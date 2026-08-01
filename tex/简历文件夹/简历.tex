@@ -1,0 +1,144 @@
+\include{settings}
+% 填写个人信息
+% 学院
+\newcommand{\school}{XX书院丨XX College}
+% 联系方式
+\newcommand{\contact}{
+	\scriptsize
+	\textcolor{white}{
+		\faEnvelope \quad \href{mailto:example@mail.bnu.edu.cn}{example@mail.bnu.edu.cn}
+		\hspace{4em}
+		\faPhone \quad  181-0000-0000
+	}
+}
+%%%%%%%%%%%%%%%%%%%%
+% 简历正文
+%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	% 页眉：校标组合+学院名
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=north, inner sep=0pt](header) at (current page.north){
+			\includegraphics[width=\paperwidth]{images/header.png}
+		};
+		% 左边校徽
+		\node[anchor=west](school_logo) at (header.west){
+			\hspace{0.5cm}
+			\includegraphics[width=0.2\textwidth]{images/北京师范大学校徽校名白色.png}
+		};
+		% 右边乐育书院图标
+		\node[anchor=east](school_name) at(header.east){
+			\hspace{0.5cm}
+			\includegraphics[width=0.15\textwidth]{images/乐育书院.png}
+			\hspace{0.5cm}
+		};
+	\end{tikzpicture}
+%	\vspace{-3.5em}
+	% 页脚，联系方式
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south, inner sep=0pt](footer) at (current page.south){
+			\includegraphics[width=\paperwidth]{images/footer.png}
+		};
+		% 联系方式
+		\node[anchor=center] at(footer.center){\contact};
+	\end{tikzpicture}
+	% 背景
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[opacity=0.05] at(current page.center){
+			\includegraphics[width=0.7\paperwidth, keepaspectratio]{images/bnu_logo_big.png}
+		};
+	\end{tikzpicture}
+	% 个人信息
+	\begin{figure}[h]
+		% 左半边，信息
+		\begin{minipage}{0.82\textwidth}
+			\vspace*{-15pt}
+			\section{\makebox[\widthof{\faAddressCard}][c]{\color{WHU_Blue}{\faAddressCard}}\quad 个人信息}
+			\begin{tabularx}{\linewidth}{p{\widthof{出生日期:}}Xp{\widthof{政治面貌:}}X}
+				姓\ \ \ \ \ \ \ \ 名: & 小明 & 
+				出生年月: & 2000年1月  \\
+				邮\ \ \ \ \ \ \ \ 箱: & example@mail.bnu.edu.cn & 
+				求职意向: & 数学教师 \\
+			\end{tabularx}
+		\end{minipage}
+		\hspace{2em}
+		% 右半边，照片
+		%\vspace*{-10pt}
+		\begin{minipage}{0.12\textwidth}
+			\setlength{\fboxsep}{0pt}
+			\includegraphics[width=\linewidth]{images/头像.jpg}
+		\end{minipage}
+	\end{figure}
+	\vspace{-1em}
+	\vspace*{-2pt}
+	% 教育背景
+	\section{\makebox[\widthof{\faGraduationCap}][c]{\color{WHU_Blue}{\faGraduationCap}}\quad 教育背景}
+	% 教育背景（本科生）
+	%{\large \textbf{XX大学}} \hspace{1.4cm} \textbf{硕士研究生} \hspace{1.6cm} \textbf{学科教学（数学）} \hfill {2028年9月 - 2030年7月} 
+	%\begin{itemize}
+	% \item \href{学院官网.example.edu.cn}{\underline{XX学堂}}，专业：你的专业  
+	%	\item \textbf{主修课程}：数学课程与教材分析、数学教学设计与案例分析、数学教育测量与评价、中学数学解题研究\ 等。
+	%\end{itemize}
+	%\vspace{0.5em}
+	{\large \textbf{XX大学}} \hspace{1.9cm} \textbf{本科} \hspace{1.5cm} \textbf{数学与应用数学} \hfill 20XX年9月 - 20XX年7月
+	\begin{itemize}
+		\item \textbf{主修课程}：概率论（90+）、常微分方程（90+）、教育学（85+）、现代教育技术（90+）、Python（95+）\ 等。
+		\item \textbf{担任职务}：\textbf{XX书院团委组织部干事}（整理学生团籍资料，审核实践报销材料，担任入团考试、表彰大会场务 等）、XXX社团社长、\textbf{班级宣传委员}（发表推文十余篇）、全媒体宣传中心文字采编部干事
+		\item \textbf{所获荣誉}：\textbf{学业X等奖学金}
+		%		\item \textbf{英语水平}：CET6成绩500+分
+		%	\item \textbf{GPA}：3.4 / 4.0（排名30 / 70）
+	\end{itemize}
+	\vspace{0.5em}
+	{\large \textbf{XX市第X高级中学}}\hfill 20XX年9月 - 20XX年7月
+	\begin{itemize}
+		\item 获班级第一、多次超越奖，\textbf{总分年级前20}%，高考XXX
+	\end{itemize}
+	\vspace{-8pt}
+	% 实践经历
+	\section{\makebox[\widthof{\faGraduationCap}][c]{\color{WHU_Blue}{\faUniversity}}\quad 实践经历}
+	%	\textbf{教育实习}
+	\begin{itemize}
+		\item \textbf{XX省XX县第X高级中学} \hfill 20XX年X月 - 20XX年X月 \
+		担任见习数学教师与班主任与实践队财务组组长，听课8节，\textbf{授课10节}，开展简单几何体体积公开课与以"从特殊到一般"为主题的数学素质拓展课程，独立完成教案5份，组织考试2次，批改试卷90+份。指导老师评价："\textbf{教案规范，课堂组织清晰，教学责任感强。}"
+		\item \textbf{援XX"云陪伴"志愿服务} \hfill 20XX年X月 - 20XX年X月 \\
+		针对XX地区教育资源薄弱问题，负责五年级数学线上教学。讲授\textbf{20节课程}，形成《彩云之桥志愿者记录》及《学生成长手册》。学生期末平均分\textbf{提升10+分}，家长评价："课程设计好，善于看出孩子的不足。"
+	\end{itemize}
+	\vspace{-8pt}
+	% 获奖情况
+	\section{\makebox[\widthof{\faGraduationCap}][c]{\color{WHU_Blue}{\faTrophy}}\quad 获奖情况}
+	\textbf{全国大学生数学竞赛（数学A类）省部级X等奖} \hfill 20XX年X月%9日
+	\begin{itemize}
+		\item 聚焦解析几何、线性代数、数学分析等核心考点，独立完成六道竞赛题目解答
+		\item 攻克向量运算、线性算子、积分不等式证明等重难点模块
+	\end{itemize}
+	\textbf{XX高校数学建模校际联赛X等奖} \hfill 20XX年X月\newline
+	\textbf{全国大学生数学建模竞赛省部级X等奖} \hfill 20XX年X月
+	\begin{itemize}
+		\item 负责建模、编程、论文撰写任务
+		\item 针对孕妇及胎儿检测核心问题，对 \textbf{NIPT（无创产前检测）}相关数据建模分析
+		\item 构建\textbf{线性混合效应模型}、\textbf{改进 Canopy-Kmeans 聚类算法}、\textbf{CART 决策树}等模型，解决对分组最佳检测时点确定及女胎异常判定等问题，最终形成\textbf{《NIPT时点选择与孕妇风险和胎儿状态异常分析》}
+	\end{itemize}
+	\textbf{XX大学XX书院"XX"教师技能大比武二等奖} \hfill 20XX年X月%7日
+	\begin{itemize}
+		\item 参与设计\textbf{"等比数列前n项和"公开课}
+		\item 协助团队搭建\textbf{"10分钟说题"}框架，以准确\textbf{分析学情}、\textbf{剖析题目重难点、易错点、内蕴核心素养}等
+	\end{itemize}
+	\textbf{XX大学XX书院"XX"班主任技能大比武二等奖} \hfill 20XX年X月%7日
+	\begin{itemize}
+		\item 参与设计\textbf{带班育人方略}与\textbf{主题班会设计}
+		\item 代表团队进行\textbf{"3分钟情景模拟"}，准确、快速拆解\textbf{家校沟通问题}情景的根本原因，高效完成现场应答
+	\end{itemize}
+	\textbf{XX大学第X届师范生文化节\textbf{板书设计大赛X等奖}、\textbf{最美三笔字评比X等奖}}\hfill 20XX年X月
+	%		\begin{itemize}
+		%			\item 以"空间向量与立体几何"为主题的板书设计以及对应复习课教案分别获得二等奖与三等奖
+		%			\item 粉笔字作品《无题》在三笔字的粉笔字赛道获得三等奖
+		%		\end{itemize}
+	% 工作技能
+	\vspace*{-8pt}
+	\section{\makebox[\widthof{\faGraduationCap}][c]{\color{WHU_Blue}{\faWrench}}\quad 专业技能}
+	\begin{itemize}
+		%	\item 教师资格证：高中数学，合格
+		\item 普通话二级甲等、CET6成绩500+
+		\item 熟练使用Office办公软件，以及LaTeX（建模常用）、MATLAB、Maple、VScode（编写c语言、python代码）等专业技能软件
+		%	\item 编程：Matlab，Python，c
+	\end{itemize}
+\end{document}
