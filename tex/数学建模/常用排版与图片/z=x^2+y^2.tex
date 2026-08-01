@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{palatino}  % 帕拉提诺体字体宏包
+\usepackage{lipsum}  % 导入生成段落的宏包
+\usepackage[hyperref=true,style=ieee]{biblatex}  % biblatex参考文献宏包
+\usepackage{indentfirst}
+\usepackage{booktabs} % For professional-looking tables
+\usepackage{xcolor}   % For cell coloring
+\usepackage{colortbl} % Required for \rowcolor
+\usepackage{ctex} % 一行代码搞定中文支持
+
+\begin{document}
+	
+	\begin{figure}[ht]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				view={45}{30}, % 视角设置
+				axis lines=middle,
+				xlabel=$x$,
+				ylabel=$y$,
+				zlabel=$z$,
+				xlabel style={anchor=north east},
+				ylabel style={anchor=north west},
+				zlabel style={anchor=south},
+				title={$z = x^2 + y^2$ (抛物面)},
+				colormap={custom}{
+					rgb255(0)=(245,124,110)    % #f57c6e
+					rgb255(0.16)=(242,181,110) % #f2b56e
+					rgb255(0.32)=(251,231,158) % #fbe79e
+					rgb255(0.48)=(132,195,183) % #84c3b7
+					rgb255(0.64)=(136,215,218) % #88d7da
+					rgb255(0.8)=(113,184,237)  % #71b8ed
+					rgb255(0.96)=(184,174,234) % #b8aeea
+					rgb255(1)=(242,168,218)    % #f2a8da
+				},
+				colorbar,
+				colorbar style={
+					title={$z$值},
+					ylabel style={font=\small}
+				},
+				% 设置坐标轴范围，让轴延长一些
+				xmin=-2.5, xmax=2.5,
+				ymin=-2.5, ymax=2.5,
+				zmin=0, zmax=8.5,
+				% 调整刻度位置
+				xtick={-2,-1,0,1,2},
+				ytick={-2,-1,0,1,2},
+				ztick={0,2,4,6,8},
+				% 调整坐标轴比例
+				axis line style={thick},
+				% 调整网格线
+				grid=major,
+				grid style={dashed,gray!30}
+				]
+				\addplot3[
+				surf,
+				domain=-2:2,
+				domain y=-2:2,
+				samples=30,
+				samples y=30,
+				opacity=0.85,
+				shader=interp
+				] {x^2 + y^2};
+				
+				% 添加坐标轴上的点
+				\addplot3[only marks, mark=*, mark size=2pt, color=black] coordinates {
+					(0,0,0)
+				};
+				\node at (axis cs:0.3,0,0) [above] {$(0,0,0)$};
+				
+				% 可以在坐标轴端点添加小箭头指示延伸方向（可选）
+				\addplot3[->, thick, black, no marks] coordinates {
+					(2.2,0,0) (2.5,0,0)
+				};
+				\addplot3[->, thick, black, no marks] coordinates {
+					(0,2.2,0) (0,2.5,0)
+				};
+				\addplot3[->, thick, black, no marks] coordinates {
+					(0,0,7.8) (0,0,8.5)
+				};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{三维抛物面 $z = x^2 + y^2$，使用自定义渐变色系}
+	\end{figure}
+	
+\end{document}

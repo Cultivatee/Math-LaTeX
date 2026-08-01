@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{circuitikz}
+
+\begin{document}
+	\begin{circuitikz}[european]
+		% 电源
+		\draw (0,0) to[battery, l=$V$] (0,3);
+		% 电阻
+		\draw (0,3) to[resistor, l=$R_1$] (3,3);
+		% 电容
+		\draw (3,3) to[capacitor, l=$C$] (3,0);
+		% 电感
+		\draw (3,3) to[inductor, l=$L$] (6,3);
+		% 二极管
+		\draw (6,3) to[diode, l=$D$] (6,0);
+		% 接地
+		\draw (0,0) -- (6,0);
+		% 电流表
+		\draw (2,0) to[ammeter] (4,0);
+		% 电压表
+		\draw (1,2) to[voltmeter] (2,2);
+		% 连接点
+		\draw[fill=black] (3,3) circle (2pt) node[above] {A};
+		\draw[fill=black] (6,3) circle (2pt) node[above] {B};
+	\end{circuitikz}
+\end{document}

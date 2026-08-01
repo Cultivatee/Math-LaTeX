@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\begin{document}
+	\begin{tikzpicture}[node distance=2cm]
+		\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=red!30]
+		\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+		\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+		\tikzstyle{arrow} = [thick,->,>=stealth]
+		
+		\node (start) [startstop] {开始};
+		\node (input) [process, below of=start] {输入数据};
+		\node (decision) [decision, below of=input, yshift=-0.5cm] {条件判断};
+		\node (output1) [process, right of=decision, xshift=3cm] {处理A};
+		\node (output2) [process, left of=decision, xshift=-3cm] {处理B};
+		\node (end) [startstop, below of=decision, yshift=-1.5cm] {结束};
+		
+		\draw [arrow] (start) -- (input);
+		\draw [arrow] (input) -- (decision);
+		\draw [arrow] (decision) -- node[anchor=south] {是} (output1);
+		\draw [arrow] (decision) -- node[anchor=south] {否} (output2);
+		\draw [arrow] (output1) |- (end);
+		\draw [arrow] (output2) |- (end);
+	\end{tikzpicture}
+\end{document}

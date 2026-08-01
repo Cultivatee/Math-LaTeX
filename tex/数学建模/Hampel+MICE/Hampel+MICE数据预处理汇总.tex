@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,   
+	right=2.5cm,   
+	top=2.5cm,      
+	bottom=2.5cm,  
+	headheight=13.6pt
+}
+
+% 字体设置（需使用 XeLaTeX 编译）
+\usepackage{fontspec}
+\usepackage[UTF8, fontset=none]{ctex}
+
+% 设置英文默认字体为 Times New Roman
+\setmainfont{Times New Roman}[
+BoldFont = Times New Roman Bold,
+ItalicFont = Times New Roman Italic,
+BoldItalicFont = Times New Roman Bold Italic
+]
+
+% 手动设置中文字体
+\setCJKmainfont{SimSun}[
+BoldFont = SimHei,
+ItalicFont = KaiTi
+]
+\setCJKsansfont{SimHei}
+\setCJKmonofont{FangSong}
+
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\definecolor{LightGreen}{rgb}{0.9, 0.95, 0.9}
+\definecolor{LightBlue}{RGB}{229, 238, 255}
+\definecolor{LightPink}{RGB}{255, 229, 237}
+
+% 修正表格标题格式：居中对齐，字体为黑体
+\captionsetup[table]{
+	justification=centering,
+	labelsep=quad,
+	font={bf}  % 添加这一行：将标题字体设置为粗体（黑体）
+}
+
+\begin{document}
+	
+	
+	\begin{table}[h]
+		\centering
+		\setlength{\tabcolsep}{6pt}
+		\renewcommand{\arraystretch}{1.2}
+		\caption{各设备数据预处理统计汇总}
+		\label{tab:预处理统计}
+		\begin{tabular}{lccccc}
+			\toprule
+			\textbf{设备} & \textbf{原始缺失} & \textbf{异常点剔除} & \textbf{MICE插补} & \textbf{线性插值} & \textbf{维护期保留NaN} \\
+			\midrule
+			\rowcolor{LightBlue}
+			A1 & 457 & 1370 & 3643 & 8 & 197 \\
+			A2 & 406 & 1508 & 3824 & 0 & 174 \\
+			\rowcolor{LightBlue}
+			A3 & 388 & 1532 & 3829 & 0 & 168 \\
+			A4 & 445 & 1501 & 3885 & 2 & 223 \\
+			\rowcolor{LightBlue}
+			A5 & 458 & 1620 & 4151 & 0 & 240 \\
+			A6 & 439 & 1514 & 3896 & 8 & 223 \\
+			\rowcolor{LightBlue}
+			A7 & 453 & 1588 & 4078 & 0 & 215 \\
+			A8 & 417 & 1478 & 3788 & 0 & 203 \\
+			\rowcolor{LightBlue}
+			A9 & 453 & 1421 & 3746 & 0 & 200 \\
+			A10 & 379 & 1431 & 3616 & 0 & 175 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	
+\end{document}

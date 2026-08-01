@@ -1,0 +1,65 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{tikz-3dplot}
+\begin{document}
+	% 设置视角
+	\tdplotsetmaincoords{70}{115}
+	\begin{tikzpicture}[scale=2.5, tdplot_main_coords,
+		dot/.style={circle,fill,inner sep=1pt},
+		line solid/.style={black,line width=0.8pt},
+		line dash/.style={black!60,line width=0.6pt,dashed}]
+		
+		% 正方体顶点坐标（棱长2，D为原点）
+		\coordinate (D) at (0,0,0);
+		\coordinate (A) at (2,0,0);
+		\coordinate (B) at (2,2,0);
+		\coordinate (C) at (0,2,0);
+		\coordinate (D1) at (0,0,2);
+		\coordinate (A1) at (2,0,2);
+		\coordinate (B1) at (2,2,2);
+		\coordinate (C1) at (0,2,2);
+		
+		% ========== 1. 绘制立方体框架 ==========
+		% 底面
+		\draw[line dash] (D) -- (A);
+		\draw[line dash] (D) -- (C);
+		\draw[line solid] (A) -- (B) -- (C);
+		
+		% 顶面
+		\draw[line solid] (A1) -- (B1) -- (C1);
+		\draw[line solid] (D1) -- (A1);
+		\draw[line solid] (C1) -- (D1);
+		
+		% 侧棱
+		\draw[line solid] (A) -- (A1);
+		\draw[line solid] (B) -- (B1);
+		\draw[line solid] (C) -- (C1);
+		\draw[line dash] (D) -- (D1);
+		
+		% ========== 2. 绘制提升典例中的点E（DD1中点） ==========
+		\coordinate (E) at (0,0,1);
+		\node[dot,label={left:$E$}] at (E) {};
+		
+		% ========== 3. 绘制平面AEC1（半透明填充）==========
+		\definecolor{planeblue}{RGB}{113,184,237}
+		\fill[color=planeblue, opacity=0.25] (A) -- (E) -- (C1) -- cycle;
+		\draw[color=planeblue, line width=1.0pt] (A) -- (E) -- (C1) -- cycle;
+		
+		% ========== 4. 绘制相关直线 ==========
+		% A1B - 橙色粗线
+		\draw[orange, line width=1.5pt] (A1) -- (B);
+		% AC1 - 紫色粗线（平面AEC1的一边）
+		%\draw[purple, line width=1.2pt] (A) -- (C1);
+		
+		% ========== 5. 顶点标签 ==========
+		\node[dot,label={below left:$A$}] at (A) {};
+		\node[dot,label={below right:$B$}] at (B) {};
+		\node[dot,label={above right:$C$}] at (C) {};
+		\node[dot,label={left:$D$}] at (D) {};
+		
+		\node[dot,label={left:$A_1$}] at (A1) {};      
+		\node[dot,label={right:$B_1$}] at (B1) {};     
+		\node[dot,label={above:$C_1$}] at (C1) {};     
+		\node[dot,label={below left:$D_1$}] at (D1) {};
+		
+	\end{tikzpicture}
+\end{document}

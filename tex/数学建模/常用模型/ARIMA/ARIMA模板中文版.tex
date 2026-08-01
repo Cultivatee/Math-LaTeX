@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,      % 左边距 2cm
+	right=2.5cm,     % 右边距 2cm
+	top=2.5cm,       % 上边距 2cm
+	bottom=2.5cm,    % 下边距 2cm
+	headheight=13.6pt
+}
+\usepackage{amsmath}
+\usepackage{booktabs} % 用于三线表
+\usepackage{caption}
+\usepackage{setspace} % 用于设置行间距
+\usepackage{array}
+\usepackage{CTeX}
+\setlength{\headheight}{13.6pt}
+\usepackage{enumitem} % 用于自定义列表格式
+
+\begin{document}
+	
+	\section*{6.3.2 利用ARIMA模型预测进货量}
+	
+	\subsection*{(1)ARIMA时间序列分析}
+	
+	ARIMA（自回归积分滑动平均模型）的核心思想是：将一个非平稳时间序列通过差分转换为平稳序列，利用该序列自身的滞后项（自回归）和随机误差项的滞后项（滑动平均）来建立预测模型，即先对原始序列进行 \(d\) 阶差分，然后对差分后的平稳序列建立一个 ARMA(\(p,q\)) 模型。分为三个部分：AR（\(p\)）自回归部分、MA（\(q\)）移动平均部分、I（\(d\)）差分部分，以下为三个部分的具体介绍：
+	
+	\begin{enumerate}[label=\arabic*)]
+		\item \textbf{AR (\(p\)) 自回归部分 (Autoregressive)}：\\
+		根据自身的值依照线性关系预测未来的值。公式如下：
+		\begin{equation}
+		X_t = c + \sum_{i=1}^{p} \phi_i X_{t-i} + \varepsilon_t 
+		\end{equation}
+		其中 \(p\) 是阶数，表示使用过去时间点数，\(X_t\) 是当前时刻的值，\(X_{t-i}\) 是过去 \(p\) 个时刻的值，\(\phi_i\) 是自回归系数，\(c\) 是常数，\(\varepsilon_t\) 是随机误差。
+		
+		\item \textbf{MA (\(q\)) 移动平均部分 (Moving Average)}：\\
+		模型认为当前的值与过去一系列随机误差项有关，捕捉时间序列受到的短期冲击效应，对误差项进行平均。公式如下：
+		\begin{equation}
+		X_t = \mu + \varepsilon_t + \sum_{j=1}^{q} \theta_j \varepsilon_{t-j} 
+		\end{equation}
+		其中，\(q\) 是阶数，表示使用过去时间点的误差，\(\varepsilon_{t-j}\) 是当前和过去 \(q\) 个时刻的随机误差，\(\theta_j\) 是移动平均系数。
+		
+		\item \textbf{I (\(d\)) 差分部分 (Integrated)}：\\
+		使得序列变得平稳的部分。通过差分来消除趋势和非恒定的方差，使得一个时间序列的均值和方差不随时间发生系统性变化，实现平稳性。一阶差分、二阶差分公式如下：
+		\begin{equation}
+		\nabla X_t = X_t - X_{t-1} \tag{3}
+		\end{equation}
+		\begin{equation}
+		\nabla^2 X_t = \nabla X_t - \nabla X_{t-1} \tag{4}
+		\end{equation}
+		其中 \(d\) 代表差分的阶数，通常 \(d=1\) 或 \(d=2\) 就足以让序列变得平稳。
+	\end{enumerate}
+	
+	\subsection*{（2）得出预测结果}
+	
+	本文利用 \textit{MATLAB} 对各品类蔬菜的周销量进行ARIMA时间序列分析，由于篇幅原因，仅展示部分单品的结果，全部结果见文件 \textit{ARIMA.xlsx}：
+	
+	\begin{table}[h]
+		\centering
+		\caption*{表5 预测结果}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{spacing}{1.5} % 设置1.5倍行间距
+			\begin{tabular}{@{}lccc@{}}
+				\toprule
+				\textbf{单品组合} & \textbf{2021年相关系数} & \textbf{2022年相关系数} & \textbf{2年平均相关系数} \\
+				\midrule
+				上海青螺丝椒(份) & -0.410018296 & -0.903074635 & -0.656546465 \\
+				上海青小青菜(份) & -0.426960775 & -0.884997079 & -0.655978927 \\
+				云南生菜螺丝椒(份) & -0.468748579 & -0.83800917 & -0.653378874 \\
+				上海青云南生菜(份) & -0.429652604 & -0.871453397 & -0.650553 \\
+				上海青杏鲍菇(2) & -0.404275203 & -0.894663846 & -0.649469525 \\
+				上海青奶白菜(份) & -0.426960775 & -0.86276201 & -0.644861392 \\
+				上海青菜心(份) & -0.426960775 & -0.845851263 & -0.636406019 \\
+				\bottomrule
+			\end{tabular}
+		\end{spacing}
+	\end{table}
+	\renewcommand{\heavyrulewidth}{0.8pt}
+\end{document}

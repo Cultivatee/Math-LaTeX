@@ -1,0 +1,200 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,   
+	right=2.5cm,   
+	top=2.5cm,      
+	bottom=2.5cm,  
+	headheight=13.6pt
+}
+
+% 字体设置（需使用 XeLaTeX 编译）
+\usepackage{fontspec}
+\usepackage{ctex}
+
+% 设置英文默认字体为 Times New Roman
+\setmainfont{Times New Roman}[
+BoldFont = Times New Roman Bold,
+ItalicFont = Times New Roman Italic,
+BoldItalicFont = Times New Roman Bold Italic
+]
+
+% 设置中文字体
+\setCJKmainfont{SimSun}[
+BoldFont = SimHei,  
+ItalicFont = KaiTi   
+]
+
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{multirow}
+
+% 修正表格标题格式：居中对齐
+\captionsetup[table]{justification=centering,labelsep=quad}
+
+\begin{document}
+	%makima插值原理
+	
+	\noindent\textbf{1. 变量定义：}
+	\begin{itemize}
+		\item 区间 $[x_k, x_{k+1}]$，长度 $\Delta x = x_{k+1}-x_k$
+		\item 局部坐标 $t = \dfrac{x-x_k}{\Delta x}$（作用：把任意区间映射到 $[0,1]$，方便计算）
+		\item $z_k, z_{k+1}$：区间两端点的函数值（已知）
+		\item $S_k, S_{k+1}$：区间两端点的导数/斜率（已知）
+	\end{itemize}
+	
+	\medskip
+	\noindent\textbf{2. 插值约束条件：}
+	\[
+	\begin{cases}
+		P_k(x_k) = z_k,\quad P_k(x_{k+1}) = z_{k+1} \qquad \text{（曲线经过两端点）} \\
+		P_k'(x_k) = S_k,\quad P_k'(x_{k+1}) = S_{k+1} \qquad \text{（曲线在两端点斜率匹配）}
+	\end{cases}
+	\]
+	
+	\medskip
+	\noindent\textbf{3. 分段三次多项式表达式：}
+	\[
+	\begin{aligned}
+		P_k(x) = &\quad (2t^3-3t^2+1) \cdot z_k \quad \text{（$t=0$时=1，$t=1$时=0 → 控制左端点值）}\\
+		&+ (t^3-2t^2+t) \cdot \Delta x \cdot S_k \quad \text{（$t=0$时导数=1 → 控制左端点斜率）}\\
+		&+ (-2t^3+3t^2) \cdot z_{k+1} \quad \text{（$t=0$时=0，$t=1$时=1 → 控制右端点值）}\\
+		&+ (t^3-t^2) \cdot \Delta x \cdot S_{k+1} \quad \text{（$t=1$时导数=1 → 控制右端点斜率）}
+	\end{aligned}
+	\]
+	
+	\newpage
+	
+	
+	
+	
+	2. 算法基本思想与迭代步骤
+	
+	算法通过为每个顶点赋予距离标号 \(d_j\)（起始点到顶点 \(j\) 的当前最短路径权值）和前驱标号 \(p_j\)（顶点 \(j\) 在最短路径中的前一顶点），经标记已访问节点、更新未访问节点权值、选取最优邻域节点三步迭代，最终得到最优路径。结合山区公路规划的坡度约束、地形特征约束，具体迭代步骤为：
+	
+	1. 初始化：设起始点为山脚 \(S(0,800)\)，令其距离标号 \(d_S=0\)，前驱标号 \(p_S=\emptyset\)；其余所有顶点距离标号 \(d_j=\infty\)，前驱标号 \(p_j=?\)；标记起始点 \(S\) 为已访问节点，记当前已访问节点为 \(k=S\)，其余为未访问节点。
+	
+	2. 邻域节点权值更新：遍历已访问节点 \(k\) 的所有八邻域未访问节点 \(j\)，首先验证工程约束（坡度约束 \(\alpha_{pq}=\frac{|Z_p-Z_q|}{d_{pq}} \leq \alpha_{\text{max}}\)、地形特征约束（溪流区判定桥梁、高落差区判定隧道）），若满足约束，则更新节点 \(j\) 的距离标号：
+	\[
+	d_j = \min\left[d_j, d_k + w(v_k,v_j)\right]
+	\]
+	若更新后权值更优，同步更新前驱标号 \(p_j=k\)；若违反约束，标记该边为禁行边，不参与权值更新。
+	
+	3. 选取最优未访问节点：从所有未访问节点中，选取距离标号最小的顶点 \(i\)，即 \(d_i = \min\left[d_j \mid j \in \text{未访问节点}\right]\)，将顶点 \(i\) 标记为已访问节点。
+	
+	4. 迭代终止判断：若目标点（居民点/居民区/矿区）被标记为已访问节点，算法终止，通过前驱标号回溯得到最优路径；否则令 \(k=i\)，返回步骤2继续迭代。
+	
+	\newpage
+	
+	为贴合山区公路规划的工程实际，在经典Dijkstra算法基础上进行动态约束适配与工程化改进，核心改进点为实时地形特征识别、动态成本更新与约束回溯机制，同时融入坡度硬约束：
+	
+	1. 坡度约束：对所有待扩展的边，验证坡度是否满足工程规范，坡度计算公式为：
+	$$
+	\alpha_{p q}=\frac{\left|Z_{p}-Z_{q}\right|}{d_{p q}} \leq \alpha_{\text{max}}
+	$$
+	式中，$Z_p$、$Z_q$为顶点$v_p$、$v_q$对应的地形高程，$\alpha_{\text{max}}$为山区公路允许的最大坡度，违反该约束的边直接判定为禁行边。
+	
+	2. 地形特征识别与动态成本：引入桥梁、隧道标志识别变量，实时判定路段类型并调整单位工程成本$C_{\text{工程}}$，实现边权的动态更新，标志变量判定规则为：
+	$$
+	\chi_{\text{Bridge }}=\left\{\begin{array}{rr}1 & 若(x, y) \in \text{River且 } \alpha_{p q}>0, \\ 0 & 其他情况, \end{array}\right.
+	$$
+	$$
+	\chi_{\text{Tunnel }}=\left\{\begin{array}{lr}1 & 若 \left|Z_{p}-Z_{q}\right|>50 \text{m 且 } \alpha_{p q}>0.1, \\ 0 & 其他情况。 \end{array}\right.
+	$$
+	式中，$\text{River}$为溪流范围内点构成的集合，$\chi_{\text{Bridge}}=1$时为桥梁路段，$\chi_{\text{Tunnel}}=1$时为隧道路段，分别赋予对应的高单位成本。
+	
+	3. 约束回溯机制：当某条边违反坡度等核心工程约束时，回溯至最近的合法已访问节点，并标记该违规区域为禁行区，避免算法向不可行区域扩展，保证最终路径的工程可行性。
+	
+	\newpage
+	
+	算法的核心改进为构建综合目标函数，将工程成本、安全风险、生态影响等多维度目标进行线性加权，统一为单一代价指标，核心公式为：
+	$$
+	f = \lambda_1 f_1 + \lambda_2 f_2 + \lambda_3 f_3
+	$$
+	
+	$f$ 为路段的综合代价值，作为算法迭代的核心寻优指标；
+	
+	$f_1,f_2,f_3$ 分别为普通道路、桥梁、隧道三类路段的分项目标函数，可综合表征工程成本、安全风险、生态影响等多维度指标；
+	
+	$\lambda_1,\lambda_2,\lambda_3$ 为决策偏好权重，满足 $\lambda_1+\lambda_2+\lambda_3=1$，我们选择结合熵权法标定，反映不同目标的优先级。
+	
+	\newpage
+	
+	
+	\subsection{基于熵权法的权重标定}
+	为客观确定多准则Dijkstra算法中工程成本、安全风险、生态影响三类目标的决策偏好权重，本文采用熵权法进行客观赋权。该方法基于信息熵理论，通过指标数据的离散程度量化信息价值：指标信息熵越小，数据区分度越高、所含信息量越大，对应权重越高，可有效避免主观赋值偏差，适配山区公路多目标规划的决策需求。
+	
+	熵权法的计算流程如下：
+	
+	\textbf{Step 1. 数据标准化}
+	
+	对原始指标进行无量纲化处理，消除量纲影响。标准化矩阵元素为：
+	\[
+	z_{ij} = \frac{x_{ij}}{\sqrt{\sum_{i=1}^n x_{ij}^2}}
+	\]
+	若指标存在负数，则采用极差标准化：
+	\[
+	\widetilde{z}_{ij} = \frac{x_{ij} - \min\{x_{1j},x_{2j},\dots,x_{nj}\}}{\max\{x_{1j},x_{2j},\dots,x_{nj}\} - \min\{x_{1j},x_{2j},\dots,x_{nj}\}}
+	\]
+	其中$x_{ij}$为第$i$个样本、第$j$项指标的原始数据。
+	
+	\textbf{Step 2. 计算概率矩阵}
+	
+	计算各指标下样本的比重，构建概率矩阵$P$：
+	\[
+	p_{ij} = \frac{\widetilde{z}_{ij}}{\sum_{i=1}^n \widetilde{z}_{ij}}
+	\]
+	$p_{ij}$代表第$j$项指标下第$i$个样本所占的比重。
+	
+	\textbf{Step 3. 计算信息熵}
+	
+	计算第$j$个指标的信息熵，量化指标的信息含量：
+	\[
+	e_j = -\frac{1}{\ln n}\sum_{i=1}^n p_{ij}\ln(p_{ij}),\quad j=1,2,\dots,m
+	\]
+	
+	\textbf{Step 4. 计算信息效用值}
+	
+	由信息熵推导指标的效用值，效用值越高代表指标区分度越强：
+	\[
+	d_j = 1 - e_j
+	\]
+	
+	\textbf{Step 5. 计算熵权}
+	
+	对效用值进行归一化，得到各指标的客观权重（熵权）：
+	\[
+	\omega_j = \frac{d_j}{\sum_{j=1}^m d_j}
+	\]
+	
+	将计算得到的熵权$\omega_j$直接作为多准则Dijkstra综合目标函数
+	\[
+	f = \lambda_1 f_1 + \lambda_2 f_2 + \lambda_3 f_3
+	\]
+	中的决策偏好权重$\lambda_j$，实现基于数据客观规律的多目标路径寻优。
+	
+	\newpage
+	
+	\subsection{基于熵权法的权重标定}
+	为客观确定多准则Dijkstra算法中工程成本、安全风险、生态影响三类目标的决策偏好权重$\lambda_1,\lambda_2,\lambda_3$，本文采用熵权法进行客观赋权。该方法基于信息熵理论，通过指标数据的离散程度量化信息价值，有效避免主观赋值偏差，适配山区公路多目标规划的决策需求。
+	
+	首先对三类指标的原始数据进行标准化处理，消除量纲影响；随后计算各指标的概率矩阵、信息熵与信息效用值：
+	\[
+	e_j = -\frac{1}{\ln n}\sum_{i=1}^n p_{ij}\ln(p_{ij}),\quad d_j = 1 - e_j
+	\]
+	其中$e_j$为第$j$个指标的信息熵，$d_j$为信息效用值，效用值越高代表指标区分度越强。
+	
+	最终通过归一化得到各指标的熵权，直接作为综合目标函数
+	\[
+	f = \lambda_1 f_1 + \lambda_2 f_2 + \lambda_3 f_3
+	\]
+	中的决策权重$\lambda_j$，实现基于数据客观规律的多目标路径寻优。
+	
+\end{document}

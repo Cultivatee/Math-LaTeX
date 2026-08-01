@@ -1,0 +1,31 @@
+\contentsline {section}{\numberline {1}引言}{2}{section.1}%
+\contentsline {section}{\numberline {2}准备工作}{2}{section.2}%
+\contentsline {section}{\numberline {3}平面绘图基础}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}直线与点}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}坐标系与网格}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}三角形与辅助线}{4}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}角度标注}{5}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}坐标系进阶：交点}{5}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}圆锥曲线}{6}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}圆}{6}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}椭圆}{7}{subsubsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.3}抛物线}{7}{subsubsection.3.6.3}%
+\contentsline {subsubsection}{\numberline {3.6.4}双曲线}{8}{subsubsection.3.6.4}%
+\contentsline {subsection}{\numberline {3.7}极坐标绘图（玫瑰线）}{8}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}三角函数图像}{9}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}区域填充}{10}{subsection.3.9}%
+\contentsline {section}{\numberline {4}三维绘图}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}三维坐标系}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}空间点与直线}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}空间中的三角形与平面}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}三维多面体：正方体}{12}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}三维旋转体线框示意（圆锥、圆柱）}{13}{subsection.4.5}%
+\contentsline {paragraph}{圆锥}{13}{section*.1}%
+\contentsline {paragraph}{圆柱}{13}{section*.2}%
+\contentsline {section}{\numberline {5}综合示例：平面与三维图形混合}{14}{section.5}%
+\contentsline {section}{\numberline {6}进阶技巧}{14}{section.6}%
+\contentsline {subsection}{\numberline {6.1}图文并排（minipage）}{14}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}使用循环绘制多个图形}{16}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}自定义箭头样式}{16}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}阴影与渐变}{16}{subsection.6.4}%
+\contentsline {section}{\numberline {7}结语}{16}{section.7}%

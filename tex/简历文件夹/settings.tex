@@ -1,0 +1,109 @@
+\documentclass[11pt]{article}
+\usepackage{xltxtra}
+\usepackage{bookmark}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\usepackage{url}
+\urlstyle{tt}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{relsize}
+\usepackage{xspace}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{fontspec}
+\usepackage{fancybox}
+\usepackage{float}
+
+% 取消中文字符与数字之间的间隔
+\CJKsetecglue{}
+\protected\def\Cpp{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.28ex}{\relsize{-1}++}}\xspace}
+\setlength{\parindent}{0pt}
+\pagenumbering{gobble}
+\setlist[itemize]{topsep=0em, leftmargin=*}
+\setlist[enumerate]{topsep=0em, leftmargin=*}
+
+% ========== 标题格式设置（改为黑体） ==========
+% 一级标题：黑体，大号，加粗
+\titleformat{\section}
+{\LARGE\bfseries\sffamily\raggedright}  % \sffamily 使用无衬线字体（黑体）
+{}{0em}
+{}
+[{\color{WHU_Blue}\titlerule}]
+\titlespacing*{\section}{0cm}{*1}{*1}
+
+% 二级标题：黑体，较大，加粗
+\titleformat{\subsection}
+{\large\bfseries\sffamily\raggedright}  % \sffamily 使用无衬线字体（黑体）
+{}{0em}
+{}
+[]
+\titlespacing*{\subsection}{0cm}{*1}{*1}
+
+\usepackage[
+a4paper,
+left=1.2cm,
+right=1.2cm,
+top=1.5cm,
+bottom=1cm,
+nohead
+]{geometry}
+
+\renewcommand{\arraystretch}{1.2}
+\linespread{1.2}
+\renewcommand{\CJKglue}{\hskip 0.05em}
+
+% ========== 字体设置 ==========
+% 英文字体：Times New Roman（正文）
+% 中文字体：宋体（正文）
+% 标题字体：黑体（通过 \sffamily 实现）
+
+% 设置英文字体（明确指定粗体）
+\setmainfont{Times New Roman}[
+BoldFont = Times New Roman Bold,
+ItalicFont = Times New Roman Italic,
+BoldItalicFont = Times New Roman Bold Italic,
+]
+
+% 设置无衬线字体（用于标题）
+\setsansfont{Arial}[
+BoldFont = Arial Bold,
+]
+
+% 设置等宽字体
+\setmonofont{Courier New}[
+BoldFont = Courier New Bold,
+]
+
+% 设置中文字体（明确指定粗体）
+\setCJKmainfont{SimSun}[
+BoldFont = SimHei,        % 宋体的粗体用黑体代替
+ItalicFont = SimSun,      % 宋体通常没有斜体
+]
+
+% 设置中文无衬线字体（用于标题）
+\setCJKsansfont{SimHei}[
+BoldFont = SimHei,         % 黑体本身就有粗体效果
+]
+
+% 设置中文等宽字体
+\setCJKmonofont{FangSong}[
+BoldFont = SimHei,         % 仿宋的粗体用黑体代替
+]
+
+% 自定义主题色
+\definecolor{WHU_Blue}{RGB}{0, 37, 84}
+
+% 减小 itemize 间距
+\setlist[itemize]{topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=2pt, leftmargin=*}

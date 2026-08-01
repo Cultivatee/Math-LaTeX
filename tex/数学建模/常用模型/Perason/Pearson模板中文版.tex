@@ -1,0 +1,142 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,   
+	right=2.5cm,   
+	top=2.5cm,      
+	bottom=2.5cm,  
+	headheight=13.6pt
+}
+\usepackage{amsmath}
+\usepackage{booktabs} % 用于三线表
+\usepackage{caption}
+\usepackage{setspace} % 用于设置行间距
+\usepackage{array}
+\usepackage{graphicx} % 用于插入图片
+\usepackage{CTeX}
+\setlength{\headheight}{13.6pt}
+\usepackage{enumitem} % 用于自定义列表格式
+\usepackage{svg}
+
+\begin{document}
+	\subsection{利用Pearson相关系数判断各品类相关性}
+	
+	Pearson\textbf{相关系数}被广泛用于分析两个变量之间的线性相关程度，其取值范围为（-1,1），若系数为正值表示两个变量间呈正向相关，负值表示两个变量间呈负向相关，该值的绝对值越接近于1代表两变量间的线性相关性越强，越接近于0表示两个变量之间几乎没有线性相关性。计算公式如下：
+	
+	\begin{equation}
+		r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2 \sum_{i=1}^{n}(y_i - \bar{y})^2}}
+	\end{equation}
+	
+	\subsubsection{求解结果}
+	
+	使用MATLAB求解Pearson相关系数，并绘制热力图：
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=.8\textwidth]{figures/pearson_picture.eps}
+		\label{fig:问题一分析}
+		\caption{图片名称}
+	\end{figure}
+	
+	由上表得出无明显强相关品类，从中筛选出较强相关的品类如下表所示：
+	
+	\begin{table}[h!]
+		\centering
+		\caption{较强相关品类组合（$|r|>0.5$）}
+		\label{tab:strong_corr}
+		\renewcommand{\arraystretch}{1.5} 
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{tabular}{ccc}
+			\toprule
+			品类1 & 品类2 & 相关系数 \\
+			\midrule
+			花叶类 & 花菜类 & 0.638288645480482 \\
+			花叶类 & 水生根茎类 & 0.568835111289716 \\
+			花叶类 & 辣椒类 & 0.668577433074466 \\
+			花叶类 & 食用菌 & 0.639654735509754 \\
+			花菜类 & 水生根茎类 & 0.549840658198361 \\
+			花菜类 & 辣椒类 & 0.561693690138146 \\
+			\bottomrule
+		\end{tabular}
+		\renewcommand{\heavyrulewidth}{0.8pt}
+	\end{table}
+	
+	以上较强相关品类组合亦于文件Correlated Categories.xlsx中呈现。
+	
+	\subsubsection{Pearson相关系数检验}
+	
+	本文对上述结果进行Pearson相关系数检验，检验步骤如下：
+	
+	\paragraph{Step 1. 提出假设}
+	
+	原假设$H_0$：真实相关系数$\rho = 0$。即两个变量总体上没有线性相关关系。
+	
+	备择假设$H_1$：真实相关系数$\rho \neq 0$。即两个变量总体上存在线性相关关系。
+	
+	设置信水平为95\%
+	
+	\paragraph{Step 2. 计算$P$值}
+	
+	p值的计算来自于一个由$r$转化而来的\textbf{t统计量}，t统计量的计算公式如下：
+	
+	\begin{equation}
+		t = \frac{r - \rho_0}{SE_r} = \frac{r}{\sqrt{\frac{1-r^2}{n-2}}}
+		\label{eq:t_test_correlation}
+	\end{equation}
+	
+	其中，$r$代表计算出的样本Pearson相关系数，$\rho_0$代表在原假设下的总体相关系数，$SE_r$代表相关系数$r$的标准误 (Standard Error)，$n-2$代表自由度 (df)。由于原假设为$\rho = 0$，于是t统计量的计算公式可以简化为：
+	
+	\begin{equation}
+		t = r \sqrt{\frac{x-2}{1-r^2}}
+		\label{eq:t_test_simplified}
+	\end{equation}
+	
+	计算得出的t统计量服从自由度为$\textit{df} = n - 2$的\textbf{t分布}，p值为t分布在两端尾部的面积之和。
+	
+	本文利用MATLAB计算两端尾部的面积之和，进行Pearson相关系数检验。结果如下表所示：
+	
+	\begin{table}[h!]
+		\centering
+		\caption{较强相关品类Pearson相关系数检验$P$值}
+		\label{tab:p_value_strong}
+		\renewcommand{\arraystretch}{1.5} 
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{tabular}{ccc}
+			\toprule
+			品类1 & 品类2 & $P$值 \\
+			\midrule
+			花叶类 & 花菜类 & 0.0000000 \\
+			花叶类 & 辣椒类 & 0.0000000 \\
+			花菜类 & 茄类 & 0.0000000 \\
+			花菜类 & 辣椒类 & 0.0000000 \\
+			茄类 & 辣椒类 & 0.0000000 \\
+			辣椒类 & 食用菌 & 0.0000000 \\
+			\bottomrule
+		\end{tabular}
+		\renewcommand{\heavyrulewidth}{0.8pt}
+	\end{table}
+	
+	\begin{table}[h!]
+		\centering
+		\caption{所有品类间Pearson相关系数检验$P$值}
+		\label{tab:p_value_all}
+		\renewcommand{\arraystretch}{1.5} 
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{tabular}{ccccccc}
+			\toprule
+			& 花叶类 & 花菜类 & 水生根茎 & 茄类 & 辣椒类 & 食用菌 \\
+			\midrule
+			花叶类 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 \\
+			花菜类 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 \\
+			水生根茎 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0030232 & 0.0000000 & 0.0000000 \\
+			茄类 & 0.0000000 & 0.0000000 & 0.0030232 & 0.0000000 & 0.0000000 & 0.0000051 \\
+			辣椒类 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 \\
+			食用菌 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000051 & 0.0000000 & 0.0000000 \\
+			\bottomrule
+		\end{tabular}
+		\renewcommand{\heavyrulewidth}{0.8pt}
+	\end{table}
+	
+	由表2、表3得出，各品类销售量间的Pearson相关系数均小于置信水平0.05，拒绝原假设，即上一步分析得出的结论可信。
+\end{document}

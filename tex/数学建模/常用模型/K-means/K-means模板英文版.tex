@@ -1,0 +1,122 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,    
+	right=2.5cm,     
+	top=2.5cm,      
+	bottom=2.5cm,   
+	headheight=13.6pt
+}
+\usepackage{amsmath}
+\usepackage{booktabs} % for three-line tables
+\usepackage{caption}
+\usepackage{setspace} % for setting line spacing
+\usepackage{array}
+\setlength{\headheight}{13.6pt}
+\usepackage{enumitem} % for custom list formatting
+\usepackage{graphicx} % for inserting images
+
+\begin{document}
+	
+	\subsection{Analysis of Classification Methods Using Improved Canopy-Kmeans Algorithm}
+	
+	\subsubsection{Analysis of the Improved Canopy-Kmeans Algorithm}
+	
+	The differences between the improved Canopy-Kmeans algorithm and the traditional K-means algorithm are as follows:
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item The traditional K-means algorithm randomly selects initial cluster centers, making it sensitive to initialization, prone to falling into local optima, and producing inconsistent results in each run. In contrast, Canopy-Kmeans first uses the Canopy algorithm for coarse clustering, intelligently identifies dense data regions through two distance thresholds, and selects more representative initial center points, greatly improving the stability and convergence of the algorithm.
+		
+		\item In terms of the clustering process, the K-means algorithm directly performs fine clustering, while the Canopy-Kmeans algorithm adopts a two-stage strategy of "coarse clustering + fine clustering." It first quickly divides the data into approximate ranges using Canopy, and then performs K-means fine optimization on these coarse clusters. This hierarchical processing not only improves clustering quality but also enhances the algorithm's robustness to noise and outliers.
+		
+		\item Canopy-Kmeans automatically infers a suitable number of clusters (K value) to some extent, addressing the limitation of K-means requiring pre-specification of the number of clusters.
+	\end{enumerate}
+	
+	This paper adopts the improved Canopy-Kmeans algorithm. First, data from products with the same name are merged, and then using total sales, maximum daily sales, and average daily sales as indicators, \textbf{the products are divided into four categories: hot-selling, popular-selling, average-selling, and slow-selling}, with K set to 4 for clustering analysis. The steps of the improved Canopy-Kmeans algorithm are as follows:
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item \textbf{Canopy Coarse Clustering}: Use two thresholds ($T_1 > T_2$) for rapid data partitioning. Points with distances less than $T_1$ are grouped into the same Canopy, and points with distances less than $T_2$ are marked as strongly associated, avoiding them as new centers. This step quickly identifies dense data regions.
+		
+		\item \textbf{Center Point Selection}: Use the "minimum-maximum principle" for Canopy center point selection. The initial Canopy center points should be as far apart as possible. The method for selecting the remaining center points is: calculate the minimum distance between each candidate center and the existing centers, and select the candidate point with the maximum value of these minimum distances as the center point. The formula is as follows:
+		\[
+		\begin{cases} 
+			\text{DistCollect}(m+1) = \min \{ d(x_{m+1}, x_r), r = 1, 2, ..., m \} \\
+			\text{Dist}_{\min}(m+1) = \max \{ \min [d(x_j, x_{i_r})], j \neq i_1, i_2, ..., i_r \}
+		\end{cases} \tag{1}
+		\]
+		
+		where $\min[d(x_{m+1}, c_i)]$ represents the minimum distance between the $(m+1)$-th candidate Canopy center point and the first $m$ determined Canopy center points, and $Dist_{\min} (m+1)$ indicates that the optimal $x_{m+1}$ should be the one with the maximum value among all the shortest distances \cite{mao2012}.
+		
+		\item \textbf{Adaptive K-value Adjustment}: Dynamically adjust the final number of clusters based on the number of Canopies: merge close Canopies when there are too many, and supplement with representative points when there are too few, optimizing the clustering structure.
+		
+		\item \textbf{Fine K-means Optimization}: Execute the standard K-means algorithm based on the high-quality initial centers to achieve fast convergence and high-precision clustering.
+	\end{enumerate}
+	
+	\subsubsection{Determination of Cluster Centers}
+	
+	Using total sales, maximum daily sales, and average daily sales as indicators, the clustering algorithm is applied to classify the products into four categories: hot-selling, popular-selling, average-selling, and slow-selling.
+	
+	\begin{table}[h]
+		\centering
+		\caption{Table 5 Cluster Centers}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{spacing}{1.5}
+			\begin{tabular}{@{}lccc@{}}
+				\toprule
+				\textbf{Product Combination} & \textbf{2021 Correlation Coefficient} & \textbf{2022 Correlation Coefficient} & \textbf{2-Year Average Correlation Coefficient} \\
+				\midrule
+				Shanghai Green Screw Pepper (portion) & -0.410018296 & -0.903074635 & -0.656546465 \\
+				Shanghai Green Small Bok Choy (portion) & -0.426960775 & -0.884997079 & -0.655978927 \\
+				Yunnan Lettuce Screw Pepper (portion) & -0.468748579 & -0.83800917 & -0.653378874 \\
+				Shanghai Green Yunnan Lettuce (portion) & -0.429652604 & -0.871453397 & -0.650553 \\
+				Shanghai Green King Oyster Mushroom (2) & -0.404275203 & -0.894663846 & -0.649469525 \\
+				Shanghai Green Milk Cabbage (portion) & -0.426960775 & -0.86276201 & -0.644861392 \\
+				Shanghai Green Choy Sum (portion) & -0.426960775 & -0.845851263 & -0.636406019 \\
+				\bottomrule
+			\end{tabular}
+		\end{spacing}
+		\renewcommand{\heavyrulewidth}{0.8pt}
+	\end{table}
+	
+	\subsubsection{Problem Solving}
+	
+	This paper uses \textit{MATLAB} to obtain the clustering results for various vegetable products. Due to space limitations, only partial clustering results are presented here. Complete results can be found in the file \textit{Cluster Result.xlsx}:
+	
+	\begin{table}[h]
+		\centering
+		\caption{Clustering of Sixty Vegetable Products}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{spacing}{1.5}
+			\begin{tabular}{@{}lccc@{}}
+				\toprule
+				\textbf{Product Combination} & \textbf{2021 Correlation Coefficient} & \textbf{2022 Correlation Coefficient} & \textbf{2-Year Average Correlation Coefficient} \\
+				\midrule
+				Shanghai Green Screw Pepper (portion) & -0.410018296 & -0.903074635 & -0.656546465 \\
+				Shanghai Green Small Bok Choy (portion) & -0.426960775 & -0.884997079 & -0.655978927 \\
+				Yunnan Lettuce Screw Pepper (portion) & -0.468748579 & -0.83800917 & -0.653378874 \\
+				Shanghai Green Yunnan Lettuce (portion) & -0.429652604 & -0.871453397 & -0.650553 \\
+				Shanghai Green King Oyster Mushroom (2) & -0.404275203 & -0.894663846 & -0.649469525 \\
+				Shanghai Green Milk Cabbage (portion) & -0.426960775 & -0.86276201 & -0.644861392 \\
+				Shanghai Green Choy Sum (portion) & -0.426960775 & -0.845851263 & -0.636406019 \\
+				\bottomrule
+			\end{tabular}
+		\end{spacing}
+		\renewcommand{\heavyrulewidth}{0.8pt}
+	\end{table}
+	
+	Analysis results of sales correlation for each product:
+	
+	\begin{enumerate}[label=\Roman*.]
+		\item \textbf{Products in the hot-selling category typically have high total sales, high maximum daily sales, and high average daily sales}. This means these products are very popular and show relatively consistent trends in sales indicators. There may be high correlations among products within the hot-selling category, meaning their sales indicators influence each other significantly.
+		
+		\item \textbf{Products in the popular-selling category perform relatively well in sales indicators}, but compared to the hot-selling category, their total sales, maximum daily sales, and average daily sales may be slightly lower. Within the popular-selling category, there is strong correlation among products.
+		
+		\item \textbf{Products in the average-selling category maintain stable sales indicators at a medium level}, without obvious highs or lows. There may be lower correlation among these products, and their sales indicators are relatively independent.
+		
+		\item \textbf{Products in the slow-selling category show low total sales, low maximum daily sales, and low average daily sales}. There may be weak correlation among these products, and their sales indicators have minimal influence on each other.
+	\end{enumerate}
+	
+	% Mao Dianhui. Improved Canopy-Kmeans Algorithm Based on MapReduce[J]. Computer Engineering and Applications, 2012, 48(27): 
+	
+\end{document}

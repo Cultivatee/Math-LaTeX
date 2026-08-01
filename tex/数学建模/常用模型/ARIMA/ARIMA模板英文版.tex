@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,      % 左边距 2cm
+	right=2.5cm,     % 右边距 2cm
+	top=2.5cm,       % 上边距 2cm
+	bottom=2.5cm,    % 下边距 2cm
+	headheight=13.6pt
+}
+\usepackage{amsmath}
+\usepackage{booktabs} % for three-line tables
+\usepackage{caption}
+\usepackage{setspace} % for setting line spacing
+\usepackage{array}
+\usepackage{enumitem} % for custom list formatting
+
+\begin{document}
+		\subsection{Forecasting Purchase Volume Using ARIMA Model}
+	
+	\subsubsection{ ARIMA Time Series Analysis}
+	
+	The core idea of ARIMA (Autoregressive Integrated Moving Average) is to transform a non-stationary time series into a stationary one through differencing, and then establish a forecasting model using the lagged values of the series itself (autoregressive) and lagged values of random error terms (moving average). Specifically, the original series is differenced d times to achieve stationarity, and then an ARMA(p,q) model is built on the differenced stationary series. It consists of three parts: AR (p) autoregressive part, MA (q) moving average part, and I (d) integrated (differencing) part. The details of these three components are as follows:
+	
+	\begin{enumerate}[label=(\arabic*)]
+		\item \textbf{AR (p) Autoregressive Part}: \\
+		Forecasts future values based on a linear relationship with its own past values. The formula is as follows:
+		\begin{equation}
+			X_t = c + \sum_{i=1}^{p} \phi_i X_{t-i} + \varepsilon_t 
+		\end{equation}
+		where p is the order, representing the number of past time points used; \(X_t\) is the value at the current time; \(X_{t-i}\) are the values at the past p time points; \(\phi_i\) are the autoregressive coefficients; c is a constant; and \(\varepsilon_t\) is the random error.
+		
+		\item \textbf{MA (q) Moving Average Part}: \\
+		The model assumes that the current value is related to a series of past random error terms, capturing short-term shock effects in the time series by averaging the error terms. The formula is as follows:
+		\begin{equation}
+			X_t = \mu + \varepsilon_t + \sum_{j=1}^{q} \theta_j \varepsilon_{t-j} 
+		\end{equation}
+		where q is the order, representing the number of past error terms used; \(\varepsilon_{t-j}\) are the current and past q random errors; and \(\theta_j\) are the moving average coefficients.
+		
+		\item \textbf{I (d) Integrated (Differencing) Part}: \\
+		This part makes the series stationary. Differencing is used to eliminate trends and non-constant variance, ensuring that the mean and variance of the time series do not change systematically over time, thereby achieving stationarity. The formulas for first-order and second-order differencing are as follows:
+		\begin{equation}
+			\nabla X_t = X_t - X_{t-1} \tag{3}
+		\end{equation}
+		\begin{equation}
+			\nabla^2 X_t = \nabla X_t - \nabla X_{t-1} \tag{4}
+		\end{equation}
+		where d represents the order of differencing. Typically, d = 1 or d = 2 is sufficient to make the series stationary.
+	\end{enumerate}
+	
+	\subsubsection{Forecasting Results}
+	
+	This study uses \textit{MATLAB} to perform ARIMA time series analysis on the weekly sales of various vegetable categories. Due to space limitations, only partial results are presented here. Complete results can be found in the file \textit{ARIMA.xlsx}:
+	
+	\begin{table}[h]
+		\centering
+		\caption{Forecasting Results}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{spacing}{1.5} % Set 1.5 line spacing
+			\begin{tabular}{@{}lccc@{}}
+				\toprule
+				\textbf{\centering Product Combination} & \textbf{2021 Coef.} & \textbf{2022 Coef.} & \textbf{Avg.Coef} \\
+				\midrule
+				Screw Pepper (portion) & -0.410018296 & -0.903074635 & -0.656546465 \\
+				Small Bok Choy (portion) & -0.426960775 & -0.884997079 & -0.655978927 \\
+				Yunnan Lettuce Screw & -0.468748579 & -0.83800917 & -0.653378874 \\
+				Green Yunnan Lettuce & -0.429652604 & -0.871453397 & -0.650553 \\
+				Green Mushroom & -0.404275203 & -0.894663846 & -0.649469525 \\
+				Green Milk & -0.426960775 & -0.86276201 & -0.644861392 \\
+				Shanghai Green & -0.426960775 & -0.845851263 & -0.636406019 \\
+				\bottomrule
+			\end{tabular}
+		\end{spacing}
+		\footnotesize \textit{Note: All values are correlation coefficients.}
+	\end{table}
+	\renewcommand{\heavyrulewidth}{1.2pt}
+\end{document}

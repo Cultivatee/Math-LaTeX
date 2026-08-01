@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis lines = middle,
+			xlabel = {$x$},
+			ylabel = {$y$},
+			xmin = -3, xmax = 3,
+			ymin = -2, ymax = 2,
+			grid = major,
+			width=10cm, height=6cm
+			]
+			
+			% 绘制正弦函数
+			\addplot [
+			domain=-3:3,
+			samples=100,
+			color=blue,
+			thick
+			] {sin(deg(x))};
+			
+			% 绘制余弦函数
+			\addplot [
+			domain=-3:3,
+			samples=100,
+			color=red,
+			thick,
+			dashed
+			] {cos(deg(x))};
+			
+			% 添加图例
+			\legend{$\sin(x)$, $\cos(x)$}
+			
+			% 添加标注
+			\node at (axis cs: 1.57,1) [anchor=west] {最大值};
+			\draw[->, thick] (axis cs: 1.57,0.9) -- (axis cs: 1.57,1);
+			
+		\end{axis}
+	\end{tikzpicture}
+\end{document}

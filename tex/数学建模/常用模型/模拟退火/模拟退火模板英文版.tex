@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,      % 左边距 2cm
+	right=2.5cm,     % 右边距 2cm
+	top=2.5cm,       % 上边距 2cm
+	bottom=2.5cm,    % 下边距 2cm
+	headheight=13.6pt
+}
+\usepackage{amsmath}
+\usepackage{booktabs} % 用于三线表
+\usepackage{caption}
+\usepackage{setspace} % 用于设置行间距
+\usepackage{array}
+\usepackage{graphicx} % 用于插入图片
+\setlength{\headheight}{13.6pt}
+\usepackage{enumitem} % 用于自定义列表格式
+\usepackage{svg}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{palatino}  % 帕拉提诺体字体宏包
+\usepackage{lipsum}  % 导入生成段落的宏包
+\usepackage[hyperref=true,style=ieee]{biblatex}  % biblatex参考文献宏包
+\usepackage{indentfirst}
+\usepackage{booktabs} % For professional-looking tables
+\usepackage{xcolor}   % For cell coloring
+\usepackage{colortbl} % Required for \rowcolor
+\definecolor{LightGreen}{rgb}{0.9, 0.95, 0.9}
+\addbibresource{ref.bib}  % 添加引用文献bib源
+\usepackage{fancyhdr}
+\usepackage{enumitem} % 用于自定义列表格式
+\usepackage{setspace}
+\usepackage{svg}
+\usepackage{float}
+
+
+	\begin{document}
+		\subsection{Optimizing XXX Strategy Using Simulated Annealing Algorithm}
+		
+		\subsubsection{Analysis of Simulated Annealing Algorithm Model}
+		
+		Simulated annealing is a general-purpose probabilistic optimization algorithm inspired by the physical process of annealing in solids. It is used to find approximate global optimal solutions for given problems within a large search space. The algorithm optimizes strategies by mimicking the annealing process of solid materials in physics: first, heating the material to a high temperature to increase particle kinetic energy, making it easier to escape local energy minima; then slowly cooling it to reduce particle kinetic energy, allowing it to eventually stabilize at the global energy minimum state, thereby reaching the most stable state with the lowest energy \cite{ref1}. The specific steps of the simulated annealing algorithm are as follows:
+		
+		\begin{figure}[H]
+			\centering
+			\hspace*{-60pt}
+			\includegraphics[
+			width=1.2\textwidth,  % 图片宽度设为页面的1.2倍
+			trim=0cm 0cm 0cm 5cm, % 仅上方裁剪4cm（左、下、右均不裁剪）
+			clip,                 % 启用裁剪功能（必须加，否则trim不生效）
+			keepaspectratio       % 保持图片宽高比，避免裁剪后变形
+			]{figures/模拟退火英文版.pdf}
+			\caption{Flowchart of Simulated Annealing Algorithm}
+		\end{figure}
+		
+		1) Initialization:
+		
+		Generate an initial temperature using an empirical algorithm:
+		
+		\begin{equation}
+			T_0 = -\frac{\overline{\Delta f^+}}{\ln P_r}
+		\end{equation}
+		
+		where \(\overline{\Delta f^+}\) is the average positive (deteriorating) change, and \(P_r\) is the initial expected acceptance probability.
+		
+		Define a temperature reduction strategy:
+		
+		\begin{equation}
+		T_{k+1} = \text{CoolingRate} \times T_k
+		\end{equation}
+		
+		Set the cooling rate CoolingRate to 0.95, the number of iterations at each temperature to 50, the maximum number of iterations to 1000, and the termination condition to \(T_k < T_{\text{final}} = 0.1\).
+		
+		2) Algorithm Loop:
+		
+		For each temperature \(T_k\), execute a Markov chain, i.e., \(L_k\) cycles. A new solution \(S_{\text{new}}\) is generated from the current solution \(S_{\text{current}}\) via a perturbation mechanism, and the energy difference between the new and current solutions is calculated:
+		
+		\begin{equation}
+		\Delta E = f(S_{\text{new}}) - f(S_{\text{current}})
+		\end{equation}
+		
+		For minimization problems, decide whether to accept the new solution based on the \textbf{Metropolis criterion}: if \(\Delta E < 0\), the new solution is better than the current one and is accepted unconditionally. If \(\Delta E \geq 0\), accept it with a certain probability given by:
+		
+		\begin{equation}
+		P = \exp\left(-\frac{\Delta E}{T_k}\right)
+		\end{equation}
+		
+		where exp is the exponential function, and \(T_k\) is the current temperature. Generate a random number \(r\) uniformly distributed in the interval \([0,1)\) and compare \(r\) with the acceptance probability \(P\):
+		
+		\[
+		\begin{cases}
+			\text{if } r < P, & \text{accept the new solution } S_{\text{new}} \\
+			\text{if } r \geq P, & \text{keep the current solution } S_{\text{current}}
+		\end{cases}
+		\]
+		
+		3) Cooling and Termination:
+		
+		After completing the \(L_k\) cycles at the current temperature \(T_k\), check the termination condition \(T_{k+1} < T_{\text{final}}\). If not satisfied, return to the loop and continue iterations at the new temperature; if satisfied, the algorithm ends and outputs the historically best-found solution \(S_{\text{best}}\).
+		
+		\subsubsection{Prediction Results}
+		
+		This paper implements the simulated annealing algorithm using MATLAB to optimize pricing strategies. Due to space limitations, only partial results for individual products are shown. Complete results can be found in the file Q3SA.xlsx:
+		
+		\begin{table}[htbp]
+			\centering
+			\renewcommand{\arraystretch}{1.5}
+			\caption{Prediction Results}
+			\begin{tabular}{cccc}
+				\toprule
+				\textbf{Product Combination} & \textbf{2021 Correlation Coefficient} & \textbf{2022 Correlation Coefficient} & \textbf{Average 2-Year Correlation Coefficient} \\
+				\midrule
+				Shanghai Green Pepper (portion) & -0.410018296 & -0.903074635 & -0.656546465 \\
+				Shanghai Green Bok Choy (portion) & -0.426960775 & -0.884997079 & -0.655978927 \\
+				Yunnan Lettuce Pepper (portion) & -0.468748579 & -0.83800917 & -0.653378874 \\
+				Shanghai Green Yunnan Lettuce (portion) & -0.429652604 & -0.871453397 & -0.650553 \\
+				Shanghai Green King Oyster Mushroom (2) & -0.404275203 & -0.894663846 & -0.649469525 \\
+				Shanghai Green Milk Cabbage (portion) & -0.426960775 & -0.86276201 & -0.644861392 \\
+				Shanghai Green Heart (portion) & -0.426960775 & -0.845851263 & -0.636406019 \\
+				\bottomrule
+			\end{tabular}
+			\label{tab:prediction_results}
+		\end{table}
+		
+		
+		%Xiao Xiaowei, Xiao Di, Lin Jinguo, et al. Overview of Research on Multi-objective Optimization Problems[J]. Computer Applications Research, 2011,28(03):805-808+827.
+		
+	\end{document}

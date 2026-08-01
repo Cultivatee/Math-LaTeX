@@ -1,0 +1,319 @@
+%%% code: 代码文件夹
+%%% figures: 图片文件夹
+%%% *.cls: LaTeX 格式文件
+%%% *.tex: LaTeX 文档文件
+%%% *.bib: Bib 引用文献源文件
+\documentclass{mcmthesis}  % 文档类型
+\mcmsetup{CTeX = false,   % 使用 CTeX 套装时，设置为 true
+	tcn = 12345678,   % 队伍控制号
+	problem = ABCDEF,  % 选题
+	sheet = true,   % sheet页
+	titleinsheet = true,   % sheet页显示标题
+	keywordsinsheet = true,  % sheet页显示关键词
+	titlepage = false,   % 标题页
+	abstract = true  % 摘要
+}
+\memoto{The Greek Goverment}  % 建议书目标
+\memofrom{MCM Team 12345678}  % 建议书来源
+\memosubject{Safety procedures for submersibles}  % 建议书主题
+\memodate{\today}  % 建议书日期
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 导入宏包和引用文献源
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+%\usepackage{palatino}  % 帕拉提诺体字体宏包
+\usepackage{times}  % 正文使用Times New Roman风格字体
+\usepackage{newtxmath}
+\usepackage{lipsum}  % 导入生成段落的宏包
+\usepackage[hyperref=true,style=ieee]{biblatex}  % biblatex参考文献宏包
+\usepackage{indentfirst}
+\usepackage{booktabs} % For professional-looking tables
+\usepackage{xcolor}   % For cell coloring
+\usepackage{colortbl} % Required for \rowcolor
+\definecolor{LightGreen}{rgb}{0.9, 0.95, 0.9}
+\addbibresource{ref.bib}  % 添加引用文献bib源
+\usepackage{fancyhdr}
+\usepackage{enumitem} % 用于自定义列表格式
+\usepackage{setspace}
+\usepackage{svg}
+\usepackage{booktabs}  % 三线表加粗
+\usepackage{float}
+\usepackage{eso-pic}  % 用于在页面添加背景
+\usepackage{graphicx} % 图片支持
+\usepackage{tikz}     % 用于绘制半透明覆盖层
+\setlength{\headheight}{13.6pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 文档信息设置
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{ A Maturity Evaluation Model of D\&A Systems}  % 文章标题
+\author{\small Team 12345678}  % 作者，开启标题页才会显示
+\date{\today}  % 日期，开启标题页才会显示
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 文档开始
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}  % 文档
+	\begin{abstract}  % 摘要
+		
+		Data and analytics(D\&A) systems, with which corporations utilize to manage data and analytics, are of great significance in this era of big data. The more mature a D\&A system is, the more benefit a corporation can obtain from its database, and the more commercial advantages a company can gain. Thus, the maturity of a D\&A system reflecting to what extent data is managed and taken advantage of, is worthy of attention. Aware of this, we establish a set of assessment and optimization models to assist
+		not only Intercontinental Cargo Moving(ICM) Corporation, but also corporations in various industries with determination and improvement of the maturity level of their D\&A systems.
+		
+		To begin with, we establish the DAS Accessment Model to evaluate the maturity level of a D\&A
+		system. We investigate into three components of a D\&A system, which are people, technology and
+		process, and come up with 12 key performance indicators(KPIs) that are strictly quantified. Two methods to calculate the score of a D\&A system are adopted thereafter. The first one is the Fuzzy Sythetic Evaluation Model. The second one is the EWM-AHP Method, which is an integrated process of weight calculation by the Entrophy Weight Method(EWM) and the Analytic Hierarchy Process(AHP). Further, we integrate two scores to obtain the final score of the system, and decide in which level this
+		D\&Asystem locates according to the Capability Maturity Model.
+		
+		Next, the Vector Optimization Model is established in order to upgrade the level of maturity of a D\&Asystem. Amaturity vector with coordinates being the very scores of three components of a D\&A system is placed in a three-dimensional coordinate system to reflect the current maturity, while the target maturity level is represented as a parameterized surface. By choosing an optimization vector such that the vector sum of these two vectors reaches the surface, the process of optimization is visualized. Then, concrete proposals to optimize the system are put forward accordingly. Meanwhile, detailed procedures for ICM Corporation on how to measure the effectiveness of their D\&A system are shown in flow charts.
+		
+		Finally, we set up the Scale-Demand method so as to analyse the influence of the scale on the importance of three components of a D\&A system. Based on the concept of demand in economics, this
+		method enables us to apply our DAS Assessment Model to seaport corporations of different scale, as well as corporations in different industries. Afterwards, benefits of using the same assessment model between different industries are discussed. In the end, we check the reliability of our model.
+		\begin{keywords}  % 关键词
+			data and analytics(D\&A)systems, maturity level, KPIs, Fuzzy Synthetic Evaluation Model, AHP-EWMMethod, Vector Optimization Model, Scale-Demand method.
+		\end{keywords}  % 结束关键词
+	\end{abstract}  % 结束摘要
+	\maketitle  % 生成sheet页
+	
+	\tableofcontents  % 生成目录表
+	
+	%%%%%%%%%%%%%%%%%% sheet页与目录页结束 %%%%%%%%%%%%%%%%%%
+	
+	\newpage  % 开始新的一页
+	\section{Introduction}  % 一级标题
+	\subsection{Background}  % 二级标题
+	In today’s digital world, data has become strategic and valuable assets for more and more companies. Indeed, data are utilized as a tool to support strategic decisions and business intelligence. However, for data to be potent assets, they need to be of good quality and well-managed[5]. Since there are numerous data generated in various commercial activities, it is difficult for many companies to preserve data, let alone properly use data to obtain a competitive advantage. 
+	
+	Consequently, a well-operated data and analytics (D\&A) system is urgently needed for every corporation which desires to derive value from data assets. The D\&A system plays a role not only in data management and governance, but in every field of business. The more mature a D\&A system is, the more benefit a corporation can gain from it. Generally speaking, a D\&A system consists of three components: people, technology and process. To determine the maturity of a D\&A system, it is thus particularly important to consider these three components.
+	
+	\subsection{Restatement of the Problem}
+	Considering the baseline information on cycling and limiting conditions noted in the problem statement, the following issues should be addressed:
+	\begin{itemize}
+		\item Build a mathematical model to determine the optimal allocation of energy according to different courses. All the courses are divided into three kinds of road sections, namely uphill, flat and downhill.
+		\item Build a mathematical model to determine the optimal allocation of energy according to different courses. All the courses are divided into three kinds of road sections, namely uphill, flat and downhill.
+	\end{itemize}
+	
+	\subsection{Our Work \& Model Overview}
+	\indent After analyzing the problem, our team searched for data and built three main models to solve it. To avoid a complicated description and clearly show our work process, the flow chart is presented in Figure 1.
+	
+	Considering the background, we analyze and solve the problems step-by-step:
+	
+	\textbf{Step 1}: We select proper key performance indicators and build an assessment model to evaluate the maturity level of the D\&A system of ICM Corporation. Especially, we build our assessment model with a combination of both subjective and objective methods.
+	
+	\textbf{Step 2}: We use our assessment model set up in Step 1 to demonstrate how to optimize the D\&A system of ICM Corporation once the information of KPIs of the corporation is given. Then, we answer the questions raised by hiring managers, Information Technology department and Information Security Officer at ICM Corporations on how to optimize the maturity level of D\&A system, and come up with concrete proposals.
+	
+	\textbf{Step 3}: We are required to design procedures or systems for ICM Corporation to properly use our assessment model in Step 1 to measure the effectiveness. Since in our model, effectiveness is determined by the maturity levels, we design flow charts to visualize our recommended procedures to assess the maturity levels.
+	
+	\textbf{Step 4}: We establish a new method to analyse the weights of three components of a D\&A systems of different-scale companies. Then we use this method to apply our assessment model to seaport companies of different scale. Also, we apply our model to other industries, especially to trucking companies, to evaluate the maturity of their D\&A systems. Finally, we discuss the benefit to ICM Corporation when customers of it also adopt our assessment model.
+	
+	\textbf{Step 5}: We write an one-page letter to customers of ICM Corporation to briefly introduce our assessment model, and to make them confident in the D\&A system of ICM Corporation.
+	
+	For better arranging our process of problem solving, the flow diagram of our work is shown in Figure \ref{fig:问题一分析}.
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=.2\textwidth]{example.eps}
+		\label{fig:问题一分析}
+		\caption{图片名称}
+	\end{figure}
+	
+	
+	\section{Assumptions and Justifications}  % 一级标题
+	Considering that the problem may be very complex in the real situation, it’s necessary for us to make some reasonable assumptions first to simplify the problem. Each assumption is properly followed by the justification: 
+	\begin{itemize}
+		\item \textbf{Assumption:} The data we collect is precise. \\
+		\textbf{Justification:} Since all of our data is collected from official websites and databases, we assume the accuracy of our data.
+		
+		\item \textbf{Assumption:} Expert scoring does not distinguish between the professional level of experts. \\
+		\textbf{Justification:} In AHP, there will be several experts to score, whose professionalism is assumed to be identical.
+		
+		\item \textbf{Assumption:} The data we need for determining the maturity of the D\&A system of ICM Corporation are accessible. \\
+		\textbf{Justification:} Since ICM Corporation does not share specifics about their D\&A system, we assume that all data needed for assessing the maturity can be collected by ICM Corporation.
+		
+		\item \textbf{Assumption:} When establishing the assessment model to measure the maturity level, indicators that are relatively unimportant are neglected. \\
+		\textbf{Justification:} According to the Pareto principle, for many outcomes, roughly 80\% of consequences come from 20\% of causes. To assess the maturity level, we concentrate on key parts of the cause, and adopt key performance indicators so as to assess the maturity level.
+	\end{itemize}
+	
+	
+	\section{Notations}  % 一级标题
+	
+	The key notations used in this paper are listed in Table 1.
+	\begin{table}[h!]
+		\centering
+		\caption{Notations used in this paper}
+		\label{tab:notations}
+		\renewcommand{\arraystretch}{1.5} 
+		\begin{tabular}{lc}
+			\toprule
+			\textbf{Symbol} & \textbf{Definition} \\
+			\midrule
+			\rowcolor{LightGreen}
+			$ACS$ & The mass of carbon sequestered by forest and its products \\
+			$ACS_t$ & The mass of carbon sequestered by trees \\
+			\rowcolor{LightGreen}
+			$ACS_p$ & The mass of carbon sequestered by products \\
+			$ACS_s$ & The mass of carbon sequestered by soil \\
+			\rowcolor{LightGreen}
+			$ACS_w$ & The mass of carbon sequestered by water \\
+			$BFV$ & Biomass of forest vegetation \\
+			\rowcolor{LightGreen}
+			$CF$ & Carbon content \\
+			$\alpha_j$ & The coefficient of geography \\
+			\rowcolor{LightGreen}
+			$\beta$ & The coefficient of topography \\
+			$\tau_k$ & The proportion of the $k$th terrain in the forest \\
+			\rowcolor{LightGreen}
+			$ACD$ & The mass of carbon dioxide sequestered by forest and its products \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\section{Maturity Assessment: DAS Maturity Assessment Model} 
+	
+	\section{Upgrade the Level:Vector Optimization Model}  % 一级标题
+	
+	\section{XGBoost model}  % 一级标题
+	
+	\section{Sensitivity Analysis}  % 一级标题
+	
+	\section{Model Extension}  % 一级标题
+	
+	\section{Model Evaluation}  % 一级标题
+	\subsection{Reliability}
+	\subsection{Strengths}
+	\subsection{Weaknesses}
+	
+	\newpage
+	\phantomsection  % 创建锚点
+	\addcontentsline{toc}{section}{Memorandum}
+	% 方案2：或者将背景图片直接调暗
+	\begin{tikzpicture}[remember picture, overlay]
+	    \node[inner sep=0, opacity=0.2] at (current page.center) {
+		        \includegraphics[width=\paperwidth, height=\paperheight]{figures/冰川.jpg}
+		    };
+	\end{tikzpicture}
+	\begin{memo}[Memorandum]  % 建议书
+		Dear Officer of the Government of Greece,
+		
+		It has come to our attention that a company in your country, MCMS, has developed a type of submersible suitable for tourists to explore the seabed. However, the potential for loss of communication restricts its application and development. Therefore, we have established a dynamic and kinematic model of the submersible (see page ten), as well as a search and rescue strategy based on this model.
+		
+		Firstly, after conducting a comprehensive force analysis on the submersible, we established a kinematic model considering the impact of ocean currents in the Ionian Sea region on its movement. We found that once the submersible loses communication, its possible positions are greatly influenced by ocean currents. Worse still, we discovered that there are few ocean current monitoring points near the Ionian Sea, leading to inaccurate ocean current data and, consequently, excessive uncertainty in the submersible's position. Installing more ocean current detection stations in the Ionian Sea could significantly improve the accuracy of determining the position of the lost submersible.
+		
+		Secondly, through a comprehensive evaluation of the performance and cost indicators of various search and rescue devices, we determined that the optimal equipment for surface and underwater searches are drones and sonar, respectively.
+		
+		Thirdly, based on the kinematic model, using Monte Carlo simulation and ant colony algorithm, we found an optimal search and rescue solution that is most likely to locate the submersible as follows:
+		
+		The results suggest that the search path should be as perpendicular as possible to the curve predicted by the dynamic model, and the one-way search path should increase with time.
+		
+		Additionally, for a lost submersible, time is of the essence, and the probability of successfully finding it decreases sharply with increasing time, as shown in the table below:
+		
+		\begin{table}[h]
+			\centering
+			\caption{Probability of Detection after 10 Hours}
+			\label{tab:detection_probability}
+			\renewcommand{\arraystretch}{1.5} % 设置表格行间距为1.5倍
+			\begin{tabular}{cc}
+				\toprule
+				\textbf{Search Start Time} & \textbf{Probability of Detection} \\
+				\midrule
+				Start from the 1st hour & 46\% \\
+				Start from the 3rd hour & 30\% \\
+				Start from the 5th hour & 13\% \\
+				\bottomrule
+			\end{tabular}
+		\end{table}
+		
+		Therefore, we recommend dispatching relevant detection equipment to the designated area as quickly as possible once the mothership loses communication with the submersible. Our model also indicates that deploying more detectors, with larger detection widths and higher accuracy, increases search efficiency and the probability of successfully detecting the submersible. Purchasing and stockpiling more advanced detection equipment (such as underwater detection vehicles, underwater robots, high-precision sonar, etc.) and strengthening cooperation with the MCMS company will significantly increase the probability of finding the lost submersible.
+		
+		In conclusion, with the use of advanced sensors and the position and search models we have established, there is a high probability of quickly locating the submersible after an accident, while ensuring the speed of rescue operations. We sincerely hope that the Greek government considers these suggestions to ensure the safety of tourists and promote the development of deep-sea tourism.
+		
+		Thank you for considering this vital matter. I am available for any further discussion or clarification regarding the proposed model and technology.
+		
+		\vspace{2\baselineskip} % 空两行
+		
+		\begin{flushright}
+			Sincerely,\\
+			MCM Team \#2419984
+		\end{flushright}
+	\end{memo}  % 建议书结束
+	
+	\newpage
+	\phantomsection  % 创建锚点
+	\addcontentsline{toc}{section}{Letter}
+	\section*{\centering Letter}
+	\noindent Dear Puzzle Editor of the New York Times:
+	
+	Playing the daily Wordle has become a pastime for many people across the world. The NewYork Times has built up a dedicated fanbase, and the ease of the game also allows for anybodyto occasionally pick up the daily challenge and post their results to social media. Part of whatwe aimed to do was discover what causes this variation in daily reports, and how the difhicultyof words you choose as the Puzzle Editor can affect player results. The Bayesian model that wehave developed can provide a distribution on future player count, as well as a distribution ofresults based on any chosen word.
+	\begin{flushright}
+		Sincerely,\\
+		MCM Team \#2419984
+	\end{flushright}
+	
+	
+	\newpage
+	\phantomsection  % 创建锚点
+	\addcontentsline{toc}{section}{References}
+	\begin{thebibliography}{9}%宽度9
+		\bibitem{1} 边旭明.胎儿染色体非整倍体的无创DNA产前检测[J].实用妇产科杂志,2013,29(05):330-333.
+		\bibitem{2} 罗潇.法律规制视野下的当代中国生育行为研究[D].西南财经大学,2014.
+		\bibitem{3} EHRICH M, DECIU C, ZWIEFELHOFER T, 等. Noninvasive detection of fetal trisomy 21 by sequencing of DNA in maternal blood: a study in a clinical setting[J/OL]. American Journal of Obstetrics and Gynecology, 2011, 204(3): 205.e1-205.e11. DOI:10.1016/j.ajog.2010.12.060.
+		\bibitem{4} 徐勇勇,陈长生,曹秀堂,等.医学与卫生统计资料的系统结构数据[Ｊ].中国卫生统计,1995,12(5)：12-15.
+		\bibitem{5}余松林.混合线性模型的应用[J].中国医院统计,2006,(01):70-75.
+		\bibitem{6}毛典辉.基于MapReduce的Canopy-Kmeans改进算法[J].计算机工程与应用,2012,48(27):22-26+68.
+		\bibitem{7}DeepSeek Chat, DeepSeek-V3, 深度求索（DeepSeek）, 2025-09-05.
+		\bibitem{8}龙文佳,张晓峰,张链.基于k-means和肘部法则的业务流程聚类方法[J].江汉大学学报(自然科学版),2020,48(01):81-90.DOI:10.16389/j.cnki.cn42-1737/n.2020.01.011.
+		\bibitem{9}DeepSeek Chat, DeepSeek-V3, 深度求索（DeepSeek）, 2025-09-05.
+		\bibitem{10}DeepSeek Chat, DeepSeek-V3, 深度求索（DeepSeek）, 2025-09-06.
+		\bibitem{11}栾丽华,吉根林.决策树分类技术研究[J].计算机工程,2004,(09):94-96+105
+		\bibitem{12}李琪,张欣,张平康,等.基于密度峰值优化的Canopy-Kmeans并行算法[J].通信技术,2018,51(02):312-317.
+	\end{thebibliography}
+	
+	%%%%%%%%%%%%%%%%%%%%%%% 正文结束 %%%%%%%%%%%%%%%%%%%%%%%
+	
+	\newpage
+	\section*{\centering Report on Use of AI}
+	
+	\subsection*{1. Deepseek (Jan 30, 2026 version, DeepSeek - V3)}
+	
+	\textbf{Query 1:} 
+	We have found that the Shannon-Wiener index, which describes biodiversity, is very similar to the expression for information entropy. Please explain the connection between these two concepts.
+	
+	\textbf{Output:} 
+	The Shannon-Wiener index, often used to describe biodiversity in ecological studies, and the concept of information entropy, formulated by Claude Shannon in the context of information theory, are indeed closely related because they both measure the uncertainty or diversity in a system. Here's how these two concepts connect:
+	
+	\subsubsection*{Information Entropy}
+	Information entropy, also known as Shannon entropy, quantifies the amount of uncertainty or randomness in a set of outcomes. The formula for information entropy \( H \) is given by:
+	
+	\[
+	H = -\sum_{i = 1}^{n} p(x_i) \log p(x_i)
+	\]
+	
+	where \( p(x_i) \) is the probability of occurrence of the \( i \)-th possible value of the random variable, and the sum is over all possible values of this variable. This equation measures the expected value of the information contained in a message, in bits, assuming that all possible messages are equally likely. It essentially quantifies how much information is produced on average for every source symbol that is communicated.
+	
+	\subsubsection*{Shannon-Wiener Index in Ecology}
+	The Shannon-Wiener index (or Shannon diversity index) is an application of Shannon's concept of entropy to biodiversity. In ecology, it is used to quantify the diversity of species within a community, considering both the number of species (richness) and the evenness of their distribution. The formula is very similar to that of information entropy:
+	
+	\[
+	H' = -\sum_{i = 1}^{s} p_i \log p_i
+	\]
+	
+	where \( p_i \) is the proportion of individuals belonging to the \( i \)-th species in the dataset, and \( s \) is the total number of species. This index essentially measures the uncertainty in predicting the species of a randomly selected individual from the dataset. A higher Shannon-Wiener index indicates a more diverse ecosystem.
+	
+	\subsubsection*{Connection}
+	The fundamental connection between these concepts lies in their shared focus on measuring uncertainty, diversity, or randomness in a distribution. In information theory, entropy measures the uncertainty in predicting the value of a message. In ecology, the Shannon-Wiener index measures the biodiversity of an ecosystem by quantifying the uncertainty in predicting the species of a randomly selected individual. Both use a logarithmic function to weigh probabilities, which accounts for the way information or biodiversity scales with the number of entities or species and their distribution. This mathematical similarity underscores a deeper conceptual link between the ideas of information and ecological diversity: both can be thought of as measures of variety and unpredictability in a system, whether it's a set of messages or a community of organisms.
+	
+	
+	\subsection*{2. OpenAI ChatGPT (Jan 30, 2026 version, ChatGPT - 4)}
+	
+	
+	\textbf{Query 1:} 
+	We have found that the Shannon-Wiener index, which describes biodiversity, is very similar to the expression for information entropy. Please explain the connection between these two concepts.
+	
+	\textbf{Output:} 
+	The Shannon-Wiener index, often used to describe biodiversity in ecological studies, and the concept of information entropy, formulated by Claude Shannon in the context of information theory, are indeed closely related because they both measure the uncertainty or diversity in a system. Here's how these two concepts connect:
+	
+\end{document}  % 文档结束
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,      % 左边距 2cm
+	right=2.5cm,     % 右边距 2cm
+	top=2.5cm,       % 上边距 2cm
+	bottom=2.5cm,    % 下边距 2cm
+	headheight=13.6pt
+}
+\usepackage{amsmath}
+\usepackage{booktabs} % 用于三线表
+\usepackage{caption}
+\usepackage{setspace} % 用于设置行间距
+\usepackage{array}
+\setlength{\headheight}{13.6pt}
+\usepackage{enumitem} % 用于自定义列表格式
+\usepackage{booktabs}  % 三线表加粗
+
+\begin{document}
+	\subsection{Describing xxx Using Statistical Measures}
+	
+	\subsubsection{Descriptive Statistics}
+	
+	This paper introduces three descriptive statistical measures from statistics and data analysis: the \textbf{coefficient of variation}, the \textbf{skewness coefficient}, and the \textbf{kurtosis coefficient} to analyze the distribution patterns of data. The coefficient of variation is used to measure the \textbf{degree of dispersion} of data, the skewness coefficient is used to measure the \textbf{symmetry of the distribution shape}, and the kurtosis coefficient is used to measure the \textbf{steepness of the distribution shape} \cite{1}. The specific introductions of these three coefficients are as follows:
+	
+	\begin{enumerate}
+		\item \textbf{Coefficient of Variation (CV)}:
+		
+		The coefficient of variation is a \textbf{dimensionless} statistical measure used to compare the dispersion of different datasets. It can also serve as a bridge between different dimensions, for example, it can eliminate differences in averages and standard deviations such as those between height and weight, enabling meaningful comparisons. It is usually expressed in percentage form, with the calculation formula as follows:
+		
+		\begin{equation}
+			CV = \frac{\sigma}{\mu} \times 100\%
+			\label{eq:cv}
+		\end{equation}
+		
+		where \(CV\) is the coefficient of variation, \(\sigma\) is the population standard deviation, and \(\mu\) is the population mean. A larger CV value indicates \textbf{greater relative volatility} of the data; a smaller CV value indicates less relative volatility, meaning the data is \textbf{more concentrated} \cite{2}.
+		
+		\item \textbf{Skewness Coefficient (SK)}:
+		
+		The \textbf{skewness coefficient} is a statistical measure of the degree of \textbf{asymmetry} in a data distribution, describing the extent and direction of deviation from a symmetric distribution. The calculation formula is as follows:
+		
+		\begin{equation}
+			SK = \frac{\sum_{i=1}^{m} (x_{ij} - \bar{x})^3 / m}{s_j^3}
+			\label{eq:sk}
+		\end{equation}
+		
+		where \(m\) is the sample size, \(x_{ij}\) is each data point, \(\bar{x}\) is the sample mean, \(s_j\) is the sample standard deviation, \(i\) denotes the data point, and \(j\) denotes the measurement item. If \textbf{SK = 0}, it indicates a \textbf{symmetric} data distribution; if \textbf{SK > 0}, it indicates a positive or right-skewed distribution, meaning there are \textbf{more data points on the right side}, with mean > median > mode; if \textbf{SK < 0}, it indicates a negative or left-skewed distribution, meaning there are \textbf{more data points on the left side}, with mean < median < mode. The larger the \textbf{absolute value} of the skewness coefficient, the more severe the \textbf{skewness} \cite{3}.
+		
+		\item \textbf{Kurtosis Coefficient (K)}:
+		
+		The \textbf{kurtosis coefficient} is a statistical measure of the \textbf{steepness} of a data distribution, measuring the height of the peak and the tails of the distribution compared to a normal distribution. The calculation formula is as follows:
+		
+		\begin{equation}
+			K = \frac{\sum_{i=1}^{m} (x_{ij} - \bar{x})^4 / m}{s_j^4} - 3
+			\label{eq:k}
+		\end{equation}
+		
+		where \(K\) is the kurtosis coefficient, \(m\) is the sample size, \(x_{ij}\) is each data point, \(\bar{x}\) is the sample mean, \(s_j\) is the sample standard deviation, \(i\) denotes the data point, and \(j\) denotes the measurement item. If \textbf{Kurtosis = 0}, it indicates that the distribution has the same steepness as a normal distribution, known as \textbf{mesokurtic}; if \textbf{Kurtosis > 0}, it indicates that the data distribution is \textbf{steeper} than a normal distribution, with \textbf{thicker tails}, and there are more \textbf{extreme values} in the data far from the mean; if \textbf{Kurtosis < 0}, it indicates that the data distribution is \textbf{flatter} than a normal distribution, with \textbf{thinner tails}, and the data is more \textbf{dispersed} with fewer extreme values \cite{3}.
+	\end{enumerate}
+	
+	\subsubsection{Statistical Results}
+	
+	This paper uses MATLAB to calculate the above three statistical measures. Due to space limitations, only partial product combination results are shown. The complete results can be found in the file Statistics.xlsx:
+	
+	\renewcommand{\arraystretch}{1.5}
+	\begin{table}[h!]
+		\centering
+		\caption{Table 5 Prediction Results}
+		\begin{tabular}{cccc}
+			\toprule[1.5pt]
+			\textbf{Product Combination} & \textbf{2021 Correlation Coefficient} & \textbf{2022 Correlation Coefficient} & \textbf{2-Year Average Correlation Coefficient} \\
+			\midrule
+			Shanghai Green + Spiral Pepper (serving) & -0.410018296 & -0.903074635 & -0.656546465 \\
+			Shanghai Green + Small Green Vegetables (serving) & -0.426960775 & -0.884997079 & -0.655978927 \\
+			Yunnan Lettuce + Spiral Pepper (serving) & -0.468748579 & -0.83800917 & -0.653378874 \\
+			Shanghai Green + Yunnan Lettuce (serving) & -0.429652604 & -0.871453397 & -0.650553 \\
+			Shanghai Green + King Oyster Mushroom (2) & -0.404275203 & -0.894663846 & -0.649469525 \\
+			Shanghai Green + Milk Cabbage (serving) & -0.426960775 & -0.86276201 & -0.644861392 \\
+			Shanghai Green + Choi Sum (serving) & -0.426960775 & -0.845851263 & -0.636406019 \\
+			\bottomrule[1.5pt]
+		\end{tabular}
+	\end{table}
+	
+	Next, the classification analysis is performed using the three different coefficients:
+	
+	\begin{enumerate}
+		\item \textbf{Coefficient of Variation}: Since most coefficients of variation are negative, and the remaining ones are greater than 0.15, indicating strong variability, they are not analyzed further as they hold little statistical significance.
+		\item \textbf{Skewness Coefficient}: For the weathered lead-barium category, nine component indicators have a skewness coefficient less than 0, indicating that the data points falling to the left of the mean are generally more numerous. Among these, the skewness coefficient for Na2O is approximately equal to 0, suggesting that the data for CaO is nearly symmetrically distributed. The skewness coefficients for the remaining five component indicators are greater than 0, indicating that the data points falling to the right of the mean are more numerous.
+		\item \textbf{Kurtosis Coefficient}: Six component indicators have a kurtosis coefficient greater than 0, indicating that the distribution of these indicators has a sharper peak or thicker tails compared to a normal distribution. The kurtosis coefficients for the remaining eight indicators are less than 0, indicating that their distributions have a flatter peak or thinner tails compared to a normal distribution. For the weathered high-potassium category, the skewness coefficients for six groups are less than 0, indicating that the data points falling to the left of the mean are more numerous for these six groups. Another six groups have a skewness coefficient value of 0, indicating that the data for these six groups are symmetrically distributed. The skewness coefficient values for the remaining two groups, Al2O3 and P2O5, are greater than 0, indicating that the data points distributed to the right of the mean are more numerous. The kurtosis coefficients for six groups of data are greater than 0, indicating that the distribution of these indicators has a sharper peak or thicker tails compared to a normal distribution. The kurtosis coefficients for another two groups of data are less than 0, indicating that their distributions have a flatter peak or thinner tails compared to a normal distribution. The skewness coefficients for the remaining six groups of data are 0, indicating that their distribution's peak sharpness and tail thickness are comparable to those of a standard normal distribution.
+	\end{enumerate}
+	
+	
+	
+		%\bibitem{1} Su Weihua. Research on Theory and Methods of Multi-index Comprehensive Evaluation [D]. Xiamen University, 2000.
+		%\bibitem{2} Wang Chunzhi, Si Qin. Research on Data Statistical Processing Methods and Their Application in Delphi Method [J]. Journal of Inner Mongolia University of Finance and Economics (Comprehensive Edition), 2011, 9(04): 92-96. DOI:10.13895/j.cnki.jimufe.2011.04.019.
+		%\bibitem{3} Li Xingqi, Gao Xiaohong. Evaluation of the Effectiveness of Dimensionless Methods [J]. Statistics and Decision, 2021, 37(15): 24-28. DOI:10.13546/j.cnki.tjyjc.2021.15.005.
+	
+\end{document}

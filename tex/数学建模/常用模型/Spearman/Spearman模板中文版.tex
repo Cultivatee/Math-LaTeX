@@ -1,0 +1,174 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,      % 左边距 2cm
+	right=2.5cm,     % 右边距 2cm
+	top=2.5cm,       % 上边距 2cm
+	bottom=2.5cm,    % 下边距 2cm
+	headheight=13.6pt
+}
+\usepackage{amsmath}
+\usepackage{booktabs} % 用于三线表
+\usepackage{caption}
+\usepackage{setspace} % 用于设置行间距
+\usepackage{array}
+\usepackage{graphicx} % 用于插入图片
+\usepackage{CTeX}
+\setlength{\headheight}{13.6pt}
+\usepackage{enumitem} % 用于自定义列表格式
+\usepackage{svg}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{palatino}  % 帕拉提诺体字体宏包
+\usepackage{lipsum}  % 导入生成段落的宏包
+\usepackage[hyperref=true,style=ieee]{biblatex}  % biblatex参考文献宏包
+\usepackage{indentfirst}
+\usepackage{booktabs} % For professional-looking tables
+\usepackage{xcolor}   % For cell coloring
+\usepackage{colortbl} % Required for \rowcolor
+\definecolor{LightGreen}{rgb}{0.9, 0.95, 0.9}
+\addbibresource{ref.bib}  % 添加引用文献bib源
+\usepackage{fancyhdr}
+\usepackage{enumitem} % 用于自定义列表格式
+\usepackage{setspace}
+\usepackage{svg}
+
+\begin{document}
+	\subsection{利用Spearman相关系数判断各品类相关性}
+	
+	\subsubsection{Spearman相关系数算法}
+	
+	Spearman\textbf{相关系数}被广泛用于衡量两个变量之间\textbf{单调关系}的强度和方向，其取值范围为 \([-1,1]\)，若系数为正值表示两个变量间呈正向单调相关，负值表示两个变量间呈负向单调相关，该值的绝对值越接近于1代表两变量间的单调相关性越强，越接近于0表示两个变量之间的单调相关性越弱。求解步骤如下：
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item \textbf{将数据转化为等级}
+		
+		将变量 \(X\) 的所有值从小到大排秩，排名 1 为最小值，排名 \(n\) 为最大值。如果出现并列值，则取它们排名的平均值，同理对变量 \(Y\) 进行排秩。
+		
+		\item \textbf{计算两个等级序列的Spearman相关系数}
+		
+		将排列后的等级带入公式中：
+		\begin{equation}
+			\rho = \frac{\sum_{i=1}^{n} \left(R_{x_i} - \overline{R_x}\right) \left(R_{y_i} - \overline{R_y}\right)}
+			{\sqrt{\sum_{i=1}^{n} \left(R_{x_i} - \overline{R_x}\right)^2 \sum_{i=1}^{n} \left(R_{y_i} - \overline{R_y}\right)^2}}
+			\label{eq:spearman_correlation}
+		\end{equation}
+		其中，\(\rho\) 为 Spearman 相关系数，$\bar{R}_x$ 是 $R_x$ 的均值，$\bar{R}_y$ 是 $R_y$ 的均值，\(n\) 为样本数量。
+	\end{enumerate}
+	
+	\subsubsection{求解结果}
+	
+	使用 MATLAB 求解 Spearman 相关系数，并绘制热力图：
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=.8\textwidth]{figures/pearson_picture.eps}
+		\label{fig:问题一分析}
+		\caption{图片名称}
+	\end{figure}
+	
+	由上表得出无明显强相关品类，从中筛选出较强相关的品类如下表所示：
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{较强相关品类组合（\(|\rho|>0.5\)）}
+		\label{tab:spearman_strong_corr}
+		\renewcommand{\arraystretch}{1.5}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{tabular}{ccc}
+			\toprule
+			品类1 & 品类2 & 相关系数 \\
+			\midrule
+			花叶类 & 花菜类 & 0.638288645480482 \\
+			花叶类 & 水生根茎类 & 0.568835111289716 \\
+			花叶类 & 辣椒类 & 0.668577433074466 \\
+			花叶类 & 食用菌 & 0.639654735509754 \\
+			花菜类 & 水生根茎类 & 0.549840658198361 \\
+			花菜类 & 辣椒类 & 0.561693690138146 \\
+			\bottomrule
+		\end{tabular}
+		\renewcommand{\heavyrulewidth}{0.8pt}
+	\end{table}
+	
+	以上较强相关品类组合亦于文件 Correlated Categories.xlsx 中呈现。
+	
+	\subsubsection{Spearman相关系数检验}
+	
+	本文对上述结果进行 Spearman 相关系数检验，检验步骤如下：
+	
+	\paragraph{Step 1. 提出假设}
+	
+	原假设 \(H_0\)：真实相关系数 \(\rho = 0\)，即两个变量总体上没有单调相关关系。
+	
+	备择假设 \(H_1\)：真实相关系数 \(\rho \neq 0\)，即两个变量总体上存在单调相关关系。
+	
+	设置信水平为 95\%。
+	
+	\paragraph{Step 2. 计算 \(P\) 值}
+	
+	p 值的计算来自于一个由 \(r\) 转化而来的 \textbf{t 统计量}，t 统计量的计算公式如下：
+	
+	\begin{equation}
+		t = \frac{r - \rho_0}{SE_r} = \frac{r}{\sqrt{\frac{1-r^2}{n-2}}}
+		\label{eq:t_test_correlation}
+	\end{equation}
+	
+	其中，\(r\) 代表计算出的样本 Spearman 相关系数，\(\rho_0\) 代表在原假设下的总体相关系数，\(SE_r\) 代表相关系数 \(r\) 的标准误（Standard Error），\(n-2\) 代表自由度（df）。由于原假设为 \(\rho = 0\)，于是 t 统计量的计算公式可以简化为：
+	
+	\begin{equation}
+		t = r \sqrt{\frac{x-2}{1-r^2}}
+		\label{eq:t_test_simplified}
+	\end{equation}
+	
+	计算得出的 t 统计量服从自由度为 \(\textit{df} = n - 2\) 的 \textbf{t 分布}，p 值为 t 分布在两端尾部的面积之和。
+	
+	本文利用 MATLAB 计算两端尾部的面积之和，进行 Spearman 相关系数检验。结果如下表所示：
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{较强相关品类 Spearman 相关系数检验 \(P\) 值}
+		\label{tab:spearman_p_strong}
+		\renewcommand{\arraystretch}{1.5}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{tabular}{ccc}
+			\toprule
+			品类1 & 品类2 & \(P\) 值 \\
+			\midrule
+			花叶类 & 花菜类 & 0.0000000 \\
+			花叶类 & 辣椒类 & 0.0000000 \\
+			花菜类 & 茄类 & 0.0000000 \\
+			花菜类 & 辣椒类 & 0.0000000 \\
+			茄类 & 辣椒类 & 0.0000000 \\
+			辣椒类 & 食用菌 & 0.0000000 \\
+			\bottomrule
+		\end{tabular}
+		\renewcommand{\heavyrulewidth}{0.8pt}
+	\end{table}
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{所有品类间 Spearman 相关系数检验 \(P\) 值}
+		\label{tab:spearman_p_all}
+		\renewcommand{\arraystretch}{1.5}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{tabular}{ccccccc}
+			\toprule
+			& 花叶类 & 花菜类 & 水生根茎 & 茄类 & 辣椒类 & 食用菌 \\
+			\midrule
+			花叶类 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 \\
+			花菜类 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 \\
+			水生根茎 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0030232 & 0.0000000 & 0.0000000 \\
+			茄类 & 0.0000000 & 0.0000000 & 0.0030232 & 0.0000000 & 0.0000000 & 0.0000051 \\
+			辣椒类 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 \\
+			食用菌 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000051 & 0.0000000 & 0.0000000 \\
+			\bottomrule
+		\end{tabular}
+		\renewcommand{\heavyrulewidth}{0.8pt}
+	\end{table}
+	
+	由\textbf{表2}、\textbf{表3}得出，各品类销售量间的 Spearman 相关系数均小于置信水平 0.05，拒绝原假设，即上一步分析得出的结论可信。
+	
+	
+	%何艳频，孙爱峰．Spearman等级相关系数计算公式及其相互关系的探讨[J]．中国现代药物应用，2007，(07)：72-73．
+\end{document}

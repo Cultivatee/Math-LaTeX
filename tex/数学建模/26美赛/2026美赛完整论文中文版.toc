@@ -1,0 +1,34 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Background}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Restatement of the Problem}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Our Work \& Model Overview}{4}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Assumptions and Justifications}{4}{section.2}%
+\contentsline {section}{\numberline {3}Notations}{5}{section.3}%
+\contentsline {section}{\numberline {4}电池功率消耗动态微分方程模型}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}模型选择}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}综合考虑多因素的功耗函数}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}考虑温度影响的模型修正}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}利用Runge-Kutta法求解常微分方程数值解}{12}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}随机仿真}{13}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}参数估计方法与模型合理性说明}{14}{subsection.4.6}%
+\contentsline {section}{\numberline {5}剩余电量预测与不确定性量化}{15}{section.5}%
+\contentsline {subsection}{\numberline {5.1}剩余电量预测}{15}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}显著影响因素分析}{17}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}使用蒙特卡洛法Quantify the Uncertainty}{17}{subsection.5.3}%
+\contentsline {section}{\numberline {6}敏感性分析与假设验证}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.1}假设验证}{18}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}改变OLED屏幕假设}{18}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}改变恒温假设}{19}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}敏感性分析}{20}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Parameter values的敏感性}{20}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}改变fluctuations in usage patterns}{21}{subsubsection.6.2.2}%
+\contentsline {section}{\numberline {7}建议}{22}{section.7}%
+\contentsline {subsection}{\numberline {7.1}面向手机用户的建议}{22}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}面向操作系统的优化建议}{22}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}关于考虑电池老化的建议}{22}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}模型延伸：跨设备适配}{23}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Model Evaluation}{24}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Strengths}{24}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Weaknesses}{24}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Improvement}{24}{subsection.8.3}%
+\contentsline {section}{References}{25}{section*.25}%

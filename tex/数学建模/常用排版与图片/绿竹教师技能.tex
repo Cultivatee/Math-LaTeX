@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,   
+	right=2.5cm,   
+	top=2.5cm,      
+	bottom=2.5cm,  
+	headheight=13.6pt
+}
+
+% 字体设置（需使用 XeLaTeX 编译）
+\usepackage{fontspec}
+\usepackage{ctex}
+
+% 设置英文默认字体为 Times New Roman
+\setmainfont{Times New Roman}[
+BoldFont = Times New Roman Bold,
+ItalicFont = Times New Roman Italic,
+BoldItalicFont = Times New Roman Bold Italic
+]
+
+% 设置中文字体
+\setCJKmainfont{SimSun}[
+BoldFont = SimHei,  
+ItalicFont = KaiTi   
+]
+
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{multirow}
+
+% 修正表格标题格式：居中对齐
+\captionsetup[table]{justification=centering,labelsep=quad}
+
+\begin{document}
+	
+	\subsection*{题目1}
+	已知正项等比数列$\{a_n\}$中，$a_2 \cdot a_4 = 1$，$S_3 = 7$，求$S_5$。
+	
+	\subsubsection*{解答}
+	由等比数列性质，$a_2 a_4 = a_3^2 = a_1^2 q^4 = 1$。
+	因数列是正项等比数列，故$a_1 > 0, q > 0$，因此$a_1 q^2 = 1$，即$a_1 = \dfrac{1}{q^2}$。
+	
+	等比数列前$3$项和公式为：
+	\[
+	S_3 = \frac{a_1(1 - q^3)}{1 - q} = 7
+	\]
+	将$a_1 = \dfrac{1}{q^2}$代入：
+	\[
+	\frac{\dfrac{1}{q^2}(1 - q^3)}{1 - q} = 7
+	\]
+	利用立方差公式$1 - q^3 = (1 - q)(1 + q + q^2)$，约去$1 - q$（$q \neq 1$，否则$S_3 = 3a_1 = 3 \cdot \dfrac{1}{q^2} = 3 \neq 7$）：
+	\[
+	\frac{1 + q + q^2}{q^2} = 7
+	\]
+	整理得：
+	\[
+	1 + q + q^2 = 7q^2 \implies 6q^2 - q - 1 = 0
+	\]
+	解此一元二次方程：
+	\[
+	q = \frac{1 \pm \sqrt{1 + 24}}{12} = \frac{1 \pm 5}{12}
+	\]
+	因$q > 0$，故$q = \dfrac{1}{2}$，代入$a_1 = \dfrac{1}{q^2}$得$a_1 = 4$。
+	
+	等比数列前$5$项和：
+	\[
+	S_5 = \frac{a_1(1 - q^5)}{1 - q} = \frac{4\left(1 - \left(\dfrac{1}{2}\right)^5\right)}{1 - \dfrac{1}{2}} = \frac{4 \cdot \dfrac{31}{32}}{\dfrac{1}{2}} = \frac{31}{4}
+	\]
+	
+	
+\end{document}

@@ -1,0 +1,141 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,      % 左边距 2cm
+	right=2.5cm,     % 右边距 2cm
+	top=2.5cm,       % 上边距 2cm
+	bottom=2.5cm,    % 下边距 2cm
+	headheight=13.6pt
+}
+\usepackage{amsmath}
+\usepackage{booktabs} % 用于三线表
+\usepackage{caption}
+\usepackage{setspace} % 用于设置行间距
+\usepackage{array}
+\usepackage{graphicx} % 用于插入图片
+\setlength{\headheight}{13.6pt}
+\usepackage{enumitem} % 用于自定义列表格式
+\usepackage{svg}
+
+\begin{document}
+	\subsection{Using Pearson Correlation Coefficient to Determine Category Correlations}
+	
+	The Pearson \textbf{correlation coefficient} is widely used to analyze the linear correlation between two variables. Its value ranges from -1 to 1. A positive coefficient indicates a positive correlation between the two variables, while a negative coefficient indicates a negative correlation. The closer the absolute value is to 1, the stronger the linear correlation between the variables; the closer it is to 0, the weaker the linear correlation. The calculation formula is as follows:
+	
+	\begin{equation}
+		r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2 \sum_{i=1}^{n}(y_i - \bar{y})^2}}
+	\end{equation}
+	
+	\subsubsection{Solution Results}
+	
+	The Pearson correlation coefficient was calculated using MATLAB, and a heatmap was generated:
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=.8\textwidth]{figures/pearson_picture.eps}
+		\label{fig:问题一分析}
+		\caption{name}
+	\end{figure}
+	
+	Based on the above table, no strongly correlated categories were identified. The relatively strongly correlated categories are listed in the table below:
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{Relatively Strongly Correlated Category Combinations ($|r|>0.5$)}
+		\label{tab:strong_corr}
+		\renewcommand{\arraystretch}{1.5}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{tabular}{ccc}
+			\toprule
+			Category 1 & Category 2 & Correlation Coefficient \\
+			\midrule
+			Leafy Vegetables & Cauliflower & 0.638288645480482 \\
+			Leafy Vegetables & Aquatic Stem Vegetables & 0.568835111289716 \\
+			Leafy Vegetables & Peppers & 0.668577433074466 \\
+			Leafy Vegetables & Edible Mushrooms & 0.639654735509754 \\
+			Cauliflower & Aquatic Stem Vegetables & 0.549840658198361 \\
+			Cauliflower & Peppers & 0.561693690138146 \\
+			\bottomrule
+		\end{tabular}
+		\renewcommand{\heavyrulewidth}{0.8pt}
+	\end{table}
+	
+	The above relatively strongly correlated category combinations are also presented in the file Correlated Categories.xlsx.
+	
+	\subsubsection{Pearson Correlation Coefficient Test}
+	
+	This study conducted a Pearson correlation coefficient test on the above results, following the steps below:
+	
+	\paragraph{Step 1. Propose Hypotheses}
+	
+	Null hypothesis $H_0$: The true correlation coefficient $\rho = 0$, meaning there is no linear correlation between the two variables in the population.
+	
+	Alternative hypothesis $H_1$: The true correlation coefficient $\rho \neq 0$, meaning there is a linear correlation between the two variables in the population.
+	
+	The confidence level is set to 95\%.
+	
+	\paragraph{Step 2. Calculate the $P$ Value}
+	
+	The p-value is derived from a \textbf{t-statistic} transformed from $r$. The formula for the t-statistic is as follows:
+	
+	\begin{equation}
+		t = \frac{r - \rho_0}{SE_r} = \frac{r}{\sqrt{\frac{1-r^2}{n-2}}}
+		\label{eq:t_test_correlation}
+	\end{equation}
+	
+	Where $r$ represents the calculated sample Pearson correlation coefficient, $\rho_0$ represents the population correlation coefficient under the null hypothesis, $SE_r$ represents the standard error of the correlation coefficient $r$, and $n-2$ represents the degrees of freedom (df). Since the null hypothesis is $\rho = 0$, the formula for the t-statistic can be simplified to:
+	
+	\begin{equation}
+		t = r \sqrt{\frac{x-2}{1-r^2}}
+		\label{eq:t_test_simplified}
+	\end{equation}
+	
+	The calculated t-statistic follows a \textbf{t-distribution} with $\textit{df} = n - 2$ degrees of freedom. The p-value is the sum of the areas in both tails of the t-distribution.
+	
+	This study used MATLAB to calculate the sum of the areas in both tails, performing the Pearson correlation coefficient test. The results are shown in the tables below:
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{$P$ Values for Pearson Correlation Coefficient Test of Relatively Strongly Correlated Categories}
+		\label{tab:p_value_strong}
+		\renewcommand{\arraystretch}{1.5}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{tabular}{ccc}
+			\toprule
+			Category 1 & Category 2 & $P$ Value \\
+			\midrule
+			Leafy Vegetables & Cauliflower & 0.0000000 \\
+			Leafy Vegetables & Peppers & 0.0000000 \\
+			Cauliflower & Eggplant & 0.0000000 \\
+			Cauliflower & Peppers & 0.0000000 \\
+			Eggplant & Peppers & 0.0000000 \\
+			Peppers & Edible Mushrooms & 0.0000000 \\
+			\bottomrule
+		\end{tabular}
+		\renewcommand{\heavyrulewidth}{0.8pt}
+	\end{table}
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{$P$ Values for Pearson Correlation Coefficient Test Across All Categories}
+		\label{tab:p_value_all}
+		\renewcommand{\arraystretch}{1.5}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{tabular}{ccccccc}
+			\toprule
+			& Leafy Vegetables & Cauliflower & Aquatic Stem & Eggplant & Peppers & Edible Mushrooms \\
+			\midrule
+			Leafy Vegetables & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 \\
+			Cauliflower & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 \\
+			Aquatic Stem & 0.0000000 & 0.0000000 & 0.0000000 & 0.0030232 & 0.0000000 & 0.0000000 \\
+			Eggplant & 0.0000000 & 0.0000000 & 0.0030232 & 0.0000000 & 0.0000000 & 0.0000051 \\
+			Peppers & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 \\
+			Edible Mushrooms & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000051 & 0.0000000 & 0.0000000 \\
+			\bottomrule
+		\end{tabular}
+		\renewcommand{\heavyrulewidth}{0.8pt}
+	\end{table}
+	
+	Based on Tables 2 and 3, the Pearson correlation coefficients between the sales volumes of all categories are less than the confidence level of 0.05. Therefore, the null hypothesis is rejected, indicating that the conclusions drawn in the previous step are credible.
+\end{document}

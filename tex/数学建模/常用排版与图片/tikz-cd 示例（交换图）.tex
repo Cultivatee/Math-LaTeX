@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{tikz-cd}
+
+\begin{document}
+	\[
+	\begin{tikzcd}[row sep=large, column sep=large]
+		A \arrow[r, "f"] \arrow[d, "\phi"'] 
+		& B \arrow[d, "\psi"] \\
+		C \arrow[r, "g"'] 
+		& D
+	\end{tikzcd}
+	\]
+	
+	% 更复杂的交换图
+	\[
+	\begin{tikzcd}[row sep=large, column sep=large]
+		& E \arrow[dl, "p_1"'] \arrow[dr, "p_2"] \\
+		F \arrow[rr, "h"] \arrow[dr, "q_1"'] 
+		&& G \arrow[dl, "q_2"] \\
+		& H \arrow[uu, dashed, "\exists! \alpha"]
+	\end{tikzcd}
+	\]
+\end{document}

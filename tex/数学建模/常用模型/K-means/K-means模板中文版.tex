@@ -1,0 +1,121 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,      % 左边距 2cm
+	right=2.5cm,     % 右边距 2cm
+	top=2.5cm,       % 上边距 2cm
+	bottom=2.5cm,    % 下边距 2cm
+	headheight=13.6pt
+}
+\usepackage{amsmath}
+\usepackage{booktabs} % 用于三线表
+\usepackage{caption}
+\usepackage{setspace} % 用于设置行间距
+\usepackage{array}
+\usepackage{CTeX}
+\setlength{\headheight}{13.6pt}
+\usepackage{enumitem} % 用于自定义列表格式
+\usepackage{graphicx} % 用于插入图片
+
+\begin{document}
+	
+	\subsection{通过改进的Canopy-Kmeans算法分析分类方式}
+	
+	\subsubsection{改进的Canopy-Kmeans算法的分析}
+	
+	改进的Canopy-Kmeans算法与传统K-means算法的区别在于以下3点：
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item 传统K-means算法完全随机选择初始聚类中心，导致算法对初始化敏感，容易陷入局部最优解，且每次运行结果可能不一致。而Canopy-Kmeans先使用Canopy算法进行粗聚类，通过两个距离阈值智能识别数据密集区域，从中选择更有代表性的初始中心点，大大提高了算法的稳定性和收敛性。
+		
+		\item 在聚类过程上，K-means算法直接进行精细聚类，而Canopy-Kmeans算法采用"粗聚类+细聚类"的两阶段策略。先通过Canopy快速划分数据的大致范围，再在这些粗聚类基础上进行K-means精细优化，这种分层处理方式不仅提升了聚类质量，还增强了算法对噪声数据和异常值的鲁棒性。
+		
+		\item Canopy-Kmeans在一定程度上自动推测合适的聚类数量K值，解决了K-means需要预先指定聚类数的限制。
+	\end{enumerate}
+	
+	本文采用改进的Canopy-Kmeans算法，首先将单品名称相同的品种进行数据合并处理，然后以单品的总销售量、每日最大销售量和日均销售量为指标，\textbf{将单品分为热销、畅销、平销和滞销四大类}，设置K值为4，进行聚类分析。改进的Canopy-Kmeans算法步骤如下：
+	\begin{enumerate}[label=\arabic*.]
+		\item{Canopy粗聚类}：使用双阈值（$T_1 > T_2$）进行快速数据划分。距离小于$T_1$的点归入同一Canopy，小于$T_2$的点标记为强关联，避免作为新中心。这一步快速识别数据密集区域。
+		\item{中心点选择}：使用"最小最大原则"的Canopy中心点选择方法。初始的Canopy中心点间距应尽可能远，其余中心点的选择方法为：计算待确定中心与各个已有中心的最小距离，选择最小距离的最大值对应的待确定点作为中心点，公式如下：
+		\[
+		\begin{cases} 
+			\text{DistCollect}(m+1) = \min \{ d(x_{m+1}, x_r), r = 1, 2, ..., m \} \\
+			\text{Dist}_{\min}(m+1) = \max \{ \min [d(x_j, x_{i_r})], j \neq i_1, i_2, ..., i_r \}
+		\end{cases} \tag{1}
+		\]
+		
+		其中$\min[d(x_{m+1}, c_i)]$表示待确定的第$m+1$个Canopy中心点与前$m$个已确定的Canopy中心点间距中最小距离，$Dist_{\min} (m+1)$ 则表示最优的$x_{m+1}$应为所有最短距离中最大者\cite{mao2012}。
+		
+		\item{自适应K值调整}：根据Canopy数量动态调整最终聚类数：过多时合并相近Canopy，过少时补充代表性点，优化聚类结构。
+		
+		\item{精细K-means优化}：在优质初始中心基础上执行标准K-means算法，实现快速收敛和高精度聚类。
+	\end{enumerate}
+	
+	\subsubsection{得出聚类中心}
+	
+	以单品的总销售量、每日最大销售量和日均销售量为指标，使用聚类算法进行分类，将单品分为热销、畅销、平销和滞销四大类。
+	
+	\begin{table}[h]
+		\centering
+		\caption*{表5 聚类中心}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{spacing}{1.5}
+			\begin{tabular}{@{}lccc@{}}
+				\toprule
+				\textbf{单品组合} & \textbf{2021年相关系数} & \textbf{2022年相关系数} & \textbf{2年平均相关系数} \\
+				\midrule
+				上海青螺丝椒(份) & -0.410018296 & -0.903074635 & -0.656546465 \\
+				上海青小青菜(份) & -0.426960775 & -0.884997079 & -0.655978927 \\
+				云南生菜螺丝椒(份) & -0.468748579 & -0.83800917 & -0.653378874 \\
+				上海青云南生菜(份) & -0.429652604 & -0.871453397 & -0.650553 \\
+				上海青杏鲍菇(2) & -0.404275203 & -0.894663846 & -0.649469525 \\
+				上海青奶白菜(份) & -0.426960775 & -0.86276201 & -0.644861392 \\
+				上海青菜心(份) & -0.426960775 & -0.845851263 & -0.636406019 \\
+				\bottomrule
+			\end{tabular}
+		\end{spacing}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+	\end{table}
+	
+	\subsubsection{问题求解}
+	
+	本文利用\textit{MATLAB}求解各单品蔬菜的聚类结果，由于篇幅原因，仅展示部分单品的聚类结果，全部结果见文件\textit{Cluster Result.xlsx}：
+	
+	\begin{table}[h]
+		\centering
+		\caption{六十种单品蔬菜聚类}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{spacing}{1.5}
+			\begin{tabular}{@{}lccc@{}}
+				\toprule
+				\textbf{单品组合} & \textbf{2021年相关系数} & \textbf{2022年相关系数} & \textbf{2年平均相关系数} \\
+				\midrule
+				上海青螺丝椒(份) & -0.410018296 & -0.903074635 & -0.656546465 \\
+				上海青小青菜(份) & -0.426960775 & -0.884997079 & -0.655978927 \\
+				云南生菜螺丝椒(份) & -0.468748579 & -0.83800917 & -0.653378874 \\
+				上海青云南生菜(份) & -0.429652604 & -0.871453397 & -0.650553 \\
+				上海青杏鲍菇(2) & -0.404275203 & -0.894663846 & -0.649469525 \\
+				上海青奶白菜(份) & -0.426960775 & -0.86276201 & -0.644861392 \\
+				上海青菜心(份) & -0.426960775 & -0.845851263 & -0.636406019 \\
+				\bottomrule
+			\end{tabular}
+		\end{spacing}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+	\end{table}
+	
+	各单品的销售量相关性分析结果：
+	
+	\begin{enumerate}[label=\Roman*.]
+		\item \textbf{热销类别中的单品通常具有高总销售量、高每日最大销售量和高日均销售量}。这意味着这些单品销售非常火爆，并且在销售指标上表现出相对一致的趋势。热销类别内的单品之间可能存在很高的相关性，即它们的销售指标相互影响较大。
+		
+		\item \textbf{畅销类别中的单品在销售指标上表现相对较好}，但相对于热销类别来说，它们的总销售量、每日最大销售量和日均销售量可能会稍低。在畅销类别内，单品之间的相关性较强。
+		
+		\item \textbf{平销类别中的单品的销售指标在中等水平上保持稳定}，没有明显的高或低。这些单品之间可能存在较低的相关性，销售指标相对独立。
+		
+		\item \textbf{滞销类别中的单品表现出较低的总销售量、每日最大销售量和日均销售量}。这些单品之间可能存在较弱的相关性，它们的销售指标相互影响较小。
+	\end{enumerate}
+	
+	%毛典辉. 基于MapReduce的Canopy-Kmeans改进算法[J]. 计算机工程与应用, 2012, 48(27): 
+	
+\end{document}

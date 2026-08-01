@@ -1,0 +1,53 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{tikz-3dplot}
+\begin{document}
+	% 设置视角
+	\tdplotsetmaincoords{70}{120}
+	\begin{tikzpicture}[scale=2.5, tdplot_main_coords,
+		dot/.style={circle,fill,inner sep=1pt},
+		line solid/.style={black,line width=0.8pt},
+		line dash/.style={black!60,line width=0.6pt,dashed}]
+		
+		% 顶点坐标 (底面正方形ABCD，A为原点，AB沿x轴，AD沿y轴)
+		\coordinate (A) at (0,0,0);
+		\coordinate (B) at (1,0,0);
+		\coordinate (C) at (1,1,0);
+		\coordinate (D) at (0,1,0);
+		\coordinate (P) at (0,0,1);  % PA垂直于底面
+		
+		% 中点E,F
+		\coordinate (E) at (0.5,0,0);
+		\coordinate (F) at (1,0.5,0);
+		
+		% ========== 1. 绘制底面 ==========
+		\draw[line solid] (A) -- (B) -- (C) -- (D) -- cycle;
+		
+		% ========== 2. 绘制侧棱 ==========
+		\draw[line solid] (A) -- (P);
+		\draw[line solid] (B) -- (P);
+		\draw[line solid] (C) -- (P);
+		\draw[line solid] (D) -- (P);
+		
+		% ========== 3. 绘制平面PEF（半透明填充）==========
+		\definecolor{planeblue}{RGB}{113,184,237}
+		\fill[color=planeblue, opacity=0.25] (P) -- (E) -- (F) -- cycle;
+		\draw[color=planeblue, line width=1.0pt] (P) -- (E) -- (F) -- cycle;
+		
+		% ========== 4. 绘制需要求解的线 ==========
+		% AC - 红色虚线
+		\draw[red, line width=1.2pt, dashed] (A) -- (C);
+		% BD - 橙色粗线
+		\draw[orange, line width=1.5pt] (B) -- (D);
+		
+		% ========== 5. 顶点标签 ==========
+		\node[dot,label={below left:$A$}] at (A) {};
+		\node[dot,label={below right:$B$}] at (B) {};
+		\node[dot,label={above right:$C$}] at (C) {};
+		\node[dot,label={above left:$D$}] at (D) {};
+		\node[dot,label={left:$P$}] at (P) {};
+		
+		\node[dot,label={below:$E$}] at (E) {};
+		\node[dot,label={right:$F$}] at (F) {};
+		
+	\end{tikzpicture}
+\end{document}

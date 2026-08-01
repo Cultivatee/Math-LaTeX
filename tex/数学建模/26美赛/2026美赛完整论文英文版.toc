@@ -1,0 +1,33 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Background}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Restatement of the Problem}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Our Work \& Model Overview}{4}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Assumptions and Justifications}{5}{section.2}%
+\contentsline {section}{\numberline {3}Notations}{6}{section.3}%
+\contentsline {section}{\numberline {4}Battery Power Drain Dynamic Model}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Model Selection}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}A comprehensive multi-factor power consumption function}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Model Modification Considering Temperature Effects}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Using the Runge-Kutta method to solve the numerical solution of ODEs}{12}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Stochastic Simulation}{13}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Parameter Estimation Method and Model Rationality Analysis}{15}{subsection.4.6}%
+\contentsline {section}{\numberline {5}SOC Prediction and Uncertainty Quantification}{16}{section.5}%
+\contentsline {subsection}{\numberline {5.1}SOC Prediction}{16}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Analysis of Significant Influencing Factors}{17}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Uncertainty Quantification Based on the Monte Carlo Method}{18}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Rationality of Assumptions and Sensitivity of Parameters}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Sensitivity to Model Assumptions}{18}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Variation in Screen Type Assumption}{19}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Variation in Constant Temperature Assumption}{20}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}Sensitivity Analysis}{21}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Sensitivity of Parameter values}{21}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Changing fluctuations in usage patterns}{22}{subsubsection.6.2.2}%
+\contentsline {section}{\numberline {7}Recommendations}{23}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Recommendations for Smartphone Users}{23}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Recommendations for Operating Systems}{23}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Recommendations Considering Battery Aging}{24}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Model Expansion}{24}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Model Evaluation}{24}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Strengths}{24}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Weaknesses}{25}{subsection.8.2}%
+\contentsline {section}{References}{26}{section*.25}%

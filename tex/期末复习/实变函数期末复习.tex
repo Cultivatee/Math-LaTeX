@@ -1,0 +1,1210 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,   
+	right=2.5cm,   
+	top=2.5cm,      
+	bottom=2.5cm,  
+	headheight=13.6pt
+}
+
+% 最简单、最稳定的中文方案（自动适配系统，永不报错）
+\usepackage[UTF8, scheme=plain]{ctex}
+
+% 设置英文默认字体为 Times New Roman
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{setspace}%设置间距
+\onehalfspacing
+\setlength{\parskip}{4pt}
+
+\usepackage{array}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+% 定义代码颜色
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{NavyBlue}{RGB}{0,0,128}
+\definecolor{PineGreen}{RGB}{1,121,111}
+
+% 配置 listings 环境
+\lstset{
+	language=Python,
+	tabsize=4,
+	captionpos=b,
+	numbers=left,
+	numbersep=1em,
+	sensitive=true,
+	showtabs=false,
+	frame=shadowbox,
+	breaklines=true,
+	keepspaces=true,
+	showspaces=false,
+	showstringspaces=false,
+	breakatwhitespace=false,
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{NavyBlue},
+	commentstyle=\color{codegreen},
+	numberstyle=\color{black},
+	stringstyle=\color{PineGreen!90!black},
+	rulesepcolor=\color{red!20!green!20!blue!20}
+}
+
+\definecolor{LightGreen}{rgb}{0.9, 0.95, 0.9}
+\definecolor{LightBlue}{RGB}{229, 238, 255}
+\definecolor{LightPink}{RGB}{255, 229, 237}
+
+% 修正表格标题格式：居中对齐，字体为黑体
+\captionsetup[table]{
+	justification=centering,
+	labelsep=quad,
+	font={bf}
+}
+
+% 设置图片标题（图注）字体为黑体
+\captionsetup[figure]{
+	justification=centering,
+	labelsep=quad,
+	font={bf}
+}
+
+% 设置子图标题字体为黑体
+\captionsetup[subfigure]{
+	font={bf}
+}
+
+\begin{document}
+	
+	\begin{center}
+		{\LARGE \textbf{实变函数期末复习}} \\[0.5cm]
+		{\large {\kaishu 石继楷 \quad 编写}} \\[0.3cm]
+		{\large 2026年5月29日}
+	\end{center}
+	
+	\section{第一章\quad 集合与点集}
+	\subsection{集合及其运算}
+	\subsubsection{定义 集合列上极限}
+	\[
+	\displaystyle \varlimsup_{k\to\infty} A_k = \bigcap_{j=1}^{\infty} \bigcup_{k=j}^{\infty} A_k
+	\]
+	含义：有无穷多次出现在$A_k$里，$\exists K$，当$k>K$，$x\in A_k$.
+	
+	\subsubsection{定义 集合列下极限}
+	\[
+	\displaystyle \varliminf_{k\to\infty} A_k = \bigcup_{j=1}^{\infty} \bigcap_{k=j}^{\infty} A_k
+	\]
+	
+	\subsubsection{数列上下极限定义}
+	\[
+	\displaystyle \varlimsup_{k\to\infty} x_k = \inf_{j\ge1}\sup_{k\ge j}x_k
+	\]
+	函数例子 $[0,1]\to\mathbb{R}$：
+	\[
+	f(x)=\frac1\pi \arctan x + \frac12
+	\]
+	
+	\subsection{集合的基数}
+	\subsubsection{定义 可列集}
+	基数 $=\overline{\overline{\mathbb{N}}}=\aleph_0$.
+	
+	\subsubsection{定理1.6}
+	$A$ 无穷集 $\iff A$ 与它的真子集对等.
+	\begin{enumerate}
+		\item[$\Rightarrow$] 设$A$为无穷集，取$A_0=A\setminus\{a_0\}$仍为无穷集，存在可列子集 $\{a_1,a_2,\dots\}\subset A_0$.
+		构造映射 $f:A_0\to A$：
+		\[
+		f(x)=
+		\begin{cases}
+			a_{j-1},& x=a_j\\
+			x,& \text{其他}
+		\end{cases}
+		\]
+		于是$A_0\sim A$，一一映射.
+		\item[$\Leftarrow$] 显然.
+	\end{enumerate}
+	
+	\subsubsection{Bernstein定理}
+	若 $\overline{\overline{X}}\le\overline{\overline{Y}},\ \overline{\overline{Y}}\le\overline{\overline{X}}$，则 $\overline{\overline{X}}=\overline{\overline{Y}}$.
+	\begin{itemize}
+		\item $\overline{\overline{X}}<\overline{\overline{Y}}$：$X$与$Y$的真子集对等，但不与$Y$对等；
+		\item $\overline{\overline{X}}\le\overline{\overline{Y}}$：$X$与$Y$的子集对等.
+	\end{itemize}
+	
+	有限集和可列集统称可数集.
+	
+	\subsubsection{定理 $\overline{\overline{[0,1]}}=\overline{\overline{\mathscr{P}(\mathbb{N})}}$}
+	\begin{enumerate}
+		\item[$\Rightarrow$] $\forall x\in[0,1]$，二进制展开 $x=\sum\limits_{k=1}^{\infty}\frac{a_k}{2^k},\ a_k=0,1$.
+		
+		令$A=\{i\mid a_i=1\}\subset\mathbb{N}$
+		
+		$\therefore [0,1]$与$\mathscr{P}(\mathbb{N})$的子集对应
+		
+		$\therefore \overline{\overline{[0,1]}}\le\overline{\overline{\mathscr{P}(\mathbb{N})}}$.
+		\item[$\Leftarrow$] $\forall A\subset\mathscr{P}(\mathbb{N})$，令
+		\[
+		a_i=
+		\begin{cases}
+			0,& i\in A\\
+			1,& i\notin A
+		\end{cases}
+		\]
+		构造 $x=\sum\limits_{i=1}^{\infty}\frac{a_i}{3^i}\in[0,1]$.
+	\end{enumerate}
+	
+	\subsection{$\mathbb{R}^n$中的点集}
+	\subsubsection{闭集套定理}
+	$\{E_k\}$ 渐缩非空闭集且$E_1$有界，则
+	\[
+	\bigcap_{k=1}^{\infty}E_k \neq \emptyset
+	\]
+	
+	\subsubsection{有限覆盖定理}
+	$E\subset\mathbb{R}^n$ 有界闭集，若 $\displaystyle E\subset\bigcup_{\lambda\in I}B_\lambda$，则可选出有限个$\{B_{\lambda_i}\mid \lambda_i \in I,\ i=1,2,\dots,k$\}覆盖$E$：
+	\[
+	E\subset \bigcup_{i=1}^k B_{\lambda_i}
+	\]
+	
+	\subsection{点集上的连续函数}
+	\subsubsection{定义：点连续}
+	$\forall \varepsilon>0,\exists \delta>0$，当 $x\in E\cap B(x_0,\delta)$ 时，$|f(x)-f(x_0)|<\varepsilon$，则称$f$在$x_0$连续.
+	
+	\subsubsection{定理1.22}
+	$E_1,E_2$ 闭集，若$f$在$E_1,E_2$连续，则$f$在$E_1\cup E_2$连续.
+	
+	\subsubsection{定理1.23}
+	若$f$连续，$E$有界闭集：
+	\begin{enumerate}
+		\item $f$在$E$有界；
+		\item $f$在$E$取到最大值、最小值：$\exists x_1,x_2,\ f(x_1)=\sup\{f(x)\mid x\in E\},\ f(x_2)=\inf\{f(x)\mid x\in E\}$；
+		\item $f$在$E$上一致连续：
+		$\forall \varepsilon>0,\exists \delta>0,\forall x',x''\in E$，只要$|x'-x''|<\delta$，有$|f(x')-f(x'')|<\varepsilon$.
+	\end{enumerate}
+	
+	\paragraph{例20 \ (P33)}
+	若$E$为闭集，则$\exists y_0\in E$，使得 $d(x_0,y_0)=d(x_0,E)$，其中 $d(x_0,E)=\inf\{d(x_0,y)\mid y\in E\}$.
+	证明：
+	设$x_0\notin E$，$\forall y\in E,\ d(x_0,E)=\inf\{d(x_0,y)\mid y\in E\}\le d(x_0,y_1)$.
+	
+	缩小$y$范围：令$E_1=E\cap B(x_0,d(x_0,y_1))$，$E_1$有界闭集，且
+	\[
+	\begin{aligned}
+		d(x_0,E)&=\inf\{d(x_0,y)\mid y\in E\}\\
+		&=\inf\{d(x_0,y)\mid y\in E_1\}\\
+		&=d(x_0,E_1)\\
+		&\le d(x_0,y_1)
+	\end{aligned}
+	\]
+	
+	$\forall y,y'\in\mathbb{R}^n,\ d(x_0,y)\le d(x_0,y')+d(y,y'),\ d(x_0,y')\le d(x_0,y)+d(y,y')$.
+	
+	令$f(y)=d(x_0,y)$，则$|f(y_1)-f(y_2)|\le d(y_1,y_2)=|y_1-y_2|$.
+	
+	$f$在$\mathbb{R}^n$上连续，限制在$E_1$也连续.
+	
+	$\therefore\exists y_0\in E_1\subset E$，使 $f(y_0)=\inf\limits_{y\in E_1}f(y)=\inf\{d(x_0,y)\mid y\in E\}$，即 $d(x_0,y_0)=d(x_0,E)$.
+	
+	\section{第二章\quad Lebesgue测度}
+	\subsection{外测度}
+	\subsubsection{定义 L覆盖}
+	对$E\subset\mathbb{R}^n$，若可数开区间列$I_1,I_2,\dots$满足 $\bigcup\limits_{k=1}^{\infty}I_k\supset E$，则称$\{I_k\}$为$E$的L覆盖.
+	
+	\subsubsection{定义 外测度}
+	\[
+	\displaystyle m^*E = \inf\left\{ \sum_{k=1}^{\infty}|I_k| \,\bigg|\, \{I_k\} \text{ 是}E\text{的L覆盖},\ \bigcup_{k=1}^{\infty}I_k\supset E \right\}
+	\]
+	
+	\subsubsection{定理 外测度的性质}
+	\begin{enumerate}
+		\item 非负性：$0\le m^*E\le\infty$；
+		\item 单调性：若$E_1\subset E_2$，则$m^*E_1\le m^*E_2$；
+		\item 次可加性：
+		\[
+		\displaystyle m^*\Big(\bigcup_{k=1}^{\infty}E_k\Big) \le \sum_{k=1}^{\infty}m^*E_k
+		\]
+	\end{enumerate}
+	证明次可加性：
+	不妨设 $\sum\limits_{k=1}^{\infty}m^*E_k<\infty$.
+	$\forall \varepsilon>0,\forall k\in\mathbb{Z}^+$，存在$E_k$的L覆盖$\{I_i^{(k)}\}(i\in\mathbb{N}_+)$，使得
+	\[
+	\sum_{i=1}^{\infty}|I_i^{(k)}| < m^*E_k + \frac{\varepsilon}{2^k}
+	\]
+	$\{I_i^{(k)}\}$是$\bigcup\limits_{k=1}^{\infty}E_k$的L覆盖，故
+	\[
+	\begin{aligned}
+		0&\le m^*\Big(\bigcup_{k=1}^{\infty}E_k\Big) \le \sum_{k=1}^{\infty}\sum_{i=1}^{\infty}|I_i^{(k)}| \\
+		&< \sum_{k=1}^{\infty}\Big(m^*E_k+\frac{\varepsilon}{2^k}\Big) < \sum_{k=1}^{\infty}m^*E_k + \varepsilon
+	\end{aligned}
+	\]
+	令$\varepsilon\to0$得证.
+	
+	\subsubsection{Cantor集}
+	\[
+	I_1=\big(\tfrac13,\tfrac23\big),\ F_1=[0,1]\setminus I_1
+	\]
+	\[
+	I_2=\big(\tfrac19,\tfrac29\big)\cup\big(\tfrac79,\tfrac89\big),\ F_2=[0,1]\setminus(I_1\cup I_2)
+	\]
+	$I_k$为$2^{k-1}$个长度为$\frac1{3^k}$的开区间，$F_k$为$2^k$个长度为$\frac1{3^k}$的闭区间.
+	\[
+	C=\bigcap_{k=1}^{\infty}F_k \text{ 为Cantor三分集}
+	\]
+	性质：
+	\begin{enumerate}
+		\item 非空闭集；
+		\item $mC=0$.证明：
+		\[
+		\sum_{k=1}^{\infty}\frac{2^{k-1}}{3^k}=1\quad \text{或}\quad 0\le m^*C=m^*\Big(\bigcap_{k=1}^{\infty}F_k\Big)\le m^*F_n=2^n\cdot\frac1{3^n}
+		\]
+		\item $\overline{\overline{C}}=\overline{\overline{\mathbb{R}}}$；
+		\item $C'=C$，所有点是聚点.
+	\end{enumerate}
+	
+	\subsection{可测集与测度}
+	\subsubsection{定义：Carathéodory条件}
+	$E\subset\mathbb{R}^n$，$\forall T\subset\mathbb{R}^n$，满足
+	\[
+	m^*T = m^*(T\cap E)+m^*(T\cap E^c)
+	\]
+	（只需证$\ge$，$\le$由次可加性自然成立）.
+	
+	\subsubsection{E可测$\Leftrightarrow$任意开矩体I， $\bm{|I|\geq m^*(I\cap E)+m^*(I\cap E^c)}$}
+	
+	证明：设$m^*T<\infty$，$\forall \varepsilon>0$，$\{I_k\}$是$T$的L覆盖，满足$\displaystyle \sum_{i=1}^{\infty}|I_k|<m^*T+\varepsilon$.
+	\[
+	\begin{aligned}
+		m^*(T\cap E)+m^*(T\cap E^c)
+		&\le \sum_{k=1}^{\infty}m^*(I_k\cap E)+\sum_{k=1}^{\infty}m^*(I_k\cap E^c) \\
+		&= \sum_{k=1}^{\infty}\Big(m^*(I_k\cap E)+m^*(I_k\cap E^c)\Big) \\
+		&\le \sum_{k=1}^{\infty}|I_k| < m^*T+\varepsilon
+	\end{aligned}
+	\]
+	令$\varepsilon\to0$.
+	当$m^*T=\infty$时，Carathéodory条件显然成立.
+	
+	\subsubsection{定理2.2 测度完全可加性}
+	$\{E_k\}$两两不交可测集，则
+	\[
+	\displaystyle m\Big(\bigcup_{k=1}^{\infty}E_k\Big)=\sum_{k=1}^{\infty}m(E_k)
+	\]
+	
+	\subsubsection{定义： $\sigma$代数}
+	$X$为集合，$\Gamma \subset\mathscr{P}(X)$，$\Gamma $由$X$部分子集构成集合，称$\Gamma $是$X$的$\sigma$代数，满足：
+	\begin{enumerate}
+		\item $\emptyset\in\Gamma $；
+		\item 若$A\in\Gamma $，则$A^c\in\Gamma $；
+		\item 若$A_i\in\Gamma $，则$\bigcup\limits_{i=1}^{\infty}A_i\in\Gamma $.
+	\end{enumerate}
+	
+	\subsubsection{定理2.3}
+	\begin{enumerate}
+		\item 渐张集列$\{E_k\}$，则$\displaystyle 
+		m\Big(\bigcup_{k=1}^{\infty}E_k\Big)=\lim_{k\to\infty}m(E_k)
+		$
+		
+		证明：不妨设$m(E_k)<\infty$，令$F_k=E_k\setminus E_{k-1},\ E_0=\emptyset$，$\{F_k\}$两两不交，$\bigcup\limits_{k=1}^{\infty}E_k=\bigcup\limits_{k=1}^{\infty}F_k$.
+		\[
+		m(F_k)=m(E_k)-m(E_{k-1})
+		\]
+		\[
+		m\Big(\bigcup_{k=1}^{\infty}E_k\Big)=m\Big(\bigcup_{k=1}^{\infty}F_k\Big)=\sum_{k=1}^{\infty}m(F_k)=\sum_{k=1}^{\infty}\big(mE_k-mE_{k-1}\big)=\lim_{k\to\infty}m(E_k)
+		\]
+		\item 渐缩集列$\{E_k\}$，存在$E_N$有限测度，则$\displaystyle 
+		m\Big(\bigcap_{k=1}^{\infty}E_k\Big)=\lim_{k\to\infty}m(E_k)
+		$
+		
+		证明：令$F_k=E_N\setminus E_k$，$\{F_k\}$渐张，$\bigcup\limits_{k=1}^{\infty}F_k=E_N\setminus\bigcap\limits_{k=1}^{\infty}E_k$.
+		
+		$\displaystyle \because m\Big(\bigcup_{k=1}^{\infty} F_k \Big)=m\Big(\bigcup_{k=1}^{\infty} (E_N \setminus E_k)\Big)=m(E_N) - m\Big(\bigcup_{k=1}^{\infty} E_k \Big)=m(E_N) - m\Big(\lim_{k\to \infty} E_k \Big)$
+		
+		利用$F_k$渐张把lim拿到外面：
+		
+		$\displaystyle \because m\Big(\bigcup_{k=1}^{\infty} F_k \Big)=\lim_{k\to \infty} m(F_k)=\lim_{k\to \infty} m( E_N-E_k )=m(E_N)-\lim_{k\to \infty}m(E_k)$
+		
+		$\displaystyle \therefore m(\lim_{k\to \infty}E_k)=\lim_{k\to \infty}m(E_k))$
+	\end{enumerate}
+	
+	记号：$F_\sigma$ 闭可列并，$G_\delta$ 开可列交.
+	
+	\subsection{可测集的特征}
+	\subsubsection{定理2.6-2.8 可测集逼近}
+	$E$可测$\iff$
+	\begin{enumerate}
+		\item $\forall \varepsilon>0$，存在开集$G\supset E$，$m^*(G\setminus E)<\varepsilon$；（$G_\delta$型集 $H=\bigcap G_k$）
+		\item $\forall \varepsilon>0$，存在闭集$F\subset E$，$m^*(E\setminus F)<\varepsilon$.（$F_\sigma$型集 $H=\bigcup F_k=H^c$）
+	\end{enumerate}
+	
+	\section{第三章\quad 可测函数}
+	\subsection{可测函数的概念与基本性质}
+	\subsubsection{定义 可测函数}
+	$f:E\to\overline{\mathbb{R}}$，$\forall x\in E$，$\{x\mid f(x)>a\}$是$\mathbb{R}^n$可测集$\implies f$在$E$上可测.
+	
+	\subsubsection{定理3.1 等价条件}
+	\[
+	\textcircled{1}\ E(f>a),\ \textcircled{2}\ E(f\ge a),\ \textcircled{3}\ E(f<a),\ \textcircled{4}\ E(f\le a)
+	\]
+	证明：
+	\begin{itemize}
+		\item $\textcircled{1}\Rightarrow\textcircled{2}$：
+		\[
+		E(f\ge a)=\bigcap_{k=1}^{\infty}E\Big(f>a-\frac1k\Big)
+		\]
+		\item $\textcircled{2}\Rightarrow\textcircled{3}$：
+		\[
+		E(f<a)=E\setminus E(f\ge a)
+		\]
+		\item $\textcircled{3}\Rightarrow\textcircled{4}$：
+		\[
+		E(f\le a)=\bigcup_{k=1}^{\infty}E\Big(f<a+\frac1k\Big)
+		\]
+		\item $\textcircled{4}\Rightarrow\textcircled{1}$：
+		\[
+		E(f>a)=E\setminus E(f\le a)
+		\]
+	\end{itemize}
+	
+	\subsubsection{定理3.2 四则运算可测}
+	$cf(x),\ f+g,\ f\cdot g,\ f/g$ 均可测.
+	\begin{enumerate}
+		\item 数乘$cf$：
+		$c=0$时，$cf\equiv0$可测；
+		\[
+		E(cf>a)=
+		\begin{cases}
+			E\big(f>\frac{a}{c}\big),& c>0\\
+			E\big(f<\frac{a}{c}\big),& c<0
+		\end{cases}
+		\]
+		故$cf$可测.
+		
+		\item 和函数$f+g$：
+		\[
+		\begin{aligned}
+			E(f+g>a)&=E(f>a-g)\\
+			&=\bigcup_{k=1}^{\infty}\Big(E(f>r_k)\cap E(r_k>a-g)\Big)\\
+			&=\bigcup_{k=1}^{\infty}\Big(E(f>r_k)\cap E(g>a-r_k)\Big)
+		\end{aligned}
+		\]
+		其中$\{r_k\}$为全体有理数的一个排序.
+		
+		\item 乘积$f\cdot g$：\\先研究平方可测：
+		\[
+		E(f^2>a)=
+		\begin{cases}
+			E\big(f>\sqrt{a}\big)\cup E\big(f<-\sqrt{a}\big),& a>0\\
+			E,& a<0
+		\end{cases}
+		\]
+		\[
+		fg=\frac14\Big[(f+g)^2-(f-g)^2\Big]
+		\]
+		平方可测，四则组合后$fg$可测.
+		
+		\item 除法$f/g$可测：只需证$\frac1g$可测.
+		\[
+		E\Big(\frac1g>a\Big)=
+		\begin{cases}
+			E\big(g<\frac1a\big),& a>0\\
+			E(g>0)\cup E\big(g<\frac1a\big),& a<0\\
+			E(g>0),& a=0
+		\end{cases}
+		\]
+	\end{enumerate}
+	
+	\subsubsection{定理3.3 函数列极限运算}
+	$\{f_k\}$可测函数列，则 $\sup\limits_k f_k,\ \inf\limits_k f_k,\ \varliminf\limits_{k\to\infty}f_k,\ \varlimsup\limits_{k\to\infty}f_k$ 均可测.
+	\begin{enumerate}
+		\item $E\big(\sup\limits_k f_k>a\big)=\bigcup\limits_{k=1}^{\infty}E(f_k>a)$；
+		\item $\inf\limits_k f_k=-\sup\limits_k (-f_k)$；
+		\item $\displaystyle \varliminf_{k\to\infty}f_k=\sup_{k}\inf_{j\ge k}f_j$；
+		\item $\displaystyle \varlimsup_{k\to\infty}f_k=\inf_{k}\sup_{j\ge k}f_j,\quad \text{或} \varlimsup_{k\to\infty}f_k=-\varliminf_{k\to\infty}(-f_k)$.
+	\end{enumerate}
+	
+	\paragraph{推论}
+	$\max(f,g),\min(f,g)$可测.
+	构造函数列：$f_1=f,\ f_2=g,\ f_k=-\infty\ (k\ge3)$，则
+	\[
+	\sup_k f_k=\max(f,g),\quad \min(f,g)=-\max(-f,-g)
+	\]
+	
+	\subsubsection{定理3.5 分区域可测}
+	$f$在每个$E_k$可测$\implies f$在$\bigcup\limits_{k=1}^{\infty}E_k$可测.
+	
+	证明：令$f_k=f(x)\chi_{E_k}$，则 $f=\sum\limits_{k=1}^{\infty}f_k$.
+	\[
+	f(x)=\lim_{N\to\infty}\sum_{k=1}^{N}f_k
+	\]
+	由定理3.3推论2，$f_k$极限可测.
+	
+	\subsubsection{定理3.6 简单函数逼近}
+	\begin{enumerate}
+		\item 若$f$在$E$非负可测，则存在非负简单函数递增列$\{\varphi_k\}$，使得$\displaystyle \lim_{k\to\infty}\varphi_k=f$
+		\item 若$f$变号可测，存在简单函数列$\{\varphi_k\}$，满足$|\varphi_k|\le|f|$，且$\displaystyle \lim_{k\to\infty}\varphi_k=f$
+	\end{enumerate}
+	
+	\subsubsection{定理3.7 几乎处处相等则可测等价}
+	$f$可测，$f=g\ \text{a.e.}$，则$g$可测.
+	\[
+	E(g>a)=\{x\in E\setminus E_0\mid f>a\}\cup\{x\in E_0\mid g>a\}
+	\]
+	其中$E_0=E(f\ne g),\ mE_0=0$.
+	
+	\subsection{可测函数列的收敛}
+	\subsubsection{Egorov定理}
+	设$E\subset\mathbb{R}^n$可测，$mE<\infty$，$\{f_k\}$几乎处处有限、几乎处处收敛于几乎处处有限的$f$.
+	$\forall \varepsilon>0$，$\exists E_\delta\subset E,\ m(E\setminus E_\delta)<\varepsilon$，$\{f_k\}$在$E_\delta$上一致收敛于$f$.
+	
+	$mE<\infty$条件必要性反例：
+	
+	取$f_k(x)=
+	\begin{cases}
+		0,& x<k\\
+		1,& x>k
+	\end{cases}$，假设$\exists E_\delta\subset(0,+\infty),\ mE_\delta<\delta$，$\{f_k\}$在$(0,+\infty)\setminus E_\delta$一致收敛于$f\equiv0$.
+	
+	取$\varepsilon_0=\frac12$，$\exists k_0$，当$k\ge k_0$，$\forall x\in(0,+\infty)\setminus E_\delta$有$|f_k-f|<\frac12$
+	
+	$\therefore x<k$
+	
+	$\therefore (0,+\infty)\setminus E_\delta\subset(0,k_0)$，即$E_\delta\supset(k_0,+\infty)$，矛盾.
+	
+	\subsubsection{定义 依测度收敛}
+	$f,f_k$可测，几乎处处有限，$\forall \varepsilon>0$，$\displaystyle 
+	\lim_{k\to\infty}mE\big(\{x\in E\mid |f_k-f|\ge\varepsilon\}\big)=0
+	$
+	
+	\subsubsection{定理3.10 几乎处处收敛推依测度收敛}
+	$f,f_k$几乎处处有限，$mE<\infty$，$f_k\to f\ \text{a.e.}$，则$\{f_k\}$依测度收敛于$f$.
+	
+	证明：由Egorov定理，$\forall \delta>0$，存在$E\setminus E_\delta$，$\{f_k\}$在$E\setminus E_\delta$一致收敛，即
+	\[
+	\{x\in E\setminus E_\delta\mid |f_k-f|\ge\varepsilon\}=\emptyset
+	\]
+	$k\to\infty$时，$m\{x\in E\mid |f_k-f|\ge\varepsilon\}\le mE_\delta<\delta$，由$\delta$任意性得证.
+	
+	\paragraph{依测度收敛不能推出几乎处处收敛 反例}
+	\[
+	f_m(x)=
+	\begin{cases}
+		1,& \frac{i}{2^k}\le x\le\frac{i+1}{2^k}\\
+		0,& \text{其他}
+	\end{cases}
+	\]
+	
+	依测度收敛于$0$，
+	\[
+	\Big\{x\in[0,1]\mid |f_m-f|\ge\varepsilon\Big\}=\Big[\frac{i}{2^k},\frac{i+1}{2^k}\Big]
+	\]
+	
+	$m\to\infty,k\to\infty$时，$m\Big(\big\{x\in[0,1]\mid |f_m-f|\ge\varepsilon\big\}\Big)=\frac1{2^k}\to0$.
+	
+	但$f_m$在$[0,1]$内任一点无极限，存在子列恒0、子列恒1.
+	
+	\subsubsection{定理3.11 依测度收敛极限唯一性}
+	$\{f_k\}$依测度收敛于$f,g$，则$f\sim g$（$f=g\ \text{a.e.}$）.
+	
+	证明：$|f-g|\le|f-f_k|+|f_k-g|$，$\forall \varepsilon>0$，
+	\[
+	E(|f-g|\ge\varepsilon)\subset E\Big(|f_k-f|\ge\frac{\varepsilon}{2}\Big)\cup E\Big(|f_k-g|\ge\frac{\varepsilon}{2}\Big)
+	\]
+	\[
+	mE(|f-g|\ge\varepsilon)\le mE\Big(|f_k-f|\ge\frac{\varepsilon}{2}\Big)+mE\Big(|f_k-g|\ge\frac{\varepsilon}{2}\Big)
+	\]
+	$k\to\infty$时，$mE(|f-g|\ge\varepsilon)=0$.
+	\[
+	E(f\ne g)=E(|f-g|>0)=\bigcup_{k=1}^{\infty}E\Big(|f-g|\ge\frac1k\Big)
+	\]
+	\[
+	mE(f\ne g)\le\sum_{k=1}^{\infty}mE\Big(|f-g|\ge\frac1k\Big)=0
+	\]
+	
+	\subsubsection{Riesz定理}
+	若$f_k$依测度收敛于$f$，则必存在子列$f_{k_j}$几乎处处收敛于$f$.
+	
+	\subsection{可测函数与连续函数}
+	\subsubsection{Lusin定理}
+	$f$几乎处处有限，$\forall \varepsilon>0$，存在闭集$F\subset E,\ m(E\setminus F)<\varepsilon$，$f$限制在$F$上连续.
+	
+	\subsubsection{Tietze扩张定理}
+	$f$可测，$\forall \varepsilon>0$，存在$\mathbb{R}^n$上连续函数$g$，使得
+	\[
+	m\big\{x\in E\mid f\ne g\big\}<\varepsilon
+	\]
+	若$|f|\le M$，则$|g|\le M$.
+	证明（$|f|\le M$情形）：
+	\[
+	A=\Big\{x\in F\mid \frac{M}{3}\le f\le M\Big\},\quad B=\Big\{x\in F\mid -\frac{M}{3}<f<\frac{M}{3}\Big\},\quad C=\Big\{x\in F\mid -M\le f\le -\frac{M}{3}\Big\}
+	\]
+	构造
+	\[
+	g_1(x)=\frac{M}{3}\cdot\frac{d(x,C)-d(x,A)}{d(x,C)+d(x,A)},\quad |g_1|\le\frac{M}{3}
+	\]
+	\begin{enumerate}
+		\item $x\in A$：$g_1=\frac{M}{3}$，$|f-g_1|=|f-\frac{M}{3}|\le M-\frac{M}{3}=\frac{2}{3}M$；
+		\item $x\in C$：$g_1=-\frac{M}{3}$，$|f-g_1|=|-\frac{M}{3}-f(x)|\le -\frac{M}{3}-(-M)=\frac{2}{3}M$；
+		\item $x\in B$：$|f-g_1|\le|f|+|g_1|<\frac{M}{3}+\frac{M}{3}=\frac{2}{3}M$.
+	\end{enumerate}
+	$|f-g_1|<\frac{2M}{3}$.
+	归纳构造序列：
+	\[
+	f_1=f-g_1,\quad |g_2|\le\frac13\cdot\frac{2M}{3},\quad |f_1-g_2|\le\big(\frac{2}{3}\big)^2M
+	\]
+	\[
+	|g_k|\le \big(\frac{2}{3}\big)^{k-1}\cdot\frac{M}{3},\quad \Big|f-\sum_{i=1}^{k}g_i(x)\Big|\le\big(\frac{2}{3}\big)^k M
+	\]
+	令$g=\sum\limits_{k=1}^{\infty}g_k$，级数一致收敛，$k\to\infty$时$|f-g|<\varepsilon$.
+	\[
+	|g|\le\sum_{k=1}^{\infty}|g_k|=\frac{M}{3}\sum_{k=1}^{\infty}\big(\frac{2}{3}\big)^{k-1}=M
+	\]
+	$g$连续，在$F$上$f=g,\ |g|\le M$.
+	
+	\subsubsection{定义：支集}
+	\[
+	\mathrm{supp}\,f=\overline{\{x\in E\mid f\ne0\}}
+	\]
+	支集有界闭$\iff f$有紧支集.
+	
+	\paragraph{推论}
+	$f$可测、$E$有界，则$\exists g$有紧支集连续函数，满足$mE(f\ne g)<\varepsilon$.
+	
+	\section{第四章\quad Lebesgue 积分}
+	\subsection{非负可测函数的积分}
+	\subsubsection{定义：可测集 $E\subset\mathbb{R}^n$ 上非负简单函数 $\varphi$}
+	\[
+	\displaystyle \varphi = \sum_{i=1}^k c_i \chi_{E_i}(x)
+	\]
+	\[
+	\displaystyle \int_E \varphi(x)dx = \sum_{i=1}^k c_i mE_i
+	\]
+	
+	\paragraph{性质(iv)} $\displaystyle \int_{A\cup B}\varphi = \int_A \varphi + \int_B \varphi$
+	
+	证明：
+	\[
+	\chi_{A\cup B}(x) = \chi_A(x) + \chi_B(x)
+	\]
+	\[
+	\varphi(x) = \varphi(x)\big(\chi_A(x)+\chi_B(x)\big) = \varphi(x)\chi_A(x) + \varphi(x)\chi_B(x)
+	\]
+	而
+	\[
+	\int_E \varphi(x)\chi_A(x)dx = \int_A \varphi(x)dx,\quad
+	\int_E \varphi(x)\chi_B(x)dx = \int_B \varphi(x)dx
+	\]
+	由积分线性性：
+	\[
+	\displaystyle \int_E \big(\varphi(x)\chi_A(x)+\varphi(x)\chi_B(x)\big)
+	= \int_E \varphi\chi_A + \int_E \varphi\chi_B
+	\]
+	（令 $f_1 = f\cdot\chi_E,\ f_2 = f\cdot\chi_F$，转换为线性性）
+	
+	\subsubsection{定义：非负可测函数的积分}
+	取简单函数列 $\{\varphi_k\}$ 收敛于可测函数 $f$，$\{\varphi_k\}$ 递增列：
+	\[
+	\displaystyle \int_E f(x)dx = \lim_{k\to\infty}\int_E \varphi_k(x)dx
+	\]
+	合理性：
+	\begin{itemize}
+		\item $\{\varphi_k\}$ 递增 $\implies \big\{\int_E \varphi_k(x)dx\big\}$ 递增数列；
+		\item $\lim\limits_{k\to\infty}\int_E \varphi_k(x)dx$ 有意义；
+		\item $\int_E f$ 只由 $f$ 与 $E$ 确定.
+	\end{itemize}
+	
+	\paragraph{例3(P87)} $[0,1]$ 上连续函数，$f(0)=0,\ f(1)=1$，对比两种积分关系
+	\begin{itemize}
+		\item $f$ 在 $[0,1]$ Riemann 可积（连续 $\implies$ 间断点测度为0 $\implies$ R可积）；
+		\item 非负可测函数，R、L积分均有意义.
+	\end{itemize}
+	取分割：$m_i,\ x\in \big[\frac{i-1}{2^k},\frac{i}{2^k}\big),\ i=1,2,\dots,2^k,\ \varphi_k(x)=f(i)$
+	$m_i$ 是 $f$ 在 $\big[\frac{i-1}{2^k},\frac{i}{2^k}\big)$ 的下确界.
+	$\varphi_k$ 在 $[0,1]$ 逐点收敛于 $f$，$\{\varphi_k\}$ 递增：
+	\[
+	\displaystyle (L)\int_{[0,1]} f dx = \lim_{k\to\infty}\int_{[0,1]}\varphi_k
+	= \lim_{k\to\infty}\sum_{i=1}^{2^k}\frac{m_i}{2^k}
+	\]
+	右端为 Darboux 下和：
+	\[
+	\displaystyle \lim_{k\to\infty}\sum_{i=1}^{2^k}\frac{m_i}{2^k} = (R)\int_0^1 f(x)dx
+	\]
+	得到L积分与R积分相等.
+	
+	\subsubsection{Chebyshev 不等式}
+	设 $a$ 为正常数：
+	\[
+	\displaystyle mE(f\ge a) \le \frac1a \int_E f(x)dx
+	\]
+	证明：令
+	\[
+	\varphi_a(x) =
+	\begin{cases}
+		a, & f\ge a\\
+		0, & f<a
+	\end{cases}
+	\]
+	$\varphi_a(x)\le f(x)$，故
+	\[
+	a\,mE(f\ge a) = \int_E \varphi_a(x)dx \le \int_E f(x)dx
+	\]
+	两边除以 $a$ 即证.
+	
+	\subsubsection{定理4.3}
+	\[
+	\int_E f = 0 \iff f \text{ 在 } E \text{ 几乎处处等于 } 0
+	\]
+	\begin{enumerate}
+		\item[$\Leftarrow$] 若 $f\overset{\text{a.e.}}{=}0$，取递增简单函数列 $\varphi_k\nearrow f$，
+		$\forall k,\ \varphi_k\overset{\text{a.e.}}{=}0$，故 $\int_E \varphi_k=0$，
+		\[
+		\int_E f = \lim_{k\to\infty}\int_E \varphi_k = 0
+		\]
+		\item[$\Rightarrow$] $\int_E f=0$，对任意 $k$，由Chebyshev不等式：
+		\[
+		mE\big(f>\tfrac1k\big) \le k\int_E f = 0
+		\]
+		\[
+		mE(f>0) = m\Big(\bigcup_{k=1}^\infty E\big(f>\tfrac1k\big)\Big)
+		\le \sum_{k=1}^\infty mE\big(f>\tfrac1k\big) = 0
+		\]
+	\end{enumerate}
+	
+	\subsubsection{定理4.4}
+	若 $\displaystyle \int_E f < \infty$，则 $f$ 在 $E$ 上几乎处处有限（$mE(f=\infty)=0$）.
+	
+	证明：由Chebyshev不等式，$\forall k>0$：
+	\[
+	mE(f\ge k) \le \frac1k\int_E f dx
+	\]
+	因 $\int_E f<\infty$，令 $k\to\infty$ 得 $\lim\limits_{k\to\infty}mE(f\ge k)=0$.
+	$\forall k$，$E(f=\infty)\subset E(f\ge k)$，故
+	\[
+	mE(f=\infty) = \lim_{k\to\infty}mE(f\ge k) = 0
+	\]
+	
+	\paragraph{例4 / 第四章习题2}
+	$mE<\infty$，$f$ 是 $E$ 上几乎处处有限非负可测函数，则：
+	\[
+	\displaystyle \int_E f < \infty \iff \sum_{k=1}^\infty k\,mE(k\le f<k+1) < \infty
+	\]
+	\begin{enumerate}
+		\item[$\Rightarrow$] 令 $E_k = E(k\le f<k+1),\ k=0,1,2,\dots$，
+		集合两两不交 $E_k\cap E_m=\emptyset\ (k\ne m)$.记 $\tilde{E}_N=\bigcup_{k=1}^N E_k$.
+		\[
+		\forall N,\quad
+		\int_E f = \sum_{k=0}^N \int_{E_k}f + \int_{E\setminus \tilde{E}_N}f
+		\ge \sum_{k=1}^N k\,mE_k
+		\]
+		$\int_E f<\infty$，故级数 $\displaystyle \sum_{k=1}^\infty k\,mE_k$ 收敛.
+		\item[$\Leftarrow$]
+		\[
+		\sum_{k=1}^\infty k\,mE(k\le f<k+1)
+		\le \sum_{k=1}^\infty (k+1)\,mE(k\le f<k+1)
+		= \sum_{k=1}^\infty mE(k\le f<k+1) + \sum_{k=1}^\infty k\,mE(k\le f<k+1)
+		\]
+		$mE<\infty$，故 $\displaystyle \sum_{k=1}^\infty mE(k\le f<k+1) < \infty$，
+		因此 $\displaystyle \sum_{k=1}^\infty (k+1)mE(k\le f<k+1) < \infty$.
+		又 $mE(f=\infty)=0$，故
+		\[
+		\int_E f \le mE(0\le f<1)
+		+ \sum_{k=1}^\infty (k+1)mE(k\le f<k+1)
+		+ \int_{E(f=\infty)} f < \infty
+		\]
+	\end{enumerate}
+	
+	\subsection{一般可测函数的积分}
+	\subsubsection{定义}
+	可测函数 $f$ Lebesgue可积（$f\in L(E)$）$\iff \displaystyle \int_E f^+,\int_E f^- < \infty$.
+	
+	\subsubsection{定义}
+	积分有意义 / 积分存在 $\iff \displaystyle \int_E f^+,\int_E f^-$ 不同时为 $\infty$.
+	
+	\subsubsection{定理4.6}
+	$f\in L(E) \implies |f|\in L(E)$.
+	
+	\subsubsection{定理4.7（控制判定）}
+	设 $f$ 在 $E\subset\mathbb{R}^n$ 可测，若存在可积函数 $F\in L(E)$ 满足 $|f|\le F$，则 $f\in L(E)$.
+	
+	\subsubsection{定理4.8}
+	若 $f\in L(E)$，则 $|f|$ 几乎处处有界.
+	
+	\subsubsection{定理4.9（积分线性性）}
+	$f,g\in L(E),\ a,b\in\mathbb{R} \implies af+bg\in L(E)$，且
+	\[
+	\displaystyle \int_E af + bg = a\int_E f + b\int_E g
+	\]
+	证明分4步：
+	\begin{enumerate}
+		\item $|af|=|a||f| \implies af\in L(E)$；
+		\item 证明 $\displaystyle a\int_E f = \int_E af$：
+		\begin{itemize}
+			\item 当 $a>0$：
+			\[
+			\int_E af
+			= \int_E (af)^+ - \int_E (af)^-
+			= \int_E a f^+ - \int_E a f^-
+			= a\Big(\int_E f^+ - \int_E f^-\Big)
+			= a\int_E f
+			\]
+			\item 当 $a<0$：
+			\[
+			\int_E af
+			= \int_E (af)^+ - \int_E (af)^-
+			= \int_E (-a)f^- - \int_E (-a)f^+
+			= -a\int_E f^- + a\int_E f^+
+			= a\int_E f
+			\]
+			\item $a=0$ 显然成立；
+		\end{itemize}
+		\item 证明 $f+g\in L(E)$：
+		$|f+g|\le |f|+|g|$，$f,g\in L(E) \implies f+g\in L(E)$；
+		\item 证明 $\displaystyle \int_E f+g = \int_E f + \int_E g$：
+		\[
+		f+g = (f+g)^+ - (f+g)^-,\quad
+		f = f^+ - f^-,\ g = g^+ - g^-
+		\]
+		整理得：
+		\[
+		f^- + g^+ + (f+g)^+ = f^+ + g^+ + (f+g)^-
+		\]
+		六项均为非负可测函数，积分可逐项相加：
+		\[
+		\int f^- + \int g^+ + \int (f+g)^+
+		= \int f^+ + \int g^+ + \int (f+g)^-
+		\]
+		移项即得 $\displaystyle \int_E f+g = \int_E f + \int_E g$.
+	\end{enumerate}
+	
+	\subsubsection{定理4.10（积分单调性与绝对值不等式）}
+	\begin{enumerate}
+		\item 若 $f\le g$ a.e.于 $E$，则 $\displaystyle \int_E f \le \int_E g$；
+		证明：$f-g\ge 0$ a.e.，故 $\displaystyle \int (f-g) = \int f - \int g \ge 0$.
+		\item $\displaystyle \Big|\int_E f\Big| \le \int_E |f|$；
+		证明：$-|f|\le f \le |f|$，由单调性得 $-\int|f|\le \int f \le \int|f|$，即证.
+	\end{enumerate}
+	
+	\subsubsection{定理4.11（积分绝对连续性）}
+	$f\in L(E)$，$\forall \varepsilon>0,\ \exists \delta>0$，对任意可测子集 $E_0\subset E$，只要 $mE_0<\delta$，就有
+	\[
+	\displaystyle \int_{E_0}|f| < \varepsilon
+	\]
+	
+	\paragraph{定义：对称差}
+	\[
+	E_0 \triangle E_1 = (E_1\setminus E_0) \cup (E_0\setminus E_1)
+	\]
+	若 $m(E_0\triangle E_1)<\delta$，则
+	\[
+	\displaystyle \Big|\int_{E_1}|f| - \int_{E_0}|f|\Big|
+	\le \int_{E_0\triangle E_1}|f| < \varepsilon
+	\]
+	
+	\subsection{积分极限定理}
+	\subsubsection{Levi 单调收敛定理}
+	$\{f_k\}$ 是 $E$ 上非负可测递增函数列，则
+	\[
+	\displaystyle \int_E \lim_{k\to\infty} f_k(x) dx
+	= \lim_{k\to\infty} \int_E f_k(x) dx
+	\]
+	
+	\subsubsection{Lebesgue 逐项积分定理}
+	$\{f_k\}$ 是 $E\subset\mathbb{R}^n$ 上非负可测函数列，则
+	\[
+	\displaystyle \int_E \sum_{k=1}^\infty f_k
+	= \sum_{k=1}^\infty \int_E f_k
+	\]
+	证明：令 $\displaystyle S_k(x) = \sum_{i=1}^k f_i(x)$，$\{S_k\}$ 为非负递增列，
+	$\lim\limits_{k\to\infty}S_k(x) = \sum\limits_{i=1}^\infty f_i(x)$.
+	由积分有限可加性 $\displaystyle \int_E S_k = \sum_{i=1}^k \int_E f_i$，
+	令 $k\to\infty$，使用Levi定理即证.
+	
+	\subsubsection{Fatou 引理}
+	$\{f_k\}$ 非负可测，则
+	\[
+	\displaystyle \int_E \varliminf_{k\to\infty} f_k
+	\le \varliminf_{k\to\infty} \int_E f_k
+	\]
+	对偶形式：
+	\[
+	\displaystyle \int_E \varlimsup_{k\to\infty} f_k
+	\ge \varlimsup_{k\to\infty} \int_E f_k
+	\]
+	证明：
+	\begin{enumerate}
+		\item 记 $g_k = \inf\limits_{j\ge k}f_j$，则 $g_k\nearrow \varliminf\limits_{k\to\infty}f_k$，由Levi定理：
+		\[
+		\int_E \varliminf_{k\to\infty} f_k
+		= \lim_{k\to\infty}\int_E \inf_{j\ge k}f_j
+		\le \varliminf_{k\to\infty}\int_E f_k
+		\]
+		\item 若存在可积函数 $g$ 使得 $f_k\le g$ a.e.，令 $h_k = g-f_k \ge 0$ 非负可测，对 $\{h_k\}$ 用Fatou：
+		\[
+		\int_E \varliminf_{k\to\infty} h_k
+		\le \varliminf_{k\to\infty}\int_E h_k
+		\]
+		\[
+		\int_E \varliminf_{k\to\infty}(g-f_k)
+		\le \varliminf_{k\to\infty}\Big(\int_E g - \int_E f_k\Big)
+		\]
+		\[
+		\int_E g - \int_E \varlimsup_{k\to\infty}f_k
+		\le \int_E g - \varlimsup_{k\to\infty}\int_E f_k
+		\]
+		消去 $\int_E g$，移项即得对偶不等式.
+	\end{enumerate}
+	
+	\subsubsection{Lebesgue 控制收敛定理}
+	$\{f_k\}$ 几乎处处收敛、可测；存在非负可积函数 $F\in L(E)$ 满足 $|f_k(x)|\le F(x)$，$\lim\limits_{k\to\infty}f_k = f$，则 $f,f_k\in L(E)$ 且
+	\[
+	\displaystyle \lim_{k\to\infty}\int_E f_k = \int_E f
+	\]
+	
+	\subsection{Lebesgue 积分与 Riemann 积分的关系}
+	\subsubsection{定理4.17}
+	若 $f\in R[a,b]$，则 $f\in L(a,b)$，且
+	\[
+	\displaystyle (R)\int_a^b f = (L)\int_a^b f
+	\]
+	
+	\subsubsection{定理4.18}
+	$[a,b]$ 上有界函数Riemann可积 $\iff$ 函数在 $[a,b]$ 间断点集测度为0.
+	
+	\subsubsection{定理4.19}
+	定义在 $\mathbb{R}$ 上的函数，在任意有限闭区间上有界，且在 $\mathbb{R}$ 上反常Riemann积分绝对收敛，则 $f\in L(\mathbb{R})$，且两种积分值相等.
+	
+	\paragraph{例9（Cantor集函数积分）}
+	$f$ 在Cantor集上取0，在区间 $(\tfrac13)^k$ 对应区间取值 $\tfrac1k$，求L积分：
+	间断点全体为Cantor集，测度为0，故R可积，$(R)\int_0^1 f = (L)\int_0^1 f$.
+	\[
+	\int_0^1 f = \sum_{k=1}^\infty 2^{k-1}\cdot \frac{1}{k 3^k}
+	\]
+	级数推导：
+	\begin{enumerate}
+		\item 几何级数 $\displaystyle \sum_{n=0}^\infty x^n = \frac{1}{1-x}$，两边积分：
+		\[
+		\int_0^t \sum_{n=0}^\infty x^n dx
+		= \int_0^t \frac{1}{1-x} dx
+		\implies \sum_{n=1}^\infty \frac{t^n}{n} = -\ln(1-t)
+		\]
+		\item 交换积分求和：
+		\[
+		\int_0^t \sum_{n=0}^\infty x^n dx
+		= \sum_{n=0}^\infty \int_0^t x^n dx
+		= \sum_{n=1}^\infty \frac{t^n}{n}
+		\]
+	\end{enumerate}
+	代入 $t=\tfrac23$：
+	\[
+	\int_0^1 f = \frac12 \sum_{k=1}^\infty \frac{(\tfrac23)^k}{k}
+	= \frac12 \cdot \Big(-\ln\big(1-\tfrac23\big)\Big)
+	= \frac{\ln 3}{2}
+	\]
+	
+	\subsection{Fubini 定理}
+	\subsubsection{Fubini 定理}
+	若 $f\in L(\mathbb{R}^2)$，则累次积分与二重积分相等：
+	\[
+	\displaystyle \int_{\mathbb{R}} dx \int_{\mathbb{R}} f(x,y) dy
+	= \iint_{\mathbb{R}^2} f(x,y) dxdy
+	\]
+	性质：
+	\begin{enumerate}
+		\item 固定 $x$，$f(x,y)$ 作为 $y$ 的函数L可积 a.e.；
+		\item $\displaystyle \int_{\mathbb{R}} f(x,y) dy \in L(\mathbb{R})$.
+	\end{enumerate}
+	
+	\subsubsection{Tonelli 定理（非负情形）}
+	$f(x,y)$ 非负可测，则
+	\[
+	\displaystyle \int_{\mathbb{R}} dx \int_{\mathbb{R}} f(x,y) dy
+	= \iint_{\mathbb{R}^2} f(x,y) dxdy
+	\]
+	性质：
+	\begin{enumerate}
+		\item 固定 $x$，$f(x,y)$ 作为 $y$ 的函数L可积 a.e.；
+		\item $\displaystyle \int_{\mathbb{R}} f(x,y) dy \in L(\mathbb{R})$.
+	\end{enumerate}
+	
+	\section{第五章\quad 微分与不定积分}
+	\subsection{变上限积分的微分、有界变差函数}
+	\paragraph{定义 Vitali 覆盖}
+	$\Gamma$ 是 $E$ 的Vitali覆盖：$\forall x\in E,\ \forall \varepsilon>0$，存在区间 $I\in\Gamma$ 满足 $x\in I,\ |I|<\varepsilon$.
+	
+	\subsubsection{Vitali 覆盖定理}
+	设 $E\subset\mathbb{R},\ m^*E<\infty$，$\Gamma$ 是 $E$ 的Vitali覆盖，则对 $\forall \varepsilon>0$，存在 $\Gamma$ 中有限个两两不交区间 $I_1,I_2,\dots,I_n$，满足：
+	\[
+	\displaystyle m^*\Big(E\setminus \bigcup_{j=1}^n I_j\Big) < \varepsilon
+	\]
+	
+	\subsubsection{Lebesgue 单调函数微分定理}
+	若 $f$ 是 $[a,b]$ 上单调上升函数，则 $f'$ 在 $[a,b]$ 几乎处处存在，且
+	\[
+	\displaystyle \int_a^b f'(x) dx \le f(b)-f(a)
+	\]
+	
+	\paragraph{引理1：$L^1$ 函数可用连续紧支函数平均逼近}
+	若 $f\in L(E),\ E\subset\mathbb{R}$，$\forall \varepsilon>0$，存在 $\mathbb{R}$ 上具有紧支集的连续函数 $g$，使得
+	\[
+	\displaystyle \int_{\mathbb{R}} |f-g| < \varepsilon
+	\]
+	
+	\paragraph{引理2：可积函数的平均连续性}
+	若 $f\in L(\mathbb{R})$，则
+	\[
+	\displaystyle \lim_{h\to0}\int_{\mathbb{R}} |f(x+h)-f(x)| dx = 0
+	\]
+	
+	\subsubsection{定义：有界变差函数}
+	设 $f$ 在 $[a,b]$ 有定义，对 $[a,b]$ 任意分割 $\Delta:a=x_0<x_1<\dots<x_n=b$，若
+	\[
+	\sup_{\Delta} \sum_{i=1}^n |f(x_i)-f(x_{i-1})| < \infty
+	\]
+	则称 $f$ 在 $[a,b]$ 有界变差，记 $f\in BV[a,b]$.
+	
+	\paragraph{全变差定义}
+	\[
+	\displaystyle \bigvee_a^b (f)
+	= \sup_{\Delta} \sum_{i=1}^n |f(x_i)-f(x_{i-1})|
+	\]
+	
+	\paragraph{例1：单调函数一定有界变差}
+	\[
+	\sum_{i=1}^n |f(x_i)-f(x_{i-1})|
+	= \Big|\sum_{i=1}^n \big(f(x_i)-f(x_{i-1})\big)\Big|
+	= |f(b)-f(a)|
+	\]
+	上确界即为 $|f(b)-f(a)|<\infty$.
+	
+	\subsubsection{Jordan 分解定理}
+	函数有界变差 $\iff$ 可分解为两个单调上升函数之差：
+	$\exists g,h$ 单调上升，使得 $\forall x\in[a,b],\ f(x)=g(x)-h(x)$.
+	
+	\paragraph{推论}
+	若 $f\in BV[a,b]$，则 $f'$ 在 $[a,b]$ 几乎处处存在，且 $f'\in L[a,b]$.
+	
+	\subsection{绝对连续性与 Newton-Leibniz 公式}
+	\subsubsection{Cantor 函数（NL公式反向反例）}
+	Cantor函数 $\Theta(x)$ 定义：
+	\[
+	\Theta(x)=
+	\begin{cases}
+		\frac12, & x\in \big(\tfrac13,\tfrac23\big)\\
+		\frac14, & x\in \big(\tfrac19,\tfrac29\big)\\
+		\frac34, & x\in \big(\tfrac79,\tfrac89\big)\\
+		\vdots
+	\end{cases}
+	\]
+	第 $n$ 次去掉的 $2^{n-1}$ 个区间上，$\Theta(x)$ 取值：
+	\[
+	\frac{1}{2^n},\ \frac{3}{2^n},\ \dots,\ \frac{2^n-1}{2^n}
+	\]
+	记 $G_0 = \bigcup_{j=1}^\infty I_j$，在 $G_0$ 上定义 $\Theta(x)$；
+	在Cantor集 $C=[0,1]\setminus G_0$ 上，定义 $\Theta(x) = \sup\limits_{t<x,\ t\in G_0}\Theta(t)$.
+	边界值：$\Theta(0)=0,\ \Theta(1)=1$.
+	
+	\paragraph{Cantor函数性质}
+	\begin{enumerate}
+		\item $\Theta$ 在 $[0,1]$ 单调上升；
+		\item $\Theta\in C[0,1]$；
+		\item $\Theta'(x)=0$ a.e. $x\in[0,1]$.
+	\end{enumerate}
+	\[
+	\displaystyle \int_0^1 \Theta'(x)dx = 0 < \Theta(1)-\Theta(0)=1
+	\]
+	说明单调连续函数不一定满足NL公式，根源是不绝对连续.
+	
+	\subsubsection{定义：绝对连续函数}
+	设 $f$ 在 $[a,b]$ 定义，$\forall \varepsilon>0,\ \exists \delta>0$，对任意有限个不交区间 $(x_i,y_i)\subset[a,b],\ i=1,\dots,n$，满足 $(x_i,y_i)\cap(x_j,y_j)=\emptyset\ (i\ne j)$ 且 $\displaystyle \sum_{i=1}^n (y_i-x_i)<\delta$，就有
+	\[
+	\displaystyle \sum_{i=1}^n |f(y_i)-f(x_i)| < \varepsilon
+	\]
+	称 $f$ 在 $[a,b]$ 绝对连续，记 $f\in AC[a,b]$.
+	
+	\paragraph{绝对连续函数性质}
+	\begin{enumerate}
+		\item $af+cg$ 绝对连续（$f,g$ 绝对连续）；
+		\item 绝对连续 $\implies$ 一致连续；
+		\item 绝对连续 $\implies$ 有界变差；
+		\item 若 $f\in L(a,b)$，则变上限积分 $\displaystyle F(x)=\int_a^x f(t)dt$ 在 $[a,b]$ 绝对连续；
+		\item 满足Lipschitz条件的函数必绝对连续：$\exists L>0,\ \forall x,y\in[a,b],\ |f(x)-f(y)|\le L|x-y|$.
+	\end{enumerate}
+	
+	\subsection{微积分基本定理 / Newton-Leibniz 公式（先导后积）}
+	若 $f\in L([a,b])$，$F'(x)=f(x)\ \text{a.e.}\ x\in[a,b]$，且 $F(x)$ 在 $[a,b]$ 绝对连续，则
+	\[
+	(L)\int_a^b f(x)\,dx = F(b)-F(a)
+	\]
+	先积后导：
+	\[
+	\Big(\int_a^x f(t)\,dt\Big)' = f(x),\quad \text{a.e.}\ x\in[a,b]
+	\]
+	
+	\section{第六章\quad Lebesgue 空间 $L^p$}
+	\subsection{6.1 $L^p$ 范数}
+	\subsubsection{$\bm{Def}$ $L^p$ 空间与范数}
+	$mE>0,\ p\ge1$，$\|f\|_p$ 为 $f$ 在 $L^p$ 的范数（$f$ 在 $E$ 可测，所有 $p$ 次可积函数构成 $L^p(E)$）
+	\[
+	\|f\|_p = \Big(\int_E |f|^p\Big)^{\frac1p} < +\infty
+	\]
+	\[
+	L^p(E) = \Big\{ f:E\to\overline{\mathbb{R}}\ \text{可测}\ \Big|\ \int_E |f|^p < \infty \Big\}
+	\]
+	
+	\subsubsection{$\bm{Thm}$ $L^p$ 对线性运算封闭}
+	$\forall f,g\in L^p(E)$：
+	\[
+	\|\alpha f\|_p = \Big(\int_E |\alpha|^p |f|^p\Big)^{\frac1p} = |\alpha|\cdot\|f\|_p < +\infty
+	\]
+	\[
+	\int_E |f+g|^p \le \int_E 2^{p-1}(|f|^p+|g|^p) = 2^{p-1}\big(\|f\|_p^p+\|g\|_p^p\big) < +\infty
+	\]
+	
+	\subsubsection{$\bm{Thm}$ 范数的性质}
+	\begin{enumerate}
+		\item 非负性：$\|f\|_p\ge0$，且 $\|f\|_p=0 \iff f=0\ \text{a.e.}\ x\in E$
+		\item 齐次性：$\|\lambda f\|_p = |\lambda|\|f\|_p$
+		\item 三角不等式：$\|f+g\|_p \le \|f\|_p+\|g\|_p$
+	\end{enumerate}
+	
+	\subsubsection{$\bm{Lemma}$ Young 不等式}
+	若 $a,b,\alpha,\beta>0,\ \alpha+\beta=1$，则
+	\[
+	a^\alpha b^\beta \le \alpha a+\beta b
+	\]
+	
+	\subsubsection{$\bm{Thm}$ Hölder 不等式}
+	$f\in L^p(E),\ g\in L^q(E),\ \dfrac1p+\dfrac1q=1,\ p>1,q>1$
+	\[
+	\|fg\|_1 \le \|f\|_p \|g\|_q
+	\]
+	其中 $p=q=2$ 时：
+	\[
+	\int_E |fg| \le \Big(\int_E |f|^2\Big)^{\frac12}\cdot\Big(\int_E |g|^2\Big)^{\frac12}
+	\]
+	离散形式：
+	\[
+	\Big(\sum_{i=1}^n a_i b_i\Big)^2 \le \Big(\sum_{i=1}^n a_i^2\Big)\Big(\sum_{i=1}^n b_i^2\Big)
+	\]
+	证明：由 $a^\alpha b^\beta \le \alpha a+\beta b$，取
+	\[
+	\alpha=\frac1p,\ \beta=\frac1q,\ a=\frac{|f|^p}{\|f\|_p^p},\ b=\frac{|g|^q}{\|g\|_q^q}
+	\]
+	\[
+	\int_E \frac{|f|}{\|f\|_p}\cdot\frac{|g|}{\|g\|_q}
+	\le \int_E \frac1p\frac{|f|^p}{\|f\|_p^p} + \frac1q\frac{|g|^q}{\|g\|_q^q}
+	\]
+	\[
+	\frac{1}{\|f\|_p\|g\|_q}\int_E |fg| \le \frac1p+\frac1q = 1
+	\]
+	
+	\subsubsection{$\bm{Thm}$ Minkowski 不等式}
+	若 $f,g\in L^p(E)$，则
+	\[
+	\|f+g\|_p \le \|f\|_p+\|g\|_p
+	\]
+	证明：
+	\[
+	\begin{aligned}
+		\int_E |f+g|^p &= \int_E |f+g|^{p-1}\cdot|f+g| \\
+		&= \int_E |f+g|^{p-1}|f| + \int_E |f+g|^{p-1}|g|
+	\end{aligned}
+	\]
+	由 Hölder 不等式，$\dfrac{p}{p-1}=q \implies q = \dfrac{p}{p-1}$
+	\[
+	\le \|f\|_p \Big(\int_E |f+g|^p\Big)^{\frac{p-1}{p}} + \|g\|_p \Big(\int_E |f+g|^p\Big)^{\frac{p-1}{p}}
+	\]
+	\[
+	\therefore \|f+g\|_p^p \le \big(\|f\|_p+\|g\|_p\big)\cdot\|f+g\|_p^{\frac{p}{q}}
+	\]
+	\[
+	\therefore \|f+g\|_p \le \|f\|_p+\|g\|_p
+	\]
+	记距离 $\rho(f,g)=\|f-g\|_p$。
+	
+	\subsubsection{$\bm{Def}$ $L^p$ 收敛}
+	\[
+	\lim_{k\to\infty}\rho(f_k,f) = \lim_{k\to\infty}\|f_k-f\|_p = 0
+	\]
+	记为 $f_k \xrightarrow{L^p} f$。
+	
+	\subsubsection{$\bm{Thm}$ 6.4 $L^p$ 收敛 $\implies$ 依测度收敛}
+	$f_k \xrightarrow{L^p} f \implies f_k$ 依测度收敛于 $f$。
+	证明：$\forall a>0$，记 $E_a = E(|f_k-f|\ge a)$
+	\[
+	\int_E |f_k-f|^p \ge \int_{E_a} |f_k-f|^p \ge a^p mE_a
+	\]
+	令 $k\to\infty$，$mE_a\to0$。
+	
+	\subsubsection{$\bm{Def}$ $L^p(E)$ 基本列（Cauchy 列）}
+	$\forall \varepsilon>0,\ \exists N$，当 $m,n>N$ 时，$\|f_n-f_m\|_p<\varepsilon$。
+	
+	\subsubsection{$\bm{Thm}$ $L^p$ 空间完备性}
+	若 $\{f_k\}$ 是 Cauchy 列，则 $\exists f\in L^p(E)$，使 $f_k$ 在 $L^p(E)$ 中收敛于 $f$。
+	
+	\subsection{6.2 $L^2$ 空间}
+	\subsubsection{$\bm{Def}$ 内积}
+	$f\in L^2,\ g\in L^2$，
+	\[
+	\int_E f\cdot g = \langle f,g\rangle
+	\]
+	
+	\subsubsection{$\bm{Thm}$ 内积性质}
+	\begin{enumerate}
+		\item $\langle f,g\rangle = \langle g,f\rangle$
+		\item $\langle f,f\rangle \ge 0$，且 $\langle f,f\rangle=0 \iff f=0\ \text{a.e.}\ x\in E$
+		\item $\langle \alpha f,g\rangle = \alpha\langle f,g\rangle$
+		\item $\langle f_1+f_2,g\rangle = \langle f_1,g\rangle+\langle f_2,g\rangle$
+	\end{enumerate}
+	
+	\subsubsection{$\bm{Thm}$ Schwarz 不等式}
+	\[
+	|\langle f,g\rangle| \le \|f\|_2\|g\|_2
+	\]
+	
+	\subsubsection{$\bm{Thm}$ 内积的连续性}
+	若 $f_k\to f,\ g_k\to g$（$\lim\limits_{k\to\infty}\|f_k-f\|_p=0$），则
+	\[
+	\langle f_k,g_k\rangle \to \langle f,g\rangle
+	\]
+	
+	\subsubsection{$\bm{Def}$ 正交系}
+	正交 $\iff \langle f,g\rangle = 0$。
+	若 $\{\varphi_\alpha\}\subset L^2$，任意两函数正交，则 $\{\varphi_\alpha\}$ 为 $L^2$ 的正交系。
+	若 $\|\varphi_\alpha\|_2=1,\ \forall\alpha$，则为标准正交系。
+	
+	\subsubsection{$\bm{Def}$ 坐标}
+	$f$ 相对于 $\{\varphi_k\}$ 的第 $k$ 个坐标：$c_k = \langle f,\varphi_k\rangle$。
+	
+	\subsubsection{$\bm{Thm}$ Bessel 不等式}
+	$\{\varphi_k\}_{k=1}^\infty$ 是 $L^2$ 标准正交系，$f\in L^2$，$c_k=\langle f,\varphi_k\rangle$ 是坐标，则
+	\[
+	\sum_{k=1}^\infty |c_k|^2 \le \|f\|_2^2
+	\]
+	
+	\subsubsection{$\bm{Thm}$ Riesz-Fisher 定理}
+	若 $\sum\limits_{k=1}^\infty |a_k|^2<\infty$，$\{\varphi_k\}$ 标准，则
+	\[
+	\sum_{k=1}^\infty a_k\varphi_k \to f \quad (\text{某个 } f\in L^2)
+	\]
+	
+	\subsubsection{$\bm{Def}$ 完全标准正交基}
+	$\{\varphi_k\}_{k=1}^\infty$ 标准，若 $\langle \varphi,\varphi_k\rangle=0,\forall k \implies \varphi\sim 0$ 即 $\|\varphi\|_2=0$，则 $\{\varphi_k\}$ 为完全标准正交系（不能再添加 $L^2$ 的非零函数进入 $\{\varphi_k\}$）。
+	
+	\subsubsection{$\bm{Thm}$ Parseval 等式}
+	$\{\varphi_k\}_{k=1}^\infty$ 完全标准，则
+	\[
+	\|f\|_2^2 = \sum_{k=1}^\infty |c_k|^2
+	\]
+	
+\end{document}

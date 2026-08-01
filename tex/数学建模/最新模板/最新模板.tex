@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,   
+	right=2.5cm,   
+	top=2.5cm,      
+	bottom=2.5cm,  
+	headheight=13.6pt
+}
+
+% 字体设置（需使用 XeLaTeX 编译）
+\usepackage{fontspec}
+\usepackage[UTF8, fontset=none]{ctex}
+
+% 设置英文默认字体为 Times New Roman
+\setmainfont{Times New Roman}[
+BoldFont = Times New Roman Bold,
+ItalicFont = Times New Roman Italic,
+BoldItalicFont = Times New Roman Bold Italic
+]
+
+% 手动设置中文字体
+\setCJKmainfont{SimSun}[
+BoldFont = SimHei,
+ItalicFont = KaiTi
+]
+\setCJKsansfont{SimHei}
+\setCJKmonofont{FangSong}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+% 定义代码颜色
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{NavyBlue}{RGB}{0,0,128}
+\definecolor{PineGreen}{RGB}{1,121,111}
+
+% 配置 listings 环境
+\lstset{
+	language=Python,
+	tabsize=4,
+	captionpos=b,
+	numbers=left,
+	numbersep=1em,
+	sensitive=true,
+	showtabs=false,
+	frame=shadowbox,
+	breaklines=true,
+	keepspaces=true,
+	showspaces=false,
+	showstringspaces=false,
+	breakatwhitespace=false,
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{NavyBlue},
+	commentstyle=\color{codegreen},
+	numberstyle=\color{black},  % 将 gray 改为 black
+	stringstyle=\color{PineGreen!90!black},
+	rulesepcolor=\color{red!20!green!20!blue!20}
+}
+
+\definecolor{LightGreen}{rgb}{0.9, 0.95, 0.9}
+\definecolor{LightBlue}{RGB}{229, 238, 255}
+\definecolor{LightPink}{RGB}{255, 229, 237}
+
+% 表格标题格式：字体为黑体
+\captionsetup[table]{
+	labelsep=quad,
+	font={bf}
+}
+
+% 设置图片标题（图注）字体为黑体
+\captionsetup[figure]{
+	labelsep=quad,
+	font={bf}
+}
+
+% 设置子图标题字体为黑体
+\captionsetup[subfigure]{
+	font={bf}
+}
+
+\begin{document}
+	
+	\begin{center}
+		{\LARGE \textbf{标题}} \\[0.5cm]
+		{\large 石继楷 \quad 202411079123} \\[0.3cm]
+		{\large 2026年X月X日}
+	\end{center}
+	
+	\section{第一章}
+	
+	\subsection{第一节}
+	
+\end{document}
