@@ -1,0 +1,307 @@
+\documentclass[12pt,a4paper]{article}
+
+% 基础包
+\usepackage{ctex}        % 中文支持
+\usepackage{geometry}     % 页面设置
+\usepackage{fancyhdr}     % 页眉页脚
+\usepackage{lastpage}     % 总页数
+\usepackage{indentfirst}  % 首行缩进
+
+% 字体设置 - 使用Times New Roman字体（含数字）
+\usepackage{mathptmx}     % 数学字体为Times New Roman风格
+\usepackage[T1]{fontenc}  % 字体编码
+
+% 数学公式
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+
+% 表格
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{colortbl}
+
+% 图片和颜色
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% 列表
+\usepackage{enumitem}
+\usepackage{tasks}        % 用于排版选择题选项
+
+% 页面设置
+\geometry{
+	left=1.6cm,
+	right=2.04cm,
+	top=1.6cm,
+	bottom=2.54cm,
+	headheight=1.2cm,
+	footskip=0.8cm,
+	nohead                 % 去掉页眉
+}
+
+% 行距和段落 - 1.5倍行距
+\linespread{1.5}
+\setlength{\parindent}{2em}  % 首行缩进2字符
+\setlength{\parskip}{0.5ex}
+
+% 页眉页脚设置 - 只有页脚，没有页眉，去掉横线
+\pagestyle{fancy}
+\fancyhf{}                    % 清空所有页眉页脚
+\fancyfoot[C]{\makebox[0pt][c]{数学试题~第\thepage 页（共\pageref{LastPage}页）}}  % 使用\makebox确保居中对齐
+\renewcommand{\headrulewidth}{0pt}  % 去掉页眉横线
+\renewcommand{\footrulewidth}{0pt}  % 去掉页脚横线
+
+% 选择题选项环境配置
+% 4个选项一行（用于单选题）
+\NewTasksEnvironment[
+label=\Alph*.,
+label-width=1.5em,
+item-indent=2em,
+column-sep=2em,
+before-skip=0.8em,
+after-skip=0.8em
+]{choicesFour}[\choice](4)
+
+% 2个选项一行（用于多选题和部分单选题）
+\NewTasksEnvironment[
+label=\Alph*.,
+label-width=1.5em,
+item-indent=2em,
+column-sep=3em,
+before-skip=0.8em,
+after-skip=0.8em
+]{choicesTwo}[\choice](2)
+
+% 1个选项一行
+\NewTasksEnvironment[
+label=\Alph*.,
+label-width=1.5em,
+item-indent=2em,
+before-skip=0.8em,
+after-skip=0.8em
+]{choicesOne}[\choice](1)
+
+\begin{document}
+	
+	% 左上角绝密标识 - 使用$\bigstar$命令确保显示
+	\noindent {\large\bfseries 绝密$\bigstar$启用前}
+	
+	\vspace*{0.5cm}
+	
+	% 封面部分
+	\begin{center}
+		{\Large 2025年普通高等学校招生全国统一考试}\\[0.8cm]
+		{\LARGE\bfseries 数~~~~学}
+	\end{center}
+	
+	\noindent 本试卷共4页，19小题，满分150分，考试时间120分钟.
+	
+	% 注意事项 - 严格按照您提供的格式
+	\noindent\hangindent=73pt {\bfseries 注意事项：}1. 答题前，请务必将自己的姓名、准考证号用黑色字迹签字笔或钢笔分别填写在试卷和答题卡上.  将条形码横贴在答题卡右上角的“条形码粘贴处”. 
+	
+	\noindent\hangindent=73pt\hspace{61pt}2. 作答选择题时，选出每小题答案后，用2B铅笔把答题卡上对应题目选项的答案信息点涂黑，在试卷上作答无效；如需改动，用橡皮擦干净后，再选涂其他答案. 
+	
+	\noindent\hangindent=73pt\hspace{61pt}3. 非选择题必须用黑色字迹钢笔或签字笔作答，答案必须写在答题卡各题目指定区域的相应位置上；如需改动，先划掉原来的答案，然后再写上新的答案. 
+	
+	\noindent\hangindent=73pt\hspace{61pt}4. 考生须保持答题卡的整洁. 考试结束后，将试卷和答题卡一并交回. 
+
+	
+	% 一、选择题
+	\noindent\hangindent=2em {\bfseries 一、选择题:本题共8小题，每小题5分，共40分.每小题给出的四个选项中，只有一项是符合题目要求的.}
+	
+	\begin{enumerate}[leftmargin=*,label=\arabic*.,itemsep=0.8ex]
+		% 第1题 - 4个选项一行
+		\item (1+5i)i的虚部为
+		
+		\begin{choicesFour}
+			\choice $-1$ \choice $0$ \choice $1$ \choice $6$
+		\end{choicesFour}
+		
+		% 第2题 - 4个选项一行
+		\item
+		设全集$U=\{x \mid x\text{是小于9的正整数}\}$，$A=\{1,3,5\}$,则$\complement_U A$中的元素个数为
+		
+		\begin{choicesFour}
+			\choice $0$ \choice $3$ \choice $5$ \choice $8$
+		\end{choicesFour}
+		
+		% 第3题 - 4个选项一行
+		\item 若双曲线$C$的虚轴长是实轴长的$\sqrt{7}$倍，则$C$的离心率为
+		
+		\begin{choicesFour}
+			\choice $\sqrt{2}$ \choice $2$ \choice $\sqrt{7}$ \choice $2\sqrt{2}$
+		\end{choicesFour}
+		
+		% 第4题 - 4个选项一行
+		\item
+		已知点$(a,0)(a>0)$是函数$y=2\tan(x-\dfrac{\pi}{3})$的图像的一个对称中心，则\textit{a}的最小值为
+		
+		\begin{choicesFour}
+			\choice $\dfrac{\pi}{6}$ \choice $\dfrac{\pi}{3}$ \choice $\dfrac{\pi}{2}$ \choice $\dfrac{4\pi}{3}$
+		\end{choicesFour}
+		
+		% 第5题 - 4个选项一行
+		\item 设$f(x)$是定义在$\mathbb{R}$上且周期为2的偶函数，当$2 \leq x\leq 3$时，$f(x)=5-2x$，则$f\left(-\dfrac{3}{4}\right)=$
+		
+		\begin{choicesFour}
+			\choice $-\dfrac{1}{2}$ \choice $-\dfrac{1}{4}$ \choice $\dfrac{1}{4}$ \choice $\dfrac{1}{2}$
+		\end{choicesFour}
+		
+		% 第6题 - 4个选项一行
+		\item 帆船比赛中，运动员可借助风力计测定风速的大小和方向，测出的结果在航海学中称为视风风速，视风风速对应的向量是真风风速对应的向量与船行风速对应的向量之和，其中船行风速对应的向量与船速对应的向量大小相等，方向相反，图1给出了部分风力等级、名称与风速大小的对应关系.已知某帆船运动员在某时刻测得的视风风速对应的向量与船速对应的向量如图2(风速的大小和向量的大小相同，单位m/s)，则真风为
+		
+		\begin{center}
+			\begin{tabular}{ccc}
+				\toprule
+				级数 & 名称 & 风速大小(单位：m/s)\\
+				\midrule
+				2 & 轻风 & 1.6\textasciitilde3.3\\
+				3 & 微风 & 3.4\textasciitilde5.4\\
+				4 & 和风 & 5.5\textasciitilde7.9\\
+				5 & 劲风 & 8.0\textasciitilde10.7\\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		
+		\begin{choicesFour}
+			\choice 轻风 \choice 微风 \choice 和风 \choice 劲风
+		\end{choicesFour}
+		
+		% 第7题 - 4个选项一行
+		\item 已知圆$x^2+y^2=r^2(r>0)$上到直线$x+y+2=0$的距离为1的点有且仅有2个，则$r$的取值范围是
+		
+		\begin{choicesFour}
+			\choice $(0,\sqrt{2}-1)$ \choice $(\sqrt{2}-1,\sqrt{2}+1)$ \choice $(\sqrt{2}+1,+\infty)$ \choice $(0,\sqrt{2}+1)$
+		\end{choicesFour}
+		
+		% 第8题 - 从第8题开始改为2个选项一行
+		\item 已知$x=\log_2 3$，$y=\log_3 4$，$z=\log_4 5$，则$x$，$y$，$z$的大小关系不可能是
+		
+		\begin{choicesFour}
+			\choice $x>y>z$ \choice $x>z>y$ \choice $y>x>z$ \choice $z>y>x$
+		\end{choicesFour}
+	\end{enumerate}
+	
+	\vspace{0.3cm}
+	
+	% 二、选择题
+	\noindent\hangindent=2em {\bfseries 二、选择题:本题共3小题，每小题6分，共18分.每小题给出的选项中，有多项符合题目要求. 全部选对的得6分，部分选对的得部分分，有选错的得0分.}
+	
+	\begin{enumerate}[leftmargin=*,label=\arabic*.,resume,itemsep=0.8ex]
+		% 第9题 - 2个选项一行（多选题）
+		\item 在正三棱柱$ABC-A_1B_1C_1$中，$D$为$BC$的中点，则
+		
+		\begin{choicesTwo}
+			\choice $A_1D\parallel B_1C$ \choice $A_1D\perp$平面$ABC$ \choice $A_1D\perp B_1C$ \choice $A_1D\parallel$平面$BCC_1B_1$
+		\end{choicesTwo}
+		
+		% 第10题 - 2个选项一行（多选题）
+		\item 已知抛物线$C:y^2=4x$的焦点为$F$，过$F$的一条直线交$C$于$A$，$B$两点，过$A$作直线$x=-1$的垂线，垂足为$D$，过$F$且与直线$AB$垂直的直线交$x=-1$于点$E$，则
+		
+		\begin{choicesTwo}
+			\choice $|AB|=|AD|$ \choice $|AE|=|BF|$ \choice $A$、$E$、$B$三点共线 \choice $E$在以$AB$为直径的圆上
+		\end{choicesTwo}
+		
+		% 第11题 - 2个选项一行（多选题）
+		\item 已知$\triangle ABC$的面积为$\sqrt{3}$，若$\overrightarrow{AB}\cdot\overrightarrow{AC}=2$，则
+		
+		\begin{choicesTwo}
+			\choice $|\overrightarrow{AB}|=2$ \choice $|\overrightarrow{AC}|=2$ \choice $\angle A=60^\circ$ \choice $\angle A=120^\circ$
+		\end{choicesTwo}
+	\end{enumerate}
+	
+	\vspace{0.3cm}
+	
+	% 三、填空题
+	\noindent {\bfseries 三、填空题:本题共3小题，每小题5分，共15分.}
+	
+	\begin{enumerate}[leftmargin=*,label=\arabic*.,resume,itemsep=0.8ex]
+		% 第12题
+		\item 若直线$y=2x+b$是曲线$y=\ln x$的一条切线，则$b=\underline{\qquad\qquad}$. 
+		
+		% 第13题
+		\item 若一个等比数列的各项均为正数，且前4项的和等于4，前8项的和等于68，则这个数列的公比等于\underline{\qquad\qquad}. 
+		
+		% 第14题
+		\item 有5个相同的球，分别标有数字1，2，3，4，5，从中有放回地随机取3次，每次取1个球. 记$X$为这5个球中至少被取出1次的球的个数，则$X$的数学期望$E(X)=\underline{\qquad\qquad}$. 
+	\end{enumerate}
+	
+	\vspace{0.3cm}
+	
+	% 四、解答题
+	\noindent {\bfseries 四、解答题:本题共6小题，共70分.解答应写出文字说明、证明过程或演算步骤.}
+	
+	\begin{enumerate}[leftmargin=*,label=\arabic*.,resume,itemsep=1.2ex]
+		% 第15题
+		\item (13分) 为研究某疾病与超声波检查结果的关系，从做过超声波检查的人群中随机调查了1000人，得到如下列联表：
+		
+		\begin{center}
+			\begin{tabular}{lccc}
+				\toprule
+				& \multicolumn{3}{c}{超声波检查结果} \\
+				\cmidrule{2-4}
+				组别 & 正常 & 不正常 & 合计 \\
+				\midrule
+				患该疾病 & 20 & 180 & 200 \\
+				未患该疾病 & 780 & 20 & 800 \\
+				合计 & 800 & 200 & 1000 \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		
+		(1) 记超声波检查结果不正常者患该疾病的概率为$p$，求$p$的估计值；
+		
+		(2) 根据小概率值$\alpha=0.001$的独立性检验，分析超声波检查结果是否与患该疾病有关. 
+		
+		附：$\chi^2=\dfrac{n(ad-bc)^2}{(a+b)(c+d)(a+c)(b+d)}$，
+		
+		\begin{center}
+			\begin{tabular}{c|ccc}
+				$\alpha$ & 0.050 & 0.010 & 0.001 \\
+				\hline
+				$x_\alpha$ & 3.841 & 6.635 & 10.828 \\
+			\end{tabular}
+		\end{center}
+		
+		% 第16题
+		\item (15分) 已知数列$\{a_n\}$中，$a_1=1$，$a_{n+1}=\dfrac{a_n}{1+na_n}$. 
+		
+		(1) 证明：数列$\left\{\dfrac{1}{a_n}\right\}$是等差数列；
+		
+		(2) 给定正整数$m$，设函数$f_m(x)=\sum_{k=1}^m a_kx^{k-1}$，求$f_m\left(\dfrac{1}{2}\right)$. 
+		
+		% 第17题
+		\item (15分) 如图，在四棱锥$P-ABCD$中，$PA\perp$底面$ABCD$，$AD\parallel BC$，$AB\perp AD$. 
+		
+		(1) 证明：平面$PBC\perp$平面$PAB$；
+		
+		(2) 设$PA=AB=BC=2$，且点$A$，$B$，$C$，$D$均在球$O$的球面上. 
+		
+		(i) 证明：点$O$在平面$ABCD$内；
+		
+		(ii) 求直线$PO$与$BC$所成角的余弦值. 
+		
+		% 第18题
+		\item (17分) 已知椭圆$C:\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1(a>b>0)$的离心率为$\dfrac{\sqrt{3}}{2}$，下顶点为$A$，右顶点为$B$，$|AB|=\sqrt{5}$. 
+		
+		(1) 求$C$的方程；
+		
+		(2) 已知动点$P$不在$y$轴上，点$R$在射线$AP$上，且满足$\dfrac{\left| AR\right| }{\left| RP\right| }=\dfrac{|AO|}{|OP|}$. 
+		
+		(i) 设$P(m,n)$，求$R$的坐标（用$m$，$n$表示）；
+		
+		(ii) 设$O$为坐标原点，$Q$是$C$上的动点，直线$OR$的斜率为直线$PQ$的斜率的3倍，求$\dfrac{|OR|}{|PQ|}$的最大值. 
+		
+		% 第19题
+		\item (17分) 
+		(1) 求函数$f(x)=\ln x - x$在区间$(0,+\infty)$的最大值；
+		
+		(2) 给定$a>0$和$b\in\mathbb{R}$，证明：存在$\xi>0$使得$f(\xi)=\ln\xi-\xi=b$；
+		
+		(3) 设$F(x)=\ln x - ax - b$，若存在$x_0>0$使得$F(x)\leq 0$对$x>0$恒成立，求$b$的最小值. 
+	\end{enumerate}
+
+\end{document}

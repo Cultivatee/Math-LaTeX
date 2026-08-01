@@ -1,0 +1,360 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,   
+	right=2.5cm,   
+	top=2.5cm,      
+	bottom=2.5cm,  
+	headheight=13.6pt
+}
+
+% 字体设置（需使用 XeLaTeX 编译）
+\usepackage{fontspec}
+\usepackage{ctex}
+
+% 设置英文默认字体为 Times New Roman
+\setmainfont{Times New Roman}[
+BoldFont = Times New Roman Bold,
+ItalicFont = Times New Roman Italic,
+BoldItalicFont = Times New Roman Bold Italic
+]
+
+% 设置中文字体
+\setCJKmainfont{SimSun}[
+BoldFont = SimHei,  
+ItalicFont = KaiTi   
+]
+
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{multirow}
+
+% 修正表格标题格式：居中对齐
+\captionsetup[table]{justification=centering,labelsep=quad}
+
+\begin{document}
+	
+	\begin{center}
+		{\LARGE \textbf{数学模型作业}} \\[0.5cm]
+		{\large 石继楷 \quad 202411079123} \\[0.3cm]
+		{\large 2026年3月31日}
+	\end{center}
+	
+	\section{作业1：线性回归参数a和b的求解}
+	
+	\subsection{方法一：最小二乘法（定义式）}
+	
+	给定数据点 $(x_i, y_i), i=1,\dots,n$，拟合直线 $y = a + bx$，误差平方和为：
+	\[
+	Q = \sum_{i=1}^n (y_i - a - bx_i)^2
+	\]
+	
+	由极值条件得到正规方程组：
+	\[
+	\begin{cases}
+		na + b\sum_{i=1}^n x_i = \sum_{i=1}^n y_i \\[8pt]
+		a\sum_{i=1}^n x_i + b\sum_{i=1}^n x_i^2 = \sum_{i=1}^n x_i y_i
+	\end{cases}
+	\]
+	
+	解为：
+	\[
+	b = \frac{l_{xy}}{l_{xx}},\quad a = \bar{y} - b\bar{x}
+	\]
+	
+	其中：
+	\[
+	\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i,\quad \bar{y} = \frac{1}{n}\sum_{i=1}^n y_i,\quad l_{xy} = \sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y}),\quad l_{xx} = \sum_{i=1}^n (x_i - \bar{x})^2
+	\]
+	
+	\subsection{方法二：求偏导法}
+	
+	对 $Q(a,b)$ 求偏导并令其为零：
+	\[
+	\frac{\partial Q}{\partial a} = -2\sum_{i=1}^n (y_i - a - bx_i) = 0,\qquad 
+	\frac{\partial Q}{\partial b} = -2\sum_{i=1}^n (y_i - a - bx_i)x_i = 0
+	\]
+	
+	同样导出正规方程组：
+	\[
+	\begin{cases}
+		na + b\sum_{i=1}^n x_i = \sum_{i=1}^n y_i \\[8pt]
+		a\sum_{i=1}^n x_i + b\sum_{i=1}^n x_i^2 = \sum_{i=1}^n x_i y_i
+	\end{cases}
+	\]
+	
+	最终得到相同解：
+	\[
+	b = \frac{l_{xy}}{l_{xx}},\quad a = \bar{y} - b\bar{x}
+	\]
+	
+	\newpage
+	
+	\section{作业2：美国人口数据分析（1790—2020年）}
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{美国1790—2020年人口数据（单位：百万）}
+		\renewcommand{\arraystretch}{1.2}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\setlength{\tabcolsep}{3em}
+		\begin{tabular}{cccc}
+			\toprule
+			年份 & 人口 & 年份 & 人口 \\
+			\midrule
+			1790 & 3.9  & 1910 & 92.0  \\
+			1800 & 5.3  & 1920 & 106.5 \\
+			1810 & 7.2  & 1930 & 123.2 \\
+			1820 & 9.6  & 1940 & 131.7 \\
+			1830 & 12.9 & 1950 & 150.7 \\
+			1840 & 17.1 & 1960 & 179.3 \\
+			1850 & 23.2 & 1970 & 204.0 \\
+			1860 & 31.4 & 1980 & 226.5 \\
+			1870 & 38.6 & 1990 & 251.4 \\
+			1880 & 50.2 & 2000 & 282.2 \\
+			1890 & 62.9 & 2010 & 308.7 \\
+			1900 & 76.0 & 2020 & 331.4 \\
+			\bottomrule
+		\end{tabular}
+		\renewcommand{\heavyrulewidth}{0.8pt}
+	\end{table}
+	
+	\subsection{模型拟合结果对比}
+	
+	采用三种数学模型对美国人口数据进行拟合分析：
+	
+	\subsubsection{线性模型}
+	模型形式：$P(t) = a + b \cdot t$
+	
+	参数估计结果：
+	\[
+	\hat{b} \approx 1.4273,\qquad \hat{a} \approx -2605.3942
+	\]
+	
+	回归方程：
+	\[
+	\hat{P}(t) = -2605.3942 + 1.4273\,t
+	\]
+	
+	拟合优度：
+	\[
+	SSE_{\text{lin}} = \sum_{i=1}^n (P_i - \hat{P}_i)^2 \approx 20103.7404,\qquad R^2 = 1 - \frac{SSE}{SST} \approx 0.9210
+	\]
+	
+	\subsubsection{指数模型}
+	模型形式：$P(t) = A \cdot e^{B t}$
+	
+	通过对数变换 $\ln P = \ln A + B t$，使用最小二乘法得：
+	\[
+	B \approx 0.019105,\qquad A \approx e^{-32.4279} \approx 9.2064 \times 10^{-15}
+	\]
+	
+	回归方程：
+	\[
+	\hat{P}(t) = 9.2064 \times 10^{-15} \cdot e^{0.019105 t}
+	\]
+	
+	拟合优度：
+	\[
+	SSE_{\text{exp}} \approx 69280.1645,\qquad R^2 \approx 0.7276
+	\]
+	
+	\subsubsection{Logistic阻滞增长模型}
+	模型形式：\( P(t) = \dfrac{K}{1 + \left(\dfrac{K}{P_0} - 1\right)e^{-r(t-t_0)}} \)
+	
+	使用非线性最小二乘法估计参数（$t_0 = 1790$）：
+	\[
+	K \approx 497.6\ \text{（百万）},\qquad r \approx 0.020660,\qquad P_0 \approx 8.3\ \text{（百万）}
+	\]
+	
+	回归方程：
+	\[
+	\hat{P}(t) = \frac{497.6}{1 + \left(\frac{497.6}{8.3} - 1\right)e^{-0.020660(t-1790)}}
+	\]
+	
+	拟合优度：
+	\[
+	SSE_{\text{log}} \approx 514.2823,\qquad R^2 \approx 0.9980
+	\]
+	
+	\subsection{模型对比分析}
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{美国人口模型对比（1790-2020年）}
+		\renewcommand{\arraystretch}{2}
+		\begin{tabular}{lccc}
+			\toprule
+			模型 & 公式 & SSE & $R^2$ \\
+			\midrule
+			线性模型 & $P = -2605.3942 + 1.4273t$ & 20103.74 & 0.9210 \\
+			指数模型 & $P = 9.2064\times10^{-15} \cdot e^{0.019105t}$ & 69280.16 & 0.7276 \\
+			Logistic模型 & $P = \dfrac{497.6}{1 + 58.95e^{-0.020660(t-1790)}}$ & 514.28 & 0.9980 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	从决定系数 $R^2$ 来看，Logistic模型拟合效果最好（$R^2 = 0.9980$），说明美国人口增长呈现典型的S形曲线特征，早期增长缓慢，19-20世纪快速增长，近年来增速放缓。环境容纳量约为497.6百万（4.976亿）。
+	
+	\newpage
+	
+	\subsection{人口趋势图}
+	\begin{figure}[htbp]
+		\centering
+		 \includegraphics[width=0.8\textwidth]{figures/美国人口数据分析.png}
+		\caption{美国1790—2020年人口趋势与三种模型拟合}
+		\label{fig:us_pop}
+	\end{figure}
+	Logistic模型最能准确描述美国人口增长的全过程。
+	
+	%\newpage
+	
+	\section{作业3：中国人口数据分析（2000—2020年）}
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{中国2000—2020年人口数据（单位：亿）}
+		\renewcommand{\arraystretch}{1.2}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\setlength{\tabcolsep}{3em}
+		\begin{tabular}{cccc}
+			\toprule
+			年份 & 人口 & 年份 & 人口 \\
+			\midrule
+			2000 & 12.6743 & 2011 & 13.4735 \\
+			2001 & 12.7627 & 2012 & 13.5404 \\
+			2002 & 12.8453 & 2013 & 13.6072 \\
+			2003 & 12.9227 & 2014 & 13.6782 \\
+			2004 & 12.9988 & 2015 & 13.7462 \\
+			2005 & 13.0756 & 2016 & 13.8271 \\
+			2006 & 13.1448 & 2017 & 13.9008 \\
+			2007 & 13.2129 & 2018 & 13.9538 \\
+			2008 & 13.2802 & 2019 & 14.0005 \\
+			2009 & 13.3450 & 2020 & 14.1178 \\
+			2010 & 13.4091 &  &  \\
+			\bottomrule
+		\end{tabular}
+		\renewcommand{\heavyrulewidth}{0.8pt}
+	\end{table}
+	
+	\subsection{模型拟合结果对比}
+	
+	采用三种数学模型对中国2000-2020年人口数据进行分析：
+	
+	\subsubsection{线性模型}
+	模型形式：$P(t) = a + b \cdot t$
+	
+	参数估计结果：
+	\[
+	\hat{b} \approx 0.069582,\qquad \hat{a} \approx -126.4541
+	\]
+	
+	回归方程：
+	\[
+	\hat{P}(t) = -126.4541 + 0.069582\,t
+	\]
+	
+	拟合优度：
+	\[
+	SSE_{\text{lin}} = \sum_{i=1}^n (P_i - \hat{P}_i)^2 \approx 0.004412,\qquad R^2 = 1 - \frac{SSE}{SST} \approx 0.998818
+	\]
+	
+	2020年预测值：$\hat{P}(2020) \approx 14.1014$ 亿，与实际值 14.1178 亿相比，绝对误差为 $-0.0164$ 亿，相对误差 $-0.1163\%$。
+	
+	\subsubsection{指数模型}
+	模型形式：$P(t) = A \cdot e^{B t}$
+	
+	通过对数变换 $\ln P = \ln A + B t$，使用最小二乘法得：
+	\[
+	B \approx 0.005196,\qquad A \approx e^{-7.848} \approx 0.000390
+	\]
+	
+	回归方程：
+	\[
+	\hat{P}(t) = 0.000390 \cdot e^{0.005196 t}
+	\]
+	
+	拟合优度：
+	\[
+	SSE_{\text{exp}} \approx 0.006879,\qquad R^2 \approx 0.998157
+	\]
+	
+	2020年预测值：$\hat{P}(2020) \approx 14.1136$ 亿，绝对误差 $-0.0042$ 亿，相对误差 $-0.0300\%$。
+	
+	\subsubsection{Logistic阻滞增长模型}
+	模型形式：$P(t) = \dfrac{K}{1 + \left(\dfrac{K}{P_0} - 1\right)e^{-r(t-t_0)}}$
+	
+	使用非线性最小二乘法估计参数（$t_0 = 2000$）：
+	\[
+	K \approx 19.51\ \text{（亿）},\qquad r \approx 0.016623,\qquad P_0 \approx 12.6964\ \text{（亿）}
+	\]
+	
+	回归方程：
+	\[
+	\hat{P}(t) = \frac{19.51}{1 + \left(\frac{19.51}{12.6964} - 1\right)e^{-0.016623(t-2000)}}
+	\]
+	
+	拟合优度：
+	\[
+	SSE_{\text{log}} \approx 0.003433,\qquad R^2 \approx 0.999080
+	\]
+	
+	2020年预测值：$\hat{P}(2020) \approx 14.0874$ 亿，绝对误差 $-0.0304$ 亿，相对误差 $-0.2157\%$。
+	
+	\subsection{模型对比分析}
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{中国人口模型对比（2000-2020年）}
+		\renewcommand{\arraystretch}{2}
+		\renewcommand{\heavyrulewidth}{1.2pt}
+		\begin{tabular}{lcccc}
+			\toprule
+			模型 & 公式 & SSE & $R^2$ & 2020预测误差 \\
+			\midrule
+			线性模型 & $P = -126.4541 + 0.069582t$ & 0.004412 & 0.998818 & -0.1163\% \\
+			指数模型 & $P = 0.000390 \cdot e^{0.005196t}$ & 0.006879 & 0.998157 & -0.0300\% \\
+			Logistic模型 & $P = \dfrac{19.51}{1 + 0.5367e^{-0.016623(t-2000)}}$ & 0.003433 & 0.999080 & -0.2157\% \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\subsection{结果分析}
+	
+	\begin{enumerate}
+		\item \textbf{线性模型}：拟合效果良好（$R^2 = 0.998818$），2020年预测值略低于实际值。这说明在2000-2020年间，中国人口增长近似线性，年均增长约695.8万人。
+		
+		\item \textbf{指数模型}：拟合效果略低于线性模型（$R^2 = 0.998157$），2020年预测值相对误差最小（仅$-0.03\%$），但该模型假设恒定增长率，不适用于长期预测。
+		
+		\item \textbf{Logistic模型}：拟合效果最佳（$R^2 = 0.999080$），环境容纳量 $K \approx 19.51$ 亿，远高于当前人口，说明中国人口增长尚未出现明显的S形饱和特征。该模型符合人口增长规律，适用于中长期预测。
+	\end{enumerate}
+	
+	\subsection{人口趋势图}
+	\begin{figure}[htbp]
+		\centering
+		 \includegraphics[width=0.8\textwidth]{figures/中国人口数据分析.png}
+		\caption{中国2000—2020年人口趋势与三种模型拟合}
+		\label{fig:cn_pop}
+	\end{figure}
+	三种模型在2000-2020年间拟合效果相近，但Logistic模型更能反映人口增长放缓的趋势，对远期预测更具参考价值。
+	
+	%\section*{结论}
+	%
+	%通过对比分析中美两国人口数据，可以得出以下结论：
+	%
+	%\begin{enumerate}
+	%	\item 美国200余年间人口增长呈现典型的S形曲线特征，Logistic模%型拟合效果最好（$R^2 = 0.9980$），环境容纳量约为4.98亿。
+	%	
+	%	\item 中国2000-2020年间人口增长近似线性（$R^2 = 0.9988$），Logistic模型显示环境容纳量约为19.51亿，远高于当前水平，表明中国人口增长仍处于上升阶段。
+	%	
+	%	\item %三种模型对比表明，对于短期预测，指数模型误差最小（$-0.03\%$）；对于长期预测，应考虑Logistic模型以反映增长放缓的趋势。
+	%\end{enumerate}
+	
+\end{document}
