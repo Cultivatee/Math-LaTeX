@@ -1,0 +1,326 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,   
+	right=2.5cm,   
+	top=2.5cm,      
+	bottom=2.5cm,  
+	headheight=13.6pt
+}
+\usepackage[UTF8, scheme=plain]{ctex}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{nccmath}
+\everymath{\displaystyle}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{NavyBlue}{RGB}{0,0,128}
+\definecolor{PineGreen}{RGB}{1,121,111}
+\lstset{
+	language=Python,
+	tabsize=4,
+	captionpos=b,
+	numbers=left,
+	numbersep=1em,
+	sensitive=true,
+	showtabs=false,
+	frame=shadowbox,
+	breaklines=true,
+	keepspaces=true,
+	showspaces=false,
+	showstringspaces=false,
+	breakatwhitespace=false,
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{NavyBlue},
+	commentstyle=\color{codegreen},
+	numberstyle=\color{black},
+	stringstyle=\color{PineGreen!90!black},
+	rulesepcolor=\color{red!20!green!20!blue!20}
+}
+\definecolor{LightGreen}{rgb}{0.9, 0.95, 0.9}
+\definecolor{LightBlue}{RGB}{229, 238, 255}
+\definecolor{LightPink}{RGB}{255, 229, 237}
+\captionsetup[table]{
+	justification=centering,
+	labelsep=quad,
+	font={bf}
+}
+\captionsetup[figure]{
+	justification=centering,
+	labelsep=quad,
+	font={bf}
+}
+\captionsetup[subfigure]{
+	font={bf}
+}
+\begin{document}
+	\begin{center}
+		{\LARGE \textbf{微分几何期末复习}} \\[0.5cm]
+		{\large 石继楷 \quad 编写} \\[0.3cm]
+		{\large 2026年6月12日}
+	\end{center}
+	
+	\section{曲线论}
+	\subsection{曲线的曲率}
+	\begin{itemize}
+		\item 切向量：$\boldsymbol{r}'(t)$，单位切向量：$\boldsymbol{T}(t)=\dfrac{\boldsymbol{r}'(t)}{|\boldsymbol{r}'(t)|}$
+		\item 弧长：$s=\int|\boldsymbol{r}'(u)|du$
+		\item 主法向量：弧长参数下：$\boldsymbol{N}(s)=\dfrac{\boldsymbol{r}''(s)}{|\boldsymbol{r}''(s)|}$；一般参数下：$\boldsymbol{N}(t)=\dfrac{(\boldsymbol{r}'(t)\times\boldsymbol{r}''(t))\times\boldsymbol{r}'(t)}{|\boldsymbol{r}'(t)\times\boldsymbol{r}''(t)|\cdot|\boldsymbol{r}'(t)|}$
+		\item 副法向量：$\boldsymbol{B}(t)=\boldsymbol{T}(t)\times\boldsymbol{N}(t)$
+		\item 曲率：$\kappa=\dfrac{|\boldsymbol{r}'\times\boldsymbol{r}''|}{|\boldsymbol{r}'|^3}$；弧长参数下：$\kappa=|\boldsymbol{r}''(s)|$；直线$\kappa\equiv0$，平面曲线$\tau\equiv0$
+	\end{itemize}
+	
+	\subsection{曲线的挠率}
+	\subsubsection{正则点与奇点}
+	正则点：满足$\boldsymbol{r}'(t)\neq\boldsymbol{0}$的点\\奇点：满足$\boldsymbol{r}'(t)=\boldsymbol{0}$的点。\\容许的参数变换$t=t(\tilde{t})$，$\dfrac{dt}{d\tilde{t}}\neq0$，$\dfrac{dt}{d\tilde{t}}>0$以保向，<0反向。
+	\begin{itemize}
+		\item $\tau=-\boldsymbol{B}'\cdot\boldsymbol{N}=\boldsymbol{N}'\cdot\boldsymbol{B}$；$\tau\equiv0\iff$平面曲线
+		\item 挠率公式：$\tau=\dfrac{(\boldsymbol{r}'\times\boldsymbol{r}'')\cdot\boldsymbol{r}'''}{|\boldsymbol{r}'\times\boldsymbol{r}''|^2}$
+		\item 挠曲线：$\kappa,\tau$处处非零
+		\item Frenet公式：
+		\[
+		\begin{cases}
+			\dfrac{d\boldsymbol{T}}{ds}=\kappa\boldsymbol{N}\\
+			\dfrac{d\boldsymbol{N}}{ds}=-\kappa\boldsymbol{T}+\tau\boldsymbol{B}\\
+			\dfrac{d\boldsymbol{B}}{ds}=-\tau\boldsymbol{N}
+		\end{cases}
+		\]
+	\end{itemize}
+	
+	\subsubsection{曲线论基本定理}
+	给定区间$(a,b)$上的连续可微函数$\kappa(s)>0$和连续函数$\tau(s)$，则在$E^3$中存在一条正则参数曲线$C:\boldsymbol{r}=\boldsymbol{r}(s)$，以弧长$s$为参数，其曲率函数为$\kappa=\kappa(s)$，挠率函数为$\tau=\tau(s)$；且这样的曲线在相差空间的刚体运动意义下是唯一的。
+	
+	\subsection{曲率中心与平面曲线的相对曲率}
+	\begin{itemize}
+		\item 曲率中心：$\boldsymbol{C}(t)=\boldsymbol{r}(t)+\dfrac{1}{\kappa}\boldsymbol{N}(t)$，曲率半径：$R=\dfrac{1}{\kappa}$
+		\item 平面曲线的相对曲率：$\kappa=\dfrac{x'y''-x''y'}{(x'^2+y'^2)^{\frac{3}{2}}}$
+	\end{itemize}
+	
+	\subsection{$\S$3.1 参数化曲面}
+	\subsubsection{正则点与奇点}
+	\begin{itemize}
+		\item 正则点：$\boldsymbol{r}_u\times\boldsymbol{r}_v\neq\boldsymbol{0}$
+		\item 奇点：$\boldsymbol{r}_u\times\boldsymbol{r}_v=\boldsymbol{0}$
+	\end{itemize}
+	\subsubsection{曲面的允许参数变换}
+	$(u,v)\leftrightarrow(\tilde{u},\tilde{v})$，$J=\dfrac{\partial(u,v)}{\partial(\tilde{u},\tilde{v})}\neq0$，$J>0$ 保持可微性，正则性，切平面、法向量不变。
+	
+	\subsection{直纹面与可展曲面}
+	\begin{itemize}
+		\item 直纹面：$\boldsymbol{r}(u,v)=\boldsymbol{a}(u)+v\boldsymbol{l}(u)$；可展曲面的充要条件：$(\boldsymbol{a}',\boldsymbol{l},\boldsymbol{l}')=0$，即$(\boldsymbol{r}_u,\boldsymbol{r}_v,\boldsymbol{r}_{uv})=0$
+		\item 旋转面：$\boldsymbol{r}(u,v)=\big(f(u)\cos v,f(u)\sin v,g(u)\big)$，第一基本量$E=f'^2+g'^2,\,F=0,\,G=f^2$
+	\end{itemize}
+	P.S. u线$\Rightarrow v=$常数，$dv=0$
+	
+	\section{曲面论第一基本形式}
+	\subsection{第一基本形式与几何量}
+	\begin{itemize}
+		\item 第一基本量：$E=\boldsymbol{r}_u^2,\,F=\boldsymbol{r}_u\cdot\boldsymbol{r}_v,\,G=\boldsymbol{r}_v^2$
+		\item 弧长：$s=\int\sqrt{E\left(\dfrac{du}{dt}\right)^2+2F\dfrac{du}{dt}\dfrac{dv}{dt}+G\left(\dfrac{dv}{dt}\right)^2}dt$
+		\item 交角：$\cos\theta=\dfrac{Edu_1du_2+F(du_1dv_2+dv_1du_2)+Gdv_1dv_2}{\sqrt{Edu_1^2+2Fdu_1dv_1+Gdv_1^2}\sqrt{Edu_2^2+2Fdu_2dv_2+Gdv_2^2}}$
+		\item 面积：$S=\iint_D\sqrt{EG-F^2}\,dudv$
+		\item 局部等距对应：$E,F,G$ 整体变换 $\tilde{E},\tilde{F},\tilde{G}$ 相同，即 $\mathrm{I}$ 相同。
+		\item P.S. 若 $u=v^2$，$(u,v)\Rightarrow(v^2,v)\Rightarrow d\boldsymbol{r}=(2v,1)$ 代入。
+	\end{itemize}
+	
+	\subsection{等温参数}
+	\[
+	ds^2=\rho^2(u,v)(du^2+dv^2)
+	\]
+	
+	\subsection{$\S3.4$ 局部等距对应}
+	两曲面对应弧长有相等弧长$\iff$局部等距对应$\iff\mathrm{I}$相同
+	\subsubsection{内蕴性质}
+	由$\mathrm{I}$完全确定的量/性质=内蕴量，内蕴性质，$\mathrm{I}\to\cdots$属性=内蕴几何，以内蕴量、性质为研究对象的叫内蕴几何。
+	
+	
+	
+	\section{曲面论第二基本形式与曲率}
+	\subsection{$\S4.1$ 第二基本形式}
+	\begin{itemize}
+		\item 第二基本形式：$\mathrm{II}=-d\boldsymbol{n}\cdot d\boldsymbol{r}$，参数变换不变；法向量$\boldsymbol{n}=\dfrac{\boldsymbol{r}_u\times\boldsymbol{r}_v}{|\boldsymbol{r}_u\times\boldsymbol{r}_v|}$
+		\item 第二基本量：$L=\boldsymbol{r}_{uu}\cdot\boldsymbol{n},\,M=\boldsymbol{r}_{uv}\cdot\boldsymbol{n},\,N=\boldsymbol{r}_{vv}\cdot\boldsymbol{n}$
+		\[
+		\begin{pmatrix}L&M\\M&N\end{pmatrix}=-\begin{pmatrix}\boldsymbol{r}_u\\\boldsymbol{r}_v\end{pmatrix}\cdot(\boldsymbol{n}_u\ \boldsymbol{n}_v)
+		\]
+		\[
+		L=\dfrac{(\boldsymbol{r}_{uu},\boldsymbol{r}_u,\boldsymbol{r}_v)}{\sqrt{EG-F^2}},\;
+		M=\dfrac{(\boldsymbol{r}_{uv},\boldsymbol{r}_u,\boldsymbol{r}_v)}{\sqrt{EG-F^2}},\;
+		N=\dfrac{(\boldsymbol{r}_{vv},\boldsymbol{r}_u,\boldsymbol{r}_v)}{\sqrt{EG-F^2}}
+		\]
+		\item u线为直线$\Leftrightarrow\boldsymbol{r}_u\times\boldsymbol{r}_{uu}=0$
+	\end{itemize}
+	
+	\subsection{$\S4.2$ 法曲率}
+	曲线的分解：$\dfrac{d\boldsymbol{T}}{ds}=\kappa_n\boldsymbol{n}+\kappa_g\ \boldsymbol{n}\times\boldsymbol{T}$
+	\begin{itemize}
+		\item 法曲率：$\kappa_n=\dfrac{\mathrm{II}}{\mathrm{I}}=\boldsymbol{T}'\cdot\boldsymbol{n}$
+		\item 定理：曲线相切$\kappa_n$相等
+		\item 定义：法截面：过法线的平面；法截线：法截面与曲面的交线
+	\end{itemize}
+	
+	\subsection{法曲率、主曲率与Weingarten变换}
+	\begin{itemize}
+		\item 主曲率：Weingarten矩阵$\boldsymbol{W}=\dfrac{1}{EG-F^2}\begin{pmatrix}GM-FN&FM-GL\\FL-EM&EL-FM\end{pmatrix}$的特征值$\kappa_1,\kappa_2$
+		\item 特征方程：$(EG-F^2)k^2-(EN-2FM+GL)k+(LN-M^2)=0$
+		\item Euler公式：$\kappa_n=\kappa_1\cos^2\theta+\kappa_2\sin^2\theta$
+		\item 高斯曲率：$K=\dfrac{LN-M^2}{EG-F^2}$（内蕴），平均曲率：$H=\dfrac{LG-2MF+NE}{2(EG-F^2)}=\dfrac{\kappa_1+\kappa_2}{2}$（非内蕴）
+		\item Weingarten变换的特征方程：$\lambda^2-2H\lambda+K=0$
+		\item 脐点：满足$\boldsymbol{r}_u\times\boldsymbol{r}_v\neq\boldsymbol{0}$，且$L:M:N=E:F:G$的点，此时两个主曲率相等；奇点：$\boldsymbol{r}_u\times\boldsymbol{r}_v=\boldsymbol{0}$
+		\item 正交曲率线网下：$k_1=\dfrac{L}{E}$，$k_2=\dfrac{N}{G}$
+		\item 极小曲面：$H=0$；可展曲面：$K=0$
+	\end{itemize}
+	
+	\subsection{$\S4.3$ 自然标架的运动公式与Christoffel符号}
+	\begin{itemize}
+		\item 度量矩阵：$g_{ij}=\boldsymbol{r}_i\cdot\boldsymbol{r}_j=\begin{pmatrix}E&F\\F&G\end{pmatrix},\quad g^{ij}=\dfrac{1}{EG-F^2}\begin{pmatrix}G&-F\\-F&E\end{pmatrix}$
+		\item 例子：$E=2,F=1,G=1$，$g_{ij}=\begin{pmatrix}2&1\\1&1\end{pmatrix}$，$g^{ij}=\dfrac{1}{1}\begin{pmatrix}1&-1\\-1&2\end{pmatrix}$
+		\item 当$F=0$，正交参数网：$g^{ij}=\begin{pmatrix}\dfrac{1}{E}&0\\0&\dfrac{1}{G}\end{pmatrix}$
+		\item 第二类Christoffel符号：$\Gamma^k_{ij}=\dfrac{1}{2}g^{kl}\big(\partial_jg_{il}+\partial_ig_{jl}-\partial_lg_{ij}\big)$
+		\item $F=0$时的Christoffel符号：
+		\[
+		\begin{aligned}
+			\Gamma_{11}^1=\dfrac{E_1}{2E},\quad&\Gamma_{11}^2=-\dfrac{E_2}{2G}\\
+			\Gamma_{12}^1=\dfrac{E_2}{2E},\quad&\Gamma_{12}^2=\dfrac{G_1}{2G}\\
+			\Gamma_{22}^1=-\dfrac{G_1}{2E},\quad&\Gamma_{22}^2=\dfrac{G_2}{2G}
+		\end{aligned}
+		\]
+		\item $\delta_j^i=\begin{cases}1&i=j\\0&i\neq j\end{cases}$
+		\item Gauss公式：$\boldsymbol{r}_{ij}=\Gamma^k_{ij}\boldsymbol{r}_k+\Omega_{ij}\boldsymbol{n}$，$\Omega_{11}=L,\Omega_{12}=\Omega_{21}=M,\Omega_{22}=N$
+		\item Weingarten公式：$\boldsymbol{n}_i=-\Omega_{ik}g^{kj}\boldsymbol{r}_j$，$(W_i^j=\sum\Omega_{ik}g^{kj})$
+		\item 测地曲率的内蕴公式（正交参数网）：
+		\[
+		\kappa_g=\dfrac{d\varphi}{ds}-\dfrac{1}{2\sqrt{G}}\dfrac{\partial\sqrt{E}}{\partial v}\cos\varphi+\dfrac{1}{2\sqrt{E}}\dfrac{\partial\sqrt{G}}{\partial u}\sin\varphi
+		\]
+	\end{itemize}
+	
+	\subsection{$\S4.6$ 曲率线、渐近曲线}
+	\begin{itemize}
+		\item 主方向：切方向法曲率达到最大值的两个方向；脐点：两个主曲率相等；非脐点仅有两个主方向
+		\item 曲率线：切方向是主方向（曲线C是曲面S的曲率线），曲率线网$F=M=0$
+		\item Rodrigues公式：曲率线$\iff\dfrac{d\boldsymbol{n}}{ds}=-\kappa(s)\boldsymbol{T}$，$\boldsymbol{n}'\parallel\boldsymbol{T}'$
+		\item 交角相同：$\boldsymbol{T}\cdot\boldsymbol{T}=c$，等等
+		\item 法曲率：$\kappa_n=\dfrac{-d\boldsymbol{n}\cdot d\boldsymbol{r}}{d\boldsymbol{r}\cdot d\boldsymbol{r}}=\dfrac{\mathrm{II}}{\mathrm{I}}=\boldsymbol{T}'\cdot\boldsymbol{n}$
+		\item 曲率线的微分方程：$\begin{vmatrix}du^2&dudv&dv^2\\E&F&G\\L&M&N\end{vmatrix}=0$
+		\item 渐近曲线：法曲率$\kappa_n=0$，即$Ldu^2+2Mdudv+Ndv^2=0$
+	\end{itemize}
+	
+	\subsection{$\S4.7$ 曲面一点附近的形状}
+	\[
+	\boldsymbol{r}^*(x^*,y^*)=\left(x^*,y^*,\dfrac{1}{2}(k_1(p)x^{*2}+k_2(p)y^{*2})\right)
+	\]
+	\[
+	K=k_1k_2\begin{cases}>0&\text{椭圆抛物面}\\<0&\text{双曲抛物面}\\=0&\text{抛物柱面/不存在}\end{cases}
+	\]
+	
+	\subsection{$\S4.8$ 特殊曲面的曲率特征}
+	\begin{itemize}
+		\item 曲面面积的第一变分公式：$\dfrac{dA(\varphi)}{d\rho}\bigg|_{\rho=0}=-2\iint\left(\dfrac{\partial M}{\partial\rho}\bigg|_{\rho=0}\right)Hd\sigma$，平均曲率
+		\item 极小曲面：$H=\dfrac{k_1+k_2}{2}=\dfrac{LN-2MF+NE}{2(EG-F^2)}=0$
+		\item 定理：无脐点$K=0$，则S可展
+	\end{itemize}
+	
+	\section{曲面的基本方程}
+	\subsection{正交参数网下的方程}
+	\begin{itemize}
+		\item Gauss绝妙定理：
+		\[
+		K=\dfrac{-1}{\sqrt{EG}}\left\{\left[\dfrac{(\sqrt{E})_v}{\sqrt{G}}\right]_v+\left[\dfrac{(\sqrt{G})_u}{\sqrt{E}}\right]_u\right\}
+		\]
+		\item Codazzi方程：
+		\[
+		\begin{cases}
+			(k_1)_v=(k_1-k_2)\dfrac{E_v}{2E}\\
+			(k_2)_u=(k_2-k_1)\dfrac{G_u}{2G}
+		\end{cases}
+		\]
+		其中$k_1=\dfrac{L}{E}$，$k_2=\dfrac{N}{G}$
+		\item $-R_{1212}=|\Omega|$
+	\end{itemize}
+	
+	\section{曲面论基本定理与微分形式}
+	\subsection{$\S5.2$ 曲面论基本定理}
+	遇到第一/第二基本形式，与某某曲面的关系。算$g_{ij}$，$\Omega_{ij}$，若正定，对称，满足Gauss-Codazzi方程，则存在唯一子叫曲面以这I II为形式。\\
+	曲面论基本定理：$\tilde{g}$正定，$\tilde{\Omega}$对称，满足Gauss-Codazzi方程，则存在唯一曲面S，$\mathrm{I}=\tilde{g}$，$\mathrm{II}=\tilde{\Omega}$。
+	
+	\subsection{$\S5.3$ 曲面上的正交活动标架}
+	正交标架场$\{\boldsymbol{r};\boldsymbol{e}_1,\boldsymbol{e}_2,\boldsymbol{e}_3\}$
+	运动公式：
+	\[
+	\begin{cases}
+		d\boldsymbol{r}=\omega_1\boldsymbol{e}_1+\omega_2\boldsymbol{e}_2\\
+		d\begin{pmatrix}\boldsymbol{e}_1\\\boldsymbol{e}_2\\\boldsymbol{e}_3\end{pmatrix}=\begin{pmatrix}0&\omega_{12}&\omega_{13}\\\omega_{21}&0&\omega_{23}\\\omega_{31}&\omega_{32}&0\end{pmatrix}\begin{pmatrix}\boldsymbol{e}_1\\\boldsymbol{e}_2\\\boldsymbol{e}_3\end{pmatrix}
+	\end{cases},\quad\omega_{ij}=-\omega_{ji}
+	\]
+	
+	\subsection{$\S5.4$ 曲面的结构方程}
+	$\theta=fdu_1+gdu_2$，1-形式
+	\begin{itemize}
+		\item 性质：
+		①线性性：$(\lambda\theta_1+\mu\theta_2)\wedge\varphi=\lambda\theta_1\wedge\varphi+\mu\theta_2\wedge\varphi$
+		②反交换率：$\theta\wedge\varphi=-\varphi\wedge\theta$，$\theta\wedge\theta=0$
+		\item 二阶外微分形式：$gdu_1\wedge gdu_2$
+		\item 定义运算：
+		①0-形式：$df=\dfrac{\partial f}{\partial u_1}du_1+\dfrac{\partial f}{\partial u_2}du_2$
+		②1-形式：
+		\[
+		\begin{aligned}
+			d\theta&=df\wedge du_1+dg\wedge du_2\\
+			&=\left(\dfrac{\partial f}{\partial u_1}du_1+\dfrac{\partial f}{\partial u_2}du_2\right)\wedge du_1+\left(\dfrac{\partial g}{\partial u_1}du_1+\dfrac{\partial g}{\partial u_2}du_2\right)\wedge du_2\\
+			&=\left(\dfrac{\partial g}{\partial u_1}-\dfrac{\partial f}{\partial u_2}\right)du_1\wedge du_2
+		\end{aligned}
+		\]
+		③2-形式：$d\varphi=0$
+		\item 性质：
+		①$d(f\cdot g)=df\cdot g+f\cdot dg$
+		②$d(f\theta)=df\wedge\theta+f d\theta$；$d(\theta f)=d\theta\cdot f-\theta\wedge df$
+		③$d(df)=0$
+	\end{itemize}
+	\[
+	\begin{aligned}
+		\mathrm{I}&=\omega_1^2+\omega_2^2,\quad\mathrm{J}=\omega_1\omega_{13}+\omega_2\omega_{23}\\
+		d\boldsymbol{r}&=\omega_1\boldsymbol{e}_1+\omega_2\boldsymbol{e}_2\quad\left(\text{取}\boldsymbol{e}_1=\dfrac{\boldsymbol{r}_u}{\sqrt{E}},\boldsymbol{e}_2=\dfrac{\boldsymbol{r}_v}{\sqrt{G}}\right)\\
+		\boldsymbol{e}_3&=\boldsymbol{e}_1\times\boldsymbol{e}_2,\quad\omega_1=\sqrt{E}du,\quad\omega_2=\sqrt{G}dv\\
+		\omega_{12}&=d\boldsymbol{e}_1\cdot\boldsymbol{e}_2,\quad\omega_{13}=d\boldsymbol{e}_1\cdot\boldsymbol{e}_3,\quad\omega_{23}=d\boldsymbol{e}_2\cdot\boldsymbol{e}_3\\
+		\omega_{12}&=\dfrac{(\sqrt{E})_v}{\sqrt{G}}du+\dfrac{(\sqrt{G})_u}{\sqrt{E}}dv\\
+		\omega_{13}&=\dfrac{1}{\sqrt{E}}(Ldu+Mdv),\quad\omega_{23}=\dfrac{1}{\sqrt{G}}(Mdu+Ndv)
+	\end{aligned}
+	\]
+	
+	\section{测地线与Gauss-Bonnet公式}
+	\subsection{$\S6.1$ Liouville公式}
+	\[
+	\kappa_g=\dfrac{d\varphi}{ds}+\left[\dfrac{-1}{\sqrt{G}}\dfrac{\partial\ln\sqrt{E}}{\partial v}\cos\varphi+\dfrac{1}{\sqrt{E}}\dfrac{\partial\ln\sqrt{G}}{\partial u}\sin\varphi\right]
+	\]
+	
+	\subsection{测地线存在唯一性定理}
+	S上任一点P，存在P的某邻域$\varepsilon_0\subset S$，使在$\varepsilon_0$从P出发指定单位切方向$\boldsymbol{T}_0$，存在唯一测地线C满足$\left(\boldsymbol{r}_i,\dfrac{du^i}{ds}\right)\bigg|_{t=t_0}=\boldsymbol{T}_0$。
+	
+	\subsection{$\S6.2$ 测地极坐标系性质}
+	S在测地极坐标系$(\rho,\psi)$的$\mathrm{I}=d\rho^2+G(\rho,\psi)d\psi^2$
+	其中$\lim\limits_{\rho\to0}\sqrt{G}=0$，$\lim\limits_{\rho\to0}\dfrac{\partial\sqrt{G}}{\partial\rho}=1$
+	
+	\subsection{$\S6.4$ 局部Gauss-Bonnet公式}
+	\[
+	\sum_{i=1}^n\theta_i+\oint_{\partial D}\kappa_gds+\iint_DKd\sigma=2\pi
+	\]
+	测地三角形内角和：$\alpha_1+\alpha_2+\alpha_3=\pi+\iint Kd\sigma$
+	\begin{itemize}
+		\item 正曲率：内角和$>\pi$
+		\item 负曲率：内角和$<\pi$
+	\end{itemize}
+\end{document}
