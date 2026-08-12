@@ -24,12 +24,6 @@
 \doublespacing
 \setlength{\parskip}{4pt}
 
-% 增大公式与上下文字的间距
-\setlength{\abovedisplayskip}{15pt plus 3pt minus 6pt}
-\setlength{\belowdisplayskip}{15pt plus 3pt minus 6pt}
-\setlength{\abovedisplayshortskip}{15pt plus 3pt minus 6pt}
-\setlength{\belowdisplayshortskip}{15pt plus 3pt minus 6pt}
-
 \usepackage{array}
 \usepackage{listings}
 \usepackage{graphicx}
@@ -124,7 +118,7 @@
 	\fi
 	\color{DarkGreen}%
 }{%
-	\newline\color{black}%
+	\ifhmode\fi\color{black}%
 }
 
 \newcommand{\category}[1]{\noindent{\normalfont\bfseries\color{SkyBlue} #1}\hskip 0.5em}
@@ -165,7 +159,12 @@
 	\[
 	\overrightarrow{p}=x\overrightarrow{a}+y\overrightarrow{b}
 	\]
-	\textbf{用途：证明向量共面}\newline
+	\textbf{用途：证明向量共面}
+	
+	$\overrightarrow{OP}=x\overrightarrow{OA}+y\overrightarrow{OB}+z\overrightarrow{OC}$，$x+y+z=1$.
+	
+	$\implies ABCP$四点共面.
+	
 	\textbf{技巧：系数大的放左边}
 \end{knowledge}
 
@@ -2579,15 +2578,20 @@ $b^2 = c^2-a^2 = 3$.
 	圆$B$：圆心$(1,0)$，半径$r_B=3$.
 	
 	设动圆$P$半径为$r$.
+	
 	由外切：$|PA| = r+1$.
+	
 	由内切（$P$在$B$内）：$|PB| = 3-r$.
 	
 	两式相加：
 	\[
 	|PA| + |PB| = (r+1) + (3-r) = 4.
 	\]
+	
 	定点距离$|AB| = 2$.
+	
 	$\because 2a=4 > 2c=2$.
+	
 	$\therefore$ 轨迹为椭圆.
 \end{minipage}
 \hfill
@@ -2622,6 +2626,7 @@ $b^2 = c^2-a^2 = 3$.
 
 \begin{minipage}[t]{0.7\textwidth}
 	设$M(x,y), A(x_0,y_0)$.
+	
 	$\overrightarrow{AM}=(x-x_0, y-y_0), \quad \overrightarrow{MB}=(3-x, -y)$.
 	
 	由$\overrightarrow{AM}=\frac{1}{3}\overrightarrow{MB}$得：
@@ -2671,5 +2676,2210 @@ $b^2 = c^2-a^2 = 3$.
 		\draw[dashed, DarkRed] (A) -- (M) -- (B);
 	\end{tikzpicture}
 \end{minipage}
+
+\subsection{第九讲\quad 弦长问题}
+
+\begin{knowledge}{直线与圆锥曲线的位置关系}
+	联立直线与圆锥曲线方程，消元得到一元二次方程，通过判别式$\Delta$判定位置关系。
+	\begin{itemize}
+		\item $\Delta>0$：两个交点（相交）
+		\item $\Delta=0$：一个交点（相切）
+		\item $\Delta<0$：无交点（相离）
+	\end{itemize}
+\end{knowledge}
+
+\subsubsection{直线与椭圆}
+\begin{knowledge}{直线与椭圆联立}
+	直线方程：$y=kx+m$
+	椭圆方程：$b^2x^2+a^2y^2-a^2b^2=0$（化简式）
+	
+	联立消$y$：
+	\[
+	b^2x^2+a^2(kx+m)^2-a^2b^2=0
+	\]
+	整理得：
+	\[
+	(b^2+a^2k^2)x^2+2a^2kmx+a^2(m^2-b^2)=0
+	\]
+\end{knowledge}
+
+\begin{question}
+	直线$y=kx+2$与椭圆$x^2+\dfrac{y^2}{4}=1$的公共点个数？
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	化简椭圆方程：$4x^2+y^2-4=0$
+	
+	联立：
+	\[
+	\begin{cases}
+		y=kx+2 \\
+		4x^2+y^2-4=0
+	\end{cases}
+	\]
+	
+	代入消元：$4x^2+(kx+2)^2-4=0$
+	
+	$4x^2+k^2x^2+4kx+4-4=0$
+	
+	$(4+k^2)x^2+4kx=0$
+	
+	$\Delta=(4k)^2-4(4+k^2)\cdot 0=16k^2\geq 0$
+	
+	$\therefore$ 恒有$1$或$2$个公共点。
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.6, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-3,0) -- (3,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-3) -- (0,3) node[above] {$y$};
+		
+		% 椭圆 x^2 + y^2/4 = 1
+		\draw[thick] (0,0) ellipse (1 and 2);
+		
+		% 直线 y=kx+2 (过点(0,2))
+		\draw[thick, DarkRed] (-2,1) -- (2,3);
+		\draw[thick, SkyBlue] (-2,3) -- (2,1);
+		
+		\fill (0,2) circle (2pt) node[right] {$(0,2)$};
+		
+		\node[above] at (1.5,2.5) {$y=kx+2$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsubsection{直线与抛物线}
+\begin{knowledge}{直线与抛物线联立}
+	直线方程：$y=kx+m$
+	抛物线方程：$y^2=2px$
+	
+	联立消$x$或$y$：
+	\[
+	k^2x^2+(2km-2p)x+m^2=0
+	\]
+	
+	分类讨论：
+	\begin{enumerate}[label=\arabic*.]
+		\item $k=0$：一交点
+		\item $k\neq 0$，$\Delta\geq 0$：两交点
+	\end{enumerate}
+\end{knowledge}
+
+\begin{question}
+	过定点$P(0,1)$且与抛物线$y^2=2x$只有一交点的直线方程为？
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	\textbf{情况1：}$k$不存在，即$x=0$（竖直线）
+	
+	\textbf{情况2：}设$y=kx+b$，代入$P(0,1)\implies b=1$，$\therefore y=kx+1$
+	
+	联立抛物线：
+	\[
+	\begin{cases}
+		y=kx+1 \\
+		y^2=2x
+	\end{cases}
+	\]
+	
+	代入消元：$(kx+1)^2=2x$
+	
+	$k^2x^2+2kx+1=2x$
+	
+	$k^2x^2+(2k-2)x+1=0$
+	
+	$\Delta=(2k-2)^2-4k^2\cdot 1=0$
+	
+	$4k^2-8k+4-4k^2=0$
+	
+	$-8k+4=0\implies k=\dfrac{1}{2}$
+	
+	$\therefore$ 直线方程为$y=\dfrac{1}{2}x+1$或$x=0$。
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.6, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-1,0) -- (4,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-2) -- (0,3) node[above] {$y$};
+		
+		% 抛物线 y^2=2x
+		\draw[thick, domain=0:3, smooth, variable=\y] plot ({0.5*\y*\y}, {\y});
+		\draw[thick, domain=0:3, smooth, variable=\y] plot ({0.5*\y*\y}, {-\y});
+		
+		% 切线 y=0.5x+1
+		\draw[thick, DarkRed] (-1,0.5) -- (3,2.5);
+		
+		% 竖直线 x=0
+		\draw[thick, SkyBlue] (0,-2) -- (0,3);
+		
+		\fill (0,1) circle (2pt) node[left] {$P(0,1)$};
+		\fill (2,2) circle (2pt) node[right] {切点};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsubsection{直线与双曲线}
+\begin{knowledge}{直线与双曲线联立}
+	直线方程：$y=kx+m$
+	双曲线方程：$b^2x^2-a^2y^2-a^2b^2=0$
+	
+	联立消$y$：
+	\[
+	(b^2-a^2k^2)x^2-2a^2kmx-a^2(m^2+b^2)=0
+	\]
+	
+	分类讨论：
+	\begin{enumerate}[label=\arabic*.]
+		\item 当$b^2-a^2k^2=0$，即$k=\pm\dfrac{b}{a}$时（渐近线斜率）
+		\begin{itemize}
+			\item $m=0$：无根，$y=\pm\dfrac{b}{a}x$为渐近线
+			\item $m\neq 0$：一交点，$y=\pm\dfrac{b}{a}x+m$
+		\end{itemize}
+		\item $b^2-a^2k^2\neq 0$，$\Delta\geq 0$
+	\end{enumerate}
+	
+	当$\Delta=0$时：
+	\begin{enumerate}[label=\arabic*.]
+		\item 一左一右：$x_1\cdot x_2<0$
+		\item 右支：$\begin{cases} x_1\cdot x_2>0 \\ x_1+x_2>0 \end{cases}$
+		\item 左支：$\begin{cases} x_1\cdot x_2>0 \\ x_1+x_2<0 \end{cases}$
+	\end{enumerate}
+\end{knowledge}
+
+\category{直线与双曲线位置关系}
+\begin{question}
+	直线$y=kx+2$与双曲线$x^2-y^2=6$的右支交于不同两点，那么$k$的范围？
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	联立：
+	\[
+	\begin{cases}
+		y=kx+2 \\
+		x^2-y^2-6=0
+	\end{cases}
+	\]
+	
+	代入消元：$x^2-(kx+2)^2-6=0$
+	
+	$x^2-(k^2x^2+4kx+4)-6=0$
+	
+	$(1-k^2)x^2-4kx-10=0$
+	
+	条件：
+	\[
+	\begin{cases}
+		1-k^2\neq 0 \implies k\neq \pm 1 \\
+		\Delta>0 \\
+		x_1+x_2>0 \quad\text{(右支)} \\
+		x_1\cdot x_2>0 \quad\text{(同侧)}
+	\end{cases}
+	\]
+	
+	$\Delta=(-4k)^2-4(1-k^2)(-10)>0$
+	
+	$16k^2+40(1-k^2)>0$
+	
+	$16k^2+40-40k^2>0$
+	
+	$40-24k^2>0$
+	
+	$k^2<\dfrac{5}{3}$
+	
+	由韦达定理：
+	\[
+	\begin{cases}
+		x_1+x_2=\dfrac{4k}{1-k^2}>0 \\
+		x_1\cdot x_2=\dfrac{-10}{1-k^2}>0
+	\end{cases}
+	\]
+	
+	$\therefore 1-k^2<0\implies k^2>1$
+	
+	结合$k^2<\dfrac{5}{3}$，得$1<k^2<\dfrac{5}{3}$
+	
+	$\therefore k\in\left(-\dfrac{\sqrt{15}}{3},-1\right)\cup\left(1,\dfrac{\sqrt{15}}{3}\right)$
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.5, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-4,0) -- (4,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-4) -- (0,4) node[above] {$y$};
+		
+		% 双曲线 x^2-y^2=6，用y作自变量避免断点
+		\draw[thick, domain=-3.5:3.5, smooth, samples=200, variable=\y] plot ({sqrt(\y*\y+6)}, {\y});
+		\draw[thick, domain=-3.5:3.5, smooth, samples=200, variable=\y] plot ({-sqrt(\y*\y+6)}, {\y});
+		
+		% 渐近线 y=x 和 y=-x
+		\draw[dashed, gray] (-3.5,-3.5) -- (3.5,3.5);
+		\draw[dashed, gray] (-3.5,3.5) -- (3.5,-3.5);
+		
+		% 直线 y=kx+2 (示意)
+		\draw[thick, DarkRed] (-2,0) -- (3,3.5);
+		
+		\fill (0,2) circle (2pt) node[left] {$(0,2)$};
+		
+		\node[right] at (3,2) {右支};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsubsection{弦长问题}
+\begin{knowledge}{弦长公式与通用步骤}
+	$A,B$为在直线（斜率为$k$）上不同两点.
+	
+	弦长公式：$|AB|=\sqrt{1+k^2}\,|x_1-x_2|$.
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item 设直线方程，设$k$，讨论斜率是否存在.
+		
+		\item 联立.
+		
+		\item 设交点$A(x_1,y_1), B(x_2,y_2)$，列出$\Delta$，$x_1+x_2=-\dfrac{b}{a}$，$x_1x_2=\dfrac{c}{a}$.
+		
+		\item 弦长公式$AB=\sqrt{1+k^2}\sqrt{(x_1+x_2)^2-4x_1x_2}$，用$\dfrac{b}{a},\dfrac{c}{a}$代换.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{焦点弦}
+\begin{question}
+	已知$\dfrac{x^2}{9}+y^2=1$，过左焦点$F$作倾斜角为$\dfrac{\pi}{6}$的直线交椭圆于$A,B$，则$|AB|=$?
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	$a^2=9, b^2=1, c^2=8$.
+	
+	$\therefore F(-2\sqrt{2},0)$，$k=\tan\dfrac{\pi}{6}=\dfrac{\sqrt{3}}{3}$.
+	
+	$y-0=\dfrac{\sqrt{3}}{3}(x+2\sqrt{2}) \implies y=\dfrac{\sqrt{3}}{3}x+\dfrac{2\sqrt{6}}{3}$.
+	
+	联立$\begin{cases} y=\dfrac{\sqrt{3}}{3}x+\dfrac{2\sqrt{6}}{3} \\ x^2+9y^2-9=0 \end{cases} \implies 4x^2+12\sqrt{2}x+15=0$.
+	
+	设$A(x_1,y_1), B(x_2,y_2)$，$\Delta=48>0$.
+	
+	$x_1+x_2=-3\sqrt{2}$，$x_1x_2=\dfrac{15}{4}$.
+	
+	$AB=\sqrt{1+k^2}|x_1-x_2|=\sqrt{1+k^2}\sqrt{(x_1+x_2)^2-4x_1x_2}=\sqrt{\dfrac{4}{3}}\times\sqrt{3}=2$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-4,0) -- (4,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-1.8) -- (0,1.8) node[above] {$y$};
+		\draw[thick] (0,0) ellipse (3 and 1);
+		\pgfmathsetmacro{\xA}{(-3*sqrt(2)+sqrt(3))/2}
+		\pgfmathsetmacro{\yA}{sqrt(3)/3*\xA+2*sqrt(6)/3}
+		\pgfmathsetmacro{\xB}{(-3*sqrt(2)-sqrt(3))/2}
+		\pgfmathsetmacro{\yB}{sqrt(3)/3*\xB+2*sqrt(6)/3}
+		\coordinate (F) at ({-2*sqrt(2)},0);
+		\coordinate (A) at (\xA,\yA);
+		\coordinate (B) at (\xB,\yB);
+		\draw[thick, DarkRed] ({-3.4},{sqrt(3)/3*(-3.4+2*sqrt(2))}) -- ({-0.5},{sqrt(3)/3*(-0.5+2*sqrt(2))});
+		\fill (F) circle (2pt) node[below] {$F$};
+		\fill (A) circle (2pt) node[above right] {$A$};
+		\fill (B) circle (2pt) node[below left] {$B$};
+	\end{tikzpicture}
+\end{minipage}
+
+\category{弦长求参数}
+\begin{question}
+	已知$\dfrac{x^2}{4}+y^2=1$，直线为$y=2x+m$，当$m=$?时，直线$l$被截得弦长为$\dfrac{20}{17}$.
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	联立$\begin{cases} y=2x+m \\ x^2+4y^2-4=0 \end{cases} \implies 17x^2+16mx+4m^2-4=0$.
+	
+	设交点$A(x_1,y_1), B(x_2,y_2)$，$\Delta=16(17-m^2)>0$.
+	
+	$x_1+x_2=-\dfrac{16m}{17}$，$x_1x_2=\dfrac{4m^2-4}{17}$.
+	
+	$AB=\sqrt{1+k^2}|x_1-x_2|=\sqrt{1+k^2}\sqrt{(x_1+x_2)^2-4x_1x_2}=\dfrac{20}{17}$.
+	
+	即$\sqrt{5}\cdot\dfrac{\sqrt{16(17-m^2)}}{17}=\dfrac{20}{17}$.
+	
+	$\therefore m^2=12$，$m=\pm2\sqrt{3}$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-3,0) -- (3,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-2) -- (0,2) node[above] {$y$};
+		\draw[thick] (0,0) ellipse (2 and 1);
+		\pgfmathsetmacro{\m}{2*sqrt(3)}
+		\pgfmathsetmacro{\xA}{(-16*sqrt(3)+2*sqrt(5))/17}
+		\pgfmathsetmacro{\yA}{2*\xA+\m}
+		\pgfmathsetmacro{\xB}{(-16*sqrt(3)-2*sqrt(5))/17}
+		\pgfmathsetmacro{\yB}{2*\xB+\m}
+		\coordinate (A) at (\xA,\yA);
+		\coordinate (B) at (\xB,\yB);
+		\draw[thick, DarkRed] ({-2.3},{2*(-2.3)+\m}) -- ({-0.85},{2*(-0.85)+\m});
+		\fill (A) circle (2pt) node[above right] {$A$};
+		\fill (B) circle (2pt) node[below left] {$B$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsection{第十讲\quad 面积问题}
+
+\subsubsection{面积计算问题}
+\begin{knowledge}{面积计算通用步骤}
+	前三步一样（与弦长问题同）.
+	
+	在算$AB$时，不先把$\sqrt{1+k^2}$算出.
+	
+	$|AB|=\sqrt{1+k^2}\cdot|x_1-x_2|=\sqrt{1+k^2}\cdot\sqrt{(x_1+x_2)^2-4x_1x_2}=\sqrt{1+k^2}\cdot\dfrac{\sqrt{\Delta}}{|a|}$.
+	
+	$d=\dfrac{|Ax_0+By_0+C|}{\sqrt{A^2+B^2}}\ \left(=\dfrac{|Ax_0+By_0+C|}{\sqrt{1+k^2}}\right)$.
+	
+	$\therefore S=\dfrac{1}{2}AB\cdot d=\dfrac{1}{2}\cdot\dfrac{\sqrt{\Delta}}{|a|}\cdot|Ax_0+By_0+C|$.
+\end{knowledge}
+
+\category{焦点三角形面积}
+\begin{question}
+	过椭圆$\dfrac{x^2}{4}+\dfrac{y^2}{3}=1$的左焦点$F_1$的直线$l$与椭圆相交于$A,B$，若$S_{\triangle AOB}=\dfrac{6\sqrt{2}}{7}$，则$O$到$l$距离为?
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	\begin{enumerate}[label=\arabic*.]
+		\item $k$不存在时，$S=\dfrac{1}{2}AB\cdot OF_1=\dfrac{1}{2}\cdot\dfrac{2b^2}{a}\cdot c=\dfrac{3}{2}\neq\dfrac{6\sqrt{2}}{7}$，不满足.
+		
+		\item $k$存在时，$y-0=k(x+1)$，即$y=kx+k$.
+	\end{enumerate}
+	
+	联立$\begin{cases} y=kx+k \\ 3x^2+4y^2-12=0 \end{cases} \implies (4k^2+3)x^2+8k^2x+4k^2-12=0$.
+	
+	设$A(x_1,y_1), B(x_2,y_2)$，$\Delta=144k^2+144>0$.
+	
+	$x_1+x_2=-\dfrac{8k^2}{4k^2+3}$，$x_1x_2=\dfrac{4k^2-12}{4k^2+3}$.
+	
+	$AB=\sqrt{1+k^2}\cdot|x_1-x_2|=\sqrt{1+k^2}\cdot\dfrac{\sqrt{144k^2+144}}{4k^2+3}=\dfrac{12(k^2+1)}{4k^2+3}$.
+	
+	$d=\dfrac{|k\cdot0-0+k|}{\sqrt{k^2+1}}=\dfrac{|k|}{\sqrt{k^2+1}}$.
+	
+	$S=\dfrac{1}{2}AB\cdot d=\dfrac{6\sqrt{k^2+1}\cdot|k|}{4k^2+3}=\dfrac{6\sqrt{2}}{7}$.
+	
+	$\therefore k=\pm1$.
+	
+	代入$d=\dfrac{|k|}{\sqrt{k^2+1}}=\dfrac{\sqrt{2}}{2}$.
+	
+	
+	
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-3,0) -- (3,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-2.2) -- (0,2.2) node[above] {$y$};
+		\draw[thick] (0,0) ellipse (2 and {sqrt(3)});
+		
+		\pgfmathsetmacro{\xA}{(-4+6*sqrt(2))/7}
+		\pgfmathsetmacro{\yA}{\xA+1}
+		\pgfmathsetmacro{\xB}{(-4-6*sqrt(2))/7}
+		\pgfmathsetmacro{\yB}{\xB+1}
+		
+		\coordinate (F) at (-1,0);
+		\coordinate (O) at (0,0);
+		\coordinate (A) at (\xA,\yA);
+		\coordinate (B) at (\xB,\yB);
+		
+		% 直线 l: y=x+1 (k=1)
+		\draw[thick, DarkRed] (-2.2,-1.2) -- (1.2,2.2);
+		% 三角形 OAB
+		\draw[dashed, SkyBlue] (O) -- (A);
+		\draw[dashed, SkyBlue] (O) -- (B);
+		% O 到 l 的距离 d
+		\draw[dashed, SkyBlue] (O) -- (-0.5,0.5) node[midway, left] {$d$};
+		
+		\fill (F) circle (2pt) node[below] {$F_1$};
+		\fill (O) circle (2pt) node[below right] {$O$};
+		\fill (A) circle (2pt) node[right] {$A$};
+		\fill (B) circle (2pt) node[below left] {$B$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsection*{另解\quad 设 $l:\ x=ky-1$}
+
+\textbf{说明：}此设法恒过 $F_1(-1,0)$，不能表示$y=0$，但这时$d=0$，明显不符合，排除情况.
+
+
+\[\text{联立}
+\begin{cases}
+	x=ky-1\\[2pt]
+	3x^2+4y^2-12=0
+\end{cases}
+\ \Longrightarrow\ (3k^2+4)y^2-6ky-9=0.
+\]
+
+设 $A(x_1,y_1)$，$B(x_2,y_2)$，则
+\[
+y_1+y_2=\frac{6k}{3k^2+4},\qquad y_1y_2=\frac{-9}{3k^2+4},
+\]
+\[
+|y_1-y_2|=\sqrt{(y_1+y_2)^2-4y_1y_2}
+=\frac{\sqrt{36k^2+36(3k^2+4)}}{3k^2+4}
+=\frac{12\sqrt{k^2+1}}{3k^2+4}.
+\]
+
+以 $OF_1$ 为公共底（$|OF_1|=1$），两小三角形高分别为 $|y_1|,|y_2|$，故
+\[
+S_{\triangle AOB}=\frac12|OF_1|\cdot|y_1-y_2|
+=\frac{6\sqrt{k^2+1}}{3k^2+4}=\frac{6\sqrt2}{7}.
+\]
+
+令 $t=\sqrt{k^2+1}\ (t\ge1)$，则 $3k^2+4=3t^2+1$，上式化为
+\[
+7t=\sqrt2\,(3t^2+1)\ \Longrightarrow\ 18t^4-37t^2+2=0
+\ \Longrightarrow\ (t^2-2)(18t^2-1)=0.
+\]
+由 $t^2\ge1$ 得 $t^2=2$，即 $k^2=1$，$k=\pm1$.
+
+直线 $l:\ x-ky+1=0$，故 $O$ 到 $l$ 的距离为$d=\dfrac{|0-k\cdot0+1|}{\sqrt{1+k^2}}=\dfrac{1}{\sqrt2}=\dfrac{\sqrt2}{2}.$
+
+\subsection*{另解（约$\sqrt{k^2+1}$版）\quad 设 $l:\ x=ky-1$}
+
+\textbf{可行性：}可以。此时 $|y_1-y_2|$ 同样可求弦长，且弦长公式中的 $\sqrt{1+k^2}$ 与距离公式分母中的 $\sqrt{1+k^2}$ 符号相消，无需真正算出它们。
+
+由 $l:\ x-ky+1=0$（即 $A=1,\ B=-k,\ C=1$），有
+\[
+|AB|=\sqrt{1+k^2}\,|y_1-y_2|=\sqrt{1+k^2}\cdot\frac{\sqrt{\Delta}}{|a|},
+\qquad
+d=\frac{|Ax_0+By_0+C|}{\sqrt{1+k^2}},
+\]
+两式相乘，$\sqrt{1+k^2}$ 约去，故
+\[
+S_{\triangle AOB}=\frac12|AB|\cdot d
+=\frac12\cdot\frac{\sqrt{\Delta}}{|a|}\cdot|Ax_0+By_0+C|.
+\]
+
+\textbf{代入计算：}将 $x=ky-1$ 代入 $3x^2+4y^2=12$：
+\[
+(3k^2+4)y^2-6ky-9=0,
+\]
+其中 $a=3k^2+4$，$\Delta=36k^2+36(3k^2+4)=144(k^2+1)$，$\sqrt\Delta=12\sqrt{k^2+1}$。
+
+取 $(x_0,y_0)=(0,0)$，则 $|Ax_0+By_0+C|=|1|=1$，于是
+\[
+S=\frac12\cdot\frac{12\sqrt{k^2+1}}{3k^2+4}\cdot1
+=\frac{6\sqrt{k^2+1}}{3k^2+4}=\frac{6\sqrt2}{7}.
+\]
+
+\textbf{解出 $k$：}去分母得 $7\sqrt{k^2+1}=\sqrt2\,(3k^2+4)$。令 $u=k^2+1\ (u\ge1)$，则 $3k^2+4=3u+1$：
+\[
+49u=2(3u+1)^2\ \Longrightarrow\ 18u^2-37u+2=0
+\ \Longrightarrow\ (u-2)(18u-1)=0,
+\]
+由 $u\ge1$ 得 $u=2$，即 $k^2=1$。
+
+\textbf{回代求距离：}
+\[
+d=\frac{|Ax_0+By_0+C|}{\sqrt{1+k^2}}=\frac{1}{\sqrt2}=\frac{\sqrt2}{2}.
+\]
+
+\textbf{注：}此写法的好处是 $\sqrt{1+k^2}$ 在 $S$ 的表达式中已先行约去，全程只需计算 $\dfrac{\sqrt\Delta}{|a|}$ 与距离公式的分子 $|Ax_0+By_0+C|$（本题该分子恰为 $1$），不必分别求出 $|AB|$ 与 $d$ 再相乘，运算量小。
+
+\subsubsection{面积最值问题}
+\begin{knowledge}{面积最值的两类函数型}
+	
+	\begin{minipage}{0.6\textwidth}
+	\begin{enumerate}[label=\arabic*.]
+	\item 二次函数型：$S=|m|\cdot\sqrt{9-m^2}$.
+	
+	令$m^2=t,\ t>0$.
+	
+	$\therefore S=\sqrt{(9-t)t}=\sqrt{-t^2+9t}$.
+	
+	在$t=\dfrac{9}{2}$时，$S_{\max}$.
+	
+	
+	\item 分式型：$S=\dfrac{4k^2+3}{\sqrt{4k^2+1}}$.
+	
+	令$\sqrt{4k^2+1}=t,\ t\geq1$.
+	
+	$S=\dfrac{t^2+2}{t}=t+\dfrac{2}{t}$.
+	
+	当$t=\sqrt{2}$时，$S_{\min}$（对勾函数）.
+	\end{enumerate}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.4\textwidth}
+	
+		\begin{tikzpicture}[scale=0.5, baseline=(current bounding box.north)]
+			\begin{scope}[shift={(0,0)}]
+				\draw[->, gray!40] (0,0) -- (4,0) node[right] {$t$};
+				\draw[->, gray!40] (0,0) -- (0,5) node[above] {$S$};
+				\draw[thick, DarkRed, domain=0.45:3.6, smooth, variable=\t] plot ({\t}, {\t+2/\t});
+				\fill[DarkRed] ({sqrt(2)}, {2*sqrt(2)}) circle (2pt);
+				\draw[dashed, SkyBlue] ({sqrt(2)},0) -- ({sqrt(2)},{2*sqrt(2)});
+				\node[below] at ({sqrt(2)},0) {$\sqrt{2}$};
+			\end{scope}
+			\begin{scope}[shift={(0,-10)}]
+				\draw[->, gray!40] (0,0) -- (4.5,0) node[right] {$t$};
+				\draw[->, gray!40] (0,0) -- (0,6) node[above] {$S$};
+				\draw[thick, DarkRed, domain=1:4, smooth, variable=\t] plot ({\t}, {\t+4/\t});
+				\fill[DarkRed] (2,4) circle (2pt);
+				\draw[dashed, SkyBlue] (2,0) -- (2,4);
+				\node[below] at (2,0) {$2$};
+			\end{scope}
+		\end{tikzpicture}
+	
+	\end{minipage}
+\end{knowledge}
+
+\category{面积最大值}
+\begin{question}
+	已知$A(0,-2)$，椭圆$\dfrac{x^2}{4}+y^2=1$，过$A$直线$l$与椭圆交于$P,Q$，则$\triangle OPQ$面积最大值?
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	\begin{enumerate}[label=\arabic*.]
+		\item $k$不存在时，不满足.
+		
+		\item $k$存在时，$y=kx-2$.
+	\end{enumerate}
+	
+	联立$\begin{cases} y=kx-2 \\ x^2+4y^2-4=0 \end{cases} \implies (4k^2+1)x^2-16kx+12=0$.
+	
+	设$P(x_1,y_1), Q(x_2,y_2)$，$\Delta=64k^2-48>0$.
+	
+	$x_1+x_2=\dfrac{16k}{4k^2+1}$，$x_1x_2=\dfrac{12}{4k^2+1}$.
+	
+	$PQ=\sqrt{1+k^2}\cdot|x_1-x_2|=\sqrt{1+k^2}\cdot\dfrac{\sqrt{64k^2-48}}{4k^2+1}$.
+	
+	$d=\dfrac{|k\cdot0-0-2|}{\sqrt{k^2+1}}=\dfrac{2}{\sqrt{k^2+1}}$.
+	
+	$S=\dfrac{1}{2}\cdot PQ\cdot d=\dfrac{4\sqrt{4k^2-3}}{4k^2+1}$.
+	
+	令$t=\sqrt{4k^2-3},\ t>0$.
+	
+	$S=\dfrac{4t}{t^2+4}=\dfrac{4}{t+\dfrac{4}{t}}$.
+	
+	当$t=2$时，$\left(t+\dfrac{4}{t}\right)_{\min}=4$.
+	
+	$\therefore S_{\max}=1$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-3,0) -- (3,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-2.6) -- (0,2) node[above] {$y$};
+		\draw[thick] (0,0) ellipse (2 and 1);
+		
+		\coordinate (O) at (0,0);
+		\coordinate (A) at (0,-2);
+		\coordinate (P) at (2,0);
+		\coordinate (Q) at (1.2,-0.8);
+		
+		% 直线 l: y=x-2 (k=1)
+		\draw[thick, DarkRed] (-0.5,-2.5) -- (2.5,0.5);
+		\draw[dashed, SkyBlue] (O) -- (P);
+		\draw[dashed, SkyBlue] (O) -- (Q);
+		
+		\fill (O) circle (2pt) node[above left] {$O$};
+		\fill (A) circle (2pt) node[left] {$A(0,-2)$};
+		\fill (P) circle (2pt) node[above right] {$P$};
+		\fill (Q) circle (2pt) node[below left] {$Q$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsection{第十一讲\quad 定值问题}
+\begin{knowledge}{定值问题通用步骤}
+	\begin{enumerate}[label=\arabic*.]
+		\item 设直线方程：1.存在 \quad 2.不存在（提前写答案）.
+		
+		\item 联立（消$y$）：$Ax^2+Bx+C=0$.
+		
+		\item 设$A(x_1,y_1), B(x_2,y_2)$，$\Delta>0$（不算），求$x_1x_2$，$x_1+x_2$.
+		
+		\item 定值：核心条件转化.
+		\begin{itemize}
+			\item 斜率（$k=\tan\alpha$）
+			\item 向量（$\overrightarrow{a}\cdot\overrightarrow{b}=0$，$\perp$）
+			\item 两点距
+		\end{itemize}
+	\end{enumerate}
+	
+	附：整理后再代入韦达定理；遇$y$代入解析式；在通分前分离常数.
+	
+	目标：韦达定理.
+	
+	\textbf{技巧：}若第一问的答案已知，可只算分母.
+\end{knowledge}
+
+\category{向量定值}
+\begin{question}
+	已知$\dfrac{x^2}{4}+\dfrac{y^2}{2}=1$（$a^2=4, b^2=2 \implies c^2=2$），过$P(0,1)$的直线交于$A,B$，证明$\overrightarrow{OA}\cdot\overrightarrow{OB}+\overrightarrow{PA}\cdot\overrightarrow{PB}$为定值.
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	1. $k$不存在（一条竖线），$A(0,\sqrt{2}), B(0,-\sqrt{2})$.
+	
+	$\overrightarrow{OA}\cdot\overrightarrow{OB}=-2$，$\overrightarrow{PA}\cdot\overrightarrow{PB}=-1$.
+	
+	$\therefore \overrightarrow{OA}\cdot\overrightarrow{OB}+\overrightarrow{PA}\cdot\overrightarrow{PB}=-3$.
+	
+	2. 当$k$存在时，$y-1=kx$.
+	
+	联立$\begin{cases} y=kx+1 \\ x^2+2y^2-4=0 \end{cases} \implies (2k^2+1)x^2+4kx-2=0$.
+	
+	设$A(x_1,y_1), B(x_2,y_2)$，$\Delta>0$.
+	
+	$x_1+x_2=\dfrac{-4k}{2k^2+1}$，$x_1x_2=\dfrac{-2}{2k^2+1}$.
+	
+	$\overrightarrow{PA}=(x_1,kx_1)$，$\overrightarrow{PB}=(x_2,kx_2)$.
+	
+	$\therefore \overrightarrow{OA}\cdot\overrightarrow{OB}+\overrightarrow{PA}\cdot\overrightarrow{PB}$
+	$=x_1x_2+(kx_1+1)(kx_2+1)+x_1x_2+k^2x_1x_2$
+	$=(2k^2+2)\cdot\dfrac{-2}{2k^2+1}+k\cdot\dfrac{-4k}{2k^2+1}+1$
+	$=\dfrac{-8k^2-4}{2k^2+1}+1=-3$.
+	
+	$\therefore$ 定值为$-3$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-3,0) -- (3,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-2) -- (0,2) node[above] {$y$};
+		\draw[thick] (0,0) ellipse (2 and {sqrt(2)});
+		
+		\pgfmathsetmacro{\xA}{(-2+sqrt(10))/3}
+		\pgfmathsetmacro{\yA}{\xA+1}
+		\pgfmathsetmacro{\xB}{(-2-sqrt(10))/3}
+		\pgfmathsetmacro{\yB}{\xB+1}
+		
+		\coordinate (P) at (0,1);
+		\coordinate (A) at (\xA,\yA);
+		\coordinate (B) at (\xB,\yB);
+		\coordinate (O) at (0,0);
+		
+		% 直线 y=x+1 (k=1)
+		\draw[thick, DarkRed] (-2.2,-1.2) -- (1.2,2.2);
+		\draw[dashed, SkyBlue] (O) -- (A);
+		\draw[dashed, SkyBlue] (O) -- (B);
+		
+		\fill (P) circle (2pt) node[left] {$P$};
+		\fill (A) circle (2pt) node[right] {$A$};
+		\fill (B) circle (2pt) node[below left] {$B$};
+	\end{tikzpicture}
+\end{minipage}
+
+\category{角度定值（抛物线）}
+\begin{question}
+	设抛物线$y^2=2x$，$A(2,0)$，$B(-2,0)$，过$A$直线$l$与抛物线交于$M,N$，证明$\angle ABM=\angle ABN$.
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	分析：$\angle ABM=\angle ABN \iff \tan\angle ABM=\tan\angle ABN \iff k_{BM}=-k_{BN}$.
+	
+	$\therefore$ 需证$k_{BM}+k_{BN}=0$.
+	
+	设$l: x=my+2$，联立$y^2=2x$：
+	\[
+	y^2-2my-4=0
+	\]
+	设$M(x_1,y_1), N(x_2,y_2)$，则$y_1+y_2=2m$，$y_1y_2=-4$.
+	
+	$k_{BM}+k_{BN}=\dfrac{y_1}{x_1+2}+\dfrac{y_2}{x_2+2}=\dfrac{y_1(my_2+4)+y_2(my_1+4)}{(my_1+4)(my_2+4)}$
+	$=\dfrac{2my_1y_2+4(y_1+y_2)}{(my_1+4)(my_2+4)}=\dfrac{-8m+8m}{(my_1+4)(my_2+4)}=0$.
+	
+	$\therefore \angle ABM=\angle ABN$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-3,0) -- (4,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-3) -- (0,3) node[above] {$y$};
+		% 抛物线 y^2=2x
+		\draw[thick, domain=-2.6:2.6, smooth, variable=\y] plot ({0.5*\y*\y}, {\y});
+		
+		\pgfmathsetmacro{\yM}{(1+sqrt(17))/2}
+		\pgfmathsetmacro{\xM}{0.5*\yM*\yM}
+		\pgfmathsetmacro{\yN}{(1-sqrt(17))/2}
+		\pgfmathsetmacro{\xN}{0.5*\yN*\yN}
+		
+		\coordinate (A) at (2,0);
+		\coordinate (B) at (-2,0);
+		\coordinate (M) at (\xM,\yM);
+		\coordinate (N) at (\xN,\yN);
+		
+		% 直线 l 过 A
+		\draw[thick, DarkRed] (N) -- (M);
+		% BM, BN
+		\draw[thick, SkyBlue] (B) -- (M);
+		\draw[thick, SkyBlue] (B) -- (N);
+		
+		\fill (A) circle (2pt) node[below right] {$A$};
+		\fill (B) circle (2pt) node[above left] {$B$};
+		\fill (M) circle (2pt) node[right] {$M$};
+		\fill (N) circle (2pt) node[right] {$N$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsection{第十二讲\quad 等差数列}
+
+\subsubsection{数列的概念}
+\begin{knowledge}{数列的概念}
+	第$n$项$a_n$.
+	
+	$a_n$与$n$的关系可用一式子表示：$a_n=f(n)$，叫通项公式.
+	
+	数列不一定有通项公式.
+	
+	每个数列通项公式可能不唯一.
+	
+	递推公式：相邻多项关系可用一式子表示，如$1,1,2,3,5,8,13$：$1+1=2$，$1+2=3$，$2+3=5$.
+	
+	$S_n=a_1+\cdots+a_n$.
+	
+	按一定次序排列的一列数叫数列.
+	
+	分类：
+	\begin{itemize}
+		\item 有穷数列、无穷数列.
+		
+		\item 递增数列、递减数列.
+		
+		\item 周期数列.
+		
+		\item 常数数列、摆动数列.
+		
+	\end{itemize}
+\end{knowledge}
+
+\subsubsection{等差数列的概念}
+\begin{knowledge}{等差数列的概念与公式}
+	等差：后一项与前一项的差为常数（公差$d$）.
+	
+	等差中项：$a,b,c \implies 2b=a+c$.
+	
+	通项公式（累加法）：
+	\[
+	\begin{cases}
+		a_2-a_1=d \\
+		a_3-a_2=d \\
+		a_4-a_3=d \\
+		\vdots \\
+		a_n-a_{n-1}=d
+	\end{cases}
+	\implies a_n-a_1=(n-1)d
+	\]
+	
+	$\bigstar \ a_n=a_1+(n-1)d$，$a_n=a_m+(n-m)d$（基本量）.
+	
+	$\bigstar ~ S_n=na_1+\dfrac{n(n-1)}{2}d$.
+	
+	$S_n=\dfrac{d}{2}n^2+\left(a_1-\dfrac{d}{2}\right)n$.
+	
+	在知末项时，用$S_n=\dfrac{(a_1+a_n)n}{2}$（首+末）$\times$项数$\div 2$.
+\end{knowledge}
+
+\category{等差中项}
+\begin{question}
+	在$\{a_n\}$中，$a_2=2$，$a_6=0$，且$\left\{\dfrac{1}{a_n+1}\right\}$为等差数列，$a_4=$?
+\end{question}
+
+由等差中项：
+\[
+\frac{1}{a_2+1}+\frac{1}{a_6+1}=2\cdot\frac{1}{a_4+1}.
+\]
+
+即$\dfrac{1}{3}+1=\dfrac{2}{a_4+1}$.
+
+$\dfrac{4}{3}=\dfrac{2}{a_4+1} \implies a_4+1=\dfrac{3}{2}$.
+
+$\therefore a_4=\dfrac{1}{2}$.
+
+\category{等差性质与前$n$项和}
+\begin{question}
+	若$a_1=1$，$a_{m-1}+a_m+a_{m+1}=27$，$S_m=45$，求$m$.
+\end{question}
+
+由等差数列性质：$a_{m-1}+a_{m+1}=2a_m$.
+
+$\therefore 3a_m=27 \implies a_m=9$.
+
+在知末项时，用$S_m=\dfrac{(a_1+a_m)m}{2}$.
+
+$S_m=\dfrac{(1+9)m}{2}=45 \implies 5m=45$.
+
+$\therefore m=9$.
+
+\subsubsection{等差数列的性质}
+\begin{knowledge}{等差数列的性质}
+	
+	$\bigstar ~p+t=m+n \implies a_p+a_t=a_m+a_n$（两边项数相同）.
+	
+	$S_{2n-1}=\dfrac{(a_1+a_{2n-1})\cdot(2n-1)}{2}=(2n-1)a_n$.
+	
+	eg：$S_{17}=17a_9$（$2n-1=17 \implies n=9$）.
+	
+	一条件：性质解题.
+	
+	两条件：基本量解题.
+\end{knowledge}
+
+\category{基本量解题}
+\begin{question}
+	$a_1+a_2+a_3=9$，$a_1$与$a_{11}$的等差中项是$15$，求$a_9$.
+\end{question}
+
+$3a_2=9 \implies a_2=3$.
+
+等差中项：$a_1$与$a_{11} \implies \dfrac{1+11}{2}=6 \implies a_6=15$.
+
+两个条件：$\begin{cases} a_6=a_1+5d \\ a_2=a_1+d \end{cases} \implies \begin{cases} a_1=0 \\ d=3 \end{cases}$.
+
+$\therefore a_9=a_1+8d=24$.
+
+\category{性质解题}
+\begin{question}
+	已知等差$\{a_n\}$，$a_2-a_5+a_8=4$，求$S_9$.
+\end{question}
+
+一条件：性质：$a_2+a_8=2a_5$.
+
+$\therefore a_5=4$.
+
+$S_9=9a_5=36$（$\dfrac{9+1}{2}=5$）.
+
+\category{两等差数列和之比}
+\begin{question}
+	$\{a_n\},\{b_n\}$等差，$\dfrac{S_n}{T_n}=\dfrac{4n+2}{5n+2}$，求$\dfrac{a_5}{b_5}$.
+\end{question}
+
+$S_{2n-1}=(2n-1)a_n$.
+
+$\therefore 2n-1=9 \implies n=5$.
+
+$\therefore \dfrac{a_5}{b_5}=\dfrac{S_9}{T_9}=\dfrac{4\cdot9+2}{5\cdot9+2}=\dfrac{38}{47}$.
+
+\category{乘1法最值}
+\begin{question}
+	$\{a_n\}$等差，$a_m+a_n=a_2+a_7$，求$\left(\dfrac{1}{m}+\dfrac{9}{n}\right)_{\min}$.
+\end{question}
+
+$m+n=9$.
+
+$\left(\dfrac{1}{m}+\dfrac{9}{n}\right)(m+n)\cdot\dfrac{1}{9}=\left(10+\dfrac{n}{m}+\dfrac{9m}{n}\right)\times\dfrac{1}{9}$.
+
+$m,n$是角标，需满足正整数，取等可能取不到.
+
+$\dfrac{n}{m}=\dfrac{9m}{n} \implies n=3m$，结合$m+n=9 \implies m=\dfrac{9}{4},\ n=\dfrac{27}{4}$（非整数，舍）.
+
+$\therefore$ 对正整数，比较$m=2$与$m=3$：
+
+$m=2,\ n=7$：$\dfrac{1}{2}+\dfrac{9}{7}=\dfrac{25}{14}$.
+
+$m=3,\ n=6$：$\dfrac{1}{3}+\dfrac{9}{6}=\dfrac{11}{6}$.
+
+$\therefore$ 最小值为$\dfrac{25}{14}$.
+
+\subsection{第十三讲\quad 等比数列}
+
+\subsubsection{概念}
+\begin{knowledge}{等比数列的概念}
+	
+	后一项比前一项为常数（公比$q$）；等比不能有$0$.
+	
+	等比中项：$x,G,y \implies G^2=xy$.
+	
+	通项公式：$a_n=a_1\cdot q^{n-1}=a_2\cdot q^{n-2}=a_3\cdot q^{n-3}$.
+	
+	累乘法：
+	\[
+	\begin{cases}
+		\dfrac{a_2}{a_1}=q \\
+		\dfrac{a_3}{a_2}=q \\
+		\vdots \\
+		\dfrac{a_n}{a_{n-1}}=q
+	\end{cases}
+	\implies \frac{a_n}{a_1}=q^{n-1}.
+	\]
+	
+	判断数列方式：
+	\begin{enumerate}[label=\arabic*.]
+		\item 定义法：$a_{n+1}-a_n=$常：等差；$\dfrac{a_{n+1}}{a_n}=$常：等比.
+		
+		\item 等中项：$a_{n-1}+a_{n+1}=2a_n$等差；$a_{n-1}\cdot a_{n+1}=a_n^2$等比.
+		
+		\item 公式：根据题目表示出$a_n$（可能多项）；整理出：$An+B$等差；$C\cdot D^n$等比.
+		
+	\end{enumerate}
+	
+	常数列是等差；常数列除$0,0,0,\cdots$外是等比.
+	
+	前$n$项和（错位相减）：
+	\[
+	S_n=\begin{cases}
+		na_1 & (q=1) \\
+		\dfrac{a_1(1-q^n)}{1-q} & (q\neq 1)
+	\end{cases}
+	\]
+\end{knowledge}
+
+\category{分类讨论求通项}
+\begin{question}
+	等比$\{a_n\}$，$a_2=6$，$a_5-2a_4-a_3+12=0$，求$a_n$.
+\end{question}
+
+$a_2q^3-2a_2q^2-a_2q+12=0$.
+
+$6q^3-12q^2-6q+12=0 \implies q^3-2q^2-q+2=0$.
+
+$q^2(q-2)-(q-2)=0 \implies (q-2)(q^2-1)=0$.
+
+$\therefore q=\pm1$或$2$.
+
+\begin{enumerate}[label=\arabic*.]
+	\item $q=2$：$a_n=a_2q^{n-2}=6\cdot2^{n-2}$.
+	
+	\item $q=1$：$a_n=a_2q^{n-2}=6$.
+	
+	\item $q=-1$：$a_n=a_2q^{n-2}=6\cdot(-1)^{n-2}$.
+	
+\end{enumerate}
+
+\category{递推关系求项}
+\begin{question}
+	$\{a_n\}$满足$3a_{n+1}+a_n=0$，$a_2=-\dfrac{4}{3}$，求$a_{10}$.
+\end{question}
+
+$3a_{n+1}=-a_n$.
+
+$\dfrac{a_{n+1}}{a_n}=-\dfrac{1}{3}$.
+
+$\therefore q=-\dfrac{1}{3}$.
+
+$a_{10}=a_2\cdot q^8=-\dfrac{4}{3}\cdot\dfrac{1}{3^8}=-4\times3^{-9}$.
+
+\subsubsection{等比数列的性质}
+\begin{knowledge}{等比数列的性质}
+	$p+t=m+n \implies a_p\cdot a_t=a_m\cdot a_n$.
+	
+	若$2m=p+t$，则$a_p a_t=a_m^2$.
+\end{knowledge}
+
+\category{由通项判断数列类型}
+\begin{question}
+	$\{a_n\}$等比，$a_1=1$，$q=3$，求下列数列的通项公式：
+	\begin{enumerate}[label=\arabic*.]
+		\item $\left\{\dfrac{a_{n+1}}{a_n}\right\}$
+		\item $\{a_{n+1}-a_n\}$
+		\item $\{\log_3 a_n\}$
+		\item $\{a_n\cdot a_{n+1}\}$
+	\end{enumerate}
+\end{question}
+
+优先求出题目中$a_n$通项公式：$a_n=a_1\cdot q^{n-1}=3^{n-1}$.
+
+\begin{enumerate}[label=\arabic*.]
+	\item $\left\{\dfrac{a_{n+1}}{a_n}\right\}=\left\{\dfrac{a_n\cdot q}{a_n}\right\}=\{q\}=\{3\}$，常数列.
+	
+	\item $\{a_{n+1}-a_n\}=\{3^n-3^{n-1}\}=\{2\cdot3^{n-1}\}$，等比数列.
+	
+	\item $\{\log_3 a_n\}=\{\log_3 3^{n-1}\}=\{n-1\}$，等差数列.
+	
+	\item $\{a_n\cdot a_{n+1}\}=\{3^{n-1}\cdot3^n\}=\{3\cdot9^{n-1}\}$，等比数列.
+	
+\end{enumerate}
+
+\subsubsection{等差、等比综合}
+\begin{knowledge}{综合要点}
+	
+	分清等差等比.
+	
+	运用中项.
+\end{knowledge}
+
+\category{等差中项运用}
+\begin{question}
+	等比$\{a_n\}$，$3a_1,\ \dfrac{1}{2}a_3,\ 2a_2$等差，求$\dfrac{a_6}{a_4}$.
+\end{question}
+
+$3a_1+2a_2=2\times\dfrac{1}{2}a_3$.
+
+$3a_1+2a_1q=a_1q^2 \implies q^2-2q-3=0$.
+
+$q=3$或$-1$（舍）.
+
+$\dfrac{a_6}{a_4}=q^2=9$.
+
+\category{正项数列解方程}
+\begin{question}
+	$\{a_n\}$正，$a_2\cdot a_4=1$，$S_3=7$，求$S_5$.
+\end{question}
+
+$a_2\cdot a_4=a_3^2=a_1^2q^4=1 \implies a_1=\dfrac{1}{q^2}$.
+
+$S_3=\dfrac{a_1(1-q^3)}{1-q}=\dfrac{\frac{1}{q^2}(1-q^3)}{1-q}=7$.
+
+用立方差公式分解：
+\[
+\frac{\frac{1}{q^2}(1-q)(1+q+q^2)}{1-q}=7 \implies 1+q+q^2=7q^2.
+\]
+
+$6q^2-q-1=0 \implies q=\dfrac{1}{2},\ a_1=4$.
+
+$\therefore S_5=\dfrac{4\left(1-\left(\frac{1}{2}\right)^5\right)}{1-\frac{1}{2}}=\dfrac{31}{4}$.
+
+\category{根与性质运用}
+\begin{question}
+	等比$\{a_n\}$，$a_3,a_{15}$是方程$x^2-6x+8=0$两根，求$\dfrac{a_1a_{17}}{a_9}$.
+\end{question}
+
+由韦达定理：$a_3+a_{15}=6$，$a_3a_{15}=8$.
+
+$a_1a_{17}=a_3a_{15}=8=a_9^2$.
+
+$\because a_9=a_3q^6$，且$a_3>0$.
+
+$\therefore a_9=2\sqrt{2}$.
+
+$\therefore \dfrac{a_1a_{17}}{a_9}=\dfrac{8}{2\sqrt{2}}=2\sqrt{2}$.
+
+\category{中项配方}
+\begin{question}
+	$\{a_n\}$等比，$a_n>0$，$a_2a_4+2a_3a_5+a_4a_6=25$，求$a_3+a_5$.
+\end{question}
+
+$a_2a_4=a_3^2$，$a_4a_6=a_5^2$.
+
+$a_3^2+2a_3a_5+a_5^2=25 \implies (a_3+a_5)^2=25$.
+
+$\because a_n>0$.
+
+$\therefore a_3+a_5=5$.
+
+\subsection{第十四讲\quad 数列求通项}
+
+\subsubsection{累加法}
+\begin{knowledge}{累加法}
+	整理出能用累加消项的式子.
+	
+	如：$a_{n+1}-a_n=n+1$.
+	
+	找出与$n$同步变化的项：$a_n$角标.
+	
+	进行从小到大赋值，直到找到消项规律，整理式子（右边用$S_n$）.
+	
+	如$a_n-a_1=\cdots$（判断等差、等比）.
+	
+	把$a_1$移项：$a_n=\cdots$.
+\end{knowledge}
+
+\category{累加法}
+\begin{question}
+	$\{a_n\}$满足$a_1=1$，$\dfrac{1}{a_{n+1}}-\dfrac{1}{a_n}=4^n$，则求$a_n$通项公式.
+\end{question}
+
+$\begin{cases}
+	\dfrac{1}{a_2}-\dfrac{1}{a_1}=4 \\
+	\dfrac{1}{a_3}-\dfrac{1}{a_2}=4^2 \\
+	\vdots \\
+	\dfrac{1}{a_n}-\dfrac{1}{a_{n-1}}=4^{n-1}
+\end{cases}$
+
+累加：$\dfrac{1}{a_n}-\dfrac{1}{a_1}=4+4^2+\cdots+4^{n-1}$（等比）.
+
+$S_n=\dfrac{4(1-4^{n-1})}{1-4}=\dfrac{4(4^{n-1}-1)}{3}=\dfrac{4^n-4}{3}$.
+
+$\therefore \dfrac{1}{a_n}=1+\dfrac{4^n-4}{3}=\dfrac{4^n-1}{3}$.
+
+$\therefore a_n=\dfrac{3}{4^n-1}$.
+
+\subsubsection{累乘法}
+\begin{knowledge}{累乘法}
+	展开括号，合并同类项，整理出：
+	
+	单项$\dfrac{a_n}{a_{n+1}}=\dfrac{n}{n+1}$.
+	
+	找出同步变化的项.
+	
+	赋值，直到找到规律.
+	
+	运用$S_n$（判断等差等比）.
+	
+	把$a_1$乘过去：$\dfrac{a_n}{a_1}=S_n$.
+\end{knowledge}
+
+\category{等差与累加结合}
+\begin{question}
+	$\{a_n\}$首项为$3$，$\{b_n\}$等差，$b_n=a_{n+1}-a_n$，$b_3=-2$，$b_{10}=12$，求$a_8$.
+\end{question}
+
+两个条件：$\begin{cases} b_3=b_1+2d=-2 \\ b_{10}=b_1+9d=12 \end{cases} \implies \begin{cases} b_1=-6 \\ d=2 \end{cases}$.
+
+$b_n=b_1+(n-1)d=2n-8$.
+
+$\therefore a_{n+1}-a_n=2n-8$.
+
+$\begin{cases}
+	a_2-a_1=-6 \\
+	a_3-a_2=-4 \\
+	\vdots \\
+	a_n-a_{n-1}=2n-10
+\end{cases}$
+
+累加：$a_n-a_1=-6-4+\cdots+(2n-10)=\dfrac{(-6+2n-10)(n-1)}{2}=(n-8)(n-1)$.
+
+$a_n=3+(n-8)(n-1)$.
+
+$\therefore a_8=3$.
+
+\subsubsection{$a_n$与$S_n$的关系}
+\begin{knowledge}{通用方法}
+	题目给$S_n=\cdots a_n$.
+	
+	$S_{n-1}=\cdots a_{n-1}$.
+	
+	$S_n-S_{n-1}=a_n$.
+	
+	得到一个关于$a_n$的式子.
+	
+	使用累乘或累加化成$a_n=\cdots$.
+\end{knowledge}
+
+\category{$a_{n+1}=3S_n$型}
+\begin{question}
+	$\{a_n\}$，$a_1=1$，$a_{n+1}=3S_n\ (n\geq1)$，求$a_6$.
+\end{question}
+
+$a_n=3S_{n-1}\ (n\geq2)$（不一定代表从$a_2$开始的通项）.
+
+$a_{n+1}-a_n=3(S_n-S_{n-1})\ (n\geq2)$.
+
+$a_{n+1}-a_n=3a_n\ (n\geq2)$.
+
+$a_{n+1}=4a_n\ (n\geq2)$.
+
+$\{a_n\}$是从第二项开始公比为$4$的等比数列.
+
+$a_2=3S_1=3$.
+
+$\therefore a_n=a_2\cdot q^{n-2}=3\cdot4^{n-2}\ (n\geq2)$.
+
+$a_1=1$不满足上式.
+
+$\therefore a_n=\begin{cases} 1, & n=1 \\ 3\cdot4^{n-2}, & n\geq2 \end{cases}$.
+
+$\therefore a_6=3\times4^4=768$.
+
+\category{$na_{n+1}=2S_n$型}
+\begin{question}
+	$a_1=1$，$na_{n+1}=2S_n$，求通项公式.
+\end{question}
+
+$(n-1)a_n=2S_{n-1}\ (n\geq2)$.
+
+两式相减：$na_{n+1}-(n-1)a_n=2a_n \implies na_{n+1}=(n+1)a_n\ (n\geq2)$.
+
+$\dfrac{a_{n+1}}{a_n}=\dfrac{n+1}{n}\ (n\geq2)$.
+
+$\begin{cases}
+	\dfrac{a_3}{a_2}=\dfrac{3}{2} \\
+	\dfrac{a_4}{a_3}=\dfrac{4}{3} \\
+	\vdots \\
+	\dfrac{a_n}{a_{n-1}}=\dfrac{n}{n-1}
+\end{cases}$
+累乘$\dfrac{n}{2}=\dfrac{a_n}{a_2}$.
+
+又$n=1$时$a_2=2S_1=2$.
+
+$\therefore a_n=2\times\dfrac{n}{2}=n$.
+
+\category{累乘法（分式型）}
+\begin{question}
+	$a_1=2$，$na_n=(n+2)a_{n-1}$，求$a_n$.
+\end{question}
+
+展开、合并：$\dfrac{a_n}{a_{n-1}}=\dfrac{n+2}{n}$.
+
+$\begin{cases}
+	\dfrac{a_2}{a_1}=\dfrac{4}{2} \\
+	\dfrac{a_3}{a_2}=\dfrac{5}{3} \\
+	\dfrac{a_4}{a_3}=\dfrac{6}{4} \\
+	\vdots \\
+	\dfrac{a_n}{a_{n-1}}=\dfrac{n+2}{n}
+\end{cases}$
+累乘.
+
+$\dfrac{a_n}{a_1}=\dfrac{4}{2}\times\dfrac{5}{3}\times\dfrac{6}{4}\times\cdots\times\dfrac{n+2}{n}=\dfrac{(n+1)(n+2)}{2\times3}$.
+
+$\therefore a_n=a_1\cdot\dfrac{(n+1)(n+2)}{6}=\dfrac{(n+1)(n+2)}{3}$.
+
+\category{累乘法（指数型）}
+\begin{question}
+	$a_1=2$，$a_{n+1}=2^n\cdot a_n$，求通项公式.
+\end{question}
+
+$\dfrac{a_{n+1}}{a_n}=2^n$.
+
+$\begin{cases}
+	\dfrac{a_2}{a_1}=2^1 \\
+	\dfrac{a_3}{a_2}=2^2 \\
+	\vdots \\
+	\dfrac{a_n}{a_{n-1}}=2^{n-1}
+\end{cases}$
+累乘.
+
+$\dfrac{a_n}{a_1}=2^{1+2+\cdots+(n-1)}=2^{\frac{n(n-1)}{2}}$.
+
+$\therefore a_n=2\cdot2^{\frac{n(n-1)}{2}}=2^{\frac{n(n-1)}{2}+1}$.
+
+\subsection{第十五讲\quad 数列求和（分组求和）}
+
+\subsubsection{拆分成等差、等比数列求和}
+\begin{knowledge}{分组求和}
+	$a_n=2^n+3n-1$.
+	
+	$S_n=2^1+2^2+\cdots+2^n+2+5+\cdots+(3n-1)$.
+	
+	$=\dfrac{2(1-2^n)}{1-2}+2n+\dfrac{n(n-1)}{2}\cdot3$.
+\end{knowledge}
+
+\category{分组求和}
+\begin{question}
+	$1+(1+2)+(1+2+4)+\cdots+(1+2+4+\cdots+2^n)=?$
+\end{question}
+
+等比数列求和：第$k$组$1+2+\cdots+2^{k-1}=\dfrac{1\cdot(1-2^{k})}{1-2}=2^{k}-1$.
+
+$\therefore S_{n+1}=2^1+2^2+\cdots+2^{n+1}-1\times(n+1)$
+
+$=\dfrac{2(1-2^{n+1})}{1-2}-n-1$
+
+$=2^{n+2}-n-3$.
+
+\subsubsection{含绝对值}
+\begin{knowledge}{含绝对值求和}
+	找到分界线（正负），先求通项.
+	
+	把式子（$S_n$）化成从$a_1$开始的两部分，再用等差/等比求和.
+\end{knowledge}
+
+\category{含绝对值求和}
+\begin{question}
+	$\{a_n\}$，$a_1=-60$，$a_{n+1}=a_n+3$，求$|a_1|+\cdots+|a_{30}|$.
+\end{question}
+
+累加法求通项：$a_n=3n-63$；$n=21$时$a_n=0$.
+
+原式$=-a_1-\cdots-a_{21}+a_{22}+\cdots+a_{30}$
+
+$=a_1+\cdots+a_{30}-2(a_1+\cdots+a_{21})$
+
+$=S_{30}-2S_{21}$
+
+$=765$.
+
+\subsubsection{奇偶分别求和}
+\begin{knowledge}{奇偶分组}
+	$a_{n+2}-a_n=2+(-1)^n$.
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item $n$奇，$a_{n+2}-a_n=1 \implies$ 等差$d=1$.
+		
+		\item $n$偶，$a_{n+2}-a_n=3 \implies$ 等差$d=3$.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{等比数列含绝对值}
+\begin{question}
+	等比$\{a_n\}$正，$S_2+4S_4=S_6$，$a_1=1$，令$b_n=a_n-15$，求$T=|b_1|+\cdots+|b_{10}|$.
+\end{question}
+
+$\dfrac{a_1(1-q^2)}{1-q}+4\cdot\dfrac{a_1(1-q^4)}{1-q}=\dfrac{a_1(1-q^6)}{1-q}$.
+
+展开：$q^4-3q^2-4=0 \implies q^2=4 \implies q=2$（正）.
+
+$a_n=a_1q^{n-1}=2^{n-1}$.
+
+$b_n=2^{n-1}-15$；$n=4$时$b_4=-7<0$，$b_5=1>0$.
+
+$T_{10}=-b_1-\cdots-b_4+b_5+\cdots+b_{10}$
+
+$=b_1+\cdots+b_{10}-2(b_1+\cdots+b_4)$
+
+$=B_{10}-2B_4$.
+
+其中$B_n=2^n-1-15n$，$B_{10}=873$，$B_4=-45$.
+
+$\therefore T=873+90=963$.
+
+\category{奇偶等比分组}
+\begin{question}
+	$\{a_n\}$，$a_1=1$，$a_{n+1}\cdot a_n=2^n$，求$a_{2019}$和$S_{2019}$.
+\end{question}
+
+$a_{n+2}\cdot a_{n+1}=2^{n+1}$.
+
+两式相除：$\dfrac{a_{n+2}}{a_n}=2$.
+
+\begin{enumerate}[label=\arabic*.]
+	\item $n$奇，$\dfrac{a_{n+2}}{a_n}=2$，首项$a_1=1$，$q=2$.
+	
+	\item $n$偶，$\dfrac{a_{n+2}}{a_n}=2$，首项$a_2=2$，$q=2$.
+	
+\end{enumerate}
+
+$a_{2019}=a_1\cdot2^{1009}=2^{1009}$.
+
+$S_{2019}=(a_1+a_3+\cdots+a_{2019})+(a_2+a_4+\cdots+a_{2018})$（$1010$个奇项，$1009$个偶项）.
+
+$=\dfrac{1\cdot(1-2^{1010})}{1-2}+\dfrac{2(1-2^{1009})}{1-2}$
+
+$=2^{1010}-1+2^{1010}-2$
+
+$=2^{1011}-3$.
+
+\subsubsection{奇偶特殊情况}
+\begin{knowledge}{奇偶特殊情况}
+	奇偶项通项公式均为等差数列，两项和为定值.
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item 奇数时，$S_n=\dfrac{n-1}{2}\times$定值$+a_n$.
+		
+		\item 偶数时，$S_n=\dfrac{n}{2}\times$定值.
+		
+	\end{enumerate}
+\end{knowledge}
+
+
+
+\category{奇偶变号}
+\begin{question}
+	$\{(-1)^n(3n-1)\}$，求$S_{2021}$.
+\end{question}
+
+\begin{enumerate}[label=\arabic*.]
+	\item $n$奇，$a_n=1-3n$.
+	
+	\item $n$偶，$a_n=3n-1$.
+	
+\end{enumerate}
+
+相加相邻两项为定值$3$.
+
+$S_{2021}=(a_1+a_2)+(a_3+a_4)+\cdots+a_{2021}$
+
+$=\dfrac{2021-1}{2}\times3+a_{2021}$
+
+$=3030+(1-3\times2021)$
+
+$=-3032$.
+
+\category{奇偶定值配对}
+\begin{question}
+	$a_{n+1}+(-1)^{n+1}a_n=2$，求$S_{100}$.
+\end{question}
+
+$n$奇时，$a_{n+1}+a_n=2$，即$a_1+a_2=2$，$a_3+a_4=2$，$\cdots$，定值.
+
+$\therefore S_{100}=\dfrac{100}{2}\times2=100$.
+
+
+
+\section{高二秋季（上学期）}
+
+\subsection{第一讲\quad 空间向量初步}
+
+\subsubsection{概念、线性运算}
+\begin{knowledge}{共面与线性运算}
+	$\overrightarrow{OP}=x\overrightarrow{OA}+y\overrightarrow{OB}+z\overrightarrow{OC}$，$x+y+z=1$.
+	
+	$\implies ABCP$四点共面.
+	
+	共面向量：一个向量用另两个向量表示.
+	
+	若四点共线：运用定比分点，共顶点，一个向量用其他向量表示，系数和为$1$.
+\end{knowledge}
+
+\category{向量平行}
+\begin{question}
+	$\vec{a}=(1,5,-1)$，$\vec{b}=(-2,3,5)$，若$(k\vec{a}+\vec{b})\parallel(\vec{a}-3\vec{b})$，求$k$.
+\end{question}
+
+对应系数成比例：$1\times(-3)=-3$.
+
+$k\cdot(-3)=1$.
+
+$\therefore k=-\dfrac{1}{3}$.
+
+\category{基底与共面判断}
+\begin{question}
+	$\{\vec{a},\vec{b},\vec{c}\}$构成空间基底，下列向量不共面的？
+	\begin{enumerate}[label=\arabic*.]
+		\item $\vec{b}+\vec{c},\ \vec{b},\ \vec{b}-\vec{c}$
+		\item $\vec{a},\ \vec{a}+\vec{b},\ \vec{a}-\vec{b}$
+		\item $\vec{a}+\vec{b},\ \vec{a}-\vec{b},\ \vec{c}$
+		\item $\vec{a}+\vec{b},\ \vec{a}+\vec{b}+\vec{c},\ \vec{c}$
+	\end{enumerate}
+\end{question}
+
+\begin{enumerate}[label=\arabic*.]
+	\item $\vec{b}=\dfrac{1}{2}[(\vec{b}+\vec{c})+(\vec{b}-\vec{c})]$，共面.
+	
+	\item $\vec{a}=\dfrac{1}{2}[(\vec{a}+\vec{b})+(\vec{a}-\vec{b})]$，共面.
+	
+	\item 无法线性表示，不共面.
+	
+	\item $\vec{a}+\vec{b}+\vec{c}=(\vec{a}+\vec{b})+\vec{c}$，共面.
+	
+\end{enumerate}
+
+$\therefore$ 选$3$.
+
+\subsubsection{数量积}
+\category{数量积求长度}
+\begin{question}
+	平行六面体中，底边是边长为$1$的正方形，$\angle A_1AB=\angle A_1AD=60^\circ$，$A_1A=3$，求$A_1C$.
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	$|\overrightarrow{A_1C}|=|\overrightarrow{A_1A}+\overrightarrow{AB}+\overrightarrow{AD}|$.
+	
+	$=\sqrt{(\overrightarrow{A_1A}+\overrightarrow{AB}+\overrightarrow{AD})^2}$.
+	
+	其中$\overrightarrow{A_1A}\cdot\overrightarrow{AB}=\overrightarrow{A_1A}\cdot\overrightarrow{AD}=3\times1\times\cos120^\circ=-\dfrac{3}{2}$，$\overrightarrow{AB}\cdot\overrightarrow{AD}=0$.
+	
+	$=\sqrt{9+1+1-6}=\sqrt{5}$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		\coordinate (A) at (0,0);
+		\coordinate (B) at (2,0);
+		\coordinate (C) at (2.5,0.5);
+		\coordinate (D) at (0.5,0.5);
+		\coordinate (A1) at (0.5,2);
+		\coordinate (B1) at (2.5,2);
+		\coordinate (C1) at (3,2.5);
+		\coordinate (D1) at (1,2.5);
+		
+		\draw[thick] (A) -- (B) -- (C) -- (C1) -- (D1) -- (A1) -- cycle;
+		\draw[thick] (B) -- (B1) -- (C1);
+		\draw[thick] (A1) -- (B1);
+		\draw[dashed] (A) -- (D) -- (C);
+		\draw[dashed] (D) -- (D1);
+		
+		\node[below left] at (A) {$A$};
+		\node[below] at (B) {$B$};
+		\node[right] at (C) {$C$};
+		\node[above left] at (D) {$D$};
+		\node[left] at (A1) {$A_1$};
+		\node[right] at (C1) {$C_1$};
+		\node[above] at (D1) {$D_1$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsubsection{坐标运算}
+\begin{knowledge}{向量方法求距离}
+	
+	求点面距（法向量$\vec{n}$，斜向量）：
+	$d=\dfrac{|\text{斜向量}\cdot\vec{n}|}{|\vec{n}|}$.（斜向量不能化简）
+	
+	求点线~/~线线距：
+	$d=|\text{斜向量}|\cdot\sin\theta=\sqrt{\overrightarrow{PA}^2-\left(\dfrac{\overrightarrow{PA}\cdot\vec{u}}{|\vec{u}|}\right)^2}$.
+	
+	异面直线：
+	\begin{itemize}
+		\item 求公垂向量$\vec{u}$（$\vec{u}\cdot\vec{s_1}=0$，$\vec{u}\cdot\vec{s_2}=0$），$d=\dfrac{|\vec{u}\cdot\overrightarrow{P_1P_2}|}{|\vec{u}|}$.
+		
+		\item $d=\dfrac{|(\overrightarrow{P_1P_2},\overrightarrow{s_1},\overrightarrow{s_2})|}{|\overrightarrow{s_1}\times\overrightarrow{s_2}|}$.
+		
+	\end{itemize}
+	
+	\begin{center}
+		\begin{tikzpicture}[scale=0.75, baseline=(current bounding box.north)]
+			% 点面距
+			\begin{scope}[shift={(-5,0)}]
+				\draw[thick, gray!60] (0,0) -- (3,0) -- (3.8,0.9) -- (0.8,0.9) -- cycle;
+				\coordinate (P) at (1.8,2.6);
+				\coordinate (H) at (1.8,0.45);
+				\coordinate (A) at (2.9,0.6);
+				\draw[thick, SkyBlue, dashed] (P) -- (H) node[midway, left] {$d$};
+				\draw[thick, DarkRed, ->] (P) -- (A) node[midway, right] {斜向量};
+				\draw[dashed, gray] (A) -- (H);
+				\draw[->, black] (H) -- ++(0,1.4) node[right] {$\vec{n}$};
+				\fill[black] (P) circle (2pt) node[above] {$P$};
+				\fill[black] (A) circle (2pt) node[below right] {$A$};
+				\fill[black] (H) circle (2pt) node[below left] {$H$};
+				\node[black] at (1.9,-0.8) {点面距};
+			\end{scope}
+			% 点线距
+			\begin{scope}[shift={(0,0)}]
+				\draw[thick, black] (0,0) -- (3.5,1);
+				\draw[->, black] (3.5,1) -- ++(0.5,0.14) node[right] {$\vec{u}$};
+				\coordinate (A) at (1.2,0.34);
+				\coordinate (P) at (2,2.4);
+				\coordinate (H) at (2.41,0.69);
+				\draw[thick, DarkRed, ->] (A) -- (P) node[midway, left] {斜向量};
+				\draw[thick, SkyBlue, dashed] (P) -- (H) node[midway, right] {$d$};
+				\draw[gray] (A) ++(0.5,0.14) arc (16:70:0.55);
+				\node[gray] at (1.95,0.8) {$\theta$};
+				\fill[black] (A) circle (2pt) node[below left] {$A$};
+				\fill[black] (P) circle (2pt) node[above] {$P$};
+				\node[black] at (1.75,-0.8) {点线距};
+			\end{scope}
+			% 异面直线
+			\begin{scope}[shift={(5,0)}]
+				\draw[thick, black] (0,0) -- (3,0.4);
+				\draw[thick, black] (0.4,1.9) -- (3.4,2.4);
+				\draw[->, black] (3,0.4) -- ++(0.5,0.07) node[right] {$\overrightarrow{s_1}$};
+				\draw[->, black] (3.4,2.4) -- ++(0.5,0.08) node[right] {$\overrightarrow{s_2}$};
+				\coordinate (P1) at (1.4,0.19);
+				\coordinate (P2) at (1.7,2.1);
+				\draw[thick, DarkRed, ->] (P1) -- (P2) node[midway, right] {$\overrightarrow{P_1P_2}$};
+				\draw[thick, SkyBlue, dashed] (2.2,0.3) -- (2.3,2.2) node[midway, left] {$\vec{u}$};
+				\fill[black] (P1) circle (2pt) node[below] {$P_1$};
+				\fill[black] (P2) circle (2pt) node[above] {$P_2$};
+				\node[black] at (1.7,-0.8) {异面直线};
+			\end{scope}
+		\end{tikzpicture}
+	\end{center}
+\end{knowledge}
+
+\category{点面距}
+\begin{question}
+	在棱长为$2$的正方体$ABCD-A_1B_1C_1D_1$中，$E$为$BB_1$中点，求$C$到面$AD_1E$的距离.
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	\begin{enumerate}[label=\arabic*.]
+		\item 法向量：$\vec{n}=(2,-1,2)$.
+		
+		\item 斜向量：$\overrightarrow{CE}=(2,0,1)$.
+		
+		\item 公式：$d=\dfrac{|\text{斜}\cdot\vec{n}|}{|\vec{n}|}=\dfrac{4+2}{\sqrt{9}}=\dfrac{6}{3}=2$.
+		
+	\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		\coordinate (A) at (0,0);
+		\coordinate (B) at (2,0);
+		\coordinate (C) at (2.6,0.5);
+		\coordinate (D) at (0.6,0.5);
+		\coordinate (A1) at (0,2);
+		\coordinate (B1) at (2,2);
+		\coordinate (C1) at (2.6,2.5);
+		\coordinate (D1) at (0.6,2.5);
+		\coordinate (E) at (2,1);
+		
+		\draw[thick] (A) -- (B) -- (C) -- (C1) -- (D1) -- (A1) -- cycle;
+		\draw[thick] (B) -- (B1) -- (C1);
+		\draw[thick] (A1) -- (B1);
+		\draw[dashed] (A) -- (D) -- (C);
+		\draw[dashed] (D) -- (D1);
+		
+		% 平面 AD1E
+		\draw[thick, DarkRed] (A) -- (E) -- (D1) -- cycle;
+		
+		\fill (E) circle (2pt) node[right] {$E$};
+		\node[below left] at (A) {$A$};
+		\node[below] at (B) {$B$};
+		\node[right] at (C) {$C$};
+		\node[left] at (D) {$D$};
+		\node[left] at (A1) {$A_1$};
+		\node[right] at (C1) {$C_1$};
+		\node[above] at (D1) {$D_1$};
+	\end{tikzpicture}
+\end{minipage}
+
+\category{基底转换求坐标}
+\begin{question}
+	$\vec{a},\vec{b},\vec{c}$是单位正交基底，$\vec{a}+\vec{b},\ \vec{a}-\vec{b},\ \vec{c}$是另一基底. 若$\vec{p}$在$\{\vec{a},\vec{b},\vec{c}\}$下的坐标为$(1,2,3)$，则在$\{\vec{a}+\vec{b},\ \vec{a}-\vec{b},\ \vec{c}\}$下的坐标？
+\end{question}
+
+设$\vec{p}=x(\vec{a}+\vec{b})+y(\vec{a}-\vec{b})+z\vec{c}=(x+y)\vec{a}+(x-y)\vec{b}+z\vec{c}$.
+
+$\begin{cases}
+	x+y=1 \\
+	x-y=2 \\
+	z=3
+\end{cases}
+\implies
+\begin{cases}
+	x=\dfrac{3}{2} \\
+	y=-\dfrac{1}{2} \\
+	z=3
+\end{cases}$
+
+$\therefore \vec{p}$在$\{\vec{a}+\vec{b},\ \vec{a}-\vec{b},\ \vec{c}\}$下为$\left(\dfrac{3}{2},-\dfrac{1}{2},3\right)$.
+
+\category{等体积转化}
+\begin{knowledge}{楔形体体积转化}
+	$V_{EFBC}=V_{C-BEF}=\dfrac{1}{2}V_{C-ABE}=\dfrac{1}{2}V_{E-ABC}$.
+\end{knowledge}
+
+\begin{minipage}[t]{0.7\textwidth}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		\coordinate (A) at (0,0);
+		\coordinate (B) at (3,0);
+		\coordinate (C) at (3.7,0.9);
+		\coordinate (D) at (0.7,0.9);
+		\coordinate (E) at (1.6,2.2);
+		\coordinate (F) at (2.8,2.2);
+		
+		\draw[thick] (A) -- (B) -- (C) -- (F) -- (E) -- cycle;
+		\draw[thick] (B) -- (F);
+		\draw[thick, DarkRed] (E) -- (B);
+		\draw[dashed] (A) -- (D) -- (C);
+		\draw[dashed] (D) -- (E);
+		\draw[dashed, DarkRed] (E) -- (C);
+		
+		\node[left] at (A) {$A$};
+		\node[below] at (B) {$B$};
+		\node[right] at (C) {$C$};
+		\node[left] at (D) {$D$};
+		\node[above] at (E) {$E$};
+		\node[above] at (F) {$F$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsection{第二讲\quad 立体几何的空间向量方法}
+
+\subsubsection{平行、垂直}
+
+\subsubsection{角度问题}
+\begin{knowledge}{二面角锐钝判断}
+	在判断二面角是锐/钝.
+	
+	看法向量的指向.
+	
+	同时往面内/面外指：$\cos\theta$相反.
+	
+	一个往面内，一个往面外指：$\cos\theta$相同.
+	
+	遇到难写的点，可以利用共线设$\lambda$，确定点的位置.
+\end{knowledge}
+
+\category{存在性探究}
+\begin{question}
+	试探究$PC$上是否存在$E$，使面$ADE$与面$ABC$的$\cos\theta=\dfrac{\sqrt{21}}{7}$，确定$E$的位置.
+	（$PA=AC=2$，$\angle PAC=45^\circ$，$\angle B=90^\circ$，$\angle PCB=105^\circ$，折起使面$PAC\perp$面$ABC$；(1)$BC\perp AD$.）
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	设$\overrightarrow{PE}=\lambda\overrightarrow{PC}=(2\lambda,0,-2\lambda)$.
+	
+	$\overrightarrow{AE}=\overrightarrow{AP}+\overrightarrow{PE}=(2\lambda,0,2-2\lambda)$.
+	
+	$\overrightarrow{AD}=\left(\dfrac{3}{4},\dfrac{\sqrt{3}}{4},1\right)$，设面$ADE$法向量$\vec{n}$.
+	
+	$\vec{n}=(\sqrt{3}\lambda-\sqrt{3},\ 3-7\lambda,\ \sqrt{3}\lambda)$.
+	
+	面$ABC$法向量$\vec{n_1}=(0,0,1)$.
+	
+	$|\cos\theta|=|\cos\langle\vec{n},\vec{n_1}\rangle|=\dfrac{\sqrt{21}}{7}=\dfrac{\sqrt{3}\lambda}{\sqrt{(\sqrt{3}\lambda-\sqrt{3})^2+(3-7\lambda)^2+(\sqrt{3}\lambda)^2}}$.
+	
+	$\therefore \lambda=\dfrac{1}{2}$，即$E$为中点.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		\coordinate (A) at (0,0);
+		\coordinate (C) at (-2.2,0.2);
+		\coordinate (B) at (-1.2,-0.9);
+		\coordinate (P) at (0,2);
+		\coordinate (E) at (-0.9,1.2);
+		\coordinate (D) at (-1.1,0.1);
+		
+		% 坐标轴
+		\draw[->, gray!40] (A) -- (0.5,-1.7) node[right] {$y$};
+		\draw[->, gray!40] (A) -- (0,2.7) node[above] {$z$};
+		\draw[->, gray!40] (A) -- (1.3,0.7) node[right] {$x$};
+		
+		% 立体
+		\draw[thick] (P) -- (A);
+		\draw[thick] (P) -- (C);
+		\draw[thick] (A) -- (B);
+		\draw[thick] (B) -- (C);
+		\draw[dashed] (A) -- (C);
+		\draw[thick, DarkRed] (A) -- (E);
+		\draw[dashed, DarkRed] (E) -- (D);
+		\draw[dashed, DarkRed] (A) -- (D);
+		
+		\fill (A) circle (2pt) node[right] {$A$};
+		\fill (B) circle (2pt) node[below] {$B$};
+		\fill (C) circle (2pt) node[left] {$C$};
+		\fill (P) circle (2pt) node[right] {$P$};
+		\fill (E) circle (2pt) node[left] {$E$};
+		\fill (D) circle (2pt) node[below] {$D$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsection{第三讲\quad 直线方程}
+
+\subsubsection{直线方程}
+\category{垂直与最值}
+\begin{question}
+	$a^2x+y+2=0$与$bx-(a^2+1)y-1=0$垂直，求$|ab|_{\min}$.
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	垂直条件：$a^2b-(a^2+1)=0$.
+	
+	$b=\dfrac{a^2+1}{a^2}$.
+	
+	$\therefore |ab|=\left|a\cdot\dfrac{a^2+1}{a^2}\right|=\left|a+\dfrac{1}{a}\right|$.
+	
+	当$a=-1$或$1$时，$\left(a+\dfrac{1}{a}\right)_{\min}=2$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.6, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-3,0) -- (3,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-4) -- (0,4) node[above] {$y$};
+		
+		% y = x + 1/x
+		\draw[thick, DarkRed, domain=0.3:2.8, smooth, variable=\x] plot ({\x}, {\x+1/\x});
+		\draw[thick, DarkRed, domain=-2.8:-0.3, smooth, variable=\x] plot ({\x}, {\x+1/\x});
+		
+		\draw[dashed, gray] (1,0) -- (1,2);
+		\draw[dashed, gray] (-1,0) -- (-1,-2);
+		\node[below] at (1,0) {$1$};
+		\node[below] at (-1,0) {$-1$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsubsection{对称问题}
+\category{点关于线对称}
+\begin{question}
+	$A(2,1)$，$l:x-y-4=0$，求$A$关于$l$的对称点$B(a,b)$.
+\end{question}
+
+$AB$中垂线是$l$：
+\[
+\begin{cases}
+	AB\text{中点在}l\text{上} \\
+	AB\perp l
+\end{cases}
+\implies
+\begin{cases}
+	\dfrac{2+a}{2}-\dfrac{1+b}{2}-4=0 \\
+	\dfrac{b-1}{a-2}=-1
+\end{cases}
+\]
+
+解得$a=5,\ b=-2$.
+
+$\therefore B(5,-2)$.
+
+\subsubsection{直线系方程}
+\begin{knowledge}{直线系方程}
+	用于解决类似以下问题：求过$2x-y+8=0$和$x+y-1=0$交点和$(4,3)$的直线方程.
+	
+	$2x-y+8+\lambda(x+y-1)=0$过两直线交点.
+	
+	除$x+y-1=0$外，表示过交点的所有直线. 把$(4,3)$代入可得到$\lambda$，进而求过交点和$(4,3)$的直线.
+	
+	代入：$13+6\lambda=0 \implies \lambda=-\dfrac{13}{6}$.
+	
+	$\therefore$ 直线为$x+19y-61=0$.
+\end{knowledge}
+
+\begin{knowledge}{等距与对称条件}
+	\begin{center}
+		\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+			% 两平行线间一点等距
+			\begin{scope}[shift={(-6,0)}]
+				\draw[thick] (0,-1.5) -- (1.5,2) node[above] {$l_1$};
+				\draw[thick] (1.8,-1.5) -- (3.3,2) node[above] {$l_2$};
+				\fill (1.5,0.3) circle (2pt) node[left] {$A$};
+				\node[below] at (1.6,-1.6) {$\begin{cases} l_1\parallel l_2 \\ d_{A\to l_1}=d_{A\to l_2} \end{cases}$};
+			\end{scope}
+			% 三平行线等距
+			\begin{scope}[shift={(-1.5,0)}]
+				\draw[thick] (0,-1.5) -- (1,2) node[above] {$l_1$};
+				\draw[thick] (1.2,-1.5) -- (2.2,2) node[above] {$l$};
+				\draw[thick] (2.4,-1.5) -- (3.4,2) node[above] {$l_2$};
+				\node[below] at (1.7,-1.6) {$\begin{cases} l_1\parallel l_2\parallel l \\ d_{l_1\to l}=d_{l_2\to l} \end{cases}$};
+			\end{scope}
+			% 角平分线对称
+			\begin{scope}[shift={(3.5,0)}]
+				\draw[thick] (-1,-1.5) -- (2,2) node[above] {$l_1$};
+				\draw[thick] (-1,1) -- (2.5,-1.5) node[right] {$l_2$};
+				\draw[thick] (-1.5,0) -- (2.5,0.4) node[right] {$l$};
+				\fill (0.3,0) circle (2pt) node[below] {$P$};
+				\fill (1.2,0.9) circle (2pt) node[left] {$A$};
+				\fill (1.4,-0.7) circle (2pt) node[below] {$B$};
+				\draw[dashed] (1.2,0.9) -- (1.4,-0.7);
+				\node[below] at (1,-1.6) {$\begin{cases} l_2\text{和}l_1\text{关于}l\text{对称} \\ A\text{关于}l\text{对称点}B \end{cases}$};
+			\end{scope}
+		\end{tikzpicture}
+	\end{center}
+\end{knowledge}
+
+\subsection{第四讲\quad 圆的方程}
+
+\subsubsection{圆的方程}
+\begin{knowledge}{设方程办法}
+	已知圆心、半径 $\to$ 标准（几何）；已知圆上两点 $\to$ 圆心在中垂线上.
+	
+	圆上三个点 $\to$ 一般（代化数）.
+\end{knowledge}
+
+\subsubsection{点线圆的位置关系}
+\begin{knowledge}{位置关系与圆系}
+	点、圆：把点代入方程，与方程右侧比较.
+	
+	已知公切线条数 $\to$ 圆与圆的位置关系.
+	
+	圆系方程：设$x^2+y^2=1$，$x^2+y^2-4x=4$交于$A,B$.
+	
+	$\therefore x^2+y^2-1+\lambda(x^2+y^2-4x-4)=0$.
+	
+	表示为过$A,B$（除$x^2+y^2-4x-4$）所有的圆.
+\end{knowledge}
+
+\subsubsection{切线方程与切线长}
+\begin{knowledge}{切线方程与切线长}
+	切线方程：
+	\begin{enumerate}[label=\arabic*.]
+		\item 点在圆上.
+		
+		\item 点在圆外：设$k$，讨论$k$是否存在；点斜式$y-n=k(x-m)$；$d=r$.
+		
+	\end{enumerate}
+	
+	切线长：勾股定理.
+\end{knowledge}
+
+\category{过三点求圆}
+\begin{question}
+	$f(x)=x^2+2x+b\ (b<1)$与坐标轴有三个交点，经过这三点的圆记为$C$，求一般方程.
+\end{question}
+
+令$x=0$，得$(0,b)$.
+
+令$y=0$，得$x^2+2x+b=0$.
+
+设$x^2+y^2+Dx+Ey+F=0$.
+
+令$x=0$：$y^2+Ey+F=0 \implies b^2+bE+F=0$.
+
+令$y=0$：$x^2+Dx+F=0$，与$x^2+2x+b=0$对应系数相同.
+
+$\therefore D=2$，$F=b \implies b^2+bE+b=0 \implies E=-1-b$.
+
+$\therefore x^2+y^2+2x-(b+1)y+b=0$.
+
+\category{截距和}
+\begin{question}
+	求过$(4,2)$，$(-1,3)$且在四个截距和为$2$的圆的方程.
+\end{question}
+
+令$x=0$：$y^2+Ey+F=0$，$y_1+y_2=-E$.
+
+令$y=0$：$x^2+Dx+F=0$，$x_1+x_2=-D$.
+
+$\therefore -D-E=2$.
+
+代入两点：
+\[
+\begin{cases}
+	4D+2E+F=-20 \\
+	-D+3E+F=-10 \\
+	-D-E=2
+\end{cases}
+\implies
+\begin{cases}
+	D=-2 \\
+	E=0 \\
+	F=-12
+\end{cases}
+\]
+
+$\therefore x^2+y^2-2x-12=0$.
+
+\category{直线与圆位置关系}
+\begin{question}
+	$(a,b)$是$x^2+y^2=r^2$外一点，则$ax+by=r^2$与圆的位置关系？
+\end{question}
+
+由已知：$a^2+b^2>r^2$.
+
+$d=\dfrac{r^2}{\sqrt{a^2+b^2}}<r$.
+
+且$(0,0)$不满足$ax+by-r^2=0$（不过圆心）.
+
+$\therefore$ 相交且不过圆心.
+
+\subsection{第五讲\quad 直线与圆综合}
+
+\subsubsection{圆的切点、弦问题}
+\begin{knowledge}{切点弦与两圆相减}
+	\begin{enumerate}[label=\arabic*.]
+		\item 求两圆心；距为$2r$；$\dfrac{1}{2}OP$为$r$；$OP$中点为圆心；两点相减即可.
+		
+		\item $P(x_0,y_0)$，圆$(x-a)^2+(y-b)^2=r^2$：切点弦$(x_0-a)(x-a)+(y_0-b)(y-b)=r^2$.
+		
+	\end{enumerate}
+	
+	两圆相减：求公共弦、求公切线、求切点弦.
+\end{knowledge}
+
+\category{不完整圆}
+\begin{question}
+	$y=1+\sqrt{4-x^2}$与$y=k(x-2)+4$有两个相异交点时，求$k$范围.
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	$y=1+\sqrt{4-x^2} \implies x^2+(y-1)^2=4\ (y\geq1,\ -2\leq x\leq2)$为上（半）圆.
+	
+	不完整圆问题：注意定义域、值域，数形结合.
+	
+	直线过定点$(2,4)$，结合半圆图形求$k$范围.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-3,0) -- (3,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-1) -- (0,4.5) node[above] {$y$};
+		
+		% 上半圆
+		\draw[thick, domain=0:180, smooth, variable=\t] plot ({2*cos(\t)}, {1+2*sin(\t)});
+		\draw[dashed, gray] (-2,1) -- (2,1);
+		
+		% 直线过 (2,4)
+		\draw[thick, DarkRed] (-3,0.25) -- (2.5,4.4);
+		
+		\fill (2,4) circle (2pt) node[right] {$(2,4)$};
+		\fill (0,1) circle (2pt) node[left] {$C$};
+	\end{tikzpicture}
+\end{minipage}
+
+\category{几点到线距为$d$}
+\begin{question}
+	$x^2+y^2-4x-4y-10=0$上至少有三个不同的点到$ax+by=0$的距离为$2\sqrt{2}$，求倾斜角的范围.
+\end{question}
+
+圆：$(x-2)^2+(y-2)^2=18$，圆心$(2,2)$，$r=3\sqrt{2}$.
+
+转化为：圆心到线距$\leq\sqrt{2}$.
+
+$\dfrac{|2a+2b|}{\sqrt{a^2+b^2}}\leq\sqrt{2} \implies a^2+4ab+b^2\leq0$.
+
+$\left(\dfrac{a}{b}\right)^2+4\dfrac{a}{b}+1\leq0 \implies -2-\sqrt{3}\leq\dfrac{a}{b}\leq-2+\sqrt{3}$.
+
+$2-\sqrt{3}\leq-\dfrac{a}{b}\leq2+\sqrt{3}$，即$k=-\dfrac{a}{b}\in[2-\sqrt{3},\ 2+\sqrt{3}]$.
+
+$\therefore \alpha\in\left[\dfrac{\pi}{12},\ \dfrac{5\pi}{12}\right]$.
+
+\category{最值问题（长、角）}
+\begin{knowledge}{最值结论}
+	越靠近，切线长越短.
+	
+	两切点与直线上动点成角最大（比$\sin$）.
+	
+	圆系方程：两圆相减出公共弦方程；一圆方程$+\lambda\cdot$公共弦方程$=0$.
+\end{knowledge}
+
+\begin{question}
+	$M$在$x^2+y^2=1$上，$P$在$2x+y-3=0$上，过$P$作圆切线，切于$A,B$.
+	\begin{enumerate}[label=\arabic*.]
+		\item 圆上是否存在到直线距离为$1$的点？
+		\item 切线长最小值.
+		\item $\angle APB$最大值.
+	\end{enumerate}
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	\begin{enumerate}[label=\arabic*.]
+		\item 圆心到线距$\dfrac{3\sqrt{5}}{5}$.
+		
+		$\therefore \dfrac{3\sqrt{5}}{5}-1\leq d\leq\dfrac{3\sqrt{5}}{5}+1$，含$1$，存在.
+		
+		\item 切线长$_{\min}\implies$点线距$_{\min}+$勾股：$\sqrt{\left(\dfrac{3\sqrt{5}}{5}\right)^2-1}=\dfrac{2\sqrt{5}}{5}$.
+		
+		\item $\angle APB$越靠近圆越大，在$OP_{\min}$时，$\sin\angle OPA=\dfrac{1}{3\sqrt{5}/5}=\dfrac{\sqrt{5}}{3}>\dfrac{1}{2}=\sin30^\circ$.
+		
+		$\therefore \angle OPA>30^\circ$，$\angle APB>60^\circ$.
+		
+	\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-2,0) -- (3,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-1.5) -- (0,3) node[above] {$y$};
+		
+		\draw[thick] (0,0) circle (1);
+		
+		\coordinate (P) at (1.3,2.1);
+		\coordinate (A) at (0.95,0.35);
+		\coordinate (B) at (-0.5,0.87);
+		
+		\draw[thick, DarkRed] (P) -- (A);
+		\draw[thick, DarkRed] (P) -- (B);
+		\draw[dashed, SkyBlue] (0,0) -- (P);
+		
+		\fill (P) circle (2pt) node[right] {$P$};
+		\fill (A) circle (2pt) node[right] {$A$};
+		\fill (B) circle (2pt) node[left] {$B$};
+		\fill (0,0) circle (2pt) node[below left] {$O$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsubsection{旋转轴}
+\begin{knowledge}{定值、存在性问题}
+	一定要设$A(x_1,y_1), B(x_2,y_2)$.
+	
+	算$x_1+x_2$，$x_1x_2$.
+	
+	再根据题目列式.
+	
+	遇垂直，用坐标表示点.
+	
+	再表示向量，用向量坐标运算求解.
+\end{knowledge}
+
+\category{圆系方程：公共弦为直径}
+\begin{question}
+	求$x^2+y^2+4x+1=0$，$x^2+y^2+2x+2y+1=0$公共弦为直径的圆的方程.
+\end{question}
+
+方法一（圆系）：
+相减求弦方程：$2x-2y=0 \implies x-y=0$.
+
+$\therefore$ 圆方程$x^2+y^2+4x+1+\lambda(x-y)=0 \implies x^2+y^2+(\lambda+4)x-\lambda y+1=0$.
+
+圆心$\left(\dfrac{-\lambda-4}{2},\dfrac{\lambda}{2}\right)$代入$AB$：$\lambda=-2$.
+
+$\therefore (x+1)^2+(y+1)^2=1$.
+
+方法二：$\begin{cases} AB\text{方程} \\ O_1O_2\text{方程} \end{cases}$求得圆心，用弦长公式求得值$\div2=r$.
+
+\category{旋转轴：定值}
+\begin{question}
+	$y=kx+2$与$(x-1)^2+y^2=1$交于$A,B$，证明$k_{OA}+k_{OB}$为定值.
+\end{question}
+
+联立：$(k^2+1)x^2+(4k-2)x+4=0$.
+
+设$A(x_1,y_1), B(x_2,y_2)$，$x_1+x_2=-\dfrac{4k-2}{k^2+1}$，$x_1x_2=\dfrac{4}{k^2+1}$.
+
+$k_{OA}+k_{OB}=\dfrac{y_1}{x_1}+\dfrac{y_2}{x_2}=\dfrac{kx_1+2}{x_1}+\dfrac{kx_2+2}{x_2}$
+
+分离常数$=2k+\dfrac{2}{x_1}+\dfrac{2}{x_2}=2k+\dfrac{2(x_1+x_2)}{x_1x_2}=2k-(2k-1)=1$.
+
+$\therefore$ 定值为$1$.
+
+\category{存在性：以弦为直径过定点}
+\begin{question}
+	$y=x+m$交$(x+2)^2+y^2=4$于$P,Q$，是否存在以$PQ$为直径的圆过$(-2,0)$，求$m$.
+\end{question}
+
+联立：$2x^2+2(m+2)x+m^2=0$.
+
+设$P(x_1,y_1), Q(x_2,y_2)$：$x_1+x_2=-m-2$，$x_1x_2=\dfrac{m^2}{2}$.
+
+$PA\perp QA$（$A(-2,0)$）：$(x_1+2)(x_2+2)+y_1y_2=0$.
+
+即$(x_1+2)(x_2+2)+(x_1+m)(x_2+m)=0$.
+
+$2x_1x_2+(m+2)(x_1+x_2)+4+m^2=0$.
+
+$m^2-(m+2)^2+4+m^2=0 \implies m^2-4m=0$.
+
+$\therefore m=0$或$m=4$，且满足$\Delta>0$.
+
+\subsection{第六讲\quad 椭圆}
+
+\subsubsection{焦点三角形变形}
+\begin{knowledge}{焦点三角形周长}
+	弦$AB$过$F_1$，则$C_{\triangle ABF_2}=4a$.
+\end{knowledge}
+
+\category{待定系数求方程}
+\begin{question}
+	椭圆经过$(\sqrt{2},\dfrac{\sqrt{2}}{2})$，$(\dfrac{2\sqrt{6}}{3},\dfrac{\sqrt{3}}{3})$，求方程.
+\end{question}
+
+设$mx^2+ny^2=1$.
+
+$\begin{cases}
+	2m+\dfrac{1}{2}n=1 \\
+	\dfrac{24}{9}m+\dfrac{1}{3}n=1
+\end{cases}
+\implies
+\begin{cases}
+	m=\dfrac{1}{4} \\
+	n=1
+\end{cases}$
+
+$\therefore \dfrac{1}{4}x^2+y^2=1$.
+
+\category{最值问题（定义转化）}
+\begin{question}
+	$P$为$\dfrac{x^2}{25}+\dfrac{y^2}{9}=1$上动点，$F_2$为右焦点，$A(3,1)$，则$(PF_2+PA)_{\min}=$?
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	$PF_2+PA=10-PF_1+PA$（$PF_1+PF_2=2a=10$）.
+	
+	$=10+(PA-PF_1)\geq10-AF_1$.
+	
+	$AF_1=\sqrt{(3+4)^2+1^2}=5\sqrt{2}$.
+	
+	$\therefore$ 最小值$=10-5\sqrt{2}$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.5, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-6,0) -- (6,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-3.5) -- (0,3.5) node[above] {$y$};
+		\draw[thick] (0,0) ellipse (5 and 3);
+		
+		\coordinate (F1) at (-4,0);
+		\coordinate (F2) at (4,0);
+		\coordinate (A) at (3,1);
+		\coordinate (P) at (-2,2.4);
+		
+		\draw[dashed, DarkRed] (P) -- (A);
+		\draw[dashed, SkyBlue] (P) -- (F1);
+		\draw[dashed, SkyBlue] (F1) -- (A);
+		
+		\fill (F1) circle (3pt) node[below] {$F_1$};
+		\fill (F2) circle (3pt) node[below] {$F_2$};
+		\fill (A) circle (3pt) node[right] {$A$};
+		\fill (P) circle (3pt) node[above] {$P$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsubsection{焦点三角形面积}
+\begin{knowledge}{面积公式}
+	\begin{enumerate}[label=\arabic*.]
+		\item $S=b^2\cdot\tan\dfrac{\theta}{2}$.
+		
+		\item $S=c\cdot|y_P|$.
+		
+		\item $S=(a+c)r$（内切圆）.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{面积综合}
+\begin{question}
+	$P$为$\dfrac{x^2}{8}+\dfrac{y^2}{4}=1$上一点，$F_1,F_2$左右焦点，$S_{\triangle F_1PF_2}=3$.
+	求：(1)$y_P$；(2)判断$\angle F_1PF_2>\dfrac{\pi}{2}$？；(3)$C_{\triangle F_1PF_2}$；(4)$r$.
+\end{question}
+
+\begin{enumerate}[label=\arabic*.]
+	\item $S=c\cdot|y_P|=3 \implies y_P=\pm\dfrac{3}{2}$.
+	
+	\item $\tan\dfrac{\theta}{2}=\dfrac{S}{b^2}=\dfrac{3}{4}<1=\tan\dfrac{\pi}{4}$.
+	
+	$\therefore \theta<\dfrac{\pi}{2}$（不大于）.
+	
+	\item $C_{\triangle PF_1F_2}=2a+2c=4\sqrt{2}+4$.
+	
+	\item $S=(a+c)r=3 \implies r=\dfrac{3}{2\sqrt{2}+2}$.
+	
+\end{enumerate}
+
+
 
 \end{document}
