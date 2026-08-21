@@ -1,0 +1,277 @@
+\documentclass[12pt,a4paper]{article}
+% 基础包
+\usepackage{ctex}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{indentfirst}
+% 字体设置
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+% 数学公式
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{nccmath}
+\everymath{\displaystyle}
+\usepackage{txfonts}
+\providecommand{\varparallel}{\mathrel{/\!/}}
+% 表格
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{colortbl}
+% 图片和颜色
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+% 列表
+\usepackage{enumitem}
+\usepackage{tasks}
+% TikZ 画图
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{
+	arrows.meta, calc, patterns, intersections,
+	through, angles, quotes, decorations.pathmorphing
+}
+% 页面设置
+\geometry{
+	left=1.6cm,
+	right=2.04cm,
+	top=1.6cm,
+	bottom=2.54cm,
+	headheight=1.2cm,
+	footskip=0.8cm,
+	nohead
+}
+% 行距和段落
+\linespread{1.5}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.5ex}
+% 页脚设置
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\makebox[0pt][c]{数学试题~第\thepage 页（共\pageref{LastPage}页）}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+% 选择题选项环境
+\NewTasksEnvironment[
+label=\Alph*.,
+label-width=1.5em,
+item-indent=2em,
+column-sep=2em,
+before-skip=0.8em,
+after-skip=0.8em
+]{choicesFour}[\choice](4)
+\NewTasksEnvironment[
+label=\Alph*.,
+label-width=1.5em,
+item-indent=2em,
+column-sep=3em,
+before-skip=0.8em,
+after-skip=0.8em
+]{choicesTwo}[\choice](2)
+\NewTasksEnvironment[
+label=\Alph*.,
+label-width=1.5em,
+item-indent=2em,
+before-skip=0.8em,
+after-skip=0.8em
+]{choicesOne}[\choice](1)
+\begin{document}
+	\noindent {\large\bfseries 绝密$\bigstar$启用前}
+	\vspace*{0.5cm}
+	\begin{center}
+		{\Large 2026年普通高等学校招生全国统一考试}\\[0.8cm]
+		{\LARGE\bfseries 数~~~~学}
+	\end{center}
+	
+	\noindent 本试卷共4页，19小题，满分150分，考试时间120分钟.
+	
+	\noindent\hangindent=73pt {\bfseries 注意事项：}1. 答题前，请务必将自己的姓名、准考证号用黑色字迹签字笔或钢笔分别填写在试卷和答题卡上. 将条形码横贴在答题卡右上角的“条形码粘贴处”.
+	
+	\noindent\hangindent=73pt\hspace{61pt}2. 作答选择题时，选出每小题答案后，用2B铅笔把答题卡上对应题目选项的答案信息点涂黑，在试卷上作答无效；如需改动，用橡皮擦干净后，再选涂其他答案.
+	
+	\noindent\hangindent=73pt\hspace{61pt}3. 非选择题必须用黑色字迹钢笔或签字笔作答，答案必须写在答题卡各题目指定区域的相应位置上；如需改动，先划掉原来的答案，然后再写上新的答案.
+	
+	\noindent\hangindent=73pt\hspace{61pt}4. 考生须保持答题卡的整洁. 考试结束后，将试卷和答题卡一并交回.
+	
+	\vspace{0.3cm}
+	
+	\noindent\hangindent=2em {\bfseries 一、选择题：本题共8小题，每小题5分，共40分. 每小题给出的四个选项中，只有一项是符合题目要求的.}
+	
+	\begin{enumerate}[leftmargin=*,label=\arabic*.,itemsep=0.8ex]
+		\item $(1-3\mathrm{i})^2=$
+		\begin{choicesFour}
+			\choice $-8+6\mathrm{i}$ \choice $-8-6\mathrm{i}$ \choice $8+6\mathrm{i}$ \choice $8-6\mathrm{i}$
+		\end{choicesFour}
+		\item 已知集合$A=\{0,1,3,6,9\}$，$B=\{x\mid x^2=x\}$，则$A\cap B=$
+		\begin{choicesFour}
+			\choice $\{0,1\}$ \choice $\{3,6\}$ \choice $\{0,1,9\}$ \choice $\{0,3,9\}$
+		\end{choicesFour}
+		\item 已知$|\boldsymbol{a}+\boldsymbol{b}|=1$，$|\boldsymbol{a}-\boldsymbol{b}|=3$，则$\boldsymbol{a}\cdot\boldsymbol{b}=$
+		\begin{choicesFour}
+			\choice $\dfrac12$ \choice $\dfrac13$ \choice $-\dfrac13$ \choice $-\dfrac12$
+		\end{choicesFour}
+		\item 已知双曲线$C:\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1\ (a>0,\ b>0)$过点$(1,0)$和$\left(\sqrt7,\dfrac32\right)$，则双曲线$C$的渐近线方程是
+		\begin{choicesFour}
+			\choice $y=\pm\dfrac32 x$ \choice $y=\pm\dfrac{\sqrt6}{4}x$ \choice $y=\pm\dfrac23 x$ \choice $y=\pm\dfrac{\sqrt6}{2}x$
+		\end{choicesFour}
+		\item 已知棱台的上下底面均为有一个角为$60^\circ$的菱形，且上下底面的边长分别为$2$和$3$，若该棱台的高为$\sqrt3$，则该棱台的体积为
+		\begin{choicesFour}
+			\choice $\dfrac{19}{12}$ \choice $\dfrac{19}{6}$ \choice $\dfrac{19}{4}$ \choice $\dfrac{19}{2}$
+		\end{choicesFour}
+		\item 现有甲、乙、丙、丁等$8$人分成$A,B$两个技术小组，要求每组$4$人，且甲、乙必须在一起，丙、丁不能在一起，则不同的分配方案有
+		\begin{choicesFour}
+			\choice $10$种 \choice $12$种 \choice $16$种 \choice $24$种
+		\end{choicesFour}
+		\item 已知$\alpha$为第二象限角，且$3\sin2\alpha\cos\alpha=8\sin\alpha\cos2\alpha$，则$\dfrac{\sin2\alpha}{1+\cos2\alpha}=$
+		\begin{choicesFour}
+			\choice $\dfrac34$ \choice $\dfrac35$ \choice $-\dfrac12$ \choice $\dfrac{15}{12}$
+		\end{choicesFour}
+		\item 已知函数$f(x)$为偶函数，且满足$f(x)+f(2-x)=0$，且当$x\in\left[\dfrac32,3\right]$时，$f(x)=x^2+ax+b$，则
+		\begin{choicesFour}
+			\choice $a=-2,\ b=-3$ \choice $a=-2,\ b=3$ \choice $a=-4,\ b=-3$ \choice $a=-4,\ b=3$
+		\end{choicesFour}
+	\end{enumerate}
+	\vspace{0.3cm}
+	\noindent\hangindent=2em {\bfseries 二、选择题：本题共3小题，每小题6分，共18分. 每小题给出的选项中，有多项符合题目要求. 全部选对的得6分，部分选对的得部分分，有选错的得0分.}
+	\begin{enumerate}[leftmargin=*,label=\arabic*.,resume,itemsep=0.8ex]
+		\item 已知圆$O:x^2+y^2=1$，圆$A:x^2+y^2-6x-8y+k=0$，则下列说法正确的是
+		\begin{choicesOne}
+			\choice 点$A$的坐标为$(-3,-4)$
+			\choice $k=9$时，圆$A$与$x$轴相切
+			\choice 当$k=-11$时，圆$A$与圆$O$相切
+			\choice 当圆$A$与圆$O$相交时，两交点所在的直线方程为$6x+8y-k-2=0$
+		\end{choicesOne}
+		\item 已知等比数列$\{a_n\}$的公比$q\ne1$，且$a_1>0$，$2a_3=a_1+a_2$，记数列$\{a_n\}$的前$n$项和为$S_n$，则
+		\begin{choicesOne}
+			\choice $q=-\dfrac12$
+			\choice $S_n>\dfrac23 a_1$
+			\choice $S_{n+2}=\dfrac{S_n+S_{n+1}}{2}$
+			\choice $S_1+S_2+\cdots+S_n>\dfrac23 na_1$
+		\end{choicesOne}
+		\item 已知抛物线$E:y^2=8x$，有一斜率为$k\ (k>0)$的直线$l$过点$(-1,0)$，点$A$在抛物线$E$上，$B,C$两点在直线$l$上，且$\triangle ABC$为等边三角形，则
+		\begin{choicesOne}
+			\choice 抛物线$E$的准线方程为$x=-2$
+			\choice 当直线$l$与抛物线$E$无交点时，$k>\sqrt2$
+			\choice 若直线$l$与抛物线$E$相交于唯一一点$B$，则抛物线$E$的焦点在直线$AB$上
+			\choice 当$k=2$时，$\triangle ABC$面积的最小值为$\dfrac{\sqrt3}{15}$
+		\end{choicesOne}
+	\end{enumerate}
+	\vspace{0.3cm}
+	\noindent {\bfseries 三、填空题：本题共3小题，每小题5分，共15分.}
+	\begin{enumerate}[leftmargin=*,label=\arabic*.,resume,itemsep=0.8ex]
+		\item 设$S_n$为等差数列$\{a_n\}$的前$n$项和，若$a_1=-1$，$a_4=5$，则$S_6=$\underline{\qquad\qquad}.
+		\item 若函数$f(x)=2^x+2^{2-x}-m$有两个零点，则$m$的取值范围为\underline{\qquad\qquad}.
+		\item 已知球$O$的体积为$V_0=4\sqrt3\pi$，点$A,B,C,D$均在球表面上，若$\triangle ABC$为正三角形，且$DA=DB=DC=\sqrt2$，则$S_{\triangle ABC}=$\underline{\qquad\qquad}.
+	\end{enumerate}
+	\vspace{0.3cm}
+	\noindent {\bfseries 四、解答题：本题共5小题，共77分. 解答应写出文字说明、证明过程或演算步骤.}
+	\begin{enumerate}[leftmargin=*,label=\arabic*.,resume,itemsep=1.2ex]
+		\item (13分)\\
+		某工厂抽取一批电子元件检测，记录第一次出故障的时间（天），然后绘制出如下有关于“首次故障时间”与“对应频率”的频率分布直方图：
+		
+		(1) 求第一四分位数和中位数；
+		
+		(2) 设$\hat{p}$为首次故障时间小于$365$天的概率估计值.
+		
+		\hspace*{2em}(i) 求$\hat{p}$；
+		
+		\hspace*{2em}(ii) 已知该工厂向某用户销售了$100$件电子元件，$X$为这$100$件产品首次出现故障时间小于$365$天的件数，若$X\sim B(100,\hat{p})$，求$E(X)$和$D(X)$.
+		
+		\begin{minipage}{0.4\textwidth}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.6\linewidth}
+			\centering
+			\begin{tikzpicture}[baseline=(current bounding box.north), scale=1, line cap=round, line join=round]
+				% 坐标轴（x轴带折断符号）
+				\draw (0,0)--(0.2,0);
+				\draw (0.2,0)--(0.3,0.15)--(0.5,-0.15)--(0.6,0);
+				\draw[->] (0.6,0)--(8.2,0) node[right]{时间/天};
+				\draw[->] (0,0)--(0,3.2) node[above]{$\dfrac{\text{频率}}{\text{组距}}$};
+				\node[below left] at (0,0) {$O$};
+				% x轴刻度
+				\foreach \i/\t in {0/345,1/355,2/365,3/375,4/385,5/395,6/405,7/415,8/425}
+				\draw (0.9+0.8*\i,0.1)--(0.9+0.8*\i,-0.1) node[below]{$\t$};
+				% y轴刻度
+				\foreach \y/\s in {0.5/0.005,1/0.01,1.5/0.015,2/0.02,2.5/0.025}
+				\node[left] at (0,\y) {$\s$};
+				% 虚线
+				\draw[dashed] (0,0.5)--(7.3,0.5);
+				\draw[dashed] (0,1)--(2.5,1);
+				\draw[dashed] (0,1.5)--(5.7,1.5);
+				\draw[dashed] (0,2)--(3.3,2);
+				\draw[dashed] (0,2.5)--(4.1,2.5);
+				% 直方图矩形：[345,355)0.005 [355,365)0.01 [365,375)0.02 [375,385)0.025 [385,395)0.015 [395,405)0.015 [405,415)0.005 [415,425)0.005
+				\foreach \i/\h in {0/0.5,1/1,2/2,3/2.5,4/1.5,5/1.5,6/0.5,7/0.5}
+				\draw (0.9+0.8*\i,0) rectangle (0.9+0.8*\i+0.8,\h);
+			\end{tikzpicture}
+		\end{minipage}
+		
+		\newpage
+		\item (15分)\\
+		如图，在三棱锥$A-BCD$中，点$E$在$BD$上，$AE\perp CE$，$AE\perp DE$，$CD\perp AD$.
+		\begin{minipage}{0.7\textwidth}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.3\linewidth}
+			\centering
+			\tdplotsetmaincoords{40}{150}
+			\begin{tikzpicture}[tdplot_main_coords, baseline=(current bounding box.north), scale=0.8, line cap=round, line join=round]
+				\coordinate (D) at (0,0,0);
+				\coordinate (E) at (2,0,0);
+				\coordinate (B) at (3,0,0);
+				\coordinate (C) at (0,3.46,0);
+				\coordinate (A) at (2,0,1.41);
+				\draw[thick] (D)--(C)--(B) (A)--(D) (A)--(C) (A)--(B);
+				\draw[dashed] (D)--(B);
+				\draw[dashed] (A)--(E) ;
+				\draw[dashed] (C)--(E);
+				\fill (D) circle(1pt) node[below left]{$D$};
+				\fill (E) circle(1pt) node[below]{$E$};
+				\fill (B) circle(1pt) node[below right]{$B$};
+				\fill (C) circle(1pt) node[right]{$C$};
+				\fill (A) circle(1pt) node[above]{$A$};
+			\end{tikzpicture}
+		\end{minipage}
+		
+		(1) 求证：$CD\perp AB$；
+		
+		(2) 若$DE=2$，$BE=1$，$AE=\sqrt2$，$CD=2\sqrt3$，求直线$AD$与平面$ABC$所成角的正弦值.
+		
+		\vspace{0.2\textheight}
+		\item (15分)\\
+		在$\triangle ABC$中，已知$\cos B=\dfrac34$，$\cos^2(A+C)+\sin A\sin C=1$.
+		
+		(1) 证明：$\triangle ABC$为钝角三角形；
+		
+		(2) 若$\triangle ABC$的面积为$\dfrac{\sqrt7}{4}$，求$\triangle ABC$的周长.
+		
+		\newpage
+		\item (17分)\\
+		椭圆$E:\dfrac{x^2}{a^2}+y^2=1\ (a>1)$，过右焦点且与$x$轴垂直的直线被$E$截得的长度为$\sqrt2$.
+		
+		(1) 求$E$的离心率；
+		
+		(2) $O$为坐标原点，给定点$G(t_0,0)\ (t_0\ne0)$，$A(x_0,y_0)\ (y_0\ne0)$在$E$上，过点$A$作$y$轴的垂线，垂足为$B$，$AO$与$GB$交于点$P$. 当$A$在$E$上运动时，$P$的轨迹为$M$.
+		
+		\hspace*{2em}(i) 求$M$的方程，并说明$M$是什么曲线；
+		
+		\hspace*{2em}(ii) $M$是否有中心点？当$t_0$为何值时，$M$有中心点？当$M$有中心点时，平移$M$到$M'$，使$O$为$M'$的中心点，说明$M'$的形状.
+		
+		\newpage
+		\item (17分)\\
+		已知函数$f(x)=xe^x+ax+b$，曲线$y=f(x)$在点$(0,f(0))$处的切线为$y=-2x+1$.
+		
+		(1) 求$a,b$；
+		
+		(2) 当$x>0$时，$f(x+m)+f(x-m)>2-2x$，求$m$的取值范围；
+		
+		(3) 当$x>0$时，$f(x+k)+f(k-x)>2f(k)$，求$k$的最小值.
+		
+		\vspace{0.9\textheight}
+	\end{enumerate}
+\end{document}

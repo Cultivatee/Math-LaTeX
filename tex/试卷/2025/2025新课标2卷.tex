@@ -1,0 +1,256 @@
+\documentclass[12pt,a4paper]{article}
+% 基础包
+\usepackage{ctex}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{indentfirst}
+% 字体设置
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+% 数学公式
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{nccmath}
+\everymath{\displaystyle}
+\usepackage{txfonts}
+\providecommand{\varparallel}{\mathrel{/\!/}}
+% 表格
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{colortbl}
+% 图片和颜色
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+% 列表
+\usepackage{enumitem}
+\usepackage{tasks}
+% TikZ 画图
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{
+	arrows.meta, calc, patterns, intersections,
+	through, angles, quotes, decorations.pathmorphing
+}
+% 页面设置
+\geometry{
+	left=1.6cm,
+	right=2.04cm,
+	top=1.6cm,
+	bottom=2.54cm,
+	headheight=1.2cm,
+	footskip=0.8cm,
+	nohead
+}
+% 行距和段落
+\linespread{1.5}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.5ex}
+% 页脚设置
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\makebox[0pt][c]{数学试题~第\thepage 页（共\pageref{LastPage}页）}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+% 选择题选项环境
+\NewTasksEnvironment[
+label=\Alph*.,
+label-width=1.5em,
+item-indent=2em,
+column-sep=2em,
+before-skip=0.8em,
+after-skip=0.8em
+]{choicesFour}[\choice](4)
+\NewTasksEnvironment[
+label=\Alph*.,
+label-width=1.5em,
+item-indent=2em,
+column-sep=3em,
+before-skip=0.8em,
+after-skip=0.8em
+]{choicesTwo}[\choice](2)
+\NewTasksEnvironment[
+label=\Alph*.,
+label-width=1.5em,
+item-indent=2em,
+before-skip=0.8em,
+after-skip=0.8em
+]{choicesOne}[\choice](1)
+\begin{document}
+	\noindent {\large\bfseries 绝密$\bigstar$启用前}
+	
+	\vspace*{0.5cm}
+	
+	% 封面部分
+	\begin{center}
+		{\Large 2025年普通高等学校招生全国统一考试}\\[0.8cm]
+		{\LARGE\bfseries 数~~~~学}
+	\end{center}
+	
+	\noindent 本试卷共4页，19小题，满分150分，考试时间120分钟.
+	
+	% 注意事项
+	\noindent\hangindent=73pt {\bfseries 注意事项：}1. 答题前，请务必将自己的姓名、准考证号用黑色字迹签字笔或钢笔分别填写在试卷和答题卡上.  将条形码横贴在答题卡右上角的“条形码粘贴处”.
+	
+	\noindent\hangindent=73pt\hspace{61pt}2. 作答选择题时，选出每小题答案后，用2B铅笔把答题卡上对应题目选项的答案信息点涂黑，在试卷上作答无效；如需改动，用橡皮擦干净后，再选涂其他答案.
+	
+	\noindent\hangindent=73pt\hspace{61pt}3. 非选择题必须用黑色字迹钢笔或签字笔作答，答案必须写在答题卡各题目指定区域的相应位置上；如需改动，先划掉原来的答案，然后再写上新的答案.
+	
+	\noindent\hangindent=73pt\hspace{61pt}4. 考生须保持答题卡的整洁. 考试结束后，将试卷和答题卡一并交回.
+	
+	\vspace{0.3cm}
+	
+	\noindent\hangindent=2em {\bfseries 一、选择题：本题共8小题，每小题5分，共40分. 每小题给出的四个选项中，只有一项是符合题目要求的.}
+	\begin{enumerate}[leftmargin=*,label=\arabic*.,itemsep=0.8ex]
+		\item 样本数据$2,8,14,16,20$的平均数为
+		\begin{choicesFour}
+			\choice $8$ \choice $9$ \choice $12$ \choice $18$
+		\end{choicesFour}
+		\item 已知$z=1+\mathrm{i}$，则$\dfrac{1}{z-1}=$
+		\begin{choicesFour}
+			\choice $-\mathrm{i}$ \choice $\mathrm{i}$ \choice $-1$ \choice $1$
+		\end{choicesFour}
+		\item 已知集合$A=\{-4,0,1,2,8\}$，$B=\{x\mid x^3=x\}$，则$A\cap B=$
+		\begin{choicesFour}
+			\choice $\{0,1,2\}$ \choice $\{1,2,8\}$ \choice $\{2,8\}$ \choice $\{0,1\}$
+		\end{choicesFour}
+		\item 不等式$\dfrac{x-4}{x-1}\ge2$的解集是
+		\begin{choicesFour}
+			\choice $\{x\mid -2\le x\le1\}$ \choice $\{x\mid x\le-2\}$ \choice $\{x\mid -2\le x<1\}$ \choice $\{x\mid x>1\}$
+		\end{choicesFour}
+		\item 在$\triangle ABC$中，$BC=2$，$AC=1+\sqrt3$，$AB=\sqrt6$，则$A=$
+		\begin{choicesFour}
+			\choice $45^\circ$ \choice $60^\circ$ \choice $120^\circ$ \choice $135^\circ$
+		\end{choicesFour}
+		\item 设抛物线$C:y^2=2px\ (p>0)$的焦点为$F$，点$A$在$C$上，过$A$作$C$的准线的垂线，垂足为$B$，若直线$BF$的方程为$y=-2x+2$，则$|AF|=$
+		\begin{choicesFour}
+			\choice $3$ \choice $4$ \choice $5$ \choice $6$
+		\end{choicesFour}
+		\item 记$S_n$为等差数列$\{a_n\}$的前$n$项和，若$S_3=6$，$S_5=-5$，则$S_6=$
+		\begin{choicesFour}
+			\choice $-20$ \choice $-15$ \choice $-10$ \choice $-5$
+		\end{choicesFour}
+		\item 已知$0<\alpha<\pi$，$\cos\dfrac{\alpha}{2}=\dfrac{\sqrt5}{5}$，则$\sin\left(\alpha-\dfrac{\pi}{4}\right)=$
+		\begin{choicesFour}
+			\choice $\dfrac{\sqrt2}{10}$ \choice $\dfrac{\sqrt2}{5}$ \choice $\dfrac{3\sqrt2}{10}$ \choice $\dfrac{7\sqrt2}{10}$
+		\end{choicesFour}
+	\end{enumerate}
+	\vspace{0.3cm}
+	\noindent\hangindent=2em {\bfseries 二、选择题：本题共3小题，每小题6分，共18分. 每小题给出的选项中，有多项符合题目要求. 全部选对的得6分，部分选对的得部分分，有选错的得0分.}
+	\begin{enumerate}[leftmargin=*,label=\arabic*.,resume,itemsep=0.8ex]
+		\item 记$S_n$为等比数列$\{a_n\}$的前$n$项和，$q$为$\{a_n\}$的公比，$q>0$，若$S_3=7$，$a_3=1$，则
+		\begin{choicesTwo}
+			\choice $q=\dfrac12$
+			\choice $a_5=\dfrac19$
+			\choice $S_5=8$
+			\choice $a_n+S_n=8$
+		\end{choicesTwo}
+		\item 已知$f(x)$是定义在$\mathbb{R}$上的奇函数，且当$x>0$时，$f(x)=(x^2-3)\mathrm{e}^x+2$，则
+		\begin{choicesTwo}
+			\choice $f(0)=0$
+			\choice 当$x<0$时，$f(x)=-(x^2-3)\mathrm{e}^{-x}-2$
+			\choice $f(x)\ge2$当且仅当$x\ge\sqrt3$
+			\choice $x=-1$是$f(x)$的极大值点
+		\end{choicesTwo}
+		\item 双曲线$C:\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1\ (a>0,\ b>0)$的左、右焦点分别是$F_1,F_2$，左、右顶点分别为$A_1,A_2$，以$F_1F_2$为直径的圆与$C$的一条渐近线交于$M,N$两点，且$\angle NA_1M=\dfrac{5\pi}{6}$，则
+		\begin{choicesOne}
+			\choice $\angle A_1MA_2=\dfrac{\pi}{6}$
+			\choice $|MA_1|=2|MA_2|$
+			\choice $C$的离心率为$\sqrt{13}$
+			\choice 当$a=\sqrt2$时，四边形$NA_1MA_2$的面积为$8\sqrt3$
+		\end{choicesOne}
+	\end{enumerate}
+	\vspace{0.3cm}
+	\noindent {\bfseries 三、填空题：本题共3小题，每小题5分，共15分.}
+	\begin{enumerate}[leftmargin=*,label=\arabic*.,resume,itemsep=0.8ex]
+		\item 已知平面向量$\boldsymbol{a}=(x,1)$，$\boldsymbol{b}=(x-1,2x)$，若$\boldsymbol{a}\perp(\boldsymbol{a}-\boldsymbol{b})$，则$|\boldsymbol{a}|=$\underline{\qquad\qquad}.
+		\item 若$x=2$是函数$f(x)=(x-1)(x-2)(x-a)$的极值点，则$f(0)=$\underline{\qquad\qquad}.
+		\item 一个底面半径为$4\ \mathrm{cm}$，高为$9\ \mathrm{cm}$的封闭圆柱形容器（容器壁厚度忽略不计）内有两个半径相等的铁球，则铁球半径的最大值为\underline{\qquad\qquad}$\mathrm{cm}$.
+	\end{enumerate}
+	\vspace{0.3cm}
+	\noindent {\bfseries 四、解答题：本题共5小题，共77分. 解答应写出文字说明、证明过程或演算步骤.}
+	\begin{enumerate}[leftmargin=*,label=\arabic*.,resume,itemsep=1.2ex]
+		\item (13分)\\
+		已知函数$f(x)=\cos(2x+\varphi)\ (0\le\varphi<\pi)$，$f(0)=\dfrac12$.
+		
+		(1) 求$\varphi$；
+		
+		(2) 设函数$g(x)=f(x)+f\left(x-\dfrac{\pi}{6}\right)$，求$g(x)$的值域和单调区间.
+		
+		\newpage
+		\item (15分)\\
+		已知椭圆$C:\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\ (a>b>0)$的离心率为$\dfrac{\sqrt2}{2}$，长轴长为$4$.
+		
+		(1) 求$C$的方程；
+		
+		(2) 过点$(0,-2)$的直线$l$与$C$交于$A,B$两点，$O$为坐标原点，若$\triangle OAB$的面积为$\sqrt2$，求$|AB|$.
+		
+		\vspace{0.2\textheight}
+		\item (15分)\\
+		如图，在四边形$ABCD$中，$AB\varparallel CD$，$\angle DAB=90^\circ$，$F$为$CD$的中点，点$E$在$AB$上，$EF\varparallel AD$，$AB=3AD$，$CD=2AD$，将四边形$EFDA$沿$EF$翻折至四边形$EFD'A'$，使得面$EFD'A'$与面$EFCB$所成的二面角为$60^\circ$.
+		
+		(1) 证明：$A'B\varparallel$平面$CD'F$；
+		
+		(2) 求面$BCD'$与面$EFD'A'$所成的二面角的正弦值.
+		
+		\begin{flushright}
+			\tdplotsetmaincoords{110}{80}
+			\begin{tikzpicture}[tdplot_main_coords, baseline=(current bounding box.north), scale=2, line cap=round, line join=round]
+				% 底面 EFCB 与翻折后顶点（二面角按平面夹角60°，折向原位置一侧）
+				\coordinate (E) at (0,0,0);
+				\coordinate (B) at (0,2,0);
+				\coordinate (F) at (1,0,0);
+				\coordinate (C) at (1,1,0);
+				\coordinate (A1) at (0,-0.5,0.87);
+				\coordinate (D1) at (1,-0.5,0.87);
+				% 翻折前原位置
+				\coordinate (A) at (0,-1,0);
+				\coordinate (D) at (1,-1,0);
+				% 翻折前原图形（虚线）
+				\draw[dashed] (A)--(E) (A)--(D) (D)--(F);
+				% 底面 EFCB
+				\draw[thick] (E)--(B) (B)--(C) (C)--(F) (F)--(E);
+				% 翻折后的面 EFD'A'
+				\draw[thick] (E)--(A1) (A1)--(D1);
+				% 辅助线
+				\draw[thick] (A1)--(B) (D1)--(B);
+				\draw[dashed] (D1)--(F) (D1)--(C);
+				% 标点
+				\fill (E) circle(1pt) node[below]{$E$};
+				\fill (B) circle(1pt) node[below right]{$B$};
+				\fill (C) circle(1pt) node[right]{$C$};
+				\fill (F) circle(1pt) node[left]{$F$};
+				\fill (A) circle(1pt) node[below left]{$A$};
+				\fill (D) circle(1pt) node[above left]{$D$};
+				\fill (A1) circle(1pt) node[above]{$A'$};
+				\fill (D1) circle(1pt) node[above]{$D'$};
+			\end{tikzpicture}
+		\end{flushright}
+		\newpage
+		\item (17分)\\
+		已知函数$f(x)=\ln(1+x)-x+\dfrac12x^2-kx^3$，其中$0<k<\dfrac13$.
+		
+		(1) 证明：$f(x)$在区间$(0,+\infty)$存在唯一的极值点和唯一的零点；
+		
+		(2) 设$x_1,x_2$分别为$f(x)$在区间$(0,+\infty)$的极值点和零点.
+		
+		\hspace*{2em}(i) 设函数$g(t)=f(x_1+t)-f(x_1-t)$，证明：$g(t)$在区间$(0,x_1)$单调递减；
+		
+		\hspace*{2em}(ii) 比较$2x_1$与$x_2$的大小，并证明你的结论.
+		
+		\newpage
+		\item (17分)\\
+		甲、乙两人进行乒乓球练习，每个球胜者得$1$分，负者得$0$分. 设每个球甲胜的概率为$p\ \left(\dfrac12<p<1\right)$，乙胜的概率为$q$，$p+q=1$，且各球的胜负相互独立. 对正整数$k\ge2$，记$p_k$为打完$k$个球后甲比乙至少多得$2$分的概率，$q_k$为打完$k$个球后乙比甲至少多得$2$分的概率.
+		
+		(1) 求$p_3,p_4$（用$p$表示）；
+		
+		(2) 若$\dfrac{p_4-p_3}{q_4-q_3}=4$，求$p$；
+		
+		(3) 证明：对任意正整数$m$，$p_{2m+1}-q_{2m+1}<p_{2m}-q_{2m}<p_{2m+2}-q_{2m+2}$.
+		
+		\vspace{0.9\textheight}
+	\end{enumerate}
+\end{document}

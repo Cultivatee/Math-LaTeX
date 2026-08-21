@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  20 AUG 2026 00:22
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  21 AUG 2026 09:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**2025新课标1卷.tex
-(./2025新课标1卷.tex
+**2025新课标1卷解析.tex
+(./2025新课标1卷解析.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/base/article.cls
@@ -1333,8 +1333,8 @@ LaTeX Font Info:    Trying to load font information for T1+txr on input line 82
 (d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/txfonts/t1txr.fd
 File: t1txr.fd 2000/12/15 v3.1
 )
-(./2025新课标1卷.aux)
-\openout1 = `2025新课标1卷.aux'.
+(./2025新课标1卷解析.aux)
+\openout1 = `2025新课标1卷解析.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 82.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
@@ -1461,44 +1461,44 @@ File: utxsyc.fd 2000/12/15 v3.1
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <20.74> not available
 (Font)              Font shape `T1/txr/bx/n' tried instead on input line 90.
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <12> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 96.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 108.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 108.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 108.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 97.
 
 [1
 
-]
-Overfull \hbox (6.49695pt too wide) in paragraph at lines 179--179
+] [2] [3]
+Overfull \hbox (6.49695pt too wide) in paragraph at lines 278--278
 |$\OML/txmi/m/it/12 BC \OMS/txsy/m/n/12 ?$ \TU/SimSun(0)/m/n/12 平 面 $\OML/txmi/
 m/it/12 AA[]D$| 
  []
 
 
-Overfull \hbox (11.01695pt too wide) in paragraph at lines 179--179
+Overfull \hbox (11.01695pt too wide) in paragraph at lines 278--278
 |$\OML/txmi/m/it/12 CC[] \U/txsyc/m/n/12 ^^I$ \TU/SimSun(0)/m/n/12 平 面 $\OML/tx
 mi/m/it/12 AA[]D$| 
  []
 
-[2] [3] [4] [5] [6]
+[4] [5] [6] [7] [8] [9] [10] [11] [12]
 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
-(./2025新课标1卷.aux)
+(./2025新课标1卷解析.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/07/14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 25660 strings out of 468168
- 593929 string characters out of 5429579
- 993295 words of memory out of 5000000
- 53907 multiletter control sequences out of 15000+600000
- 669154 words of font info for 137 fonts, out of 8000000 for 9000
+ 25749 strings out of 468168
+ 596558 string characters out of 5429579
+ 985305 words of memory out of 5000000
+ 53986 multiletter control sequences out of 15000+600000
+ 679183 words of font info for 167 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,12n,111p,423b,945s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,14n,111p,425b,969s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 2025新课标1卷.pdf (6 pages).
+Output written on 2025新课标1卷解析.pdf (12 pages).

@@ -641,6 +641,7 @@ $\therefore B=(38,17,-17)$
 \begin{question}
 	经过$(1,2)$且两截距绝对值相等的直线方程为?
 \end{question}
+
 题目涉及截距，优先考虑截距式，分类讨论：
 \begin{enumerate}[label=\arabic*.]
 	\item 直线过原点：$y=2x$
@@ -671,6 +672,7 @@ $\therefore B=(38,17,-17)$
 \begin{question}
 	设$m\in\mathbb{R}$，则$m=-3$是直线$mx+3y=2-m$与$x+(m+1)y=1$平行的什么条件？
 \end{question}
+
 平行条件：$\dfrac{A_1}{A_2}=\dfrac{B_1}{B_2}\neq\dfrac{C_1}{C_2}$
 \[
 \dfrac{m}{1}=\dfrac{3}{m+1}\implies m=-3 \text{ 或 }m=2
@@ -698,7 +700,9 @@ $\therefore B=(38,17,-17)$
 \begin{question}
 	两条平行直线$3x+4y-12=0$与$ax+8y+11=0$之间的距离为?
 \end{question}
+
 平行直线满足：$\dfrac{3}{a}=\dfrac{4}{8}$，解得$a=6$.
+
 前提：$A,B$系数统一，第一个方程左右同乘$2$：$6x+8y-24=0$，此时$A=6,B=8,C_1=-24,C_2=11$.
 \[
 d=\dfrac{|-24-11|}{\sqrt{6^2+8^2}}=\dfrac{35}{10}=\dfrac{7}{2}.
@@ -708,12 +712,15 @@ d=\dfrac{|-24-11|}{\sqrt{6^2+8^2}}=\dfrac{35}{10}=\dfrac{7}{2}.
 \begin{question}
 	过原点的直线$l$的倾斜角取值范围为$\left[\dfrac{\pi}{3},\dfrac{3\pi}{4}\right]$，则其斜率的取值范围?
 \end{question}
-\begin{minipage}[t]{0.5\textwidth}
+
+\begin{minipage}[t]{0.7\textwidth}
+	
 	$\tan\dfrac{\pi}{3}=\sqrt{3},\ \tan\dfrac{3\pi}{4}=-1$.
 	
 	由图像可得斜率范围：$(-\infty,-1]\cup[\sqrt{3},+\infty)$.
 \end{minipage}
-\begin{minipage}[t]{0.45\textwidth}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
 	\begin{tikzpicture}[scale=0.6,baseline=(current bounding box.north)]
 		\draw[->] (-0.2,0)--(3.3,0) node[right]{$x$};
 		\draw[->] (0,-3.2)--(0,3.2) node[above]{$y$};
@@ -754,6 +761,7 @@ d=\dfrac{|-24-11|}{\sqrt{6^2+8^2}}=\dfrac{35}{10}=\dfrac{7}{2}.
 \begin{question}
 	$(2k-1)x-(k+3)y-(k-11)=0$过定点?
 \end{question}
+
 整理式子：
 \[
 k(2x-y-1)-x-3y+11=0
@@ -799,14 +807,22 @@ k(2x-y-1)-x-3y+11=0
 		\end{enumerate}
 		\item 圆与圆：计算两圆圆心距，和$|r_1-r_2|$、$r_1+r_2$比较.
 	\end{enumerate}
-	内含：$d<|r_1-r_2|$；内切：$d=|r_1-r_2|$；
 	
-	相交：$|r_1-r_2|<d<r_1+r_2$；外切：$d=r_1+r_2$；外离：$d>r_1+r_2$.
+	内含：$d<|r_1-r_2|$
+	
+	内切：$d=|r_1-r_2|$
+	
+	相交：$|r_1-r_2|<d<r_1+r_2$
+	
+	外切：$d=r_1+r_2$
+	
+	外离：$d>r_1+r_2$
 \end{knowledge}
 
 \begin{question}{例题1}
 	方程$a^2x^2+(a+2)y^2+4x+8y+5a=0$表示圆，求该圆的圆心.
 \end{question}
+
 解：
 圆方程中$x^2,y^2$系数相等
 \[
@@ -827,6 +843,7 @@ $D^2+E^2-4F<0$，不表示圆，舍去.
 \begin{question}{例题2}
 	直线$3x+4y+m=0$与圆$x^2+y^2-2x+4y+1=0$相切，求$m$的值.
 \end{question}
+
 圆$x^2+y^2-2x+4y+1=0$圆心$(1,-2)$，半径$r=2$.
 \[
 d=\frac{|3-8+m|}{5}=2 \implies m=-5 \text{ 或 } m=15
@@ -840,6 +857,7 @@ d=\frac{|3-8+m|}{5}=2 \implies m=-5 \text{ 或 } m=15
 \begin{minipage}[t]{0.7\textwidth}
 	解：
 	圆$x^2+y^2+10x+10y=0$圆心$(-5,-5)$，半径$5\sqrt2$.
+	
 	两圆外切于原点，则所求圆圆心在直线$y=x$上，设圆心$(m,m)$.
 	\[
 	\sqrt{2(m+5)^2}=6\sqrt2 \implies m=1
@@ -874,7 +892,7 @@ d=\frac{|3-8+m|}{5}=2 \implies m=-5 \text{ 或 } m=15
 	过$A(11,2)$作圆$x^2+y^2+2x-4y-164=0$的弦，弦长为整数的共有几个？
 \end{question}
 
-\begin{minipage}[t]{0.7\textwidth}
+\begin{minipage}[t]{0.75\textwidth}
 	圆方程配方：$(x+1)^2+(y-2)^2=169$，圆心$O(-1,2)$，半径$r=13$.
 	
 	点$A(11,2)$到圆心距离：$|OA|=\sqrt{(11+1)^2+(2-2)^2}=12<r$，故点在圆内.
@@ -924,7 +942,7 @@ d=\frac{|3-8+m|}{5}=2 \implies m=-5 \text{ 或 } m=15
 		
 		% 标点
 		\fill (O) circle (10pt) node[above left] {$O(-1,2)$};
-		\fill (A) circle (10pt) node[below right] {$A(11,2)$};
+		\fill (A) circle (10pt) node[below] {$A(11,2)$};
 		
 		% 标注
 		\node[above] at (0,2) {$26$};
@@ -970,6 +988,7 @@ $\therefore a=2\sqrt{3},\ b=\sqrt{3},\ c=3$，椭圆方程：$\dfrac{x^2}{12}+\d
 \begin{question}
 	椭圆过定点$(3,0)$且$a=3b$，求标准方程.
 \end{question}
+
 过$(3,0)$并不是焦点，需分类讨论：
 \begin{enumerate}[label=\arabic*.]
 	\item 焦点在$x$轴：$\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$.
@@ -1074,6 +1093,7 @@ $\therefore a=2\sqrt{3},\ b=\sqrt{3},\ c=3$，椭圆方程：$\dfrac{x^2}{12}+\d
 \begin{question}
 	过$(3,2)$且与椭圆$3x^2+8y^2=24$有相同焦点，求椭圆方程.
 \end{question}
+
 化简已知椭圆：$\dfrac{x^2}{8}+\dfrac{y^2}{3}=1$，焦点在$x$轴，$c^2=8-3=5$.
 
 \textbf{A方法（待定系数法）：}
@@ -1131,8 +1151,11 @@ $\because b^2>0, \therefore b^2=10, a^2=15$.
 \begin{question}
 	椭圆$x^2+my^2=1$的焦点在$y$轴上，长轴是短轴的$2$倍，$m=$?
 \end{question}
+
 化为标准方程：$\dfrac{x^2}{1}+\dfrac{y^2}{1/m}=1$.
+
 焦点在$y$轴，故$a^2=\dfrac{1}{m}, b^2=1$.
+
 由$a=2b$：
 \[
 a=\sqrt{\frac{1}{m}}=2\times 1=2 \implies m=\frac{1}{4}.
@@ -1195,7 +1218,10 @@ e=\frac{\sqrt{3}}{2}=\sqrt{\frac{a^2-b^2}{a^2}} \implies a^2=4b^2
 \begin{question}
 	已知椭圆$C:\dfrac{x^2}{a^2}+\dfrac{y^2}{4}=1\ (a>2)$，直线$l:y=x-2$过$C$的一个焦点，求$C$的离心率.
 \end{question}
-$\because a>2$，$\therefore$ 焦点在$x$轴上.
+
+$\because a>2$
+
+$\therefore$ 焦点在$x$轴上.
 
 令$y=0$，得$x=2$，即焦点为$(2,0)$.
 
@@ -2437,6 +2463,7 @@ $\therefore$ 抛物线方程为$x^2=16y$.
 	动圆$P$与定圆$B:x^2+y^2+4x=0$相切，且过点$A(2,0)$，求$P$的轨迹.
 \end{question}
 
+\begin{minipage}{0.7\textwidth}
 定圆$B$：$(x+2)^2+y^2=4$，圆心$B(-2,0)$，半径$R=2$.
 
 动圆$P$过点$A(2,0)$，设半径为$r$，则$|PA|=r$.
@@ -2467,11 +2494,12 @@ $2a=2 \implies a=1$. $2c=4 \implies c=2$.
 $b^2 = c^2-a^2 = 3$.
 
 方程：$x^2 - \dfrac{y^2}{3} = 1$.
-
-
-\begin{tikzpicture}[scale=0.5, baseline=(current bounding box.north)]
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\textwidth}
+\begin{tikzpicture}[scale=0.48, baseline=(current bounding box.north)]
 	% 左图：外切 (对应双曲线右支)
-	\begin{scope}[shift={(-10,0)}]
+	\begin{scope}[shift={(-2,5)}]
 		\draw[->, gray!40] (-3,0) -- (3,0) node[right] {$x$};
 		\draw[->, gray!40] (0,-4) -- (0,5) node[above] {$y$};
 		
@@ -2495,7 +2523,7 @@ $b^2 = c^2-a^2 = 3$.
 	\end{scope}
 	
 	% 右图：内切 (对应双曲线左支)
-	\begin{scope}[shift={(10,0)}]
+	\begin{scope}[shift={(0,-10)}]
 		\draw[->, gray!40] (-3,0) -- (3,0) node[right] {$x$};
 		\draw[->, gray!40] (0,-4) -- (0,5) node[above] {$y$};
 		
@@ -2518,6 +2546,7 @@ $b^2 = c^2-a^2 = 3$.
 		\fill (-2,-2) circle (2pt) node[below left] {$T$};
 	\end{scope}
 \end{tikzpicture}
+\end{minipage}
 
 \category{根式方程求轨迹}
 \begin{question}
@@ -2657,7 +2686,7 @@ $b^2 = c^2-a^2 = 3$.
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.3\textwidth}
-	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+	\begin{tikzpicture}[scale=1, baseline=(current bounding box.north)]
 		\draw[->, gray!40] (-1.5,0) -- (4,0) node[right] {$x$};
 		\draw[->, gray!40] (0,-1.5) -- (0,1.5) node[above] {$y$};
 		
@@ -3369,7 +3398,7 @@ d=\frac{|Ax_0+By_0+C|}{\sqrt{1+k^2}}=\frac{1}{\sqrt2}=\frac{\sqrt2}{2}.
 	设抛物线$y^2=2x$，$A(2,0)$，$B(-2,0)$，过$A$直线$l$与抛物线交于$M,N$，证明$\angle ABM=\angle ABN$.
 \end{question}
 
-\begin{minipage}[t]{0.7\textwidth}
+\begin{minipage}[t]{0.75\textwidth}
 	分析：$\angle ABM=\angle ABN \iff \tan\angle ABM=\tan\angle ABN \iff k_{BM}=-k_{BN}$.
 	
 	$\therefore$ 需证$k_{BM}+k_{BN}=0$.
@@ -4714,7 +4743,9 @@ $\therefore \alpha\in\left[\dfrac{\pi}{12},\ \dfrac{5\pi}{12}\right]$.
 		
 		\item 切线长$_{\min}\implies$点线距$_{\min}+$勾股：$\sqrt{\left(\dfrac{3\sqrt{5}}{5}\right)^2-1}=\dfrac{2\sqrt{5}}{5}$.
 		
-		\item $\angle APB$越靠近圆越大，在$OP_{\min}$时，$\sin\angle OPA=\dfrac{1}{3\sqrt{5}/5}=\dfrac{\sqrt{5}}{3}>\dfrac{1}{2}=\sin30^\circ$.
+		\item $\angle APB$越靠近圆越大，在$OP_{\min}$时，
+		
+		$\sin\angle OPA=\dfrac{1}{3\sqrt{5}/5}=\dfrac{\sqrt{5}}{3}>\dfrac{1}{2}=\sin30^\circ$.
 		
 		$\therefore \angle OPA>30^\circ$，$\angle APB>60^\circ$.
 		
@@ -5191,6 +5222,566 @@ $\therefore \dfrac{1}{4}x^2+y^2=1$.
 		\fill (P) circle (2pt) node[left] {$P$};
 	\end{tikzpicture}
 \end{minipage}
+
+\subsection{第八讲\quad 弦长面积}
+
+\subsubsection{倒斜横截式}
+\begin{knowledge}{倒斜横截式}
+	$x=my+n$，$m=\dfrac{1}{k}$.
+	
+	不表示斜率为$0$的直线.
+	
+\end{knowledge}
+
+\category{倒斜横截式综合}
+\begin{question}
+	椭圆$e=\dfrac{\sqrt{3}}{2}$，经过$M\left(1,\dfrac{\sqrt{3}}{2}\right)$，过$T(1,0)$（$k\neq0$）直线交椭圆于$E,F$，$A,B$左右顶点.
+	(1)求椭圆方程；(2)求$\dfrac{k_{AE}}{k_{BF}}$；(3)设$P$为$AE$与$BF$交点，求$P$轨迹方程.
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	(1) 由$e=\dfrac{\sqrt3}{2}$得$b^2=\dfrac{a^2}{4}$，代入$M$：$\dfrac{1}{a^2}+\dfrac{3}{a^2}=1 \implies a^2=4,\ b^2=1$.
+	
+	$\dfrac{x^2}{4}+y^2=1$.
+	
+	(2) 设$x=my+1$.
+	
+	联立$\begin{cases} x=my+1 \\ \dfrac{x^2}{4}+y^2=1 \end{cases} \implies (m^2+4)y^2+2my-3=0$，$\Delta=16(m^2+3)>0$.
+	
+	$y_1+y_2=-\dfrac{2m}{m^2+4}$，$y_1y_2=-\dfrac{3}{m^2+4}$.
+	
+	$\implies my_1y_2=\dfrac{3}{2}(y_1+y_2)$.
+	
+	$\dfrac{k_{AE}}{k_{BF}}=\dfrac{y_1(x_2-2)}{y_2(x_1+2)}=\dfrac{my_1y_2-y_1}{my_1y_2+3y_2}=\dfrac{\frac12y_1+\frac32y_2}{\frac32y_1+\frac92y_2}=\dfrac{1}{3}$.
+	
+	(3) 抓住(2)中$\dfrac{k_1}{k_2}=\dfrac{1}{3}$定值.
+	
+	$\begin{cases} y=k_1(x+2) \\ y=k_2(x-2) \end{cases}$相除：$\dfrac{1}{3}\cdot\dfrac{x+2}{x-2}=1 \implies x=4$.
+	
+	$\therefore P$轨迹为$x=4$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.55, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-3,0) -- (5,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-2) -- (0,2) node[above] {$y$};
+		\draw[thick] (0,0) ellipse (2 and 1);
+		
+		\coordinate (A) at (-2,0);
+		\coordinate (B) at (2,0);
+		\coordinate (T) at (1,0);
+		\coordinate (E) at (1.6,0.6);
+		\coordinate (F) at (0,-1);
+		\coordinate (P) at (4,1);
+		
+		% 直线 EF 过 T
+		\draw[thick, DarkRed] (F) -- (E);
+		% AE 延长到 P
+		\draw[thick, SkyBlue] (A) -- (P);
+		% BF 延长到 P
+		\draw[thick, SkyBlue] (F) -- (P);
+		% 轨迹 x=4
+		\draw[dashed, gray] (4,-1.8) -- (4,1.8);
+		
+		\fill (A) circle (3pt) node[below left] {$A$};
+		\fill (B) circle (3pt) node[below right] {$B$};
+		\fill (T) circle (3pt) node[below left] {$T$};
+		\fill (E) circle (3pt) node[above] {$E$};
+		\fill (F) circle (3pt) node[below] {$F$};
+		\fill (P) circle (3pt) node[right] {$P$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsection{第九讲\quad 定点、定值问题}
+\begin{knowledge}{消参技巧}
+	找$k$和$m$的关系，消参.
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item 若分子为定值，把分母的$m$或$m^2$提出，系数为$0$，即分母也为定值.
+		
+		\item 若分子带$m$，分母配倍数.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{斜率积定值与定点}
+\begin{question}
+	$A(-3,0)$，$B(3,0)$，直线$AM,BM$，$k_{AM}\cdot k_{BM}=-\dfrac{1}{9}$.
+	(1)求$M$轨迹方程；(2)过$(1,0)$直线$l$与轨迹交$P,Q$，是否存在定点$S(x_0,0)$使直线$SP$与$SQ$斜率之积为定值.
+\end{question}
+
+\begin{minipage}[t]{0.75\textwidth}
+	(1) 关于原点对称两点，椭/双.
+	
+	设$M(x,y)$：$\dfrac{y}{x+3}\cdot\dfrac{y}{x-3}=-\dfrac{1}{9}$.
+	
+	$9y^2=-(x^2-9)$（$x\neq\pm3$）.
+	
+	$\therefore \dfrac{x^2}{9}+y^2=1$（$x\neq\pm3$）.
+	
+	(2) 1$^\circ$ 斜率为$0$时，椭圆被扣掉两个$x$轴的点，直线未与椭圆相交，不满足.
+	
+	2$^\circ$ $x=my+1$.
+	
+	联立$\begin{cases} x=my+1 \\ x^2+9y^2-9=0 \end{cases} \implies (m^2+9)y^2+2my-8=0$.
+	
+	设$P(x_1,y_1), Q(x_2,y_2)$，$\Delta>0$，$y_1+y_2=-\dfrac{2m}{m^2+9}$，$y_1y_2=-\dfrac{8}{m^2+9}$.
+	
+	$k_{SP}\cdot k_{SQ}=\dfrac{y_1}{x_1-x_0}\cdot\dfrac{y_2}{x_2-x_0}=\dfrac{y_1y_2}{(my_1+1-x_0)(my_2+1-x_0)}$
+	
+	$=\dfrac{-8}{(x_0^2-9)m^2+9(1-x_0)^2}$.
+	
+	令$x_0^2-9=0$.
+	
+	$\therefore x_0=\pm3$，$S(3,0)$或$S(-3,0)$，定值为$-\dfrac{2}{9}$或$-\dfrac{2}{81}$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\begin{tikzpicture}[scale=0.6, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-4,0) -- (4,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-2) -- (0,2) node[above] {$y$};
+		\draw[thick] (0,0) ellipse (3 and 1);
+		
+		\coordinate (T) at (1,0);
+		\coordinate (P) at (1.8,0.8);
+		\coordinate (Q) at (0,-1);
+		\coordinate (S) at (3,0);
+		
+		% 直线 l 过 (1,0)
+		\draw[thick, DarkRed] (Q) -- (P);
+		% SP, SQ
+		\draw[dashed, SkyBlue] (S) -- (P);
+		\draw[dashed, SkyBlue] (S) -- (Q);
+		
+		\fill (T) circle (2pt) node[above] {$(1,0)$};
+		\fill (P) circle (2pt) node[above right] {$P$};
+		\fill (Q) circle (2pt) node[below left] {$Q$};
+		\fill (S) circle (2pt) node[below right] {$S$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsection{第十讲\quad 双曲线}
+\begin{minipage}[t]{0.7\textwidth}
+	\begin{knowledge}{基本性质}
+		$e=\dfrac{c}{a}$，$e\in(1,+\infty)$.
+		
+		$e$越大开口越大.
+		
+		$k_{AB}\cdot k_{OP}=\dfrac{b^2}{a^2}$.
+		
+		关于原点对称$A,A'$：$k_{BA}\cdot k_{BA'}=\dfrac{b^2}{a^2}$.
+		
+		点差法：顶点$A_1,A_2$，$k_{BA_1}\cdot k_{BA_2}=\dfrac{b^2}{a^2}$.
+		
+		焦点弦三角形：$C_{\triangle ABF_1}=4a+2AB$.
+	\end{knowledge}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.85, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-2.5,0) -- (2.5,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-2.2) -- (0,2.2) node[above] {$y$};
+		\draw[thick, domain=-1.8:1.8, smooth, variable=\y] plot ({sqrt(1+\y*\y)}, {\y});
+		\draw[thick, domain=-1.8:1.8, smooth, variable=\y] plot ({-sqrt(1+\y*\y)}, {\y});
+		
+		\coordinate (A) at (1.56,1.2);
+		\coordinate (B) at (1.41,-1);
+		\coordinate (A2) at (-1.56,-1.2);
+		\coordinate (P) at (1.485,0.1);
+		\coordinate (O) at (0,0);
+		
+		% 弦 AB 与 OP
+		\draw[thick, DarkRed] (A) -- (B);
+		\draw[dashed, DarkRed] (O) -- (P);
+		% 对称点连线
+		\draw[dashed, gray] (A) -- (A2);
+		\draw[thick, SkyBlue] (B) -- (A2);
+		
+		\fill (A) circle (2pt) node[above right] {$A$};
+		\fill (B) circle (2pt) node[below right] {$B$};
+		\fill (A2) circle (2pt) node[left] {$A'$};
+		\fill (P) circle (2pt) node[right] {$P$};
+		\fill (O) circle (2pt) node[above left] {$O$};
+	\end{tikzpicture}
+\end{minipage}
+
+\vspace{10pt}
+\noindent
+\begin{minipage}[t]{0.7\textwidth}
+	\begin{knowledge}{共渐近线双曲线系}
+		
+		与$\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1$共渐近线的双曲线系：$\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=\lambda$（$\lambda\neq0$）.
+		
+		对于无穷，$\lambda$取任何数都可以；忽略符号，可用于已知一点和渐近线.
+		
+		eg：$(2,1)$，$y=\pm\sqrt{3}x$：$\dfrac{x^2}{1}-\dfrac{y^2}{3}=\lambda$，代入$(2,1)$：$\lambda=4-\dfrac{1}{3}=\dfrac{11}{3}$.
+	\end{knowledge}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.75, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-3,0) -- (3,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-2.5) -- (0,2.5) node[above] {$y$};
+		% 渐近线
+		\draw[dashed, gray] (-2.5,-3.25) -- (2.5,3.25);
+		\draw[dashed, gray] (-2.5,3.25) -- (2.5,-3.25);
+		% λ=1
+		\draw[thick, domain=-2:2, smooth, variable=\y] plot ({sqrt(1+\y*\y/1.69)}, {\y});
+		\draw[thick, domain=-2:2, smooth, variable=\y] plot ({-sqrt(1+\y*\y/1.69)}, {\y});
+		% λ=2
+		\draw[thick, SkyBlue, domain=-2:2, smooth, variable=\y] plot ({sqrt(2*(1+\y*\y/3.38))}, {\y});
+		\draw[thick, SkyBlue, domain=-2:2, smooth, variable=\y] plot ({-sqrt(2*(1+\y*\y/3.38))}, {\y});
+		% λ=-1
+		\draw[thick, DarkRed, domain=-1.6:1.6, smooth, variable=\x] plot ({\x}, {sqrt(1.69*(1+\x*\x))});
+		\draw[thick, DarkRed, domain=-1.6:1.6, smooth, variable=\x] plot ({\x}, {-sqrt(1.69*(1+\x*\x))});
+		
+		\node[right] at (1.7,-1.7) {$\lambda=1$};
+		\node[right] at (1.9,1.7) {$\lambda=2$};
+		\node[right] at (1.2,2.2) {$\lambda=-1$};
+	\end{tikzpicture}
+\end{minipage}
+
+\vspace{10pt}
+\noindent
+\begin{minipage}[t]{0.7\textwidth}
+	\begin{knowledge}{焦点三角形与焦半径}
+		
+		$S=\dfrac{b^2}{\tan\frac{\theta}{2}}$.
+		
+		$S=c\cdot|y_P|=\dfrac{1}{2}C_{\triangle}\cdot r$（$C_{\triangle}=2a+2c$）.
+		
+		找临界（$P$在右支）：$PF_1\geq a+c$，$PF_2\geq c-a$.
+		
+		$P$在右支：$PF_1=ex_0+a$，$PF_2=ex_0-a$.
+		
+		$P$在左支：$PF_1=-ex_0-a$，$PF_2=-ex_0+a$.
+		
+		在求离心率时，点在线上常用.
+	\end{knowledge}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.85, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-2.5,0) -- (2.5,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-2.2) -- (0,2.2) node[above] {$y$};
+		\draw[thick, domain=-1.8:1.8, smooth, variable=\y] plot ({sqrt(1+\y*\y)}, {\y});
+		\draw[thick, domain=-1.8:1.8, smooth, variable=\y] plot ({-sqrt(1+\y*\y)}, {\y});
+		
+		\coordinate (F1) at (-1.41,0);
+		\coordinate (F2) at (1.41,0);
+		\coordinate (P) at (1.56,1.2);
+		
+		% 焦点三角形
+		\draw[thick, DarkRed] (P) -- (F1);
+		\draw[thick, DarkRed] (P) -- (F2);
+		% |y_P|
+		\draw[dashed, SkyBlue] (P) -- (1.56,0);
+		
+		\draw (P) ++(-0.5,-0.28) arc (210:250:0.55);
+		\node[below left] at (1.3,0.8) {$\theta$};
+		
+		\fill (F1) circle (2pt) node[below left] {$F_1$};
+		\fill (F2) circle (2pt) node[below right] {$F_2$};
+		\fill (P) circle (2pt) node[above right] {$P$};
+		\node[right, SkyBlue] at (1.56,1) {$|y_P|$};
+		\node[left, DarkRed] at (0.2,0.7) {$ex_0+a$};
+		\node[right, DarkRed] at (1.6,0.2) {$ex_0-a$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsection{第十一讲\quad 抛物线}
+
+\subsubsection{小结论}
+\begin{minipage}[t]{0.55\textwidth}
+	\begin{knowledge}{焦点弦小结论}
+		
+		抛物线$y^2=2px$的焦点弦$AB$，$A(x_1,y_1),B(x_2,y_2)$
+		
+		\begin{enumerate}[label=\arabic*., left=0pt]
+			
+			\item $x_1x_2=\dfrac{p^2}{4}$，$y_1y_2=-p^2$.
+			
+			\item $AB=x_1+x_2+p=\dfrac{2p}{\sin^2\theta}$.
+			
+			\item $S_{\triangle AOB}=\dfrac{p^2}{2\sin\theta}$.
+			
+			\item $AF=\dfrac{p}{1-\cos\theta}$，$BF=\dfrac{p}{1+\cos\theta}$（上减下加）.
+			
+			\item $\dfrac{1}{AF}+\dfrac{1}{BF}=\dfrac{2}{p}$.
+			
+			\item 以$AF$、$BF$为直径的圆与$x$轴相切.
+			
+			\item 以$AB$为直径的圆与准线相切.
+			
+			\item $\angle CFD=90^\circ$.
+			
+			\item $A,O,D$（$B,O,C$）共线.
+			
+			\item $k_{AB}=\dfrac{2p}{y_1+y_2}$.
+			
+			\item 过某点切线斜率：$\dfrac{p}{y}$.
+			
+			\item 过某点切线方程：$y_0y=p(x_0+x)$（类比半代入）.
+			
+			\item 从$P(x_0,y_0)$引出的切点弦$MN$方程为$y_0y=p(x_0+x)$.
+			
+			\item 作$A,B$切线：切线互相垂直，交点在准线，$EF\perp AB$.
+			
+			\item $S_{\triangle AEB}=\dfrac{1}{2}AB\cdot EF\geq p^2$，在通径时取到.
+					
+					\hspace*{25pt} $AB\geq 2p,~ EF\geq p$
+			
+		\end{enumerate}
+	\end{knowledge}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\textwidth}
+	\centering
+	% 图1：相切圆
+	\begin{tikzpicture}[scale=1, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-1.2,0) -- (3.8,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-1.6) -- (0,3.2) node[above] {$y$};
+		\draw[thick, domain=-1.7:2.5, smooth, variable=\y] plot ({0.5*\y*\y}, {\y});
+		\draw[dashed, gray] (-0.5,-1.6) -- (-0.5,3.2);
+		
+		\coordinate (F) at (0.5,0);
+		\coordinate (A) at (2.914,2.414);
+		\coordinate (B) at (0.086,-0.414);
+		
+		\draw[thick, DarkRed] (A) -- (B);
+		\draw[SkyBlue] (1.5,1) circle (2);
+		\draw[SkyBlue] (1.707,1.207) circle (1.707);
+		
+		\fill (F) circle (2pt) node[below right] {$F$};
+		\fill (A) circle (2pt) node[right] {$A$};
+		\fill (B) circle (2pt) node[below] {$B$};
+		\node[gray!60] at (1.4,-2.1) {以$AB$为直径切准线，以$AF$为直径切$x$轴};
+	\end{tikzpicture}
+	
+	\vspace{6pt}
+	% 图2：∠CFD=90°，共线
+	\begin{tikzpicture}[scale=1, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-1.2,0) -- (3.3,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-1.2) -- (0,2.8) node[above] {$y$};
+		\draw[thick, domain=-1.4:2.5, smooth, variable=\y] plot ({0.5*\y*\y}, {\y});
+		\draw[dashed, gray] (-0.5,-1.2) -- (-0.5,2.8);
+		
+		\coordinate (F) at (0.5,0);
+		\coordinate (A) at (2.914,2.414);
+		\coordinate (B) at (0.086,-0.414);
+		\coordinate (C) at (-0.5,2.414);
+		\coordinate (D) at (-0.5,-0.414);
+		\coordinate (O) at (0,0);
+		
+		\draw[thick, DarkRed] (F) -- (C);
+		\draw[thick, DarkRed] (F) -- (D);
+		\draw[thick, SkyBlue] (A) -- (D);
+		\draw[thick, SkyBlue] (B) -- (C);
+		\draw[dashed, SkyBlue] (A) -- (C);
+		\draw[dashed, SkyBlue] (B) -- (D);
+		
+		\fill (F) circle (2pt) node[below right] {$F$};
+		\fill (A) circle (2pt) node[right] {$A$};
+		\fill (B) circle (2pt) node[below] {$B$};
+		\fill (C) circle (2pt) node[left] {$C$};
+		\fill (D) circle (2pt) node[left] {$D$};
+		\fill (O) circle (1.5pt) node[above left] {$O$};
+		\node[gray!60] at (1.2,-1.7) {$\angle CFD=90^\circ$，$A,O,D$共线};
+	\end{tikzpicture}
+	
+	\vspace{6pt}
+	% 图3：切线与切点弦
+	\begin{tikzpicture}[scale=0.9, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-1.8,0) -- (3.6,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-1.6) -- (0,3.1) node[above] {$y$};
+		\draw[thick, domain=-1.6:2.5, smooth, variable=\y] plot ({0.5*\y*\y}, {\y});
+		\draw[dashed, gray] (-0.5,-1.6) -- (-0.5,3.1);
+		
+		\coordinate (F) at (0.5,0);
+		\coordinate (A) at (2.914,2.414);
+		\coordinate (B) at (0.086,-0.414);
+		\coordinate (E) at (-0.5,1);
+		% P 在 E 左侧，切点弦 0.2y = x-1.2+... 即 y0*y = x0+x
+		\coordinate (P) at (-1.2,0.2);
+		\coordinate (M) at (1.552,1.762);
+		\coordinate (N) at (0.928,-1.362);
+		
+		% 焦点弦 AB（灰）与 A、B 处切线交于准线 E
+		\draw[gray] (A) -- (B);
+		\draw[thick, DarkRed] (E) -- (A);
+		\draw[thick, DarkRed] (E) -- (B);
+		\draw[dashed, DarkRed] (E) -- (F);
+		% P 引两切线（稍延长），切点弦 MN
+		\draw[thick, SkyBlue] (P) -- (1.85,1.93);
+		\draw[thick, SkyBlue] (P) -- (1.17,-1.54);
+		\draw[dashed, SkyBlue] (M) -- (N);
+		
+		\fill (F) circle (2pt) node[below right] {$F$};
+		\fill (A) circle (2pt) node[right] {$A$};
+		\fill (B) circle (2pt) node[below] {$B$};
+		\fill (E) circle (2pt) node[above left] {$E$};
+		\fill (P) circle (2pt) node[left] {$P(x_0,y_0)$};
+		\fill (M) circle (2pt) node[right] {$M$};
+		\fill (N) circle (2pt) node[right] {$N$};
+		\node[gray!60] at (1.2,-2.1) {切线交于$E$\quad $EF\perp AB$\quad 切点弦$MN$：$y_0y=p(x_0+x)$};
+	\end{tikzpicture}
+\end{minipage}
+
+\vspace{10pt}
+\category{抛物线与圆综合}
+\begin{question}
+	已知$y^2=4x$，$A,B$分别在抛物线和圆$(x-1)^2+y^2=16$的实线部分上运动，$AB\parallel x$轴，求$C_{\triangle FAB}$周长取值范围.
+\end{question}
+
+\begin{minipage}[t]{0.62\textwidth}
+	$C_{\triangle FAB}=AF+BF+AB=AF+AB+4$（圆半径$4$）.
+	
+	$=d_{A\to l}+AB+4=d_{B\to l}+4=x_B+5$.
+	
+	联立$\begin{cases} y^2=4x \\ (x-1)^2+y^2=16 \end{cases} \implies x=3$.
+	
+	$\therefore x_B\in(3,5)$.
+	
+	$\therefore C_{\triangle FAB}\in(8,10)$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.34\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.45, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-2,0) -- (6,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-4.5) -- (0,4.5) node[above] {$y$};
+		\draw[thick, domain=-4:4, smooth, variable=\y] plot ({0.25*\y*\y}, {\y});
+		\draw[thick] (1,0) circle (4);
+		\draw[dashed, gray] (-1,-4.5) -- (-1,4.5);
+		
+		\coordinate (A) at (1,2);
+		\coordinate (B) at (4.46,2);
+		\coordinate (F) at (1,0);
+		
+		\draw[thick, DarkRed] (A) -- (B);
+		\draw[thick, SkyBlue] (A) -- (F);
+		\draw[thick, SkyBlue] (B) -- (F);
+		
+		\fill (A) circle (4pt) node[above left] {$A$};
+		\fill (B) circle (4pt) node[above right] {$B$};
+		\fill (F) circle (4pt) node[below] {$F$};
+	\end{tikzpicture}
+\end{minipage}
+
+\vspace{10pt}
+\category{相互垂直的焦点弦}
+\begin{question}
+	过$y^2=2px$的焦点作相互垂直的弦$AB$和$CD$，求$(AB+CD)_{\min}$.
+\end{question}
+
+\begin{minipage}[t]{0.62\textwidth}
+	$AB=\dfrac{2p}{\sin^2\theta}$，$CD=\dfrac{2p}{\sin^2\left(\theta+\frac{\pi}{2}\right)}=\dfrac{2p}{\cos^2\theta}$.
+	
+	$AB+CD=2p\left(\dfrac{1}{\sin^2\theta}+\dfrac{1}{\cos^2\theta}\right)=2p\cdot\dfrac{1}{\sin^2\theta\cos^2\theta}$.
+	
+	法一：$\sin^2\theta\cos^2\theta\leq\left(\dfrac{\sin^2\theta+\cos^2\theta}{2}\right)^2=\dfrac{1}{4}$.
+	
+	$\Bigg\{\dfrac{2ab}{a+b}\ \le\ \sqrt{ab}\ \le\ \dfrac{a+b}{2}\ \le\ \sqrt{\dfrac{a^2+b^2}{2}}\qquad(a,b>0)\Bigg\}
+	$
+	
+	法二：$\sin^2\theta(1-\sin^2\theta)=t(1-t)=-t^2+t\leq\dfrac14$.
+	
+	法三：$\left(\dfrac{1}{2}\sin2\theta\right)^2\leq\dfrac{1}{4}$.
+	
+	$\therefore (AB+CD)_{\min}=2p\cdot4=8p$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.34\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-1,0) -- (3.5,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-3) -- (0,3) node[above] {$y$};
+		\draw[thick, domain=-2.6:2.6, smooth, variable=\y] plot ({0.5*\y*\y}, {\y});
+		
+		\coordinate (F) at (0.5,0);
+		\coordinate (A) at (2.91,2.41);
+		\coordinate (B) at (0.09,-0.41);
+		\coordinate (C) at (2.91,-2.41);
+		\coordinate (D) at (0.09,0.41);
+		
+		\draw[thick, DarkRed] (A) -- (B);
+		\draw[thick, SkyBlue] (C) -- (D);
+		
+		\fill (F) circle (2pt) node[right] {$F$};
+		\fill (A) circle (2pt) node[right] {$A$};
+		\fill (B) circle (2pt) node[below] {$B$};
+		\fill (C) circle (2pt) node[right] {$C$};
+		\fill (D) circle (2pt) node[above] {$D$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsection{第十二讲\quad 等差数列}
+\begin{knowledge}{性质}
+	
+	$S_{2n}=n(a_n+a_{n+1})$.
+	
+	$\{a_n\}$的前$n$项和为$S_n$，则$S_k,\ S_{2k}-S_k,\ S_{3k}-S_{2k},\cdots$是等差，公差为$k^2d$.
+	
+	等差$\{a_n\}$，$\left\{\dfrac{S_n}{n}\right\}$为等差，公差为$\dfrac{d}{2}$；连续相同项数和成等差.
+	
+	$a_n=An+B$只有一次项和常数项.
+	
+	$S_n=Cn^2+Dn$二次（无常数项）.
+\end{knowledge}
+
+\category{数等差数列个数}
+\begin{question}
+	$A=\{1,2,3,4\}$，任选$3$个元素构成等差数列，这样的数列有几个？
+\end{question}
+
+$1,2,3$ / $2,3,4$ / $4,3,2$ / $3,2,1$.
+
+$\therefore$ 共$4$个.
+
+\begin{knowledge}{判别、证明等差数列}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 定义：$a_{n+1}-a_n=$常.
+		
+		\item 中项：$a_{n+2}+a_n=2a_{n+1}$.
+		
+		\item 公式：$a_n=An+B$；$S_n=Cn^2+Dn$.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{Sn/n性质}
+\begin{question}
+	等差$\{a_n\}$，$a_1=-11$，$\dfrac{S_{10}}{10}-\dfrac{S_8}{8}=2$，则$S_{11}=$?
+\end{question}
+
+$\left\{\dfrac{S_n}{n}\right\}$等差$d_1$，$\dfrac{S_{10}}{10}-\dfrac{S_8}{8}=2d_1=2$.
+
+$\therefore d_1=1$，$d=2d_1=2$.
+
+$\therefore S_{11}=11\times(-11)+\dfrac{11\times10}{2}\times2=-11$.
+
+\category{双等差条件}
+\begin{question}
+	$\{a_n\}$，$\left\{\dfrac{a_n^2}{n}\right\}$等差，$a_1=2$，则$a_{10}=$?
+\end{question}
+
+法一（基本量）：用中项写条件：$\dfrac{a_1^2}{1}+\dfrac{a_3^2}{3}=2\times\dfrac{a_2^2}{2}$.
+
+$a_1^2+\dfrac{(a_1+2d)^2}{3}=2\times\dfrac{(a_1+d)^2}{2}$.
+
+$\therefore d=2$，$a_{10}=a_1+9d=20$.
+
+法二（公式法）：$a_n=An+B$.
+
+$\dfrac{a_n^2}{n}=\dfrac{(An+B)^2}{n}=A^2n+2AB+\dfrac{B^2}{n}$.
+
+不出现$\dfrac{1}{n}$的项，$\therefore B=0$.
+
+$\therefore a_n=An$，$a_1=A=2$，$a_n=2n$，$a_{10}=20$.
 
 
 
