@@ -89,3 +89,17 @@
 \contentsline {subsection}{\numberline {2.11}第十一讲\hskip 1em\relax 抛物线}{64}{subsection.2.11}%
 \contentsline {subsubsection}{\numberline {2.11.1}小结论}{64}{subsubsection.2.11.1}%
 \contentsline {subsection}{\numberline {2.12}第十二讲\hskip 1em\relax 等差数列}{65}{subsection.2.12}%
+\contentsline {subsection}{\numberline {2.13}第十三讲\hskip 1em\relax 等比数列}{68}{subsection.2.13}%
+\contentsline {subsubsection}{\numberline {2.13.1}等比数列的性质}{68}{subsubsection.2.13.1}%
+\contentsline {subsection}{\numberline {2.14}第十四讲\hskip 1em\relax 数列求通项}{69}{subsection.2.14}%
+\contentsline {subsubsection}{\numberline {2.14.1}待定系数法}{69}{subsubsection.2.14.1}%
+\contentsline {subsubsection}{\numberline {2.14.2}$S_n$与$a_n$的关系}{71}{subsubsection.2.14.2}%
+\contentsline {subsection}{\numberline {2.15}第十五讲\hskip 1em\relax 数列求和}{72}{subsection.2.15}%
+\contentsline {subsubsection}{\numberline {2.15.1}分组求和}{72}{subsubsection.2.15.1}%
+\contentsline {subsubsection}{\numberline {2.15.2}裂项相消}{72}{subsubsection.2.15.2}%
+\contentsline {subsubsection}{\numberline {2.15.3}错位相减}{74}{subsubsection.2.15.3}%
+\contentsline {subsection}{\numberline {2.16}关于数列放缩、圆锥曲线}{74}{subsection.2.16}%
+\contentsline {subsubsection}{\numberline {2.16.1}数列的简单放缩}{74}{subsubsection.2.16.1}%
+\contentsline {subsubsection}{\numberline {2.16.2}圆锥曲线小题}{75}{subsubsection.2.16.2}%
+\contentsline {subsubsection}{\numberline {2.16.3}圆锥曲线大题}{75}{subsubsection.2.16.3}%
+\contentsline {section}{\numberline {3}高二寒}{76}{section.3}%

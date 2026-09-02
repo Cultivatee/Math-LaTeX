@@ -1,0 +1,660 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,
+	right=2.5cm,
+	top=2.5cm,
+	bottom=2.5cm,
+	headheight=13.6pt
+}
+% 最简单、最稳定的中文方案（自动适配系统，永不报错）
+\usepackage[UTF8, scheme=plain]{ctex}
+% 设置英文默认字体为 Times New Roman
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parskip}{4pt}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{
+	arrows.meta,
+	calc,
+	patterns,
+	decorations.pathmorphing,
+	backgrounds,
+	positioning,
+	fit,
+	shapes.geometric,
+	intersections,
+	through,
+	angles,
+	quotes,
+	plotmarks
+}
+%目录超链接
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{2ex}
+\setlength{\cftbeforesubsecskip}{1ex}
+\setlength{\cftbeforesubsubsecskip}{1ex}
+% 定义代码颜色
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{NavyBlue}{RGB}{0,0,128}
+\definecolor{PineGreen}{RGB}{1,121,111}
+% 配置 listings 环境
+\lstset{
+	language=Python,
+	tabsize=4,
+	captionpos=b,
+	numbers=left,
+	numbersep=1em,
+	sensitive=true,
+	showtabs=false,
+	frame=shadowbox,
+	breaklines=true,
+	keepspaces=true,
+	showspaces=false,
+	showstringspaces=false,
+	breakatwhitespace=false,
+	basicstyle=\ttfamily\normalsize,
+	keywordstyle=\color{NavyBlue},
+	commentstyle=\color{codegreen},
+	numberstyle=\color{black},
+	stringstyle=\color{PineGreen!90!black},
+	rulesepcolor=\color{red!20!green!20!blue!20},
+	escapeinside={/@}{@/},
+}
+\definecolor{LightGreen}{rgb}{0.9, 0.95, 0.9}
+\definecolor{LightBlue}{RGB}{229, 238, 255}
+\definecolor{LightPink}{RGB}{255, 229, 237}
+\captionsetup[table]{
+	justification=centering,
+	labelsep=quad,
+	font={bf}
+}
+\captionsetup[figure]{
+	justification=centering,
+	labelsep=quad,
+	font={bf}
+}
+\captionsetup[subfigure]{
+	font={bf}
+}
+\begin{document}
+	\begin{center}
+		{\LARGE \textbf{Python 的零碎语法}} \\[0.5cm]
+		{\large {\kaishu 石继楷 \quad 编写}} \\[0.3cm]
+		{\normalsize 2026年9月2日}
+	\end{center}
+	\tableofcontents
+	\newpage
+	\section{引言}
+	本教程旨在为正在学习 Python 的读者提供一份实用的常用功能指南，将零碎的语法点按主题归类整理。内容涵盖基础输入输出、数值运算与类型转换、切片与逻辑运算、列表与序列操作、循环与流程控制、列表推导式与二维列表、经典算法片段、函数与高级函数、异常处理等核心知识点。通过本教程，读者可以快速掌握 Python 编程中的常用技巧与最佳实践。
+	
+	\section{基础输入与输出}
+	\subsection{print 的两个关键字参数}
+	\texttt{print} 函数支持两个常用的关键字参数：\texttt{sep}（分隔符，默认为空格）和 \texttt{end}（结束符，默认为换行）。
+	\begin{lstlisting}
+		# 两个参数输出（关键字参数）sep='' / end=''
+		print("Hello", "World", sep="-", end="!")
+		# 输出：Hello-World!
+	\end{lstlisting}
+	
+	\subsection{format 格式化输出}
+	使用 \texttt{format} 方法时，花括号中的数字表示参数位置，按顺序依次填入。
+	\begin{lstlisting}
+		f1, f2, f3 = 1, 2, 1.5
+		# 依次填入：{2} 用 f3，{0} 用 f1，{1} 用 f2
+		s = '{2}与{0}的平均值是{1}'
+		print(s.format(f1, f2, f3))
+	\end{lstlisting}
+	
+	\subsection{f-string 格式化输出}
+	f-string 是更直观的格式化方式，花括号内可直接写表达式，冒号后控制小数位数。
+	\begin{lstlisting}
+		# fstring 方法
+		print(f"{f1}与{f2}的平均值为{(f1+f2)/2:0.2f}。")
+		a = f'{5.1:.2f}'   # 输出 5.10
+		print(a)
+	\end{lstlisting}
+	
+	\section{数值运算与类型转换}
+	\subsection{取整与舍入}
+	\begin{itemize}
+		\item \texttt{round()}：四舍六入五成双。注意 \texttt{round(3.5)=4}，\texttt{round(4.5)=4}；\texttt{round(4.5,2)} 输出 \texttt{4.5}。
+		\item 导入库：\texttt{from math import floor, ceil}。\texttt{floor} 向下取整，\texttt{ceil} 向上取整。
+		\item \texttt{int(2.3)=2}（直接截断小数部分）。
+	\end{itemize}
+	\begin{lstlisting}
+		from math import floor, ceil
+		print(round(3.5))    # 4（四舍六入五成双）
+		print(round(4.5))    # 4
+		print(round(4.5, 2)) # 4.5
+		print(int(2.3))      # 2
+		print(floor(2.9))    # 2，向下取整
+		print(ceil(2.1))     # 3，向上取整
+	\end{lstlisting}
+	
+	\subsection{进制转换与整除}
+	\begin{lstlisting}
+		# int('100', 2) 输出 2 进制的 100 对应的十进制
+		print(int('100', 2))  # 4
+		# 整除与负数
+		print(-9 // 2)        # -5（向下取整）
+	\end{lstlisting}
+	
+	\subsection{提取各位数字}
+	利用 \texttt{//10}（将数字删掉最后 1 位）与 \texttt{\%10}（取当前数最后一位）可以提取各位数字。
+	\begin{lstlisting}
+		i = 456
+		# 提取百位数字
+		a = i // 100         # 4
+		# 提取十位数字
+		a = (i // 10) % 10   # 5
+		# 提取个位数字
+		a = i % 10           # 6
+		# 小结：//10 将数字删掉最后 1 位；%10 取当前数最后一位
+	\end{lstlisting}
+	
+	\subsection{类型转换杂项}
+	\begin{itemize}
+		\item \texttt{str()}：把数字和 \texttt{True}、\texttt{False} 转成字符串。
+		\item 参数区分大小写：关键字 \texttt{True}/\texttt{False} 首字母必须大写。
+	\end{itemize}
+	\begin{lstlisting}
+		print(str(100))    # '100'，数字转字符串
+		print(str(True))   # 'True'，布尔转字符串
+	\end{lstlisting}
+	
+	\section{切片、布尔与逻辑运算}
+	\subsection{切片}
+	切片语法为 \texttt{a[start:stop:step]}：开始取，结束不取，最后一个元素的索引为 \texttt{-1}。
+	\begin{lstlisting}
+		a = [0, 1, 2, 3, 4]
+		# a[1:3:1] 从第二个元素开始，索引到第四个字符（不取），步长为 1
+		print(a[1:3:1])   # [1, 2]
+		print(a[-1])      # 4，最后一个为 -1
+	\end{lstlisting}
+	
+	\subsection{布尔与逻辑运算}
+	\begin{itemize}
+		\item \texttt{not 1} 结果为 \texttt{False}。
+		\item \texttt{bool(list)}：列表是否有元素，有则为 \texttt{True}，空列表为 \texttt{False}。
+		\item \texttt{and} 找假、返回后一个：\texttt{2 and 3} 得 \texttt{3}；\texttt{2 and 0} 得 \texttt{0}。
+		\item \texttt{or} 找真、返回前一个：\texttt{2 or 3} 得 \texttt{2}；\texttt{0 or 2} 得 \texttt{2}。
+		\item 优先级：\texttt{not} 高于 \texttt{and}，\texttt{and} 高于 \texttt{or}。
+	\end{itemize}
+	\begin{lstlisting}
+		print(not 1)       # False
+		print(bool([1]))   # True，列表是否有元素
+		print(bool([]))    # False
+		# 找假/后
+		print(2 and 3)     # 3
+		print(2 and 0)     # 0
+		# 找真/前
+		print(2 or 3)      # 2
+		print(0 or 2)      # 2
+		# 优先级：not > and > or
+	\end{lstlisting}
+	
+	\subsection{海象运算符}
+	\texttt{(b:=3)>0}：先把 \texttt{3} 赋值给 \texttt{b}，再判断 \texttt{3>0}。
+	\begin{lstlisting}
+		if (b := 3) > 0:   # 把 3 赋值给 b，再判断 3 > 0
+		print(b)       # 3
+	\end{lstlisting}
+	
+	\section{列表与序列操作}
+	\subsection{输入与拆分}
+	\begin{lstlisting}
+		# xxx.split() 依靠空格创建列表
+		s = "a b c"
+		lst = s.split()          # ['a', 'b', 'c']
+		print('abc'.split())     # 结果是 ['abc']，无空格则不拆分
+		
+		# 输入列表（整数）
+		fs = list(map(int, input().split()))
+		# 输入列表（字符串）
+		fs = list(map(str, input().split()))
+		# 把输入字符串逐字符打散成列表
+		fs = list(str(input()))
+		
+		# 打散字符串
+		print(list('abcde'))     # ['a', 'b', 'c', 'd', 'e']
+	\end{lstlisting}
+	
+	\subsection{列表增删与拼接}
+	\begin{lstlisting}
+		fs = [1, 2, 3]
+		fs.append(1)             # 往列表 fs 里加元素
+		fs.pop(5)                # 删 fs 索引 5 处的元素
+		
+		fs1 = [1, 2]
+		fs2 = [3, 4]
+		fs1 += fs2               # 列表相加，fs1 变为 [1, 2, 3, 4]
+		print([1, 2] + [3, 4])   # [1, 2, 3, 4]
+		print([1, 2] * 3)        # [1, 2, 1, 2, 1, 2]
+		
+		# 想要把第 i 个元素加入新列表
+		score = fs[i]
+		new_fs.append(score)
+	\end{lstlisting}
+	
+	\subsection{排序与逆序}
+	\begin{lstlisting}
+		fs = [3, 1, 2]
+		fs2 = fs[::-1]           # 逆序输出，不改变原列表
+		fs.reverse()             # 改变 fs，原地逆序
+		fs.sort(reverse=True)    # 从大到小排序，fs 会变
+		lst = sorted(fs)         # lst 是排序结果，fs 不会变
+	\end{lstlisting}
+	
+	\subsection{查找与计数}
+	\begin{lstlisting}
+		fs = [1, 2, 3, 2]
+		# 序列的操作：成员判断
+		print(2 in fs)           # True
+		print(max(fs))           # 3，最大值
+		
+		s = "hello"
+		print(s.find('l'))       # 返回位置 2，如果没有则返回 -1
+		print(s.rfind('l'))      # 从右往左找，返回正索引 3
+		
+		# 列表计数：lst.count(num)
+		print(fs.count(2))       # 2，找 a 出现的次数
+		
+		# 计算列表里面字符串的最大长度
+		max_length = max(len(word) for word in fs)
+		
+		# 一个一个单词对比
+		words = s.split()
+		res = []
+		target = "l"
+		for word in words:
+		if word == target:
+		res.append(target)
+	\end{lstlisting}
+	
+	\subsection{去重}
+	\begin{lstlisting}
+		x = [1, 2, 2, 3]
+		y = set(x)               # 把列表 x 变成集合，去重
+		
+		# 有序 set，只保留一个（保持原顺序）
+		unique_char = []
+		for c in x:
+		if c not in unique_char:
+		unique_char.append(c)
+	\end{lstlisting}
+	
+	\subsection{列表与字符串互转、解包}
+	注意 \texttt{join} 的元素必须是字符串。
+	\begin{lstlisting}
+		result = ['a', 'b', 'c']
+		# 列表转字符串
+		print(" ".join(result))            # a b c
+		# 元素是数字时，先用 map(str, ...) 转换
+		print(' '.join(map(str, [1, 2])))  # 1 2
+		
+		word = "ABC"
+		print(word.lower())                # abc，转小写
+		
+		# 解包
+		lst = [1, 2, 3]
+		print(*lst, sep='\n')              # 解包后每个元素一行
+	\end{lstlisting}
+	
+	\subsection{元组细节}
+	\begin{lstlisting}
+		print(type((1)))     # <class 'int'>，(1) 是 int
+		print(type((1,)))    # <class 'tuple'>，(1,) 是元组
+		print((1, 2) is (1, 2))  # 不一定对，要看地址
+	\end{lstlisting}
+	
+	\section{循环与流程控制}
+	\subsection{range 循环与遍历}
+	\begin{lstlisting}
+		# for i in range(1, 21)：i 从 1 到 20 循环
+		for i in range(1, 21):
+		print(i)
+		
+		# 遍历列表
+		fs = [1, 2, 3]
+		for num in fs:
+		print(num)
+	\end{lstlisting}
+	
+	\subsection{条件表达式}
+	\begin{lstlisting}
+		y = 2
+		# 条件表达式：如果 y != 1 把 2 赋值给 x
+		x = 3 if y == 1 else 2
+		print(x)   # 2
+	\end{lstlisting}
+	
+	\subsection{match-case}
+	\texttt{match-case} 是 Python 3.10 及以上版本的结构匹配语法，\texttt{case 1|2|3} 表示同时匹配多个值，\texttt{case \_} 为默认分支。
+	\begin{lstlisting}
+		today = 5
+		match today:
+		case 1 | 2 | 3:      # 匹配多个值
+		print("前半周")
+		case 5:
+		print("周五")
+		case _:              # 默认分支
+		print("其他")
+	\end{lstlisting}
+	
+	\subsection{for...else 与 while...else}
+	\texttt{for...else} 和 \texttt{while...else} 是和 \texttt{break} 搭配的“善后”结构：循环未被 \texttt{break} 打断时才执行 \texttt{else} 块；也可以用 \texttt{found} 标志实现同样的善后。
+	\begin{lstlisting}
+		fs = [1, 2, 3]
+		target = 4
+		found = False
+		for num in fs:
+		if num == target:
+		found = True
+		break
+		else:
+		# 循环没有被 break 打断时执行（善后）
+		print("未找到目标值")
+		# 或者用 found 标志善后
+		if not found:
+		print("未找到目标值")
+	\end{lstlisting}
+	
+	\section{列表推导式、二维列表与 eval}
+	列表推导式的通用形式为 \texttt{[exp(item) for item in oldList if condi(item)]}。
+	\begin{lstlisting}
+		# 列表解析式（列表推导式）
+		# [exp(item) for item in oldList if condi(item)]
+		def is_prime(n):
+		if n < 2:
+		return False
+		for i in range(2, int(n ** 0.5) + 1):
+		if n % i == 0:
+		return False
+		return True
+		
+		# eg：筛出 1000 以内的素数
+		ans = [i for i in range(1000) if is_prime(i)]
+		
+		# 二维列表初始化
+		m, n = 3, 4
+		lst = [[0 for _ in range(m)] for _ in range(n)]
+		
+		# eval()：直接输入转可执行代码
+		print(eval("3 + 4"))   # 7
+	\end{lstlisting}
+	
+	\section{经典算法片段}
+	\subsection{二分查找}
+	\begin{lstlisting}
+		low = 0
+		high = len(lst)
+		found = False
+		while low < high:
+		mid = (low + high) // 2
+		if n == lst[mid]:
+		found = True
+		break
+		elif n < lst[mid]:
+		high = mid
+		else:
+		low = mid + 1
+	\end{lstlisting}
+	
+	\subsection{选择排序}
+	\begin{lstlisting}
+		for i in range(0, len(del_lst) - 1):
+		min_index = i
+		for j in range(i + 1, len(del_lst)):
+		if del_lst[min_index] > del_lst[j]:
+		min_index = j
+		del_lst[i], del_lst[min_index] = del_lst[min_index], del_lst[i]
+	\end{lstlisting}
+	
+	\section{enumerate 枚举}
+	\texttt{enumerate} 可同时取得索引与元素，默认 \texttt{start} 为 \texttt{0}。
+	\begin{lstlisting}
+		fruits = ["苹果", "香蕉", "橙子", "葡萄"]
+		for index, fruit in enumerate(fruits, start=1):
+		print(f"第 {index} 种水果是：{fruit}")
+		result = list(enumerate(fruits, start=1))
+		print(result)
+		# [(1, '苹果'), (2, '香蕉'), (3, '橙子'), (4, '葡萄')]
+		# 默认 start 为 0
+	\end{lstlisting}
+	
+	\section{函数}
+	\subsection{定义与调用、return}
+	定义函数用 \texttt{def}，注意函数有没有 \texttt{return}：没有 \texttt{return} 时，函数返回 \texttt{None}。
+	\begin{lstlisting}
+		def function(x, y):
+		return x + y
+		
+		# 调用
+		b = function(1, 2)
+		print(b)   # 3
+		# 注意有没有 return：无 return 的函数返回 None
+	\end{lstlisting}
+	
+	\subsection{lambda 函数}
+	\texttt{lambda} 是一个不用 \texttt{def} 的匿名函数，常用于排序的 \texttt{key} 参数。
+	\begin{lstlisting}
+		a = lambda x, y: x + y
+		second = lambda x: x[1]   # 一个不用 def 的函数，返回第二个元素
+		lst = [[5, 6], [1, 2]]
+		# 根据 [5, 6] 的第二个元素排序
+		lst.sort(key=lambda x: x[1])
+		print(lst)   # [[1, 2], [5, 6]]
+	\end{lstlisting}
+	
+	\subsection{增量赋值与可变性}
+	不可变对象（\texttt{int}、\texttt{str}）增量赋值时会重新复制（开辟新内存）；可变对象（如列表）则原地增量（不开辟新内存）。
+	\begin{lstlisting}
+		def func1(x):
+		x += 100   # int 不可变，重新赋值，只改变 x 自己
+		
+		a = 5
+		func1(a)
+		print(a)       # 5，a 不受影响
+	\end{lstlisting}
+	
+	\subsection{默认值函数}
+	定义默认值函数时，应避免用可变对象（如列表）作为默认值。
+	\begin{lstlisting}
+		def babble(words, times = 1, spaces = 0):
+		print((words + ' ' * spaces) * times)
+		
+		babble('Hello')          # Hello
+		babble('Tiger', 3)       # TigerTigerTiger
+		babble("Three", 3, 2)    # Three  Three  Three
+	\end{lstlisting}
+	
+	\subsection{可变参数}
+	\texttt{*a} 可以接收一个或多个位置参数，打包成元组；\texttt{**a} 接收带参数名的参数（关键字参数），打包成字典。
+	\begin{lstlisting}
+		def my_sum(a, b, *c, **d):
+		print(a, b, c, d)
+		
+		print(my_sum(1, 2, 3, 4, 5))
+		# a:1, b:2, c:(3, 4, 5), d: {}
+		print(my_sum(1, 2, 3, 4, 5, male = 6, femal = 7))
+		# a:1, b:2, c:(3, 4, 5), d: {'male': 6, 'femal': 7}
+	\end{lstlisting}
+	
+	\section{高级函数：zip、reduce、filter}
+	\begin{lstlisting}
+		from functools import reduce
+		
+		# zip：把多个可迭代对象打包
+		names = ["Alice", "Bob", "Charlie"]
+		math = [85, 92, 78]
+		english = [90, 88, 82]
+		zipped = zip(names, math, english)
+		# 转换为列表查看
+		result = list(zipped)
+		print(result)
+		# 输出: [('Alice', 85, 90), ('Bob', 92, 88), ('Charlie', 78, 82)]
+		
+		# reduce() 累计
+		seq = [1, 2, 3, 4, 5]
+		total = reduce(lambda x, y: x + y, seq)
+		print(total)   # 15
+		
+		# filter()：fun 必须返回 True/False（表达式）
+		lst = [1, 2, 3, 4, 5]
+		ans = list(filter(lambda x: x % 2 == 0, lst))
+		print(ans)     # [2, 4]
+	\end{lstlisting}
+	
+	\section{异常处理}
+	使用 \texttt{try...except} 捕获并处理运行时错误，防止程序崩溃。
+	\begin{lstlisting}
+		try:
+		result = 10 / 0
+		except Exception as e:
+		print(e)   # 打印异常信息
+	\end{lstlisting}
+	
+	\section{结语}
+	本教程梳理了 Python 编程中最常用的零碎语法点与高级特性。掌握这些知识点，将有助于读者编写出更加简洁、高效且健壮的 Python 代码。建议读者在实际项目中多加练习，以巩固所学内容。
+	
+	\newpage
+	\begin{center}
+		{\huge \textbf{附录}}
+	\end{center}
+	本教程使用的模板如下，读者可以参考本文档的字体、标题样式、lstlisting设置以及添加的宏包等。
+	\begin{verbatim}
+		\documentclass{article}
+		\usepackage{geometry}
+		\geometry{
+			a4paper,
+			left=2.5cm,
+			right=2.5cm,
+			top=2.5cm,
+			bottom=2.5cm,
+			headheight=13.6pt
+		}
+		% 最简单、最稳定的中文方案（自动适配系统，永不报错）
+		\usepackage[UTF8, scheme=plain]{ctex}
+		% 设置英文默认字体为 Times New Roman
+		\usepackage{fontspec}
+		\setmainfont{Times New Roman}
+		\usepackage{amsmath}
+		\usepackage{amssymb}
+		\usepackage{booktabs}
+		\usepackage{caption}
+		\usepackage{setspace}
+		\onehalfspacing
+		\setlength{\parskip}{4pt}
+		\usepackage{array}
+		\usepackage{listings}
+		\usepackage{graphicx}
+		\usepackage{enumitem}
+		\usepackage{subcaption}
+		\usepackage{multirow}
+		\usepackage{mathrsfs}
+		\usepackage{bm}
+		\usepackage{xcolor}
+		\usepackage{colortbl}
+		\usepackage{tikz}
+		\usepackage{tikz-3dplot}
+		\usetikzlibrary{
+			arrows.meta,
+			calc,
+			patterns,
+			decorations.pathmorphing,
+			backgrounds,
+			positioning,
+			fit,
+			shapes.geometric,
+			intersections,
+			through,
+			angles,
+			quotes,
+			plotmarks
+		}
+		%目录超链接
+		\usepackage{hyperref}
+		\hypersetup{
+			colorlinks=true,
+			linkcolor=black,
+			filecolor=magenta,
+			urlcolor=cyan,
+		}
+		\usepackage{tocloft}
+		\setlength{\cftbeforesecskip}{2ex}
+		\setlength{\cftbeforesubsecskip}{1ex}
+		\setlength{\cftbeforesubsubsecskip}{1ex}
+		% 定义代码颜色
+		\definecolor{codegreen}{rgb}{0,0.6,0}
+		\definecolor{NavyBlue}{RGB}{0,0,128}
+		\definecolor{PineGreen}{RGB}{1,121,111}
+		% 配置 listings 环境
+		\lstset{
+			language=Python,
+			tabsize=4,
+			captionpos=b,
+			numbers=left,
+			numbersep=1em,
+			sensitive=true,
+			showtabs=false,
+			frame=shadowbox,
+			breaklines=true,
+			keepspaces=true,
+			showspaces=false,
+			showstringspaces=false,
+			breakatwhitespace=false,
+			basicstyle=\ttfamily\normalsize,
+			keywordstyle=\color{NavyBlue},
+			commentstyle=\color{codegreen},
+			numberstyle=\color{black},
+			stringstyle=\color{PineGreen!90!black},
+			rulesepcolor=\color{red!20!green!20!blue!20},
+			escapeinside={/@}{@/},
+		}
+		\definecolor{LightGreen}{rgb}{0.9, 0.95, 0.9}
+		\definecolor{LightBlue}{RGB}{229, 238, 255}
+		\definecolor{LightPink}{RGB}{255, 229, 237}
+		\captionsetup[table]{
+			justification=centering,
+			labelsep=quad,
+			font={bf}
+		}
+		\captionsetup[figure]{
+			justification=centering,
+			labelsep=quad,
+			font={bf}
+		}
+		\captionsetup[subfigure]{
+			font={bf}
+		}
+		\begin{document}
+			...
+		\end{document}
+	\end{verbatim}
+\end{document}

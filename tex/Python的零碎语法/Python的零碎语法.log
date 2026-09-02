@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  2 SEP 2026 18:07
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  2 SEP 2026 18:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**高中数学笔记.tex
-(./高中数学笔记.tex
+**Python的零碎语法.tex
+(./Python的零碎语法.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/base/article.cls
@@ -1316,7 +1316,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip68
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 63.
+Package hyperref Info: Option `colorlinks' set `true' on input line 57.
 
 (d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -1358,56 +1358,29 @@ Package tocloft Info: The document has section divisions on input line 51.
 (d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
-(d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/listings/lstlang2.sty
-File: lstlang2.sty 2025/11/14 1.11b listings language file
-)
-(d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/listings/lstlang3.sty
-File: lstlang3.sty 2025/11/14 1.11b listings language file
-)
-(d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2025/11/14 1.11b listings language file
-)
-(d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/listings/lstlang2.sty
-File: lstlang2.sty 2025/11/14 1.11b listings language file
-)
-(d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/listings/lstlang3.sty
-File: lstlang3.sty 2025/11/14 1.11b listings language file
-)
-(d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2025/11/14 1.11b listings language file
-)
-(d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/listings/lstlang2.sty
-File: lstlang2.sty 2025/11/14 1.11b listings language file
-)
-(d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/listings/lstlang3.sty
-File: lstlang3.sty 2025/11/14 1.11b listings language file
-)
-(d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-)
-(./高中数学笔记.aux)
-\openout1 = `高中数学笔记.aux'.
+(./Python的零碎语法.aux)
+\openout1 = `Python的零碎语法.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1450,73 +1423,73 @@ Package fontspec Info:
 
 \symlegacymaths=\mathgroup10
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 140.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 140.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 140.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 140.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 140.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 140.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 140.
-LaTeX Font Info:    Redeclaring math accent \check on input line 140.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 140.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 140.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 140.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 140.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 140.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 140.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 140.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 140.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 140.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 140.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 140.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 140.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 140.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 140.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 140.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 140.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 105.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 105.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 105.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 105.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 105.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 105.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 105.
+LaTeX Font Info:    Redeclaring math accent \check on input line 105.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 105.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 105.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 105.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 105.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 140.
+(Font)              `operators' in the math version `normal' on input line 105.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/TimesNewRoman(0)/m/n on input line 1
-40.
+05.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 140.
+(Font)              `operators' in the math version `bold' on input line 105.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/m/n on input line 
-140.
+105.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/m/n on 
-input line 140.
+input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> TU/TimesNewRoman(0)/m/it on input line
- 140.
+ 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/b/n on input line 
-140.
+105.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 140.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 140.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 105.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/b/n on 
-input line 140.
+input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> TU/TimesNewRoman(0)/b/it on input lin
-e 140.
+e 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 140.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 140.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 105.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count387
-Package hyperref Info: Link coloring ON on input line 140.
-(./高中数学笔记.out) (./高中数学笔记.out)
+Package hyperref Info: Link coloring ON on input line 105.
+(./Python的零碎语法.out) (./Python的零碎语法.out)
 \@outlinefile=\write4
-\openout4 = `高中数学笔记.out'.
+\openout4 = `Python的零碎语法.out'.
 
 
 Package fontspec Info: 
@@ -1544,7 +1517,7 @@ Package fontspec Info:
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
 (fontspec)             <->"KaiTi/OT:script=hani;language=dflt;"
 
- (./高中数学笔记.toc
+ (./Python的零碎语法.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
 
 (d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1560,757 +1533,75 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 1.
 
 (d:/Software/LaTeX/texlive/2026/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
+))
+\tf@toc=\write5
+\openout5 = `Python的零碎语法.toc'.
+
+
 [1
 
-] [2] [3])
-\tf@toc=\write5
-\openout5 = `高中数学笔记.toc'.
+]
 
- [4]
+Package fontspec Info: 
+(fontspec)             Could not resolve font "FangSong/BI" (it probably
+(fontspec)             doesn't exist).
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 153.
 
-[5]
-Overfull \hbox (95.68513pt too wide) detected at line 278
-[][]
- []
+Package fontspec Info: 
+(fontspec)             Could not resolve font "FangSong/B" (it probably
+(fontspec)             doesn't exist).
 
 
-Overfull \hbox (24.78711pt too wide) in paragraph at lines 312--313
- [][] 
- []
+Package fontspec Info: 
+(fontspec)             Could not resolve font "FangSong/I" (it probably
+(fontspec)             doesn't exist).
 
-[6]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 350.
+Package fontspec Info: 
+(fontspec)             Font family 'FangSong(0)' created for font 'FangSong'
+(fontspec)             with options [Script={CJK}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 
+ [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
 
-Overfull \hbox (27.84525pt too wide) in paragraph at lines 446--447
-[][] 
- []
-
-[7]
-Overfull \hbox (175.79669pt too wide) in paragraph at lines 461--534
-\OML/cmm/m/it/10 BG \OMS/cmsy/m/n/10 k$ \TU/SimSun(0)/m/n/10 平 面 $\OML/cmm/m/it
-/10 EFC[]$\TU/TimesNewRoman(0)/m/n/10 . [][][] []  [] 
- []
-
-
-Overfull \hbox (2.31781pt too wide) in paragraph at lines 620--621
-[][] 
- []
-
-[8]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 623.
-
-[9]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 716--759
-[][]  [] 
- []
-
-[10]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 778.
-
-[11]
-Overfull \hbox (47.93123pt too wide) in paragraph at lines 883--884
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 857--885
-[][] [] 
- []
-
-[12]
-Overfull \hbox (41.22998pt too wide) in paragraph at lines 952--953
-[][] 
- []
-
-
-Overfull \hbox (39.43025pt too wide) in paragraph at lines 895--954
-[][]  [] 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 955.
-
-[13]
-Overfull \hbox (85.61938pt too wide) in paragraph at lines 1049--1050
-[][] 
- []
-
-
-Overfull \hbox (46.66666pt too wide) in paragraph at lines 1003--1090
-[]\TU/SimSun(0)/b/n/10 几 何 性 质[] [][]  [] 
- []
-
-[14]
-Overfull \hbox (90.73242pt too wide) in paragraph at lines 1112--1149
-[]\TU/TimesNewRoman(0)/b/n/10 B \TU/SimSun(0)/b/n/10 方 法  |（定 义 法） ：|  []  [] 
- []
-
-[15]
-Overfull \hbox (12.78027pt too wide) in paragraph at lines 1214--1215
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 1183--1216
-[][]  [] 
- []
-
-[16]
-Overfull \hbox (44.0819pt too wide) in paragraph at lines 1278--1279
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 1239--1280
-[][]  [] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 1288--1341
-[][]  [] 
- []
-
-[17]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 1342.
-
-[18]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 1408--1442
-[][]  [] 
- []
-
-
-Overfull \hbox (12.78027pt too wide) in paragraph at lines 1486--1487
-[][] 
- []
-
-
-Overfull \hbox (46.66666pt too wide) in paragraph at lines 1444--1488
-[]\TU/SimSun(0)/b/n/10 几 何 性 质[] [][]  [] 
- []
-
-[19]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 1535--1592
-[][]  [] 
- []
-
-
-Overfull \hbox (50.27777pt too wide) in paragraph at lines 1593--1653
-\TU/SimSun(0)/m/n/10 求 离 心 率\TU/TimesNewRoman(0)/m/n/10 . [][][] []  [] 
- []
-
-[20]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 1659--1720
-[][]  [] 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 1721.
-
-[21]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 1767--1792
-[][]  [] 
- []
-
-[22]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 1814--1848
-[][]  [] 
- []
-
-
-Overfull \hbox (1.66667pt too wide) in paragraph at lines 1850--1911
-$[]$  $[]$ 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 1936--1966
-[][]  [] 
- []
-
-[23]
-Overfull \hbox (20.51546pt too wide) in paragraph at lines 2008--2009
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 1972--2010
-[][]  [] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2015--2053
-[][]  [] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2059--2104
-[][]  [] 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 2105.
-
-[24]
-Overfull \hbox (12.78116pt too wide) in paragraph at lines 2183--2184
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2141--2185
-[][]  [] 
- []
-
-
-Overfull \hbox (81.06583pt too wide) in paragraph at lines 2242--2243
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2191--2244
-[][]  [] 
- []
-
-[25]
-Overfull \hbox (18.47032pt too wide) in paragraph at lines 2293--2294
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2257--2295
-[][]  [] 
- []
-
-[26]
-Overfull \hbox (47.20697pt too wide) in paragraph at lines 2371--2372
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2338--2373
-[][]  [] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2378--2417
-[][]  [] 
- []
-
-[27]
-Overfull \hbox (18.47032pt too wide) in paragraph at lines 2459--2460
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2423--2461
-[][]  [] 
- []
-
-
-Overfull \hbox (12.978pt too wide) in paragraph at lines 2548--2549
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2466--2550
-[]$[]$  $[]$ 
- []
-
-[28]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2556--2604
-[][]  [] 
- []
-
-
-Overfull \hbox (12.78116pt too wide) in paragraph at lines 2653--2654
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2610--2655
-[][]  [] 
- []
-
-
-Overfull \hbox (32.69669pt too wide) in paragraph at lines 2711--2712
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2661--2713
-[][]  [] 
- []
-
-[29]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 2714.
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2744--2783
-[][]  [] 
- []
-
-[30]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2805--2852
-[][]  [] 
- []
-
-[31]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2886--2957
-[][]  [] 
- []
-
-[32] [33]
-Overfull \hbox (58.30484pt too wide) in paragraph at lines 3013--3014
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2981--3015
-[][]  [] 
- []
-
-
-Overfull \hbox (12.78027pt too wide) in paragraph at lines 3050--3051
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3021--3052
-[][]  [] 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 3053.
-
-
-Overfull \hbox (12.78027pt too wide) in paragraph at lines 3128--3129
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3073--3130
-[][]  [] 
- []
-
-[34] [35] [36]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3214--3257
-[]$[]$  $[]$ 
- []
-
-
-Overfull \hbox (12.78027pt too wide) in paragraph at lines 3312--3313
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3264--3314
-[][]  [] 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 3315.
-
-[37]
-Overfull \hbox (12.78027pt too wide) in paragraph at lines 3393--3394
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3344--3395
-[][]  [] 
- []
-
-
-Underfull \hbox (badness 4779) in paragraph at lines 3412--3414
-[]$\OML/cmm/m/it/10 k[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 k[] \OT1/cmr/m/n/10 
-= [] + [] = []$ $=
- []
-
-
-Overfull \hbox (15.62442pt too wide) in paragraph at lines 3445--3446
-[][] 
- []
-
-
-Overfull \hbox (39.43025pt too wide) in paragraph at lines 3401--3447
-[][]  [] 
- []
-
-[38]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 3448.
-
-[39] [40]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 3607.
-
-[41] [42] [43]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 3783.
-
-[44]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3859.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3859.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3859.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3859.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3859.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3859.
-
-[45] [46]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 3959.
-
-[47] [48]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 4115.
-
-[49]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4169--4205
-[][]  [] 
- []
-
-[50]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4278--4320
-[][]  [] 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 4375.
-
-[51]
-Overfull \hbox (35.5853pt too wide) in paragraph at lines 4452--4453
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4399--4454
-[][]  [] 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 4455.
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4463--4488
-[][]  [] 
- []
-
-[52] [53]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 4561.
-
-[54]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 4660.
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4679--4703
-[][]  [] 
- []
-
-[55]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4738--4776
-[][]  [] 
- []
-
-[56]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 4848.
-
-[57]
-Overfull \hbox (46.92307pt too wide) in paragraph at lines 4908--4909
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4879--4910
-[][]  [] 
- []
-
-[58]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4958--4987
-[][]  [] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4993--5023
-[][]  [] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 5037--5065
-[][]  [] 
- []
-
-
-Overfull \hbox (33.2861pt too wide) in paragraph at lines 5107--5108
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 5066--5109
-[][]  [] 
- []
-
-[59]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 5110.
-
-[60]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 5175--5225
-[][]  [] 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 5226.
-
-
-Overfull \hbox (1.39935pt too wide) in paragraph at lines 5292--5293
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 5242--5294
-[][]  [] 
- []
-
-[61]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 5295.
-
-
-Overfull \hbox (12.78116pt too wide) in paragraph at lines 5360--5361
-[][] 
- []
-
-
-Overfull \hbox (39.43025pt too wide) in paragraph at lines 5313--5362
-[][]  [] 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 5363.
-
-
-Overfull \hbox (1.66666pt too wide) in paragraph at lines 5364--5408
-[]  [] 
- []
-
-[62]
-Overfull \hbox (4.24393pt too wide) in paragraph at lines 5443--5444
- [][] 
- []
-
-
-Overfull \hbox (1.66666pt too wide) in paragraph at lines 5410--5445
-[]  [] 
- []
-
-
-Overfull \hbox (2.01566pt too wide) in paragraph at lines 5492--5493
- [][] 
- []
-
-
-Overfull \hbox (1.66666pt too wide) in paragraph at lines 5447--5494
-[]  [] 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 5495.
-
-
-Overfull \hbox (7.08582pt too wide) in paragraph at lines 5562--5563
- [][] 
- []
-
-
-Overfull \hbox (61.96863pt too wide) in paragraph at lines 5630--5631
- [][] 
- []
-
-[63] [64]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 5721.
-
-[65] [66]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 5868--5898
-[][]  [] 
- []
-
-[67]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 5910--5952
-[][]  [] 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 5953.
-
-[68]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 6028.
-
-[69] [70]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6132.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 6132.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6132.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6132.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 6132.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6132.
-
-[71]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 6219.
-
-[72] [73] [74]
-Overfull \hbox (42.65399pt too wide) in paragraph at lines 6438--6439
- [][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 6390--6440
-[][]  [] 
- []
-
-
-Overfull \hbox (15.85754pt too wide) in paragraph at lines 6488--6489
- [][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 6446--6490
-[][]  [] 
- []
-
-[75]
-
-Package caption Warning: Unused \captionsetup[table] on input line 130.
+Package caption Warning: Unused \captionsetup[table] on input line 96.
 See the caption package documentation for explanation.
 
 
-Package caption Warning: Unused \captionsetup[figure] on input line 135.
+Package caption Warning: Unused \captionsetup[figure] on input line 101.
 See the caption package documentation for explanation.
 
 
-Package caption Warning: Unused \captionsetup[subfigure] on input line 138.
+Package caption Warning: Unused \captionsetup[subfigure] on input line 104.
 See the caption package documentation for explanation.
 
-[76] (./高中数学笔记.aux)
+[15] (./Python的零碎语法.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
  ***********
-Package rerunfilecheck Info: File `高中数学笔记.out' has not changed.
-(rerunfilecheck)             Checksum: CB6E71F8093F9490E604D55A3C1D23D0;12703.
+
+
+Package rerunfilecheck Warning: File `Python的零碎语法.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Python的零碎语法.out':
+(rerunfilecheck)             Before: 932534396B29D0F876CC56E957EDDC38;2442
+(rerunfilecheck)             After:  AC5E7F8645DAC1A91B675D582471CE96;4473.
  ) 
 Here is how much of TeX's memory you used:
- 36328 strings out of 468168
- 788348 string characters out of 5429579
- 1338389 words of memory out of 5000000
- 64435 multiletter control sequences out of 15000+600000
- 642403 words of font info for 139 fonts, out of 8000000 for 9000
+ 32787 strings out of 468168
+ 711404 string characters out of 5429579
+ 1662109 words of memory out of 5000000
+ 60918 multiletter control sequences out of 15000+600000
+ 634524 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,22n,111p,420b,908s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,6n,111p,425b,1795s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 高中数学笔记.pdf (76 pages).
+Output written on Python的零碎语法.pdf (15 pages).

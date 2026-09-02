@@ -5721,6 +5721,8 @@ $\therefore \dfrac{1}{4}x^2+y^2=1$.
 \subsection{第十二讲\quad 等差数列}
 \begin{knowledge}{性质}
 	
+	$S_{2n-1}=(2n-1)a_n$
+	
 	$S_{2n}=n(a_n+a_{n+1})$.
 	
 	$\{a_n\}$的前$n$项和为$S_n$，则$S_k,\ S_{2k}-S_k,\ S_{3k}-S_{2k},\cdots$是等差，公差为$k^2d$.
@@ -5782,6 +5784,744 @@ $\dfrac{a_n^2}{n}=\dfrac{(An+B)^2}{n}=A^2n+2AB+\dfrac{B^2}{n}$.
 不出现$\dfrac{1}{n}$的项，$\therefore B=0$.
 
 $\therefore a_n=An$，$a_1=A=2$，$a_n=2n$，$a_{10}=20$.
+
+\category{基本量代换}
+\begin{question}
+	等差$\{a_n\}$，若$a_8=24$，则$a_9-\dfrac{1}{3}a_{11}=$?
+\end{question}
+
+1$^\circ$ 所求$=\dfrac{1}{3}(3a_9-a_{11})$.
+
+$\because 3a_9=a_{11}+2a_8$.
+
+$\therefore 3a_9-a_{11}=2\times24=48$.
+
+所求$=16$.
+
+2$^\circ$ $a_9-\dfrac{1}{3}a_{11}=a_1+8d-\dfrac{1}{3}(a_1+10d)=\dfrac{2}{3}a_1+\dfrac{14}{3}d=\dfrac{2}{3}(a_1+7d)=\dfrac{2}{3}a_8=16$.
+
+\category{两等差和之比}
+\begin{question}
+	设等差$\{a_n\},\{b_n\}$分别$S_n,T_n$，$\dfrac{S_n}{T_n}=\dfrac{2n-3}{4n-3}$，则$\dfrac{a_2+a_{14}}{b_5+b_{11}}=$?
+\end{question}
+
+所求$=\dfrac{a_8}{b_8}$；$\dfrac{S_{15}}{T_{15}}=\dfrac{15a_8}{15b_8}=\dfrac{a_8}{b_8}$.
+
+$\therefore$ 所求$=\dfrac{2\times15-3}{4\times15-3}=\dfrac{27}{57}=\dfrac{9}{19}$.
+
+变式一：$\dfrac{a_{10}}{b_{10}}$：$n=10 \implies 2n-1=19$，$\dfrac{a_{10}}{b_{10}}=\dfrac{S_{19}}{T_{19}}$.
+
+变式二：$\dfrac{a_n}{b_n}=\dfrac{S_{2n-1}}{T_{2n-1}}=\dfrac{2(2n-1)-3}{4(2n-1)-3}=\dfrac{4n-5}{8n-7}$.
+
+变式三：$\dfrac{a_8}{b_5}$：$\because \dfrac{a_n}{b_n}=\dfrac{4n-5}{8n-7}$.
+
+$\therefore \begin{cases} a_n=k(4n-5) \\ b_n=k(8n-7) \end{cases}$，$\dfrac{a_8}{b_5}=\dfrac{k(4\times8-5)}{k(8\times5-7)}=\dfrac{27}{33}=\dfrac{9}{11}$.
+
+\category{连续相同项和成等差}
+\begin{question}
+	等差$\{a_n\}$，$\dfrac{S_3}{S_6}=\dfrac{1}{3}$，则$\dfrac{S_6}{S_{12}}=$?
+\end{question}
+
+$S_3,\ S_6-S_3,\ S_9-S_6,\ S_{12}-S_9$成等差，设为$x,\ 2x,\ 3x,\ 4x$.
+
+$S_6=x+2x=3x$.
+
+$S_{12}=x+2x+3x+4x=10x$.
+
+$\therefore \dfrac{S_6}{S_{12}}=\dfrac{3x}{10x}=\dfrac{3}{10}$.
+
+\category{三层环问题}
+\begin{question}
+	某圆形花坛分上、中、下三层，每层由相同个数的同心环（圈）组成. 已知：
+	
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		\item 上层最内一环有$9$个；
+		\item 同一层内，由内向外，每一环比内邻一环多$9$个；
+		\item 下一层的最内一环比上一层的最外一环多$9$个；
+		\item 下层比中层总共多$729$个.
+	\end{enumerate}
+	
+	求三层共有多少个.
+\end{question}
+
+由条件1--3，按“从上到下、从内到外”依次数每一环，个数构成首项$a_1=9$、公差$d=9$的等差数列$\{a_k\}$，即$a_k=9k$.
+
+设每层$n$环，则总环数$3n$.
+
+上层和$S_n$；中层$S_{2n}-S_n$；下层$S_{3n}-S_{2n}$.
+
+由条件4：下层$-$中层$=n^2\cdot 9=729$.
+
+$\therefore n^2=81 \implies n=9$.
+
+$\therefore$ 总环数$3n=27$.
+
+$S_{27}=27\times9+\dfrac{27\times26}{2}\times9=243+3159=3402$.
+
+$\therefore$ 三层共有$3402$个.
+
+\category{Sn最值}
+\begin{question}
+	$\{a_n\}$等差，$0>\dfrac{a_{11}}{a_{10}}>-1$，$S_n$有最小值，则使得$S_n<0$的$n_{\max}=$?
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	$\because S_n=Cn^2+Dn$有最小
+	
+	$\therefore$ 开口向上抛物线，$d>0$.
+	
+	$\begin{cases} \dfrac{a_{11}}{a_{10}}<0 \\ \dfrac{a_{11}}{a_{10}}>-1 \end{cases} \implies \begin{cases} a_{10}<0 \\ a_{11}>0 \\a_{11}>a_{10}\end{cases}$
+	
+	
+	
+	$S_{19}=19a_{10}<0$
+	
+	$S_{20}=10(a_{10}+a_{11})<0$
+	
+	$S_{21}=21a_{11}>0$.
+	
+	$\therefore n_{\max}=20$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-0.5,0) -- (5,0) node[right] {$n$};
+		\draw[->, gray!40] (0,-1.5) -- (0,1.5) node[above] {$S_n$};
+		\draw[thick, DarkRed, domain=-0.2:4.5, smooth, variable=\x] plot ({\x}, {0.35*\x*(\x-4.2)});
+		\draw[dashed, gray] (2,-1.6) -- (2,-1.47);
+		\draw[dashed, gray] (4,-1.6) -- (4,-0.3);
+		\node[below] at (2,-1.6) {$10$};
+		\node[below] at (4,-1.6) {$20$};
+	\end{tikzpicture}
+\end{minipage}
+
+\category{S10=S20}
+\begin{question}
+	若$S_{10}=S_{20}$，则：
+	
+	1$^\circ$$n=30$时，$S_n=0$？
+	
+	$2^\circ$$d>0$时，$a_{10}+a_{22}>0$？
+	
+	$3^\circ$$d<0$时，$a_{10}+a_{22}$与$0$？
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	$1^\circ$ $S_{10}$，$S_{20}-S_{10}$，$S_{30}-S_{20}$成等差.
+	
+	$\because S_{20}-S_{10}=0$
+	
+	$\therefore S_{10}$与$S_{30}-S_{20}$是相反数
+	
+	$\because S_{10}=S_{20}$
+	
+	$\therefore S_{30}=0$.
+	
+	$2^\circ$ $a_{10}+a_{22}=2a_{16}$；$S_{31}=31a_{16}$.
+	
+	$\because S_{30}=0$，$d>0 \implies S_{31}>0$.
+	
+	$\therefore a_{16}>0$，即$a_{10}+a_{22}>0$.
+	
+	$3^\circ$ $d<0$：$S_{31}<0 \implies a_{16}<0$（$15$分界，$a_{15}$前正后负）.
+	
+	$\therefore a_{10}+a_{22}=2a_{16}<0$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-0.5,0) -- (5,0) node[right] {$n$};
+		\draw[->, gray!40] (0,-1.5) -- (0,1.5) node[above] {$S_n$};
+		% d>0 开口向上，顶点15，零点0,30
+		\draw[thick, DarkRed, domain=-0.2:4.4, smooth, variable=\x] plot ({\x}, {0.4*\x*(\x-4.2)});
+		\draw[dashed, gray] (2.1,-1.7) -- (2.1,-1.76);
+		\node[below] at (2.1,-1.7) {$15$};
+		\node[below] at (4.2,0) {$30$};
+	\end{tikzpicture}
+	
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-0.5,0) -- (5,0) node[right] {$n$};
+		\draw[->, gray!40] (0,-1.5) -- (0,1.5) node[above] {$S_n$};
+		% d<0 开口向下
+		\draw[thick, SkyBlue, domain=-0.2:4.4, smooth, variable=\x] plot ({\x}, {-0.4*\x*(\x-4.2)});
+		\node[below] at (2.1,-1.7) {$15$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsection{第十三讲\quad 等比数列}
+
+\subsubsection{等比数列的性质}
+\begin{knowledge}{等比数列的性质}
+	等比数列隔项同号.
+	
+	从等比数列中等间隔抽取项仍为等比.
+	
+	若$\{a_n\},\{b_n\}$等比，则$\{a_n^2\}$，$\{a_na_{n+1}\}$，$\{a_n+a_{n+1}\}$，$\{a_nb_n\}$均等比.
+	
+	等比$\{a_n\}$，$q\neq1$：$S_n,\ S_{2n}-S_n,\ S_{3n}-S_{2n}$成等比，公比$q^n$.
+\end{knowledge}
+
+\category{均值不等式与性质}
+\begin{question}
+	$\{a_n\}$正项等比，$\dfrac{2}{a_3}+\dfrac{3}{a_7}=\sqrt{6}$，$a_5$的取值范围?
+\end{question}
+
+$\dfrac{2}{a_3}+\dfrac{3}{a_7}\geq2\sqrt{\dfrac{6}{a_3a_7}}=\dfrac{2\sqrt{6}}{a_5}$.
+
+$\therefore \sqrt{6}\geq\dfrac{2\sqrt{6}}{a_5}$.
+
+$\therefore a_5\geq2$.
+
+\category{积Tn判断}
+\begin{question}
+	等比$\{a_n\}$，$T_n=a_1a_2\cdots a_n$，若$a_1>1$，$a_{2020}a_{2021}>1$，$(a_{2020}-1)(a_{2021}-1)<0$，则：
+	(1)$0<q<1$？(2)$a_{2020}\cdot a_{2022}>1$？(3)$T_{2021}$是$T_n$最大值？(4)使$T_n>1$的$n_{\max}$.
+\end{question}
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $\because (a_{2020}-1)(a_{2021}-1)<0$.
+	
+	$\therefore a_{2020}$和$a_{2021}$一个大于$1$，一个小于$1$.
+	
+	$\because a_1>1$，$a_{2020}a_{2021}>1$.
+	
+	$\therefore a_{2020}^2\cdot q>0$
+	
+	$\therefore q>0$
+	
+	若$q>1$：$a_n\uparrow \implies a_{2020},a_{2021}>1$，矛盾.
+	
+	$\therefore 0<q<1$.
+	
+	\item 从(1)知$a_{2020}>1$，$a_{2021}<1$.
+	
+	$\therefore a_{2020}\cdot a_{2022}=a_{2021}^2<1$.（(2)不成立）
+	
+	\item $T_{2020}$最大.（(3)不成立）
+	
+	\item $T_{4040}=(a_{2020}a_{2021})^{2020}>1$.
+	
+	$T_{4041}=a_{2021}^{4041}<1$.
+	
+	$\therefore n_{\max}=4040$.
+	
+\end{enumerate}
+
+\category{等差加等比和拆分}
+\begin{question}
+	$\{a_n\}$等差，$\{b_n\}$等比，若$\{a_n+b_n\}$的$S_n=n-1+2^n$，则$d\cdot q=$?
+\end{question}
+
+$S_n=(a_1+\cdots+a_n)+(b_1+\cdots+b_n)=S_n'+S_n''$
+
+$=\left[\dfrac{d}{2}n^2+\left(a_1-\dfrac{d}{2}\right)n\right]+\left[\dfrac{b_1}{1-q}q^n-\dfrac{b_1}{1-q}\right]$
+
+$=n+2^n-1$.
+
+对应系数：$\dfrac{d}{2}=0$，$a_1-\dfrac{d}{2}=1$，$\dfrac{b_1}{1-q}=1$，$q=2$.
+
+$\therefore d=0$，$q=2$，$d\cdot q=0$.
+
+\subsection{第十四讲\quad 数列求通项}
+
+\subsubsection{待定系数法}
+\begin{knowledge}{$a_{n+1}=pa_n+q$型}
+	
+	当题给$a_1$，$a_{n+1}=pa_n+q$时.
+	
+	待定系数法：设$a_{n+1}+\lambda=p(a_n+\lambda)$.
+	
+	解出$\lambda$，写出$a_{n+1}+\lambda$是以$a_1+\lambda$为首项.
+	
+	为公比$p$的等比数列，写出$a_n+\lambda$的通项.
+\end{knowledge}
+
+\category{pq型}
+\begin{question}
+	$a_1=1$，$a_{n+1}=2a_n+1$，求通项.
+\end{question}
+
+设$a_{n+1}+\lambda=2(a_n+\lambda) \implies a_{n+1}=2a_n+\lambda$，对比得$\lambda=1$.
+
+$\therefore a_{n+1}+1=2(a_n+1)$.
+
+$\therefore \{a_n+1\}$是以$2$为首项、公比为$2$的等比数列.
+
+$\therefore a_n+1=2^n \implies a_n=2^n-1$.
+
+\begin{knowledge}{$a_{n+1}=pa_n+(An+B)$型}
+	
+	当题给$a_1$，$a_{n+1}=pa_n+(An+B)$.
+	
+	设$a_{n+1}+\lambda(n+1)+\mu=p(a_n+\lambda n+\mu)$.
+	
+	当题给$a_{n+1}=pa_n+q^{n+1}$：同除$q^{n+1}$.
+	
+	当$a_{n+1}=\dfrac{Aa_n}{Ca_n+D}$时：取倒数.
+\end{knowledge}
+
+\category{一次型}
+\begin{question}
+	$a_1=1$，$a_{n+1}=2a_n+2n-1$，求通项.
+\end{question}
+
+设$a_{n+1}+\lambda(n+1)+\mu=2(a_n+\lambda n+\mu)$.
+
+展开：$a_{n+1}=2a_n+\lambda n+\mu-\lambda$.
+
+对比：$\begin{cases} \lambda=2 \\ \mu-\lambda=-1 \end{cases} \implies \begin{cases} \lambda=2 \\ \mu=1 \end{cases}$.
+
+$\therefore \{a_n+2n+1\}$是以$4$为首项、$2$为公比的等比数列.
+
+$\therefore a_n+2n+1=4\cdot2^{n-1}=2^{n+1} \implies a_n=2^{n+1}-2n-1$.
+
+\category{证明等比数列}
+\begin{question}
+	$a_1=2$，$a_{n+1}=3a_n+2n-1$.(1)证$\{a_n+n\}$为等比；(2)写出$\{a_n\}$通项公式.
+\end{question}
+
+(1) $\dfrac{a_{n+1}+n+1}{a_n+n}=\dfrac{3a_n+2n-1+n+1}{a_n+n}=\dfrac{3(a_n+n)}{a_n+n}=3$.
+
+$\therefore \{a_n+n\}$是以$3$为首项、$3$为公比的等比.
+
+(2) $a_n+n=3\cdot3^{n-1}=3^n$.
+
+$\therefore a_n=3^n-n$.
+
+\category{取倒数法}
+\begin{question}
+	$a_1=1$，$a_{n+1}=\dfrac{a_n}{2+3a_n}$.(1)求通项；(2)求$\left\{\dfrac{1}{a_n}\right\}$前$n$项和.
+\end{question}
+
+(1) 取倒数：$\dfrac{1}{a_{n+1}}=\dfrac{2+3a_n}{a_n} \implies \dfrac{1}{a_{n+1}}=\dfrac{2}{a_n}+3$.
+
+设$\dfrac{1}{a_{n+1}}+\lambda=2\left(\dfrac{1}{a_n}+\lambda\right) \implies \lambda=3$.
+
+$\therefore \left\{\dfrac{1}{a_n}+3\right\}$是以$4$为首项、$2$为公比的等比数列.
+
+$\dfrac{1}{a_n}+3=4\cdot2^{n-1}=2^{n+1}$.
+
+$\therefore a_n=\dfrac{1}{2^{n+1}-3}$.
+
+(2) $S_n=\dfrac{1}{a_1}+\dfrac{1}{a_2}+\cdots+\dfrac{1}{a_n}$
+
+$=2^2-3+2^3-3+\cdots+2^{n+1}-3$
+
+$=\dfrac{4(1-2^n)}{1-2}-3n$
+
+$=2^{n+2}-3n-4$.
+
+\category{除$q^{n+1}$}
+\begin{question}
+	$a_1=2$，$a_{n+1}=2a_n+2^{n+1}$，求$a_n$通项.
+\end{question}
+
+$\dfrac{a_{n+1}}{2^{n+1}}=\dfrac{2a_n}{2^{n+1}}+1$.
+
+$\dfrac{a_{n+1}}{2^{n+1}}-\dfrac{a_n}{2^n}=1$.
+
+$\therefore \left\{\dfrac{a_n}{2^n}\right\}$是以$1$为首项、$1$为公差的等差.
+
+$\therefore \dfrac{a_n}{2^n}=1+(n-1)\times1=n$.
+
+$\therefore a_n=2^n\cdot n$.
+
+\subsubsection{$S_n$与$a_n$的关系}
+\category{消$S_n$}
+\begin{question}
+	$S_n=\dfrac{3}{2}a_n-3$，求通项.
+\end{question}
+
+$S_{n-1}=\dfrac{3}{2}a_{n-1}-3$（$n\geq2$）.
+
+$a_n=\dfrac{3}{2}a_n-\dfrac{3}{2}a_{n-1}$（$n\geq2$）.
+
+$a_n=3a_{n-1}$（$n\geq2$）.
+
+$S_1=\dfrac{3}{2}a_1-3 \implies a_1=6$，$q=3$.
+
+$\therefore a_n=6\cdot3^{n-1}=2\times3^n$.
+
+\category{$n-1$递推}
+\begin{question}
+	$a_1+2a_2+3a_3+\cdots+na_n=n^2$，求通项.
+\end{question}
+
+$a_1+2a_2+\cdots+(n-1)a_{n-1}=(n-1)^2$（$n\geq2$）.
+
+$na_n=n^2-(n-1)^2=2n-1$.
+
+$\therefore a_n=\dfrac{2n-1}{n}$（$n\geq2$）.
+
+当$n=1$时，$a_1=1$满足上式.
+
+$\therefore a_n=\dfrac{2n-1}{n}$.
+
+\category{$n-1$递推}
+\begin{question}
+	正项，$2S_n=\left(a_n+\dfrac{1}{2}\right)^2$，求通项.
+\end{question}
+
+$2S_{n-1}=\left(a_{n-1}+\dfrac{1}{2}\right)^2$.
+
+$\implies a_n+a_{n-1}=a_n^2-a_{n-1}^2$，弃负.
+
+$a_n-a_{n-1}=1$（$n\geq2$）.
+
+当$n=1$时，$2S_1=\left(a_1+\dfrac{1}{2}\right)^2 \implies a_1=\dfrac{1}{2}$.
+
+$\therefore a_n=\dfrac{1}{2}+(n-1)\times1=n-\dfrac{1}{2}$.
+
+\category{消$a_n$}
+\begin{question}
+	$a_n+2S_nS_{n-1}=0$（$n\geq2$），$a_1=\dfrac{1}{2}$.(1)证$\left\{\dfrac{1}{S_n}\right\}$等差；(2)通项.
+\end{question}
+
+(1) $S_n-S_{n-1}+2S_nS_{n-1}=0$.
+
+$\dfrac{1}{S_n}-\dfrac{1}{S_{n-1}}=2$.
+
+$\therefore \left\{\dfrac{1}{S_n}\right\}$是以$2$为首项、$2$为公差的等差.
+
+(2) $\dfrac{1}{S_n}=2+(n-1)\times2=2n \implies S_n=\dfrac{1}{2n}$.
+
+$S_{n-1}=\dfrac{1}{2(n-1)}$（$n\geq2$）.
+
+$a_1=\dfrac{1}{2}$不满足上式.
+
+$\therefore a_n=\begin{cases} \dfrac{1}{2n}-\dfrac{1}{2(n-1)}, & n\geq2 \\ \dfrac{1}{2}, & n=1 \end{cases}$
+
+\category{消$a_{n}$}
+\begin{question}
+	正项，$a_1=1$，$a_{n+1}(S_n+S_{n+1})=2^n$，求$S_n$.
+\end{question}
+
+$(S_{n+1}-S_n)(S_{n+1}+S_n)=2^n$.
+
+$S_{n+1}^2-S_n^2=2^n$.
+
+$\begin{cases}
+	S_2^2-S_1^2=2^1 \\
+	S_3^2-S_2^2=2^2 \\
+	\vdots \\
+	S_n^2-S_{n-1}^2=2^{n-1}
+\end{cases}$
+
+$\therefore S_n^2-S_1^2=2^1+2^2+\cdots+2^{n-1}=2^n-2$.
+
+$\therefore S_n^2=2^n-1$.
+
+$\therefore S_n=\sqrt{2^n-1}$.
+
+\subsection{第十五讲\quad 数列求和}
+\begin{knowledge}{项数}
+	项数$=\dfrac{\text{末}-\text{首}}{d}+1$.
+\end{knowledge}
+
+\subsubsection{分组求和}
+\category{周期型}
+\begin{question}
+	$a_n=n\cdot\cos\dfrac{n\pi}{2}$，求$S_{2020}$.
+\end{question}
+
+$T=\dfrac{2\pi}{\omega}=\dfrac{2\pi}{\frac{\pi}{2}}=4$.
+
+$S_{2020}=1\times0+2\times(-1)+3\times0+4\times1+5\times0+6\times(-1)+7\times0+8\times1+\cdots$
+
+每$4$项$=2$（也有可能成等差）.
+
+$\therefore S_{2020}=2\times\dfrac{2020}{4}=1010$.
+
+\subsubsection{裂项相消}
+\begin{knowledge}{裂项公式}
+	$a_n$为乘积时，可变成把$\dfrac{1}{\square\cdot\square}\to\dfrac{1}{a}-\dfrac{1}{b}$.
+	
+	先直接裂，再通分回去，研究乘什么等价原式.
+	
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item $\dfrac{1}{n(n+1)}=\dfrac{1}{n}-\dfrac{1}{n+1}$.
+		
+		\item $\dfrac{1}{(2n-1)(2n+1)}=\dfrac{1}{2}\left(\dfrac{1}{2n-1}-\dfrac{1}{2n+1}\right)$（要使与原式相等需$\times\dfrac12$）.
+		
+		\item $\dfrac{1}{n(n+1)(n+2)}=\dfrac{1}{2}\left(\dfrac{1}{n(n+1)}-\dfrac{1}{(n+1)(n+2)}\right)$.
+		
+		\item 有理化：$\dfrac{1}{\sqrt{n}+\sqrt{n+1}}=\sqrt{n+1}-\sqrt{n}$.
+		
+		\item $\dfrac{a^n}{(a^n-1)(a^{n+1}-1)}=\dfrac{1}{a-1}\left(\dfrac{1}{a^n-1}-\dfrac{1}{a^{n+1}-1}\right)$.
+		
+		\item $\log_a\dfrac{n}{n+1}=\log_an-\log_a(n+1)$.
+		
+		\item $\dfrac{n+2}{n(n+1)\cdot2^n}=2\left[\dfrac{1}{n\cdot2^n}-\dfrac{1}{(n+1)2^{n+1}}\right]$.
+		
+		\item $\dfrac{(-1)^n\cdot4n}{(2n-1)(2n+1)}=\dfrac{(-1)^n}{2n-1}+\dfrac{(-1)^{n+1}}{2n+1}$.
+		
+	\end{enumerate}
+	
+	求$S_n$时，裂项完后，枚举$a_1+\cdots+a_n$写到看清如何消项.
+\end{knowledge}
+
+\category{先求通项再裂项}
+\begin{question}
+	正项$\{a_n\}$，$a_1=1$，$a_{n+1}^2=2S_n+n+1$，求$\left\{\dfrac{1}{a_na_{n+1}}\right\}$的$T_n$范围.
+\end{question}
+
+$a_n^2=2S_{n-1}+n-1+1$（$n\geq2$）.
+
+相减：$a_{n+1}^2-a_n^2=2a_n+1$（$n\geq2$）.
+
+凑完全平方：$a_{n+1}^2=(a_n+1)^2$（$n\geq2$）.
+
+$a_{n+1}=a_n+1$（$n\geq2$）.
+
+$\because a_2^2=2S_1+2=4 \implies a_2=2$.
+
+$\therefore a_n=a_2+(n-2)\times1=n$（$n\geq2$）；$a_1=1$满足.
+
+$\therefore a_n=n$.
+
+$\dfrac{1}{a_na_{n+1}}=\dfrac{1}{n(n+1)}=\dfrac{1}{n}-\dfrac{1}{n+1}$.
+
+$T_n=1-\dfrac{1}{2}+\dfrac{1}{2}-\dfrac{1}{3}+\cdots+\dfrac{1}{n}-\dfrac{1}{n+1}=1-\dfrac{1}{n+1}$.
+
+$\therefore T_n\in\left[\dfrac{1}{2},1\right)$.
+
+\category{裂项综合}
+\begin{question}
+	$\{a_n\}$有$S_n$，$\{b_n\}$有$T_n$，$a_n>0$，$6S_n=a_n^2+3a_n$，$b_n=\dfrac{2^{a_n}}{(2^{a_n}-1)(2^{a_{n+1}}-1)}$，求$T_n$最值.
+\end{question}
+
+$6S_{n-1}=a_{n-1}^2+3a_{n-1}$（$n\geq2$）.
+
+相减：$6a_n=a_n^2-a_{n-1}^2+3a_n-3a_{n-1}$（$n\geq2$）.
+
+$3(a_n+a_{n-1})=(a_n+a_{n-1})(a_n-a_{n-1})$.
+
+$\therefore a_n-a_{n-1}=3$（$n\geq2$）.
+
+$6S_1=a_1^2+3a_1 \implies a_1=3$.
+
+$\therefore a_n=3n$.
+
+$b_n=\dfrac{2^{3n}}{(2^{3n}-1)(2^{3n+3}-1)}=\dfrac{1}{7}\left(\dfrac{1}{2^{3n}-1}-\dfrac{1}{2^{3n+3}-1}\right)$.
+
+$T_n=\dfrac{1}{7}\left(\dfrac{1}{7}-\dfrac{1}{2^{3n+3}-1}\right)<\dfrac{1}{49}$.
+
+\subsubsection{错位相减}
+\begin{knowledge}{等差$\times$等比}
+	等差$\times$等比：$a_n=3^n(2n-1)$.
+	
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 写$S_n$时，保留等差等比形式.
+		
+		\item 乘$q$到等比中.
+		
+		\item 必有中间是$n-1$项等比求和.
+		
+	\end{enumerate}
+	
+\end{knowledge}
+\begin{knowledge}{公式法}
+	
+	$T_n=(An+B)\cdot q^n-B$
+	
+	$q$直接看题得出，$A,B$通过$T_1,T_2$两式联解.
+	
+	最终$T_n=$常$+$等差$\times$等比.
+\end{knowledge}
+
+\category{错位相减}
+\begin{question}
+	$a_n=(2n-1)\cdot3^n$，求和.
+\end{question}
+
+法一：$T_n=(An+B)\cdot q^n-B$，$q=3$.
+
+$T_1=a_1=3=(A+B)\cdot3-B$.
+
+$T_2=a_1+a_2=30=(2A+B)\cdot9-B$.
+
+$A=3$，$B=-3$.
+
+$\therefore T_n=(3n-3)\cdot3^n+3$.
+
+法二：$S_n=1\times3^1+3\times3^2+5\times3^3+\cdots+(2n-3)3^{n-1}+(2n-1)\cdot3^n$.
+
+$\times q$：$3S_n=1\times3^2+3\times3^3+\cdots+(2n-3)3^n+(2n-1)3^{n+1}$.
+
+$-2S_n=3+2\times3^2+2\times3^3+\cdots+2\cdot3^n-(2n-1)3^{n+1}$
+
+$=3+\dfrac{18(1-3^{n-1})}{1-3}-(2n-1)3^{n+1}$.
+
+$\therefore S_n=(3n-3)\cdot3^n+3$.
+
+\subsection{关于数列放缩、圆锥曲线}
+
+\subsubsection{数列的简单放缩}
+\begin{knowledge}{放缩裂项不等式}
+	$\dfrac{1}{n(n+1)}<\dfrac{1}{n^2}<\dfrac{1}{n(n-1)}$.
+	
+	$\dfrac{1}{n^2}<\dfrac{1}{n^2-1}=\dfrac{1}{(n+1)(n-1)}=\dfrac{1}{2}\left(\dfrac{1}{n-1}-\dfrac{1}{n+1}\right)$.
+	
+	$\dfrac{1}{n^2}=\dfrac{4}{4n^2}<\dfrac{4}{4n^2-1}=2\left(\dfrac{1}{2n-1}-\dfrac{1}{2n+1}\right)$.
+	
+	$\dfrac{2}{\sqrt{n+1}+\sqrt{n}}<\dfrac{1}{\sqrt{n}}=\dfrac{2}{2\sqrt{n}}<\dfrac{2}{\sqrt{n+1}-\sqrt{n}}$.
+\end{knowledge}
+
+\category{放缩证和}
+\begin{question}
+	$a_n=\dfrac{1}{n^2}$，证$S_n<2$.
+\end{question}
+
+$a_n=\dfrac{1}{n^2}<\dfrac{1}{n^2-n}=\dfrac{1}{(n-1)\cdot n}$（$n\geq2$）.
+
+$S_n=a_1+\cdots+a_n<a_1+\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\cdots+\dfrac{1}{(n-1)n}=2-\dfrac{1}{n}<2$.
+
+\subsubsection{圆锥曲线小题}
+\category{切线长与焦距}
+\begin{question}
+	过$x^2-\dfrac{y^2}{15}=1$右支$P$向$(x+4)^2+y^2=4$和$(x-4)^2+y^2=1$作切线，$M,N$，则$(PM^2-PN^2)_{\min}$.
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	$PM^2-PN^2$
+	
+	$=(PF_1^2-r_1^2)-(PF_2^2-r_2^2)$
+	
+	$=PF_1^2-PF_2^2-3$
+	
+	$=(PF_1+PF_2)(PF_1-PF_2)-3$\quad（$PF_1-PF_2=2a=2$）.
+	
+	$\geq2\times F_1F_2-3$
+	
+	$=2\times8-3$
+	
+	$=13$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.45, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-6.5,0) -- (6.5,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-4.5) -- (0,4.5) node[above] {$y$};
+		
+		% 双曲线 x²-y²/15=1 (a=1, b=√15, c=4)
+		\draw[thick, domain=-4.5:4.5, smooth, variable=\y] plot ({sqrt(1+\y*\y/15)}, {\y});
+		\draw[thick, domain=-4.5:4.5, smooth, variable=\y] plot ({-sqrt(1+\y*\y/15)}, {\y});
+		
+		% 渐近线 y=±√15 x
+		\draw[dashed, gray] (-1.16,-4.5) -- (1.16,4.5);
+		\draw[dashed, gray] (-1.16,4.5) -- (1.16,-4.5);
+		
+		% 两圆：圆心为焦点 F1(-4,0) r=2, F2(4,0) r=1
+		\draw[thick] (-4,0) circle (2);
+		\draw[thick] (4,0) circle (1);
+		
+		% P 在右支上: y=3, x=√(1+9/15)≈1.26
+		\coordinate (P) at (1.26,3);
+		% 切点（按切线几何算出）
+		\coordinate (M) at (-4.36,1.97);
+		\coordinate (N) at (3.45,-0.84);
+		
+		\draw[thick, SkyBlue] (P) -- (M);
+		\draw[thick, SkyBlue] (P) -- (N);
+		
+		\fill (-4,0) circle (3pt) node[below] {$F_1$};
+		\fill (4,0) circle (3pt) node[below] {$F_2$};
+		\fill (P) circle (4pt) node[right] {$P$};
+		\fill (M) circle (3pt) node[above left] {$M$};
+		\fill (N) circle (3pt) node[below right] {$N$};
+	\end{tikzpicture}
+\end{minipage}
+
+\category{点线距求离心率}
+\begin{question}
+	双：以$P(b,0)$为圆心，$a$为半径的圆与一条渐近线交$M,N$，若$\angle MPN=90^\circ$，求$e$.
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	$PQ=\dfrac{\sqrt{2}}{2}a$；渐近线$bx-ay=0$（过原点）.
+	
+	$PQ=\dfrac{b^2}{\sqrt{a^2+b^2}}=\dfrac{b^2}{c}=\dfrac{\sqrt{2}}{2}a$.
+	
+	$\therefore e=\sqrt{2}$（此时$b=a$，圆恰过原点，$N$与$O$重合，$M(a,a)$）.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-2.5,0) -- (4,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-2.5) -- (0,3) node[above] {$y$};
+		
+		% 双曲线 x²-y²=a² (取 a=b=1.5, e=√2)
+		\draw[thick, domain=-2.6:2.6, smooth, variable=\y] plot ({sqrt(2.25+\y*\y)}, {\y});
+		\draw[thick, domain=-2.6:2.6, smooth, variable=\y] plot ({-sqrt(2.25+\y*\y)}, {\y});
+		
+		% 渐近线 y=±x（过原点）
+		\draw[dashed, gray] (-2.5,-2.5) -- (3.2,3.2);
+		\draw[dashed, gray] (-2.5,2.5) -- (2.5,-2.5);
+		
+		% 圆：圆心 P(b,0)=(1.5,0)，半径 a=1.5
+		\draw[thick] (1.5,0) circle (1.5);
+		
+		\coordinate (P) at (1.5,0);
+		\coordinate (M) at (1.5,1.5);
+		\coordinate (N) at (0,0);
+		\coordinate (Q) at (0.75,0.75);
+		
+		% PM、PN 与垂线 PQ
+		\draw[dashed, SkyBlue] (P) -- (M);
+		\draw[dashed, SkyBlue] (P) -- (N);
+		\draw[dashed, DarkRed] (P) -- (Q);
+		% 直角标记
+		\draw[gray] (1.3,0) -- (1.3,0.2) -- (1.5,0.2);
+		
+		\fill (P) circle (2pt) node[below right] {$P(b,0)$};
+		\fill (M) circle (2pt) node[above right] {$M$};
+		\fill (N) circle (2pt) node[below left] {$N(O)$};
+		\fill (Q) circle (1.5pt) node[above left] {$Q$};
+		\node[right, DarkRed] at (0.95,0.55) {$\frac{\sqrt2}{2}a$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsubsection{圆锥曲线大题}
+\begin{knowledge}{弦长、距离、面积三量}
+	（此页数据来自直线$x=my+2$与$\dfrac{x^2}{3}-y^2=1$联立：$(m^2-3)y^2+4my+1=0$.）
+	
+	弦长：$l=\sqrt{1+m^2}\cdot\dfrac{\sqrt{\Delta}}{|a|}=\sqrt{1+m^2}\cdot\dfrac{\sqrt{12m^2+12}}{|m^2-3|}$.
+	
+	点线距：$d=\dfrac{4}{\sqrt{1+m^2}}$.
+	
+	面积：$S=\dfrac{1}{2}\,l\cdot d=4\sqrt{3}\cdot\dfrac{\sqrt{m^2+1}}{|m^2-3|}=4\sqrt{3}\sqrt{\dfrac{m^2+1}{(m^2-3)^2}}$.
+\end{knowledge}
+
+\begin{knowledge}{比值取值范围（凑对称式）}
+	背景：直线$x=my+1$交椭圆$\dfrac{x^2}{4}+\dfrac{y^2}{3}=1$于$A(x_1,y_1),B(x_2,y_2)$，求比值$-\dfrac{y_1}{y_2}$的范围（向量条件$\overrightarrow{AF}=\lambda\overrightarrow{FB}$即$\lambda=-\dfrac{y_1}{y_2}$）.
+	
+	联立：$(3m^2+4)y^2+6my-9=0$.
+	
+	求出$y_1+y_2=\dfrac{-6m}{3m^2+4}$，$y_1y_2=\dfrac{-9}{3m^2+4}$.
+	
+	难点：$\dfrac{y_1}{y_2}$不是对称式，不能用$y_1+y_2$、$y_1y_2$直接表示；只有轮换对称式才能代入.
+	
+	凑：$\dfrac{(y_1+y_2)^2}{y_1y_2}=\dfrac{y_1}{y_2}+\dfrac{y_2}{y_1}+2$. 左边是对称式（可代入），右边恰含所求比值.
+	
+	代入左边：$\dfrac{36m^2}{(3m^2+4)^2}\cdot\dfrac{3m^2+4}{-9}=-\dfrac{4m^2}{3m^2+4}=-\dfrac{4}{3+\frac{4}{m^2}}\in\left(-\dfrac{4}{3},0\right)$.
+	
+	设$t=\dfrac{y_1}{y_2}$，即$t+\dfrac{1}{t}+2\in\left(-\dfrac{4}{3},0\right)$.
+	
+	$\therefore t+\dfrac{1}{t}\in\left(-\dfrac{10}{3},-2\right)$.
+	
+	解出$t$范围：$\because y_1y_2<0 \implies t<0$；由$t+\dfrac1t\in\left(-\dfrac{10}{3},-2\right)$得$t\in\left(-3,-\dfrac{1}{3}\right)$（$t\neq-1$）.
+	
+	$\therefore -\dfrac{y_1}{y_2}\in\left(\dfrac{1}{3},3\right)$且$\neq1$.
+\end{knowledge}
+
+\section{高二寒}
 
 
 
