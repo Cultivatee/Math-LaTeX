@@ -1,0 +1,128 @@
+% !TEX program = xelatex
+% 问题二分析——思维导图（紧凑竖排·配色修正版，XeLaTeX 编译）
+\documentclass[border=6pt]{standalone} % border=6pt：PDF 页面四周留白宽度
+\usepackage{ctex}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+% ---------- 与问题一相同的配色 ----------
+\definecolor{dgreen}{HTML}{0E4F43}  % 深绿边框/虚线
+\definecolor{pOne}{HTML}{EAF6EC}    % Step1 面板底色（浅绿）
+\definecolor{pTwo}{HTML}{E7F0FA}    % Step2 面板底色（浅蓝）
+\definecolor{pThr}{HTML}{F6E9D4}    % Step3 面板底色（浅橙）
+\definecolor{pFou}{HTML}{DEF2F7}    % Step4 面板底色（浅青）
+\definecolor{pFiv}{HTML}{F8F1F7}    % Step5 面板底色（浅粉白）
+\definecolor{pinkB}{HTML}{F7D8DC}   % 强调节点（粉红）
+\definecolor{cyanA}{HTML}{8CDDE6}   % 青色圆角标签
+\definecolor{whiteA}{HTML}{F8F5FA}  % 公式框/公式带（浅紫白）
+\definecolor{cyanC}{HTML}{DFF6F8}   % 结果节点（浅青）
+\definecolor{greenC}{HTML}{EBF7ED}  % 方法节点（浅绿）
+
+\begin{document}
+	\begin{tikzpicture}[font=\normalsize, % 全图节点默认字号
+		% --- 箭头样式：line width=1.6pt 线粗；length=6pt 头长；width=5pt 头宽 ---
+		arr/.style={line width=1.6pt,-{Stealth[length=6pt,width=5pt]}},
+		% --- 圆角矩形节点：rounded corners=5pt 圆角半径；line width=2pt 边框宽度；
+		%     inner sep=2.5mm 内边距；minimum height=10mm 最小高度 ---
+		boxR/.style={rounded corners=5pt,draw=dgreen,line width=2pt,
+			inner sep=2.5mm,minimum height=10mm,align=center},
+		% --- 直角矩形节点 ---
+		boxS/.style={draw=dgreen,line width=2pt,
+			inner sep=2.5mm,minimum height=10mm,align=center},
+		% --- 青色小标签 ---
+		chip/.style={rounded corners=5pt,draw=dgreen,line width=2pt,
+			inner sep=2mm,minimum height=8mm,font=\small},
+		% --- 公式带中的单个符号节点（无边框） ---
+		term/.style={font=\Large,inner sep=1pt},
+		% --- 主面板虚线边框 ---
+		panel/.style={draw=dgreen,dotted,line width=2pt},
+		]
+		
+		% ================= 五个虚线面板（左下、右上角坐标） =================
+		\draw[panel,fill=pOne] (0,16.6)  rectangle (24,23.3);  % Step1 面板：宽 24，高 6.7
+		\draw[panel,fill=pTwo] (0,10.95) rectangle (24,16.2);  % Step2 面板：宽 24，高 5.25
+		\draw[panel,fill=pThr] (0,7.6)   rectangle (24,10.55); % Step3 面板：宽 24，高 2.95
+		\draw[panel,fill=pFou] (0,3.45)  rectangle (24,7.2);   % Step4 面板：宽 24，高 3.75
+		\draw[panel,fill=pFiv] (0,0)     rectangle (24,3.05);  % Step5 面板：宽 24，高 3.05
+		
+		% ================= Step 1：状态转移方程 =================
+		\node[anchor=north west,font=\large] at (0.4,23.0)
+		{\textbf{Step 1：状态转移方程}\quad（纳入问题一四项指标 $k_0,\ \beta_s,\ G,\ \alpha$）};
+		% 无边框公式带（命名 BAND）：宽 23.2，高 1.1
+		\node[fill=whiteA,rounded corners=6pt,minimum width=23.2cm,minimum height=1.1cm]
+		(BAND) at (12,20.45) {};
+		% 方程逐符号排布（term 节点）
+		\node[term] (T1) at (6.0,20.45)  {$x(t+1)$};
+		\node[term]      at (8.3,20.45)  {$=$};
+		\node[term] (T2) at (10.2,20.45) {$x(t)$};
+		\node[term]      at (12.2,20.45) {$-$};
+		\node[term] (T3) at (14.2,20.45) {$D(t)$};
+		\node[term]      at (16.2,20.45) {$+$};
+		\node[term] (T4) at (18.2,20.45) {$G(t)$};
+		% 四个青色标签：位于对应项正上方
+		\node[chip,fill=cyanA] at (6.0,21.8)  {下一状态};
+		\node[chip,fill=cyanA] at (10.2,21.8) {当前状态};
+		\node[chip,fill=cyanA] at (14.2,21.8) {每日劣化};
+		\node[chip,fill=cyanA] at (18.2,21.8) {维护增益};
+		% 劣化量框与维护增益分段框
+		\node[boxS,fill=whiteA] (DB) at (7.0,18.4)
+		{$D(t)=k_0\cdot\beta_{s(t)}\cdot(1+\alpha_{\mathrm{mid}})^{N_{\mathrm{mid}}(t)}\cdot(1+\alpha_{\mathrm{big}})^{N_{\mathrm{big}}(t)}$};
+		\node[boxS,fill=whiteA,font=\small] (GB) at (18.9,18.3)
+		{$G(t)=\begin{cases}G_{\mathrm{mid}},&\text{第 }t\text{ 天中维护}\\G_{\mathrm{big}},&\text{第 }t\text{ 天大维护}\\0,&\text{无维护}\end{cases}$};
+		% 斜箭头：起点为 D(t)/G(t) 正下方与带底边交点，终点为框上缘锚点
+		\draw[arr] (T3.south |- BAND.south) -- (DB.north);
+		\draw[arr] (T4.south |- BAND.south) -- (GB.north);
+		
+		% ================= Step 2：寿命终止判定 =================
+		\node[anchor=north west,font=\large] at (0.4,15.95) {\textbf{Step 2：寿命终止判定}};
+		\node[boxS,fill=whiteA] (M1) at (5.3,14.1)
+		{365天滑动平均\quad $\bar{x}_{365}(t)=\frac{1}{365}\displaystyle\sum_{i=t-364}^{t}x(i)$};
+		\node[boxS,fill=whiteA] (M2) at (17.2,14.1)
+		{寿命终止 $\Longleftrightarrow\ (\bar{x}_{365}(t)<\mathbf{37}\wedge\bar{x}_{365}(t+30)<\mathbf{37})\ \vee\ (x(t)\le0)$};
+		\draw[arr] (M1.east) -- (M2.west);
+		\node[boxS,fill=cyanC] (M3) at (10.0,12.05)
+		{年均透水率首次下穿37时执行一次大维护补偿\quad $x(t_{\mathrm{comp}})=x(t_{\mathrm{cross}})+G_{\mathrm{big}}$};
+		\node[boxR,fill=pinkB,font=\small] (M4) at (21.1,12.05)
+		{补偿后30天仍低于阈值\\则判定寿命终止};
+		% 条件→补偿：x=14 处竖直线，两端分别落于 M2 下边沿与 M3 上边沿
+		\draw[arr] (M2.south -| 14,0) -- (M3.north -| 14,0);
+		\draw[arr] (M3.east) -- (M4.west);
+		
+		% ================= Step 3：逆向回溯 =================
+		\node[anchor=north west,font=\large] at (0.4,10.3) {\textbf{Step 3：逆向回溯初始状态}\quad（2022—2024）};
+		\node[boxS,fill=greenC] (R1) at (8.6,8.65)
+		{回溯方程\quad $x(t-1)=x(t)+k_0\cdot\beta_{s(t-1)}-G_{\mathrm{hist}}(t-1)$};
+		\node[boxR,fill=pinkB] (R2) at (19.4,8.65) {回溯初始透水率\quad $x_0\approx140$};
+		\draw[arr] (R1.east) -- (R2.west);
+		
+		% ================= Step 4：正向寿命预测 =================
+		\node[anchor=north west,font=\large] at (0.4,6.95) {\textbf{Step 4：正向寿命预测}};
+		\node[boxS,fill=greenC] (F1) at (3.6,4.9) {自2026.4实测终点\\逐日正向递推至终止};
+		\node[boxS,fill=whiteA] (F2) at (12.1,4.9) {锯齿状阶梯式衰减\\季节非线性劣化\\下穿37触发紧急大维护};
+		% 结果框改用 pinkB，避免与面板底色 pFou 同色
+		\node[boxR,fill=pinkB] (F3) at (20.3,4.9) {A4最长 7.45年\\A10最短 4.65年·平均 5.48年};
+		\draw[arr] (F1.east) -- (F2.west);
+		\draw[arr] (F2.east) -- (F3.west);
+		
+		% ================= Step 5：可靠性验证 =================
+		\node[anchor=north west,font=\large] at (0.4,2.8) {\textbf{Step 5：可靠性验证}};
+		\node[boxS,fill=greenC] (V1) at (3.3,1.25) {前70\%训练集辨识参数};
+		\node[boxS,fill=greenC] (V2) at (9.2,1.25) {后30\%测试集验证};
+		% RMSE/MAPE 框改用 cyanA，避免与面板底色 pFiv 同色
+		\node[boxS,fill=cyanA] (V3) at (14.4,1.25) {计算 RMSE 与 MAPE};
+		\node[boxR,fill=cyanC] (V4) at (20.2,1.25) {7台 MAPE$<$18\%\\其中5台$<$10\%};
+		\draw[arr] (V1.east) -- (V2.west);
+		\draw[arr] (V2.east) -- (V3.west);
+		\draw[arr] (V3.east) -- (V4.west);
+		
+		% ================= 面板间流转箭头（端点恰在面板边线上，长 0.4cm） =================
+		\draw[arr] (12,16.6)  -- (12,16.2);   % Step1 → Step2
+		\draw[arr] (12,10.95) -- (12,10.55);  % Step2 → Step3
+		\draw[arr] (12,7.6)   -- (12,7.2);    % Step3 → Step4
+		\draw[arr] (12,3.45)  -- (12,3.05);   % Step4 → Step5
+		
+	\end{tikzpicture}
+\end{document}

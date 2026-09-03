@@ -6523,6 +6523,481 @@ $S_n=a_1+\cdots+a_n<a_1+\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\cdots+\dfrac{1}
 
 \section{高二寒}
 
+\subsection{第一讲\quad 加法原理和乘法原理与排列组合}
+
+\subsubsection{加法原理和乘法原理}
+\begin{knowledge}{两大原理}
+	
+	加法原理：一步完成一件事.
+	
+	乘法原理：多步完成一件事.
+\end{knowledge}
+
+\category{选画}
+\begin{question}
+	$5$幅不同国画、$2$幅不同油画、$7$幅不同水彩，选$2$幅不同种类的画，几种选法？
+\end{question}
+
+分类相加：
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item 国、油（分步相乘）：$5\times2$.
+	
+	\item 国、水：$5\times7$.
+	
+	\item 油、水：$2\times7$.
+	
+\end{enumerate}
+
+$5\times2+5\times7+2\times7=59$.
+
+\category{象限坐标点}
+\begin{question}
+	集合$M=\{1,-2,3\}$，$N=\{-4,5,6,7\}$，各取元素为点坐标，在第一、二象限的不同点个数.
+\end{question}
+
+由题：$x\neq0$，$y>0$.
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $M$纵、$N$横：$2\times4=8$.
+	
+	\item $M$横、$N$纵：$3\times3=9$.
+	
+\end{enumerate}
+
+分类相加：$9+8=17$.
+
+\subsubsection{排列}
+\begin{knowledge}{排列数公式}
+	取出并排序.
+	
+	$A_n^m=n(n-1)(n-2)\cdots(n-m+1)$. 例：$A_9^4=9\times8\times7\times6$（$9-4+1=6$）.
+	
+	另：$A_m^m=m!$，$m$的阶乘，全排列.
+	
+	$A_3^3=3!=6$；$A_4^4=4!=24$；$A_5^5=5!=120$.
+\end{knowledge}
+
+\category{排列数}
+\begin{question}
+	$A_{n+1}^2-A_n^2=10$，求$n$.
+\end{question}
+
+$(n+1)\cdot n-n(n-1)=10 \implies 2n=10$.
+
+$\therefore n=5$.
+
+\category{特殊元素与特殊位置}
+\begin{question}
+	把$A,B,C,D,E$排成一列，$B$不能在中或两端，几种排法？
+\end{question}
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item 特殊元素优先：$B$只能在第$2$、$4$位：$A_2^1\cdot A_4^4=48$.
+	
+	\item 特殊位置优先：先排中、两端三位置：$A_4^3\cdot A_2^2=48$.
+	
+\end{enumerate}
+
+\category{不重复偶数}
+\begin{question}
+	由$0,1,2,3,4,5,6,7$组成不重复四位数，偶数的个数？
+\end{question}
+
+特殊位置优先（个位）.
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item 个位是$0$：$A_7^3=210$.
+	
+	\item 个位数不是$0$：个位$2,4,6$：$A_3^1$；千位（除$0$和已选个位）：$A_6^1$；其余两位：$A_6^2$. 即$A_3^1\cdot A_6^1\cdot A_6^2=540$.
+	
+\end{enumerate}
+
+相加：$210+540=750$.
+
+\subsubsection{组合}
+\begin{knowledge}{组合数公式}
+	取出成组.
+	
+	$C_n^m=\dfrac{A_n^m}{A_m^m}$.
+	
+	背$C_4^2=\dfrac{A_4^2}{A_2^2}=\dfrac{4\times3}{2\times1}=6$.
+	
+	规定$C_n^0=1$.
+	
+	性质一：$C_n^m=C_n^{n-m}$简化计算，如$C_9^7=C_9^2$.
+\end{knowledge}
+
+\category{解n}
+\begin{question}
+	$3C_{2n}^3=5A_n^3$，求$n$.
+\end{question}
+
+$3\cdot\dfrac{A_{2n}^3}{A_3^3}=5A_n^3$.
+
+$3\cdot\dfrac{2n(2n-1)(2n-2)}{3\times2\times1}=5n(n-1)(n-2)$.
+
+$2(2n-1)=5(n-2)$.
+
+$\therefore n=8$.
+
+\category{分类取球}
+\begin{question}
+	$4$个不同红球，$6$个不同白球，任取$4$球，红数不比白数少有几种？
+\end{question}
+
+先分类：$2$红$2$白 / $3$红$1$白 / $4$红$0$白.
+
+$C_4^2\cdot C_6^2+C_4^3\cdot C_6^1+C_4^4\cdot C_6^0=90+24+1=115$.
+
+\subsection{第二讲\quad 相邻、不相邻问题等排列组合四类方法}
+
+\subsubsection{相邻、不相邻问题}
+\begin{knowledge}{捆绑与插空}
+	
+	捆绑法：相邻 $\to$ 捆在一起，内部排序勿忘.
+	
+	插空法：不相邻 $\to$ 先排其余，再插空.
+	
+	综合：先捆绑，再插空.
+\end{knowledge}
+
+\category{王花在一起}
+\begin{question}
+	$6$人照相，王花在一起.
+\end{question}
+
+$A_5^5\cdot A_2^2$（内部排序勿忘）.
+
+\category{王花不相邻}
+\begin{question}
+	$6$人照相，王花不相邻.
+\end{question}
+
+先排其余$4$人：$A_4^4$；插$5$空：$A_5^2$.
+
+$A_4^4\cdot A_5^2$.
+
+\category{王花不相邻、甲乙相邻}
+\begin{question}
+	王花不相邻，甲乙相邻.
+\end{question}
+
+先捆绑（甲乙）：与其余$1$人共$3$元素排：$A_3^3$；甲乙内部：$A_2^2$；王花插$4$空：$A_4^2$.
+
+$A_3^3\times A_2^2\times A_4^2$.
+
+\category{三男三女}
+\begin{question}
+	三男三女照相，男甲与男乙相邻，三女中有两女相邻，几种？
+\end{question}
+
+（甲乙）与丙排：$A_2^2$；甲乙内部：$A_2^2$；选两女：$C_3^2$；女内部：$A_2^2$；女组插空：$A_3^2$.
+
+$A_2^2\times A_2^2\times C_3^2\times A_2^2\times A_3^2=144$.
+
+\subsubsection{定位、定序问题}
+\begin{knowledge}{方法}
+	元素优先/位置优先.
+	
+	特殊优先、困难靠边、逐步插空、去序.
+\end{knowledge}
+
+\category{甲在乙左侧}
+\begin{question}
+	$5$人，甲在乙左侧（不一定相邻），几种排法？
+\end{question}
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item 特殊优先：$C_5^2\times1\times A_3^3$.
+	
+	\item 困难靠边：$A_5^3\times1$.
+	
+	\item 逐步插空：$A_3^1\cdot A_4^1\cdot A_5^1$.
+	
+	\item 去序：$\dfrac{A_5^5}{A_2^2}$.
+	
+\end{enumerate}
+
+若甲在乙左、乙在丁左：$\dfrac{A_5^5}{A_3^3}$.
+
+\category{端点条件}
+\begin{question}
+	五人一行，左端排甲乙，右端不排甲，几种？
+\end{question}
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item 左甲：不用讨论右甲：$A_4^4=24$.
+	
+	\item 左乙：右不乙不甲：$A_3^1\times A_3^3=18$.
+	
+\end{enumerate}
+
+$24+18=42$.
+
+\category{伞数}
+\begin{question}
+	一个三位数，十位比百、个位都大，称伞数. 从$1,2,3,4,5,6$任选$3$数，几种？
+\end{question}
+
+法一：
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item 中$3$，两边从$1,2$选：$A_2^2=2$.
+	
+	\item 中$4$，两边$1,2,3$：$A_3^2=6$.
+	
+	\item 中$5$，两边$1,2,3,4$：$A_4^2=12$.
+	
+	\item 中$6$，两边$1,2,3,4,5$：$A_5^2=20$.
+	
+\end{enumerate}
+
+共$2+6+12+20=40$.
+
+法二：任选三数，肯定有一个最大，置于中间，两边数排序：$C_6^3\times A_2^2=40$.
+
+\subsubsection{正难则反问题（至多、至少、不都）}
+\category{必有男、女生}
+\begin{question}
+	$4$男$3$女选$4$人参加座谈会，必有男、女生，几种？
+\end{question}
+
+反：无男/无女：$C_7^4-1=34$.
+
+正：
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $1$男$3$女：$C_4^1\cdot C_3^3=4$.
+	
+	\item $2$男$2$女：$C_4^2\cdot C_3^2=18$.
+	
+	\item $3$男$1$女：$C_4^3\cdot C_3^1=12$.
+	
+\end{enumerate}
+
+$4+18+12=34$.
+
+\category{至少一次}
+\begin{question}
+	用$2,3$组四位数，$2,3$至少一次，几种？
+\end{question}
+
+全$2$或全$3$，总共$2\times2\times2\times2=16$.
+
+$\therefore 16-2=14$.
+
+\subsubsection{相同元素分配问题}
+\begin{knowledge}{名额法（隔板法）}
+	相同：名额.
+	
+	方程式：$x_1+x_2+x_3=30$，多少正整数解.
+	
+	保证$x_1,x_2,x_3\geq1$；多了减，少了加.
+	
+	公式：$C_{30-1}^{3-1}=C_{29}^2$.
+\end{knowledge}
+
+\category{不少于编号数}
+\begin{question}
+	$20$个相同小球，放入编号为$1,2,3$的盒子，球数不少于编号数，几种？
+\end{question}
+
+化为方程式：$x_1+x_2+x_3=20$.
+
+此时$x_1\geq1$，$x_2\geq2$，$x_3\geq3$.
+
+为保证$x_1,x_2,x_3\geq1$：
+
+$x_1+(x_2-1)+(x_3-2)=20-3=17$.
+
+$\therefore$ 共有$C_{17-1}^{3-1}=C_{16}^2=120$.
+
+\subsection{第三讲\quad 条件概率与离散型随机变量}
+
+\subsubsection{条件概率}
+\begin{knowledge}{定义}
+	在$A$发生的条件下，$B$发生的概率：$P(B|A)$.
+	
+	$P(B|A)=\dfrac{P(A\cap B)}{P(A)}=\dfrac{n(A\cap B)}{n_A}$.
+\end{knowledge}
+
+\category{知帅求高}
+\begin{question}
+	老师$40$人，高$20$，帅$15$，又高又帅$5$，若看一个帅，高的概率？
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	$A$：高，$B$：帅，$A\cap B$：又高又帅.
+	
+	$P(A|B)=\dfrac{P(AB)}{P(B)}=\dfrac{n_{AB}}{n_B}=\dfrac{5}{15}=\dfrac{1}{3}$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		\draw[thick, DarkRed] (-2.2,-1.3) rectangle (2.5,1.3);
+		\draw[thick, DarkRed] (-0.5,0) circle (1);
+		\draw[thick, DarkRed] (0.7,0) circle (1);
+		\begin{scope}
+			\clip (-0.5,0) circle (1);
+			\fill[gray!30] (0.7,0) circle (1);
+		\end{scope}
+		\node[DarkRed] at (-1.1,0.4) {$A$};
+		\node[DarkRed] at (1.3,0.4) {$B$};
+	\end{tikzpicture}
+\end{minipage}
+
+\begin{knowledge}{做题注意}
+	做题：表示$A,B,A\cap B$含义，列公式.
+	
+	注意：分母注意，两件事干完，一个选完，另一个随意.
+\end{knowledge}
+
+\category{不放回取书}
+\begin{question}
+	$3$数$2$语，取$2$本，不放回. $A$：第一次数，$B$：第二次数，求$P(AB)$，$P(B|A)$.
+\end{question}
+
+$AB$：一、二次都数.
+
+$P(AB)=\dfrac{n_{AB}}{n}=\dfrac{C_3^1C_2^1}{C_5^1C_4^1}=\dfrac{3}{10}$.
+
+$P(B|A)=\dfrac{n_{AB}}{n_A}=\dfrac{C_3^1C_2^1}{C_3^1C_4^1}=\dfrac{1}{2}$.
+
+\subsubsection{全概率}
+\begin{knowledge}{全概率公式}
+	$A_1,A_2,\cdots$两两互斥，加起$=$全，对于$B$：
+	
+	$P(B)=P(A_1)\cdot P(B|A_1)+P(A_2)\cdot P(B|A_2)+\cdots$
+	
+	简单推导：$P(B)=P(A_1B)+P(A_2B)=P(A_1)\cdot P(B|A_1)+\cdots$
+	
+	$\because P(B|A_1)=\dfrac{P(A_1B)}{P(A_1)}$.
+	
+	$\therefore P(A_1B)=P(B|A_1)\cdot P(A_1)$.
+\end{knowledge}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		\draw[thick] (-2,-1.1) rectangle (2,1.1);
+		\draw[thick] (0,-1.1) -- (0,1.1);
+		\draw[thick, DarkRed] (0,-0.35) circle (0.75);
+		\begin{scope}
+			\clip (0,-0.35) circle (0.75);
+			\fill[gray!30] (-2,-1.1) rectangle (0,1.1);
+		\end{scope}
+		\node at (-1,0.8) {$A_1$};
+		\node at (1,0.8) {$A_2$};
+		\node[DarkRed] at (0.3,0.1) {$B$};
+	\end{tikzpicture}
+\end{minipage}
+
+\category{讨论相加}
+\begin{question}
+	打敌机，打中机身$0.5$，机尾$0.1$，miss $0.4$. 两次射，中一次尾或两次机身即坠，二弹多少概率坠机？
+\end{question}
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item 机身两次：$0.5\times0.5=0.25$.
+	
+	\item 机尾：$0.1+0.9\times0.1=0.19$.
+	
+\end{enumerate}
+
+$\therefore$ 总$=0.25+0.1+0.09=0.44$.
+
+\subsubsection{离散型随机变量}
+\begin{knowledge}{概念与分布列}
+	随机变量$+$可以一一取值（有限个）$\to$离散型随机变量.
+	
+	离散型随机变量取值在上，每值取到概率写在下.
+	
+	$P_1+\cdots+P_n=1$.
+	
+	分布列：
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			$X$ & $x_1$ & $x_2$ & $\cdots$ & $x_n$ \\ \hline
+			$P$ & $P_1$ & $P_2$ & $\cdots$ & $P_n$ \\ \hline
+		\end{tabular}
+	\end{center}
+	
+	判断：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 在校学生数：定值，不是随机变量.
+		
+		\item 抛骰子两点数之差 \quad 是.
+		
+		\item 射击环数 \quad 是.
+		
+		\item 二球取一球可能性：概率不是随机变量.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\begin{knowledge}{写分布列步骤与数字特征}
+	写分布列步骤：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 写出$X$全部值.
+		
+		\item 求$X$值概率（困难用一减）.
+		
+		\item 写分布列.
+		
+	\end{enumerate}
+	
+	$E(X)=x_1p_1+\cdots+x_np_n$.
+	
+	方差：$D(X)=(x_1-E(X))^2\cdot p_1+\cdots+(x_n-E(X))^2\cdot p_n$.
+	
+	标准差：$\sigma(X)=\sqrt{D(X)}$.
+	
+	性质：$x_1,x_2,\cdots,x_n$均值$\bar{x}$，方差$s^2$，则$2x_1+3,\cdots,2x_n+3$均值$2\bar{x}+3$，方差$2^2s^2$.
+\end{knowledge}
+
+\category{抽奖不重复}
+\begin{question}
+	抽奖：$1$个$300$，$4$个$200$，$4$个$100$，不重复三格，设总金额为$X$元. (1)求$P(X=600)$；(2)分布与$E(X)$.
+\end{question}
+
+(1) 列出情况：$300+200+100$（$16$种）；$200+200+200$（$4$种）.
+
+$P(X=600)=\dfrac{C_1^1C_4^1C_4^1+C_4^3}{C_9^3}=\dfrac{20}{84}=\dfrac{5}{21}$.
+
+(2) 可能值：$300,400,500,600,700$.
+
+$P(X=300)=\dfrac{C_4^3}{84}=\dfrac{1}{21}$.
+
+$P(X=400)=\dfrac{C_4^2C_4^1}{84}=\dfrac{2}{7}$.
+
+$P(X=500)=\dfrac{C_1^1C_4^2+C_4^2C_4^1}{84}=\dfrac{5}{14}$.
+
+$P(X=600)=\dfrac{5}{21}$.
+
+$P(X=700)=\dfrac{C_1^1C_4^2}{84}=\dfrac{1}{14}$.
+
+最后列表：
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		$X$ & $300$ & $400$ & $500$ & $600$ & $700$ \\ \hline
+		$P$ & $\dfrac{1}{21}$ & $\dfrac{2}{7}$ & $\dfrac{5}{14}$ & $\dfrac{5}{21}$ & $\dfrac{1}{14}$ \\ \hline
+	\end{tabular}
+\end{center}
+
+$E(X)=\dfrac{300\times4+400\times24+500\times30+600\times20+700\times6}{84}=500$.
+
 
 
 \end{document}

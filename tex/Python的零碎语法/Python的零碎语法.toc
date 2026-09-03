@@ -1,41 +1,41 @@
-\contentsline {section}{\numberline {1}引言}{2}{section.1}%
-\contentsline {section}{\numberline {2}基础输入与输出}{2}{section.2}%
-\contentsline {subsection}{\numberline {2.1}print 的两个关键字参数}{2}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}format 格式化输出}{2}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}f-string 格式化输出}{2}{subsection.2.3}%
-\contentsline {section}{\numberline {3}数值运算与类型转换}{2}{section.3}%
-\contentsline {subsection}{\numberline {3.1}取整与舍入}{2}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}进制转换与整除}{3}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}提取各位数字}{3}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}类型转换杂项}{3}{subsection.3.4}%
+\contentsline {section}{\numberline {1}引言}{3}{section.1}%
+\contentsline {section}{\numberline {2}基础输入与输出}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}print 的两个关键字参数}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}format 格式化输出}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}f-string 格式化输出}{3}{subsection.2.3}%
+\contentsline {section}{\numberline {3}数值运算与类型转换}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}取整与舍入}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}进制转换与整除}{4}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}提取各位数字}{4}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}类型转换杂项}{4}{subsection.3.4}%
 \contentsline {section}{\numberline {4}切片、布尔与逻辑运算}{4}{section.4}%
 \contentsline {subsection}{\numberline {4.1}切片}{4}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}布尔与逻辑运算}{4}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}海象运算符}{4}{subsection.4.3}%
-\contentsline {section}{\numberline {5}列表与序列操作}{4}{section.5}%
-\contentsline {subsection}{\numberline {5.1}输入与拆分}{4}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}列表增删与拼接}{5}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}排序与逆序}{5}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}查找与计数}{5}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}去重}{6}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}列表与字符串互转、解包}{6}{subsection.5.6}%
+\contentsline {subsection}{\numberline {4.2}布尔与逻辑运算}{5}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}海象运算符}{5}{subsection.4.3}%
+\contentsline {section}{\numberline {5}列表与序列操作}{5}{section.5}%
+\contentsline {subsection}{\numberline {5.1}输入与拆分}{5}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}列表增删与拼接}{6}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}排序与逆序}{6}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}查找与计数}{6}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}去重}{7}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}列表与字符串互转、解包}{7}{subsection.5.6}%
 \contentsline {subsection}{\numberline {5.7}元组细节}{7}{subsection.5.7}%
-\contentsline {section}{\numberline {6}循环与流程控制}{7}{section.6}%
-\contentsline {subsection}{\numberline {6.1}range 循环与遍历}{7}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}条件表达式}{7}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}match-case}{7}{subsection.6.3}%
+\contentsline {section}{\numberline {6}循环与流程控制}{8}{section.6}%
+\contentsline {subsection}{\numberline {6.1}range 循环与遍历}{8}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}条件表达式}{8}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}match-case}{8}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}for...else 与 while...else}{8}{subsection.6.4}%
-\contentsline {section}{\numberline {7}列表推导式、二维列表与 eval}{8}{section.7}%
+\contentsline {section}{\numberline {7}列表推导式、二维列表与 eval}{9}{section.7}%
 \contentsline {section}{\numberline {8}经典算法片段}{9}{section.8}%
 \contentsline {subsection}{\numberline {8.1}二分查找}{9}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}选择排序}{9}{subsection.8.2}%
-\contentsline {section}{\numberline {9}enumerate 枚举}{9}{section.9}%
+\contentsline {subsection}{\numberline {8.2}选择排序}{10}{subsection.8.2}%
+\contentsline {section}{\numberline {9}enumerate 枚举}{10}{section.9}%
 \contentsline {section}{\numberline {10}函数}{10}{section.10}%
 \contentsline {subsection}{\numberline {10.1}定义与调用、return}{10}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}lambda 函数}{10}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}增量赋值与可变性}{10}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.2}lambda 函数}{11}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}增量赋值与可变性}{11}{subsection.10.3}%
 \contentsline {subsection}{\numberline {10.4}默认值函数}{11}{subsection.10.4}%
 \contentsline {subsection}{\numberline {10.5}可变参数}{11}{subsection.10.5}%
-\contentsline {section}{\numberline {11}高级函数：zip、reduce、filter}{11}{section.11}%
+\contentsline {section}{\numberline {11}高级函数：zip、reduce、filter}{12}{section.11}%
 \contentsline {section}{\numberline {12}异常处理}{12}{section.12}%
 \contentsline {section}{\numberline {13}结语}{12}{section.13}%
