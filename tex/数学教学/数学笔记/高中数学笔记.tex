@@ -148,6 +148,1190 @@
 \tableofcontents
 \newpage
 
+
+\section{初升高暑期数学}
+
+\subsection{第一讲\quad 二次方程拓展}
+
+\subsubsection{因式分解}
+\begin{knowledge}{因式分解}
+	
+	公式：$a^3-b^3=(a-b)(a^2+ab+b^2)$
+	
+	$a^3+b^3=(a+b)(a^2-ab+b^2)$.
+	
+	提公因式$\to$公式$\to$十字相乘$\to$分组分解.
+	
+	$x,y,z$未知数 / $a,b,c$为参数.
+\end{knowledge}
+	
+\begin{question}
+	
+	eg1：$m+5n-mn-5n^2=m-mn+5n-5n^2=(1-n)(m+5n)$.
+	
+	eg2：$-7x^2+19x+6=(7x+2)(-x+3)$.
+	
+	eg3：$x^2-(3m+2)x+3m+1=(x-3m-1)(x-1)$.
+	
+\end{question}
+
+\subsubsection{解含参方程}
+\begin{knowledge}{一次含参}
+	
+	\begin{question}
+	eg1：$mx=2$，一次含参需分类讨论.
+	\end{question}
+	
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 当$m=0$时，$0x=2$无解$\Rightarrow\varnothing$（空集）.
+		
+		\item 当$m\neq0$时，$x=\dfrac{2}{m}$.
+		
+	\end{enumerate}
+	
+	总结：提$x$；讨论$x$系数是否为$0$.
+	
+	\begin{question}
+	eg2：$mx-3=-x \implies (m+1)x=3$.
+	\end{question}
+	
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 当$m+1=0$，即$m=-1$时：$0\cdot x=3$，$\varnothing$.
+		
+		\item 当$m+1\neq0$，即$m\neq-1$时：$x=\dfrac{3}{m+1}$.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\begin{knowledge}{二次含参}
+	
+	总结：
+	
+	因式分解（eg1）
+	
+	求根公式（eg2）
+	
+	因式分解讨论两解是否相同
+	
+	求根公式讨论$\Delta$与0的关系
+	
+	\begin{question}
+	eg1：$(x-1)(x-a)=0$.
+	\end{question}
+	
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 当$a=1$时，$x_1=x_2=1$.
+		
+		\item 当$a\neq1$时，$x_1=1$，$x_2=a$.
+		
+	\end{enumerate}
+
+\begin{question}
+	eg2：$x^2+x+a=0$，$\Delta=1-4a$.
+\end{question}
+	
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 当$\Delta=1-4a>0$，即$a<\dfrac{1}{4}$时：$x_1=\dfrac{-1-\sqrt{1-4a}}{2}$，$x_2=\dfrac{-1+\sqrt{1-4a}}{2}$.
+		
+		\item 当$\Delta=1-4a=0$，即$a=\dfrac{1}{4}$时：$x_1=x_2=-\dfrac{1}{2}$.
+		
+		\item 当$\Delta=1-4a<0$，即$a>\dfrac{1}{4}$时：$\varnothing$.
+		
+	\end{enumerate}
+	
+	综上：当$a<\dfrac14$时两根；当$a=\dfrac14$时一根；当$a>\dfrac14$时无根.
+\end{knowledge}
+
+\subsubsection{韦达定理}
+\begin{knowledge}{韦达定理}
+	
+	推：$|x_1-x_2|=\dfrac{\sqrt{\Delta}}{|a|}$.
+	
+	四大金刚：$a+b$，$ab$，$(a-b)$，$a^2+b^2$，知二求二.
+	
+	$(a-b)=\sqrt{(a-b)^2}=\sqrt{a^2+b^2-2ab}=\sqrt{(a+b)^2-4ab}$.
+	
+	$|x_1-x_2|=\sqrt{(x_1+x_2)^2-4x_1x_2}=\sqrt{\left(-\dfrac{b}{a}\right)^2-4\cdot\dfrac{c}{a}}=\sqrt{\dfrac{b^2-4ac}{a^2}}=\dfrac{\sqrt{\Delta}}{|a|}$.
+	
+	注意：当所求式无法用韦达定理时，把二次项根带回原方程中进行降次.
+\end{knowledge}
+
+\category{降次}
+\begin{question}
+	原方程$x^2-x-1=0$，求$x_1^2+x_2$.
+\end{question}
+
+分析：把$x_1$带回原方程中得$x_1^2-x_1-1=0 \implies x_1^2=x_1+1$.
+
+$x_1^2+x_2=x_1+x_2+1=1+1=2$.
+
+\subsection{第二讲\quad 解不等式}
+
+\subsubsection{不等式的性质}
+\begin{knowledge}{不等式的性质}
+	
+	$a>b,\ b>c \implies a>c$.
+	
+	$a>b \implies a+c>b+c$.
+	
+	$a>b,\ c>d \implies a+c>b+d$（同向可加）.
+	
+	$a>b>0,\ c>d>0 \implies ac>bd$（同向可乘）.
+	
+	证明不等式的方法：作差比较法：$a>b \iff a-b>0$.
+\end{knowledge}
+
+\category{求范围}
+\begin{question}
+	$1<a<2$，$2<b<4$，求$a+2b$的范围；求$b-a$的范围.
+\end{question}
+
+$4<2b<8$.
+
+$\therefore 5<a+2b<10$.
+
+$b-a=b+(-a)$；$-2<-a<-1$.
+
+$\therefore 0<b-a<3$.
+
+\category{判断符号}
+\begin{question}
+	(1)$a>b$，则$a^2>b^2$？(2)$a>b>0$，$c<d<0$，比较$\dfrac{a}{d}$与$\dfrac{b}{c}$，$\dfrac{a}{c}$与$\dfrac{b}{d}$.
+\end{question}
+
+(1) 正误：$a^2-b^2=(a+b)(a-b)$，$(a+b)$符号？，$(a-b)>0$.
+
+(2) 关键理解：$ac<bd$.
+
+可判断$\dfrac{a}{d}<\dfrac{b}{c}$；不可判断$\dfrac{a}{c}$与$\dfrac{b}{d}$.
+
+\subsubsection{解一元二次不等式}
+\begin{knowledge}{步骤}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 化标准：二次项系数化为正.
+		
+		\item 求根.
+		
+		\item 大于取两边，小于夹中间.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{解不等式}
+\begin{question}
+	$-2x^2+x+3\leq0$.
+\end{question}
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $2x^2-x-3\geq0$.
+	
+	\item $2x^2-x-3=0$：$x_1=-1$，$x_2=\dfrac{3}{2}$.
+	
+	\item $x\leq-1$或$x\geq\dfrac{3}{2}$.
+	
+\end{enumerate}
+
+\category{由解求ab}
+\begin{question}
+	$ax^2+bx-2>0$的解是$x<-\dfrac{1}{2}$或$x>\dfrac{1}{3}$，则$ab=$？
+\end{question}
+
+两根为$-\dfrac{1}{2},\dfrac{1}{3}$：根之积$=-\dfrac{2}{a}=-\dfrac{1}{6} \implies a=12$.
+
+根之和$=-\dfrac{b}{a}=-\dfrac{1}{6} \implies b=2$.
+
+$\therefore ab=24$.
+
+\category{Delta=0}
+\begin{question}
+	$x^2-4x+4>0$.
+\end{question}
+
+\begin{minipage}[t]{0.7\textwidth}
+	$\Delta=0$.
+	
+	$\therefore x\in\{x|x\neq2\}$.
+	
+	（若$\Delta\leq0$，则画图像确定.）
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-1,0) -- (3.5,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-0.5) -- (0,2.5) node[above] {$y$};
+		\draw[thick, DarkRed, domain=-0.3:2.7, smooth, variable=\x] plot ({\x}, {(\x-1.5)*(\x-1.5)});
+		\node[below] at (1.5,0) {$2$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsubsection{解分式不等式}
+\begin{knowledge}{步骤}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 移项通分.
+		
+		\item 化除为乘.
+		
+		\item 按一元二次不等式的方法解不等式.
+		
+	\end{enumerate}
+	
+	注意：当出现$\leq,\geq$时，分母不为$0$.
+\end{knowledge}
+
+\category{解分式不等式}
+\begin{question}
+	$\dfrac{-3x+4}{x-1}\geq2$.
+\end{question}
+
+$\dfrac{-5x+6}{x-1}\geq0 \implies \begin{cases} (5x-6)(x-1)\leq0 \\ x\neq1 \end{cases}$
+
+$x_1=\dfrac{6}{5}$，$x_2=1$.
+
+$\therefore 1<x\leq\dfrac{6}{5}$.
+
+\subsection{第三讲\quad 解含参不等式}
+
+\subsubsection{解绝对值不等式}
+\begin{knowledge}{绝对值不等式}
+	
+	$|u|<a \implies -a<u<a$.
+	
+	$|u|>a \implies u<-a$或$u>a$.
+	
+	$|u|<|v| \implies u^2<v^2$.
+\end{knowledge}
+
+\category{绝对值不等式}
+\begin{question}
+	$|5-2x|>3$.
+\end{question}
+
+$5-2x<-3$或$5-2x>3$.
+
+$\therefore x>4$或$x<1$.
+
+\category{两边绝对值}
+\begin{question}
+	$|x-1|<|x-3|$.
+\end{question}
+
+$(x-1)^2<(x-3)^2$.
+
+$\therefore x<2$.
+
+\category{两边绝对值}
+\begin{question}
+	$|x+1|<|2x+1|$.
+\end{question}
+
+$(x+1)^2<(2x+1)^2 \implies 3x^2+2x>0$.
+
+$\therefore x>0$或$x<-\dfrac{2}{3}$.
+
+\subsubsection{解一元一次含参不等式}
+\begin{knowledge}{步骤}
+	移项，提$x$.
+	
+	讨论系数正负零情况.
+\end{knowledge}
+
+\category{一次含参}
+\begin{question}
+	$mx>2$.
+\end{question}
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item 当$m=0$时：$0\cdot x>2$，$\varnothing$.
+	
+	\item 当$m>0$时：$x>\dfrac{2}{m}$.
+	
+	\item 当$m<0$时：$x<\dfrac{2}{m}$.
+	
+\end{enumerate}
+
+\subsubsection{解一元二次含参不等式}
+\begin{knowledge}{步骤}
+	化标准（讨论二次）.
+	
+	因式分解$\to$讨论根大小等；求根公式$\to$讨论$\Delta$正负零.
+\end{knowledge}
+
+\category{二次含参}
+\begin{question}
+	$(x+t)(x-1)<0$.
+\end{question}
+
+根$x_1=-t$，$x_2=1$.
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item 当$-t=1$即$t=-1$时：无解.
+	
+	\item 当$-t>1$即$t<-1$时：$1<x<-t$.
+	
+	\item 当$-t<1$即$t>-1$时：$-t<x<1$.
+	
+\end{enumerate}
+
+\subsection{第四讲\quad 基本不等式}
+\begin{knowledge}{基本不等式}
+	$\dfrac{a+b}{2}\geq\sqrt{ab}$，即$a+b\geq2\sqrt{ab}$.
+	
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 正.
+		
+		\item 定（$a+b$、$ab$构造定值）.
+		
+		\item 相等（$a$和$b$有机会相等）.
+		
+	\end{enumerate}
+	
+	1$^\circ$积定和最小；2$^\circ$和定积最大；3$^\circ$和与倒数和，使用"乘1法".
+\end{knowledge}
+
+\category{凑基本不等式}
+\begin{question}
+	$y=x^2+1+\dfrac{25}{x^2+1}$，求最小值.
+\end{question}
+
+$y\geq2\sqrt{25}=10$.
+
+当$x^2+1=5$即$x=\pm2$时取等.
+
+$\therefore y_{\min}=10$.
+
+\category{拆项}
+\begin{question}
+	已知$x>0$，$y=\dfrac{x^2+2x+16}{x}$，求最小值.
+\end{question}
+
+$y=x+2+\dfrac{16}{x}\geq2\sqrt{16}+2=10$.
+
+当$x=4$时取等.
+
+$\therefore y_{\min}=10$.
+
+\category{加减凑配}
+\begin{question}
+	$y=x^2+\dfrac{1}{x^2-1}$（$x^2>1$），求最小值.
+\end{question}
+
+$y=x^2-1+\dfrac{1}{x^2-1}+1\geq2+1=3$.
+
+$(x^2-1)^2=1 \implies x^2-1=1 \implies x=\pm\sqrt{2}$.
+
+$\therefore y_{\min}=3$.
+
+\category{和定积最大}
+\begin{question}
+	$x,y>0$，$\dfrac{x}{5}+\dfrac{y}{6}=1$，求$xy$最大值.
+\end{question}
+
+$\dfrac{x}{5}+\dfrac{y}{6}\geq2\sqrt{\dfrac{xy}{30}}$.
+
+$\therefore xy\leq\dfrac{15}{2}$.
+
+$\begin{cases} \dfrac{x}{5}=\dfrac{y}{6} \\ \dfrac{x}{5}+\dfrac{y}{6}=1 \end{cases} \implies \begin{cases} x=\dfrac{5}{2} \\ y=3 \end{cases}$.
+
+$\therefore xy_{\max}=\dfrac{15}{2}$.
+
+\category{乘1法}
+\begin{question}
+	$m+n-2=0$（$mn>0$），$\left(\dfrac{1}{m}+\dfrac{2}{n}\right)_{\min}=$？
+\end{question}
+
+$m+n=2$.
+
+$\left(\dfrac{1}{m}+\dfrac{2}{n}\right)=\left(\dfrac{1}{m}+\dfrac{2}{n}\right)(m+n)\cdot\dfrac{1}{2}=\left(3+\dfrac{n}{m}+\dfrac{2m}{n}\right)\cdot\dfrac{1}{2}$.
+
+$\geq\left(3+2\sqrt{\dfrac{2mn}{mn}}\right)\times\dfrac{1}{2}=\dfrac{3+2\sqrt{2}}{2}$.
+
+$\therefore$ 最小值$=\dfrac{3+2\sqrt{2}}{2}$.
+
+\subsection{第五讲\quad 简易逻辑与集合概念}
+
+\subsubsection{命题}
+\begin{knowledge}{命题}
+	大多命题可写为"如果$p$，那么$q$".
+\end{knowledge}
+
+\subsubsection{充分条件和必要条件}
+\begin{knowledge}{充要条件判断}
+	$p$是$q$的：
+	
+	\begin{center}
+		\begin{tabular}{c|c|c}
+			& $q\Rightarrow p$ & $q\not\Rightarrow p$ \\ \hline
+			$p\Rightarrow q$ & 充要条件 & 充分不必要 \\ \hline
+			$p\not\Rightarrow q$ & 必要不充分 & 既不充分也不必要 \\
+		\end{tabular}
+	\end{center}
+	
+	即：看"前"、"后".
+	
+	前$\Rightarrow$/$\not\Rightarrow$后：充分/不充分.
+	
+	后$\Rightarrow$/$\not\Rightarrow$前：必要/不必要.
+	
+	小推大结论：eg，$x>1$是$x>3$的必要不充分条件.
+\end{knowledge}
+
+\subsubsection{集合}
+\begin{knowledge}{元素的性质}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 确定性. eg：组成集合：美女（不可），中国四大美女（可）.
+		
+		\item 互异性. eg：$\{1,a^2\}$则$a^2\neq1$.
+		
+		\item 无序性. eg：$\{1,2,3\}=\{2,3,1\}$.
+		
+	\end{enumerate}
+	
+	常见数集：
+	自然数集$N$；正整数集$N_+$；整数集$Z$；有理数集$Q$；实数集$R$.
+	
+	空集$\varnothing$.
+	
+	$a\in A$，$a\notin A$.
+\end{knowledge}
+
+\subsubsection{集合的表示法}
+\begin{knowledge}{}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 列举法：$\{1,2,3\}$.
+		
+		\item 描述法：$x$是大于$1$小于$5$的整数：$\{x|1<x<5,\ x\in Z\}$.
+		
+		\item 图示法（Venn图）.
+		
+		\item 范围：大小于$($ $)$，等于$[\ ]$，无限大/小$+\infty/-\infty$.
+		
+	\end{enumerate}
+	
+	$\{x|-1\leq x<2\}\Rightarrow[-1,2)$；$R\Rightarrow(-\infty,+\infty)$.
+\end{knowledge}
+
+\subsection{第六讲\quad 集合关系与运算}
+
+\subsubsection{集合间的关系}
+\begin{knowledge}{子集、相等、真子集}
+	$A=\{1,2\}$，$B=\{1,2,3\}$，$C=\{2,1\}$.
+	
+	$A\subseteq B$或$B\supseteq A$（子集）.
+	
+	$A\subsetneq B$（$B\supsetneq A$真子集）.
+	
+	$A=C$.
+	
+	$\varnothing$是任意集合的子集.
+	
+	$\varnothing$是任何非空集合的真子集.
+\end{knowledge}
+
+\category{两集合关系}
+\begin{question}
+	已知集合$A=\{y|y=x+1\}$，$B=\{y|y=x^2+1\}$，则$A,B$集合的关系.
+\end{question}
+
+$A$：$y\in R$；$B$：$y\geq1$.
+
+$\therefore A\supseteq B$.
+
+\category{集合相等}
+\begin{question}
+	若$a,b\in R$，集合$\{1,a+b,a\}=\{0,\dfrac{b}{a},a\}$，则$b-a=$？
+\end{question}
+
+后集内有$0$，则$a+b=0$或$a=0$.
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $a+b=0$：则$\{1,0,a\}=\{0,-1,b\}$，则$a=-1$，$b=1$，则$b-a=2$.
+	
+	\item $a=0$：$\dfrac{b}{a}$无意义，舍.
+	
+\end{enumerate}
+
+$\therefore b-a=2$.
+
+\subsubsection{集合的运算}
+\begin{knowledge}{交、并、补}
+	$A=\{1,2,3\}$，$B=\{2,4,5\}$.
+	
+	$A\cap B=\{2\}$，读"A交B"，取两集的公共部分.
+	
+	$A\cup B=\{1,2,3,4,5\}$，读"A并B"，取$A,B$集合所有元素组成集合.
+	
+	全集$U=\{1,2,3\}$，集合$C=\{3\}$.
+	
+	则$\complement_U C=\{1,2\}$，取集合外、全集内的所有元素组成集合.
+\end{knowledge}
+
+\subsection{第七讲\quad 函数}
+
+\subsubsection{函数的概念}
+\begin{knowledge}{概念}
+	$x$的范围：定义域；$y$的范围：值域.
+	
+	函数成立满足的条件：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 定义域不为空集. $y=\sqrt{x-2}+\sqrt{1-x}$不是函数.
+		
+		\item 多$x$对$1y$或$1x$对$1y$. $y^2=x$不是函数.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\begin{knowledge}{同一函数}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 定义域相同：$y=(\sqrt{x})^2$定义域$[0,+\infty)$；$y=x$定义域$x\in R$.
+		
+		\item 对应关系完全一致：$y=\sqrt{x^2}$值域$[0,+\infty)$；$y=x$值域$y\in R$.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{求定义域}
+\begin{question}
+	$f(x)=\sqrt{\dfrac{x-1}{x+1}-2}$的定义域.
+\end{question}
+
+$x+1\neq0 \implies x\neq-1$.
+
+$\dfrac{x-1}{x+1}-2\geq0 \implies (x+3)(x+1)\leq0$且$x\neq-1$.
+
+$\therefore [-3,-1)$.
+
+\subsubsection{拓展（求值域）}
+\category{画图}
+\begin{question}
+	$f(x)=-2x^2+x-2$，$x\in(0,+\infty)$，求值域.
+\end{question}
+
+轴$x=\dfrac{1}{4}$；$f\left(\dfrac{1}{4}\right)=-\dfrac{15}{8}$.
+
+$\therefore$ 值域$\left(-\infty,-\dfrac{15}{8}\right]$.
+
+\category{换元}
+\begin{question}
+	$f(x)=x+\sqrt{1-x}$，求值域.
+\end{question}
+
+设$\sqrt{1-x}=t$（$t\geq0$），$x=1-t^2$.
+
+$\therefore f(t)=-t^2+t+1$.
+
+$f\left(\dfrac{1}{2}\right)=\dfrac{5}{4}$.
+
+$\therefore$ 值域$\left(-\infty,\dfrac{5}{4}\right]$.
+
+\category{换元}
+\begin{question}
+	$y=x+2\sqrt{x}-1$，$x\in[4,16]$，求值域.
+\end{question}
+
+令$\sqrt{x}=t$，$t\in[2,4]$.
+
+$y=t^2+2t-1$.
+
+$\therefore$ 值域$[7,23]$.
+
+\subsection{第八讲\quad 函数单调性}
+
+\begin{knowledge}{单调性定义}
+	如果$\forall x_1,x_2\in D$，当$x_1<x_2$时，都有$f(x_1)<f(x_2)$（或$f(x_1)>f(x_2)$），于是$f(x)$在区间$D$上单调递增/减.
+	
+	增函数：$f(x_1)<f(x_2)$，$x_1<x_2$.
+	
+	减函数：$f(x_1)<f(x_2)$，$x_1>x_2$.
+\end{knowledge}
+
+\begin{knowledge}{判断与证明单调性的常用方法}
+	定义法、图象法.
+	
+	总结：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 一次函数看$k$.
+		
+		\item 二次函数看开口和对称轴.
+		
+		\item 反比例函数看$a$.
+		
+		\item 单调区间用"，"连接.
+		
+		\item 单调区间要在定义域范围内研究.
+		
+		\item 根号不改变原有单调性，但会改变定义域.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{定义法证明}
+\begin{question}
+	$f(x)=x+\dfrac{1}{x}$在$(0,1)$上的单调性（定义法证明的标准格式）.
+\end{question}
+
+任取$x_1<x_2$，$x_1,x_2\in(0,1)$.
+
+$f(x_1)-f(x_2)=x_1+\dfrac{1}{x_1}-x_2-\dfrac{1}{x_2}=(x_1-x_2)\left(\dfrac{x_1x_2-1}{x_1x_2}\right)>0$.
+
+$\therefore f(x_1)>f(x_2)$.
+
+$\therefore f(x)$在$(0,1)$为单调递减.
+
+\subsection{第九讲\quad 函数奇偶性与幂函数}
+
+\subsubsection{奇偶性}
+\begin{knowledge}{奇偶性}
+	关于$y$轴对称的函数为偶函数（$f(x)=f(-x)$）.
+	
+	关于原点中心对称的函数为奇函数（$f(-x)=-f(x)$）.
+	
+	奇偶性的证明：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 判断定义域是否关于$y$轴（原点）对称.
+		
+		\item 计算得$f(-x)$与$f(x)$的关系.
+		
+	\end{enumerate}
+	
+	注：奇函数都过原点，所以当定义域包括$0$时，$f(0)=0$.
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		% 偶函数
+		\begin{scope}[shift={(-3,0)}]
+			\draw[->, gray!40] (-2,0) -- (2,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-0.5) -- (0,2.5) node[above] {$f(x)$};
+			\draw[thick, DarkRed, domain=-1.5:1.5, smooth, variable=\x] plot ({\x}, {\x*\x});
+		\end{scope}
+		% 奇函数
+		\begin{scope}[shift={(3,0)}]
+			\draw[->, gray!40] (-2,0) -- (2,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-2) -- (0,2) node[above] {$f(x)$};
+			\draw[thick, SkyBlue, domain=-1.25:1.25, smooth, variable=\x] plot ({\x}, {\x*\x*\x});
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\category{奇函数求值}
+\begin{question}
+	$f(x)$奇函数，$g(x)=f(x)+9$，$g(-2)=3$，则$f(2)=$？$g(2)=$？
+\end{question}
+
+$g(-2)=f(-2)+9=3$.
+
+$f(-2)=-6$.
+
+$\because$ 奇函数.
+
+$\therefore f(2)=6$.
+
+$g(2)=f(2)+9=6+9=15$.
+
+\subsubsection{幂函数}
+\begin{knowledge}{幂函数}
+	形式：$y=x^{\alpha}$（$\alpha\in R$）.
+	
+	性质：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 所有幂函数在$(0,+\infty)$都有定义，且过$(1,1)$.
+		
+		\item $\alpha>0$：过原点，在$[0,+\infty)$为增函数.
+		
+		\item $\alpha<0$：在$(0,+\infty)$为减函数.
+		
+		\item $\alpha$为奇数，则为奇函数；$\alpha$为偶数，则为偶函数.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\subsection{第十讲\quad 指数运算与指数函数}
+
+\subsubsection{指数运算}
+\begin{knowledge}{指数运算}
+	
+	$a^0=1$.
+	
+	$a^m\cdot a^n=a^{m+n}$.
+	
+	$a^m\div a^n=a^{m-n}$.
+	
+	$a^{\frac{1}{n}}=\sqrt[n]{a}$.
+	
+	$a^{\frac{m}{n}}=\left(a^{\frac{1}{n}}\right)^m=\left(a^m\right)^{\frac{1}{n}}$.
+	
+	$\sqrt[n]{a^n}=\begin{cases} a, & n\text{奇} \\ |a|, & n\text{偶}\end{cases}$
+	
+	根化指；大化小；小化分.
+\end{knowledge}
+
+\category{根化指}
+\begin{question}
+	$\sqrt[3]{a}\cdot\sqrt{a}$.
+\end{question}
+
+$=a^{\frac{1}{3}}\cdot a^{\frac{1}{2}}=a^{\frac{5}{6}}$.
+
+\category{大化小}
+\begin{question}
+	$\left(\dfrac{16}{81}\right)^{\frac{3}{4}}$.
+\end{question}
+
+$=\left[\left(\dfrac{16}{81}\right)^{\frac{1}{4}}\right]^3=\left(\dfrac{2}{3}\right)^3=\dfrac{8}{27}$.
+
+\category{小化分}
+\begin{question}
+	$4^{0.25}$.
+\end{question}
+
+$=4^{\frac{1}{4}}=\sqrt{2}$.
+
+\category{综合化简}
+\begin{question}
+	$\left(a^{\frac{2}{3}}b^{\frac{1}{2}}\right)\left(-3a^{\frac{1}{2}}b^{\frac{1}{3}}\right)\div\left(\dfrac{1}{3}a^{\frac{1}{6}}b^{\frac{5}{6}}\right)$，$(a,b>0)$.
+\end{question}
+
+$=\dfrac{-3\cdot a^{\frac{2}{3}}\cdot a^{\frac{1}{2}}\cdot b^{\frac{1}{2}}\cdot b^{\frac{1}{3}}}{\dfrac{1}{3}a^{\frac{1}{6}}\cdot b^{\frac{5}{6}}}=\dfrac{-3a^{\frac{7}{6}}}{\dfrac{1}{3}a^{\frac{1}{6}}}=-9a$.
+
+\subsubsection{指数函数}
+\begin{knowledge}{形式与图象}
+	形式：$y=a^x$（$a>0$且$a\neq1$）.
+	
+	过定点：让指数为$0$，计算对应的$y$.
+	
+	$0<a<1$减；$a>1$增.
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		% 0<a<1 减
+		\begin{scope}[shift={(-3,0)}]
+			\draw[->, gray!40] (-1.5,0) -- (1.8,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-0.5) -- (0,2.5) node[above] {$y$};
+			\draw[thick, DarkRed, domain=-1.2:1.5, smooth, variable=\x] plot ({\x}, {pow(2,-\x)});
+			\node[DarkRed] at (1,1.8) {$0<a<1$};
+		\end{scope}
+		% a>1 增
+		\begin{scope}[shift={(3,0)}]
+			\draw[->, gray!40] (-1.8,0) -- (1.5,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-0.5) -- (0,2.5) node[above] {$y$};
+			\draw[thick, SkyBlue, domain=-1.5:1.2, smooth, variable=\x] plot ({\x}, {pow(2,\x)});
+			\node[SkyBlue] at (-1,1.8) {$a>1$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\begin{knowledge}{考题类型}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 定义域求值域$\Rightarrow$画图.
+		
+		\item 过定点：让指数为$0$，计算对应$y$.
+		
+		\item 比大小：同底不同指（画一个图象）；同指不同底（作差与$1$比较）；不同指不同底（画两个图象）.
+		
+		\item 解不等式：先换成同底的指数形式，再利用单调性.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\subsection{第十一讲\quad 对数运算}
+
+\subsubsection{对数的定义}
+\begin{knowledge}{定义}
+	$2^?=3 \implies ?=\log_2 3$.
+	
+	$a^x=N \iff \log_a N=x$（底数、真数、对数）.
+	
+	特殊：$\lg x=\log_{10}x$；$\ln x=\log_e x$.
+	
+	$\log_a 1=0$；$\log_a a=1$；$a^{\log_a b}=b$.
+\end{knowledge}
+
+\category{基本求值}
+\begin{question}
+	$\ln\sqrt{e}$；$\lg 0.001$；$2^{\log_{\sqrt{2}}7}$.
+\end{question}
+
+$\ln\sqrt{e}=\dfrac{1}{2}$.
+
+$\lg 0.001=-3$.
+
+$2^{\log_{\sqrt{2}}7}=\left(\sqrt{2}^{\log_{\sqrt{2}}7}\right)^2=7^2=49$.
+
+\category{嵌套对数}
+\begin{question}
+	$\log_3[\log_5(\log_2 x)]=0$，求$x$.
+\end{question}
+
+$\log_5(\log_2 x)=1$.
+
+$\log_2 x=5$.
+
+$\therefore x=2^5=32$.
+
+\subsubsection{对数运算}
+\begin{knowledge}{运算公式}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item $\log_a M+\log_a N=\log_a(M\cdot N)$.
+		
+		\item $\log_a M-\log_a N=\log_a(M\div N)$.
+		
+		\item $\log_a M^n=n\log_a M$.
+		
+		\item $\log_{a^{\alpha}}M^{\beta}=\dfrac{\beta}{\alpha}\log_a M$.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{立方和}
+\begin{question}
+	$(\lg5)^3+\lg8\cdot\lg5+(\lg2)^3$.
+\end{question}
+
+$a^3+b^3=(a+b)(a^2-ab+b^2)$.
+
+$(\lg5)^3+(\lg2)^3=(\lg5+\lg2)[(\lg5)^2-\lg5\lg2+(\lg2)^2]=(\lg5)^2-\lg5\lg2+(\lg2)^2$.
+
+$\lg8\cdot\lg5=3\lg2\lg5$.
+
+相加$=(\lg5)^2+2\lg5\lg2+(\lg2)^2=(\lg5+\lg2)^2=1$.
+
+$\therefore$ 原式$=1$.
+
+\subsection{第十二讲\quad 对数函数}
+\begin{knowledge}{形式与图象}
+	形式：$y=\log_a x$（$a>0,a\neq1$）.
+	
+	过定点：令真数为$1$，计算$y$的值.
+	
+	底数$<1$：单调递减；底数$>1$：单调递增.
+	
+	$y=1$沿$x$轴正方向移，先经过的底数小，后经过的底数大.
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.9, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-0.5,0) -- (4,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-1.5) -- (0,2.2) node[above] {$y$};
+		\draw[thick, SkyBlue, domain=0.15:4, smooth, variable=\x] plot ({\x}, {ln(\x)/ln(2)});
+		\draw[thick, DarkRed, domain=0.15:4, smooth, variable=\x] plot ({\x}, {ln(\x)/ln(3)});
+		\draw[dashed, gray] (0,1) -- (3.6,1);
+		\node[SkyBlue] at (3.3,1.8) {$\log_2 x$};
+		\node[DarkRed] at (3.5,1.1) {$\log_3 x$};
+		\node[left, gray] at (0,1) {$1$};
+	\end{tikzpicture}
+\end{center}
+
+\category{求定义域}
+\begin{question}
+	$f(x)=\sqrt{x^2-3x-4}+\lg(6-x)$.
+\end{question}
+
+$x^2-3x-4\geq0 \implies x\leq-1$或$x\geq4$.
+
+$6-x>0 \implies x<6$.
+
+$\therefore (-\infty,-1]\cup[4,6)$.
+
+\begin{knowledge}{比较大小}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 同底不同真.
+		
+		\item 同真不同底.
+		
+		\item 真底均不同.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{比较大小}
+\begin{question}
+	$\log_{\frac{1}{3}}\dfrac{1}{4}$与$\log_{1.5}\dfrac{2}{3}$.
+\end{question}
+
+$\log_{\frac{1}{3}}\dfrac{1}{4}=\log_3 4>1$；$\log_{1.5}\dfrac{2}{3}<0$.
+
+$\therefore \log_{\frac{1}{3}}\dfrac{1}{4}>\log_{1.5}\dfrac{2}{3}$.
+
+\begin{knowledge}{解不等式}
+	换同底对数形式（利用单调性）.
+	
+	真数$>0$.
+\end{knowledge}
+
+\category{解不等式}
+\begin{question}
+	$\log_3 x>3$.
+\end{question}
+
+$\log_3 x>\log_3 3^3$.
+
+$\therefore x>27$.
+
+\category{底小于1}
+\begin{question}
+	$\log_{0.45}(x+2)<\log_{0.45}(1-x)$.
+\end{question}
+
+$x+2>0$，$1-x>0$，$x+2>1-x$（底$<1$，变号）.
+
+$\therefore -\dfrac{1}{2}<x<1$.
+
+\subsection{第十三讲\quad 图象变换与零点}
+
+\subsubsection{图象变换}
+\begin{knowledge}{变换}
+	上下左右平移、点平移初中已学.
+	
+	翻折变换：
+	$y=|f(x)|$：留上翻下.
+	
+	$y=f(|x|)$：去左称右.
+\end{knowledge}
+
+\category{分离常数}
+\begin{question}
+	$y=\dfrac{2x+4}{x}$（由$y=\dfrac{4}{x}$变换）.
+\end{question}
+
+$y=\dfrac{2x}{x}+\dfrac{4}{x}=\dfrac{4}{x}+2$.
+
+$\therefore$ 由$y=\dfrac4x$上移$2$.
+
+\category{翻折变换}
+\begin{question}
+	$y=x^2-2|x|$，即$y=|x|^2-2|x|$.
+\end{question}
+
+原图$y=x^2-2x$（轴$x=1$）$\Rightarrow$ 去左称右后轴$x=\pm1$.
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		% 原图
+		\begin{scope}[shift={(-4,0)}]
+			\draw[->, gray!40] (-1.5,0) -- (3,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-1.5) -- (0,2.5) node[above] {$y$};
+			\draw[thick, domain=-0.7:2.7, smooth, variable=\x] plot ({\x}, {(\x-1)*(\x-1)-1});
+			\draw[dashed, gray] (1,-1.3) -- (1,2.3);
+			\node[below] at (1,-1.4) {$x=1$};
+			\node[above left] at (-0.8,2) {原图};
+		\end{scope}
+		\node at (0,0.5) {$\Rightarrow$};
+		% 翻折后
+		\begin{scope}[shift={(4,0)}]
+			\draw[->, gray!40] (-3,0) -- (3,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-1.5) -- (0,2.5) node[above] {$y$};
+			\draw[thick, domain=-2.6:2.6, smooth, variable=\x] plot ({\x}, {\x*\x-2*abs(\x)});
+			\draw[dashed, gray] (1,-1.3) -- (1,2.3);
+			\draw[dashed, gray] (-1,-1.3) -- (-1,2.3);
+			\node[above] at (1,2.3) {$x=1$};
+			\node[above] at (-1,2.3) {$x=-1$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\subsubsection{零点问题}
+\begin{knowledge}{方法}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 解方程.
+		
+		\item 图象.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{零点所在区间}
+\begin{question}
+	$f(x)=2^x+x^2-4$，判断零点所在区间：(1)$(-2,-1)$；(2)$(-1,0)$.
+\end{question}
+
+$f(-2)=\dfrac{1}{4}+4-4=\dfrac{1}{4}>0$；$f(-1)=\dfrac{1}{2}+1-4=-\dfrac{5}{2}<0$.
+
+$\therefore$ 零点在$(-2,-1)$.
+
+$f(0)=1-4=-3<0$，$f(-1)<0$，(2)不成立.
+
+\subsection{第十四讲\quad 任意角的三角函数}
+
+\subsubsection{任意角}
+\begin{knowledge}{任意角}
+	逆时针转角为正角；顺时针转角为负角；无旋转为零角.
+	
+	终边在坐标轴上的角不属于任何象限.
+	
+	终边在同一位置的角，角度差$360^\circ$.
+	
+	直线型：$\{\alpha|\alpha=\alpha_0+k\cdot180^\circ,\ k\in Z\}$.
+	
+	射线型：$\{\alpha|\alpha=\alpha_0+k\cdot360^\circ,\ k\in Z\}$.
+\end{knowledge}
+
+\subsubsection{弧度制}
+\begin{knowledge}{弧度制}
+	$\theta=\dfrac{l}{r}$；$\pi=180^\circ$.
+	
+	角度化弧度：乘$\dfrac{\pi}{180^\circ}$.
+	
+	弧度化角度：乘$\left(\dfrac{180}{\pi}\right)^\circ$.
+\end{knowledge}
+
+\subsubsection{任意角的三角函数}
+\begin{knowledge}{定义与符号}
+	$\sin\alpha=y$；$\cos\alpha=x$；$\tan\alpha=\dfrac{y}{x}$.
+	
+	符号：$\sin$一、二正，三、四负；$\cos$一、四正，二、三负；$\tan$一、三正，二、四负.
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		% 单位圆
+		\begin{scope}[shift={(-6.5,0)}]
+			\draw[->, gray!40] (-1.8,0) -- (1.8,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-1.8) -- (0,1.8) node[above] {$y$};
+			\draw[thick] (0,0) circle (1.2);
+			\draw[thick, DarkRed] (0,0) -- (0.85,0.85);
+			\draw[dashed, SkyBlue] (0.85,0.85) -- (0,0.85);
+			\draw[dashed, SkyBlue] (0.85,0.85) -- (0.85,0);
+			\node[DarkRed] at (0.55,0.2) {$\alpha$};
+		\end{scope}
+		% sin 符号
+		\begin{scope}[shift={(-3,0)}]
+			\draw[->, gray!40] (-1.3,0) -- (1.3,0);
+			\draw[->, gray!40] (0,-1.3) -- (0,1.3);
+			\node at (0.6,0.6) {$+$};
+			\node at (-0.6,0.6) {$+$};
+			\node at (-0.6,-0.6) {$-$};
+			\node at (0.6,-0.6) {$-$};
+			\node[below] at (0,-1.4) {$\sin$};
+		\end{scope}
+		% cos 符号
+		\begin{scope}[shift={(0,0)}]
+			\draw[->, gray!40] (-1.3,0) -- (1.3,0);
+			\draw[->, gray!40] (0,-1.3) -- (0,1.3);
+			\node at (0.6,0.6) {$+$};
+			\node at (-0.6,0.6) {$-$};
+			\node at (-0.6,-0.6) {$-$};
+			\node at (0.6,-0.6) {$+$};
+			\node[below] at (0,-1.4) {$\cos$};
+		\end{scope}
+		% tan 符号
+		\begin{scope}[shift={(3,0)}]
+			\draw[->, gray!40] (-1.3,0) -- (1.3,0);
+			\draw[->, gray!40] (0,-1.3) -- (0,1.3);
+			\node at (0.6,0.6) {$+$};
+			\node at (-0.6,0.6) {$-$};
+			\node at (-0.6,-0.6) {$+$};
+			\node at (0.6,-0.6) {$-$};
+			\node[below] at (0,-1.4) {$\tan$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\subsection{第十五讲\quad 同角基本关系与诱导公式}
+
+\subsubsection{同角基本关系}
+\begin{knowledge}{同角基本关系}
+	$\sin^2\alpha+\cos^2\alpha=1$.
+	
+	$\dfrac{\sin\alpha}{\cos\alpha}=\tan\alpha$.
+	
+	技巧：画图；定号.
+	
+	计算方法：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 猛算出$\cos\alpha,\sin\alpha$.
+		
+		\item 用$\tan\alpha=\dfrac{\sin\alpha}{\cos\alpha}=$常数$\implies\sin\alpha=x\cos\alpha$套入，化切为弦.
+		
+		\item 上下同除$\cos\alpha$或$\cos^2\alpha$，化弦为切.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\subsubsection{诱导公式}
+\begin{knowledge}{使用步骤}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 公式1：加减整数$2\pi\to[-\pi,\pi]$.
+		
+		\item 看能否用其他公式.
+		
+		\item 如不可，用公式3提负号.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\begin{knowledge}{12个诱导公式}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item $\sin(2k\pi+\alpha)=\sin\alpha$.
+		
+		\item $\cos(2k\pi+\alpha)=\cos\alpha$.
+		
+		\item $\sin(\pi+\alpha)=-\sin\alpha$.
+		
+		\item $\cos(\pi+\alpha)=-\cos\alpha$.
+		
+		\item $\sin(-\alpha)=-\sin\alpha$.
+		
+		\item $\cos(-\alpha)=\cos\alpha$.
+		
+		\item $\sin(\pi-\alpha)=\sin\alpha$.
+		
+		\item $\cos(\pi-\alpha)=-\cos\alpha$.
+		
+		\item $\sin\left(\dfrac{\pi}{2}-\alpha\right)=\cos\alpha$.
+		
+		\item $\cos\left(\dfrac{\pi}{2}-\alpha\right)=\sin\alpha$.
+		
+		\item $\sin\left(\dfrac{\pi}{2}+\alpha\right)=\cos\alpha$.
+		
+		\item $\cos\left(\dfrac{\pi}{2}+\alpha\right)=-\sin\alpha$.
+		
+	\end{enumerate}
+	
+	附：$\tan(2k\pi+\alpha)=\tan\alpha$；$\tan(\pi+\alpha)=\tan\alpha$；$\tan(-\alpha)=-\tan\alpha$；$\tan(\pi-\alpha)=-\tan\alpha$.
+\end{knowledge}
+
+
+
+\section{高一上学期秋季}
+
+
+
+
+
+
+
+
+
+
+
+
 \section{准高二暑期数学}
 
 \subsection{第一讲\quad 空间向量的概念及其运算}
