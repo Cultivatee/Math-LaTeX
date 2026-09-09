@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}第一讲\hskip 1em\relax 偏微分方程的基本概念}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}PDE 的定义与记号}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}线性偏微分方程}{2}{subsection.1.2}%
+\contentsline {section}{\numberline {2}第二讲\hskip 1em\relax 传输方程}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}齐次方程与特征线法}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}初值问题与行波解}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}变系数情形}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}非齐次问题}{4}{subsection.2.4}%
+\contentsline {section}{\numberline {3}第三讲\hskip 1em\relax Laplace 方程与 Poisson 方程}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}方程与调和函数}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}物理背景与 Gauss-Green 公式}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}基本解：球对称约化}{7}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Poisson 方程的解}{8}{subsection.3.4}%
