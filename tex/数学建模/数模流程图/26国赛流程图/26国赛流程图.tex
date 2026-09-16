@@ -1,0 +1,110 @@
+% !TEX program = xelatex
+% C题 微网与外网电力调控——全文建模思路思维导图（\large 统一字号·防重叠版）
+\documentclass[border=6pt]{standalone}
+\usepackage{ctex}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+% ---------- 既定配色 ----------
+\definecolor{dgreen}{HTML}{0E4F43}
+\definecolor{pOne}{HTML}{EAF6EC}
+\definecolor{pTwo}{HTML}{E7F0FA}
+\definecolor{pThr}{HTML}{F6E9D4}
+\definecolor{pFou}{HTML}{DEF2F7}
+\definecolor{pinkB}{HTML}{F7D8DC}
+\definecolor{cyanA}{HTML}{8CDDE6}
+\definecolor{whiteA}{HTML}{F8F5FA}
+\definecolor{greenC}{HTML}{EBF7ED}
+
+\begin{document}
+	\begin{tikzpicture}[font=\large, % 全图节点与标题统一 \large
+		arr/.style={line width=1.6pt,-{Stealth[length=6pt,width=5pt]}},
+		pln/.style={line width=1.6pt},
+		boxR/.style={rounded corners=5pt,draw=dgreen,line width=2pt,
+			inner sep=2.5mm,minimum height=11mm,align=center},
+		boxS/.style={draw=dgreen,line width=2pt,
+			inner sep=2.5mm,minimum height=11mm,align=center},
+		panel/.style={draw=dgreen,dotted,line width=2pt},
+		subp/.style={rounded corners=5pt,draw=dgreen,line width=2pt},
+		]
+		
+		% ================= 四个虚线面板 =================
+		\draw[panel,fill=pOne] (0,11.8)  rectangle (24.8,21.6);
+		\draw[panel,fill=pTwo] (25.2,0)  rectangle (36,21.6);
+		\draw[panel,fill=pThr] (12.5,0)  rectangle (24.8,11.4);
+		\draw[panel,fill=pFou] (0,0)     rectangle (12.2,11.4);
+		
+		% ================= 问题一（标题单行，与首行净空 0.25cm） =================
+		\node[anchor=north west,font=\large] at (0.5,21.4)
+		{\textbf{问题一：单日确定性计划购电（线性规划）}};
+		\node[boxR,fill=whiteA,minimum width=6.5cm] (A1) at (4.8,19.4) {决策变量\\$P_t^{buy},\ P_t^{ch},\ P_t^{dis},\ P_t^{curt},\ S_t$};
+		\node[boxS,fill=whiteA,minimum width=6.5cm] (A2) at (12.3,19.4) {目标函数\\$\min\displaystyle\sum_{t=1}^{144} c_t P_t^{buy}\Delta t$};
+		\node[boxR,fill=cyanA,minimum width=6cm] (A3) at (19.5,19.4) {线性规划求解\\HiGHS 单纯形/内点};
+		\node[boxR,fill=pinkB,minimum width=9.5cm] (C1) at (6.6,17.2) {电力收支平衡\\$P_t^{PV}+P_t^{buy}+P_t^{dis}=P_t^{L}+P_t^{ch}+P_t^{curt}$};
+		\node[boxR,fill=pinkB,minimum width=9.5cm] (C2) at (6.6,15.0) {储能状态转移\\$S_t=S_{t-1}+\eta P_t^{ch}\Delta t-\dfrac{P_t^{dis}\Delta t}{\eta}$};
+		\node[boxR,fill=pinkB,minimum width=9.5cm] (C3) at (6.6,12.85) {区间·功率·首末约束\\$1200\le S_t\le10800$，$S_0=S_{144}=6000$};
+		\node[boxS,fill=whiteA,minimum width=8.5cm] (CC) at (19.5,16.3) {完整 LP：目标＋平衡\\＋储能＋边界约束};
+		\node[boxS,fill=whiteA,minimum width=8.5cm] (OUT) at (19.5,13.5) {输出：计划购电 $E_t^{buy}$、充放 $E_t^{ch},E_t^{dis}$\\时段末储电量 $S_t$};
+		\draw[arr] (A1.east) -- (A2.west);
+		\draw[arr] (A2.east) -- (A3.west);
+		\draw[arr] (A3.south) -- (CC.north);
+		\draw[arr] (CC.south) -- (OUT.north);
+		\coordinate (J) at (13.6,16.3);
+		\draw[pln] (C1.east) -- (J);
+		\draw[pln] (C2.east) -- (J);
+		\draw[pln] (C3.east) -- (J);
+		\draw[arr] (J) -- (CC.west);
+		
+		% ================= 问题二 =================
+		\node[anchor=north west,font=\large] at (25.8,21.5) {\textbf{问题二：实际值未知下的预测与优化}};
+		\draw[subp,fill=cyanA] (25.8,11.5) rectangle (35.6,20.75);
+		\node[anchor=north west,font=\large] at (26.2,20.6) {\textbf{预测模块}};
+		\node[boxS,fill=whiteA,minimum width=8.6cm] (Q1) at (30.7,18.85) {负载 MSTL＋AR(p)\\$P_t^{L}=T_t^{L}+S_{144,t}^{L}+S_{1008,t}^{L}+R_t^{L}$};
+		\node[boxS,fill=whiteA,minimum width=8.6cm] (Q2) at (30.7,16.8) {光伏：晴空强度$\times$透射率\\$P_{d,t}^{PV}=B_{d,t}^{PV}\kappa_d+R_{d,t}^{PV}$，$\kappa_d$ 作 AR};
+		\node[boxS,fill=whiteA,minimum width=8.6cm] (Q3) at (30.7,14.75) {冷启动：附件 1 模板加权融合\\满 21 天切换正式模型};
+		\node[boxS,fill=whiteA,minimum width=8.6cm] (Q4) at (30.7,12.7) {非对称风险校准\\$\tilde{P}^{net}=\hat{P}^{net}+R^{risk}$，报童 $\tau^{*}=0.8$};
+		\draw[arr] (Q1.south) -- (Q2.north);
+		\draw[arr] (Q2.south) -- (Q3.north);
+		\draw[arr] (Q3.south) -- (Q4.north);
+		
+		\draw[subp,fill=cyanA] (25.8,0.15) rectangle (35.6,11.3);
+		\node[anchor=north west,font=\large] at (26.2,11.15) {\textbf{两阶段优化}};
+		\node[boxS,fill=greenC,minimum width=8.6cm] (R1) at (30.7,9.35) {日前 LP：校准净负荷为需求\\目标加日末储能价值＋循环惩罚};
+		\node[boxS,fill=whiteA,minimum width=8.6cm] (R2) at (30.7,7.3) {日内局部修正（代数、不重解）\\取消充电$\rightarrow$增放电$\rightarrow$紧急购电 $5\lambda_t$};
+		\node[boxS,fill=whiteA,minimum width=8.6cm] (R3) at (30.7,5.25) {富余处理：取消放电$\rightarrow$增充电\\无法吸收记为富余功率};
+		\node[boxS,fill=pinkB,minimum width=8.6cm] (R4) at (30.7,3.2) {费用＝计划购电费＋紧急购电费\\日末储能价值仅入决策不计费};
+		\node[boxS,fill=whiteA,minimum width=8.6cm] (R5) at (30.7,1.15) {跨日窗口：后 144 时段评估储能价值\\不施加日末恢复约束 $S_{d,144}=S_{d,0}$};
+		\draw[arr] (R1.south) -- (R2.north);
+		\draw[arr] (R2.south) -- (R3.north);
+		\draw[arr] (R3.south) -- (R4.north);
+		\draw[arr] (R4.south) -- (R5.north);
+		
+		% ================= 问题三 =================
+		\node[anchor=north west,font=\large] at (13,11.2) {\textbf{问题三：预报更新与滚动调整}};
+		\node[boxS,fill=greenC,minimum width=10.2cm] (S1) at (18.8,9.5) {整点预报$\rightarrow$10min 插值\\锚点取已实现值防未来信息};
+		\node[boxS,fill=whiteA,minimum width=10.2cm] (S2) at (18.8,7.45) {调整分解 $P_{k,t}^{buy}=P_{k-1,t}^{buy}+U_{k,t}^{+}-U_{k,t}^{-}$\\追加按 $1.5\lambda_t$·违约按 $0.5\lambda_t$ 计费};
+		\node[boxS,fill=whiteA,minimum width=10.2cm] (S3) at (18.8,5.4) {日内 24h 滚动线性规划\\跨日影子购电评估储能价值};
+		\node[boxS,fill=cyanA,minimum width=10.2cm] (S4) at (18.8,3.35) {动态非对称风险带 $b_t^{+}<b_t^{-}$\\风险集中度·风险重心$\rightarrow$候选时点};
+		\node[boxS,fill=whiteA,minimum width=10.2cm] (S5) at (18.8,1.3) {代理预报：残差延续趋势·随提前量衰减\\完整调度模型验证候选时点价值};
+		\draw[arr] (S1.south) -- (S2.north);
+		\draw[arr] (S2.south) -- (S3.north);
+		\draw[arr] (S3.south) -- (S4.north);
+		\draw[arr] (S4.south) -- (S5.north);
+		
+		% ================= 问题四 =================
+		\node[anchor=north west,font=\large] at (0.5,11.2) {\textbf{问题四：波动电价下调度}};
+		\node[boxS,fill=whiteA,minimum width=10.2cm] (E1) at (6.1,9.5) {电价预测 $\lambda_{d,t}=T_{d,t}+S_{d,t}^{\mathrm{daily}}+S_{d,t}^{\mathrm{weekly}}+R_{d,t}$\\MSTL＋AR 48h 滚动·每 7 天完整重估};
+		\node[boxS,fill=whiteA,minimum width=10.2cm] (E2) at (6.1,6.9) {日内修正 $\Delta_h=\displaystyle\sum_{t=h-m}^{h-1} w_t r_t$\\$\hat{\lambda}_{h+k}^{new}=\max\{0,\ \hat{\lambda}_{h+k}+\Delta_h e^{-(k-1)/\tau_d}\}$};
+		\node[boxS,fill=whiteA,minimum width=10.2cm] (E3) at (6.1,4.1) {决策与结算：目标用预测电价 $\hat{\lambda}_t$\\事后按真实电价 $\lambda_t$ 结算计划/调整/紧急};
+		\node[boxS,fill=whiteA,minimum width=10.2cm] (E4) at (6.1,1.7) {联合风险 $R_h=R_h^{pv}+R_h^{price}$\\覆盖得分 $S(h)=\sum_{k=1}^{4}e^{-(k-1)/\tau}R_{h+k}$ 定时点};
+		
+		% ================= 面板间流转箭头 =================
+		\draw[arr] (24.8,16.5) -- (25.2,16.5);  % 问题一 → 问题二
+		\draw[arr] (25.2,5.4)  -- (24.8,5.4);   % 问题二 → 问题三
+		\draw[arr] (12.5,5.4)  -- (12.2,5.4);   % 问题三 → 问题四
+		
+	\end{tikzpicture}
+\end{document}

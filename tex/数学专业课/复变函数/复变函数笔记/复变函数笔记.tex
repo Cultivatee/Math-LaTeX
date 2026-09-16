@@ -136,6 +136,16 @@
 	\tableofcontents
 	\newpage
 	\section{第一讲\quad 复数、复数列与复级数}
+	\subsection*{常用等式}
+	
+	\begin{itemize}
+		\item $|z|^2 = z \cdot \overline{z}$
+		\item $z_1 \cdot \overline{z_2} + \overline{z_1} \cdot z_2 = 2\operatorname{Re}(z_1 \cdot \overline{z_2})$
+		\item $|z_1|^2 \cdot |z_2|^2 = |z_1 \cdot \overline{z_2}|^2$
+		\item 延伸展开式：$|z_1 \pm z_2|^2 = |z_1|^2 + |z_2|^2 \pm 2\operatorname{Re}(z_1 \cdot \overline{z_2})$
+	\end{itemize}
+	
+	
 	\subsection{辐角与三角表示}
 	\begin{knowledge}{模与辐角}
 		
@@ -506,14 +516,112 @@
 		
 	\end{minipage}
 	\subsection{复球面与扩充复平面}
+	\subsubsection{直线与圆周的复方程}
 	\begin{minipage}[t]{0.7\textwidth}
 		
-		\begin{knowledge}{球极投影（笔记补充）}
+		\begin{knowledge}{直线的复方程}
 			
-			取与复平面切于原点$O$的球面，北极为$N$. 对平面上任一点$z$，连$Nz$，直线与球面恰交于一点$P$；反之，球面上异于$N$的每一点$P$也唯一对应平面上一点$z$. 此一一对应称为球极投影.
+			过两点$z_1,z_2$的直线$L$的参数式为
+			\[
+			z=z_1+t(z_2-z_1)\quad(t\in R).
+			\]
+			由于乘$i$相当于逆时针旋转$90^\circ$，故$i(z_2-z_1)\perp(z_2-z_1)$，
+			\[
+			z\in L \iff \operatorname{Re}\left[i(z_2-z_1)\cdot\overline{(z-z_1)}\right]=0.
+			\]
+			利用$\operatorname{Re}w=\dfrac{w+\bar w}{2}$，上式可写成共轭对称形式
+			\[
+			\left[i(z_2-z_1)\cdot\overline{z-z_1}\right]+\overline{\left[i(z_2-z_1)\cdot\overline{z-z_1}\right]}=0.
+			\]
+			展开整理即得直线的一般复方程$\bar B z+B\bar z+C=0$（$B\in C$，$B\neq0$，$C\in R$）.
 			
-			规定北极$N$对应"无穷远点"$\infty$，得扩充复平面$C^*=C\cup\{\infty\}$.
-			在球极投影下，球面上的圆对应平面上的圆或直线.
+		\end{knowledge}
+		
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.3\textwidth}
+		
+		\centering
+		\begin{tikzpicture}[scale=0.75, baseline=(current bounding box.north)]
+			\draw[->, gray!40] (-0.5,0) -- (3.5,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-0.8) -- (0,3.2) node[above] {$y$};
+			\coordinate (Z1) at (1.6,2.4);
+			\coordinate (Z2) at (2.6,-0.2);
+			\coordinate (Z) at (2.1,1.1);
+			\draw[thick] (1.3,3.18) -- (2.8,-0.72);
+			\draw[thick, DarkRed, ->] (0,0) -- (Z1);
+			\draw[thick, DarkRed, ->] (0,0) -- (Z);
+			\draw[thick, DarkRed, ->] (0,0) -- (Z2);
+			\fill (Z1) circle (2pt) node[above right] {$z_1$};
+			\fill (Z) circle (2pt) node[right] {$z$};
+			\fill (Z2) circle (2pt) node[below right] {$z_2$};
+			\node[right] at (2.65,1.7) {$L$};
+		\end{tikzpicture}
+		
+	\end{minipage}
+	\begin{minipage}[t]{0.7\textwidth}
+		
+		\begin{knowledge}{圆周的复方程}
+			
+			圆周$\partial D(z_0,R)$，圆心$z_0=a+ib$，其参数方程为
+			\[
+			z-(a+ib)=Re^{i\theta}\quad(0\le\theta\le2\pi).
+			\]
+			由$|z-z_0|^2=R^2$，即$(z-z_0)\overline{(z-z_0)}=R^2$，展开得
+			\[
+			z\bar z-\bar z_0 z-z_0\bar z+|z_0|^2-R^2=0.
+			\]
+			故圆周可表为统一形式
+			\[
+			Az\bar z+\bar B z+B\bar z+C=0\quad(A,C\in R,\ B\in C,\ A\neq0),
+			\]
+			其中以$-\dfrac{B}{A}$为圆心，$R=\dfrac{\sqrt{|B|^2-AC}}{|A|}$为半径（需$|B|^2-AC>0$）.
+			反之，当$A=0$、$B\neq0$时该形式表示直线：直线与圆周共用同一复方程.
+			
+		\end{knowledge}
+		
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.3\textwidth}
+		
+		\centering
+		\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+			\draw[->, gray!40] (-2.2,0) -- (2.2,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-2.2) -- (0,2.2) node[above] {$y$};
+			\draw[thick] (0,0) circle (1.6);
+			\coordinate (Z0) at (0,0);
+			\coordinate (Z) at (1.13,1.13);
+			\draw[thick, DarkRed, ->] (Z0) -- (Z);
+			\fill (Z0) circle (2pt) node[below left] {$z_0$};
+			\fill (Z) circle (2pt) node[above right] {$z$};
+			\node[gray] at (1.55,-1.55) {$\partial D(z_0,R)$};
+		\end{tikzpicture}
+		
+	\end{minipage}
+	\subsubsection{Riemann球面与球极投影}
+	\begin{minipage}[t]{0.7\textwidth}
+		
+		\begin{knowledge}{Riemann球面}
+			
+			取单位球面$S=\{(x,y,u)\in R^3:\ x^2+y^2+u^2=1\}$，北极$N(0,0,1)$；把复平面取为赤道面$u=0$，即$z=x+iy\leftrightarrow(x,y,0)$.
+			
+			对$z(x,y,0)$，连$Nz$交球面于另一点$P(x',y',u')$，于是$C$与$S\setminus\{N\}$之间建立一个双射；再定义无穷远点$z=\infty$，记$C_\infty=C\cup\{\infty\}$，并规定$\infty\leftrightarrow N$，即得双射$f:C_\infty\to S$（球极投影）.
+			
+			投影公式：
+			\[
+			x'=\dfrac{z+\bar z}{|z|^2+1},\quad
+			y'=\dfrac{z-\bar z}{i(|z|^2+1)},\quad
+			u'=\dfrac{|z|^2-1}{|z|^2+1};
+			\]
+			即
+			\[
+			x'+iy'=\dfrac{2z}{1+|z|^2},\quad 1-u'=\dfrac{2}{1+|z|^2};
+			\]
+			逆变换为
+			\[
+			z=\dfrac{x'+iy'}{1-u'}.
+			\]
+			（推导用到$x^2+y^2=|z|^2=z\bar z$，$2x=z+\bar z$，$2y=\dfrac{z-\bar z}{i}$.)
 			
 		\end{knowledge}
 		
@@ -523,17 +631,97 @@
 		
 		\centering
 		\begin{tikzpicture}[scale=0.85, baseline=(current bounding box.north)]
-			\draw[thick, gray] (-2.2,0) -- (2.6,0);
-			\draw[->, gray!40] (2.6,0) -- (2.9,0) node[right] {复平面};
-			\draw[thick] (0,1) circle (1);
-			\draw[dashed, gray] (0,0) -- (0,2);
-			\fill (0,2) circle (2pt) node[above] {$N$};
+			\draw[thick] (0,0) circle (1.5);
+			\draw[->, gray!40] (-2.4,0) -- (2.6,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-1.9) -- (0,2.1) node[above] {$u$};
+			\coordinate (N) at (0,1.5);
 			\coordinate (Z) at (2.2,0);
-			\draw[dashed, DarkRed] (0,2) -- (Z);
-			\fill (0.9955,1.095) circle (2pt) node[right] {$P$};
-			\fill (Z) circle (2pt) node[below right] {$z$};
+			\coordinate (P) at (1.396,0.548);
+			\draw[dashed, DarkRed] (N) -- (Z);
+			\fill (N) circle (2pt) node[above left] {$N$};
+			\fill (P) circle (2pt) node[above right] {$P(x',y',u')$};
+			\fill (Z) circle (2pt) node[below right] {$z(x,y,0)$};
 			\fill (0,0) circle (1.5pt) node[below left] {$O$};
 		\end{tikzpicture}
 		
 	\end{minipage}
+	\begin{knowledge}{球面圆周方程}
+		
+		球面上的圆周是$S$与平面的交线：
+		\[
+		\begin{cases}
+			x'^2+y'^2+u'^2=1,\\
+			a_1x'+a_2y'+a_3u'=a,
+		\end{cases}
+		\quad a_1^2+a_2^2+a_3^2=1,\ |a|<1.
+		\]
+		将投影公式代入平面方程，整理得
+		\[
+		Az\bar z+\bar B z+B\bar z+C=0,
+		\]
+		其中$A=a_3-a$，$B=a_1+ia_2$，$C=-(a_3+a)$（$A,C$为实，$B$为复）.
+		
+		1$^\circ$ 当$|B|^2-AC>0$且$A\neq0$时：为$C$上一个圆周；
+		
+		2$^\circ$ 若$S$上圆周过北极，则$a_3=a$，$A=0$，球极投影为$C$上一直线（半径为$\infty$的"圆周"）：
+		\[
+		(a_1+ia_2)\bar z+\overline{(a_1+ia_2)}z-2a=0;
+		\]
+		
+		3$^\circ$ $a=0$（最大圆周，即大圆）$\iff A+C=-2a=0$.
+		
+		结论：球极投影下，球面上的圆周与扩充复平面上的圆周或直线一一对应.
+		
+	\end{knowledge}
+	\subsubsection{球面距离}
+	\begin{minipage}[t]{0.7\textwidth}
+		
+		\begin{knowledge}{球面距离（弦距）}
+			
+			设$z_1,z_2\in C_\infty$分别对应$P_1(x_1',y_1',u_1')$，$P_2(x_2',y_2',u_2')\in S$，定义球面距离
+			\[
+			d_S(z_1,z_2)=\sqrt{(x_1'-x_2')^2+(y_1'-y_2')^2+(u_1'-u_2')^2}.
+			\]
+			代入投影公式化简得
+			\[
+			d_S(z_1,z_2)=\dfrac{2|z_1-z_2|}{\sqrt{(|z_1|^2+1)(|z_2|^2+1)}};
+			\]
+			特别地，
+			\[
+			d_S(z,\infty)=\sqrt{x'^2+y'^2+(u'-1)^2}=\dfrac{2}{\sqrt{|z|^2+1}}.
+			\]
+			注：$d_S(z_n,\infty)\to0 \iff |z_n|\to\infty$，即$z_n\to\infty$可用球面距离刻画；$d_S$使$C_\infty$成为紧度量空间.
+			
+		\end{knowledge}
+		
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.3\textwidth}
+		
+		\centering
+		\begin{tikzpicture}[scale=0.85, baseline=(current bounding box.north)]
+			\draw[thick] (0,0) circle (1.5);
+			\draw[->, gray!40] (-2.4,0) -- (2.6,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-1.9) -- (0,2.1) node[above] {$u$};
+			\coordinate (N) at (0,1.5);
+			\coordinate (Z1) at (1.2,0);
+			\coordinate (Z2) at (2.4,0);
+			\coordinate (P1) at (1.463,-0.329);
+			\coordinate (P2) at (1.348,0.657);
+			\draw[dashed, gray] (N) -- (Z1);
+			\draw[dashed, gray] (N) -- (Z2);
+			\draw[thick, SkyBlue] (P1) -- (P2);
+			\fill (N) circle (2pt) node[above left] {$N$};
+			\fill (P1) circle (2pt) node[below right] {$P_1$};
+			\fill (P2) circle (2pt) node[above right] {$P_2$};
+			\fill (Z1) circle (2pt) node[above left] {$z_1$};
+			\fill (Z2) circle (2pt) node[above right] {$z_2$};
+			\node[SkyBlue] at (2.0,-0.55) {$d_S(z_1,z_2)$};
+		\end{tikzpicture}
+		
+	\end{minipage}
+	
+	
+	
+	
 \end{document}

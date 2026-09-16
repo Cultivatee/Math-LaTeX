@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  8 SEP 2026 15:57
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  16 SEP 2026 18:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1624,7 +1624,41 @@ Overfull \hbox (1.66666pt too wide) in paragraph at lines 423--465
 []  []
  []
 
-[6] [7]
+[6] [7] [8]
+Overfull \hbox (25.38591pt too wide) detected at line 587
+[][] [] \OML/cmm/m/it/10 dy \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 d^^Z [][] [
+] dS \OT1/cmr/m/n/10 = [][] [] \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 C[]^^Z[] d
+^^Z \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 "[] \OMS/cmsy/m/n/10 ! \OT1/cmr/m/n/10
+ 0
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 578--625
+[][]  [] 
+ []
+
+[9] [10]
+Overfull \hbox (1.66666pt too wide) in paragraph at lines 661--685
+[]  [] 
+ []
+
+
+Overfull \hbox (30.97948pt too wide) detected at line 695
+\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 r\OT1/cmr/m/n/10 ) = [] [
+][] \OML/cmm/m/it/10 u\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y\OT1/cmr/m/n/10 ) \OML
+/cmm/m/it/10 dS[] \OT1/cmr/m/n/10 = [] [][] \OML/cmm/m/it/10 u\OT1/cmr/m/n/10 (
+\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 rz\OT1/cmr/m/n/10 ) \OML/
+cmm/m/it/10 r[] dS[] \OT1/cmr/m/n/10 = [] [][] \OML/cmm/m/it/10 u\OT1/cmr/m/n/1
+0 (\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 rz\OT1/cmr/m/n/10 ) \O
+ML/cmm/m/it/10 dS[]:
+ []
+
+[11]
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 732--773
+[][]  [] 
+ []
+
+[12]
 
 Package caption Warning: Unused \captionsetup[table] on input line 121.
 See the caption package documentation for explanation.
@@ -1637,21 +1671,21 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[subfigure] on input line 129.
 See the caption package documentation for explanation.
 
-[8] (./偏微分方程笔记.aux)
+[13] (./偏微分方程笔记.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `偏微分方程笔记.out' has not changed.
-(rerunfilecheck)             Checksum: D0658B10BBE98034301A5ABAD9046072;1718.
+(rerunfilecheck)             Checksum: BAC466D6951E995CD81B5B7516DD6354;1816.
  ) 
 Here is how much of TeX's memory you used:
- 32727 strings out of 468168
- 709035 string characters out of 5429579
- 1314391 words of memory out of 5000000
- 60850 multiletter control sequences out of 15000+600000
- 634468 words of font info for 105 fonts, out of 8000000 for 9000
+ 32768 strings out of 468168
+ 710951 string characters out of 5429579
+ 1317391 words of memory out of 5000000
+ 60889 multiletter control sequences out of 15000+600000
+ 634484 words of font info for 107 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,10n,111p,421b,678s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,11n,111p,421b,678s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 偏微分方程笔记.pdf (8 pages).
+Output written on 偏微分方程笔记.pdf (13 pages).

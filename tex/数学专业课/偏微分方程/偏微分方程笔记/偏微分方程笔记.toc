@@ -11,3 +11,4 @@
 \contentsline {subsection}{\numberline {3.2}物理背景与 Gauss-Green 公式}{6}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}基本解：球对称约化}{7}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Poisson 方程的解}{8}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}平均值公式}{11}{subsection.3.5}%

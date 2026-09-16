@@ -133,7 +133,7 @@
 		
 		{\LARGE \textbf{零基础偏微分方程笔记}} \\[0.5cm]
 		{\large {\kaishu 石继楷 \quad 编写}} \\[0.3cm]
-		{\normalsize \today}
+		{\normalsize 2026年9月9日}
 	\end{center}
 	\tableofcontents
 	\newpage
@@ -509,7 +509,278 @@
 			\item $u \in C^2(\mathbb{R}^n)$；
 			\item $-\Delta u = f$ 在 $\mathbb{R}^n$ 上成立.
 		\end{enumerate}
-		注：该积分即卷积 $u = \Phi * f$；证明需验证积分与二阶导数可交换，此处从略.
 	\end{knowledge}
+	
+	
+	\subsection*{Poisson方程解的证明}
+	证明分三步.
+	
+	\noindent\textbf{步1\quad 积分有意义（存在）.}
+	
+	作换元 $y \to x-y$：
+	\[
+	\int_{\mathbb{R}^n} |\Phi(x-y) f(y)|\, dy = \int_{\mathbb{R}^n} |\Phi(y) f(x-y)|\, dy.
+	\]
+	$\because f$ 有紧支集，$\therefore \exists M>0$，使 $|y|>M$ 时 $f(x-y)=0$；又 $f$ 有界，$|f(x-y)| \leq C$.
+	\[
+	\therefore \int_{\mathbb{R}^n} |\Phi(y)|\, |f(x-y)|\, dy = \int_{|y|<M} |\Phi(y)|\, |f(x-y)|\, dy \leq C \int_{|y|<M} |\Phi(y)|\, dy.
+	\]
+	1$^\circ$ 当 $n=2$，取极坐标 $y_1=\rho\cos\theta$，$y_2=\rho\sin\theta$：
+	\[
+	\int_{|y|<M} |\ln|y||\, dy = \int_0^M d\rho \int_0^{2\pi} \rho\, |\ln \rho|\, d\theta = 2\pi \int_0^M \rho\, |\ln \rho|\, d\rho < \infty.
+	\]
+	2$^\circ$ 当 $n \geq 3$：
+	\[
+	\begin{aligned}
+		\frac{1}{n(n-2)\alpha(n)} \int_{|y|<M} \frac{1}{|y|^{n-2}}\, dy &= \int_0^M d\rho \int_{\partial B(0,\rho)} \frac{1}{\rho^{n-2}}\, dS = \int_0^M \frac{1}{\rho^{n-2}} \cdot C_n \rho^{n-1}\, d\rho \\
+		&= C_n \int_0^M \rho\, d\rho < \infty,
+	\end{aligned}
+	\]
+	其中 $C_n$ 为只与 $n$ 有关的常数（由 $\partial B(0,\rho)$ 面积 $= n\alpha(n)\rho^{n-1}$ 与系数 $\frac{1}{n(n-2)\alpha(n)}$ 合并而成）. $\therefore$ 积分绝对收敛，$u(x)$ 有意义.
+	
+	\noindent\textbf{步2\quad $u$ 有偏导数 $u_{x_i}$，且 $u \in C^2(\mathbb{R}^n)$.}
+	
+	取第 $i$ 个单位向量 $e_i$，考察差商：
+	\[
+	\frac{u(x+e_i h) - u(x)}{h} = \int_{\mathbb{R}^n} \Phi(y) \cdot \frac{f(x+e_i h - y) - f(x-y)}{h}\, dy.
+	\]
+	$\exists M>0$，使 $|y|>M$，$|h|<1$ 时有 $f(x+e_i h - y) = f(x-y) = 0$. 使用中值公式（$\theta \in (0,1)$）：
+	\[
+	\left| \frac{f(x+e_i h - y) - f(x-y)}{h} \right| = |f_{x_i}(x + \theta e_i h - y)| \leq \sup_{z \in \mathbb{R}^n} |f_{x_i}(z)|.
+	\]
+	\[
+	\therefore \left| \Phi(y) \cdot \frac{f(x+e_i h - y) - f(x-y)}{h} \right| \leq C \cdot |\Phi(y)| \cdot \mathbf{1}_{\{|y| \leq M\}},
+	\]
+	右端可积（步1）. $\therefore$ 由控制收敛定理：
+	\[
+	\lim_{h \to 0} \frac{u(x+e_i h) - u(x)}{h} = \int_{\mathbb{R}^n} \Phi(y) \lim_{h \to 0} \frac{f(x+e_i h - y) - f(x-y)}{h}\, dy = \int_{\mathbb{R}^n} \Phi(y) f_{x_i}(x-y)\, dy.
+	\]
+	同理：
+	\[
+	u_{x_i x_j}(x) = \int_{\mathbb{R}^n} \Phi(y) f_{x_i x_j}(x-y)\, dy,
+	\]
+	且 $u_{x_i x_j} \in C(\mathbb{R}^n)$（即 $\lim_{x \to x_0} u_{x_i x_j}(x) = u_{x_i x_j}(x_0)$），$\therefore u \in C^2(\mathbb{R}^n)$.
+	
+	\noindent\textbf{步3\quad 证明 $-\Delta u = f$.}
+	
+	先注意
+	\[
+	\frac{\partial f(x-y)}{\partial y_i} = f_{x_i}(x-y) \cdot (-1), \quad \frac{\partial^2 f(x-y)}{\partial y_i^2} = f_{x_i x_i}(x-y) \cdot (-1) \cdot (-1) = f_{x_i x_i}(x-y).
+	\]
+	\[
+	\therefore u_{x_i x_i} = \int_{\mathbb{R}^n} \Phi(y) \frac{\partial^2 f(x-y)}{\partial y_i^2}\, dy, \quad \Delta u = \int_{\mathbb{R}^n} \Phi(y) \Delta_y f(x-y)\, dy.
+	\]
+	把积分区域拆为 $B(0,\varepsilon)$ 与 $\mathbb{R}^n \setminus B(0,\varepsilon)$：
+	\[
+	\Delta u = \int_{B(0,\varepsilon)} \Phi(y) \Delta_y f(x-y)\, dy + \int_{\mathbb{R}^n \setminus B(0,\varepsilon)} \Phi(y) \Delta_y f(x-y)\, dy = I_\varepsilon + J_\varepsilon.
+	\]
+	
+	\begin{minipage}[t]{0.7\textwidth}
+		
+		现证：当 $\varepsilon \to 0$ 时 $I_\varepsilon \to 0$，$J_\varepsilon \to -f(x)$.
+		\[
+		|I_\varepsilon| \leq \sum_{i=1}^n \sup_{z \in \mathbb{R}^n} |f_{x_i x_i}(z)| \cdot \int_{B(0,\varepsilon)} |\Phi(y)|\, dy \to 0.
+		\]
+		当 $n \geq 3$：
+		\[
+		\int_{B(0,\varepsilon)} \frac{1}{|y|^{n-2}}\, dy = \int_0^\varepsilon d\rho \int_{\partial B(0,\rho)} \frac{1}{\rho^{n-2}}\, dS = \int_0^\varepsilon \frac{1}{\rho^{n-2}} \cdot C_n \rho^{n-1}\, d\rho = \frac{C_n}{2} \varepsilon^2 \to 0
+		\]
+		（$n=2$ 时同理）.
+		分部积分公式：
+		\[
+		\int_U u_{x_i} v\, dx = \int_{\partial U} u \cdot v \cdot \nu^i\, dS - \int_U u \cdot v_{x_i}\, dx.
+		\]
+		对 $J_\varepsilon$ 使用：
+		\[
+		\begin{aligned}
+			J_\varepsilon &= \sum_{i=1}^n \int_{\mathbb{R}^n \setminus B(0,\varepsilon)} \Phi(y) \frac{\partial^2 f(x-y)}{\partial y_i^2}\, dy \\
+			&= \sum_{i=1}^n \left[ \int_{\partial B(0,\varepsilon)} \Phi(y) \frac{\partial f(x-y)}{\partial y_i} \nu^i\, dS - \int_{\mathbb{R}^n \setminus B(0,\varepsilon)} \Phi_{y_i}(y) \frac{\partial f(x-y)}{\partial y_i}\, dy \right] \\
+			&= L_\varepsilon + K_\varepsilon.
+		\end{aligned}
+		\]
+		\[
+		|L_\varepsilon| \leq \sum_{i=1}^n \sup_{z \in \mathbb{R}^n} |f_{x_i}(z)| \cdot \int_{\partial B(0,\varepsilon)} |\Phi(y)|\, dS.
+		\]
+		当 $n=2$ 时，$\int_{\partial B(0,\varepsilon)} |\ln|y||\, dS = |\ln \varepsilon| \cdot 2\pi \varepsilon \to 0$；
+		当 $n \geq 3$ 时，$\int_{\partial B(0,\varepsilon)} \frac{1}{|y|^{n-2}}\, dS = \frac{1}{\varepsilon^{n-2}} \cdot C_n \varepsilon^{n-1} = C_n \varepsilon \to 0$.
+		$\therefore L_\varepsilon \to 0$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.3\textwidth}
+		
+		\centering
+		\begin{tikzpicture}[scale=0.85, baseline=(current bounding box.north)]
+			\draw[thick, gray] (-2.1,-1.7) rectangle (2.1,1.7);
+			\draw[->, gray!40] (-2.1,0) -- (2.1,0);
+			\draw[->, gray!40] (0,-1.7) -- (0,1.7);
+			\draw[thick, fill=LightPink] (0,0) circle (0.75);
+			\fill (0,0) circle (2pt) node[below left] {$0$};
+			\draw[thick, DarkRed] (0,0) -- (0.53,0.53);
+			\node[above left, DarkRed] at (0.5,0.5) {$\varepsilon$};
+			\node[DarkRed] at (0,-0.35) {$I_\varepsilon$};
+			\node at (1.4,1.2) {$J_\varepsilon$};
+			\node[gray] at (0,-2.05) {$\mathbb{R}^n$ 拆为 $B(0,\varepsilon)$ 与其补};
+		\end{tikzpicture}
+	\end{minipage}
+	
+	对 $K_\varepsilon$ 再次使用分部积分公式：
+	\[
+	K_\varepsilon = -\sum_{i=1}^n \left[ \int_{\partial B(0,\varepsilon)} \Phi_{y_i}(y) f(x-y) \nu^i\, dS - \int_{\mathbb{R}^n \setminus B(0,\varepsilon)} \Phi_{y_i y_i}(y) f(x-y)\, dy \right],
+	\]
+	其中第二项 $= \int \Delta \Phi \cdot f\, dy = 0$（$\Phi$ 在 $\mathbb{R}^n \setminus \{0\}$ 上调和）.
+	当 $n \geq 3$：
+	\[
+	\Phi_{y_i}(y) = \frac{\partial}{\partial y_i} \left[ \frac{1}{n(n-2)\alpha(n)} \cdot \frac{1}{|y|^{n-2}} \right] = -\frac{1}{n\alpha(n)} \cdot \frac{y_i}{|y|^n};
+	\]
+	在 $\partial B(0,\varepsilon)$ 上，区域 $\mathbb{R}^n \setminus B(0,\varepsilon)$ 的外法向指向原点：$\nu = -\frac{y}{|y|}$，$\nu^i = -\frac{y_i}{|y|}$.
+	\[
+	\begin{aligned}
+		\therefore K_\varepsilon &= -\sum_{i=1}^n \int_{\partial B(0,\varepsilon)} \frac{1}{n\alpha(n)} \cdot \frac{y_i}{|y|^n} \cdot \frac{y_i}{|y|} \cdot f(x-y)\, dS_{(y)} = -\int_{\partial B(0,\varepsilon)} \frac{1}{n\alpha(n)} \cdot \frac{1}{|y|^{n-1}} f(x-y)\, dS_{(y)} \\
+		&= -\frac{1}{n\alpha(n) \varepsilon^{n-1}} \int_{\partial B(0,\varepsilon)} f(x-y)\, dS_{(y)}.
+	\end{aligned}
+	\]
+	$\because \varepsilon^n \alpha(n) = \int_{|x|<\varepsilon} dx = \int_0^\varepsilon d\rho \int_{\partial B(0,\rho)} dS$，$\therefore n \varepsilon^{n-1} \alpha(n) = \int_{\partial B(0,\varepsilon)} dS$，即 $n\alpha(n)\varepsilon^{n-1}$ 是球面 $\partial B(0,\varepsilon)$ 的面积.
+	\[
+	\therefore |K_\varepsilon - (-f(x))| \leq \frac{1}{n\alpha(n)\varepsilon^{n-1}} \int_{\partial B(0,\varepsilon)} |f(x-y) - f(x)|\, dS_{(y)} \leq \sup_{y \in \partial B(0,\varepsilon)} |f(x-y) - f(x)| \to 0.
+	\]
+	当 $n=2$ 时，$\Phi(y) = -\frac{1}{2\pi} \ln|y|$，$\Phi_{y_i} = -\frac{1}{2\pi} \cdot \frac{y_i}{|y|^2}$，
+	\[
+	K_\varepsilon = -\sum_{i=1}^n \int_{\partial B(0,\varepsilon)} -\frac{1}{2\pi} \cdot \frac{y_i}{|y|^2} \cdot \left(-\frac{y_i}{|y|}\right) f(x-y)\, dS_{(y)} = -\frac{1}{2\pi} \cdot \frac{1}{\varepsilon} \int_{\partial B(0,\varepsilon)} f(x-y)\, dS_{(y)},
+	\]
+	（利用 $\sum_{i} y_i^2 = |y|^2 = \varepsilon^2$，且 $|\partial B(0,\varepsilon)| = 2\pi\varepsilon$）
+	\[
+	|K_\varepsilon - (-f(x))| \leq \sup_{y \in \partial B(0,\varepsilon)} |f(x-y) - f(x)| \to 0.
+	\]
+	综上，$\Delta u = I_\varepsilon + J_\varepsilon = I_\varepsilon + L_\varepsilon + K_\varepsilon \to -f(x)$（$\varepsilon \to 0$），而左端与 $\varepsilon$ 无关，
+	\[
+	\therefore -\Delta u = f. \quad \blacksquare
+	\]
+	
+	\subsection{平均值公式}
+	
+	\begin{minipage}[t]{0.7\textwidth}
+		\begin{knowledge}
+		\noindent\textbf{定理（平均值公式）}\quad 若 $u$ 为 $U$ 上的调和函数，则对每个 $B(x,r) \subseteq U$：
+		\[
+		u(x) = \frac{1}{n\alpha(n) r^{n-1}} \int_{\partial B(x,r)} u(y)\, dS_{(y)} = \frac{1}{\alpha(n) r^n} \int_{B(x,r)} u(y)\, dy,
+		\]
+		即调和函数在球心之值等于其球面平均，也等于其球体平均；反过来也成立（连续函数若对每个球都满足平均值性质，则必为调和函数）.
+		\end{knowledge}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.3\textwidth}
+		
+		\centering
+		\begin{tikzpicture}[scale=0.85, baseline=(current bounding box.north)]
+			\draw[->, gray!40] (-2.4,0) -- (2.4,0) node[right] {$x_1$};
+			\draw[->, gray!40] (0,-2.4) -- (0,2.4) node[above] {$x_2$};
+			\draw[thick, fill=LightBlue] (0.2,0.1) circle (1.5);
+			\fill (0.2,0.1) circle (2pt) node[below left] {$x$};
+			\draw[thick, DarkRed] (0.2,0.1) -- (1.26,1.16);
+			\node[above left, DarkRed] at (0.75,0.65) {$r$};
+			\node[above right] at (1.26,1.16) {$\partial B(x,r)$};
+			\node[below] at (0.2,-0.6) {$B(x,r)$};
+		\end{tikzpicture}
+	\end{minipage}
+	
+	\noindent\textbf{证明}\quad 证明分五步：换元与面积元相消、积分号下求导、换回并用 Gauss-Green、定常数取极限、球体平均.
+	
+	\noindent\textbf{步1（换元与面积元相消）}\quad 映射 $y = x + rz$ 把单位球面 $\partial B(0,1)$ 映到 $\partial B(x,r)$. 球面为 $(n-1)$ 维，每个切方向均被拉伸 $r$ 倍，故面积元满足
+	\[
+	dS_{(y)} = r^{n-1}\, dS_{(z)}.
+	\]
+	代入球面平均的定义：
+	\[
+	\phi(r) = \frac{1}{n\alpha(n) r^{n-1}} \int_{\partial B(x,r)} u(y)\, dS_{(y)} = \frac{1}{n\alpha(n) r^{n-1}} \int_{\partial B(0,1)} u(x+rz)\, r^{n-1}\, dS_{(z)} = \frac{1}{n\alpha(n)} \int_{\partial B(0,1)} u(x+rz)\, dS_{(z)}.
+	\]
+	分母的 $r^{n-1}$ 与面积元带来的 $r^{n-1}$ 恰好相消；换元后积分域 $\partial B(0,1)$ 不再依赖 $r$.
+	
+	\noindent\textbf{步2（积分号下求导）}\quad $\because u \in C^2(U)$，$\therefore$ 被积函数 $F(r,z) = u(x+rz)$ 与 $\dfrac{\partial F}{\partial r} = Du(x+rz) \cdot z$ 在 $(0,r_0) \times \partial B(0,1)$ 上连续，且积分域固定，由 Leibniz 法则可在积分号下求导：
+	\[
+	\phi'(r) = \frac{1}{n\alpha(n)} \int_{\partial B(0,1)} \frac{d}{dr} u(x+rz)\, dS_{(z)} = \frac{1}{n\alpha(n)} \int_{\partial B(0,1)} Du(x+rz) \cdot z\, dS_{(z)}.
+	\]
+	
+	\noindent\textbf{步3（换回并用 Gauss-Green）}\quad 换回 $y = x+rz$，此时 $z = \dfrac{y-x}{r} = \nu$（$\partial B(x,r)$ 上的单位外法向），且 $dS_{(z)} = r^{-(n-1)} dS_{(y)}$：
+	\[
+	\phi'(r) = \frac{1}{n\alpha(n) r^{n-1}} \int_{\partial B(x,r)} Du(y) \cdot \frac{y-x}{r}\, dS_{(y)} = \frac{1}{n\alpha(n) r^{n-1}} \sum_{i=1}^n \int_{\partial B(x,r)} u_{y_i}(y)\, \nu^i\, dS_{(y)}.
+	\]
+	在 Gauss-Green 公式 $\displaystyle \int_U w_{x_i}\, dx = \int_{\partial U} w\, \nu^i\, dS$（即分部积分公式取 $v \equiv 1$，体积分项为 $0$）中取 $w = u_{y_i}$，$U = B(x,r)$：
+	\[
+	\int_{\partial B(x,r)} u_{y_i}\, \nu^i\, dS = \int_{B(x,r)} u_{y_i y_i}\, dy.
+	\]
+	对 $i$ 求和：
+	\[
+	\phi'(r) = \frac{1}{n\alpha(n) r^{n-1}} \sum_{i=1}^n \int_{B(x,r)} u_{y_i y_i}(y)\, dy = \frac{1}{n\alpha(n) r^{n-1}} \int_{B(x,r)} \Delta u\, dy = 0.
+	\]
+	
+	\noindent\textbf{步4（定常数并取极限）}\quad $\therefore \phi'(r) \equiv 0$ 于 $(0,r_0)$，$\phi$ 为常数. 又 $\because u$ 连续，
+	\[
+	|\phi(r) - u(x)| \leq \sup_{y \in \partial B(x,r)} |u(y) - u(x)| \to 0 \quad (r \to 0),
+	\]
+	$\therefore \phi(r) = \lim_{r \to 0} \phi(r) = u(x)$，即球面平均 $= u(x)$.
+	
+	\noindent\textbf{步5（球体平均）}\quad 由逐层分解（coarea）：
+	\[
+	\begin{aligned}
+		\frac{1}{\alpha(n) r^n} \int_{B(x,r)} u(y)\, dy &= \frac{1}{\alpha(n) r^n} \int_0^r d\rho \int_{\partial B(x,\rho)} u(y)\, dS_{(y)} = \frac{1}{\alpha(n) r^n} \int_0^r u(x) \cdot n\alpha(n)\, \rho^{n-1}\, d\rho \\
+		&= \frac{u(x)}{r^n} \int_0^r n \rho^{n-1}\, d\rho = u(x). \quad \blacksquare
+	\end{aligned}
+	\]
+	
+	\noindent\textbf{接下来证明反过来也成立：连续函数若对每个球都满足平均值性质，则必为调和函数}
+	
+	\begin{minipage}[t]{0.7\textwidth}
+		
+		\noindent\textbf{证明（反证法）}\quad 假设 $\Delta u(x) \neq 0$ 对某个 $x \in U$ 成立；不妨设 $\Delta u(x) > 0$（否则将 $u$ 换为 $-u$，论证完全相同）.
+		
+		$\because u \in C^2(U)$，$\therefore \Delta u$ 在 $U$ 上连续，$\therefore \exists r_0 > 0$，使 $\overline{B(x,r_0)} \subseteq U$，且
+		\[
+		\Delta u(y) > 0, \quad \forall y \in B(x, r_0).
+		\]
+		定义球面平均
+		\[
+		\phi(r) = \frac{1}{n\alpha(n) r^{n-1}} \int_{\partial B(x,r)} u(y)\, dS_{(y)}, \quad 0 < r \leq r_0.
+		\]
+		由假设 $\phi(r) = u(x)$ 与 $r$ 无关（为常数），$\therefore \phi'(r) \equiv 0$.
+		
+		另一方面，重复正方向步1--步3 的计算（换元、积分号下求导、对 $v \equiv 1$ 用 Gauss-Green 公式）：
+		\[
+		\phi'(r) = \frac{1}{n\alpha(n) r^{n-1}} \sum_{i=1}^n \int_{B(x,r)} u_{y_i y_i}(y)\, dy = \frac{1}{n\alpha(n) r^{n-1}} \int_{B(x,r)} \Delta u(y)\, dy.
+		\]
+		当 $0 < r < r_0$ 时，被积函数在 $B(x,r)$ 上恒正，$\therefore \phi'(r) > 0$.
+		
+		这与 $\phi'(r) = 0$ 矛盾（this is a contradiction）. $\therefore \Delta u(x) = 0$ 对一切 $x \in U$ 成立，即 $\Delta u = 0$，$u$ 为调和函数. $\blacksquare$
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.3\textwidth}
+		
+		\centering
+		\begin{tikzpicture}[scale=0.85, baseline=(current bounding box.north)]
+			\draw[->, gray!40] (-2.4,0) -- (2.4,0) node[right] {$x_1$};
+			\draw[->, gray!40] (0,-2.4) -- (0,2.4) node[above] {$x_2$};
+			\draw[thick, fill=LightPink] (0.2,0.1) circle (1.6);
+			\draw[thick, DarkRed] (0.2,0.1) circle (0.9);
+			\fill (0.2,0.1) circle (2pt) node[below left] {$x$};
+			\draw[thick, DarkRed] (0.2,0.1) -- (1.1,0.1);
+			\node[below, DarkRed] at (0.65,0.05) {$r$};
+			\draw[thick, SkyBlue] (0.2,0.1) -- (1.33,1.23);
+			\node[above left, SkyBlue] at (0.95,0.85) {$r_0$};
+			\node at (0.2,-0.5) {$\Delta u>0$};
+			\node[above left, DarkRed] at (-0.42,0.95) {$\partial B(x,r)$};
+			\node[below right, SkyBlue] at (1.15,1.4) {$\partial B(x,r_0)$};
+		\end{tikzpicture}
+	\end{minipage}
+	
+	\noindent\textbf{注}\quad 综合正、反两个方向，对 $u \in C^2(U)$，下列三条等价：
+	\begin{enumerate}[label=\arabic*$^\circ$, left=0pt]
+		
+		\item $u$ 调和，即 $\Delta u = 0$；
+		\item 对每个 $B(x,r) \subseteq U$，球面平均等于 $u(x)$；
+		\item 对每个 $B(x,r) \subseteq U$，球体平均等于 $u(x)$.
+	\end{enumerate}
+	
+	（2$^\circ$ 与 3$^\circ$ 的等价性由逐层分解（coarea）公式即得：球体平均可写成球面平均对半径的加权积分.）
+	
+	
 	
 \end{document}
