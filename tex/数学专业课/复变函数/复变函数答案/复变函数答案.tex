@@ -1,0 +1,205 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=2.5cm,   
+	right=2.5cm,   
+	top=2.5cm,      
+	bottom=2.5cm,  
+	headheight=13.6pt
+}
+
+% 最简单、最稳定的中文方案（自动适配系统，永不报错）
+\usepackage[UTF8, scheme=plain]{ctex}
+
+% 设置英文默认字体为 Times New Roman
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parskip}{4pt}
+
+\usepackage{array}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{
+	arrows.meta, 
+	calc, 
+	patterns, 
+	decorations.pathmorphing, 
+	backgrounds, 
+	positioning, 
+	fit, 
+	shapes.geometric, 
+	intersections, 
+	through, 
+	angles, 
+	quotes,
+	plotmarks
+}
+
+%目录超链接
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=magenta,      
+	urlcolor=cyan,
+}
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{2ex}
+\setlength{\cftbeforesubsecskip}{1ex}
+\setlength{\cftbeforesubsubsecskip}{1ex}
+
+% 定义代码颜色
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{NavyBlue}{RGB}{0,0,128}
+\definecolor{PineGreen}{RGB}{1,121,111}
+
+% 配置 listings 环境
+\lstset{
+	language=TeX,
+	tabsize=4,
+	captionpos=b,
+	numbers=left,
+	numbersep=1em,
+	sensitive=true,
+	showtabs=false,
+	frame=shadowbox,
+	breaklines=true,
+	keepspaces=true,
+	showspaces=false,
+	showstringspaces=false,
+	breakatwhitespace=false,
+	basicstyle=\ttfamily\normalsize,
+	keywordstyle=\color{NavyBlue},
+	commentstyle=\color{codegreen},
+	numberstyle=\color{black},
+	stringstyle=\color{PineGreen!90!black},
+	rulesepcolor=\color{red!20!green!20!blue!20},
+	escapeinside={/@}{@/},
+}
+
+\definecolor{LightGreen}{rgb}{0.9, 0.95, 0.9}
+\definecolor{LightBlue}{RGB}{229, 238, 255}
+\definecolor{LightPink}{RGB}{255, 229, 237}
+\definecolor{LineBlue}{RGB}{0, 90, 160}
+\definecolor{PinRed}{RGB}{190, 30, 45}
+
+\captionsetup[table]{
+	justification=centering,
+	labelsep=quad,
+	font={bf}
+}
+\captionsetup[figure]{
+	justification=centering,
+	labelsep=quad,
+	font={bf}
+}
+\captionsetup[subfigure]{
+	font={bf}
+}
+
+\begin{document}
+
+
+\begin{center}
+	{\LARGE \textbf{复变函数答案}} \\[0.5cm]
+	{\large {\kaishu 石继楷 \quad 编写}} \\[0.3cm]
+	{\normalsize 2026年9月21日}
+\end{center}
+
+\section{习题一}
+
+\noindent
+\begin{minipage}[t]{0.5\textwidth}
+	
+	\textbf{16.}\quad 证明:\\[4pt]
+	\textbf{一、$\partial E\cup E\subseteq E'$}\\[2pt]
+	$1^\circ$ $E\subseteq E'$:\\
+	设 $z_0\in E$.\\
+	$\because E$ 为开集,\\
+	$\therefore\exists r>0$ 使 $B(z_0,r)\subseteq E$.\\
+	$\forall\varepsilon>0$, 取 $w=z_0+\frac{1}{2}\min(r,\varepsilon)$,\\
+	则 $0<|w-z_0|<\min(r,\varepsilon)$,\\
+	$\therefore w\in E$ 且 $w\in B(z_0,\varepsilon)\setminus\{z_0\}$,\\
+	$\therefore z_0\in E'$, 即 $E\subseteq E'$.\\[4pt]
+	$2^\circ$ $\partial E\subseteq E'$:\\
+	设 $z_0\in\partial E$.\\
+	若 $z_0\in E$, 由 $1^\circ$ 知 $z_0\in E'$;\\
+	若 $z_0\notin E$,\\
+	$\because z_0\in\partial E$,\\
+	$\therefore\forall\varepsilon>0$, $B(z_0,\varepsilon)\cap E\neq\varnothing$,\\
+	且其中各点均异于 $z_0$,\\
+	$\therefore\big(B(z_0,\varepsilon)\setminus\{z_0\}\big)\cap E\neq\varnothing$,\\
+	$\therefore z_0\in E'$.\\
+	综上, $\partial E\cup E\subseteq E'$.\\[4pt]
+	\textbf{二、$E'\subseteq\partial E\cup E$}\\[2pt]
+	设 $z_0\in E'$.\\
+	若 $z_0\in E$, 结论已成立;\\
+	若 $z_0\notin E$,\\
+	$\because z_0\in E'$,\\
+	$\therefore\forall\varepsilon>0$, $\big(B(z_0,\varepsilon)\setminus\{z_0\}\big)\cap E\neq\varnothing$,\\
+	$\therefore B(z_0,\varepsilon)\cap E\neq\varnothing$;\\
+	又 $\because z_0\notin E$,\\
+	$\therefore z_0\in B(z_0,\varepsilon)\cap E^c$,\\
+	$\therefore B(z_0,\varepsilon)\cap E^c\neq\varnothing$,\\
+	$\therefore z_0\in\partial E$.\\
+	综上, $E'\subseteq\partial E\cup E$.\\[4pt]
+	综合一、二, $E'=\partial E\cup E$. $\blacksquare$
+	
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}
+	
+	\centering
+	\begin{tikzpicture}[baseline=(current bounding box.north), scale=1.5]
+		
+		% 开圆盘: 虚线边界不属于 E
+		\fill[LightBlue,opacity=0.6] (0,0) circle (1.6cm);
+		\draw[LineBlue,dashed,line width=0.9pt] (0,0) circle (1.6cm);
+		\node[LineBlue,font=\scriptsize] at (-0.75,1.0) {$E$};
+		
+		% 内点及其邻域: 整个含于 E
+		\coordinate (z0) at (0.2,0.0);
+		\fill[LineBlue] (z0) circle (1.5pt);
+		\draw[LineBlue,line width=0.7pt] (z0) circle (0.45cm);
+		\node[LineBlue,font=\scriptsize,anchor=north east] at (-0.05,-0.42) {$z_0\in E$};
+		\node[LineBlue,font=\scriptsize,anchor=south west] at (0.52,0.40) {$B(z_0,r)$};
+		
+		% 边界点及其邻域: 与 E 的交非空(粉色), 与 E^c 的交也非空
+		\coordinate (z1) at (45:1.6);
+		\begin{scope}
+			\clip (0,0) circle (1.6cm);
+			\fill[LightPink,opacity=0.9] (z1) circle (0.45cm);
+		\end{scope}
+		\fill[PinRed] (z1) circle (1.5pt);
+		\draw[PinRed,line width=0.7pt] (z1) circle (0.45cm);
+		\node[PinRed,font=\scriptsize,anchor=south west] at (1.28,1.34) {$z_1\in\partial E$};
+		\node[PinRed,font=\scriptsize,anchor=west] at (1.62,0.95) {$B(z_1,\varepsilon)$};
+		
+		% 图注
+		\node[font=\scriptsize,align=center] at (0,-2.2) {粉色区域为 $B(z_1,\varepsilon)\cap E\neq\varnothing$;\\ 而 $B(z_0,r)\subseteq E$};
+		
+	\end{tikzpicture}
+	
+\end{minipage}
+
+
+
+\end{document}

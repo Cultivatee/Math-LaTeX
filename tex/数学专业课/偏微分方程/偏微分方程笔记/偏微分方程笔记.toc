@@ -12,3 +12,4 @@
 \contentsline {subsection}{\numberline {3.3}基本解：球对称约化}{7}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Poisson 方程的解}{8}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}平均值公式}{11}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}调和函数的性质}{13}{subsection.3.6}%

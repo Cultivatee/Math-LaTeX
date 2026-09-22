@@ -1321,6 +1321,329 @@ $f(0)=1-4=-3<0$，$f(-1)<0$，(2)不成立.
 
 \section{高一上学期秋季}
 
+\subsection{第一讲\quad 解不等式}
+
+\subsubsection{解一元二次不等式}
+\begin{knowledge}{根与系数的关系}
+	由解集反推系数；由系数讨论解集.
+\end{knowledge}
+
+\category{由解求系数}
+\begin{question}
+	$x^2+ax+b<0\to-2<x<3$，则$a=?$，$b=?$
+\end{question}
+
+$x_1+x_2=-a=-2+3 \implies a=-1$.
+
+$x_1x_2=b=-2\times3=-6$.
+
+$\therefore a=-1$，$b=-6$.
+
+\category{思维延伸}
+\begin{question}
+	$ax^2+bx+c>0\to-\dfrac{1}{2}<x<2$，则$cx^2+bx+a<0$的解？
+\end{question}
+
+$\because >0$但取中间.
+
+$\therefore a<0$.
+
+$\begin{cases} x_1+x_2=-\dfrac{b}{a}=-\dfrac{1}{2}+2 \\ x_1x_2=\dfrac{c}{a}=-\dfrac{1}{2}\times2 \end{cases} \implies b=-\dfrac{3}{2}a$，$c=-a$.
+
+$cx^2+bx+a<0 \implies -ax^2-\dfrac{3}{2}ax+a<0 \implies -x^2-\dfrac{3}{2}x+1>0$.
+
+$\therefore -2<x<\dfrac{1}{2}$.
+
+
+
+\begin{knowledge}{含参不等式}
+
+遇到$ax^2+(a-2)x-2\geq0$.
+
+
+因式分解：$(ax-2)(x+1)\geq0$，根$x=\dfrac{2}{a}$，$x=-1$.
+
+方法：
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $a=0$.
+	
+	\item $a>0$.
+	
+	\item $a<0$：再讨论两根大小等.
+	
+\end{enumerate}
+
+综上：先把$x_1,x_2$表示出来，再讨论$x_1,x_2$的大小.
+
+\end{knowledge}
+
+
+\category{含参不等式}
+\begin{question}
+	$12x^2-ax>a^2$.
+\end{question}
+
+$x_1=-\dfrac{a}{4}$，$x_2=\dfrac{a}{3}$.
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $-\dfrac{a}{4}=\dfrac{a}{3}$：$a=0$，$x\neq0$.
+	
+	\item $-\dfrac{a}{4}<\dfrac{a}{3}$：$a>0$，$x<-\dfrac{a}{4}$或$x>\dfrac{a}{3}$.
+	
+	\item $-\dfrac{a}{4}>\dfrac{a}{3}$：$a<0$，$x<\dfrac{a}{3}$或$x>-\dfrac{a}{4}$.
+	
+\end{enumerate}
+
+
+
+\subsubsection{解绝对值不等式}
+\begin{knowledge}{方法}
+	通解通法：分类讨论法（高二常用）.
+	
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 分类讨论法.
+		
+		\item 几何意义法.
+		
+		\item 平方法.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{分类讨论}
+\begin{question}
+	$|x|<1$.
+\end{question}
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $x\geq0$：$x<1$，则$0\leq x<1$.
+	
+	\item $x<0$：$x>-1$，则$-1<x<0$.
+	
+\end{enumerate}
+
+合并：综上，$-1<x<1$.
+
+
+\subsection{第二讲\quad 集合}
+
+\subsubsection{集合与元素}
+\begin{knowledge}{数系}
+	实数$+$虚数$=$复数$C$（complex）.
+\end{knowledge}
+
+\category{至多一个元素}
+\begin{question}
+	$A=\{x|kx^2-2x+3k=0\}$至多有一个元素，则$k$值所构成的集合.
+\end{question}
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $k=0$：$-2x=0$，一个元素.
+	
+	\item $k\neq0$：$\Delta\leq0$：$4-12k^2\leq0 \implies k\leq-\dfrac{\sqrt{3}}{3}$或$k\geq\dfrac{\sqrt{3}}{3}$.
+	
+\end{enumerate}
+
+综上：$\left\{k\middle|k=0\text{或}k\leq-\dfrac{\sqrt{3}}{3}\text{或}k\geq\dfrac{\sqrt{3}}{3}\right\}$.
+
+\subsubsection{集合之间的关系}
+\begin{knowledge}{子集个数}
+	$A$有$n$个元素，则：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 子集个数$=2^n$个.
+		
+		\item 真子集$=2^n-1$个.
+		
+		\item 非空子集$=2^n-1$个.
+		
+		\item 非空真子集$=2^n-2$个.
+		
+	\end{enumerate}
+	
+	总结：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 判断集合大小关系.
+		
+		\item 大范围含参：数轴列不等式.
+		
+		\item 小范围含参：子集，数轴列不等式.
+		
+	\end{enumerate}
+\end{knowledge}
+
+
+\subsection*{第二讲（转A+）\quad 简易逻辑与基本不等式}
+
+\subsubsection{命题与量词}
+\begin{knowledge}{量词与否定}
+	
+	$\forall$任意一个；$\exists$存在一个.
+	
+	全称量词命题的否定；存在量词命题的否定.
+	
+	量词：$\forall\to\exists$，$\exists\to\forall$.
+	
+	结论：是$\to$不是；$=\to\neq$；$>\to\leq$.
+\end{knowledge}
+
+\category{写否定}
+\begin{question}
+	$P:\forall x\in R,\ x^2+x+\dfrac{1}{2}>0$；$Q:\exists x_0,y_0\in R,\ \sqrt{(x_0+1)^2}+(y_0-1)^2=0$. 写出否定.
+\end{question}
+
+$\neg P:\exists x\in R,\ x^2+x+\dfrac{1}{2}\leq0$.
+
+$\neg Q:\forall x_0,y_0\in R,\ \sqrt{(x_0+1)^2}+(y_0-1)^2\neq0$.
+
+\subsubsection{充分必要条件}
+\begin{knowledge}{判断}
+	前$\to$后：充分；后$\to$前：必要.
+	
+	小范围推大范围.
+\end{knowledge}
+
+\category{充分/必要条件}
+\begin{question}
+	$P:(a-4)x^2+2(a-4)x-4<0$解集为$R$；$Q:0<a<4$，则$P$是$Q$的什么条件.
+\end{question}
+
+$P$：
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $a=4$：$-4<0$恒成立.
+	
+	\item $a\neq4$：$\begin{cases} a-4<0 \\ \Delta<0 \end{cases} \implies \begin{cases} a<4 \\ 0<a<4 \end{cases} \implies 0<a<4$.
+	
+\end{enumerate}
+
+综上$0<a\leq4$.
+
+$\because Q$的范围比$P$小.
+
+$\therefore P$是$Q$的必要不充分条件.
+
+\category{且与否命题}
+\begin{question}
+	$P:a<x<3a$，$Q:2<x\leq3$.(1)$a=1$时，$P,Q$正确，则$x$范围；(2)$\neg P$是$\neg Q$充分不必要，则$a$范围.
+\end{question}
+
+(1) $P:1<x<3$；$Q:2<x\leq3$.
+
+$\therefore$ 交：$2<x<3$.
+
+(2) $\because \neg P$是$\neg Q$充分不必要.
+
+$\therefore \neg P$小，$\neg Q$大，即$P$大，$Q$小：$Q\subseteq P$.
+
+$\begin{cases} 3a>3 \\ a\leq2 \end{cases} \implies 1<a\leq2$.
+
+
+\category{与x轴有交点}
+\begin{question}
+	$f(x)=mx^2+2x+m$与$x$轴有交点，$m$范围.
+\end{question}
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $m=0$：$f(x)=2x$，有交点.
+	
+	\item $m\neq0$时：$\Delta\geq0$：$-1\leq m<0$或$0<m\leq1$.
+	
+\end{enumerate}
+
+综上：$-1\leq m\leq1$.
+
+\subsubsection{基本不等式}
+\begin{knowledge}{基本不等式与补充}
+	$a+b\geq2\sqrt{ab}$.
+	
+	补：$\sqrt{\dfrac{a^2+b^2}{2}}\geq\dfrac{a+b}{2}\geq\sqrt{ab}$.
+	
+	动整式不动分式；动常数不动变量；凑所求式的倍数.
+	
+	求和表示积；求积表示和；设$t$.
+\end{knowledge}
+
+\category{过关：凑定值}
+\begin{question}
+	$a>0,b>1$，$a+b=2$，$\sqrt{a(b-1)}$最大值？
+\end{question}
+
+$a+b-1=1$.
+
+$a+b-1\geq2\sqrt{a(b-1)}$.
+
+$\therefore 1\geq2\sqrt{a(b-1)}$，即最大值$\dfrac{1}{2}$.
+
+\category{思维延伸}
+\begin{question}
+	$x>0,y>0$，$x+2y=5$，则$\dfrac{(x+1)(2y+1)}{\sqrt{xy}}$最小值？
+\end{question}
+
+原式$=\dfrac{2xy+x+2y+1}{\sqrt{xy}}=\dfrac{2xy+6}{\sqrt{xy}}=2\sqrt{xy}+\dfrac{6}{\sqrt{xy}}\geq4\sqrt{3}$.
+
+\category{过关2：乘1法}
+\begin{question}
+	$ab>0$，$a+b=5$，则$\dfrac{2}{a+1}+\dfrac{1}{b+1}$最小值？
+\end{question}
+
+$a+1+b+1=7$（形成分母）.
+
+$\left(\dfrac{2}{a+1}+\dfrac{1}{b+1}\right)(a+1+b+1)\times\dfrac{1}{7}\geq(3+2\sqrt{2})\times\dfrac{1}{7}$.
+
+$\therefore$ 最小值$=\dfrac{3+2\sqrt{2}}{7}$.
+
+\category{师补：设t}
+\begin{question}
+	$x+y+xy=8$，$(x+y)_{\min}$？
+\end{question}
+
+$xy=8-(x+y)$；$xy\leq\left(\dfrac{x+y}{2}\right)^2$.
+
+设$t=x+y$：$8-t\leq\dfrac{t^2}{4}$.
+
+$t\geq4$.
+
+\category{思维1}
+\begin{question}
+	$x+3y-5xy=0$，$(4x+3y)_{\min}$？
+\end{question}
+
+$x+3y=5xy \implies \dfrac{1}{y}+\dfrac{3}{x}=5$（再乘1法）.
+
+\category{思维2}
+\begin{question}
+	$x+y=16$，$\dfrac{xy}{4x+y}$ max？
+\end{question}
+
+$\dfrac{xy}{4x+y}=\dfrac{1}{\frac{4}{y}+\frac{1}{x}}$.
+
+形成条件：$\left(\dfrac{4}{y}+\dfrac{1}{x}\right)_{\min}$（乘1法）.
+
+\category{极限}
+\begin{question}
+	$a>1,b>1$，$ab-(a+b)=1$，$a+b$？$ab$？
+\end{question}
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $ab=a+b+1\leq\left(\dfrac{a+b}{2}\right)^2$；设$a+b=t$：$t+1\leq\dfrac{t^2}{4} \implies t\geq2+2\sqrt{2}$.
+	
+	\item $ab-1=a+b\geq2\sqrt{ab}$；设$\sqrt{ab}=t$：$t^2-2t-1\geq0 \implies t\geq1+\sqrt{2}$.
+	
+\end{enumerate}
+
+$\therefore ab\geq(1+\sqrt{2})^2=3+2\sqrt{2}$.
+
+
+
 
 
 

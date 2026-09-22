@@ -1,165 +1,174 @@
-\contentsline {section}{\numberline {1}初升高暑期数学}{7}{section.1}%
-\contentsline {subsection}{\numberline {1.1}第一讲\hskip 1em\relax 二次方程拓展}{7}{subsection.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1}因式分解}{7}{subsubsection.1.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.2}解含参方程}{7}{subsubsection.1.1.2}%
-\contentsline {subsubsection}{\numberline {1.1.3}韦达定理}{8}{subsubsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.2}第二讲\hskip 1em\relax 解不等式}{8}{subsection.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}不等式的性质}{8}{subsubsection.1.2.1}%
-\contentsline {subsubsection}{\numberline {1.2.2}解一元二次不等式}{9}{subsubsection.1.2.2}%
-\contentsline {subsubsection}{\numberline {1.2.3}解分式不等式}{10}{subsubsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.3}第三讲\hskip 1em\relax 解含参不等式}{10}{subsection.1.3}%
-\contentsline {subsubsection}{\numberline {1.3.1}解绝对值不等式}{10}{subsubsection.1.3.1}%
-\contentsline {subsubsection}{\numberline {1.3.2}解一元一次含参不等式}{11}{subsubsection.1.3.2}%
-\contentsline {subsubsection}{\numberline {1.3.3}解一元二次含参不等式}{11}{subsubsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.4}第四讲\hskip 1em\relax 基本不等式}{11}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}第五讲\hskip 1em\relax 简易逻辑与集合概念}{12}{subsection.1.5}%
-\contentsline {subsubsection}{\numberline {1.5.1}命题}{12}{subsubsection.1.5.1}%
-\contentsline {subsubsection}{\numberline {1.5.2}充分条件和必要条件}{13}{subsubsection.1.5.2}%
-\contentsline {subsubsection}{\numberline {1.5.3}集合}{13}{subsubsection.1.5.3}%
-\contentsline {subsubsection}{\numberline {1.5.4}集合的表示法}{13}{subsubsection.1.5.4}%
-\contentsline {subsection}{\numberline {1.6}第六讲\hskip 1em\relax 集合关系与运算}{14}{subsection.1.6}%
-\contentsline {subsubsection}{\numberline {1.6.1}集合间的关系}{14}{subsubsection.1.6.1}%
-\contentsline {subsubsection}{\numberline {1.6.2}集合的运算}{14}{subsubsection.1.6.2}%
-\contentsline {subsection}{\numberline {1.7}第七讲\hskip 1em\relax 函数}{14}{subsection.1.7}%
-\contentsline {subsubsection}{\numberline {1.7.1}函数的概念}{14}{subsubsection.1.7.1}%
-\contentsline {subsubsection}{\numberline {1.7.2}拓展（求值域）}{15}{subsubsection.1.7.2}%
-\contentsline {subsection}{\numberline {1.8}第八讲\hskip 1em\relax 函数单调性}{15}{subsection.1.8}%
-\contentsline {subsection}{\numberline {1.9}第九讲\hskip 1em\relax 函数奇偶性与幂函数}{16}{subsection.1.9}%
-\contentsline {subsubsection}{\numberline {1.9.1}奇偶性}{16}{subsubsection.1.9.1}%
-\contentsline {subsubsection}{\numberline {1.9.2}幂函数}{17}{subsubsection.1.9.2}%
-\contentsline {subsection}{\numberline {1.10}第十讲\hskip 1em\relax 指数运算与指数函数}{17}{subsection.1.10}%
-\contentsline {subsubsection}{\numberline {1.10.1}指数运算}{17}{subsubsection.1.10.1}%
-\contentsline {subsubsection}{\numberline {1.10.2}指数函数}{18}{subsubsection.1.10.2}%
-\contentsline {subsection}{\numberline {1.11}第十一讲\hskip 1em\relax 对数运算}{19}{subsection.1.11}%
-\contentsline {subsubsection}{\numberline {1.11.1}对数的定义}{19}{subsubsection.1.11.1}%
-\contentsline {subsubsection}{\numberline {1.11.2}对数运算}{19}{subsubsection.1.11.2}%
-\contentsline {subsection}{\numberline {1.12}第十二讲\hskip 1em\relax 对数函数}{20}{subsection.1.12}%
-\contentsline {subsection}{\numberline {1.13}第十三讲\hskip 1em\relax 图象变换与零点}{21}{subsection.1.13}%
-\contentsline {subsubsection}{\numberline {1.13.1}图象变换}{21}{subsubsection.1.13.1}%
-\contentsline {subsubsection}{\numberline {1.13.2}零点问题}{21}{subsubsection.1.13.2}%
-\contentsline {subsection}{\numberline {1.14}第十四讲\hskip 1em\relax 任意角的三角函数}{22}{subsection.1.14}%
-\contentsline {subsubsection}{\numberline {1.14.1}任意角}{22}{subsubsection.1.14.1}%
-\contentsline {subsubsection}{\numberline {1.14.2}弧度制}{22}{subsubsection.1.14.2}%
-\contentsline {subsubsection}{\numberline {1.14.3}任意角的三角函数}{22}{subsubsection.1.14.3}%
-\contentsline {subsection}{\numberline {1.15}第十五讲\hskip 1em\relax 同角基本关系与诱导公式}{22}{subsection.1.15}%
-\contentsline {subsubsection}{\numberline {1.15.1}同角基本关系}{22}{subsubsection.1.15.1}%
-\contentsline {subsubsection}{\numberline {1.15.2}诱导公式}{23}{subsubsection.1.15.2}%
-\contentsline {section}{\numberline {2}高一上学期秋季}{24}{section.2}%
-\contentsline {section}{\numberline {3}准高二暑期数学}{24}{section.3}%
-\contentsline {subsection}{\numberline {3.1}第一讲\hskip 1em\relax 空间向量的概念及其运算}{24}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}空间向量的概念及其线性运算}{24}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}向量的数量积}{25}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}坐标运算}{25}{subsubsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.2}第二讲\hskip 1em\relax 立体几何中的向量方法}{26}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}方向向量与法向量}{26}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}空间平行、垂直与空间向量的关系}{27}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}角度问题}{27}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}第三讲\hskip 1em\relax 直线方程}{28}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}直线方程}{28}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}位置关系与距离公式}{28}{subsubsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}第四讲\hskip 1em\relax 直线与圆}{30}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}圆的方程}{30}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}点、直线、圆与圆的位置关系}{31}{subsubsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.5}第五讲\hskip 1em\relax 椭圆初步}{32}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}椭圆的定义}{32}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}椭圆的标准方程}{33}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.3}几何性质}{34}{subsubsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.6}第六讲\hskip 1em\relax 双曲线初步}{37}{subsection.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}双曲线的定义}{37}{subsubsection.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.2}双曲线的标准方程}{38}{subsubsection.3.6.2}%
-\contentsline {subsubsection}{\numberline {3.6.3}几何性质}{38}{subsubsection.3.6.3}%
-\contentsline {subsection}{\numberline {3.7}第七讲\hskip 1em\relax 抛物线初步}{40}{subsection.3.7}%
-\contentsline {subsubsection}{\numberline {3.7.1}定义}{40}{subsubsection.3.7.1}%
-\contentsline {subsubsection}{\numberline {3.7.2}标准方程}{41}{subsubsection.3.7.2}%
-\contentsline {subsubsection}{\numberline {3.7.3}定义与焦准距转化}{41}{subsubsection.3.7.3}%
-\contentsline {subsubsection}{\numberline {3.7.4}将军饮马问题}{42}{subsubsection.3.7.4}%
-\contentsline {subsubsection}{\numberline {3.7.5}相似三角形问题}{42}{subsubsection.3.7.5}%
-\contentsline {subsection}{\numberline {3.8}第八讲\hskip 1em\relax 轨迹方程}{44}{subsection.3.8}%
-\contentsline {subsubsection}{\numberline {3.8.1}圆锥曲线综合(求方程/离心率)}{44}{subsubsection.3.8.1}%
-\contentsline {subsection}{\numberline {3.9}第九讲\hskip 1em\relax 弦长问题}{49}{subsection.3.9}%
-\contentsline {subsubsection}{\numberline {3.9.1}直线与椭圆}{49}{subsubsection.3.9.1}%
-\contentsline {subsubsection}{\numberline {3.9.2}直线与抛物线}{50}{subsubsection.3.9.2}%
-\contentsline {subsubsection}{\numberline {3.9.3}直线与双曲线}{51}{subsubsection.3.9.3}%
-\contentsline {subsubsection}{\numberline {3.9.4}弦长问题}{52}{subsubsection.3.9.4}%
-\contentsline {subsection}{\numberline {3.10}第十讲\hskip 1em\relax 面积问题}{53}{subsection.3.10}%
-\contentsline {subsubsection}{\numberline {3.10.1}面积计算问题}{53}{subsubsection.3.10.1}%
-\contentsline {subsubsection}{\numberline {3.10.2}面积最值问题}{56}{subsubsection.3.10.2}%
-\contentsline {subsection}{\numberline {3.11}第十一讲\hskip 1em\relax 定值问题}{56}{subsection.3.11}%
-\contentsline {subsection}{\numberline {3.12}第十二讲\hskip 1em\relax 等差数列}{58}{subsection.3.12}%
-\contentsline {subsubsection}{\numberline {3.12.1}数列的概念}{58}{subsubsection.3.12.1}%
-\contentsline {subsubsection}{\numberline {3.12.2}等差数列的概念}{58}{subsubsection.3.12.2}%
-\contentsline {subsubsection}{\numberline {3.12.3}等差数列的性质}{59}{subsubsection.3.12.3}%
-\contentsline {subsection}{\numberline {3.13}第十三讲\hskip 1em\relax 等比数列}{60}{subsection.3.13}%
-\contentsline {subsubsection}{\numberline {3.13.1}概念}{60}{subsubsection.3.13.1}%
-\contentsline {subsubsection}{\numberline {3.13.2}等比数列的性质}{62}{subsubsection.3.13.2}%
-\contentsline {subsubsection}{\numberline {3.13.3}等差、等比综合}{62}{subsubsection.3.13.3}%
-\contentsline {subsection}{\numberline {3.14}第十四讲\hskip 1em\relax 数列求通项}{63}{subsection.3.14}%
-\contentsline {subsubsection}{\numberline {3.14.1}累加法}{63}{subsubsection.3.14.1}%
-\contentsline {subsubsection}{\numberline {3.14.2}累乘法}{64}{subsubsection.3.14.2}%
-\contentsline {subsubsection}{\numberline {3.14.3}$a_n$与$S_n$的关系}{65}{subsubsection.3.14.3}%
-\contentsline {subsection}{\numberline {3.15}第十五讲\hskip 1em\relax 数列求和（分组求和）}{66}{subsection.3.15}%
-\contentsline {subsubsection}{\numberline {3.15.1}拆分成等差、等比数列求和}{66}{subsubsection.3.15.1}%
-\contentsline {subsubsection}{\numberline {3.15.2}含绝对值}{67}{subsubsection.3.15.2}%
-\contentsline {subsubsection}{\numberline {3.15.3}奇偶分别求和}{67}{subsubsection.3.15.3}%
-\contentsline {subsubsection}{\numberline {3.15.4}奇偶特殊情况}{68}{subsubsection.3.15.4}%
-\contentsline {section}{\numberline {4}高二秋季（上学期）}{68}{section.4}%
-\contentsline {subsection}{\numberline {4.1}第一讲\hskip 1em\relax 空间向量初步}{68}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}概念、线性运算}{68}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}数量积}{69}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}坐标运算}{69}{subsubsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.2}第二讲\hskip 1em\relax 立体几何的空间向量方法}{71}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}平行、垂直}{71}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}角度问题}{71}{subsubsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.3}第三讲\hskip 1em\relax 直线方程}{71}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}直线方程}{71}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}对称问题}{72}{subsubsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3}直线系方程}{72}{subsubsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.4}第四讲\hskip 1em\relax 圆的方程}{73}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}圆的方程}{73}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}点线圆的位置关系}{73}{subsubsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.3}切线方程与切线长}{73}{subsubsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.5}第五讲\hskip 1em\relax 直线与圆综合}{74}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}圆的切点、弦问题}{74}{subsubsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.2}位置关系综合}{76}{subsubsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.6}第六讲\hskip 1em\relax 椭圆}{77}{subsection.4.6}%
-\contentsline {subsubsection}{\numberline {4.6.1}焦点三角形变形}{77}{subsubsection.4.6.1}%
-\contentsline {subsubsection}{\numberline {4.6.2}焦点三角形面积}{77}{subsubsection.4.6.2}%
-\contentsline {subsubsection}{\numberline {4.6.3}离心率}{78}{subsubsection.4.6.3}%
-\contentsline {subsection}{\numberline {4.7}第七讲\hskip 1em\relax 中点、对称问题}{79}{subsection.4.7}%
-\contentsline {subsubsection}{\numberline {4.7.1}点差法}{79}{subsubsection.4.7.1}%
-\contentsline {subsubsection}{\numberline {4.7.2}中点问题}{79}{subsubsection.4.7.2}%
-\contentsline {subsubsection}{\numberline {4.7.3}对称问题}{79}{subsubsection.4.7.3}%
-\contentsline {subsection}{\numberline {4.8}第八讲\hskip 1em\relax 弦长面积}{80}{subsection.4.8}%
-\contentsline {subsubsection}{\numberline {4.8.1}倒斜横截式}{80}{subsubsection.4.8.1}%
-\contentsline {subsection}{\numberline {4.9}第九讲\hskip 1em\relax 定点、定值问题}{81}{subsection.4.9}%
-\contentsline {subsection}{\numberline {4.10}第十讲\hskip 1em\relax 双曲线}{82}{subsection.4.10}%
-\contentsline {subsection}{\numberline {4.11}第十一讲\hskip 1em\relax 抛物线}{83}{subsection.4.11}%
-\contentsline {subsubsection}{\numberline {4.11.1}小结论}{83}{subsubsection.4.11.1}%
-\contentsline {subsection}{\numberline {4.12}第十二讲\hskip 1em\relax 等差数列}{84}{subsection.4.12}%
-\contentsline {subsection}{\numberline {4.13}第十三讲\hskip 1em\relax 等比数列}{87}{subsection.4.13}%
-\contentsline {subsubsection}{\numberline {4.13.1}等比数列的性质}{87}{subsubsection.4.13.1}%
-\contentsline {subsection}{\numberline {4.14}第十四讲\hskip 1em\relax 数列求通项}{88}{subsection.4.14}%
-\contentsline {subsubsection}{\numberline {4.14.1}待定系数法}{88}{subsubsection.4.14.1}%
-\contentsline {subsubsection}{\numberline {4.14.2}$S_n$与$a_n$的关系}{90}{subsubsection.4.14.2}%
-\contentsline {subsection}{\numberline {4.15}第十五讲\hskip 1em\relax 数列求和}{91}{subsection.4.15}%
-\contentsline {subsubsection}{\numberline {4.15.1}分组求和}{91}{subsubsection.4.15.1}%
-\contentsline {subsubsection}{\numberline {4.15.2}裂项相消}{91}{subsubsection.4.15.2}%
-\contentsline {subsubsection}{\numberline {4.15.3}错位相减}{93}{subsubsection.4.15.3}%
-\contentsline {subsection}{\numberline {4.16}关于数列放缩、圆锥曲线}{93}{subsection.4.16}%
-\contentsline {subsubsection}{\numberline {4.16.1}数列的简单放缩}{93}{subsubsection.4.16.1}%
-\contentsline {subsubsection}{\numberline {4.16.2}圆锥曲线小题}{94}{subsubsection.4.16.2}%
-\contentsline {subsubsection}{\numberline {4.16.3}圆锥曲线大题}{94}{subsubsection.4.16.3}%
-\contentsline {section}{\numberline {5}高二寒}{95}{section.5}%
-\contentsline {subsection}{\numberline {5.1}第一讲\hskip 1em\relax 加法原理和乘法原理与排列组合}{95}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}加法原理和乘法原理}{95}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}排列}{96}{subsubsection.5.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.3}组合}{96}{subsubsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.2}第二讲\hskip 1em\relax 相邻、不相邻问题等排列组合四类方法}{97}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}相邻、不相邻问题}{97}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2}定位、定序问题}{98}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3}正难则反问题（至多、至少、不都）}{98}{subsubsection.5.2.3}%
-\contentsline {subsubsection}{\numberline {5.2.4}相同元素分配问题}{99}{subsubsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.3}第三讲\hskip 1em\relax 条件概率与离散型随机变量}{99}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}条件概率}{99}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}全概率}{100}{subsubsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.3}离散型随机变量}{100}{subsubsection.5.3.3}%
+\contentsline {section}{\numberline {1}初升高暑期数学}{8}{section.1}%
+\contentsline {subsection}{\numberline {1.1}第一讲\hskip 1em\relax 二次方程拓展}{8}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}因式分解}{8}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}解含参方程}{8}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}韦达定理}{9}{subsubsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.2}第二讲\hskip 1em\relax 解不等式}{9}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}不等式的性质}{9}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}解一元二次不等式}{10}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}解分式不等式}{11}{subsubsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.3}第三讲\hskip 1em\relax 解含参不等式}{11}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}解绝对值不等式}{11}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}解一元一次含参不等式}{12}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}解一元二次含参不等式}{12}{subsubsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.4}第四讲\hskip 1em\relax 基本不等式}{12}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}第五讲\hskip 1em\relax 简易逻辑与集合概念}{13}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}命题}{13}{subsubsection.1.5.1}%
+\contentsline {subsubsection}{\numberline {1.5.2}充分条件和必要条件}{14}{subsubsection.1.5.2}%
+\contentsline {subsubsection}{\numberline {1.5.3}集合}{14}{subsubsection.1.5.3}%
+\contentsline {subsubsection}{\numberline {1.5.4}集合的表示法}{14}{subsubsection.1.5.4}%
+\contentsline {subsection}{\numberline {1.6}第六讲\hskip 1em\relax 集合关系与运算}{15}{subsection.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.1}集合间的关系}{15}{subsubsection.1.6.1}%
+\contentsline {subsubsection}{\numberline {1.6.2}集合的运算}{15}{subsubsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.7}第七讲\hskip 1em\relax 函数}{15}{subsection.1.7}%
+\contentsline {subsubsection}{\numberline {1.7.1}函数的概念}{15}{subsubsection.1.7.1}%
+\contentsline {subsubsection}{\numberline {1.7.2}拓展（求值域）}{16}{subsubsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.8}第八讲\hskip 1em\relax 函数单调性}{16}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}第九讲\hskip 1em\relax 函数奇偶性与幂函数}{17}{subsection.1.9}%
+\contentsline {subsubsection}{\numberline {1.9.1}奇偶性}{17}{subsubsection.1.9.1}%
+\contentsline {subsubsection}{\numberline {1.9.2}幂函数}{18}{subsubsection.1.9.2}%
+\contentsline {subsection}{\numberline {1.10}第十讲\hskip 1em\relax 指数运算与指数函数}{18}{subsection.1.10}%
+\contentsline {subsubsection}{\numberline {1.10.1}指数运算}{18}{subsubsection.1.10.1}%
+\contentsline {subsubsection}{\numberline {1.10.2}指数函数}{19}{subsubsection.1.10.2}%
+\contentsline {subsection}{\numberline {1.11}第十一讲\hskip 1em\relax 对数运算}{20}{subsection.1.11}%
+\contentsline {subsubsection}{\numberline {1.11.1}对数的定义}{20}{subsubsection.1.11.1}%
+\contentsline {subsubsection}{\numberline {1.11.2}对数运算}{20}{subsubsection.1.11.2}%
+\contentsline {subsection}{\numberline {1.12}第十二讲\hskip 1em\relax 对数函数}{21}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.13}第十三讲\hskip 1em\relax 图象变换与零点}{22}{subsection.1.13}%
+\contentsline {subsubsection}{\numberline {1.13.1}图象变换}{22}{subsubsection.1.13.1}%
+\contentsline {subsubsection}{\numberline {1.13.2}零点问题}{22}{subsubsection.1.13.2}%
+\contentsline {subsection}{\numberline {1.14}第十四讲\hskip 1em\relax 任意角的三角函数}{23}{subsection.1.14}%
+\contentsline {subsubsection}{\numberline {1.14.1}任意角}{23}{subsubsection.1.14.1}%
+\contentsline {subsubsection}{\numberline {1.14.2}弧度制}{23}{subsubsection.1.14.2}%
+\contentsline {subsubsection}{\numberline {1.14.3}任意角的三角函数}{23}{subsubsection.1.14.3}%
+\contentsline {subsection}{\numberline {1.15}第十五讲\hskip 1em\relax 同角基本关系与诱导公式}{23}{subsection.1.15}%
+\contentsline {subsubsection}{\numberline {1.15.1}同角基本关系}{23}{subsubsection.1.15.1}%
+\contentsline {subsubsection}{\numberline {1.15.2}诱导公式}{24}{subsubsection.1.15.2}%
+\contentsline {section}{\numberline {2}高一上学期秋季}{25}{section.2}%
+\contentsline {subsection}{\numberline {2.1}第一讲\hskip 1em\relax 解不等式}{25}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}解一元二次不等式}{25}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}解绝对值不等式}{26}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}第二讲\hskip 1em\relax 集合}{26}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}集合与元素}{26}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}集合之间的关系}{26}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}命题与量词}{27}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}充分必要条件}{27}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}基本不等式}{28}{subsubsection.2.2.5}%
+\contentsline {section}{\numberline {3}准高二暑期数学}{29}{section.3}%
+\contentsline {subsection}{\numberline {3.1}第一讲\hskip 1em\relax 空间向量的概念及其运算}{29}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}空间向量的概念及其线性运算}{29}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}向量的数量积}{30}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}坐标运算}{31}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}第二讲\hskip 1em\relax 立体几何中的向量方法}{31}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}方向向量与法向量}{31}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}空间平行、垂直与空间向量的关系}{32}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}角度问题}{33}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}第三讲\hskip 1em\relax 直线方程}{34}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}直线方程}{34}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}位置关系与距离公式}{34}{subsubsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.4}第四讲\hskip 1em\relax 直线与圆}{36}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}圆的方程}{36}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}点、直线、圆与圆的位置关系}{36}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}第五讲\hskip 1em\relax 椭圆初步}{38}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}椭圆的定义}{38}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}椭圆的标准方程}{38}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}几何性质}{39}{subsubsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.6}第六讲\hskip 1em\relax 双曲线初步}{42}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}双曲线的定义}{42}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}双曲线的标准方程}{43}{subsubsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.3}几何性质}{43}{subsubsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.7}第七讲\hskip 1em\relax 抛物线初步}{45}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.7.1}定义}{45}{subsubsection.3.7.1}%
+\contentsline {subsubsection}{\numberline {3.7.2}标准方程}{46}{subsubsection.3.7.2}%
+\contentsline {subsubsection}{\numberline {3.7.3}定义与焦准距转化}{46}{subsubsection.3.7.3}%
+\contentsline {subsubsection}{\numberline {3.7.4}将军饮马问题}{47}{subsubsection.3.7.4}%
+\contentsline {subsubsection}{\numberline {3.7.5}相似三角形问题}{47}{subsubsection.3.7.5}%
+\contentsline {subsection}{\numberline {3.8}第八讲\hskip 1em\relax 轨迹方程}{49}{subsection.3.8}%
+\contentsline {subsubsection}{\numberline {3.8.1}圆锥曲线综合(求方程/离心率)}{49}{subsubsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.9}第九讲\hskip 1em\relax 弦长问题}{54}{subsection.3.9}%
+\contentsline {subsubsection}{\numberline {3.9.1}直线与椭圆}{54}{subsubsection.3.9.1}%
+\contentsline {subsubsection}{\numberline {3.9.2}直线与抛物线}{55}{subsubsection.3.9.2}%
+\contentsline {subsubsection}{\numberline {3.9.3}直线与双曲线}{56}{subsubsection.3.9.3}%
+\contentsline {subsubsection}{\numberline {3.9.4}弦长问题}{57}{subsubsection.3.9.4}%
+\contentsline {subsection}{\numberline {3.10}第十讲\hskip 1em\relax 面积问题}{58}{subsection.3.10}%
+\contentsline {subsubsection}{\numberline {3.10.1}面积计算问题}{58}{subsubsection.3.10.1}%
+\contentsline {subsubsection}{\numberline {3.10.2}面积最值问题}{61}{subsubsection.3.10.2}%
+\contentsline {subsection}{\numberline {3.11}第十一讲\hskip 1em\relax 定值问题}{61}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}第十二讲\hskip 1em\relax 等差数列}{63}{subsection.3.12}%
+\contentsline {subsubsection}{\numberline {3.12.1}数列的概念}{63}{subsubsection.3.12.1}%
+\contentsline {subsubsection}{\numberline {3.12.2}等差数列的概念}{63}{subsubsection.3.12.2}%
+\contentsline {subsubsection}{\numberline {3.12.3}等差数列的性质}{64}{subsubsection.3.12.3}%
+\contentsline {subsection}{\numberline {3.13}第十三讲\hskip 1em\relax 等比数列}{65}{subsection.3.13}%
+\contentsline {subsubsection}{\numberline {3.13.1}概念}{65}{subsubsection.3.13.1}%
+\contentsline {subsubsection}{\numberline {3.13.2}等比数列的性质}{67}{subsubsection.3.13.2}%
+\contentsline {subsubsection}{\numberline {3.13.3}等差、等比综合}{67}{subsubsection.3.13.3}%
+\contentsline {subsection}{\numberline {3.14}第十四讲\hskip 1em\relax 数列求通项}{68}{subsection.3.14}%
+\contentsline {subsubsection}{\numberline {3.14.1}累加法}{68}{subsubsection.3.14.1}%
+\contentsline {subsubsection}{\numberline {3.14.2}累乘法}{69}{subsubsection.3.14.2}%
+\contentsline {subsubsection}{\numberline {3.14.3}$a_n$与$S_n$的关系}{70}{subsubsection.3.14.3}%
+\contentsline {subsection}{\numberline {3.15}第十五讲\hskip 1em\relax 数列求和（分组求和）}{71}{subsection.3.15}%
+\contentsline {subsubsection}{\numberline {3.15.1}拆分成等差、等比数列求和}{71}{subsubsection.3.15.1}%
+\contentsline {subsubsection}{\numberline {3.15.2}含绝对值}{72}{subsubsection.3.15.2}%
+\contentsline {subsubsection}{\numberline {3.15.3}奇偶分别求和}{72}{subsubsection.3.15.3}%
+\contentsline {subsubsection}{\numberline {3.15.4}奇偶特殊情况}{73}{subsubsection.3.15.4}%
+\contentsline {section}{\numberline {4}高二秋季（上学期）}{73}{section.4}%
+\contentsline {subsection}{\numberline {4.1}第一讲\hskip 1em\relax 空间向量初步}{73}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}概念、线性运算}{73}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}数量积}{74}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}坐标运算}{74}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}第二讲\hskip 1em\relax 立体几何的空间向量方法}{76}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}平行、垂直}{76}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}角度问题}{76}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.3}第三讲\hskip 1em\relax 直线方程}{76}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}直线方程}{76}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}对称问题}{77}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}直线系方程}{77}{subsubsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.4}第四讲\hskip 1em\relax 圆的方程}{78}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}圆的方程}{78}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}点线圆的位置关系}{78}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}切线方程与切线长}{78}{subsubsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.5}第五讲\hskip 1em\relax 直线与圆综合}{79}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}圆的切点、弦问题}{79}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}位置关系综合}{81}{subsubsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.6}第六讲\hskip 1em\relax 椭圆}{82}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}焦点三角形变形}{82}{subsubsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.2}焦点三角形面积}{82}{subsubsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.3}离心率}{83}{subsubsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.7}第七讲\hskip 1em\relax 中点、对称问题}{84}{subsection.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.1}点差法}{84}{subsubsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.2}中点问题}{84}{subsubsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.3}对称问题}{84}{subsubsection.4.7.3}%
+\contentsline {subsection}{\numberline {4.8}第八讲\hskip 1em\relax 弦长面积}{85}{subsection.4.8}%
+\contentsline {subsubsection}{\numberline {4.8.1}倒斜横截式}{85}{subsubsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.9}第九讲\hskip 1em\relax 定点、定值问题}{86}{subsection.4.9}%
+\contentsline {subsection}{\numberline {4.10}第十讲\hskip 1em\relax 双曲线}{87}{subsection.4.10}%
+\contentsline {subsection}{\numberline {4.11}第十一讲\hskip 1em\relax 抛物线}{88}{subsection.4.11}%
+\contentsline {subsubsection}{\numberline {4.11.1}小结论}{88}{subsubsection.4.11.1}%
+\contentsline {subsection}{\numberline {4.12}第十二讲\hskip 1em\relax 等差数列}{89}{subsection.4.12}%
+\contentsline {subsection}{\numberline {4.13}第十三讲\hskip 1em\relax 等比数列}{92}{subsection.4.13}%
+\contentsline {subsubsection}{\numberline {4.13.1}等比数列的性质}{92}{subsubsection.4.13.1}%
+\contentsline {subsection}{\numberline {4.14}第十四讲\hskip 1em\relax 数列求通项}{93}{subsection.4.14}%
+\contentsline {subsubsection}{\numberline {4.14.1}待定系数法}{93}{subsubsection.4.14.1}%
+\contentsline {subsubsection}{\numberline {4.14.2}$S_n$与$a_n$的关系}{95}{subsubsection.4.14.2}%
+\contentsline {subsection}{\numberline {4.15}第十五讲\hskip 1em\relax 数列求和}{96}{subsection.4.15}%
+\contentsline {subsubsection}{\numberline {4.15.1}分组求和}{96}{subsubsection.4.15.1}%
+\contentsline {subsubsection}{\numberline {4.15.2}裂项相消}{96}{subsubsection.4.15.2}%
+\contentsline {subsubsection}{\numberline {4.15.3}错位相减}{98}{subsubsection.4.15.3}%
+\contentsline {subsection}{\numberline {4.16}关于数列放缩、圆锥曲线}{98}{subsection.4.16}%
+\contentsline {subsubsection}{\numberline {4.16.1}数列的简单放缩}{98}{subsubsection.4.16.1}%
+\contentsline {subsubsection}{\numberline {4.16.2}圆锥曲线小题}{99}{subsubsection.4.16.2}%
+\contentsline {subsubsection}{\numberline {4.16.3}圆锥曲线大题}{99}{subsubsection.4.16.3}%
+\contentsline {section}{\numberline {5}高二寒}{100}{section.5}%
+\contentsline {subsection}{\numberline {5.1}第一讲\hskip 1em\relax 加法原理和乘法原理与排列组合}{100}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}加法原理和乘法原理}{100}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}排列}{101}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}组合}{101}{subsubsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.2}第二讲\hskip 1em\relax 相邻、不相邻问题等排列组合四类方法}{102}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}相邻、不相邻问题}{102}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}定位、定序问题}{103}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}正难则反问题（至多、至少、不都）}{103}{subsubsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.4}相同元素分配问题}{104}{subsubsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.3}第三讲\hskip 1em\relax 条件概率与离散型随机变量}{104}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}条件概率}{104}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}全概率}{105}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}离散型随机变量}{105}{subsubsection.5.3.3}%

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  6 SEP 2026 17:23
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  20 SEP 2026 15:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1563,88 +1563,88 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 [1
 
-] [2] [3] [4] [5])
+] [2] [3] [4] [5] [6])
 \tf@toc=\write5
 \openout5 = `高中数学笔记.toc'.
 
- [6]
+ [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
 (hyperref)                replaced by space on input line 154.
 
-[7]
+[8]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
 (hyperref)                replaced by space on input line 272.
 
-[8]
+[9]
 Overfull \hbox (16.66666pt too wide) in paragraph at lines 356--373
 [][]  [] 
  []
-
-[9]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 400.
 
 [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 485.
+(hyperref)                replaced by space on input line 400.
 
 [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 561.
+(hyperref)                replaced by space on input line 485.
 
 [12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 626.
+(hyperref)                replaced by space on input line 561.
 
 [13]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 682.
+(hyperref)                replaced by space on input line 626.
 
 [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 753.
+(hyperref)                replaced by space on input line 682.
 
 [15]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 797.
+(hyperref)                replaced by space on input line 753.
 
 [16]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 867.
+(hyperref)                replaced by space on input line 797.
 
 [17]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 957.
+(hyperref)                replaced by space on input line 867.
 
 [18]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 957.
+
+[19]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
 (hyperref)                replaced by space on input line 1022.
 
-[19] [20]
+[20] [21]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
@@ -1655,586 +1655,530 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
 (hyperref)                replaced by space on input line 1177.
 
-[21]
+[22]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
 (hyperref)                replaced by space on input line 1253.
 
-[22]
+[23]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 1337.
+(hyperref)                replaced by space on input line 1324.
 
-[23] [24]
-Overfull \hbox (95.68513pt too wide) detected at line 1462
+[24] [25]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 1432.
+
+[26] [27] [28]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 1660.
+
+[29] [30]
+Overfull \hbox (95.68513pt too wide) detected at line 1785
 [][]
  []
 
 
-Overfull \hbox (24.78711pt too wide) in paragraph at lines 1496--1497
+Overfull \hbox (24.78711pt too wide) in paragraph at lines 1819--1820
  [][] 
  []
 
-[25]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 1534.
+(hyperref)                replaced by space on input line 1857.
 
-
-Overfull \hbox (27.84525pt too wide) in paragraph at lines 1630--1631
+[31]
+Overfull \hbox (27.84525pt too wide) in paragraph at lines 1953--1954
 [][] 
  []
 
-[26]
-Overfull \hbox (175.79669pt too wide) in paragraph at lines 1645--1718
+
+Overfull \hbox (175.79669pt too wide) in paragraph at lines 1968--2041
 \OML/cmm/m/it/10 BG \OMS/cmsy/m/n/10 k$ \TU/SimSun(0)/m/n/10 平 面 $\OML/cmm/m/it
 /10 EFC[]$\TU/TimesNewRoman(0)/m/n/10 . [][][] []  [] 
  []
 
-
-Overfull \hbox (2.31781pt too wide) in paragraph at lines 1804--1805
-[][] 
- []
-
-[27]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 1807.
-
-[28]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 1900--1943
-[][]  [] 
- []
-
-[29]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 1962.
-
-[30]
-Overfull \hbox (47.93123pt too wide) in paragraph at lines 2067--2068
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2041--2069
-[][] [] 
- []
-
-[31]
-Overfull \hbox (41.22998pt too wide) in paragraph at lines 2136--2137
-[][] 
- []
-
-
-Overfull \hbox (39.43025pt too wide) in paragraph at lines 2079--2138
-[][]  [] 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 2139.
-
 [32]
-Overfull \hbox (85.61938pt too wide) in paragraph at lines 2233--2234
+Overfull \hbox (2.31781pt too wide) in paragraph at lines 2127--2128
 [][] 
  []
 
 
-Overfull \hbox (46.66666pt too wide) in paragraph at lines 2187--2274
-[]\TU/SimSun(0)/b/n/10 几 何 性 质[] [][]  [] 
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 2130.
 
-[33]
-Overfull \hbox (90.73242pt too wide) in paragraph at lines 2296--2333
-[]\TU/TimesNewRoman(0)/b/n/10 B \TU/SimSun(0)/b/n/10 方 法  |（定 义 法） ：|  []  [] 
- []
-
-[34]
-Overfull \hbox (12.78027pt too wide) in paragraph at lines 2398--2399
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2367--2400
+[33] [34]
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 2223--2266
 [][]  [] 
  []
 
 [35]
-Overfull \hbox (44.0819pt too wide) in paragraph at lines 2462--2463
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2423--2464
-[][]  [] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2472--2525
-[][]  [] 
- []
-
-[36]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 2526.
+(hyperref)                replaced by space on input line 2285.
 
-[37]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2592--2626
-[][]  [] 
- []
-
-
-Overfull \hbox (12.78027pt too wide) in paragraph at lines 2670--2671
+[36]
+Overfull \hbox (47.93123pt too wide) in paragraph at lines 2390--2391
 [][] 
  []
 
 
-Overfull \hbox (46.66666pt too wide) in paragraph at lines 2628--2672
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 2364--2392
+[][] [] 
+ []
+
+
+Overfull \hbox (41.22998pt too wide) in paragraph at lines 2459--2460
+[][] 
+ []
+
+
+Overfull \hbox (39.43025pt too wide) in paragraph at lines 2402--2461
+[][]  [] 
+ []
+
+[37]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 2462.
+
+[38]
+Overfull \hbox (85.61938pt too wide) in paragraph at lines 2556--2557
+[][] 
+ []
+
+
+Overfull \hbox (46.66666pt too wide) in paragraph at lines 2510--2597
 []\TU/SimSun(0)/b/n/10 几 何 性 质[] [][]  [] 
  []
 
-[38]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2719--2776
-[][]  [] 
- []
-
-
-Overfull \hbox (50.27777pt too wide) in paragraph at lines 2777--2837
-\TU/SimSun(0)/m/n/10 求 离 心 率\TU/TimesNewRoman(0)/m/n/10 . [][][] []  [] 
- []
-
 [39]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2843--2904
-[][]  [] 
+Overfull \hbox (90.73242pt too wide) in paragraph at lines 2619--2656
+[]\TU/TimesNewRoman(0)/b/n/10 B \TU/SimSun(0)/b/n/10 方 法  |（定 义 法） ：|  []  [] 
  []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 2905.
+Overfull \hbox (12.78027pt too wide) in paragraph at lines 2721--2722
+[][] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 2690--2723
+[][]  [] 
+ []
 
 [40]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2951--2976
+Overfull \hbox (44.0819pt too wide) in paragraph at lines 2785--2786
+[][] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 2746--2787
+[][]  [] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 2795--2848
 [][]  [] 
  []
 
 [41]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 2998--3032
-[][]  [] 
- []
 
-
-Overfull \hbox (1.66667pt too wide) in paragraph at lines 3034--3095
-$[]$  $[]$ 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3120--3150
-[][]  [] 
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 2849.
 
 [42]
-Overfull \hbox (20.51546pt too wide) in paragraph at lines 3192--3193
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 2915--2949
+[][]  [] 
+ []
+
+
+Overfull \hbox (12.78027pt too wide) in paragraph at lines 2993--2994
 [][] 
  []
 
 
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3156--3194
+Overfull \hbox (46.66666pt too wide) in paragraph at lines 2951--2995
+[]\TU/SimSun(0)/b/n/10 几 何 性 质[] [][]  [] 
+ []
+
+[43]
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 3042--3099
 [][]  [] 
  []
 
 
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3199--3237
-[][]  [] 
+Overfull \hbox (50.27777pt too wide) in paragraph at lines 3100--3160
+\TU/SimSun(0)/m/n/10 求 离 心 率\TU/TimesNewRoman(0)/m/n/10 . [][][] []  [] 
  []
 
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3243--3288
+[44]
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 3166--3227
 [][]  [] 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 3289.
-
-[43]
-Overfull \hbox (12.78116pt too wide) in paragraph at lines 3367--3368
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3325--3369
-[][]  [] 
- []
-
-
-Overfull \hbox (81.06583pt too wide) in paragraph at lines 3426--3427
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3375--3428
-[][]  [] 
- []
-
-[44]
-Overfull \hbox (18.47032pt too wide) in paragraph at lines 3477--3478
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3441--3479
-[][]  [] 
- []
+(hyperref)                replaced by space on input line 3228.
 
 [45]
-Overfull \hbox (47.20697pt too wide) in paragraph at lines 3555--3556
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3522--3557
-[][]  [] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3562--3601
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 3274--3299
 [][]  [] 
  []
 
 [46]
-Overfull \hbox (18.47032pt too wide) in paragraph at lines 3643--3644
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3607--3645
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 3321--3355
 [][]  [] 
  []
 
 
-Overfull \hbox (12.978pt too wide) in paragraph at lines 3732--3733
-[][] 
+Overfull \hbox (1.66667pt too wide) in paragraph at lines 3357--3418
+$[]$  $[]$ 
  []
 
 
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3650--3734
-[]$[]$  $[]$ 
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 3443--3473
+[][]  [] 
  []
 
 [47]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3740--3788
-[][]  [] 
- []
-
-
-Overfull \hbox (12.78116pt too wide) in paragraph at lines 3837--3838
+Overfull \hbox (20.51546pt too wide) in paragraph at lines 3515--3516
 [][] 
  []
 
 
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3794--3839
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 3479--3517
 [][]  [] 
  []
 
 
-Overfull \hbox (32.69669pt too wide) in paragraph at lines 3895--3896
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3845--3897
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 3522--3560
 [][]  [] 
  []
 
-[48]
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 3566--3611
+[][]  [] 
+ []
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 3898.
+(hyperref)                replaced by space on input line 3612.
+
+[48]
+Overfull \hbox (12.78116pt too wide) in paragraph at lines 3690--3691
+[][] 
+ []
 
 
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3928--3967
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 3648--3692
+[][]  [] 
+ []
+
+
+Overfull \hbox (81.06583pt too wide) in paragraph at lines 3749--3750
+[][] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 3698--3751
 [][]  [] 
  []
 
 [49]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 3989--4036
+Overfull \hbox (18.47032pt too wide) in paragraph at lines 3800--3801
+[][] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 3764--3802
 [][]  [] 
  []
 
 [50]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4070--4141
-[][]  [] 
- []
-
-[51] [52]
-Overfull \hbox (58.30484pt too wide) in paragraph at lines 4197--4198
+Overfull \hbox (47.20697pt too wide) in paragraph at lines 3878--3879
 [][] 
  []
 
 
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4165--4199
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 3845--3880
 [][]  [] 
  []
 
 
-Overfull \hbox (12.78027pt too wide) in paragraph at lines 4234--4235
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 3885--3924
+[][]  [] 
+ []
+
+[51]
+Overfull \hbox (18.47032pt too wide) in paragraph at lines 3966--3967
 [][] 
  []
 
 
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4205--4236
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 3930--3968
+[][]  [] 
+ []
+
+
+Overfull \hbox (12.978pt too wide) in paragraph at lines 4055--4056
+[][] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 3973--4057
+[]$[]$  $[]$ 
+ []
+
+[52]
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 4063--4111
+[][]  [] 
+ []
+
+
+Overfull \hbox (12.78116pt too wide) in paragraph at lines 4160--4161
+[][] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 4117--4162
+[][]  [] 
+ []
+
+
+Overfull \hbox (32.69669pt too wide) in paragraph at lines 4218--4219
+[][] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 4168--4220
+[][]  [] 
+ []
+
+[53]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 4221.
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 4251--4290
+[][]  [] 
+ []
+
+[54]
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 4312--4359
+[][]  [] 
+ []
+
+[55]
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 4393--4464
+[][]  [] 
+ []
+
+[56] [57]
+Overfull \hbox (58.30484pt too wide) in paragraph at lines 4520--4521
+[][] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 4488--4522
+[][]  [] 
+ []
+
+
+Overfull \hbox (12.78027pt too wide) in paragraph at lines 4557--4558
+[][] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 4528--4559
 [][]  [] 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 4237.
+(hyperref)                replaced by space on input line 4560.
 
 
-Overfull \hbox (12.78027pt too wide) in paragraph at lines 4312--4313
+Overfull \hbox (12.78027pt too wide) in paragraph at lines 4635--4636
 [][] 
  []
 
 
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4257--4314
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 4580--4637
 [][]  [] 
  []
 
-[53] [54] [55]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4398--4441
+[58] [59] [60]
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 4721--4764
 []$[]$  $[]$ 
  []
 
 
-Overfull \hbox (12.78027pt too wide) in paragraph at lines 4496--4497
+Overfull \hbox (12.78027pt too wide) in paragraph at lines 4819--4820
 [][] 
  []
 
 
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4448--4498
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 4771--4821
 [][]  [] 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 4499.
+(hyperref)                replaced by space on input line 4822.
 
-[56]
-Overfull \hbox (12.78027pt too wide) in paragraph at lines 4577--4578
+[61]
+Overfull \hbox (12.78027pt too wide) in paragraph at lines 4900--4901
 [][] 
  []
 
 
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 4528--4579
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 4851--4902
 [][]  [] 
  []
 
 
-Underfull \hbox (badness 4779) in paragraph at lines 4596--4598
+Underfull \hbox (badness 4779) in paragraph at lines 4919--4921
 []$\OML/cmm/m/it/10 k[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 k[] \OT1/cmr/m/n/10 
 = [] + [] = []$ $=
  []
 
 
-Overfull \hbox (15.62442pt too wide) in paragraph at lines 4629--4630
+Overfull \hbox (15.62442pt too wide) in paragraph at lines 4952--4953
 [][] 
  []
 
 
-Overfull \hbox (39.43025pt too wide) in paragraph at lines 4585--4631
+Overfull \hbox (39.43025pt too wide) in paragraph at lines 4908--4954
 [][]  [] 
  []
 
-[57]
+[62]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 4632.
+(hyperref)                replaced by space on input line 4955.
 
-[58] [59]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 4791.
-
-[60] [61] [62]
+[63] [64]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 4967.
+(hyperref)                replaced by space on input line 5114.
 
-[63]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5043.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 5043.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5043.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5043.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 5043.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5043.
-
-[64] [65]
+[65] [66] [67]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 5143.
-
-[66] [67]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 5299.
+(hyperref)                replaced by space on input line 5290.
 
 [68]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 5353--5389
-[][]  [] 
- []
 
-[69]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 5462--5504
-[][]  [] 
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5366.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 5559.
-
-[70]
-Overfull \hbox (35.5853pt too wide) in paragraph at lines 5636--5637
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 5583--5638
-[][]  [] 
- []
+(hyperref)                removing `subscript' on input line 5366.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5366.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5366.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 5366.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5366.
+
+[69] [70]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 5639.
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 5647--5672
-[][]  [] 
- []
+(hyperref)                replaced by space on input line 5466.
 
 [71] [72]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 5745.
+(hyperref)                replaced by space on input line 5622.
 
 [73]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 5844.
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 5863--5887
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 5676--5712
 [][]  [] 
  []
 
 [74]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 5922--5960
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 5785--5827
 [][]  [] 
  []
 
-[75]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 6032.
+(hyperref)                replaced by space on input line 5882.
 
-[76]
-Overfull \hbox (46.92307pt too wide) in paragraph at lines 6092--6093
+[75]
+Overfull \hbox (35.5853pt too wide) in paragraph at lines 5959--5960
 [][] 
  []
 
 
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 6063--6094
-[][]  [] 
- []
-
-[77]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 6142--6171
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 5906--5961
 [][]  [] 
  []
 
 
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 6177--6207
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 5962.
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 5970--5995
 [][]  [] 
  []
 
+[76] [77]
 
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 6221--6249
-[][]  [] 
- []
-
-
-Overfull \hbox (33.2861pt too wide) in paragraph at lines 6291--6292
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 6250--6293
-[][]  [] 
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 6068.
 
 [78]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 6294.
+(hyperref)                replaced by space on input line 6167.
 
-[79]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 6359--6409
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 6186--6210
 [][]  [] 
  []
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 6410.
-
-
-Overfull \hbox (1.39935pt too wide) in paragraph at lines 6476--6477
-[][] 
- []
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 6426--6478
+[79]
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 6245--6283
 [][]  [] 
  []
 
@@ -2242,165 +2186,232 @@ Overfull \hbox (16.66666pt too wide) in paragraph at lines 6426--6478
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 6479.
+(hyperref)                replaced by space on input line 6355.
 
-
-Overfull \hbox (12.78116pt too wide) in paragraph at lines 6544--6545
+[81]
+Overfull \hbox (46.92307pt too wide) in paragraph at lines 6415--6416
 [][] 
  []
 
 
-Overfull \hbox (39.43025pt too wide) in paragraph at lines 6497--6546
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 6386--6417
+[][]  [] 
+ []
+
+[82]
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 6465--6494
+[][]  [] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 6500--6530
+[][]  [] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 6544--6572
+[][]  [] 
+ []
+
+
+Overfull \hbox (33.2861pt too wide) in paragraph at lines 6614--6615
+[][] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 6573--6616
+[][]  [] 
+ []
+
+[83]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 6617.
+
+[84]
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 6682--6732
 [][]  [] 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 6547.
+(hyperref)                replaced by space on input line 6733.
 
 
-Overfull \hbox (1.66666pt too wide) in paragraph at lines 6548--6592
-[]  [] 
- []
-
-[81]
-Overfull \hbox (4.24393pt too wide) in paragraph at lines 6627--6628
- [][] 
+Overfull \hbox (1.39935pt too wide) in paragraph at lines 6799--6800
+[][] 
  []
 
 
-Overfull \hbox (1.66666pt too wide) in paragraph at lines 6594--6629
-[]  [] 
- []
-
-
-Overfull \hbox (2.01566pt too wide) in paragraph at lines 6676--6677
- [][] 
- []
-
-
-Overfull \hbox (1.66666pt too wide) in paragraph at lines 6631--6678
-[]  [] 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 6679.
-
-
-Overfull \hbox (7.08582pt too wide) in paragraph at lines 6746--6747
- [][] 
- []
-
-
-Overfull \hbox (61.96863pt too wide) in paragraph at lines 6814--6815
- [][] 
- []
-
-[82] [83]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 6905.
-
-[84] [85]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 7052--7082
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 6749--6801
 [][]  [] 
+ []
+
+[85]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 6802.
+
+
+Overfull \hbox (12.78116pt too wide) in paragraph at lines 6867--6868
+[][] 
+ []
+
+
+Overfull \hbox (39.43025pt too wide) in paragraph at lines 6820--6869
+[][]  [] 
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 6870.
+
+
+Overfull \hbox (1.66666pt too wide) in paragraph at lines 6871--6915
+[]  [] 
  []
 
 [86]
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 7094--7136
-[][]  [] 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 7137.
-
-[87]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 7212.
-
-[88] [89]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 7316.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 7316.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 7316.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 7316.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 7316.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 7316.
-
-[90]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 7403.
-
-[91] [92] [93]
-Overfull \hbox (42.65399pt too wide) in paragraph at lines 7622--7623
+Overfull \hbox (4.24393pt too wide) in paragraph at lines 6950--6951
  [][] 
  []
 
 
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 7574--7624
-[][]  [] 
+Overfull \hbox (1.66666pt too wide) in paragraph at lines 6917--6952
+[]  [] 
  []
 
 
-Overfull \hbox (15.85754pt too wide) in paragraph at lines 7672--7673
+Overfull \hbox (2.01566pt too wide) in paragraph at lines 6999--7000
  [][] 
  []
 
 
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 7630--7674
+Overfull \hbox (1.66666pt too wide) in paragraph at lines 6954--7001
+[]  [] 
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 7002.
+
+
+Overfull \hbox (7.08582pt too wide) in paragraph at lines 7069--7070
+ [][] 
+ []
+
+
+Overfull \hbox (61.96863pt too wide) in paragraph at lines 7137--7138
+ [][] 
+ []
+
+[87] [88]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 7228.
+
+[89] [90]
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 7375--7405
 [][]  [] 
  []
 
-[94]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 7710.
-
-[95] [96]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 7840.
-
-[97] [98]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 8005.
-
-
-Overfull \hbox (16.66666pt too wide) in paragraph at lines 8019--8039
+[91]
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 7417--7459
 [][]  [] 
  []
 
-[99] [100]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 7460.
+
+[92]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 7535.
+
+[93] [94]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 7639.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 7639.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 7639.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 7639.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 7639.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 7639.
+
+[95]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 7726.
+
+[96] [97] [98]
+Overfull \hbox (42.65399pt too wide) in paragraph at lines 7945--7946
+ [][] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 7897--7947
+[][]  [] 
+ []
+
+
+Overfull \hbox (15.85754pt too wide) in paragraph at lines 7995--7996
+ [][] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 7953--7997
+[][]  [] 
+ []
+
+[99]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 8033.
+
+[100] [101]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 8163.
+
+[102] [103]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 8328.
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 8342--8362
+[][]  [] 
+ []
+
+[104] [105]
 
 Package caption Warning: Unused \captionsetup[table] on input line 130.
 See the caption package documentation for explanation.
@@ -2413,28 +2424,21 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[subfigure] on input line 138.
 See the caption package documentation for explanation.
 
-[101] (./高中数学笔记.aux)
+[106] (./高中数学笔记.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
  ***********
-
-
-Package rerunfilecheck Warning: File `高中数学笔记.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `高中数学笔记.out':
-(rerunfilecheck)             Before: 98C91846A1C3CECD7EAD8A01B5DD6DAA;19756
-(rerunfilecheck)             After:  28D0366FA2EA4ED038AD3768194F7ECD;20267.
+Package rerunfilecheck Info: File `高中数学笔记.out' has not changed.
+(rerunfilecheck)             Checksum: 77754626E936FF20BA93FED800844364;21324.
  ) 
 Here is how much of TeX's memory you used:
- 36598 strings out of 468168
- 794286 string characters out of 5429579
- 1338389 words of memory out of 5000000
- 64705 multiletter control sequences out of 15000+600000
+ 36602 strings out of 468168
+ 794346 string characters out of 5429579
+ 1339389 words of memory out of 5000000
+ 64709 multiletter control sequences out of 15000+600000
  642403 words of font info for 139 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,22n,111p,420b,908s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 高中数学笔记.pdf (101 pages).
+Output written on 高中数学笔记.pdf (106 pages).
