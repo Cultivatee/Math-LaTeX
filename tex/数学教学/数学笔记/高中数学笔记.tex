@@ -1642,7 +1642,834 @@ $\dfrac{xy}{4x+y}=\dfrac{1}{\frac{4}{y}+\frac{1}{x}}$.
 
 $\therefore ab\geq(1+\sqrt{2})^2=3+2\sqrt{2}$.
 
+\subsection{第三讲\quad 二次函数最值与二次方程根的分布}
 
+\subsubsection{二次函数的最值问题}
+\begin{knowledge}{总结}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 对称轴能取最值：分三种情况，范围左、中、右.
+		
+		\item 对称轴不能取最值：分两种情况，范围中左、中右.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{动区间定轴求最小}
+\begin{question}
+	$y=x^2-2x+3$在$a\leq x\leq a+4$最小值.
+\end{question}
+
+对称轴$x=1$.
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $1\leq a$：$y_{\min}=a^2-2a+3$.
+	
+	\item $-3<a<1$：$y_{\min}=2$.
+	
+	\item $1\geq a+4$，即$a\leq-3$：$y_{\min}=(a+4)^2-2(a+4)+3$.
+	
+\end{enumerate}
+
+\category{动区间定轴求最大}
+\begin{question}
+	$y=2x^2+4x-1$，在$m\leq x\leq m+1$最大值.
+\end{question}
+
+对称轴$x=-1$；比较区间中点$\dfrac{2m+1}{2}$与轴.
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $-1\leq\dfrac{2m+1}{2}$：最大在$x=m+1$：$y_{\max}=2(m+1)^2+4(m+1)-1$.
+	
+	\item $-1>\dfrac{2m+1}{2}$：最大在$x=m$：$y_{\max}=2m^2+4m-1$.
+	
+\end{enumerate}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		% 例1 数轴
+		\begin{scope}[shift={(-4,0)}]
+			\draw[->, gray!40] (-2.5,0) -- (2.8,0);
+			\draw[thick] (-1.2,0.25) -- (-1.2,-0.25) node[below] {$a$};
+			\draw[thick] (0.5,0.25) -- (0.5,-0.25) node[below] {$1$};
+			\draw[thick] (2.2,0.25) -- (2.2,-0.25) node[below] {$a+4$};
+		\end{scope}
+		% 例2 数轴
+		\begin{scope}[shift={(4,0)}]
+			\draw[->, gray!40] (-2.8,0) -- (2.8,0);
+			\draw[thick] (-1.5,0.25) -- (-1.5,-0.25) node[below] {$m$};
+			\draw[thick] (0,0.6) -- (0,-0.6);
+			\node[below] at (0,-0.7) {$\dfrac{2m+1}{2}$};
+			\draw[thick] (1.5,0.25) -- (1.5,-0.25) node[below] {$m+1$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\subsubsection{一元二次方程的根的分布问题}
+\begin{knowledge}{步骤}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 画符合条件的图象.
+		
+		\item 讨论：开口、$\Delta$、对称轴、端点值正负.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\subsection{第四讲\quad 函数与单调性}
+
+\subsubsection{函数三要素}
+\begin{knowledge}{定义域}
+	具体函数：$\sqrt{\quad}\geq0$；$(\quad)^0\neq0$；$\dfrac{1}{(\quad)}\neq0$；$\dfrac{1}{\sqrt{(\quad)}}>0$；$\log_a(\quad)>0$.
+	
+	抽象函数：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 定义域为$x$范围.
+		
+		\item 同一个$f$，括号内范围一致.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\begin{knowledge}{求解析式}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 由简入繁（代入）.
+		
+		\item 由繁入简（换元）.
+		
+		\item 联立方程法.
+		
+		\item 待定系数法.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{抽象函数定义域}
+\begin{question}
+	$f(x+2)$定义域$[-3,2]$，则$y=f(2x-1)$定义域？
+\end{question}
+
+$f(x+2)$：$x\in[-3,2] \implies (x+2)\in[-1,4]$.
+
+$y=f(2x-1)$：$-1\leq2x-1\leq4$.
+
+$\therefore x\in\left[0,\dfrac{5}{2}\right]$.
+
+\category{换元}
+\begin{question}
+	$f(\sqrt{x}-1)=x+\sqrt{x}$，求$f(x)$.
+\end{question}
+
+令$\sqrt{x}-1=t$（$t\geq-1$）.
+
+$f(t)=(t+1)^2+t+1=t^2+3t+2$（$t\geq-1$）.
+
+$\therefore f(x)=x^2+3x+2$（$x\geq-1$）.
+
+\category{联立方程法}
+\begin{question}
+	$f(x)+2f(-x)=x^2-x$，求$f(x)$.
+\end{question}
+
+$x$换$-x$：$f(-x)+2f(x)=x^2+x$.
+
+联立消$f(-x)$：$3f(x)=x^2+3x$.
+
+$\therefore f(x)=\dfrac{x^2}{3}+x$.
+
+\category{待定系数法}
+\begin{question}
+	$f(x)$一次函数，$3f(x+1)-2f(x-1)=2x+17$，求$f(x)$.
+\end{question}
+
+设$f(x)=kx+b$.
+
+$f(x+1)=k(x+1)+b$；$f(x-1)=k(x-1)+b$.
+
+$\therefore 3[k(x+1)+b]-2[k(x-1)+b]=2x+17$.
+
+$\begin{cases} k=2 \\ 5k+b=17 \end{cases} \implies \begin{cases} k=2 \\ b=7 \end{cases}$.
+
+$\therefore f(x)=2x+7$.
+
+\category{换元求值域}
+\begin{question}
+	$f(x)=x+\sqrt{1-3x}$，求值域.
+\end{question}
+
+令$\sqrt{1-3x}=t$（$t\geq0$）.
+
+$y=-\dfrac{1}{3}t^2+t+\dfrac{1}{3}$（$t\geq0$）.
+
+轴$t=\dfrac{3}{2}$；当$t=\dfrac{3}{2}$时，$y_{\max}=\dfrac{13}{12}$.
+
+$\therefore \left(-\infty,\dfrac{13}{12}\right]$.
+
+\subsubsection{函数单调性}
+\begin{knowledge}{判断单调性}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 图象法.
+		
+		\item 定义法（证明）.
+		
+		\item 四则运算.
+		
+	\end{enumerate}
+	
+	增函数：$f(x_1)<f(x_2) \implies x_1<x_2$.
+	
+	减函数：$f(x_1)<f(x_2) \implies x_1>x_2$.
+	
+	分段函数：每段满足单调性；交界处满足单调性：$f(x_1)<f(x_2)$.
+	
+	考虑定义域和单调性.
+\end{knowledge}
+
+\category{定义法证明}
+\begin{question}
+	$f(x)=\dfrac{x}{x+1}$，$x\in[1,+\infty)$，证明单调性.
+\end{question}
+
+$\forall x_1<x_2$，$x_1,x_2\in[1,+\infty)$.
+
+$f(x_1)-f(x_2)=\dfrac{x_1}{x_1+1}-\dfrac{x_2}{x_2+1}=\dfrac{x_1x_2+x_1-x_1x_2-x_2}{(x_1+1)(x_2+1)}=\dfrac{x_1-x_2}{(x_1+1)(x_2+1)}<0$.
+
+$\therefore f(x_1)<f(x_2)$.
+
+$\therefore f(x)$在$[1,+\infty)$上单调递增.
+
+\subsection{第五讲\quad 函数性质}
+
+\subsubsection{奇偶性}
+\begin{knowledge}{方法与运算}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 图象法.
+		
+		\item 定义法.
+		
+		\item 四则运算.
+		
+	\end{enumerate}
+	
+	奇$\pm$奇$=$奇；偶$\pm$偶$=$偶；奇$\pm$偶$=$非.
+	
+	奇$\times$奇$=$偶；奇$\times$偶$=$奇；偶$\times$偶$=$偶.
+	
+	$|$奇$|=$偶；$|$偶$|=$偶.
+	
+	奇函数在$x=0$处有定义，则$f(0)=0$.
+	
+	加负号、取倒数变单调性；单调性与奇偶性结合时，画图.
+\end{knowledge}
+
+\category{求另侧解析式}
+\begin{question}
+	$R$上奇函数$f(x)$，$x>0$时$f(x)=x^2+x-1$，则$x<0$时$f(x)$？
+\end{question}
+
+取$x<0$，$-x>0$.
+
+$f(x)=-f(-x)=-\left[(-x)^2+(-x)-1\right]=-x^2+x+1$.
+
+\category{过关}
+\begin{question}
+	$R$上奇$f(x)=x^2+2x+1$（$x>0$）.(1)$f(x)$？(2)$f(a)=-4$，$a$？
+\end{question}
+
+(1) $1^\circ$$x<0$：取$x<0$，$-x>0$：$f(x)=-f(-x)=-x^2+2x-1$.
+
+$2^\circ$$x=0$：$f(0)=0$.
+
+(2) $1^\circ$$a>0$：$(a+1)^2=-4$无解.
+
+$2^\circ$$a<0$：$f(a)=-a^2+2a-1=-4 \implies a_1=-1$，$a_2=3$（舍）.
+
+$\therefore a=-1$.
+
+\subsubsection{周期性}
+\begin{knowledge}{周期公式}
+	$f(x+a)=f(x+b)$：周期$|b-a|$.
+	
+	$f(x+a)=-f(x+b)$：$2|b-a|$.
+	
+	$f(x+a)=-\dfrac{1}{f(x+b)}$：$2|b-a|$.
+\end{knowledge}
+
+\category{思维}
+\begin{question}
+	$f(x+2)=-\dfrac{1}{f(x)}$，$f(1)=-\dfrac{1}{3}$，$f(2019)$？
+\end{question}
+
+周期为$4$；$2019\div4=504\cdots3$.
+
+$f(2019)=f(3)=-\dfrac{1}{f(1)}=3$.
+
+\subsubsection{对称性}
+\begin{knowledge}{同号周期、异号对称}
+
+\end{knowledge}
+
+\begin{knowledge}{轴对称与中心对称}
+	
+	$1^\circ$轴对称：$f(a+x)=f(b-x)$，轴$x_0=\dfrac{(a+x)+(b-x)}{2}=\dfrac{a+b}{2}$.
+	
+	$2^\circ$中心对称（点对称）：$f(a+x)+f(b-x)=2c$，坐标$\left(\dfrac{a+b}{2},c\right)$.
+\end{knowledge}
+
+\begin{knowledge}{双对称函数具有周期性}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item $(a,0),(b,0)\implies T=2|b-a|$.
+		
+		\item $x=a,x=b\implies T=2|b-a|$.
+		
+		\item $x=a,(b,0)\implies T=4|b-a|$.
+		
+	\end{enumerate}
+	
+	规律：移项；$f(x)+f(x)$为点对称；$f(x)-f(x)$为线对称；加点、减线.
+\end{knowledge}
+
+\category{双对称}
+\begin{question}
+	$f(x)=f(4-x)$，$f(x)=-f(-x)$，在$[-2,0]$有$f(x)=x^2$，则$f(2018)$？
+\end{question}
+
+$\because f(x)=f(4-x)$.
+
+$\therefore$ 轴$x_0=\dfrac{4+x-x}{2}=2$.
+
+$\because f(x)=-f(-x)$.
+
+$\therefore f(x)+f(-x)=0$，中心$(0,0)$.
+
+$\therefore$ 周期$=4\times (2-0)=8.$
+
+$\therefore f(2018)=f(2+8\times 252)=f(2)$.
+
+$\because$ 在$[-2,0]$有$f(x)=x^2$.
+
+$\therefore f(2)=-f(-2)=-4$.
+
+\subsection{第六讲\quad 对勾函数与恒成立问题}
+
+\subsubsection{对勾双撇函数}
+\begin{knowledge}{对勾与双撇}
+	
+	对勾函数：$f(x)=x+\dfrac{a}{x}$.
+	
+	双撇函数：$f(x)=x-\dfrac{a}{x}$.
+	
+	$y=ax+\dfrac{b}{x}$：同号对勾；异号双撇.
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		% 对勾
+		\begin{scope}[shift={(-4.5,0)}]
+			\draw[->, gray!40] (-0.8,0) -- (4.5,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-0.8) -- (0,4.5) node[above] {$y$};
+			\draw[dashed, gray] (0,0) -- (4,4);
+			\draw[thick, DarkRed, domain=0.25:4, smooth, variable=\x] plot ({\x}, {\x+1/\x});
+			\draw[dashed] (1,0) node[below] {$\sqrt{a}$} -- (1,2);
+			\draw[dashed] (0,2) node[left] {$2\sqrt{a}$} -- (1,2);
+		\end{scope}
+		% 双撇
+		\begin{scope}[shift={(4.5,0)}]
+			\draw[->, gray!40] (-4,0) -- (4,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-4) -- (0,4) node[above] {$y$};
+			\draw[dashed, gray] (-3.5,-3.5) -- (3.5,3.5);
+			\draw[thick, SkyBlue, domain=0.25:3.8, smooth, variable=\x] plot ({\x}, {\x-1/\x});
+			\draw[thick, SkyBlue, domain=-3.8:-0.25, smooth, variable=\x] plot ({\x}, {\x-1/\x});
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\category{二次比一次}
+\begin{question}
+	$y=\dfrac{x^2+x+1}{x+1}$，$x\in\left[\dfrac{1}{2},2\right]$，值域？
+\end{question}
+
+令$t=x+1$，$t\in\left[\dfrac{3}{2},3\right]$.
+
+$\therefore y=t+\dfrac{1}{t}-1$.
+
+$\therefore$ 值域$\in\left[\dfrac{7}{6},\dfrac{7}{3}\right]$.
+
+\category{一次比二次}
+\begin{question}
+	$y=\dfrac{2x}{x^2+1}$.
+\end{question}
+
+$y=\dfrac{2}{x+\frac{1}{x}}$.
+
+\subsubsection{恒成立问题}
+\begin{knowledge}{恒反存正}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 整体分析.
+		
+		\item 参变分离.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{整体分析}
+\begin{question}
+	$mx^2-mx-1<0$，任意$x$恒成立，$m$范围？
+\end{question}
+
+由“恒反”：求$(mx^2-mx-1)_{\max}$.
+
+$f(x)=mx^2-mx-1$；对称轴$x_0=\dfrac{1}{2}$.
+
+$m=0$.
+
+$\begin{cases} m<0 \\ f(x)_{\max}=f\left(\dfrac{1}{2}\right)<0 \end{cases}$
+
+$\therefore m\in(-4,0]$.
+
+\category{参变分离}
+\begin{question}
+	$x^2-3\geq ax-a$对于$3\leq x\leq4$恒成立，$a$范围？
+\end{question}
+
+$a(x-1)\leq x^2-3 \implies a\leq\dfrac{x^2-3}{x-1}$.
+
+令$t=x-1\in[2,3]$：$\dfrac{x^2-3}{x-1}=t+2-\dfrac{2}{t}$递增.
+
+最小值$=2+2-1=3$.
+
+$\therefore a\leq3$.
+
+\subsection{第七讲\quad 复合函数与抽象函数}
+
+\subsubsection{复合函数（单调性）}
+\begin{knowledge}{同增异减}
+	同增异减.
+	
+	讨论单调区间需在定义域内讨论.
+	
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 根号不改变单调性，但会改变定义域.
+		
+		\item 取倒数会改变单调性.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{单调区间}
+\begin{question}
+	$f(x)=\dfrac{1}{\sqrt{x^2-6x-7}}$的单调区间.
+\end{question}
+
+定义域：$(-\infty,-1)\cup(7,+\infty)$.
+
+$x_0=3$.
+
+$(-\infty,-1)$：内减$\to$增（取倒数）.
+
+$(7,+\infty)$：内增$\to$减（取倒数）.
+
+\subsubsection{抽象函数}
+\begin{knowledge}{赋值法}
+	赋值法：问啥赋啥.
+\end{knowledge}
+
+\category{奇函数赋值}
+\begin{question}
+	$f(x)$ $R$上奇函数，$f(1)=\dfrac{1}{2}$，$f(x+2)=f(x)+f(2)$，求$f(-5)$.
+\end{question}
+
+$f(2)=f(0)+f(2)$；$f(1)=f(-1)+f(2) \implies f(2)=1$.
+
+$f(-1)=-\dfrac{1}{2}$.
+
+$f(-1)=f(-3)+f(2) \implies -\dfrac{1}{2}=f(-3)+1 \implies f(-3)=-\dfrac{3}{2}$.
+
+$f(-3)=f(-5)+f(2)$.
+
+$\therefore f(-5)=f(-3)-f(2)=-\dfrac{5}{2}$.
+
+\category{抽象函数的奇偶性}
+\begin{question}
+	$f(x_1\cdot x_2)=f(x_1)+f(x_2),\quad f(-1)=0$
+\end{question}
+
+取$x_2=-1$ ；$f(-x_1)=f(x_1)$.
+
+\category{抽象函数的单调性}
+\begin{question}
+	定义域$(0,+\infty)$，$f(xy)=f(x)+f(y)$，$f(2)=1$，$x>1$时$f(x)>0$.(1)$f(8)$；(2)证单调性.
+\end{question}
+
+(1) $f(4)=f(2)+f(2)=2$；$f(8)=f(4)+f(2)=3$.
+
+(2) $\forall x_1>x_2\in(0,+\infty)$.
+
+令$xy=x_1$，$x=x_2$，$y=\dfrac{x_1}{x_2}$.
+
+$f(x_1)-f(x_2)=f\left(\dfrac{x_1}{x_2}\right)>0$（$\because \dfrac{x_1}{x_2}>1$）.
+
+$\therefore f(x_1)>f(x_2)$，在$(0,+\infty)$上单调递增.
+
+\begin{knowledge}{抽象函数判断单调性的四大模型}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item $f(x+y)=f(x)+f(y)$（一次函数模型）：令$x+y=x_1$，$x=x_2$，则$y=x_1-x_2$.
+		
+		$f(x_1)-f(x_2)=f(x_1-x_2)$，与$0$比较（正负）.
+		
+		\item $f(xy)=f(x)+f(y)$（对数函数模型）：令$xy=x_1$，$x=x_2$，则$y=\dfrac{x_1}{x_2}$.
+		
+		$f(x_1)-f(x_2)=f\left(\dfrac{x_1}{x_2}\right)$，与$0$比较.
+		
+		\item $f(x+y)=f(x)f(y)$（指数函数模型）：令$x+y=x_1$，$x=x_2$，则$y=x_1-x_2$.
+		
+		$f(x_1)=f(x_2)\cdot f(x_1-x_2)$，即$\dfrac{f(x_1)}{f(x_2)}=f(x_1-x_2)$，与$1$比较（$x_1-x_2>0$时$f(x_1-x_2)>1$）.
+		
+		\item $f(xy)=f(x)f(y)$（幂函数模型）：令$xy=x_1$，$x=x_2$，则$y=\dfrac{x_1}{x_2}$.
+		
+		$f(x_1)=f(x_2)\cdot f\left(\dfrac{x_1}{x_2}\right)$，即$\dfrac{f(x_1)}{f(x_2)}=f\left(\dfrac{x_1}{x_2}\right)$，与$1$比较（$\dfrac{x_1}{x_2}>1$）.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\subsection{第八讲\quad 指数运算与指数函数}
+
+\subsubsection{指数运算综合}
+\category{换元解不等式}
+\begin{question}
+	$\left(\dfrac{1}{4}\right)^x-\dfrac{3}{2^x}+2<0$.
+\end{question}
+
+$\left(\dfrac{1}{2}\right)^{2x}-3\left(\dfrac{1}{2}\right)^x+2<0$.
+
+令$\left(\dfrac{1}{2}\right)^x=t$：$t^2-3t+2<0 \implies 1<t<2$.
+
+$1<\left(\dfrac{1}{2}\right)^x<2 \implies 2^0<2^{-x}<2^1$.
+
+$\therefore x\in(-1,0)$.
+
+\subsubsection{求值域}
+\begin{knowledge}{换元法}
+	运用换元法.
+\end{knowledge}
+
+\subsubsection{函数模型}
+\begin{knowledge}{模型}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item $f(x)=a^x\pm a^{-x}$.
+		
+		\item $f(x)=\dfrac{a^x-a^{-x}}{a^x+a^{-x}}$（四则运算）.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{奇偶性单调性}
+\begin{question}
+	$f(x)=\dfrac{2^x-1}{2^x+1}$，奇偶性、单调性.
+\end{question}
+
+$f(-x)=\dfrac{2^{-x}-1}{2^{-x}+1}\cdot\dfrac{2^x}{2^x}=\dfrac{1-2^x}{1+2^x}=-f(x)$，奇函数.
+
+遇分式证单调性：分离常数.
+
+$f(x)=\dfrac{2^x+1-2}{2^x+1}=1-\dfrac{2}{2^x+1}$.
+
+$\therefore$ 增函数.
+
+\subsection{第九讲\quad 对数运算及对数函数}
+
+\subsubsection{比较大小}
+\category{减1比较}
+\begin{question}
+	比较$\log_3 6$，$\log_5 10$，$\log_7 14$；比较$\log_2 3$，$\log_3 4$.
+\end{question}
+
+$\log_3 6-1=\log_3 2$；$\log_5 10-1=\log_5 2$；$\log_7 14-1=\log_7 2$.
+
+$\therefore \log_3 6>\log_5 10>\log_7 14$.
+
+$\log_2 3-1=\log_2\dfrac{3}{2}$；$\log_3 4-1=\log_3\dfrac{4}{3}$.
+
+由图：$\log_2\dfrac{3}{2}>\log_3\dfrac{4}{3}$.
+
+$\therefore \log_2 3>\log_3 4$.
+
+\subsubsection{复合函数单调性}
+
+\category{复合函数单调性}
+\begin{question}
+判断$\log_a \sqrt{1+x^2}-x$的单调性
+\end{question}
+
+$\sqrt{1+x^2}-x=\dfrac{\left(\sqrt{1+x^2}-x\right)\left(\sqrt{1+x^2}+x\right)}{\sqrt{1+x^2}+x}=\dfrac{1}{\sqrt{1+x^2}+x}$单调递减.
+
+
+\category{区间上递减}
+\begin{question}
+	$f(x)=\lg(x^2-2ax+1+a)$在$(-\infty,1]$递减，$a$范围？
+\end{question}
+
+真数（内函数）在$(-\infty,1]$上递减且大于$0$.
+
+$\begin{cases} x^2-2ax+1+a>0 \\ a\geq1 \end{cases}$，即$\begin{cases} f(1)>0 \\ a\geq1 \end{cases}$
+
+$\therefore a\in[1,2)$.
+
+\category{分离常数}
+\begin{question}
+	$\log_a\dfrac{1+x}{1-x}$.
+\end{question}
+
+$\dfrac{1+x}{1-x}=\dfrac{-(1-x)+2}{1-x}=-1+\dfrac{2}{1-x}$.
+
+\subsubsection{复合函数奇偶性}
+\begin{knowledge}{对数大部分为奇函数}
+	
+	$f(x)=\log_a\left(\sqrt{1+(bx)^2}-bx\right)$：
+	
+	$f(-x)=\log_a\left(\sqrt{1+(bx)^2}+bx\right)$.
+	
+	[平方差]$f(x)+f(-x)=\log_a\left[1+(bx)^2-(bx)^2\right]=\log_a 1=0$，奇函数.
+	
+	复合函数奇偶：有偶则偶. \quad 【如果$g$是偶函数，那么负号在$g$的地方就被消化了$f(g(-x))=f(g(x))$】
+	
+	$f(x)=\ln(e^x+1)-\dfrac{1}{2}x$：偶函数.
+\end{knowledge}
+
+\subsection{第十讲\quad 图象变换与零点}
+
+\subsubsection{图象变换}
+\begin{knowledge}{变换}
+	沿$x$轴：变整体.
+	
+	沿$y$轴：变$x$.
+	
+	沿原点：变整体$+$变$x$.
+	
+	$y=|f(x)|$：留上翻下.
+	
+	$y=f(|x|)$：去左称右.
+\end{knowledge}
+
+\subsubsection{函数零点}
+\begin{knowledge}{转化}
+	通常转化为交点问题；准确作图.
+\end{knowledge}
+
+\category{根的个数}
+\begin{question}
+	$a>1$，$x=\dfrac{1}{a^x+1}$的根的个数（深大附中期中12题）.
+\end{question}
+
+当$x=0$时：$0=\dfrac{1}{2}$不成立.
+
+$\therefore x\neq0$.
+
+$\therefore a^x+1=\dfrac{1}{x}$.
+
+由图：$1$个交点.
+
+\category{思维延伸}
+\begin{question}
+	$f(x)=\begin{cases} 2x-x^2, & x\geq0 \\ \dfrac{1}{x}, & x<0 \end{cases}$，$f^2(x)-b|f(x)|=0$，$b\in(0,1)$，方程根的个数？
+\end{question}
+
+令$f(x)=t$：$t^2-b|t|=0 \implies |t|^2=b|t|$.
+
+$\therefore t=b$，$t=-b$，$t=0$.
+
+即$f(x)=b$，$f(x)=-b$，$f(x)=0$.
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.9, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-2.5,0) -- (3,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-1.5) -- (0,1.8) node[above] {$y$};
+		\draw[thick, DarkRed, domain=0:2.5, smooth, variable=\x] plot ({\x}, {2*\x-\x*\x});
+		\draw[thick, SkyBlue, domain=-2.5:-0.6, smooth, variable=\x] plot ({\x}, {1/\x});
+		\draw[dashed, gray] (-2.5,0.5) -- (2.5,0.5);
+		\draw[dashed, gray] (-2.5,-0.5) -- (2.5,-0.5);
+	\end{tikzpicture}
+\end{center}
+
+由图：共$6$根.
+
+\subsection{第十一讲\quad 三角函数初步}
+
+\subsubsection{角}
+\begin{knowledge}{扇形公式}
+	
+	弧长公式：$l=|\alpha| r$.
+	
+	周长公式：$C=l+2r=\alpha r+2r$.
+	
+	面积公式：$S=\dfrac{1}{2}lr=\dfrac{1}{2}\alpha r^2$.
+\end{knowledge}
+
+\subsubsection{三角函数定义}
+\begin{knowledge}{弧度换算}
+	$1\approx57^\circ$.
+\end{knowledge}
+
+\subsubsection{同角基本关系}
+\begin{knowledge}{两关系}
+	
+	$1^\circ$知一求二：$\sin^2\alpha+\cos^2\alpha=1$.
+	
+	$2^\circ$弦切互化：$\dfrac{\sin\alpha}{\cos\alpha}=\tan\alpha$（齐次式）.
+\end{knowledge}
+
+\category{齐次式}
+\begin{question}
+	$3\sin\alpha+\cos\alpha=0$，则$\dfrac{1}{\cos^2\alpha+2\sin\alpha\cos\alpha}=$？
+\end{question}
+
+化为齐次式：$\dfrac{\sin^2\alpha+\cos^2\alpha}{\cos^2\alpha+2\sin\alpha\cos\alpha}$.
+
+$\because \cos\alpha=-3\sin\alpha$.
+
+$\therefore$ 原式$=\dfrac{10\sin^2\alpha}{9\sin^2\alpha-6\sin^2\alpha}=\dfrac{10}{3}$.
+
+\category{诱导公式化简}
+\begin{question}
+	已知$f(\alpha)=\dfrac{\sin(\pi-\alpha)\cos(2\pi-\alpha)\cos\left(\frac{3\pi}{2}-\alpha\right)}{\cos\left(\frac{\pi}{2}-\alpha\right)\sin(-\pi-\alpha)}$，化简.
+\end{question}
+
+$=\dfrac{\sin\alpha\cdot\cos\alpha\cdot(-\sin\alpha)}{\sin\alpha\cdot\sin\alpha}=-\cos\alpha$.
+
+\category{第三象限求值}
+\begin{question}
+	若$\alpha$为第三象限角，且$\sin(\alpha-\pi)=\dfrac{1}{5}$，求$f(\alpha)$（即$-\cos\alpha$）.
+\end{question}
+
+$\sin(\alpha-\pi)=\dfrac{1}{5} \implies -\sin(\pi-\alpha)=\dfrac{1}{5} \implies \sin\alpha=-\dfrac{1}{5}$.
+
+$\alpha$第三象限：邻边$2\sqrt{6}$.
+
+$\therefore \cos\alpha=-\dfrac{2\sqrt{6}}{5}$.
+
+$\therefore f(\alpha)=-\cos\alpha=\dfrac{2\sqrt{6}}{5}$.
+
+\category{三分之一角象限}
+\begin{question}
+	已知$\alpha$是第一象限角，则角$\dfrac{\alpha}{3}$在哪些象限？
+\end{question}
+
+$\alpha\in\left(2k\pi,\ 2k\pi+\dfrac{\pi}{2}\right) \implies \dfrac{\alpha}{3}\in\left(\dfrac{2k\pi}{3},\ \dfrac{2k\pi}{3}+\dfrac{\pi}{6}\right)$，取$k=0,1,2$.
+
+\begin{center}
+	\begin{tikzpicture}[scale=1.0, baseline=(current bounding box.north)]
+		\draw[thick, ->] (-2.2,0) -- (2.2,0);
+		\draw[thick, ->] (0,-2.2) -- (0,2.2);
+		\foreach \a in {30,60,120,150} {
+			\draw[thick] (\a:2) -- (\a+180:2);
+		}
+		\node[circle, draw, inner sep=1pt] at (15:1.6) {1};
+		\node at (45:1.6) {2};
+		\node at (75:1.6) {3};
+		\node at (105:1.6) {4};
+		\node[circle, draw, inner sep=1pt] at (135:1.6) {1};
+		\node at (165:1.6) {2};
+		\node at (195:1.6) {3};
+		\node at (225:1.6) {4};
+		\node[circle, draw, inner sep=1pt] at (255:1.6) {1};
+		\node at (285:1.6) {2};
+		\node at (315:1.6) {3};
+		\node at (345:1.6) {4};
+	\end{tikzpicture}
+\end{center}
+
+$\therefore$ 一、二、三象限.
+
+\subsection{第十六讲\quad 函数综合}
+\begin{knowledge}{题型归纳}
+	函数定义题[单调性、转化、换元、零点$\to$交点].
+\end{knowledge}
+
+\category{函数定义题}
+\begin{question}
+	函数$f(x)$定义域为$D$，若满足$1^\circ$$f(x)$在$D$内是单调函数；$2^\circ$存在$[m,n]\subseteq D$，使$f(x)$在$[m,n]$上的值域为$\left[\dfrac{m}{2},\dfrac{n}{2}\right]$，那么称$f(x)$为好函数. 现有$f(x)=\log_a(a^x+k)$（$a>0,a\neq1$）是好函数，则$k$的范围.
+\end{question}
+
+$y=\log_a u$，$u=a^x+k$.
+
+$0<a<1$：减、减$\to$增；$a>1$：增、增$\to$增.
+
+$f(x)$一定为增.
+
+$\begin{cases} f(m)=\log_a(a^m+k)=\dfrac{1}{2}m \\ f(n)=\log_a(a^n+k)=\dfrac{1}{2}n \end{cases} \implies \log_a(a^x+k)=\dfrac{1}{2}x$有两个不等根.
+
+$a^x+k=a^{\frac{1}{2}x}$.
+
+令$b=a^{\frac{1}{2}x},\quad b>0$：$b^2+k=b$有两不等正实根.
+
+$-b^2+b=k$.
+
+\begin{center}
+	\begin{tikzpicture}[scale=3, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-0.5,0) -- (1.5,0) node[right] {$b$};
+		\draw[->, gray!40] (0,-0.3) -- (0,0.5) node[above] {$y$};
+		\draw[thick, DarkRed, domain=0:1.3, smooth, variable=\x] plot ({\x}, {-\x*\x+\x});
+		\draw[thick] (-0.3,0.15) -- (1.3,0.15);
+		\draw[dashed] (0.5,0.25) -- (0,0.25);
+		\node[right, gray] at (1.3,0.15) {$k$};
+		\draw[dashed, gray] (0.5,0) -- (0.5,0.25);
+		\node[below] at (0.5,0) {$\dfrac{1}{2}$};
+		\node[left] at (0,0.25) {$\frac{1}{4}$};
+		\node[below] at (1.6,-0.1) {$y=-b^2+b$};
+	\end{tikzpicture}
+\end{center}
+
+由图：$0<k<\dfrac{1}{4}$.
+
+\category{宝安中学期中22题}
+\begin{question}
+	$f(x)=a^x-a^{-x}$，奇函数，$a>0$且$a\neq1$.(1)若$f(1)>0$，$f(x^2+2x)+f(x-4)<0$的解集；(2)若$f(1)=\dfrac{3}{2}$，且$g(x)=a^{2x}+a^{-2x}-2mf(x)$在$[1,+\infty)$上的最小值为$-2$，求$m$.
+\end{question}
+
+(1) $a-\dfrac{1}{a}>0$；结合$a>0$，$a\neq1$：$a>1$.
+
+$\therefore$ 函数为增函数.
+
+$\therefore f(x^2+2x)>-f(x-4)=f(4-x)$.
+
+$x^2+2x>4-x$.
+
+$\therefore x<-4$或$x>1$.
+
+(2) $a-\dfrac{1}{a}=\dfrac{3}{2} \implies a=2$.
+
+$g(x)=2^{2x}+2^{-2x}-2m(2^x-2^{-x})$.
+
+令$2^x-2^{-x}=t$.
+
+$\because 2^x-2^{-x}$为增函数.
+
+$\therefore (2^x-2^{-x})_{\min}=2^1-2^{-1}=\dfrac{3}{2}$.
+
+$\therefore t\in\left[\dfrac{3}{2},+\infty\right)$.
+
+$g(t)=t^2-2mt+2$；轴$t_0=m$.
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $m\leq\dfrac{3}{2}$：$g(t)_{\min}=g\left(\dfrac{3}{2}\right)=\dfrac{9}{4}+2-3m=-2 \implies m=\dfrac{25}{12}$（舍）.
+	
+	\item $m>\dfrac{3}{2}$：$g(t)_{\min}=g(m)=-m^2+2=-2 \implies m_1=2$或$m_2=-2$（舍）.
+	
+\end{enumerate}
+
+综上$m=2$.
 
 
 
