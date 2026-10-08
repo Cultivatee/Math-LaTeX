@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  16 SEP 2026 17:05
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  30 SEP 2026 10:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1639,6 +1639,42 @@ Overfull \hbox (1.66666pt too wide) in paragraph at lines 677--723
 []  [] 
  []
 
+[8]
+Overfull \hbox (7.89378pt too wide) in paragraph at lines 760--761
+ [][] 
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 732--763
+[][]  [] 
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 763.
+
+[9]
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 814--847
+[][]  [] 
+ []
+
+[10]
+Overfull \hbox (10.10956pt too wide) detected at line 856
+[][] [] \OT1/cmr/m/n/10 = [][] [] \OML/cmm/m/it/10 dt \OT1/cmr/m/n/10 = \OML/cm
+m/m/it/10 r[]i [][] e[] dt \OT1/cmr/m/n/10 = []
+ []
+
+
+Overfull \hbox (1.66666pt too wide) in paragraph at lines 848--876
+[]  []
+ []
+
+[11]
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 931--959
+[][]  []
+ []
+
 
 Package caption Warning: Unused \captionsetup[table] on input line 121.
 See the caption package documentation for explanation.
@@ -1651,21 +1687,28 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[subfigure] on input line 129.
 See the caption package documentation for explanation.
 
-[8] [9] (./复变函数笔记.aux)
+[12] (./复变函数笔记.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
  ***********
-Package rerunfilecheck Info: File `复变函数笔记.out' has not changed.
-(rerunfilecheck)             Checksum: E28D400BC48338393553706FA651A5B3;1775.
+
+
+Package rerunfilecheck Warning: File `复变函数笔记.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `复变函数笔记.out':
+(rerunfilecheck)             Before: E28D400BC48338393553706FA651A5B3;1775
+(rerunfilecheck)             After:  3F5C2E9D68096E1C789350F5C4E02546;2941.
  ) 
 Here is how much of TeX's memory you used:
- 32818 strings out of 468168
- 711573 string characters out of 5429579
+ 32834 strings out of 468168
+ 711923 string characters out of 5429579
  1320389 words of memory out of 5000000
- 60941 multiletter control sequences out of 15000+600000
+ 60957 multiletter control sequences out of 15000+600000
  634468 words of font info for 105 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,16n,111p,420b,771s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 复变函数笔记.pdf (9 pages).
+Output written on 复变函数笔记.pdf (12 pages).

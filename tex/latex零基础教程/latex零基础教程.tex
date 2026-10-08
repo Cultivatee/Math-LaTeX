@@ -377,7 +377,26 @@ belowskip=0.5ex
 
 \subsection{字号}
 
-字号由小到大：\verb|\tiny|、\verb|\scriptsize|、\verb|\footnotesize|、\verb|\small|、\verb|\normalsize|、\verb|\large|、\verb|\Large|、\verb|\LARGE|、\verb|\huge|、\verb|\Huge|。
+\begin{center}
+	\setlength{\tabcolsep}{10pt}
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{llll}
+		\toprule
+		\textbf{\LaTeX{} 命令} & \textbf{绝对大小} & \textbf{Word 近似字号} & \textbf{效果} \\
+		\midrule
+		\verb|\tiny| & $5$ pt & 八号 & {\tiny 示例文字} \\
+		\verb|\scriptsize| & $7$ pt & 七号 & {\scriptsize 示例文字} \\
+		\verb|\footnotesize| & $8$ pt & 六号 & {\footnotesize 示例文字} \\
+		\verb|\small| & $9$ pt & 小五 & {\small 示例文字} \\
+		\verb|\normalsize| & $10$ pt & 五号 & {\normalsize 示例文字} \\
+		\verb|\large| & $12$ pt & 小四 & {\large 示例文字} \\
+		\verb|\Large| & $14.4$ pt & 四号 & {\Large 示例文字} \\
+		\verb|\LARGE| & $17.28$ pt & 三号 & {\LARGE 示例文字} \\
+		\verb|\huge| & $20.74$ pt & 二号 & {\huge 示例文字} \\
+		\verb|\Huge| & $24.88$ pt & 一号 & {\Huge 示例文字} \\
+		\bottomrule
+	\end{tabular}
+\end{center}
 
 \begin{lstlisting}
 	{\Large 这是大号字体}

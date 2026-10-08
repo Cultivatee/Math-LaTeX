@@ -916,16 +916,256 @@ $\therefore w \equiv 0$，即 $u = \hat{u}$. $\blacksquare$
 	\end{tikzpicture}
 \end{minipage}
 
-\noindent\textbf{接证 $u_\varepsilon = u$ 于 $U_\varepsilon$ 上}\quad $\because \eta$ 为径向函数，可设 $\eta_\varepsilon(y) = \psi_\varepsilon(|y|)$；换元 $y \to x-y$ 并逐层分解：
+\noindent\textbf{接证 $u_\varepsilon = u$ 于 $U_\varepsilon$ 上}\quad 代入 $\eta_\varepsilon(z) = \dfrac{1}{\varepsilon^n} \eta\left(\dfrac{z}{\varepsilon}\right)$ 并逐层分解，对 $x \in U_\varepsilon$：
 \[
 \begin{aligned}
-	u_\varepsilon(x) &= \int_{B(0,\varepsilon)} \eta_\varepsilon(y)\, u(x-y)\, dy = \int_0^\varepsilon \psi_\varepsilon(\rho) \left( \int_{\partial B(x,\rho)} u(y)\, dS_{(y)} \right) d\rho \\
-	&= \int_0^\varepsilon \psi_\varepsilon(\rho)\, n\alpha(n)\, \rho^{n-1}\, u(x)\, d\rho = u(x) \int_{\mathbb{R}^n} \eta_\varepsilon(y)\, dy = u(x),
+	u_\varepsilon(x) &= \int_{B(x,\varepsilon)} \eta_\varepsilon(x-y)\, u(y)\, dy = \int_0^\varepsilon d\rho \int_{\partial B(x,\rho)} \frac{1}{\varepsilon^n}\, \eta\!\left(\frac{x-y}{\varepsilon}\right) u(y)\, dS_{(y)} \\
+	&= \int_0^\varepsilon d\rho \int_{\partial B(x,\rho)} \frac{1}{\varepsilon^n}\, C_n\, e^{\frac{1}{\left|\frac{x-y}{\varepsilon}\right|^2 - 1}}\, u(y)\, dS_{(y)} \qquad \left(\left|\frac{x-y}{\varepsilon}\right| = \frac{\rho}{\varepsilon}\right) \\
+	&= \int_0^\varepsilon d\rho\; \frac{1}{\varepsilon^n}\, C_n\, e^{\frac{1}{(\rho/\varepsilon)^2 - 1}} \cdot u(x) \cdot n\alpha(n)\, \rho^{n-1} = u(x) \int_{\mathbb{R}^n} \eta_\varepsilon\, dy = u(x),
 \end{aligned}
 \]
-其中第二步用到球面平均值 $\dfrac{1}{n\alpha(n)\rho^{n-1}} \displaystyle\int_{\partial B(x,\rho)} u\, dS = u(x)$.
+其中第三步用到球面平均值 $\dfrac{1}{n\alpha(n)\rho^{n-1}} \displaystyle\int_{\partial B(x,\rho)} u\, dS = u(x)$，末步用到归一化 $\displaystyle\int_{\mathbb{R}^n} \eta_\varepsilon = 1$. $\therefore u = u_\varepsilon \in C^\infty(U_\varepsilon)$，由 $\varepsilon$ 任意得 $u \in C^\infty(U)$.
 
-$\therefore u = u_\varepsilon \in C^\infty(U_\varepsilon)$；又 $\varepsilon$ 任意且 $U = \bigcup_{\varepsilon>0} U_\varepsilon$，$\therefore u \in C^\infty(U)$. $\blacksquare$
+\begin{minipage}[t]{0.7\textwidth}
+	
+	\noindent\textbf{定理（导数估计）}\quad 设 $u$ 在 $U$ 中调和，则对每个球 $B(x^0,r) \subset U$ 与每个多重指标 $|\alpha| = k$：
+	\[
+	|D^\alpha u(x^0)| \leq \frac{C_k}{r^{n+k}}\, \|u\|_{L^1(B(x^0,r))},
+	\]
+	其中常数 $C_k$ 只依赖 $n$ 与 $k$；具体可取 $C_0 = \dfrac{1}{\alpha(n)}$，$C_k = \dfrac{(2^{n+1} n k)^k}{\alpha(n)}$.
+	
+	\noindent\textbf{证明（$k=1$ 情形）}\quad 先由平均值公式（球体形式）与三角不等式：
+	\[
+	|u(x_0)| \leq \frac{1}{\alpha(n) r^n} \int_{B(x_0,r)} |u(y)|\, dy = \frac{1}{\alpha(n) r^n}\, \|u\|_{L^1(B(x_0,r))}.
+	\]
+	$\because u$ 调和，$\therefore u_{x_i}$ 亦调和（正则性定理），在 $B(x_0,\frac{r}{2})$ 上用平均值公式，再以 Gauss-Green（$v \equiv 1$）化为边积分：
+	\[
+	u_{x_i}(x_0) = \frac{1}{\alpha(n) \left(\frac{r}{2}\right)^n} \int_{B(x_0,\frac{r}{2})} u_{x_i}(x)\, dx = \frac{1}{\alpha(n) \left(\frac{r}{2}\right)^n} \int_{\partial B(x_0,\frac{r}{2})} u(x)\, \nu^i\, dS_{(x)}.
+	\]
+	当 $x \in \partial B(x_0,\frac{r}{2})$ 时 $B(x,\frac{r}{2}) \subset B(x_0,r)$，故由平均值公式：
+	\[
+	|u(x)| \leq \frac{1}{\alpha(n) \left(\frac{r}{2}\right)^n} \int_{B(x,\frac{r}{2})} |u(y)|\, dy \leq \frac{2^n}{\alpha(n) r^n}\, \|u\|_{L^1(B(x_0,r))}.
+	\]
+	代回，并用 $\left|\partial B(x_0,\frac{r}{2})\right| = n\alpha(n) \left(\frac{r}{2}\right)^{n-1}$：
+	\[
+	|u_{x_i}(x_0)| \leq \frac{1}{\alpha(n) \left(\frac{r}{2}\right)^n} \cdot \frac{2^n}{\alpha(n) r^n}\, \|u\|_{L^1} \cdot n\alpha(n) \left(\frac{r}{2}\right)^{n-1} = \frac{2^{n+1} n}{\alpha(n)\, r^{n+1}}\, \|u\|_{L^1(B(x_0,r))},
+	\]
+	即 $C_1 = \frac{2^{n+1} n}{\alpha(n)}$；一般 $|\alpha| = k$ 同法归纳即得 $C_k = \frac{(2^{n+1} n k)^k}{\alpha(n)}$. $\blacksquare$
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	
+	\centering
+	\begin{tikzpicture}[scale=0.85, baseline=(current bounding box.north)]
+		\draw[thick] (0,0) circle (2);
+		\fill (0,0) circle (2pt) node[below left] {$x_0$};
+		\draw[thick, SkyBlue] (1,0) circle (1);
+		\fill (1,0) circle (2pt) node[above left] {$x$};
+		\draw[DarkRed, ->] (0,0) -- (2,0);
+		\node[above, DarkRed] at (1.5,0.15) {$r$};
+		\draw[gray, ->] (1,0) -- (1,1);
+		\node[right, gray] at (1,0.5) {$\frac{r}{2}$};
+		\node[gray] at (0,-2.4) {$B(x,\frac{r}{2}) \subset B(x_0,r)$};
+	\end{tikzpicture}
+\end{minipage}
+
+\noindent\textbf{定理（解析性）}\quad 调和函数在每一点都等于其 Taylor 幂级数，即 $u$ 在 $U$ 内实解析.（由导数估计可控制 Taylor 余项，证明从略.）
+
+\noindent\textbf{定理（Liouville）}\quad 设 $u: \mathbb{R}^n \to \mathbb{R}$ 有界且调和，则 $u$ 为常数.
+
+\noindent\textbf{证明}\quad 设 $|u| \leq M$. 由导数估计（$k=1$）于任意 $r>0$：
+\[
+|u_{x_i}(x_0)| \leq \frac{C_1}{r^{n+1}}\, \|u\|_{L^1(B(x_0,r))} \leq \frac{C_1}{r^{n+1}} \cdot M \cdot \alpha(n) r^n = \frac{C_1 M \alpha(n)}{r} \to 0 \quad (r \to \infty).
+\]
+$\therefore u_{x_i}(x_0) = 0$ 对一切 $x_0$ 与 $i$ 成立，$\therefore u$ 为常数. $\blacksquare$
+
+\subsection{Harnack 不等式}
+
+\noindent\textbf{定理（Harnack 不等式）}\quad 记 $V \subset U$ 且 $V \subset \bar{V} \subset U$（即 $V \Subset U$）. 对每个连通开集 $V$，存在一个只依赖 $U,V$ 的常数 $C$，对 $U$ 中所有非负调和函数 $u$：
+\[
+\sup_V u \leq C \inf_V u.
+\]
+特别地，$\forall x, y \in V$：$\dfrac{1}{C} u(y) \leq u(x) \leq C\, u(y)$.
+
+\begin{minipage}[t]{0.7\textwidth}
+	
+	\noindent\textbf{证明}\quad 设 $r = \dfrac{1}{4} d(V, \partial U) > 0$.
+	
+	\noindent\textbf{1$^\circ$}\quad 当 $x, y \in V$，$|x-y| < r$：此时 $B(y,r) \subset B(x,2r) \subset U$，由球体平均值：
+	\[
+	\begin{aligned}
+		u(x) &= \frac{1}{\alpha(n) (2r)^n} \int_{B(x,2r)} u(z)\, dz \geq \frac{1}{\alpha(n) (2r)^n} \int_{B(y,r)} u(z)\, dz \\
+		&= \frac{\alpha(n) r^n}{\alpha(n) (2r)^n}\, u(y) = \frac{1}{2^n}\, u(y).
+	\end{aligned}
+	\]
+	
+	\noindent\textbf{2$^\circ$}\quad 一般情形：$\because \bar{V}$ 是紧集，构造开覆盖 $\bar{V} \subseteq \displaystyle\bigcup_{x \in U} B^\circ\!\left(x, \frac{r}{2}\right)$，取有限子覆盖并以 $V$ 的连通性连成球链：$x \in B(x_1,\frac{r}{2})$，$y \in B(x_m,\frac{r}{2})$，且相邻球相交 $B(x_i,\frac{r}{2}) \cap B(x_{i+1},\frac{r}{2}) \neq \varnothing$. 相邻球心距离 $< r$，反复使用 1$^\circ$：
+	\[
+	u(x) \geq \frac{1}{2^n} u(x_1) \geq \frac{1}{2^{2n}} u(x_2) \geq \cdots \geq \frac{1}{2^{mn}} u(x_m) \geq \frac{1}{2^{(m+1)n}} u(y).
+	\]
+	取 $C = 2^{(m+1)n}$（只依赖覆盖，即只依赖 $U,V$），即得 $\sup_V u \leq C \inf_V u$. $\blacksquare$
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	
+	\centering
+	\begin{tikzpicture}[scale=0.85, baseline=(current bounding box.north)]
+		\draw[thick] (0,0) circle (2);
+		\fill (0,0) circle (2pt) node[above left] {$x$};
+		\draw[thick, SkyBlue] (0.6,-0.4) circle (1);
+		\fill (0.6,-0.4) circle (2pt) node[below right] {$y$};
+		\draw[DarkRed, ->] (0,0) -- (1.41,1.41);
+		\node[above left, DarkRed] at (0.8,0.9) {$2r$};
+		\draw[gray, ->] (0.6,-0.4) -- (0.6,0.6);
+		\node[right, gray] at (0.6,0.1) {$r$};
+		\node[gray] at (0,-2.4) {$B(y,r) \subset B(x,2r)$};
+	\end{tikzpicture}
+	
+	\vspace{6pt}
+	\centering
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		\draw[thick] (-1.6,0) circle (0.6);
+		\draw[thick] (-0.6,0.25) circle (0.6);
+		\draw[thick] (0.4,0) circle (0.6);
+		\draw[thick] (1.4,0.2) circle (0.6);
+		\fill (-2.05,0) circle (2pt) node[below left] {$x$};
+		\fill (-1.6,0) circle (1.5pt) node[above] {$x_1$};
+		\fill (-0.6,0.25) circle (1.5pt) node[above] {$x_2$};
+		\fill (0.4,0) circle (1.5pt) node[below] {$\cdots$};
+		\fill (1.4,0.2) circle (1.5pt) node[above] {$x_m$};
+		\fill (1.9,0.1) circle (2pt) node[below right] {$y$};
+		\node[gray] at (0,-1.1) {相邻球相交};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsection{Green 公式与 Green 函数}
+
+\noindent\textbf{定理（Green 公式）}\quad 设 $U$ 为有界光滑开集，$u, v \in C^2(\bar{U})$，$\nu$ 为 $\partial U$ 的单位外法向，$\dfrac{\partial u}{\partial \nu} = Du \cdot \nu$. 则
+\begin{enumerate}[label=\arabic*$^\circ$, left=0pt]
+	
+	\item $\displaystyle\int_U \Delta u\, dx = \int_{\partial U} \frac{\partial u}{\partial \nu}\, dS$；
+	\item $\displaystyle\int_U Du \cdot Dv\, dx = \int_{\partial U} u\, \frac{\partial v}{\partial \nu}\, dS - \int_U u\, \Delta v\, dx$；
+	\item $\displaystyle\int_U (u\, \Delta v - v\, \Delta u)\, dx = \int_{\partial U} \left( u\, \frac{\partial v}{\partial \nu} - v\, \frac{\partial u}{\partial \nu} \right) dS$.
+\end{enumerate}
+
+\noindent\textbf{表示公式的推导}\quad 固定 $x \in U$，在 $V_\varepsilon = U \setminus B(x,\varepsilon)$ 上对 $u$ 与 $v(y) = \Phi(y-x)$（在 $V_\varepsilon$ 内调和）用 3$^\circ$，注意 $\partial V_\varepsilon = \partial U \cup \partial B(x,\varepsilon)$：
+\[
+\int_{U \setminus B(x,\varepsilon)} \left[ u(y)\, \Delta_y \Phi(y-x) - \Phi(y-x)\, \Delta u(y) \right] dy = \int_{\partial V_\varepsilon} \left( u(y)\, \frac{\partial \Phi(y-x)}{\partial \nu} - \Phi(y-x)\, \frac{\partial u(y)}{\partial \nu} \right) dS_{(y)}.
+\]
+$\because \Delta_y \Phi(y-x) = 0$. 在 $\partial B(x,\varepsilon)$ 上 $\nu = -\dfrac{y-x}{|y-x|}$，且（$n \geq 3$）
+\[
+D_y \Phi(y-x) = -\frac{1}{n\alpha(n)}\, \frac{y-x}{|y-x|^n}, \quad \frac{\partial \Phi(y-x)}{\partial \nu} = D_y \Phi(y-x) \cdot \nu = \frac{1}{n\alpha(n)}\, \frac{1}{|y-x|^{n-1}} = \frac{1}{n\alpha(n)\, \varepsilon^{n-1}},
+\]
+\[
+\therefore \int_{\partial B(x,\varepsilon)} u(y)\, \frac{\partial \Phi(y-x)}{\partial \nu}\, dS_{(y)} = \frac{1}{n\alpha(n)\, \varepsilon^{n-1}} \int_{\partial B(x,\varepsilon)} u(y)\, dS_{(y)} \xrightarrow{\varepsilon \to 0} u(x);
+\]
+而 $\left| \displaystyle\int_{\partial B(x,\varepsilon)} \Phi(y-x)\, \frac{\partial u(y)}{\partial \nu}\, dS_{(y)} \right| \to 0$（$\varepsilon \to 0$）. 令 $\varepsilon \to 0$ 得表示公式：
+\[
+-\int_U \Phi(y-x)\, \underbrace{\Delta u(y)}_{=\,-f}\, dy = u(x) + \int_{\partial U} \left[ u(y)\, \frac{\partial \Phi(y-x)}{\partial \nu} - \Phi(y-x)\, \frac{\partial u(y)}{\partial \nu} \right] dS_{(y)}. \quad (*)
+\]
+定义修正函数 $\phi^x(y)$ 为边值问题的解：
+\[
+\begin{cases}
+	\Delta \phi^x(y) = 0 & y \in U, \\
+	\phi^x(y) = \Phi(y-x) & y \in \partial U.
+\end{cases}
+\]
+对 $\phi^x$ 应用 Green 公式（$\Delta \phi^x = 0$）：
+\[
+-\int_U \phi^x(y)\, \Delta u(y)\, dy = \int_{\partial U} \left( u(y)\, \frac{\partial \phi^x}{\partial \nu}(y) - \Phi(y-x)\, \frac{\partial u(y)}{\partial \nu} \right) dS_{(y)}. \quad (**)
+\]
+$(*) - (**)$：
+\[
+\int_U -\Delta u(y)\, \big[ \Phi(y-x) - \phi^x(y) \big]\, dy = u(x) + \int_{\partial U} u(y) \left[ \frac{\partial \Phi(y-x)}{\partial \nu} - \frac{\partial \phi^x(y)}{\partial \nu} \right] dS_{(y)}.
+\]
+定义 Green 函数：
+\[
+G(x,y) = \Phi(y-x) - \phi^x(y), \quad x, y \in U,\ x \neq y.
+\]
+$\therefore$ 当 $-\Delta u = f$ 于 $U$、$u = g$ 于 $\partial U$ 时，Poisson 方程的解为
+\[
+u(x) = \int_U G(x,y)\, f(y)\, dy - \int_{\partial U} \frac{\partial G(x,y)}{\partial \nu}\, g(y)\, dS_{(y)}.
+\]
+
+\noindent\textbf{定理（Green 函数的对称性）}\quad $G(x,y) = G(y,x)$.
+
+\subsection{半空间上的 Green 函数与 Poisson 公式}
+
+\begin{minipage}[t]{0.7\textwidth}
+	
+	\noindent\textbf{半空间上的 Green 函数}\quad 记 $\mathbb{R}^n_+ = \{ (x_1,\dots,x_n) \in \mathbb{R}^n : x_n > 0 \}$. 定义 $x = (x_1,\dots,x_n) \in \mathbb{R}^n_+$ 关于平面 $\partial \mathbb{R}^n_+$ 的反射点为 $\tilde{x} = (x_1,\dots,x_{n-1},-x_n)$.
+	
+	设 $\phi^x(y) = \Phi(y-\tilde{x})$；$\because \tilde{x} \notin \mathbb{R}^n_+$，$\therefore \Delta_y \phi^x(y) = 0$ 于 $\mathbb{R}^n_+$ 内；又当 $y \in \partial \mathbb{R}^n_+$ 时 $|y-\tilde{x}| = |y-x|$，故 $\phi^x(y) = \Phi(y-x)$.
+	
+	$\therefore$ 半空间上的 Green 函数为
+	\[
+	G(x,y) = \Phi(y-x) - \Phi(y-\tilde{x}).
+	\]
+	在 $\partial \mathbb{R}^n_+$ 上 $\nu = (0,\dots,0,-1)$，故
+	\[
+	\frac{\partial G(x,y)}{\partial \nu} = D_y G(x,y) \cdot \nu = -\frac{\partial G(x,y)}{\partial y_n}.
+	\]
+	当 $n \geq 3$：
+	\[
+	\begin{aligned}
+		\frac{\partial G(x,y)}{\partial y_n} &= \frac{\partial}{\partial y_n} \left[ \frac{1}{n(n-2)\alpha(n)}\, \frac{1}{|y-x|^{n-2}} - \frac{1}{n(n-2)\alpha(n)}\, \frac{1}{|y-\tilde{x}|^{n-2}} \right] \\
+		&= -\frac{1}{n\alpha(n)} \left[ \frac{1}{|y-x|^{n-1}} \cdot \frac{y_n - x_n}{|y-x|} - \frac{1}{|y-\tilde{x}|^{n-1}} \cdot \frac{y_n - \tilde{x}_n}{|y-\tilde{x}|} \right] \\
+		&= \frac{1}{n\alpha(n)} \cdot \frac{2x_n}{|y-x|^n} \quad (\text{在边界 } y_n = 0 \text{ 上}).
+	\end{aligned}
+	\]
+	当 $n = 2$：由 $\dfrac{\partial}{\partial y_n} \ln|y-x| = \dfrac{1}{|y-x|} \cdot \dfrac{y_n - x_n}{|y-x|}$，
+	\[
+	\frac{\partial G(x,y)}{\partial y_n} = \frac{\partial}{\partial y_n} \left\{ -\frac{1}{2\pi} \big[ \ln|y-x| - \ln|y-\tilde{x}| \big] \right\} = -\frac{1}{2\pi} \left[ \frac{y_n - x_n}{|y-x|^2} - \frac{y_n + x_n}{|y-\tilde{x}|^2} \right],
+	\]
+	在边界 $y_n = 0$ 上两分母相等，$= \dfrac{x_n}{\pi |y-x|^2}$（与一般公式一致）.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	
+	\centering
+	\begin{tikzpicture}[scale=0.85, baseline=(current bounding box.north)]
+		\draw[thick] (-2.5,0) -- (2.5,0) node[right] {$\partial \mathbb{R}^n_+$};
+		\draw[->, gray!40] (2.1,-1.7) -- (2.1,1.7) node[above] {$x_n$};
+		\fill (0.4,1.2) circle (2pt) node[above right] {$x$};
+		\fill (0.4,-1.2) circle (2pt) node[below right] {$\tilde{x}$};
+		\fill (-0.8,0) circle (2pt) node[above left] {$y$};
+		\draw[dashed, SkyBlue] (0.4,1.2) -- (0.4,-1.2);
+		\draw[thick, DarkRed] (-0.8,0) -- (0.4,1.2);
+		\draw[thick, DarkRed] (-0.8,0) -- (0.4,-1.2);
+		\node[above] at (-1.5,1.6) {$\mathbb{R}^n_+$};
+		\node[gray] at (0,-2.1) {$|y-\tilde{x}|=|y-x|$};
+	\end{tikzpicture}
+\end{minipage}
+
+\noindent\textbf{定义（$\mathbb{R}^n_+$ 的 Poisson 核）}\quad
+\[
+K(x,y) = \frac{2x_n}{n\alpha(n)\, |x-y|^n} = -\frac{\partial G(x,y)}{\partial \nu}, \quad x \in \mathbb{R}^n_+,\ y \in \partial \mathbb{R}^n_+,
+\]
+其中 $|x-y| = \left[ (x_1-y_1)^2 + \cdots + (x_{n-1}-y_{n-1})^2 + x_n^2 \right]^{\frac{1}{2}}$. 于是
+\[
+u(x) = \int_{\partial \mathbb{R}^n_+} K(x,y)\, g(y)\, dS_{(y)} = \frac{2x_n}{n\alpha(n)} \int_{\partial \mathbb{R}^n_+} \frac{g(y)}{|x-y|^n}\, dy.
+\]
+
+\noindent\textbf{定理（半空间上的 Poisson 公式）}\quad 设 $g \in C(\mathbb{R}^{n-1}) \cap L^\infty(\mathbb{R}^{n-1})$，定义
+\[
+u(x) = \frac{2x_n}{n\alpha(n)} \int_{\partial \mathbb{R}^n_+} \frac{g(y)}{|x-y|^n}\, dy, \quad x \in \mathbb{R}^n_+.
+\]
+则
+\begin{enumerate}[label=\arabic*$^\circ$, left=0pt]
+	
+	\item $u \in C^\infty(\mathbb{R}^n_+) \cap L^\infty(\mathbb{R}^n_+)$；
+	\item $\Delta u(x) = 0$，$x \in \mathbb{R}^n_+$；
+	\item 对任意 $x^0 \in \partial \mathbb{R}^n_+$，$\displaystyle\lim_{\substack{x \to x^0 \\ x \in \mathbb{R}^n_+}} u(x) = g(x^0)$.
+\end{enumerate}
+
+\noindent\textbf{验证（积分收敛）}\quad 取 $M = 2|x|$，则当 $|y| > M$ 时 $|y-x| \geq |y| - |x| > \dfrac{|y|}{2}$，
+\[
+\begin{aligned}
+	\int_{\partial \mathbb{R}^n_+} \frac{1}{|x-y|^n}\, dy &= \int_{|y| \leq M} \frac{dy}{|x-y|^n} + \int_{|y| > M} \frac{dy}{|x-y|^n} \leq C + 2^n \int_{|y| > M} \frac{dy}{|y|^n} \\
+	&= C + 2^n \int_M^{+\infty} d\rho \int_{\partial B^{n-1}(0,\rho)} \frac{1}{\rho^n}\, dS = C + C_n \int_M^{+\infty} \frac{\rho^{n-2}}{\rho^n}\, d\rho = C + C_n \int_M^{+\infty} \frac{d\rho}{\rho^2} < \infty.
+\end{aligned}
+\]
+（注意：积分在 $(n-1)$ 维平面 $\partial \mathbb{R}^n_+$ 上进行，极坐标下球面测为 $\sim \rho^{n-2}$，故被积函数为 $\rho^{-2}$ 而收敛.）
 
 
 

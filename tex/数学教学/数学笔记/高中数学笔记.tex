@@ -2391,6 +2391,388 @@ $\alpha\in\left(2k\pi,\ 2k\pi+\dfrac{\pi}{2}\right) \implies \dfrac{\alpha}{3}\i
 
 $\therefore$ 一、二、三象限.
 
+
+\subsection{第十二讲\quad 三角函数图象与性质}
+
+\subsubsection{正余弦函数}
+\begin{knowledge}{图象、性质、形式}
+	
+	正余弦函数：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 图象、性质、形式.
+		
+		\item 值域.
+		
+		\item 解不等式.
+		
+	\end{enumerate}
+	
+	正切函数：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 图象与性质.
+		
+		\item 定义域、单调区间.
+		
+		\item 图象问题.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.5, baseline=(current bounding box.north)]
+		% 正弦
+		\begin{scope}[shift={(-7,0)}]
+			\draw[->, gray!40] (-7,0) -- (7,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-1.5) -- (0,1.5) node[above] {$y=\sin x$};
+			\draw[thick, DarkRed, domain=-6.5:6.5, smooth, samples=80, variable=\x] plot ({\x}, {sin(\x r)});
+			\node[below] at (3.14,0) {$\pi$};
+			\node[below] at (6.28,0) {$2\pi$};
+		\end{scope}
+		% 余弦
+		\begin{scope}[shift={(10,0)}]
+			\draw[->, gray!40] (-7,0) -- (7,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-1.5) -- (0,1.5) node[above] {$y=\cos x$};
+			\draw[thick, SkyBlue, domain=-6.5:6.5, smooth, samples=80, variable=\x] plot ({\x}, {cos(\x r)});
+			\node[below] at (3.14,0) {$\pi$};
+			\node[below] at (6.28,0) {$2\pi$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\category{值域问题}
+\begin{question}
+	$f(x)=\sin^2x+\sqrt{3}\cos x-\dfrac{3}{4}$，$x\in\left[0,\dfrac{\pi}{2}\right]$的最大值.
+\end{question}
+
+[复合函数]$f(x)=1-\cos^2x+\sqrt{3}\cos x-\dfrac{3}{4}$[化同名].
+
+令$t=\cos x$，$t\in[0,1]$[换元].
+
+$\therefore f(t)=-t^2+\sqrt{3}t+\dfrac{1}{4}$.
+
+$\therefore f(t)_{\max}=f\left(\dfrac{\sqrt{3}}{2}\right)=1$.
+
+\category{解不等式}
+\begin{question}
+	$\sin\left(2x+\dfrac{\pi}{4}\right)\leq\dfrac{1}{2}$.
+\end{question}
+
+令$t=2x+\dfrac{\pi}{4}$；$y=\sin t\leq\dfrac{1}{2}$.
+
+简单的直接解；复杂的由外到内.
+
+$-\dfrac{7}{6}\pi+2k\pi\leq t\leq\dfrac{\pi}{6}+2k\pi$.
+
+$\therefore x\in\left[-\dfrac{17}{24}\pi+k\pi,-\dfrac{\pi}{24}+k\pi\right]$，$k\in Z$.
+
+\subsubsection{正切函数}
+\begin{knowledge}{图象与性质}
+	定义域：$\left\{x\middle|x\neq\dfrac{\pi}{2}+k\pi\right\}$.
+	
+	单调区间问题与值域问题同理.
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-5.5,0) -- (5.5,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-2.2) -- (0,2.2) node[above] {$y=\tan x$};
+		\foreach \a in {-4.71,-1.57,1.57,4.71} { \draw[dashed, gray] (\a,-2.2) -- (\a,2.2); }
+		\draw[thick, DarkRed, domain=-1.35:1.35, smooth, samples=60, variable=\x] plot ({\x}, {tan(\x r)});
+		\draw[thick, DarkRed, domain=1.79:4.49, smooth, samples=60, variable=\x] plot ({\x}, {tan(\x r)});
+		\draw[thick, DarkRed, domain=-4.49:-1.79, smooth, samples=60, variable=\x] plot ({\x}, {tan(\x r)});
+		\node[below] at (1.57,0) {$\dfrac{\pi}{2}$};
+		\node[below] at (3.14,0) {$\pi$};
+	\end{tikzpicture}
+\end{center}
+
+\category{图象问题}
+\begin{question}
+	$f(x)=\cos x\cdot|\tan x|$在$\left(\dfrac{\pi}{2},\dfrac{3\pi}{2}\right)$上的图象.
+\end{question}
+
+考点：按象限定$\tan x$正负去绝对值，分段化简后作图（识图）.
+
+在$\left(\dfrac{\pi}{2},\pi\right)$（第二象限），$\tan x<0$：$f(x)=\cos x\cdot(-\tan x)=-\sin x$.
+
+在$\left(\pi,\dfrac{3\pi}{2}\right)$（第三象限），$\tan x>0$：$f(x)=\cos x\cdot\tan x=\sin x$.
+
+在$x=\pi$：$f(\pi)=0$.
+
+即$f(x)=\begin{cases} -\sin x, & x\in\left(\dfrac{\pi}{2},\pi\right) \\ 0, & x=\pi \\ \sin x, & x\in\left(\pi,\dfrac{3\pi}{2}\right) \end{cases}=-|\sin x|$.
+
+$\because$ 在$\left(\dfrac{\pi}{2},\pi\right)$上$\sin x>0$，$-\sin x$由$-1$增至$0$；在$\left(\pi,\dfrac{3\pi}{2}\right)$上$\sin x<0$，$\sin x$由$0$减至$-1$.
+
+$\therefore$ 图象全在$x$轴下方，仅$x=\pi$处触及$x$轴，呈倒拱形（两端$-1$取不到）.
+
+\begin{center}
+	\begin{tikzpicture}[scale=1.0, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (0.8,0) -- (5.5,0) node[right] {$x$};
+		\draw[->, gray!40] (1.57,-1.5) -- (1.57,0.5);
+		\draw[thick, DarkRed, domain=1.57:4.71, smooth, samples=80, variable=\x] plot ({\x}, {-abs(sin(\x r))});
+		\draw[DarkRed, fill=white] (1.57,-1) circle (0.06);
+		\draw[DarkRed, fill=white] (4.71,-1) circle (0.06);
+		\node[below] at (1.57,0) {$\dfrac{\pi}{2}$};
+		\node[below] at (3.14,0) {$\pi$};
+		\node[below] at (4.71,0) {$\dfrac{3\pi}{2}$};
+		\node[left, gray] at (1.57,-1) {$-1$};
+	\end{tikzpicture}
+\end{center}
+
+
+\subsection{第十三讲\quad 三角恒等变换}
+
+\subsubsection{和差角公式}
+\begin{knowledge}{公式}
+	$\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta$.
+	
+	$\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta$.
+	
+	$\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta$.
+	
+	$\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta$.
+	
+	正：交叉差积；余：同名和积（tan）.
+	
+	公式的逆用：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 两个角.
+		
+		\item 若不是两角，诱导公式化两角.
+		
+		\item 正切：先写展开式再变形.
+		
+	\end{enumerate}
+	
+	整体思想：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 令.
+		
+		\item 确定新元范围.
+		
+		\item 求新元的$\sin,\cos$.
+		
+		\item 表示所求，用公式展开.
+		
+		\item 代入数据，出结果.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{三角形中}
+\begin{question}
+	在$\triangle ABC$中，若$\tan A+\tan B+\sqrt{3}=\sqrt{3}\tan A\tan B$，则$C=$？
+\end{question}
+
+化题干：$\tan A+\tan B=\sqrt{3}\tan A\tan B-\sqrt{3}=\sqrt{3}(\tan A\tan B-1)$.
+
+$\dfrac{\tan A+\tan B}{\tan A\tan B-1}=\sqrt{3} \implies \tan(A+B)=-\sqrt{3}$.
+
+$\therefore A+B=\dfrac{2\pi}{3}$.
+
+$\therefore C=\pi-\dfrac{2\pi}{3}=\dfrac{\pi}{3}$.
+
+\category{整体换元}
+\begin{question}
+	$\sin\left(\alpha+\dfrac{\pi}{6}\right)=\dfrac{1}{3}$，$-\dfrac{\pi}{2}<\alpha<\dfrac{\pi}{3}$，求$\cos\alpha$.
+\end{question}
+
+令$\alpha+\dfrac{\pi}{6}=t$，$t\in\left(-\dfrac{\pi}{3},\dfrac{\pi}{2}\right)$，于一、四象限.
+
+$\sin t=\dfrac{1}{3} \implies \cos t=\dfrac{2\sqrt{2}}{3}$.
+
+$\cos\alpha=\cos\left(t-\dfrac{\pi}{6}\right)=\cos t\cdot\cos\dfrac{\pi}{6}+\sin t\cdot\sin\dfrac{\pi}{6}=\dfrac{\sqrt{6}}{3}+\dfrac{1}{6}$.
+
+\subsubsection{二倍角公式}
+\begin{knowledge}{公式}
+	$\sin2\alpha=2\sin\alpha\cos\alpha$.
+	
+	$\cos2\alpha=\cos^2\alpha-\sin^2\alpha=2\cos^2\alpha-1=1-2\sin^2\alpha$.
+	
+	$\sin^2\alpha=\dfrac{1-\cos2\alpha}{2}$；$\cos^2\alpha=\dfrac{1+\cos2\alpha}{2}$.
+	
+	降幂升角，降角升幂.
+	
+	$\sin\alpha,\cos\alpha\leftrightarrow\sin\alpha\pm\cos\alpha$（平方）$\leftrightarrow\sin2\alpha\leftrightarrow\cos2\alpha$.
+\end{knowledge}
+
+\category{思维延伸}
+\begin{question}
+	$\dfrac{\cos2\alpha}{\sin\left(\alpha-\frac{\pi}{4}\right)}=-\dfrac{\sqrt{2}}{2}$，求$\cos\alpha+\sin\alpha$.
+\end{question}
+
+$\dfrac{\cos2\alpha}{\sin\alpha\cos\frac{\pi}{4}-\sin\frac{\pi}{4}\cos\alpha}=\dfrac{(\cos\alpha+\sin\alpha)(\cos\alpha-\sin\alpha)}{\frac{\sqrt{2}}{2}(\sin\alpha-\cos\alpha)}=-\dfrac{\sqrt{2}}{2}$.
+
+$\therefore \cos\alpha+\sin\alpha=\dfrac{1}{2}$.
+
+\subsubsection{辅助角公式}
+\begin{knowledge}{辅助角}
+	$a\sin x+b\cos x \implies$ 提出$\sqrt{a^2+b^2}$.
+\end{knowledge}
+
+\begin{knowledge}{三角函数大题：转正弦型函数}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 平方降幂（二倍角公式）.
+		
+		\item 和差展开.
+		
+		\item 辅助合并.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{深外期末7}
+\begin{question}
+	$a=\dfrac{1}{2}\cos6^\circ-\dfrac{\sqrt{3}}{2}\sin6^\circ$，$b=\dfrac{2\tan13^\circ}{1+\tan^2 13^\circ}$，$c=\sqrt{\dfrac{1-\cos50^\circ}{2}}$，比大小.
+\end{question}
+
+$a=\sin(30^\circ-6^\circ)=\sin24^\circ$.
+
+$b=\dfrac{2\cdot\frac{\sin13^\circ}{\cos13^\circ}}{\frac{\cos^2 13^\circ+\sin^2 13^\circ}{\cos^2 13^\circ}}=2\cdot\dfrac{\sin13^\circ}{\cos13^\circ}\cdot\cos^2 13^\circ=2\sin13^\circ\cos13^\circ=\sin26^\circ$.
+
+$c=\sqrt{\dfrac{1-(1-2\sin^2 25^\circ)}{2}}=\sqrt{\sin^2 25^\circ}=\sin25^\circ$.
+
+$\therefore a<c<b$.
+
+\subsection{第十四讲\quad 正弦型函数（一）}
+
+\subsubsection{函数图象变换}
+\begin{knowledge}{图象变换}
+	$y=A\sin(\omega x+\varphi)+b$.
+	
+	横向平移、纵向伸缩.
+	
+	注意：谁到谁.
+	
+	平移、伸缩只对$x$.
+\end{knowledge}
+
+\subsubsection{正弦型函数的图象与性质}
+\begin{knowledge}{名称}
+	相位：$\omega x+\varphi$.
+	
+	初相：$\varphi$.
+	
+	频率：$f=\dfrac{1}{T}$.
+	
+	振幅：$A$.
+	
+	角速度：$\omega$.
+\end{knowledge}
+
+\subsection{第十五讲\quad 正弦型函数（二）}
+
+\subsubsection{A与b}
+\category{最值求a、b}
+\begin{question}
+	$y=a-b\sin\left(4x-\dfrac{\pi}{3}\right)$最大值为$5$，最小值为$1$，求$a,b$.
+\end{question}
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $b\geq0$：$\begin{cases} a+b=5 \\ a-b=1 \end{cases} \implies \begin{cases} a=3 \\ b=2 \end{cases}$.
+	
+	\item $b<0$：$\begin{cases} a-b=5 \\ a+b=1 \end{cases} \implies \begin{cases} a=3 \\ b=-2 \end{cases}$.
+	
+\end{enumerate}
+
+\subsubsection{$\omega$}
+\begin{knowledge}{题型}
+	求$\omega$及范围（难）. 核心：找周期. 方法：观察对称中心、对称轴.
+\end{knowledge}
+
+\category{区间上递减}
+\begin{question}
+	$\omega>0$，$f(x)=\sin\left(\omega x+\dfrac{\pi}{4}\right)$在$\left(\dfrac{\pi}{2},\pi\right)$上递减，$\omega$范围（南头高三）.
+\end{question}
+
+令$t=\omega x+\dfrac{\pi}{4}$，$t\in\left(\dfrac{\pi}{2}\omega+\dfrac{\pi}{4},\ \pi\omega+\dfrac{\pi}{4}\right)\subseteq\left(\dfrac{\pi}{2}+2k\pi,\ \dfrac{3\pi}{2}+2k\pi\right)$.
+
+$\begin{cases} \dfrac{\pi}{2}\omega+\dfrac{\pi}{4}\geq\dfrac{\pi}{2}+2k\pi \\ \pi\omega+\dfrac{\pi}{4}\leq\dfrac{3}{2}\pi+2k\pi \end{cases} \implies \dfrac{1}{2}+4k\leq\omega\leq\dfrac{5}{4}+2k$.
+
+$\begin{cases} \dfrac{1}{2}+4k\leq\dfrac{5}{4}+2k \\ \dfrac{1}{4}+2k>0 \end{cases} \implies k=0$.
+
+$\therefore \dfrac{1}{2}\leq\omega\leq\dfrac{5}{4}$.
+
+\category{平移重合}
+\begin{question}
+	$\omega>0$，$y=\sin\left(\omega x+\dfrac{\pi}{3}\right)+2$右移$\dfrac{2\pi}{3}$与原图象重合，$\omega_{\min}$？
+\end{question}
+
+由题：$kT=k\dfrac{2\pi}{\omega}=\dfrac{2\pi}{3}$.
+
+$\omega=3k$，$k\in Z$（$\omega>0$）.
+
+$\therefore k=1$时，$\omega_{\min}=3$.
+
+\category{有且只有两个最值点}
+\begin{question}
+	$f(x)=\cos\omega x$（$\omega>0$）在$\left(-\dfrac{2}{3}\pi,\dfrac{\pi}{4}\right)$上有且只有两个最值点，则$\omega$的范围？
+\end{question}
+
+令$t=\omega x$，$y=\cos t$，$t\in\left(-\dfrac{2}{3}\omega\pi,\ \dfrac{\pi}{4}\omega\right)$.
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-8.8,0) -- (3.5,0) node[right] {$t$};
+		\draw[->, gray!40] (0,-1.6) -- (0,1.6) node[above] {$y=\cos t$};
+		\draw[thick, DarkRed, domain=-7.33:2.75, smooth, samples=120, variable=\t] plot ({\t}, {cos(\t r)});
+		% 开区间端点（不包括）
+		\draw[DarkRed, fill=white] (-6.28,{cos(-6.28 r)}) circle (3pt);
+		\draw[DarkRed, fill=white] (2.75,{cos(2.75 r)}) circle (3pt);
+		\node[below left, DarkRed] at (-6.28,{cos(-6.28 r)}) {不包括};
+		\node[below right, DarkRed] at (2.75,{cos(2.75 r)}) {不包括};
+		% 两个最值点
+		\draw[DarkRed, fill=DarkRed] (-3.1415926,-1) circle (2pt);
+		\node[circle, draw, DarkRed, inner sep=1pt, above] at (-3.1415926,-1) {2};
+		\draw[DarkRed, fill=DarkRed] (0,1) circle (2pt);
+		\node[circle, draw, DarkRed, inner sep=1pt, above right] at (0,1.1) {1};
+	\end{tikzpicture}
+\end{center}
+
+$\therefore \begin{cases} \dfrac{\omega}{4}\pi\leq\pi \\ -4\pi\leq-\dfrac{2}{3}\omega\pi<-2\pi \end{cases} \implies 3<\omega\leq4$.
+
+\subsubsection{phi}
+\begin{knowledge}{代值}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 最值.
+		
+		\item 高三有升降趋势判断题.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{图象题}
+\begin{question}
+	由图象求$\sin(\omega x+\varphi)$.
+\end{question}
+
+\begin{center}
+	\begin{tikzpicture}[scale=1.1, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-1.3,0) -- (2.8,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-1.5) -- (0,1.5) node[above] {$y$};
+		\draw[thick, SkyBlue, domain=-1.1:2.6, smooth, samples=120, variable=\x] plot ({\x}, {sin((2*\x + 2.0944) r)});
+		\draw[dashed, gray] (0,-1) -- (1.309,-1);
+		\draw[dashed, gray] (1.309,0) -- (1.309,-1);
+		\draw[SkyBlue, fill=SkyBlue] (1.309,-1) circle (1.5pt);
+		\node[below right, DarkRed] at (1.309,-1) {$\left(\dfrac{5\pi}{12},-1\right)$};
+		\node[below] at (0.524,0) {$\dfrac{\pi}{6}$};
+		\node[below] at (2.094,0) {$\dfrac{2\pi}{3}$};
+	\end{tikzpicture}
+\end{center}
+
+代值点$\left(\dfrac{5\pi}{12},-1\right)$.
+
+$\dfrac{T}{2}=\dfrac{2\pi}{3}-\dfrac{\pi}{6}=\dfrac{\pi}{2}$.
+
+$\therefore T=\pi$，$\omega=2$；$\sin\left(2\cdot\dfrac{5\pi}{12}+\varphi\right)=-1 \implies \varphi=\dfrac{2\pi}{3}$.
+
+
 \subsection{第十六讲\quad 函数综合}
 \begin{knowledge}{题型归纳}
 	函数定义题[单调性、转化、换元、零点$\to$交点].
@@ -2471,14 +2853,1926 @@ $g(t)=t^2-2mt+2$；轴$t_0=m$.
 
 综上$m=2$.
 
+\section{高一上$\rightarrow$高一下寒假}
+
+\subsection{第一讲\quad 平面向量}
+
+\subsubsection{平面向量的基本概念}
+\begin{knowledge}{概念}
+	向量的长度，即模：$|\overrightarrow{AB}|$.
+	
+	平行向量大小不必相等，可以是相反向量.
+	
+	$-\overrightarrow{AB}=\overrightarrow{BA}$.
+	
+	共线与平行为相同概念.
+	
+	注意：注意方向；零向量；平行共线.
+\end{knowledge}
+
+\subsubsection{平面向量的线性运算}
+\begin{knowledge}{加减}
+	首尾相接：$\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}$；及平行四边形法则.
+	
+	$\overrightarrow{OB}-\overrightarrow{OA}=\overrightarrow{AB}$（指向被减向量的点）.
+	
+	$\left||\vec{a}|-|\vec{b}|\right|\leq|\vec{a}+\vec{b}|\leq|\vec{a}|+|\vec{b}|$.
+	
+	中点：$\overrightarrow{AD}=\dfrac{1}{2}\overrightarrow{AB}+\dfrac{1}{2}\overrightarrow{AC}$.
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.9, baseline=(current bounding box.north)]
+		% 减法三角形
+		\begin{scope}[shift={(-5,0)}]
+			\coordinate (O) at (0,0);
+			\coordinate (A) at (2.6,0.2);
+			\coordinate (B) at (-1.2,1.6);
+			\draw[thick, ->] (O) -- (A) node[below] {$A$};
+			\draw[thick, ->] (O) -- (B) node[left] {$B$};
+			\draw[thick, ->, DarkRed] (A) -- (B);
+			\node[below] at (O) {$O$};
+		\end{scope}
+		% 中线
+		\begin{scope}[shift={(0,0)}]
+			\coordinate (A) at (0,2);
+			\coordinate (B) at (-1,0);
+			\coordinate (C) at (1,0);
+			\coordinate (D) at (0,0);
+			\draw[thick] (A) -- (B) -- (C) -- cycle;
+			\draw[thick, ->, DarkRed] (A) -- (D);
+			\node[above] at (A) {$A$};
+			\node[below left] at (B) {$B$};
+			\node[below right] at (C) {$C$};
+			\node[below] at (D) {$D$};
+		\end{scope}
+		% 夹角
+		\begin{scope}[shift={(3,1.5)}]
+			\draw[thick, ->] (0,0) -- (2.2,0) node[above] {$\overrightarrow{a}$};
+			\draw[thick, ->] (0,0) -- (1.2,-1.4) node[left] {$\overrightarrow{b}$};
+			\draw (0.5,0) arc (0:-49:0.5);
+			\node at (0.75,-0.35) {$\theta$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\category{向量基本运算}
+\begin{question}
+	在$\triangle ABC$中，$\overrightarrow{BD}=\overrightarrow{DC}$，$E$是$AD$中点，则$\overrightarrow{EB}=$？
+\end{question}
+
+$\overrightarrow{AE}=\dfrac{1}{4}\overrightarrow{AB}+\dfrac{1}{4}\overrightarrow{AC}$；$\overrightarrow{EA}=-\dfrac{1}{4}\overrightarrow{AB}-\dfrac{1}{4}\overrightarrow{AC}$.
+
+$\therefore \overrightarrow{EB}=\overrightarrow{EA}+\overrightarrow{AB}=\dfrac{3}{4}\overrightarrow{AB}-\dfrac{1}{4}\overrightarrow{AC}$.
+
+\begin{knowledge}{重心结论}
+	重心为三等分点（中位线、中线）：$\vec{c}=\dfrac{1}{3}\vec{a}+\dfrac{1}{3}\vec{b}$.
+\end{knowledge}
+
+\subsubsection{向量的数量积}
+\begin{knowledge}{数量积}
+	$\theta$记为$\langle\vec{a},\vec{b}\rangle$；起点相同.
+	
+	$\vec{a}\cdot\vec{b}=|\vec{a}|\cdot|\vec{b}|\cos\theta$（数量）.
+	
+	$\vec{a}\cdot\vec{b}\cdot\vec{c}\neq\vec{a}(\vec{b}\cdot\vec{c})$.
+	
+	$|\vec{a}+\vec{b}|=\sqrt{(\vec{a}+\vec{b})^2}$.
+\end{knowledge}
+
+\category{由模求数量积}
+\begin{question}
+	设向量$\vec{a},\vec{b}$满足$|\vec{a}+\vec{b}|=\sqrt{10}$，$|\vec{a}-\vec{b}|=\sqrt{6}$，则$\vec{a}\cdot\vec{b}=$？
+\end{question}
+
+$\sqrt{\vec{a}^2+2\vec{a}\cdot\vec{b}+\vec{b}^2}=\sqrt{10}$；$\sqrt{\vec{a}^2-2\vec{a}\cdot\vec{b}+\vec{b}^2}=\sqrt{6}$.
+
+两式平方相减：$4\vec{a}\cdot\vec{b}=4$.
+
+$\therefore \vec{a}\cdot\vec{b}=1$.
+
+\category{单位向量夹角}
+\begin{question}
+	若$\vec{m}$和$\vec{n}$是夹角为$\dfrac{\pi}{3}$的两个单位向量，则向量$\vec{a}=2\vec{m}+\vec{n}$，$\vec{b}=-3\vec{m}+2\vec{n}$的夹角为？
+\end{question}
+
+$\vec{m}\cdot\vec{n}=|\vec{m}|\cdot|\vec{n}|\cos\theta=\dfrac{1}{2}$.
+
+$|\vec{a}|=\sqrt{(2\vec{m}+\vec{n})^2}=\sqrt{4+1+4\vec{m}\cdot\vec{n}}=\sqrt{7}$.
+
+$|\vec{b}|=\sqrt{(-3\vec{m}+2\vec{n})^2}=\sqrt{9+4-12\vec{m}\cdot\vec{n}}=\sqrt{7}$.
+
+$\vec{a}\cdot\vec{b}=(2\vec{m}+\vec{n})\cdot(-3\vec{m}+2\vec{n})=-\dfrac{7}{2}$.
+
+$\therefore 7\cos\theta=-\dfrac{7}{2} \implies \cos\theta=-\dfrac{1}{2}$.
+
+$\therefore \theta=\dfrac{2\pi}{3}$.
+
+
+\subsection{第二讲\quad 解三角形}
+
+\subsubsection{解三角形}
+
+\begin{knowledge}{解三角形}
+	
+	“知三求三”：已知三个量，求另外三个量.
+	
+\end{knowledge}
+
+\subsubsection{正弦定理}
+
+\begin{knowledge}{正弦定理}
+	
+	$\dfrac{a}{\sin A}=\dfrac{b}{\sin B}=\dfrac{c}{\sin C}=2R$（$R$为外接圆半径）.
+	
+	使用条件：一组对边、对角已知.
+	
+	用途：边角互化（转化为角的正弦值）.
+	
+\end{knowledge}
+
+\begin{knowledge}{边角互化策略}
+	
+	优先边化角.
+	
+	边化角后：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 三角恒等变换.
+		
+		\item 求角.
+		
+	\end{enumerate}
+	
+	角化边的情形：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item $a^2$出现较多.
+		
+		\item 边的条件较多.
+		
+	\end{enumerate}
+	
+\end{knowledge}
+
+\begin{knowledge}{面积公式}
+	
+	$S_\triangle=\dfrac{1}{2}ab\sin C=\dfrac{1}{2}ac\sin B=\dfrac{1}{2}bc\sin A$.
+	
+	（两边及夹角）.
+	
+\end{knowledge}
+
+\category{翠园期末6}
+\begin{question}
+	$\triangle ABC$中，$a=\sqrt{2}$，$b=2$，$\sin B+\cos B=\sqrt{2}$，求$\angle A$.
+\end{question}
+
+辅助角公式：$\sqrt{2}\sin\left(B+\dfrac{\pi}{4}\right)=\sqrt{2}$.
+
+$\therefore \sin\left(B+\dfrac{\pi}{4}\right)=1$，$B=\dfrac{\pi}{4}$.
+
+由正弦定理：$\sin A=\dfrac{a\sin B}{b}=\dfrac{\sqrt{2}\times\dfrac{\sqrt{2}}{2}}{2}=\dfrac{1}{2}$.
+
+$\therefore A=30^\circ$或$150^\circ$.
+
+$\because a<b$，由大角对大边知$A<B$.
+
+$\therefore \angle A=30^\circ$.
+
+\category{边化角求角}
+\begin{question}
+	$\triangle ABC$中，$\dfrac{\cos B}{\cos C}=-\dfrac{b}{2a+c}$，求$\angle B$.
+\end{question}
+
+由正弦定理边化角：$\dfrac{\cos B}{\cos C}=-\dfrac{\sin B}{2\sin A+\sin C}$.
+
+去分母、整理：$2\sin A\cos B+\cos B\sin C+\cos C\sin B=0$.
+
+$2\sin A\cos B+\sin(B+C)=0$.
+
+$\because B+C=\pi-A$.
+
+$\therefore 2\sin A\cos B+\sin A=0$.
+
+$\because \sin A\neq0$.
+
+$\therefore 2\cos B+1=0$，即$\cos B=-\dfrac{1}{2}$.
+
+$\therefore B=\dfrac{2\pi}{3}$.
+
+\category{翠园期中12}
+\begin{question}
+	$\triangle ABC$中，$a=\sqrt{3}$，$b=1$，$B=30^\circ$，求$S_{\triangle ABC}$.
+\end{question}
+
+由正弦定理：$\dfrac{a}{\sin A}=\dfrac{b}{\sin B}=\dfrac{1}{\frac{1}{2}}=2$.
+
+$\therefore \sin A=\dfrac{a}{2}=\dfrac{\sqrt{3}}{2}$，则$A=60^\circ$或$120^\circ$.
+
+$\therefore C=90^\circ$或$30^\circ$.
+
+$S_{\triangle ABC}=\dfrac{1}{2}ab\sin C=\dfrac{1}{2}\times\sqrt{3}\times1\times\sin C$.
+
+$\therefore S_{\triangle ABC}=\dfrac{\sqrt{3}}{2}$或$\dfrac{\sqrt{3}}{4}$.
+
+\category{联盟9}
+\begin{question}
+	$\triangle ABC$中，$\dfrac{\cos B}{b}+\dfrac{\cos C}{c}=\dfrac{\sin A}{\sqrt{3}\sin C}$，求$b$.
+\end{question}
+
+由正弦定理：$a=2R\sin A$，$b=2R\sin B$，$c=2R\sin C$，其中$2R$为外接圆直径.
+
+左边$=\dfrac{\cos B\sin C+\cos C\sin B}{2R\sin B\sin C}=\dfrac{\sin(B+C)}{2R\sin B\sin C}$.
+
+$\because B+C=\pi-A$.
+
+$\therefore \sin(B+C)=\sin A$.
+
+故$\dfrac{\sin A}{2R\sin B\sin C}=\dfrac{\sin A}{\sqrt{3}\sin C}$.
+
+$\therefore 2R\sin B=b=\sqrt{3}$.
+
+\subsubsection{余弦定理}
+
+\begin{knowledge}{余弦定理}
+	
+	$\begin{cases} a^2=b^2+c^2-2bc\cos A \\ b^2=a^2+c^2-2ac\cos B \\ c^2=a^2+b^2-2ab\cos C \end{cases}$
+	
+	使用条件：所求与所给正好为“三边一角”.
+	
+\end{knowledge}
+
+\category{余弦定理角化边}
+\begin{question}
+	$\triangle ABC$中，$\sin^2A\leq\sin^2B+\sin^2C-\sin B\sin C$，求$A$的范围.
+\end{question}
+
+由于$\sin^2$很多，采取角化边.
+
+\[
+\left(\dfrac{a}{2R}\right)^2\leq\left(\dfrac{b}{2R}\right)^2+\left(\dfrac{c}{2R}\right)^2-\dfrac{b}{2R}\cdot\dfrac{c}{2R}
+\]
+
+即$a^2\leq b^2+c^2-bc$.
+
+$\because a^2=b^2+c^2-2bc\cos A$.
+
+$\therefore -2bc\cos A\leq -bc$.
+
+$\therefore \cos A\geq\dfrac{1}{2}$.
+
+$\therefore A\in\left(0,\dfrac{\pi}{3}\right]$.
+
+
+\subsection{第三讲\quad 复数}
+
+\subsubsection{复数的基本概念}
+
+\begin{knowledge}{虚数单位与基本概念}
+	
+	虚数单位$i$，规定$i^2=-1$.
+	
+	欧拉公式：$e^{i\pi}+1=0$.
+	
+	纯虚数：$bi$（$b\neq0$）；非纯虚数：$a+bi$.
+	
+	对于复数$z=a+bi$，共轭复数$\bar z=a-bi$.
+	
+	实部与虚部分别相等，则称两复数相等.
+	
+	虚数不能比较大小.
+	
+\end{knowledge}
+
+\subsubsection{复数的四则运算}
+
+\begin{knowledge}{复数的四则运算}
+	
+	$i^2=-1$.
+	
+	加减乘除与实数的四则运算相同.
+	
+	除法（分母实数化）：分子、分母同乘分母的共轭复数.
+	
+	书写注意：虚部是实数，不带$i$.
+	
+\end{knowledge}
+
+\subsubsection{复数的几何意义}
+
+\begin{knowledge}{复平面与模}
+	
+	复数$z=a+bi$对应复平面内的点$(a,b)$.
+	
+	$|z|$为点$z$到原点的距离（线段长）：
+	
+	\[
+	|z|=|a+bi|=\sqrt{a^2+b^2}.
+	\]
+	
+	$z\cdot\bar z=|z|^2$.
+	
+	\[
+	\left|\dfrac{z_1}{z_2}\right|=\dfrac{|z_1|}{|z_2|}.
+	\]
+	
+	$\left|(a+bi)^n\right|=|a+bi|^n$.
+	
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-2.5,0) -- (3,0) node[right] {实轴};
+		\draw[->, gray!40] (0,-2.5) -- (0,3) node[above] {虚轴};
+		
+		\coordinate (Z) at (2,2);
+		\coordinate (Zb) at (2,-2);
+		
+		\draw[dashed, gray] (Z) -- (2,0);
+		\draw[dashed, gray] (Z) -- (0,2);
+		\draw[dashed, gray] (Zb) -- (2,0);
+		\draw[dashed, gray] (Zb) -- (0,-2);
+		
+		\fill (Z) circle (2pt) node[above right] {$z=a+bi$};
+		\fill (Zb) circle (2pt) node[below right] {$\bar z=a-bi$};
+		\node[below left] at (0,0) {$O$};
+	\end{tikzpicture}
+\end{center}
+
+\subsection{第四讲\quad 多面体}
+
+\subsubsection{几何体}
+\begin{knowledge}{分类}
+	几何体：多面体（有棱有角）；旋转体（球、圆柱）.
+\end{knowledge}
+
+\subsubsection{棱柱}
+\begin{knowledge}{棱柱}
+	由一个平面多边形向某一方向平移一段距离.
+	
+	四棱柱、五棱柱；正棱柱、斜棱柱.
+	
+	正棱柱：底面是正多边形的直棱柱.
+	
+	体对角线：$l=\sqrt{a^2+b^2+c^2}$.
+\end{knowledge}
+
+\begin{center}
+	\textbf{经典错例：底面是正方形，两侧面垂直于底边，不为正四棱柱}
+\end{center}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.9, baseline=(current bounding box.north)]
+		% 底面正方形 ABCD
+		\coordinate (A) at (0,0);
+		\coordinate (B) at (3,0);
+		\coordinate (C) at (3.8,0.8);
+		\coordinate (D) at (0.8,0.8);
+		% 顶面 A'B'C'D'（斜平移）
+		\coordinate (Ap) at (1.2,2);
+		\coordinate (Bp) at (4.2,2);
+		\coordinate (Cp) at (5,2.8);
+		\coordinate (Dp) at (2,2.8);
+		% 底面
+		\draw[thick] (A)--(B)--(C);
+		\draw[dashed] (C)--(D)--(A);
+		% 顶面
+		\draw[thick] (Ap)--(Bp)--(Cp)--(Dp)--cycle;
+		% 侧棱（斜的，不垂直底面）
+		\draw[thick] (A)--(Ap);
+		\draw[thick] (B)--(Bp);
+		\draw[thick] (C)--(Cp);
+		\draw[dashed] (D)--(Dp);
+		% 标注
+		\node[below] at (A) {$A$};
+		\node[below] at (B) {$B$};
+		\node[right] at (C) {$C$};
+		\node[left] at (D) {$D$};
+		\node[above] at (Ap) {$A'$};
+		\node[above] at (Bp) {$B'$};
+		\node[above right] at (Cp) {$C'$};
+		\node[above left] at (Dp) {$D'$};
+		% 标注侧面垂直底边
+		\draw[DarkRed, thick] (A)--(B)--(Bp)--(Ap)--cycle;
+		\node[DarkRed, below] at (1.5,-0.3) {侧面$ABB'A'$ $\perp$ 底边$AB$};
+	\end{tikzpicture}
+\end{center}
+
+\category{体对角线与全面积}
+\begin{question}
+	若长方体的体对角线长$\sqrt{14}$，所有棱长之和$24$，则长方体的全面积？
+\end{question}
+
+$4(a+b+c)=24 \implies a+b+c=6$.
+
+由题：$\sqrt{a^2+b^2+c^2}=\sqrt{14} \implies a^2+b^2+c^2=14$.
+
+$S=2ab+2bc+2ac=(a+b+c)^2-a^2-b^2-c^2=36-14=22$.
+
+\begin{knowledge}{墙角模型}
+	底边是三角形，且三条侧棱两两垂直，不是正棱锥.
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.9, baseline=(current bounding box.north)]
+		% 长方体框架（虚线）
+		\coordinate (O) at (0,0,0);
+		\coordinate (X) at (2.5,0,0);
+		\coordinate (Y) at (0,1.8,0);
+		\coordinate (Z) at (0,0,2);
+		\coordinate (XY) at (2.5,1.8,0);
+		\coordinate (XZ) at (2.5,0,2);
+		\coordinate (YZ) at (0,1.8,2);
+		\coordinate (XYZ) at (2.5,1.8,2);
+		% 长方体棱（淡色）
+		\draw[gray!40, dashed] (O)--(X); \draw[gray!40, dashed] (O)--(Y); \draw[gray!40, dashed] (O)--(Z);
+		\draw[gray!40] (X)--(XY); \draw[gray!40] (Y)--(XY);
+		\draw[gray!40] (X)--(XZ); \draw[gray!40] (Z)--(XZ);
+		\draw[gray!40] (Y)--(YZ); \draw[gray!40] (Z)--(YZ);
+		\draw[gray!40] (XY)--(XYZ); \draw[gray!40] (XZ)--(XYZ); \draw[gray!40] (YZ)--(XYZ);
+		% 墙角三棱锥 O-XYZ（粗线）
+		\draw[thick, DarkRed] (O)--(X);
+		\draw[thick, DarkRed] (O)--(Y);
+		\draw[thick, DarkRed] (O)--(Z);
+		\draw[thick, SkyBlue] (X)--(Y);
+		\draw[thick, SkyBlue] (Y)--(Z);
+		\draw[thick, SkyBlue] (Z)--(X);
+		% 标注
+		\node[below left] at (O) {$O$};
+		\node[below right] at (X) {$A$};
+		\node[above left] at (Y) {$B$};
+		\node[above] at (Z) {$C$};
+		\node[DarkRed] at (1.2,-0.4) {$OA\perp OB\perp OC$};
+		\node[SkyBlue] at (1.5,1.2) {三棱锥$O$-$ABC$};
+		\node[DarkRed] at (1.5,-0.8) {三条侧棱两两垂直，但不是正棱锥};
+	\end{tikzpicture}
+\end{center}
+
+\subsubsection{棱锥}
+\begin{knowledge}{棱锥}
+	公共顶点.
+	
+	正三棱锥：底为正多边形，顶$\perp$底.
+	
+	正四面体：四个面为全等的等边三角形.
+	
+	$V=\dfrac{1}{3}S_{\text{底}}\cdot h$.
+	
+	经典错例：各侧面是正方形的四棱锥是正四棱锥（误，侧棱长与底边长关系需验证）.
+\end{knowledge}
+
+\subsubsection{棱台}
+\begin{knowledge}{棱台}
+	水平截棱锥.
+	
+	十字模型错例：有两个面互相平行，其余四个面都是等腰梯形的六面体是棱台（误，侧棱延长后不一定交于一点）.
+\end{knowledge}
+
+\begin{center}
+	\textbf{十字模型错例}
+\end{center}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		% 下底面长方形（长边沿x轴）
+		\coordinate (A1) at (-2,-0.5);
+		\coordinate (B1) at (2,-0.5);
+		\coordinate (C1) at (2,0.5);
+		\coordinate (D1) at (-2,0.5);
+		
+		% 上底面长方形（长边沿y轴，旋转90度）
+		\coordinate (A2) at (-0.5,1.5);
+		\coordinate (B2) at (0.5,1.5);
+		\coordinate (C2) at (0.5,3.5);
+		\coordinate (D2) at (-0.5,3.5);
+		
+		% 下底面
+		\draw[thick] (A1)--(B1)--(C1)--(D1)--cycle;
+		\node[below] at (A1) {$A_1$};
+		\node[below] at (B1) {$B_1$};
+		\node[above right] at (C1) {$C_1$};
+		\node[above left] at (D1) {$D_1$};
+		
+		% 上底面
+		\draw[thick] (A2)--(B2)--(C2)--(D2)--cycle;
+		\node[below left] at (A2) {$A_2$};
+		\node[below right] at (B2) {$B_2$};
+		\node[above right] at (C2) {$C_2$};
+		\node[above left] at (D2) {$D_2$};
+		
+		% 侧棱（连接对应顶点）
+		\draw[thick] (A1)--(A2);
+		\draw[thick] (B1)--(B2);
+		\draw[thick] (C1)--(C2);
+		\draw[thick] (D1)--(D2);
+		
+		% 标注侧面
+		\node[DarkRed, right] at (2.2,1.5) {侧面$B_1C_1C_2B_2$：倒梯形};
+		\node[DarkRed, left] at (-2.2,1.5) {侧面$A_1D_1D_2A_2$：倒梯形};
+		\node[SkyBlue, above] at (0,4) {侧面$C_1D_1D_2C_2$：正梯形};
+		\node[SkyBlue, below] at (0,-1) {侧面$A_1B_1B_2A_2$：正梯形};
+		
+		\node[DarkRed, below] at (0,-1.8) {上下底面全等但旋转90°，侧棱延长不交于一点，不是棱台};
+	\end{tikzpicture}
+\end{center}
+
+\subsection{第五讲\quad 旋转体与位置关系}
+
+\subsubsection{旋转体}
+\begin{knowledge}{圆柱、圆锥、圆台、球}
+
+	圆柱.
+	
+	圆锥：绕直角边转.
+	
+	圆台：绕直角腰.
+	
+	$V_{\text{锥}}=\dfrac{1}{3}\pi r^2 h$.
+	
+	$S_{\text{锥侧}}=\pi r l$.
+	
+	$S_{\text{锥表}}=\pi r(l+r)$.
+	
+	若展开为半圆，$l=2r$.
+	
+	$S_{\text{球}}=4\pi R^2$.
+	
+	$V=\dfrac{4}{3}\pi R^3$.
+\end{knowledge}
+
+\subsubsection{空间位置关系}
+\begin{knowledge}{符号}
+	点在/不在线面内：$\in/\notin$.
+	
+	$l$与$m$相交于$A$：$l\cap m=A$.
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		% l 平行 alpha
+		\begin{scope}[shift={(-4,0)}]
+			\draw[thick] (0,0) -- (2,0) -- (2.6,0.8) -- (0.6,0.8) -- cycle;
+			\draw[thick, DarkRed] (-0.2,1.5) -- (2.4,1.5) node[right] {$l$};
+			\node[below] at (1.3,-0.2) {$l\parallel\alpha$};
+		\end{scope}
+		% l 交 alpha 于 A
+		\begin{scope}[shift={(0,0)}]
+			\draw[thick] (0,0) -- (2,0) -- (2.6,0.8) -- (0.6,0.8) -- cycle;
+			\draw[thick, DarkRed] (1.3,-0.6) -- (1.6,1.6) node[right] {$l$};
+			\draw[fill] (1.42,0.35) circle (1.5pt);
+			\node[below right] at (1.42,0.35) {$A$};
+			\node[below] at (1.3,-0.8) {$l\cap\alpha=A$};
+		\end{scope}
+		% l 在 alpha 内
+		\begin{scope}[shift={(4,0)}]
+			\draw[thick] (0,0) -- (2,0) -- (2.6,0.8) -- (0.6,0.8) -- cycle;
+			\draw[thick, DarkRed] (0.5,0.3) -- (2.1,0.3) node[right] {$l$};
+			\node[below] at (1.3,-0.2) {$l\subset\alpha$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+前两种情形：$l\not\subset\alpha$.
+
+\begin{knowledge}{基本事实}
+
+	基本事实1：三个不共线的点确定一个平面.
+	
+	基本事实2：一直线上两点在面内，该线全在面内.
+	
+	基本事实3：不同面有一公共点，只有一条直线过该点.
+\end{knowledge}
+
+\subsection{第六讲\quad 平行关系}
+
+\subsubsection{线线平行}
+\begin{knowledge}{判定方法}
+一组对边平行且相等.
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+
+\item 构造平行四边形.
+
+\item 相似（中位线）.
+
+\item 特殊几何体.
+
+\end{enumerate}
+\end{knowledge}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+    % 平行四边形
+    \begin{scope}[shift={(-3,0)}]
+        \draw[thick] (0,0) -- (1.5,0) -- (2,1) -- (0.5,1) -- cycle;
+    \end{scope}
+    % 三角形中位线
+    \begin{scope}[shift={(1,0)}]
+        \coordinate (A) at (0,1.5);
+        \coordinate (B) at (-1.2,0);
+        \coordinate (C) at (1.2,0);
+        \coordinate (D) at (-0.6,0.75);
+        \coordinate (E) at (0.6,0.75);
+        \draw[thick] (A)--(B)--(C)--cycle;
+        \draw[thick] (D)--(E);
+        \node at (0, 0.3) {中};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{线面平行}
+\begin{knowledge}{判定与性质}
+	
+$1^\circ$ 判定（需证）：$l\not\subset\alpha$，$m\subset\alpha$，$l//m \implies l//\alpha$.
+
+$2^\circ$ 性质：$l//\alpha$，$l\subset\beta$，$\alpha\cap\beta=m \implies l//m$.
+\end{knowledge}
+
+\subsubsection{面面平行}
+\begin{knowledge}{判定与性质}
+
+$1^\circ$ 判定：一面中两相交直线与另一平面平行（两次线面平行）.
+
+$a\subset\alpha$，$b\subset\alpha$，$a\cap b=A$，$a//\beta$，$b//\beta \implies \alpha//\beta$.
+
+$2^\circ$ 性质：$\alpha//\beta$，$\alpha\cap\gamma=a$，$\beta\cap\gamma=b \implies a//b$.
+\end{knowledge}
+
+\subsection{第七讲\quad 垂直关系}
+
+\subsubsection{线线垂直}
+\begin{knowledge}{线线垂直}
+\begin{enumerate}[label=\arabic*., left=0pt]
+
+\item 共面垂直：等腰三角形的三线合一；勾股定理逆定理；直棱柱、菱形、圆.
+
+\item 异面垂直：线面垂直定义：$l\perp\alpha$，$m\subset\alpha \implies l\perp m$.
+
+\end{enumerate}
+\end{knowledge}
+
+\subsubsection{线面垂直}
+\begin{knowledge}{判定与性质}
+判定：$m\subset\alpha$，$n\subset\alpha$，$m\cap n=A$，$m\perp l$，$n\perp l \implies l\perp\alpha$.
+
+性质：$l\perp\alpha$，$m\perp\alpha \implies m//l$.
+
+$l\perp\alpha$，$l//m \implies m\perp\alpha$.
+
+平行传递：同类可传.
+\end{knowledge}
+
+\subsubsection{面面垂直}
+\begin{knowledge}{判定与性质}
+判定：$l\perp\beta$，$l\subset\alpha \implies \alpha\perp\beta$.
+
+性质：$\alpha\perp\beta$，$\alpha\cap\beta=a$，$l\subset\alpha$，$l\perp a \implies l\perp\beta$.
+
+读题读到面面垂直，先标出相交直线，作交线的垂线.
+\end{knowledge}
 
 
 
+\section{高一下（春季）}
+
+\subsection{第一、二讲\quad 平面向量}
+
+\category{本讲概要}
+基本概念、线性运算、基本定理；数量积、坐标运算.
+
+\subsubsection{基本概念}
+\begin{knowledge}{概念}
+	$0\times\overrightarrow{AB}=\vec{0}$.
+
+	$\vec{a}\parallel\vec{b}$，则$\vec{a}$与$\vec{b}$相同或相反（$\vec{b}\neq\vec{0}$）.
+
+	$\vec{0}\parallel\vec{a}$，但不能说$\vec{0}$与$\vec{a}$方向相同或相反.
+
+	$\vec{e}_a$表示与$\vec{a}$方向相同的单位向量，即$\vec{e}_a=\dfrac{\vec{a}}{|\vec{a}|}$.
+\end{knowledge}
+
+\subsubsection{线性运算}
+\begin{knowledge}{线性运算}
+	$\overrightarrow{AC}=\lambda\overrightarrow{AB}$，则$|\overrightarrow{AC}|=|\lambda|\cdot|\overrightarrow{AB}|$.
+
+	平行四边形$ABCD$中：
+
+	$|\overrightarrow{BC}+\overrightarrow{BA}|=|\overrightarrow{BC}-\overrightarrow{BA}|$（对角线相等）$\iff$矩形.
+
+	$(\overrightarrow{BC}+\overrightarrow{BA})\cdot(\overrightarrow{BC}-\overrightarrow{BA})=0$（对角线互相垂直）$\iff$菱形，对角线夹角$90^\circ$，$\cos\theta=0$.
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.9, baseline=(current bounding box.north)]
+		\coordinate (A) at (0,1.8);
+		\coordinate (D) at (3.6,1.8);
+		\coordinate (B) at (0,0);
+		\coordinate (C) at (3.6,0);
+		\draw[thick] (A)--(B)--(C)--(D)--cycle;
+		\draw[thick, ->, SkyBlue] (B)--(A);
+		\draw[thick, ->, SkyBlue] (B)--(C);
+		\draw[thick, ->, DarkRed] (B)--(D);
+		\draw[thick, ->, DarkRed] (A)--(C);
+		\node[above left] at (A) {$A$};
+		\node[above right] at (D) {$D$};
+		\node[below left] at (B) {$B$};
+		\node[below right] at (C) {$C$};
+	\end{tikzpicture}
+\end{center}
+
+\subsubsection{基本定理}
+\begin{knowledge}{共线定理与基底}
+
+	$\vec{a}$（$\vec{a}\neq\vec{0}$）与$\vec{b}$共线 $\iff$ 存在唯一实数$\lambda$，使$\vec{b}=\lambda\vec{a}$.
+
+	$\vec{a}=\lambda_1\vec{e}_1+\lambda_2\vec{e}_2 \implies \{\vec{e}_1,\vec{e}_2\}$可作为基底.
+
+	基底的要求：$\vec{e}_1$与$\vec{e}_2$不共线.
+
+	$\overrightarrow{AB}=\lambda\overrightarrow{AC}=\mu\overrightarrow{BC} \implies A,B,C$三点共线.
+\end{knowledge}
+
+\begin{knowledge}{表示向量的思路}
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		\item 类比位移.
+		\item 类比力的分解（直角时）.
+		\item 定比分点.
+	\end{enumerate}
+	$A,B,C$三点共线 $\iff$ 起点相同的两向量系数和为$1$.
+\end{knowledge}
+
+\category{向量的加减}
+\begin{question}
+	直角梯形$ABCD$中，$DC\parallel AB$，$CD=3$，$AB=6$，$M$为$BC$的三等分点. 已知$\overrightarrow{AD}=\vec{a}$，$\overrightarrow{AB}=\vec{b}$，用$\vec{a},\vec{b}$表示$\overrightarrow{AC}$与$\overrightarrow{AM}$.
+\end{question}
+
+\begin{minipage}[t]{0.55\textwidth}
+	$\overrightarrow{DC}=\dfrac{1}{2}\overrightarrow{AB}=\dfrac{1}{2}\vec{b}$.
+
+	$\therefore \overrightarrow{AC}=\overrightarrow{AD}+\overrightarrow{DC}=\vec{a}+\dfrac{1}{2}\vec{b}$.
+
+	$\overrightarrow{AM}=\overrightarrow{AB}+\overrightarrow{BM}=\overrightarrow{AB}+\dfrac{1}{3}\overrightarrow{BC}$
+
+	$=\overrightarrow{AB}+\dfrac{1}{3}\left(\overrightarrow{AC}-\overrightarrow{AB}\right)=\dfrac{1}{3}\vec{a}+\dfrac{5}{6}\vec{b}$.
+
+	另：类比力的分解 ，$\overrightarrow{AM}=\dfrac{1}{3}\vec{a}+\dfrac{5}{6}\vec{b}$
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=1, baseline=(current bounding box.north)]
+		\coordinate (A) at (0,0);
+		\coordinate (B) at (4,0);
+		\coordinate (C) at (2,1.7);
+		\coordinate (D) at (0,1.7);
+		\coordinate (M) at ($(B)!0.3333!(C)$);
+		\coordinate (M1) at ($(A)!0.3333!(D)$);
+		\coordinate (M2) at ($(A)!0.8333!(B)$);
+		\draw[thick] (A)--(B)--(C)--(D)--cycle;
+		\draw[thick, ->, DarkRed] (A)--(D) node[midway, left] {$\vec{a}$};
+		\draw[thick, ->, DarkRed] (A)--(B) node[midway, below] {$\vec{b}$};
+		\draw[dashed] (A)--(C);
+		\draw[dashed,gray] (M)--(M1);
+		\draw[dashed,gray] (M)--(M2);
+		\fill (A) circle (1.4pt) node[below left] {$A$};
+		\fill (B) circle (1.4pt) node[below right] {$B$};
+		\fill (C) circle (1.4pt) node[right] {$C$};
+		\fill (D) circle (1.4pt) node[above left] {$D$};
+		\fill (M) circle (1.4pt) node[right] {$M$};
+	\end{tikzpicture}
+\end{minipage}
+
+\begin{knowledge}{奔驰定理}
+	$P$为平面上一点，则
+	\[
+	S_{\triangle PBC}\overrightarrow{PA}+S_{\triangle PAC}\overrightarrow{PB}+S_{\triangle PAB}\overrightarrow{PC}=\vec{0}
+	\]
+	其中$S_{\triangle PBC},S_{\triangle PAC},S_{\triangle PAB}$为对应三角形的面积.
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=1.1, baseline=(current bounding box.north)]
+		\coordinate (A) at (0,2.2);
+		\coordinate (B) at (-1.6,-0.7);
+		\coordinate (C) at (1.7,-0.7);
+		\coordinate (P) at (0.25,0.35);
+		\draw[thick] (A)--(B)--(C)--cycle;
+		\draw[DarkRed] (A)--(P) (B)--(P) (C)--(P);
+		\fill (A) circle (1.3pt) node[above] {$A$};
+		\fill (B) circle (1.3pt) node[below left] {$B$};
+		\fill (C) circle (1.3pt) node[below right] {$C$};
+		\fill (P) circle (1.3pt) node[below right] {$P$};
+	\end{tikzpicture}
+\end{center}
+
+\category{南头期中12}
+\begin{question}
+	$\overrightarrow{BD}=\dfrac{1}{2}\overrightarrow{DC}$，过$D$任作直线，分别与$AB,AC$所在直线交于$M,N$，$\overrightarrow{AM}=m\overrightarrow{AB}$，$\overrightarrow{AN}=n\overrightarrow{AC}$，求$m$与$n$的关系.
+\end{question}
+
+\begin{minipage}[t]{0.55\textwidth}
+	$\overrightarrow{AD}=\overrightarrow{AB}+\overrightarrow{BD}=\overrightarrow{AB}+\dfrac{1}{3}\overrightarrow{BC}=\dfrac{2}{3}\overrightarrow{AB}+\dfrac{1}{3}\overrightarrow{AC}$.
+
+	$=\dfrac{2}{3m}\overrightarrow{AM}+\dfrac{1}{3n}\overrightarrow{AN}$.
+
+	$\because M,D,N$三点共线，$\therefore\dfrac{2}{3m}+\dfrac{1}{3n}=1$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		\coordinate (A) at (0,2);
+		\coordinate (B) at (-1.4,0);
+		\coordinate (C) at (1.4,0);
+		\coordinate (D) at ($(B)!0.3333!(C)$);
+		\coordinate (M) at ($(A)!0.8!(B)$);
+		\coordinate (N) at ($(A)!2!(C)$);
+		\draw[thick] (A)--(B)--(C)--cycle;
+		\draw[thick, DarkRed] (M)--(N);
+		\draw[dashed] (A)--(D);
+		\fill (A) circle (1.3pt) node[above] {$A$};
+		\fill (B) circle (1.3pt) node[below left] {$B$};
+		\fill (C) circle (1.3pt) node[below right] {$C$};
+		\fill (D) circle (1.3pt) node[above left] {$D$};
+		\fill (M) circle (1.3pt) node[left] {$M$};
+		\fill (N) circle (1.3pt) node[below right] {$N$};
+	\end{tikzpicture}
+\end{minipage}
+
+\category{面积比}
+\begin{question}
+	$P$为$\triangle ABC$内部一点，满足$\overrightarrow{AP}=\dfrac{2}{5}\overrightarrow{AB}+\dfrac{1}{5}\overrightarrow{AC}$，求$\dfrac{S_{\triangle ABP}}{S_{\triangle ABC}}$.
+\end{question}
+
+\begin{minipage}[t]{0.55\textwidth}
+	对比一般式：$\vec{0}=S_{\triangle PBC}\overrightarrow{PA}+S_{\triangle PAC}\overrightarrow{PB}+S_{\triangle PAB}\overrightarrow{PC}$.
+
+	化为：$-\overrightarrow{PA}=\dfrac{2}{5}\left(\overrightarrow{PB}-\overrightarrow{PA}\right)+\dfrac{1}{5}\left(\overrightarrow{PC}-\overrightarrow{PA}\right)$.
+
+	整理：$\vec{0}=\dfrac{3}{5}\overrightarrow{PA}+\dfrac{2}{5}\overrightarrow{PB}+\dfrac{1}{5}\overrightarrow{PC}$.
+
+	$\therefore S_{\triangle PBC}:S_{\triangle PAC}:S_{\triangle PAB}=3:2:1$，故$\dfrac{S_{\triangle ABP}}{S_{\triangle ABC}}=\dfrac{1}{3+2+1}=\dfrac{1}{6}$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=1, baseline=(current bounding box.north)]
+		\coordinate (A) at (0,2.1);
+		\coordinate (B) at (-1.6,-0.6);
+		\coordinate (C) at (1.8,-0.6);
+		\coordinate (P) at (0.2,0.4);
+		\draw[thick] (A)--(B)--(C)--cycle;
+		\draw[DarkRed] (A)--(P) (B)--(P) (C)--(P);
+		\fill (A) circle (1.3pt) node[above] {$A$};
+		\fill (B) circle (1.3pt) node[below left] {$B$};
+		\fill (C) circle (1.3pt) node[below right] {$C$};
+		\fill (P) circle (1.3pt) node[above right] {$P$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsubsection{数量积}
+\begin{knowledge}{数量积与投影}
+	
+	$\vec{a}$在$\vec{b}$上的投影向量：$|\vec{a}|\cos\theta\cdot\dfrac{\vec{b}}{|\vec{b}|}$，其中$\theta=\langle\vec{a},\vec{b}\rangle$.
+
+	投影向量的正负表示方向：与$\vec{b}$同向为正，反向为负.
+
+	$\vec{a}^2=|\vec{a}|^2$；$|\vec{a}|=\sqrt{\vec{a}^2}$（先平方再开方）.
+
+	$(\vec{a}+\vec{b})^2=|\vec{a}|^2+2\vec{a}\cdot\vec{b}+|\vec{b}|^2$.
+
+	$\vec{a}\cdot\vec{b}\cdot\vec{c}\neq\vec{a}(\vec{b}\cdot\vec{c})$.
+
+	$\vec{a}\perp\vec{b}\iff\vec{a}\cdot\vec{b}=0$.
+\end{knowledge}
+
+\begin{knowledge}{几何意义}
+	把一个向量投影到另一个向量所在的直线上，再用两向量的模长相乘，即得数量积.
+\end{knowledge}
+
+\category{人大附中期中11}
+\begin{question}
+	$P$是边长为$2$的等边三角形$ABC$边$BC$上的动点，求$\overrightarrow{AP}\cdot(\overrightarrow{AB}+\overrightarrow{AC})$.
+\end{question}
+
+\begin{minipage}{0.7\textwidth}
+	将$\overrightarrow{AP}$投影到$\overrightarrow{AB}+\overrightarrow{AC}$所在直线上，得到$|\overrightarrow{AP'}|=\sqrt{3}$.
+	
+	$\overrightarrow{AB}+\overrightarrow{AC}=2\overrightarrow{AM}$（$M$为$BC$中点），$|\overrightarrow{AB}+\overrightarrow{AC}|=2\sqrt{3}$.
+	
+	$\therefore\overrightarrow{AP}\cdot(\overrightarrow{AB}+\overrightarrow{AC})=\sqrt{3}\times2\sqrt{3}=6$.
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+			\coordinate (A) at (0,1.732);
+			\coordinate (B) at (-1,0);
+			\coordinate (C) at (1,0);
+			\coordinate (M) at (0,0);
+			\coordinate (P) at (0.4,0);
+			\draw[thick] (A)--(B)--(C)--cycle;
+			\draw[->, thick, SkyBlue] (A) -- (B);
+			\draw[->, thick, SkyBlue] (A) -- (C);
+			\draw[->, thick, DarkRed] (A) -- (M);
+			\draw[->, thick] (A) -- (P);
+			\node[above] at (A) {$A$};
+			\node[below left] at (B) {$B$};
+			\node[below right] at (C) {$C$};
+			\node[below left, DarkRed] at (M) {$M$};
+			\node[below right] at (P) {$P$};
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+\category{深外高一上期末20}
+\begin{question}
+	正$\triangle ABC$中，$D$为$BC$中点，$E$在$AC$上且$AE=\dfrac{2}{3}AC$，用基底$\overrightarrow{AB},\overrightarrow{AC}$求$\overrightarrow{AD}\cdot\overrightarrow{BE}$.
+\end{question}
+
+\begin{minipage}{0.7\textwidth}
+	$\overrightarrow{AD}=\dfrac{1}{2}\overrightarrow{AB}+\dfrac{1}{2}\overrightarrow{AC}$；$\overrightarrow{BE}=-\dfrac{1}{3}\overrightarrow{AB}+\dfrac{2}{3}\overrightarrow{BC}=-\overrightarrow{AB}+\dfrac{2}{3}\overrightarrow{AC}$.
+	
+	代入$|\overrightarrow{AB}|=|\overrightarrow{AC}|=a$，$\overrightarrow{AB}\cdot\overrightarrow{AC}=\dfrac{1}{2}a^2$：
+	
+	$\overrightarrow{AD}\cdot\overrightarrow{BE}=-\dfrac{1}{2}a^2-\dfrac{1}{6}\overrightarrow{AB}\cdot\overrightarrow{AC}+\dfrac{1}{3}a^2=-\dfrac{1}{4}a^2$.
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[scale=0.7, baseline=(current bounding box.north)]
+			\coordinate (A) at (0,1.732);
+			\coordinate (B) at (-1,0);
+			\coordinate (C) at (1,0);
+			\coordinate (D) at (0,0);
+			\coordinate (E) at (0.667,0.577);
+			\draw[thick] (A)--(B)--(C)--cycle;
+			\draw[->, thick, SkyBlue] (A) -- (D);
+			\draw[->, thick, DarkRed] (B) -- (E);
+			\node[above] at (A) {$A$};
+			\node[below left] at (B) {$B$};
+			\node[below right] at (C) {$C$};
+			\node[below] at (D) {$D$};
+			\node[right] at (E) {$E$};
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+\begin{knowledge}{基底法与极化恒等式}
+	
+	基底法：选一组模与夹角已知的向量作基底.
+	
+	极化恒等式：
+	
+	向量形式：$\vec{a}\cdot\vec{b}=\dfrac{1}{4}\left[(\vec{a}+\vec{b})^2-(\vec{a}-\vec{b})^2\right]$.
+	
+	三角形（中线）形式：$\triangle ABC$中，$M$是$BC$中点，则
+	
+	$\overrightarrow{AB}\cdot\overrightarrow{AC}=\left(\overrightarrow{AM}+\overrightarrow{MB}\right)\cdot\left(\overrightarrow{AM}-\overrightarrow{MB}\right)=|\overrightarrow{AM}|^2-|\overrightarrow{MB}|^2$.\quad 中线长$^2-$底边一半$^2$
+\end{knowledge}
+
+\category{中线与底边已知}
+\begin{question}
+	$\triangle ABC$中，$M$是$BC$中点，$AM=3$，$BC=10$，求$\overrightarrow{AB}\cdot\overrightarrow{AC}$.
+\end{question}
+
+由极化恒等式：$\overrightarrow{AB}\cdot\overrightarrow{AC}=|\overrightarrow{AM}|^2-|\overrightarrow{MB}|^2=9-25=-16$.
+
+\subsubsection{向量的坐标运算}
+\begin{knowledge}{坐标运算}
+	$\vec{a}=x\vec{i}+y\vec{j}\implies\vec{a}=(x,y)$.
+
+	$\vec{a}+\vec{b}=(x_1+x_2,y_1+y_2)$.
+
+	$\vec{a}\cdot\vec{b}=x_1x_2+y_1y_2$.
+
+	$\vec{a}\parallel\vec{b}\implies\dfrac{x_1}{x_2}=\dfrac{y_1}{y_2}$，交叉相乘得$x_1y_2=x_2y_1$.
+
+	向量坐标$=$终点坐标$-$起点坐标.
+\end{knowledge}
+
+\category{罗湖期中18}
+\begin{question}
+	已知$\vec{a}=(2,1)$.
+
+	（1）若$|\vec{c}|=\sqrt{5}$，且$\vec{c}\parallel\vec{a}$，求$\vec{c}$的坐标；
+
+	（2）若$\vec{b}=(m,1)$，且$\vec{a}\perp(\vec{a}+\vec{b})$，求$\cos\langle\vec{a},\vec{b}\rangle$.
+\end{question}
+
+\begin{minipage}[t]{0.5\textwidth}
+	（1）共线：$x_1y_2-x_2y_1=0$. 设$\vec{c}=(x,y)$：
+
+	$\begin{cases}x-2y=0\\x^2+y^2=5\end{cases}$，解得$\vec{c}=(1,2)$或$\vec{c}=(-1,-2)$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+	（2）$\vec{a}+\vec{b}=(m+2,2)$.
+
+	$\because\vec{a}\perp(\vec{a}+\vec{b})$，$\therefore\vec{a}\cdot(\vec{a}+\vec{b})=0$，即$2m+4+2=0$，$m=-3$.
+
+	$\therefore\vec{b}=(-3,1)$，$\vec{a}\cdot\vec{b}=-6+1=-5$.
+
+	$\cos\theta=\dfrac{-5}{\sqrt{5}\cdot\sqrt{10}}=-\dfrac{\sqrt{2}}{2}$，即$135^\circ$.
+\end{minipage}
+
+\category{育才期中11}
+\begin{question}
+	矩形$ABCD$中，$AB=\sqrt{2}$，$BC=2$，$E$为$BC$中点，$F$在$CD$上. 若$\overrightarrow{AB}\cdot\overrightarrow{AF}=\sqrt{2}$，求$\overrightarrow{AE}\cdot\overrightarrow{BF}$.
+\end{question}
+
+\begin{minipage}[t]{0.55\textwidth}
+	以$A$为原点建系（$AB$沿$y$轴，$BC$沿$x$轴）：
+
+	设$F(2,y)$. $\overrightarrow{AB}=(0,\sqrt{2})$，$\overrightarrow{AF}=(2,y)$.
+
+	$\overrightarrow{AB}\cdot\overrightarrow{AF}=\sqrt{2}y=\sqrt{2}\implies y=1$，即$F(2,1)$.
+
+	$E(1,\sqrt{2})$，$B(0,\sqrt{2})$，$\overrightarrow{AE}=(1,\sqrt{2})$，$\overrightarrow{BF}=(2,1-\sqrt{2})$.
+
+	$\therefore\overrightarrow{AE}\cdot\overrightarrow{BF}=2+\sqrt{2}(1-\sqrt{2})=\sqrt{2}$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.95, baseline=(current bounding box.north)]
+		\coordinate (A) at (0,0);
+		\coordinate (B) at (0,2);
+		\coordinate (C) at (2.8,2);
+		\coordinate (D) at (2.8,0);
+		\coordinate (E) at (1.4,2);
+		\coordinate (F) at (2.8,1);
+		\draw[thick] (A)--(B)--(C)--(D)--cycle;
+		\draw[thick, SkyBlue] (A)--(E);
+		\draw[thick, DarkRed] (B)--(F);
+		\fill (A) circle (1.2pt) node[below left] {$A$};
+		\fill (B) circle (1.2pt) node[above left] {$B$};
+		\fill (C) circle (1.2pt) node[above right] {$C$};
+		\fill (D) circle (1.2pt) node[below right] {$D$};
+		\fill (E) circle (1.2pt) node[above] {$E$};
+		\fill (F) circle (1.2pt) node[right] {$F$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsubsection{拓展}
+\begin{knowledge}{图象的中心对称}
+	$y=2\sin\left(\dfrac{\pi}{6}x+\dfrac{\pi}{3}\right)$的零点为$x=6k-2$（$k\in\mathbb{Z}$），图象关于每个零点中心对称.
+\end{knowledge}
+
+\category{红岭高三三模9}
+\begin{question}
+	$f(x)=2\sin\left(\dfrac{\pi}{6}x+\dfrac{\pi}{3}\right)$，$x\in(-2,10)$与$x$轴交于$A$，过$A$的直线与$f(x)$的图象交于$B,C$，求$(\overrightarrow{OB}+\overrightarrow{OC})\cdot\overrightarrow{OA}$.
+\end{question}
+
+\begin{minipage}[t]{0.55\textwidth}
+	令$f(x)=0$：$\dfrac{\pi}{6}x+\dfrac{\pi}{3}=k\pi$，即$x=6k-2$.
+
+	在$(-2,10)$内取$k=1$，得$x=4$，即$A(4,0)$.
+
+	由对称性，$B,C$关于$A$中心对称. 以坐标方式运算：
+
+	设$B(x_1,y_1),C(x_2,y_2)$，则$x_1+x_2=2x_A=8$，$y_1+y_2=0$.
+
+	$\therefore\overrightarrow{OB}+\overrightarrow{OC}=(8,0)$.
+
+	$\because\overrightarrow{OA}=(4,0)$，$\therefore(\overrightarrow{OB}+\overrightarrow{OC})\cdot\overrightarrow{OA}=8\times4=32$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.4, baseline=(current bounding box.north)]
+		\draw[->, gray!40] (-3,0) -- (11.5,0) node[right] {$x$};
+		\draw[->, gray!40] (0,-2.6) -- (0,2.9) node[above] {$y$};
+		\draw[thick, SkyBlue, domain=-2:10, samples=220] plot (\x, {2*sin(30*\x+60)});
+		\draw[dashed] (1.9,2.1) -- (6.1,-2.1);
+		\fill (4,0) circle (2.5pt) node[below right] {$A$};
+		\fill (3,1) circle (2.5pt) node[above left] {$B$};
+		\fill (5,-1) circle (2.5pt) node[below right] {$C$};
+	\end{tikzpicture}
+\end{minipage}
+
+\category{投影向量与夹角}
+\begin{question}
+	$\vec{a}=(2,1)$，$\vec{b}=(-3,1)$. （1）求$\vec{a}$在$\vec{b}$上的投影向量；（2）求$\vec{a}$与$\vec{a}-\vec{b}$夹角的余弦值.
+\end{question}
+
+（1）所求$=|\vec{a}|\cos\theta\cdot\dfrac{\vec{b}}{|\vec{b}|}=\left(\vec{a}\cdot\dfrac{\vec{b}}{|\vec{b}|}\right)\dfrac{\vec{b}}{|\vec{b}|}=\dfrac{\vec{a}\cdot\vec{b}}{|\vec{b}|^2}\vec{b}=\dfrac{2\times(-3)+1\times1}{10}\vec{b}=-\dfrac{1}{2}\vec{b}$.
+
+（2）$\vec{a}-\vec{b}=(5,0)$，$\cos\theta=\dfrac{\vec{a}\cdot(\vec{a}-\vec{b})}{|\vec{a}|\cdot|\vec{a}-\vec{b}|}=\dfrac{10}{\sqrt{5}\times5}=\dfrac{2\sqrt{5}}{5}$.
+
+\category{夹角为锐角}
+\begin{question}
+	$\vec{a}=(x,6)$，$\vec{b}=(3,4)$，$\vec{a}$与$\vec{b}$的夹角为锐角，求$x$的取值范围.
+\end{question}
+
+由已知：$\cos\theta=\dfrac{\vec{a}\cdot\vec{b}}{|\vec{a}||\vec{b}|}>0$且$\vec{a},\vec{b}$不共线，即$\vec{a}\cdot\vec{b}>0$且不共线：
+
+\[
+\begin{cases}
+	3x+24>0\\
+	4x-18\neq0
+\end{cases}
+\]
+
+$\therefore x\in\left(-8,\dfrac{9}{2}\right)\cup\left(\dfrac{9}{2},+\infty\right)$.
+
+\subsubsection{四心问题}
+\begin{knowledge}{四心的向量表示}
+	
+	内心：$\overrightarrow{AO}=\lambda\left(\dfrac{\overrightarrow{AB}}{|\overrightarrow{AB}|}+\dfrac{\overrightarrow{AC}}{|\overrightarrow{AC}|}\right)$（角平分线的方向）.
+
+	外心：$|\overrightarrow{OA}|=|\overrightarrow{OB}|=|\overrightarrow{OC}|=R$.
+
+	重心：$\overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC}=\vec{0}$；
+
+	$\overrightarrow{AO}=\dfrac{2}{3}\overrightarrow{AM}=\dfrac{2}{3}\left(\dfrac{1}{2}\overrightarrow{AB}+\dfrac{1}{2}\overrightarrow{AC}\right)=\dfrac{1}{3}\overrightarrow{AB}+\dfrac{1}{3}\overrightarrow{AC}$（$M$为$BC$中点）.
+
+	垂心：$\overrightarrow{OA}\cdot\overrightarrow{OB}=\overrightarrow{OB}\cdot\overrightarrow{OC}=\overrightarrow{OA}\cdot\overrightarrow{OC}$.
+\end{knowledge}
+
+
+\subsection{第三、四讲\quad 解三角形}
+
+\subsubsection{正弦定理}
+\begin{knowledge}{正弦定理}
+	
+	$\dfrac{a}{\sin A}=\dfrac{b}{\sin B}=\dfrac{c}{\sin C}=2R$.
+	
+	$a=2R\sin A$，$b=2R\sin B$，$c=2R\sin C$.
+	
+	$a:b:c=\sin A:\sin B:\sin C$.
+	
+	解决两边一角问题（SSA多解）
+	
+	大边对大角.
+\end{knowledge}
+
+\subsubsection{余弦定理}
+\begin{knowledge}{余弦定理}
+	
+	$a^2=b^2+c^2-2bc\cos A$
+	
+	$b^2=a^2+c^2-2ac\cos B$
+	
+	$c^2=b^2+a^2-2ba\cos C$.
+	
+	所给和所求为三边一角.
+	
+	$S=\dfrac{1}{2}ah=\dfrac{1}{2}ac\sin B=\dfrac{1}{2}ab\sin C=\dfrac{1}{2}bc\sin A$（两边及夹角）.
+\end{knowledge}
+
+\subsubsection{多解问题}
+\begin{knowledge}{SSA多解}
+	
+	eg：$a,b,\angle B$（锐）.
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item $b<a\sin B$：无解.
+		
+		\item $b=a\sin B$：唯一解.
+		
+		\item $a\sin B<b<a$：两组解.
+		
+		\item $b\geq a$：唯一解.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		% (1) b < a sinB 无解
+		\begin{scope}[shift={(-7,0)}]
+			\draw[thick] (0,0) -- (4,0);
+			\draw[thick] (0,0) -- (35:2.2);
+			\draw (0.45,0) arc (0:35:0.45);
+			\draw[dashed, gray] (1.802,1.262) -- (1.802,0);
+			\draw[dashed, DarkRed] (1.802,1.262) circle (0.9);
+			\draw[DarkRed, thick] (1.802,1.262) -- (1.802,0.362) node[midway,right] {$b$};
+			\node[above left] at (0.9,0.75) {$a$};
+			\node[below left] at (0,0) {$B$};
+			\node[above] at (1.802,1.262) {$C$};
+			\node[below] at (2,-0.5) {(1)$b<a\sin B$：无解};
+		\end{scope}
+		% (2) b = a sinB 唯一解
+		\begin{scope}[shift={(-2,0)}]
+			\draw[thick] (0,0) -- (4,0);
+			\draw[thick] (0,0) -- (35:2.2);
+			\draw (0.45,0) arc (0:35:0.45);
+			\draw[DarkRed, thick] (1.802,1.262) -- (1.802,0) node[midway,right] {$b$};
+			\draw[gray] (1.652,0) rectangle (1.802,0.15);
+			\node[above left] at (0.9,0.75) {$a$};
+			\node[below left] at (0,0) {$B$};
+			\node[above] at (1.802,1.262) {$C$};
+			\node[below] at (2,-0.5) {(2)$b=a\sin B$：唯一解};
+		\end{scope}
+		% (3) a sinB < b < a 两组解
+		\begin{scope}[shift={(3.5,0)}]
+			\draw[thick] (0,0) -- (4,0);
+			\draw[thick] (0,0) -- (35:2.2);
+			\draw (0.45,0) arc (0:35:0.45);
+			\draw[dashed, gray] (1.802,1.262) -- (1.802,0);
+			\draw[DarkRed, thick] (1.802,1.262) -- (0.816,0) node[midway,left] {$b$};
+			\draw[DarkRed, thick] (1.802,1.262) -- (2.788,0) node[midway,right] {$b$};
+			\node[above left] at (0.9,0.75) {$a$};
+			\node[below left] at (0,0) {$B$};
+			\node[above] at (1.802,1.262) {$C$};
+			\node[below] at (2,-0.5) {(3)$a\sin B<b<a$：两组解};
+		\end{scope}
+		% (4) b >= a 唯一解
+		\begin{scope}[shift={(9,0)}]
+			\draw[thick] (-0.7,0) -- (4.3,0);
+			\draw[thick] (0,0) -- (35:2.2);
+			\draw (0.45,0) arc (0:35:0.45);
+			\draw[dashed, gray] (1.802,1.262) -- (1.802,0);
+			\draw[DarkRed, thick] (1.802,1.262) -- (3.845,0) node[midway,right] {$b$};
+			\draw[DarkRed, dashed] (1.802,1.262) -- (-0.243,0) node[midway,left] {舍};
+			\node[above left] at (0.9,0.75) {$a$};
+			\node[below left] at (0,0) {$B$};
+			\node[above] at (1.802,1.262) {$C$};
+			\node[below] at (2,-0.5) {(4)$b\geq a$：唯一解};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\category{钝角三角形}
+\begin{question}
+	南头期中5：钝角三角形$\triangle ABC$，$S=\dfrac{3\sqrt{3}}{2}$，$AB=2$，$BC=3$，则$AC=$？
+\end{question}
+
+$c=2$，$a=3$.
+
+$S=\dfrac{3\sqrt{3}}{2}=\dfrac{1}{2}ac\sin B=3\sin B \implies \sin B=\dfrac{\sqrt{3}}{2}$，$\angle B=60^\circ$或$120^\circ$，$\cos B=\pm\dfrac{1}{2}$.
+
+\begin{enumerate}[label=\arabic*., left=0pt]
+	
+	\item $\angle B=60^\circ$：$b^2=a^2+c^2-2ac\cos B \implies b=\sqrt{7}$. 
+	
+	$\because$ 需为钝角三角形：$\cos A=\dfrac{b^2+c^2-a^2}{2bc}>0$，$\angle A$为锐角（舍）.
+	
+	\item $\angle B=120^\circ$：$b=\sqrt{19}$.
+	
+\end{enumerate}
+
+$\therefore AC=\sqrt{19}$.
+
+\category{已知sinA、cosC}
+\begin{question}
+	思维：$\sin A=\dfrac{4}{5}$，$\cos C=\dfrac{5}{13}$，$a=1$，$b=$？
+\end{question}
+
+$\dfrac{a}{\sin A}=\dfrac{b}{\sin B}$（$b$为所求，需知$\sin B$）.
+
+$\sin B=\sin(A+C)=\sin A\cos C+\sin C\cos A$.
+
+$\because \sin A=\dfrac{4}{5}$，$\therefore \cos A=\pm\dfrac{3}{5}$；大边对大角：$\sin C=\dfrac{12}{13}>\sin A \implies \angle C>\angle A$.
+
+$\therefore \cos A=\dfrac{3}{5}$.
+
+$\therefore \sin B=\dfrac{56}{65}$，正弦定理：$b=\dfrac{14}{13}$.
 
 
 
+\subsubsection{判断三角形}
+\begin{knowledge}{边角互化}
+	
+	$1^\circ$优先边化角.
+	
+	$2^\circ$若全为$\sin$，则角化边.
+	
+	利用三角之和：$\sin C=\sin(A+B)$；$a\Rightarrow\sin A(\cdot 2R)$.
+	
+	射影定理：$a\cos B+b\cos A=c$.
+\end{knowledge}
+
+\category{深中期中5}
+\begin{question}
+	若$b+c=2a$，$3\sin A=5\sin B$，$\angle C=$？
+\end{question}
+
+角化边：$3\cdot\dfrac{a}{2R}=5\cdot\dfrac{b}{2R} \implies 3a=5b \implies b=\dfrac{3}{5}a$.
+
+$\because b+c=2a$，$\therefore c=\dfrac{7}{5}a$.
+
+$c^2=a^2+b^2-2ab\cos C \implies \cos C=-\dfrac{1}{2} \implies \angle C=120^\circ$.
+
+\category{江苏期中9}
+\begin{question}
+	$b\cos C+c\cos B=b$，什么三角形？
+\end{question}
+
+$\sin B\cos C+\sin C\cos B=\sin B \implies \sin(B+C)=\sin B \implies \sin A=\sin B$.
+
+$\angle A=\angle B$，等腰.
+
+\category{由边判断}
+\begin{question}
+	$a^2+b^2<c^2$，什么三角形？
+\end{question}
+
+$\cos C=\dfrac{a^2+b^2-c^2}{2ab}<0$，$C$钝角.
+
+变式：$a^2+b^2>c^2$？只可说明$C$为锐角.
+
+\category{光明书院期中11}
+\begin{question}
+	判断：(1)$\sin A>\sin B\iff A>B$；(2)$\sin2A=\sin2B$，$\triangle ABC$为等腰；(3)$\cos^2 A+\cos^2 B-\cos^2 C=1$，直角；(4)若$\triangle ABC$为锐角三角形，则$\sin A$与$\cos B$比大小.
+\end{question}
+
+(1) 对.
+
+(2) 错，还可以是$A+B=\dfrac{\pi}{2}$.
+
+(3) $1-\sin^2 A+1-\sin^2 B-(1-\sin^2 C)=1 \implies a^2+b^2=c^2$，直角三角形，结论正确.
+
+(4) $\angle A+\angle B>\dfrac{\pi}{2} \implies \angle A>\dfrac{\pi}{2}-\angle B \implies \sin A>\sin\left(\dfrac{\pi}{2}-B\right)=\cos B$.
+
+\subsubsection{周长面积}
+\category{深圳期末17}
+\begin{question}
+	$a>c$，$2c\sin A=\sqrt{3}a$.
+	
+	(1)$\angle C=$？
+	
+	(2)若$c=4$，$S_{\triangle ABC}=\sqrt{3}$，求$C_{\triangle ABC}$.
+\end{question}
+
+(1) $2\sin C\sin A=\sqrt{3}\sin A \implies \sin C=\dfrac{\sqrt{3}}{2} \implies \angle C=60^\circ$或$120^\circ$.
+
+$\because a>c$，$\therefore \angle A>\angle C$，$\angle C=60^\circ$.
+
+(2) $S_{\triangle ABC}=\dfrac{1}{2}ab\sin C=\sqrt{3} \implies ab=4$.
+
+$c^2=a^2+b^2-2ab\cos C \implies a^2+b^2=20$.
+
+四大金刚：$(a+b)^2=a^2+b^2+2ab=28 \implies a+b=2\sqrt{7}$.
+
+$C_{\triangle ABC}=a+b+c=2\sqrt{7}+4$.
+
+\subsubsection{拼接三角形}
+\begin{knowledge}{关键}
+	公共边、互补角（关键）；可解多组三角形.
+\end{knowledge}
+
+\category{宝安第一外期中18}
+\begin{question}
+	$\angle D=\dfrac{2}{3}\pi$，$CD=\sqrt{6}$，$S_{\triangle ACD}=\dfrac{3\sqrt{3}}{2}$.
+	
+	(1)$AC=$？
+	
+	(2)若$AB\perp AD$，$\angle B=\dfrac{\pi}{4}$，$BC=$？
+\end{question}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.9, baseline=(current bounding box.north)]
+		\coordinate (B) at (-2.6,0);
+		\coordinate (C) at (0.3,0);
+		\coordinate (D) at (0.6,0.88);
+		\coordinate (A) at (0.15,1.7);
+		\draw[thick] (A)--(B); \draw[thick] (B)--(C); \draw[thick] (C)--(D); \draw[thick] (D)--(A); \draw[thick] (A)--(C);
+		\node[above] at (A) {$A$};
+		\node[below] at (B) {$B$};
+		\node[below] at (C) {$C$};
+		\node[right] at (D) {$D$};
+		\node[right] at (0.4,0.4) {$\sqrt{6}$};
+	\end{tikzpicture}
+\end{center}
+
+(1) $S_{\triangle ACD}=\dfrac{3\sqrt{3}}{2}=\dfrac{1}{2}AD\cdot CD\cdot\sin D \implies AD=\sqrt{6}$.
+
+$\therefore AC=3\sqrt{2}$.
+
+(2) $\because AB\perp AD$，$\therefore \angle BAC=60^\circ$.
+
+$\dfrac{AC}{\sin B}=\dfrac{BC}{\sin\angle BAC} \implies BC=3\sqrt{3}$.
+
+\subsubsection{范围问题}
+\begin{knowledge}{方法}
+	边化角使用三角函数解决.
+	
+	小题技巧：默认为等边三角形，$\dfrac{\sqrt{3}}{4}a^2=S_{\max}$
+	
+	小特点：左闭右开.
+	
+	需用：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 正弦定理.
+		
+		\item 和差展开、二次降幂、辅助合并.
+		
+		\item 换元.
+		
+		\item 对范围进行讨论（$\sin x\leq1$）.
+		
+	\end{enumerate}
+	
+	附：用$\sin A=\sin(B+C)$进行化简.
+	
+	$\sin15^\circ=\dfrac{\sqrt{6}-\sqrt{2}}{4}=\cos75^\circ$
+	
+	$\sin75^\circ=\dfrac{\sqrt{6}+\sqrt{2}}{4}=\cos15^\circ$
+	
+	$\tan22.5^\circ=\sqrt{2}-1$
+	
+	$\tan15^\circ=2-\sqrt{3}$
+\end{knowledge}
+
+\category{陕西咸阳高三一模}
+\begin{question}
+	若$A=\dfrac{\pi}{3}$，$a=2\sqrt{2}$，则$S_{\triangle ABC}\max=$？
+\end{question}
+
+小题：$S_{\triangle ABC}\max=\dfrac{\sqrt{3}}{4}a^2=2\sqrt{3}$.
+
+大题：正弦：$\dfrac{a}{\sin A}=\dfrac{4\sqrt{6}}{3}=2R$，$b=2R\sin B$，$c=2R\sin C$.
+
+$S_{\triangle ABC}=\dfrac{1}{2}bc\sin A=\dfrac{16}{3}\sin(A+B)\cdot\sin B\cdot\sin A=4\sin B\cos B+\dfrac{4\sqrt{3}}{3}\sin^2 B$
+
+$=2\sin2B+\dfrac{4\sqrt{3}}{3}\cdot\dfrac{1-\cos2B}{2}=\dfrac{4\sqrt{3}}{3}\sin\left(2B-\dfrac{\pi}{6}\right)+\dfrac{2\sqrt{3}}{3}$.
+
+$0\leq\sin\left(2B-\dfrac{\pi}{6}\right)\leq1$；当$\sin\left(2B-\dfrac{\pi}{6}\right)=1$时，$\angle B=\dfrac{\pi}{3}$.
+
+代入：$S_{\triangle ABC}\max=2\sqrt{3}$.
+
+\category{深外期末21}
+\begin{question}
+	$a\cos C+\sqrt{3}a\sin C-b-c=0$.
+	
+	(1)$\angle A=$？
+	
+	(2)若$a=7$，$C_{\triangle ABC}$范围？
+\end{question}
+
+(1) $\sin A\cos C+\sqrt{3}\sin A\sin C-\sin B-\sin C=0$.
+
+$-\sin C\cos A+\sqrt{3}\sin A\sin C-\sin C=0$（$\sin$在$\triangle$中为正）.
+
+$-\cos A+\sqrt{3}\sin A=1 \implies 2\left(\dfrac{\sqrt{3}}{2}\sin A-\dfrac{1}{2}\cos A\right)=1 \implies 2\sin\left(A-\dfrac{\pi}{6}\right)=1$.
+
+$A-\dfrac{\pi}{6}=\dfrac{\pi}{6} \implies A=\dfrac{\pi}{3}$.
+
+(2) $\because a=7$，$\angle A=\dfrac{\pi}{3}$：$\dfrac{a}{\sin A}=\dfrac{14\sqrt{3}}{3}=2R$.
+
+$C_{\triangle ABC}=a+b+c=7+\dfrac{14\sqrt{3}}{3}\sin B+\dfrac{14\sqrt{3}}{3}\sin C=7+\dfrac{14\sqrt{3}}{3}[\sin(A+C)+\sin C]$
+
+$=7+\dfrac{14\sqrt{3}}{3}\left(\dfrac{\sqrt{3}}{2}\cos C+\dfrac{1}{2}\sin C+\sin C\right)=7+\dfrac{14\sqrt{3}}{3}\cdot\sqrt{3}\left(\dfrac{1}{2}\cos C+\dfrac{\sqrt{3}}{2}\sin C\right)$
+
+$=7+14\sin\left(\angle C+\dfrac{\pi}{6}\right)$.
+
+$\angle C\in\left(0,\dfrac{2\pi}{3}\right)$；令$t=\angle C+\dfrac{\pi}{6}$，$t\in\left(\dfrac{\pi}{6},\dfrac{5\pi}{6}\right)$.
+
+$C_{\triangle ABC}=7+14\sin t$.
+
+$\therefore C_{\triangle ABC}\in(14,21]$.
+
+\category{南外期中19}
+\begin{question}
+	$b=\sqrt{2}$，且$\sqrt{2}b\cos B=a\cos C+c\cos A$.
+	
+	(1)若$\angle A=\dfrac{\pi}{3}$，求$c$
+	
+	(2)若$\triangle ABC$为锐角$\triangle$，$S_{\triangle ABC}$范围.
+\end{question}
+
+(1) $\sqrt{2}\sin B\cos B=\sin B \implies \cos B=\dfrac{\sqrt{2}}{2} \implies \angle B=45^\circ$.
+
+$\because \angle A=60^\circ$，$\therefore \angle C=75^\circ$.
+
+$\dfrac{b}{\sin B}=2=\dfrac{c}{\sin C}=\dfrac{c}{\frac{\sqrt{6}+\sqrt{2}}{4}} \implies c=\dfrac{\sqrt{6}+\sqrt{2}}{2}$.
+
+(2) $S_{\triangle ABC}=\dfrac{1}{2}ac\sin B=\dfrac{\sqrt{2}}{2}\sin\left(2C-\dfrac{\pi}{4}\right)+\dfrac{1}{2}$.
+
+锐：$0<C<\dfrac{\pi}{2}$，$0<A<\dfrac{\pi}{2}$
+
+$\because A+B+C=\pi$，$\therefore A+C=\dfrac{3\pi}{4}$
+
+$\because 0<\dfrac{3\pi}{4}-C<\dfrac{\pi}{2}$，且$0<C<\dfrac{\pi}{2}$.
+
+$\therefore \angle C\in\left(\dfrac{\pi}{4},\dfrac{\pi}{2}\right)$.
+
+$\therefore S_{\triangle ABC}\in\left(1,\dfrac{\sqrt{2}+1}{2}\right]$.
 
 
+\subsection{第五讲\quad 复数}
+
+\subsubsection{复数的定义及代数形式}
+\begin{knowledge}{定义}
+	$i$是$-1$的一个平方根.
+	
+	$x^2=-1$的根：$-i$或$i$.
+	
+	共轭复数：$z=a+bi$，$\bar{z}=a-bi$.
+\end{knowledge}
+
+\category{罗外期中2}
+\begin{question}
+	$z\cdot(2-4i)=1+3i$，则$|z|=$？
+\end{question}
+
+$z=\dfrac{1+3i}{2-4i}$.
+
+$|z|=\left|\dfrac{1+3i}{2-4i}\right|=\dfrac{|1+3i|}{|2-4i|}=\dfrac{\sqrt{1^2+3^2}}{\sqrt{2^2+4^2}}=\dfrac{\sqrt{10}}{\sqrt{20}}=\dfrac{\sqrt{2}}{2}$.
+
+\subsubsection{复数的四则运算}
+\begin{knowledge}{常用结论}
+	$(1+i)^2=2i$；$(1-i)^2=-2i$.
+	
+	$\dfrac{1+i}{1-i}=i$；$\dfrac{1-i}{1+i}=-i$.
+	
+	周期性：$T=4$；$i+i^2+i^3+i^4=0$.
+\end{knowledge}
+
+\category{光明书院期中7}
+\begin{question}
+	$|z|=1$，则$|z+1-2i|$最大值$=$？
+\end{question}
+
+几何意义：单位圆上动点到定点$(-1,2)$的距离；$|-1+2i|=\sqrt{5}$.
+
+最大值$\sqrt{5}+1$；最小值$\sqrt{5}-1$.
+
+\subsubsection{复数的几何意义}
+\begin{knowledge}{模与辐角}
+	$z=a+bi$，$\bar{z}=a-bi$.
+	
+	$z\cdot\bar{z}=a^2+b^2=|z|^2=|\bar{z}|^2$.
+	
+	模的性质：$\left|\dfrac{z_1}{z_2}\right|=\dfrac{|z_1|}{|z_2|}$.
+	
+	三角形式：$z=r(\cos\theta+i\sin\theta)$（$r$模，$\theta$辐角）；如$1+\sqrt{3}i=2(\cos60^\circ+i\sin60^\circ)$.
+	
+	$z_1=r_1(\cos\theta_1+i\sin\theta_1)$，$z_2=r_2(\cos\theta_2+i\sin\theta_2)$：
+	
+	$z_1\cdot z_2=r_1r_2[\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2)]$.
+	
+	$z^n=r^n(\cos n\theta+i\sin n\theta)$.
+\end{knowledge}
+
+\subsubsection{复数与方程}
+\begin{knowledge}{两方法}
+	
+	$1^\circ$求根公式（根为虚数且共轭）：$x^2-2x+2=0$：$\Delta=-4<0$.
+	
+	$x=\dfrac{2\pm\sqrt{4(-1)}}{2}=\dfrac{2\pm\sqrt{(2i)^2}}{2}=1\pm i$.
+	
+	$2^\circ$韦达定理（待定系数法／题目已知一根）：$x^2-2x+2i=0$：设一根$x=a+bi$，代回原式.
+	
+	$(a+bi)^2-2(a+bi)+2i=0$，整理后实虚部分别等于零.
+	
+	若已知两根共轭$a\pm bi$时：
+	
+	$x_1+x_2=a+bi+a-bi=2a=-\dfrac{b}{a}$
+	
+	$x_1\cdot x_2=a^2-b^2i^2=a^2+b^2=\dfrac{c}{a}$.
+\end{knowledge}
+
+\subsection{第六讲\quad 直观图与多面体}
+
+\subsubsection{直观图}
+\begin{knowledge}{斜二测画法}
+	$y'$轴由原长缩短一半画在$y'$轴；建系时尽可能让多点落在轴上.
+	
+	平行于$x$轴线段长度不变；画原图先画$x$轴再画$y$轴（长度2倍）.
+	
+	$\dfrac{S_{\text{直}}}{S_{\text{原}}}=\dfrac{h_{\text{直}}}{h_{\text{原}}}=\dfrac{\sqrt{2}}{4}$.
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		% 斜二测坐标
+		\begin{scope}[shift={(-8,0)}]
+			\draw[->, gray!40] (-2,0) -- (2.5,0) node[right] {$x$};
+			\draw[->, gray!40] (0,-1.5) -- (0,2) node[above] {$y$};
+			\draw[->, thick, DarkRed] (-1.5,-1.5) -- (2.2,2.2) node[right] {$y'$};
+			\draw[->, thick, DarkRed] (-1.5,0) -- (2.5,0) node[right] {$x'$};
+			\draw (0.6,0) arc (0:45:0.6);
+			\node at (0.95,0.3) {$45^\circ$};
+		\end{scope}
+		% 直观图正方形
+		\begin{scope}[shift={(-1,0)}]
+			\draw[->, thick] (-2.5,0) -- (3,0) node[right] {$x'$};
+			\draw[->, thick] (-1.2,-1.2) -- (2.2,2.2) node[right] {$y'$};
+			\draw[thick] (0,0) -- (1.2,0) -- (1.2,1.2) -- (0,1.2) -- cycle;
+			\node[below] at (0,0) {$O'$};
+			\node[below] at (1.2,0) {$A'$};
+			\node[above right] at (1.2,1.2) {$B'$};
+			\node[above left] at (0,1.2) {$C'$};
+		\end{scope}
+		% 原图
+		\begin{scope}[shift={(6,0)}]
+			\draw[->, thick] (-2,0) -- (2.5,0) node[right] {$x$};
+			\draw[->, thick] (0,-0.5) -- (0,2.6) node[above] {$y$};
+			\draw[thick] (0,0) -- (1,0) -- (0,2.4) -- (-1,2.4) -- cycle;
+			\node[below left] at (0,0) {$O$};
+			\node[below] at (1,0) {$A$};
+			\node[right] at (0,2.4) {$B$};
+			\node[left] at (-1,2.4) {$C$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\category{光明书院期中5}
+\begin{question}
+	正方形$O'A'B'C'$边长为$1$，图为直观图，则$C_{\text{原}}=$？
+\end{question}
+
+还原：$O(0,0)$，$A(1,0)$，$B(0,2\sqrt{2})$，$C(-1,2\sqrt{2})$.
+
+$C_{\text{原}}=1+3+1+3=8$.
+
+\category{思维}
+\begin{question}
+	$B'C'\perp x$轴，$B'C'=3$，则原$\triangle ABC$中$BC$边的高$=$？
+\end{question}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.8, baseline=(current bounding box.north)]
+		\draw[->, thick] (-2.5,0) -- (3,0) node[right] {$x'$};
+		\draw[->, thick] (-1.5,-1.5) -- (2,2) node[right] {$y'$};
+		\draw[thick] (1.2,0) -- (1.2,1.6) node[above] {$C'$};
+		\draw[thick] (0.4,0) -- (1.2,1.6);
+		\node[below] at (0,0) {$O$};
+		\node[below] at (0.4,0) {$A$};
+		\node[below] at (1.2,0) {$B'$};
+	\end{tikzpicture}
+\end{center}
+
+$\dfrac{h_{\text{直}}}{h_{\text{原}}}=\dfrac{3}{h_{\text{原}}}=\dfrac{\sqrt{2}}{4} \implies h_{\text{原}}=6\sqrt{2}$.
+
+\subsubsection{多面体}
+\begin{knowledge}{包含关系}
+	
+	正四棱柱$\supseteq$长方体.
+	
+	正三棱锥$\subseteq$正四面体.
+	
+	小结论：棱长为$a$的正四面体，高为$\dfrac{\sqrt{6}}{3}a$.
+\end{knowledge}
+
+\begin{knowledge}{最短路程}
+	$\sqrt{(a+b)^2+c^2}$、$\sqrt{(a+c)^2+b^2}$、$\sqrt{(b+c)^2+a^2}$比大小.
+\end{knowledge}
+
+\category{江苏期中5}
+\begin{question}
+	三棱锥$A-BCD$底为等边$\triangle$，棱长为$2$，$\angle BAC=40^\circ$，则$(BM+MN+NB)_{\min}=$？
+\end{question}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.9, baseline=(current bounding box.north)]
+		\coordinate (A) at (0,0);
+		\coordinate (B) at (240:2);
+		\coordinate (C) at (280:2);
+		\coordinate (D) at (320:2);
+		\coordinate (B2) at (360:2);
+		\draw[thick] (A)--(B); \draw[thick] (A)--(C); \draw[thick] (A)--(D); \draw[thick] (A)--(B2);
+		\draw[thick] (B)--(C); \draw[thick] (C)--(D); \draw[thick] (D)--(B2);
+		\draw[dashed, DarkRed] (B)--(B2);
+		\node[above] at (A) {$A$};
+		\node[left] at (B) {$B$};
+		\node[below] at (C) {$C$};
+		\node[below right] at (D) {$D$};
+		\node[right] at (B2) {$B'$};
+	\end{tikzpicture}
+\end{center}
+
+展开图：$\angle BAB'=3\times40^\circ=120^\circ$.
+
+$\therefore (BM+MN+NB)_{\min}=BB'=\sqrt{3}\times2=2\sqrt{3}$.
+
+
+\subsection{第七讲\quad 旋转体与球}
+
+\subsubsection{旋转体}
+
+\begin{knowledge}{圆台侧面积与球截面模型}
+	
+	圆台侧面积：$S_{\text{侧}}=\pi(r_1+r_2)l$.
+	
+	大圆小圆模型：用平行于底面的平面去截球，设球半径为$R$，截面圆半径为$r$，球心到截面的距离为$d$，则$r^2+d^2=R^2$.
+	
+\end{knowledge}
+
+\begin{center}
+	\begin{tikzpicture}[scale=1.1, baseline=(current bounding box.north)]
+		% 参数：球半径 2，球心到截面距离 0.9
+		\pgfmathsetmacro{\myD}{0.9}
+		\pgfmathsetmacro{\myRs}{sqrt(4-\myD*\myD)}
+		\pgfmathsetmacro{\myRc}{0.275*\myRs}
+		
+		% 球面与赤道
+		\draw[thick] (0,0) circle (2);
+		\draw[gray!60] (0,0) ellipse (2 and 0.55);
+		% 截面圆
+		\draw[thick, DarkGreen] (0,\myD) ellipse ({\myRs} and {\myRc});
+		
+		% 球心 O、截面圆心 H、截面边缘点 A
+		\fill (0,0) circle (1.5pt) node[below left] {$O$};
+		\fill (0,\myD) circle (1.2pt) node[left] {$H$};
+		\fill (\myRs,\myD) circle (1.2pt) node[above right] {$A$};
+		
+		% 三条线段
+		\draw[thick, SkyBlue] (0,0) -- (\myRs,\myD) node[midway, above right] {$R$};
+		\draw[thick, DarkRed] (0,0) -- (0,\myD) node[midway, left] {$d$};
+		\draw[thick, DarkGreen] (0,\myD) -- (\myRs,\myD) node[midway, above] {$r$};
+		
+		% 直角标记
+		\draw[gray!70] (0,{\myD-0.2}) -- (0.2,{\myD-0.2}) -- (0.2,\myD);
+	\end{tikzpicture}
+\end{center}
+
+\category{宝中高三周测10}
+\begin{question}
+	$\triangle ABC$中，$\angle ABC=120^\circ$，$BC=1.5$，$AB=2$，将$\triangle ABC$绕$BC$所在直线旋转一周形成几何体，求其体积.
+\end{question}
+
+\begin{minipage}[t]{0.62\textwidth}
+	作$AD\perp BC$，交$BC$的延长线于$D$.
+	
+	$\because \angle ABC=120^\circ$，$\therefore \angle ABD=60^\circ$.
+	
+	$\therefore BD=AB\cos60^\circ=1$，$AD=AB\sin60^\circ=\sqrt{3}$.
+	
+	$\therefore CD=BC+BD=2.5$.
+	
+	所得几何体为圆锥$CAD$挖去圆锥$BAD$.
+	
+	$V_{\text{体}}=V_{CAD}-V_{BAD}=\dfrac{1}{3}\pi\cdot AD^2\cdot CD-\dfrac{1}{3}\pi\cdot AD^2\cdot BD$
+	
+	$=\dfrac{1}{3}\pi\cdot AD^2\cdot BC=\dfrac{1}{3}\pi\times3\times1.5=1.5\pi$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.36\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=1.2, baseline=(current bounding box.north)]
+		\coordinate (C) at (0,2.5);
+		\coordinate (B) at (0,1);
+		\coordinate (D) at (0,0);
+		\coordinate (A) at (1.73,0);
+		
+		\draw[thick] (C) -- (B) -- (A) -- cycle;
+		\draw[thick] (B) -- (D);
+		\draw[thick] (A) -- (D);
+		
+		\draw pic["$120^\circ$", draw, angle eccentricity=3, angle radius=0.2cm] {angle = A--B--C};
+		
+		\draw (0.15,0) -- (0.15,0.15) -- (0,0.15);
+		
+		\node[above right] at (C) {$C$};
+		\node[left] at (B) {$B$};
+		\node[below right] at (A) {$A$};
+		\node[below left] at (D) {$D$};
+		\node[left] at (0,1.75) {$1.5$};
+		\node[left] at (0,0.5) {$1$};
+		\node[below] at (0.87,0) {$\sqrt{3}$};
+		\node[above] at (0.87,0.5) {$2$};
+	\end{tikzpicture}
+\end{minipage}
+
+\subsubsection{常见几何体的外接球}
+
+\begin{knowledge}{外接球半径与表面积}
+	
+	球的表面积：$S_{\text{球}}=4\pi R^2$.
+	
+	正方体（棱长$a$）：$R=\dfrac{\sqrt{3}}{2}a$.
+	
+	长方体（长、宽、高$a,b,c$）：$R=\dfrac{\sqrt{a^2+b^2+c^2}}{2}$.
+	
+	侧棱两两垂直的三棱锥：补全为长方体，$R=\dfrac{\sqrt{a^2+b^2+c^2}}{2}$.
+	
+	正四面体（棱长$a$）：$R=\dfrac{\sqrt{6}}{4}a$，内切球半径$r=\dfrac{\sqrt{6}}{12}a$.
+	
+\end{knowledge}
+
+\category{正四棱锥外接球}
+\begin{question}
+	正四棱锥的顶点都在同一球面上，它的高为$4$，体积为$\dfrac{16}{3}$，求该球的表面积.
+\end{question}
+
+\begin{minipage}[t]{0.62\textwidth}
+	设底面边长为$a$，顶点为$S$，底面中心为$E$.
+	
+	$V=\dfrac{1}{3}a^2h=\dfrac{1}{3}a^2\times4=\dfrac{16}{3} \implies a=2$.
+	
+	$EA=\dfrac{\sqrt{2}}{2}a=\sqrt{2}$.
+	
+	设球心为$O$（在$SE$上），球半径为$R$.
+	
+	则$SO=R$，$OE=SE-SO=4-R$.
+	
+	在$\text{Rt}\triangle OEA$中：$OE^2+EA^2=OA^2$.
+	
+	$(4-R)^2+(\sqrt{2})^2=R^2$.
+	
+	$16-8R+2=0 \implies R=\dfrac{9}{4}$.
+	
+	$S_{\text{球}}=4\pi R^2=4\pi\times\dfrac{81}{16}=\dfrac{81}{4}\pi$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.36\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.9, baseline=(current bounding box.north)]
+		\coordinate (A) at (-1.4,-0.6);
+		\coordinate (B) at (0.8,-0.6);
+		\coordinate (C) at (1.6,0.2);
+		\coordinate (D) at (-0.6,0.2);
+		\coordinate (E) at (0.1,-0.2);
+		\coordinate (S) at (0.1,2.9);
+		\coordinate (O) at (0.1,1.1);
+		\draw[thick] (S) -- (A) -- (B) -- (C) -- cycle;
+		\draw[thick] (S) -- (C);
+		\draw[thick] (S) -- (B);
+		\draw[dashed] (S) -- (D);
+		\draw[dashed] (A) -- (D) -- (C);
+		\draw[dashed, DarkRed] (S) -- (E);
+		\draw[dashed, SkyBlue] (O) -- (A);
+		\draw[dashed,SkyBlue] (A) -- (E);
+		\fill (O) circle (1.5pt) node[left] {$O$};
+		\node[above] at (S) {$S$};
+		\node[left] at (A) {$A$};
+		\node[below] at (B) {$B$};
+		\node[right] at (C) {$C$};
+		\node[below right] at (D) {$D$};
+		\node[below] at (E) {$E$};
+	\end{tikzpicture}
+	
+	\vspace{4pt}
+	\begin{tikzpicture}[scale=1.0, baseline=(current bounding box.north)]
+		\coordinate (E) at (0,0);
+		\coordinate (O) at (0,1.3);
+		\coordinate (A) at (1.3,0);
+		\draw[thick] (O) -- (E) -- (A);
+		\draw[thick] (O) -- (A);
+		\draw (0.18,0) -- (0.18,0.18) -- (0,0.18);
+		\node[left] at (0,0.65) {$4-R$};
+		\node[below] at (0.65,0) {$\sqrt{2}$};
+		\node[above right] at (0.7,0.7) {$R$};
+		\node[below left] at (E) {$E$};
+		\node[above] at (O) {$O$};
+		\node[below right] at (A) {$A$};
+	\end{tikzpicture}
+\end{minipage}
+
+\category{三棱锥外接球（体积最大）}
+\begin{question}
+	边长为$2$的正$\triangle ABC$所在平面外一点$P$，$PB=4$，求三棱锥$P-ABC$体积最大时外接球的表面积.
+\end{question}
+
+\begin{minipage}[t]{0.62\textwidth}
+	$V_{P-ABC}=\dfrac{1}{3}S_{\triangle ABC}\cdot h$.
+	
+	$S_{\triangle ABC}=\sqrt{3}$一定，故只需求$h$最大.
+	
+	$h\leq PB=4$，当且仅当$PB\perp$平面$ABC$时取等，即$P$在$B$正上方.
+	
+	设正$\triangle ABC$中心为$O'$，球心为$O$（在过$O'$且垂直底面的直线上），球半径为$R$，设$OO'=h$.
+	
+	$O'B=\dfrac{2}{\sqrt{3}}=\dfrac{2\sqrt{3}}{3}$.
+	
+	由$OA=OB=OP=R$：$R^2=O'B^2+h^2$，且$R^2=O'B^2+(4-h)^2$.
+	
+	$\therefore h=2$，$R^2=\dfrac{4}{3}+4=\dfrac{16}{3}$.
+	
+	$S_{\text{球}}=4\pi R^2=\dfrac{64}{3}\pi$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.36\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=1.0, baseline=(current bounding box.north)]
+		\coordinate (B) at (0,-1.0);
+		\coordinate (A) at (-1.8,0.6);
+		\coordinate (C) at (1.8,0.6);
+		\coordinate (P) at (0,2.6);
+		\coordinate (O) at (0,0.8);
+		\coordinate (O1) at (0,0.07);
+		% 外接球
+		\draw[gray!40] (O) circle (1.8);
+		% 可见棱（实线）
+		\draw[thick] (P) -- (A);
+		\draw[thick] (P) -- (B);
+		\draw[thick] (P) -- (C);
+		\draw[thick] (A) -- (B) -- (C);
+		% 被遮挡棱（虚线）
+		\draw[dashed] (A) -- (C);
+		% 球心、底面中心与半径
+		\draw[dashed, DarkRed] (O1) -- (O);
+		\draw[dashed, SkyBlue] (O) -- (A);
+		\fill (O) circle (1.5pt) node[right] {$O$};
+		\fill (O1) circle (1.2pt) node[below right] {$O'$};
+		% 直角标记（PB 与 BC）
+		\draw[gray!70] (0,-0.72) -- (0.21,-0.53) -- (0.21,-0.81);
+		% 顶点
+		\fill (A) circle (1.5pt); \fill (B) circle (1.5pt);
+		\fill (C) circle (1.5pt); \fill (P) circle (1.5pt);
+		\node[above] at (P) {$P$};
+		\node[left] at (A) {$A$};
+		\node[below] at (B) {$B$};
+		\node[right] at (C) {$C$};
+		\node[left] at (-0.05,0.8) {$4$};
+	\end{tikzpicture}
+\end{minipage}
 
 
 

@@ -200,6 +200,155 @@
 	
 \end{minipage}
 
+\noindent
+\begin{minipage}[t]{0.66\textwidth}
+	
+	\textbf{4.}\quad 解: 设 $z=x+iy$, $f(z)=u(x,y)+iv(x,y)$, Cauchy-Riemann 条件为
+	\[
+	\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\qquad
+	\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x},
+	\quad\text{即}\quad u_x=v_y,\ u_y=-v_x.
+	\]
+	
+	\textbf{(1)} $\sin z$:\\
+	$\because \sin z=\sin x\cosh y+i\cos x\sinh y$,\\
+	$\therefore u=\sin x\cosh y$,\quad $v=\cos x\sinh y$.\\
+	$\because u_x=\cos x\cosh y=v_y$,\\
+	\quad $u_y=\sin x\sinh y=-v_x$,\\
+	$\therefore$ 满足 C-R 条件.\\[4pt]
+	
+	\textbf{(2)} $\cos z$:\\
+	$\because \cos z=\cos x\cosh y-i\sin x\sinh y$,\\
+	$\therefore u=\cos x\cosh y$,\quad $v=-\sin x\sinh y$.\\
+	$\because u_x=-\sin x\cosh y=v_y$,\\
+	\quad $u_y=\cos x\sinh y=-v_x$,\\
+	$\therefore$ 满足 C-R 条件.\\[4pt]
+	
+	\textbf{(3)} $z^3$:\\
+	$\because z^3=(x^3-3xy^2)+i(3x^2y-y^3)$,\\
+	$\therefore u=x^3-3xy^2$,\quad $v=3x^2y-y^3$.\\
+	$\because u_x=3x^2-3y^2=v_y$,\\
+	\quad $u_y=-6xy=-v_x$,\\
+	$\therefore$ 满足 C-R 条件.\\[4pt]
+	
+	\textbf{(4)} $\mathrm{e}^z$:\\
+	$\because \mathrm{e}^z=\mathrm{e}^x\cos y+i\,\mathrm{e}^x\sin y$,\\
+	$\therefore u=\mathrm{e}^x\cos y$,\quad $v=\mathrm{e}^x\sin y$.\\
+	$\because u_x=\mathrm{e}^x\cos y=v_y$,\\
+	\quad $u_y=-\mathrm{e}^x\sin y=-v_x$,\\
+	$\therefore$ 满足 C-R 条件.\\[4pt]
+	
+	综上, 四个函数的实部与虚部在 $\mathbb{C}$ 上处处满足 C-R 条件.
+	
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+	
+	\centering
+	\begin{tikzpicture}[baseline=(current bounding box.north), scale=0.75]
+		
+		% z 平面: 直角网格
+		\begin{scope}[shift={(0,2.6)}]
+			\draw[->,LineBlue](-1.7,0)--(1.7,0) node[right,font=\scriptsize]{$x$};
+			\draw[->,LineBlue](0,-1.3)--(0,1.3) node[above,font=\scriptsize]{$y$};
+			\foreach\yy in{-1,-0.5,0.5,1}
+			\draw[LineBlue,thin,opacity=0.5](-1.5,\yy)--(1.5,\yy);
+			\foreach\xx in{-1,-0.5,0.5,1}
+			\draw[LineBlue,thin,opacity=0.5](\xx,-1.2)--(\xx,1.2);
+			\node[LineBlue,font=\scriptsize] at (-1.1,1.55) {$z$ 平面};
+		\end{scope}
+		% 映射箭头
+		\draw[-{Stealth},thick,PinRed](0,1.15)--(0,-0.15)
+		node[midway,right,font=\scriptsize]{$w=\mathrm{e}^z$};
+		% w 平面: 极坐标网格(圆+射线)
+		\begin{scope}[shift={(0,-1.6)}]
+			\draw[->,PineGreen](-1.7,0)--(1.7,0) node[right,font=\scriptsize]{$u$};
+			\draw[->,PineGreen](0,-1.3)--(0,1.3) node[above,font=\scriptsize]{$v$};
+			\foreach\r in{0.4,0.8,1.2}
+			\draw[PineGreen,thin,opacity=0.5](0,0) circle(\r);
+			\foreach\a in{0,45,...,315}
+			\draw[PineGreen,thin,opacity=0.5](0,0)--(\a:1.3);
+			\node[PineGreen,font=\scriptsize] at (-1.1,1.55) {$w$ 平面};
+		\end{scope}
+		% 图注
+		\node[font=\scriptsize,align=center] at (0,-3.7) {以 (4) 为例: 水平线、竖直线\\ 分别映为射线、圆, 且正交相交\\ (C-R 条件的几何意义)};
+		
+	\end{tikzpicture}
+	
+\end{minipage}
 
+\noindent
+\begin{minipage}[t]{0.66\textwidth}
+	
+	\textbf{5.}\quad 证明:\\[4pt]
+	\textbf{引理（常值判别）}: 若实值函数 $u$ 在区域 $\Omega$ 内恒有 $u_x=u_y=0$, 则 $u$ 在 $\Omega$ 内为常数.\\
+	$\because\Omega$ 为连通开集,\\
+	$\therefore\forall z_0,z_1\in\Omega$, 可用完全含于 $\Omega$ 的折线联结.\\
+	每段折线上以 $t$ 为参数, 则 $\dfrac{\mathrm{d}u}{\mathrm{d}t}=u_x\,x'(t)+u_y\,y'(t)=0$,\\
+	$\therefore u(z_0)=u(z_1)$, 即 $u$ 为常数.\\[4pt]
+	
+	\textbf{(1)} 设 $f=u+\mathrm{i}v$.\\
+	$\because f'=u_x+\mathrm{i}v_x=0$,\\
+	$\therefore u_x=v_x=0$;\\
+	又 $\because f$ 解析, $\therefore$ 满足 C-R 条件: $u_y=-v_x$, $v_y=u_x$,\\
+	$\therefore u_y=v_y=0$.\\
+	$\therefore u,v$ 的一阶偏导在 $\Omega$ 内恒为零,\\
+	由引理, $u,v$ 均为常数, $\therefore f$ 在 $\Omega$ 内为常数.\\[4pt]
+	
+	\textbf{(2)} 设 $f=u+\mathrm{i}v$, 则 $|f|^2=u^2+v^2=c^2$ ($c\geq0$ 为常数).\\
+	若 $c=0$, 则 $f\equiv0$, 为常数.\\
+	下设 $c>0$. 两边分别对 $x,y$ 求偏导:\\
+	$\because uu_x+vv_x=0$,\\
+	\quad $uu_y+vv_y=0$,\\
+	将 C-R 条件 $u_y=-v_x$, $v_y=u_x$ 代入第二式, 得 $vu_x-uv_x=0$.\\
+	$\therefore$
+	\[
+	\begin{pmatrix}u&v\\ v&-u\end{pmatrix}
+	\begin{pmatrix}u_x\\ v_x\end{pmatrix}=
+	\begin{pmatrix}0\\0\end{pmatrix},
+	\]
+	$\because$ 系数行列式 $=-(u^2+v^2)=-c^2\neq0$,\\
+	$\therefore u_x=v_x=0$, 进而 $u_y=v_y=0$.\\
+	由引理, $u,v$ 均为常数, $\therefore f$ 在 $\Omega$ 内为常数. $\blacksquare$
+	
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+	
+	\centering
+	\begin{tikzpicture}[baseline=(current bounding box.north), scale=0.8]
+		
+		% 区域 Ω
+		\fill[LightBlue,opacity=0.7] plot[smooth cycle] coordinates
+		{(-1.6,-1.0) (-0.5,-1.4) (0.9,-1.2) (1.6,-0.2) (1.2,1.0) (0.1,1.4) (-1.1,1.2) (-1.7,0.2)};
+		\draw[LineBlue,thick] plot[smooth cycle] coordinates
+		{(-1.6,-1.0) (-0.5,-1.4) (0.9,-1.2) (1.6,-0.2) (1.2,1.0) (0.1,1.4) (-1.1,1.2) (-1.7,0.2)};
+		\node[LineBlue,font=\scriptsize] at (-1.1,0.7) {$\Omega$};
+		% 两点及折线路径
+		\coordinate (z0) at (-0.9,-0.6);
+		\coordinate (z1) at (1.0,0.6);
+		\draw[PinRed,thick] (z0) -- (-0.2,-0.2) -- (0.3,0.5) -- (z1);
+		\fill[PinRed] (z0) circle (1.5pt) node[below left,font=\scriptsize] {$z_0$};
+		\fill[PinRed] (z1) circle (1.5pt) node[above right,font=\scriptsize] {$z_1$};
+		\node[font=\scriptsize,align=center] at (0,-1.95) {区域连通: 任两点可用\\ 含于 $\Omega$ 的折线联结};
+		
+	\end{tikzpicture}
+	
+	\vspace{8pt}
+	
+	\begin{tikzpicture}[baseline=(current bounding box.north), scale=0.8]
+		
+		% w 平面: 像落在圆周上
+		\draw[->,PineGreen](-1.8,0)--(1.8,0) node[right,font=\scriptsize]{$u$};
+		\draw[->,PineGreen](0,-1.8)--(0,1.8) node[above,font=\scriptsize]{$v$};
+		\draw[PineGreen,thick](0,0) circle (1.3);
+		\coordinate (w) at (60:1.3);
+		\draw[PinRed,dashed](0,0)--(w) node[midway,left,font=\scriptsize]{$c$};
+		\fill[PinRed] (w) circle (1.5pt) node[above right,font=\scriptsize] {$f(z)$};
+		\node[font=\scriptsize,align=center] at (0,-2.2) {(2): 像点恒落在圆周 $|w|=c$ 上};
+		
+	\end{tikzpicture}
+	
+\end{minipage}
 
 \end{document}

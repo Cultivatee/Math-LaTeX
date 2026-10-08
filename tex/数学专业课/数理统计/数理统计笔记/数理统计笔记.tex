@@ -235,9 +235,9 @@
 		
 		$k$ 阶中心矩：$b_k = \dfrac{1}{n} \displaystyle\sum_{i=1}^n (X_i - \bar{X})^k$.
 		
-		样本偏度：$\hat{\beta}_S = \dfrac{b_3}{b_2^{3/2}}$.
+		样本偏度：$\hat{\beta}_s = \dfrac{b_3}{b_2^{3/2}}$.
 		
-		样本峰度：$\hat{\beta}_K = \dfrac{b_4}{b_2^2} - 3$.
+		样本峰度：$\hat{\beta}_k = \dfrac{b_4}{b_2^2} - 3$.
 	\end{knowledge}
 	
 	\begin{knowledge}{次序统计量}
@@ -340,5 +340,125 @@
 			\node[below] at (5.4,-0.18) {$X_{\max}$};
 		\end{tikzpicture}
 	\end{minipage}
+	
+	\subsection{§5.4\quad 三大抽样分布}
+	
+	\begin{minipage}[t]{0.5\textwidth}
+		
+		\begin{knowledge}{$\chi^2$ 分布（卡方分布）}
+			
+			设 $X_1,\dots,X_n$ 独立同分布于 $N(0,1)$，则统计量
+			\[
+			\chi^2 = X_1^2 + \dots + X_n^2 \sim \chi^2(n),
+			\]
+			其中 $n$ 称为自由度. 其密度函数为
+			\[
+			p(y) = \frac{1}{\Gamma\left(\frac{n}{2}\right) 2^{\frac{n}{2}}} \, y^{\frac{n}{2}-1} e^{-\frac{y}{2}}, \quad y>0.
+			\]
+			期望 $=$ 自由度 $= n$；方差 $= 2n$.
+		\end{knowledge}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.5\textwidth}
+		
+		\centering
+		\begin{tikzpicture}[scale=1.3, baseline=(current bounding box.north)]
+			% chi2
+			\begin{scope}[shift={(0,0)}]
+				\draw[->, gray!40] (-0.3,0) -- (4.3,0) node[right] {$y$};
+				\draw[->, gray!40] (0,-0.2) -- (0,1.5) node[above] {$p(y)$};
+				\draw[thick, DarkRed, domain=0.01:4, smooth, samples=60, variable=\y] plot ({\y}, {exp(-\y/2)});
+				\draw[thick, SkyBlue, domain=0:4, smooth, samples=60, variable=\y] plot ({\y}, {0.5*\y*exp(-\y/2)});
+				\draw[thick, DarkGreen, domain=0:4, smooth, samples=60, variable=\y] plot ({\y}, {0.125*\y*\y*exp(-\y/2)});
+				\node[right, DarkRed] at (2.4,0.6) {$n=2$};
+				\node[right, SkyBlue] at (2.8,0.4) {$n=4$};
+				\node[right, DarkGreen] at (3.2,0.28) {$n=6$};
+				\node[above] at (3.6,0.95) {$\chi^2(n)$};
+			\end{scope}
+			% t
+			\begin{scope}[shift={(0,-2.3)}]
+				\draw[->, gray!40] (-3,0) -- (3,0) node[right] {$y$};
+				\draw[->, gray!40] (0,-0.2) -- (0,1.3) node[above] {$p(y)$};
+				\draw[thick, DarkRed, domain=-2.8:2.8, smooth, samples=60, variable=\y] plot ({\y}, {0.35/(1+\y*\y)});
+				\draw[thick, SkyBlue, domain=-2.8:2.8, smooth, samples=60, variable=\y] plot ({\y}, {0.8*exp(-\y*\y/2)});
+				\node[right, DarkRed] at (1.7,0.1) {$t(1)$};
+				\node[right, SkyBlue] at (1.9,0.4) {$n\to\infty$};
+				\node[above] at (2.4,0.95) {$t(n)$};
+			\end{scope}
+			% F
+			\begin{scope}[shift={(0,-4.6)}]
+				\draw[->, gray!40] (-0.3,0) -- (4.3,0) node[right] {$y$};
+				\draw[->, gray!40] (0,-0.2) -- (0,1.5) node[above] {$p(y)$};
+				\draw[thick, DarkRed, domain=0.03:4, smooth, samples=80, variable=\y] plot ({\y}, {0.55*(1+\y)^(-2.2)});
+				\draw[thick, SkyBlue, domain=0:4, smooth, samples=80, variable=\y] plot ({\y}, {2.2*\y*(1+0.7*\y)^(-4.5)});
+				\node[right, DarkRed] at (2.4,0.3) {$m$ 较小};
+				\node[right, SkyBlue] at (2.6,0.2) {$m$ 较大};
+				\node[above] at (3.5,0.95) {$F(m,n)$};
+			\end{scope}
+		\end{tikzpicture}
+	\end{minipage}
+	
+	\begin{knowledge}{$F$ 分布}
+		
+		设 $Y_1,\dots,Y_m$ 与 $X_1,\dots,X_n$ 相互独立且均服从 $N(0,1)$，则
+		\[
+		F = \frac{\left(Y_1^2 + \dots + Y_m^2\right)/m}{\left(X_1^2 + \dots + X_n^2\right)/n} \sim F(m,n),
+		\]
+		其中 $m$ 为分子自由度，$n$ 为分母自由度. 密度函数为
+		\[
+		p(y) = \frac{\Gamma\left(\frac{m+n}{2}\right)}{\Gamma\left(\frac{m}{2}\right)\Gamma\left(\frac{n}{2}\right)} \left(\frac{m}{n}\right)^{\frac{m}{2}} y^{\frac{m}{2}-1} \left(1+\frac{m}{n}y\right)^{-\frac{m+n}{2}}, \quad y>0.
+		\]
+		当 $n>2$ 时 $E(X)=\dfrac{n}{n-2}$；当 $n>4$ 时 $\operatorname{Var}(X)=\dfrac{2n^2(m+n-2)}{m(n-2)^2(n-4)}$.
+		
+		等价地，若 $X_1 \sim \chi^2(m)$，$X_2 \sim \chi^2(n)$ 且相互独立，则 $F = \dfrac{X_1/m}{X_2/n} \sim F(m,n)$（分子自由度在上，分母自由度在下）.
+		
+		分位数关系：
+		\[
+		F_\alpha(n,m) = \frac{1}{F_{1-\alpha}(m,n)}.
+		\]
+	\end{knowledge}
+	
+	\begin{knowledge}{$t$ 分布}
+		
+		设 $X_1$ 与 $X_2$ 独立，$X_1$ 服从标准正态，$X_2 \sim \chi^2(n)$，则
+		\[
+		t = \frac{X_1}{\sqrt{X_2/n}} \sim t(n),
+		\]
+		自由度为 $n$. 密度函数为
+		\[
+		p(y) = \frac{\Gamma\left(\frac{n+1}{2}\right)}{\sqrt{n\pi}\,\Gamma\left(\frac{n}{2}\right)} \left(1+\frac{y^2}{n}\right)^{-\frac{n+1}{2}}.
+		\]
+		当 $n>1$ 时 $E(X)=0$；当 $n>2$ 时 $\operatorname{Var}(X)=\dfrac{n}{n-2}$.
+	\end{knowledge}
+	
+	\begin{knowledge}{定理（$\bar{X}$ 与 $s^2$ 相互独立）}
+		
+		设 $X_1,\dots,X_n$ 来自 $N(\mu,\sigma^2)$，则 $\bar{X}$ 与 $s^2$ 相互独立，且
+		\[
+		\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right), \quad \frac{(n-1)s^2}{\sigma^2} \sim \chi^2(n-1).
+		\]
+	\end{knowledge}
+	
+	\begin{knowledge}{推论（$F$ 统计量的构造）}
+		
+		设 $X_1,\dots,X_m$ 来自 $N(\mu_1,\sigma_1^2)$，$Y_1,\dots,Y_n$ 来自 $N(\mu_2,\sigma_2^2)$，两样本相互独立. 记
+		\[
+		s_x^2 = \frac{1}{m-1}\sum_{i=1}^m (X_i-\bar{X})^2, \quad \bar{X} = \frac{1}{m}\sum_{i=1}^m X_i,
+		\]
+		$s_y^2$，$\bar{Y}$ 类似定义，则
+		\[
+		F = \frac{s_x^2/\sigma_1^2}{s_y^2/\sigma_2^2} \sim F(m-1, n-1).
+		\]
+	\end{knowledge}
+	
+	\begin{knowledge}{推论（$t$ 统计量的构造）}
+		
+		设 $X_1,\dots,X_n$ 来自 $N(\mu,\sigma^2)$，$\bar{X}$ 为样本均值，$s$ 为样本标准差，则
+		\[
+		t = \frac{\sqrt{n}\,(\bar{X}-\mu)}{s} \sim t(n-1).
+		\]
+	\end{knowledge}
+	
+	
 	
 \end{document}

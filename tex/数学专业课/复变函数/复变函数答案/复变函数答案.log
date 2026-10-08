@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  21 SEP 2026 22:48
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  29 SEP 2026 18:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1567,6 +1567,38 @@ Overfull \hbox (1.66667pt too wide) in paragraph at lines 129--202
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 213--219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--226
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--233
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--240
+
+ []
+
+[1
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 283--289
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--297
+
+ []
+
+
 Package caption Warning: Unused \captionsetup[table] on input line 108.
 See the caption package documentation for explanation.
 
@@ -1578,9 +1610,7 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[subfigure] on input line 116.
 See the caption package documentation for explanation.
 
-[1
-
-] (./复变函数答案.aux)
+[2] [3] (./复变函数答案.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
@@ -1589,12 +1619,12 @@ Package rerunfilecheck Info: File `复变函数答案.out' has not changed.
 (rerunfilecheck)             Checksum: 14BB9C168D31C06E5092A6972518D69E;67.
  ) 
 Here is how much of TeX's memory you used:
- 32430 strings out of 468168
- 698492 string characters out of 5429579
- 1318388 words of memory out of 5000000
- 60559 multiletter control sequences out of 15000+600000
- 634444 words of font info for 102 fonts, out of 8000000 for 9000
+ 32536 strings out of 468168
+ 702055 string characters out of 5429579
+ 1327388 words of memory out of 5000000
+ 60664 multiletter control sequences out of 15000+600000
+ 634452 words of font info for 103 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,10n,111p,420b,687s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,10n,111p,420b,802s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 复变函数答案.pdf (1 page).
+Output written on 复变函数答案.pdf (3 pages).

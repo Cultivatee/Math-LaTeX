@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  23 SEP 2026 23:51
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  24 SEP 2026 16:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1627,7 +1627,7 @@ Package fontspec Info:
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [24] [25] [26]
-Overfull \hbox (31.80798pt too wide) in paragraph at lines 1601--1602
+Overfull \hbox (31.80798pt too wide) in paragraph at lines 1620--1621
 []\TU/SimSun(0)/m/n/10 合 并 行 时，|  若 内 容 需 要 垂 直 居 中 微 调，|  可 在 [][]\TU/lmtt/m/n
 /10 \multirow []\TU/SimSun(0)/m/n/10 后 加 方 括 号 偏 移 量：| [][]\TU/lmtt/m/n/10 \mul
 tirow{2}{*}[0.5ex]{\TU/FangSong(0)/m/n/10 内容\TU/lmtt/m/n/10 }[]\TU/SimSun(0)/m/
@@ -1651,35 +1651,35 @@ File: figures/第四问3-20波动电价预测对比.png Graphic file (type bmp)
 File: figures/第四问全年10分钟级电价预测一致性.png Graphic file (type bmp)
 <figures/第四问全年10分钟级电价预测一致性.png>
  [31] [32] [33] [34] [35] [36]
-Overfull \hbox (42.31474pt too wide) in paragraph at lines 2194--2195
+Overfull \hbox (42.31474pt too wide) in paragraph at lines 2213--2214
 \TU/SimSun(0)/m/n/10 在 论 文 或 报 告 末 尾，|  通 常 需 要 列 出 参 考 文 献。|  对 于 不 需 要 复 杂 数 
 据 库 管 理 的 简 单 文 档，| \TU/TimesNewRoman(0)/m/n/10 L[]T[]X \TU/SimSun(0)/m/n/10 提 
 供 了 [][]\TU/lmtt/m/n/10 thebibliography
  []
 
 [37]
-Overfull \hbox (26.63382pt too wide) in paragraph at lines 2269--2278
+Overfull \hbox (26.63382pt too wide) in paragraph at lines 2288--2297
  [] 
  []
 
 [38] [39]
-Overfull \hbox (5.50589pt too wide) in paragraph at lines 2380--2392
+Overfull \hbox (5.50589pt too wide) in paragraph at lines 2399--2411
  [] 
  []
 
 [40]
-Overfull \hbox (4.75589pt too wide) in paragraph at lines 2476--2485
+Overfull \hbox (4.75589pt too wide) in paragraph at lines 2495--2504
  [] 
  []
 
 [41] [42] [43]
-Overfull \hbox (6.60286pt too wide) in paragraph at lines 2657--2658
+Overfull \hbox (6.60286pt too wide) in paragraph at lines 2676--2677
 \TU/SimSun(0)/m/n/10 将 [][]\TU/lmtt/m/n/10 \setmainfont{Times New Roman} []\TU/
 SimSun(0)/m/n/10 改 为 [][]\TU/lmtt/m/n/10 \setmainfont{TeX Gyre Termes}| 
  []
 
 
-Overfull \hbox (27.99973pt too wide) in paragraph at lines 2651--2660
+Overfull \hbox (27.99973pt too wide) in paragraph at lines 2670--2679
  [] 
  []
 
@@ -1692,11 +1692,11 @@ Package rerunfilecheck Info: File `latex零基础教程.out' has not changed.
 (rerunfilecheck)             Checksum: E3DDC2045932478920EDFD905751FFA0;11273.
  ) 
 Here is how much of TeX's memory you used:
- 35448 strings out of 468168
- 768139 string characters out of 5429579
+ 35475 strings out of 468168
+ 768965 string characters out of 5429579
  1668418 words of memory out of 5000000
- 63518 multiletter control sequences out of 15000+600000
- 642555 words of font info for 158 fonts, out of 8000000 for 9000
+ 63535 multiletter control sequences out of 15000+600000
+ 642635 words of font info for 168 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,21n,111p,424b,1898s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
