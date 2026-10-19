@@ -4,3 +4,8 @@
 \contentsline {subsection}{\numberline {1.3}§5.3\hskip 1em\relax 统计量及其分布}{3}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}五数概括与箱线图}{4}{subsection.1.4}%
 \contentsline {subsection}{\numberline {1.5}§5.4\hskip 1em\relax 三大抽样分布}{5}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}§5.5\hskip 1em\relax 充分统计量}{6}{subsection.1.6}%
+\contentsline {section}{\numberline {2}第六章\hskip 1em\relax 参数估计}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}§6.1\hskip 1em\relax 无偏性与有效性}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}§6.2\hskip 1em\relax 矩估计与相合性}{8}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}§6.3\hskip 1em\relax 最大似然估计（MLE）与EM算法}{10}{subsection.2.3}%

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  30 SEP 2026 10:44
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  16 OCT 2026 11:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1725,7 +1725,26 @@ Overfull \hbox (1.66666pt too wide) in paragraph at lines 1094--1139
 []  [] 
  []
 
-[19]
+[19] [20]
+Overfull \hbox (1.66666pt too wide) in paragraph at lines 1225--1258
+[]  [] 
+ []
+
+[21] [22]
+Overfull \hbox (26.08424pt too wide) detected at line 1337
+\U/msa/m/n/10 ) \OML/cmm/m/it/10 J \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 C \OT1
+/cmr/m/n/10 (\OML/cmm/m/it/10 r[] \OMS/cmsy/m/n/10 ^^@ j\OML/cmm/m/it/10 x\OMS/
+cmsy/m/n/10 j[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ;  C \OT1/cmr/m/n/10 = [] \OMS
+/cmsy/m/n/10 ^^A [] ^^A \OML/cmm/m/it/10 n^^K\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
+n\OT1/cmr/m/n/10 ) \OML/cmm/m/it/10 r[] \OMS/cmsy/m/n/10 ^^A [] ^^A \OT1/cmr/m/
+n/10 2 = []\OML/cmm/m/it/10 :
+ []
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 1317--1359
+[][]  [] 
+ []
+
 
 Package caption Warning: Unused \captionsetup[table] on input line 121.
 See the caption package documentation for explanation.
@@ -1738,7 +1757,7 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[subfigure] on input line 129.
 See the caption package documentation for explanation.
 
-[20] (./偏微分方程笔记.aux)
+[23] [24] (./偏微分方程笔记.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
@@ -1750,16 +1769,16 @@ Package rerunfilecheck Warning: File `偏微分方程笔记.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `偏微分方程笔记.out':
-(rerunfilecheck)             Before: CC676E7F7920B54CF3C32DD6728B0DA2;2665
-(rerunfilecheck)             After:  A6EFD10CB1EFE619F1CB25DB8EC541FB;2457.
+(rerunfilecheck)             Before: A6EFD10CB1EFE619F1CB25DB8EC541FB;2457
+(rerunfilecheck)             After:  E48191881494AD6D3D414D0BC1E18455;2846.
  ) 
 Here is how much of TeX's memory you used:
- 32805 strings out of 468168
- 712479 string characters out of 5429579
+ 32875 strings out of 468168
+ 713960 string characters out of 5429579
  1322391 words of memory out of 5000000
- 60926 multiletter control sequences out of 15000+600000
+ 60996 multiletter control sequences out of 15000+600000
  634484 words of font info for 107 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,12n,111p,421b,697s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 偏微分方程笔记.pdf (20 pages).
+Output written on 偏微分方程笔记.pdf (24 pages).

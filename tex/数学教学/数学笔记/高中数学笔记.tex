@@ -4720,59 +4720,1147 @@ $\therefore (BM+MN+NB)_{\min}=BB'=\sqrt{3}\times2=2\sqrt{3}$.
 	边长为$2$的正$\triangle ABC$所在平面外一点$P$，$PB=4$，求三棱锥$P-ABC$体积最大时外接球的表面积.
 \end{question}
 
+底面积$S_{\triangle ABC}=\sqrt{3}$为定值，故只需高$h_{\text{锥}}$最大.
+
+因$h_{\text{锥}}\leq PB=4$，当且仅当$PB\perp$平面$ABC$时取等，此时$P$在$B$的正上方.
+
+设底面中心为$O'$，外接球球心为$O$. 因$OO'$与$PB$同垂直于底面，故二者平行，从而$O',B,P,O$共面.
+
+在$\text{Rt}\triangle OO'B$与$\text{Rt}\triangle OEP$中（$E$为$O$在$PB$上的射影，$OE=O'B$，$BE=OO'$），由$OB=OP=R$得：
+\[
+R^2=\underbrace{O'B^2+OO'^2}_{OB^2}=\underbrace{O'B^2+(4-OO')^2}_{OP^2} \implies OO'=2.
+\]
+
+又$O'B=\dfrac{2\sqrt{3}}{3}$，故$R^2=\dfrac{4}{3}+4=\dfrac{16}{3}$.
+
+$S_{\text{球}}=4\pi R^2=\dfrac{64}{3}\pi$.
+
+\tdplotsetmaincoords{72}{110}
+\begin{center}
+	\begin{tikzpicture}[scale=1.5, baseline=(current bounding box.north)]
+		% 外接球：球心O取为坐标原点，正交投影下轮廓为以原点为心的圆，半径R=4/√3
+		\draw[gray!40] (0,0) circle ({4/sqrt(3)});
+		
+		\begin{scope}[tdplot_main_coords]
+			\coordinate (O)  at (0,0,0);
+			\coordinate (O1) at (0,0,-2);              % 底面中心，OO'=2
+			\coordinate (B)  at ({2*sqrt(3)/3},0,-2);
+			\coordinate (A)  at ({-sqrt(3)/3},1,-2);
+			\coordinate (C)  at ({-sqrt(3)/3},-1,-2);
+			\coordinate (P)  at ({2*sqrt(3)/3},0,2);   % B正上方，PB=4
+			\coordinate (E)  at ({2*sqrt(3)/3},0,0);   % OE⊥BP
+			
+			% 底面
+			\draw[thick] (A) -- (B) -- (C);
+			\draw[thick, dashed] (A) -- (C);
+			% 侧棱
+			\draw[thick] (P) -- (A);
+			\draw[thick] (P) -- (C);
+			\draw[thick] (P) -- (B);
+			% 轴截面 O'-B-P-O
+			\draw[DarkRed, thick] (O1) -- (B);
+			\draw[DarkRed, thick] (O1) -- (O);
+			\draw[DarkRed, thick, dashed] (O) -- (E);
+			% 半径
+			\draw[SkyBlue, thick] (O) -- (B);
+			\draw[SkyBlue, thick] (O) -- (P);
+			
+			\foreach \p in {A,B,C,P,O,O1,E}
+			\fill (\p) circle (1pt);
+			
+			\node[right]        at (O1) {$O'$};
+			\node[right]        at (O)  {$O$};
+			\node[below right] at (B)  {$B$};
+			\node[left]        at (A)  {$A$};
+			\node[below]       at (C)  {$C$};
+			\node[above]       at (P)  {$P$};
+			\node[right]       at (E)  {$E$};
+			
+			\node[right]  at (0,0,-1) {$h$};
+			\node[left] at ({2*sqrt(3)/3},0,1) {$4-h$};
+			\node[above left, SkyBlue] at ({sqrt(3)/3},0,-1) {$R$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\subsection{第八讲\quad 平行关系}
+
+\subsubsection{空间位置关系}
+\begin{knowledge}{线面关系}
+	
+	$a\subset\alpha$；$a\parallel\alpha$；$a\cap\alpha=A$.
+\end{knowledge}
+
+\subsubsection{线面平行与面面平行}
+\category{三棱锥中点}
+\begin{question}
+	
+	三棱锥$D-ABC$中，$E,F,O$分别是$AD,BD,AC$中点，$G$为$OC$中点. 求证：$FG\parallel$平面$BOE$.
+\end{question}
+
+$1^\circ$ 取$BC$中点$N$，连接$FN,GN$.
+
+$\begin{cases} EO\parallel CD,\ FN\parallel CD \implies FN\parallel EO \\ BO\parallel NG \end{cases} \implies FN\parallel$面，$GN\parallel$面.
+
+判定：$FN\subset$面$FNG$，$GN\subset$面$FNG$；$FN\cap GN=N$；$FN\parallel$面，$GN\parallel$面 $\implies$ 面$\parallel$面.
+
+$\therefore FG\parallel$平面$BDE$（看众多中点，构造平面）.
+
+$2^\circ$ 连接$AF$交$BE$于$M$，连接$OM$.
+
+$AF,BE$为中线，重心结论$AM=\dfrac{2}{3}AF$；又易得$AO=\dfrac{2}{3}AG$.
+
+$\therefore FG\parallel OM$.
+
+线面平行判定：$FG\not\subset$面$OEB$，$OM\subset$面$OEB$，$FG\parallel OM$.
+
+$\therefore FG\parallel$面$OEB$.
+
+\tdplotsetmaincoords{70}{70}
+\begin{center}
+	\begin{tikzpicture}[scale=1.4, baseline=(current bounding box.north)]
+		\begin{scope}[tdplot_main_coords]
+			\coordinate (A) at (0,0,0);
+			\coordinate (B) at (2,0,0);
+			\coordinate (C) at (1,1.8,0);
+			\coordinate (D) at (1.1,0.7,2);
+			\coordinate (E) at (0.55,0.35,1);
+			\coordinate (F) at (1.55,0.35,1);
+			\coordinate (O) at (0.5,0.9,0);
+			\coordinate (G) at (0.75,1.35,0);
+			\coordinate (N) at (1.5,0.9,0);
+			\coordinate (M) at (1.033,0.233,0.667);
+			\draw[thick] (A)--(B); \draw[thick] (B)--(C); \draw[thick, dashed] (C)--(A);
+			\draw[thick] (D)--(A); \draw[thick] (D)--(B); \draw[thick] (D)--(C);
+			\draw[gray, dashed] (B)--(O); \draw[gray, dashed] (O)--(E); \draw[gray, dashed] (E)--(B);
+			\draw[DarkRed, thick] (F)--(N); \draw[DarkRed, thick] (G)--(N);
+			\draw[SkyBlue, very thick] (F)--(G);
+			\draw[DarkRed, dashed] (O)--(M);
+			\draw[SkyBlue] (A)--(F);
+			\foreach \p in {A,B,C,D,E,F,O,G,N,M} \fill (\p) circle (1pt);
+			\node[left] at (A) {$A$};
+			\node[below] at (B) {$B$};
+			\node[right] at (C) {$C$};
+			\node[above] at (D) {$D$};
+			\node[left] at (E) {$E$};
+			\node[right] at (F) {$F$};
+			\node[below left] at (O) {$O$};
+			\node[below] at (G) {$G$};
+			\node[right] at (N) {$N$};
+			\node[left] at (M) {$M$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\category{高级期中11}
+\begin{question}
+	
+	将长方体灌水，固定$BC$，随着容器倾斜：$E\in AA_1$时$AE+BF$是定值？$E\in AB$时$BE\cdot BF$是定值？
+\end{question}
+
+$V_{\text{水}}=S_{ABEF}\cdot|BC|$定 $\implies S_{ABEF}$定$=\dfrac{AE+BF}{2}\cdot AB \implies AE+BF$为定值.
+
+$V_{\text{水}}=S_{BEF}\cdot|BC|$；$S_{BEF}$定$=\dfrac{1}{2}BF\cdot BE \implies BE\cdot BF$为定值.
+
+\tdplotsetmaincoords{70}{70}
+\begin{center}
+	\begin{tabular}{@{}c@{\hspace{10mm}}c@{}}
+		% 情形1：水面交 AA1 于 E、交 BB1 于 F（梯形截面）
+		\begin{tikzpicture}[scale=1.25, baseline=(current bounding box.south)]
+			\begin{scope}[tdplot_main_coords]
+				\coordinate (B)  at (0,0,0);
+				\coordinate (A)  at (1.536,0,0.547);
+				\coordinate (A1) at (1.126,0,1.675);
+				\coordinate (B1) at (-0.410,0,1.128);
+				\coordinate (E)  at (1.444,0,0.8);
+				\coordinate (F)  at (-0.291,0,0.8);
+				\coordinate (B2)  at (0,2,0);
+				\coordinate (A2)  at (1.536,2,0.547);
+				\coordinate (A12) at (1.126,2,1.675);
+				\coordinate (B12) at (-0.410,2,1.128);
+				\coordinate (E2)  at (1.444,2,0.8);
+				\coordinate (F2)  at (-0.291,2,0.8);
+				\draw[thick] (B)--(A)--(A1)--(B1)--cycle;
+				\draw[thick, dashed] (B2)--(A2)--(A12)--(B12)--cycle;
+				\draw[thick] (A)--(A2); \draw[thick] (A1)--(A12); \draw[thick] (B1)--(B12);
+				\draw[thick, dashed] (B)--(B2);
+				\fill[SkyBlue, opacity=0.35] (B)--(A)--(E)--(F)--cycle;
+				\fill[SkyBlue, opacity=0.2] (A)--(E)--(E2)--(A2)--cycle;
+				\fill[SkyBlue, opacity=0.5] (E)--(F)--(F2)--(E2)--cycle;
+				\draw[SkyBlue, thick] (E)--(F); \draw[SkyBlue, thick] (E)--(E2); \draw[SkyBlue, thick] (F)--(F2);
+				\draw[SkyBlue, thick, dashed] (E2)--(F2);
+				\foreach \p in {B,A,E,F,B2} \fill (\p) circle (1pt);
+				\node[below left] at (B) {$B$};
+				\node[below right] at (A) {$A$};
+				\node[left] at (E) {$E$};
+				\node[below right] at (F) {$F$};
+				\node[above right] at (A1) {$A_1$};
+				\node[above right] at (B1) {$B_1$};
+				\node[below right] at (B2) {$C$};
+			\end{scope}
+		\end{tikzpicture}
+		&
+		% 情形2：水面交 AB 于 E、交 BB1 于 F（三角形截面）
+		\begin{tikzpicture}[scale=1.25, baseline=(current bounding box.south)]
+			\begin{scope}[tdplot_main_coords]
+				\coordinate (B)  at (0,0,0);
+				\coordinate (A)  at (1.226,0,1.226);
+				\coordinate (A1) at (0.307,0,1.998);
+				\coordinate (B1) at (-0.919,0,0.772);
+				\coordinate (E)  at (0.5,0,0.5);
+				\coordinate (F)  at (-0.596,0,0.5);
+				\coordinate (B2)  at (0,2,0);
+				\coordinate (A2)  at (1.226,2,1.226);
+				\coordinate (A12) at (0.307,2,1.998);
+				\coordinate (B12) at (-0.919,2,0.772);
+				\coordinate (E2)  at (0.5,2,0.5);
+				\coordinate (F2)  at (-0.596,2,0.5);
+				\draw[thick] (B)--(A)--(A1)--(B1)--cycle;
+				\draw[thick, dashed] (B2)--(A2)--(A12)--(B12)--cycle;
+				\draw[thick] (A)--(A2); \draw[thick] (A1)--(A12); \draw[thick] (B1)--(B12);
+				\draw[thick, dashed] (B)--(B2);
+				\fill[SkyBlue, opacity=0.35] (B)--(E)--(F)--cycle;
+				\fill[SkyBlue, opacity=0.2] (B)--(E)--(E2)--(B2)--cycle;
+				\fill[SkyBlue, opacity=0.5] (E)--(F)--(F2)--(E2)--cycle;
+				\draw[SkyBlue, thick] (E)--(F); \draw[SkyBlue, thick] (E)--(E2); \draw[SkyBlue, thick] (F)--(F2);
+				\draw[SkyBlue, thick, dashed] (E2)--(F2);
+				\foreach \p in {B,A,E,F,B2} \fill (\p) circle (1pt);
+				\node[below left] at (B) {$B$};
+				\node[above left] at (A) {$A$};
+				\node[below left] at (E) {$E$};
+				\node[below right] at (F) {$F$};
+				\node[above right] at (A1) {$A_1$};
+				\node[left] at (B1) {$B_1$};
+				\node[below right] at (B2) {$C$};
+			\end{scope}
+		\end{tikzpicture}
+		\\[2mm]
+		(1) $E\in AA_1$（梯形截面） & (2) $E\in AB$（三角形截面）
+	\end{tabular}
+\end{center}
+
+\category{罗湖期中12}
+\begin{question}
+	
+	棱长为$1$正方体，$E,F,G$为中点（$BC,CC_1,BB_1$）. $A_1G$与面$AEF$平行？平面截面积为？
+\end{question}
+
 \begin{minipage}[t]{0.62\textwidth}
-	$V_{P-ABC}=\dfrac{1}{3}S_{\triangle ABC}\cdot h$.
-	
-	$S_{\triangle ABC}=\sqrt{3}$一定，故只需求$h$最大.
-	
-	$h\leq PB=4$，当且仅当$PB\perp$平面$ABC$时取等，即$P$在$B$正上方.
-	
-	设正$\triangle ABC$中心为$O'$，球心为$O$（在过$O'$且垂直底面的直线上），球半径为$R$，设$OO'=h$.
-	
-	$O'B=\dfrac{2}{\sqrt{3}}=\dfrac{2\sqrt{3}}{3}$.
-	
-	由$OA=OB=OP=R$：$R^2=O'B^2+h^2$，且$R^2=O'B^2+(4-h)^2$.
-	
-	$\therefore h=2$，$R^2=\dfrac{4}{3}+4=\dfrac{16}{3}$.
-	
-	$S_{\text{球}}=4\pi R^2=\dfrac{64}{3}\pi$.
+
+$\because A_1G\parallel D_1F$，$\therefore A_1G\parallel$面$AEF$.
+
+截面为梯形$AEFD_1$：$EF=\dfrac{\sqrt{2}}{2}$，$AD_1=\sqrt{2}$，腰$\dfrac{\sqrt{5}}{2}$.
+
+高$=\sqrt{\left(\dfrac{\sqrt{5}}{2}\right)^2-\left(\dfrac{\sqrt{2}}{4}\right)^2}=\sqrt{\dfrac{5}{4}-\dfrac{2}{16}}=\dfrac{3}{2\sqrt{2}}=\dfrac{3\sqrt{2}}{4}$.
+
+$S_{\text{梯}}=\dfrac{EF+AD_1}{2}\cdot\dfrac{3\sqrt{2}}{4}=\dfrac{9}{8}$.
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.36\textwidth}
-	\centering
-	\begin{tikzpicture}[scale=1.0, baseline=(current bounding box.north)]
-		\coordinate (B) at (0,-1.0);
-		\coordinate (A) at (-1.8,0.6);
-		\coordinate (C) at (1.8,0.6);
-		\coordinate (P) at (0,2.6);
-		\coordinate (O) at (0,0.8);
-		\coordinate (O1) at (0,0.07);
-		% 外接球
-		\draw[gray!40] (O) circle (1.8);
-		% 可见棱（实线）
-		\draw[thick] (P) -- (A);
-		\draw[thick] (P) -- (B);
-		\draw[thick] (P) -- (C);
-		\draw[thick] (A) -- (B) -- (C);
-		% 被遮挡棱（虚线）
-		\draw[dashed] (A) -- (C);
-		% 球心、底面中心与半径
-		\draw[dashed, DarkRed] (O1) -- (O);
-		\draw[dashed, SkyBlue] (O) -- (A);
-		\fill (O) circle (1.5pt) node[right] {$O$};
-		\fill (O1) circle (1.2pt) node[below right] {$O'$};
-		% 直角标记（PB 与 BC）
-		\draw[gray!70] (0,-0.72) -- (0.21,-0.53) -- (0.21,-0.81);
-		% 顶点
-		\fill (A) circle (1.5pt); \fill (B) circle (1.5pt);
-		\fill (C) circle (1.5pt); \fill (P) circle (1.5pt);
-		\node[above] at (P) {$P$};
-		\node[left] at (A) {$A$};
-		\node[below] at (B) {$B$};
-		\node[right] at (C) {$C$};
-		\node[left] at (-0.05,0.8) {$4$};
+\begin{minipage}[t]{0.3\textwidth}
+\tdplotsetmaincoords{72}{70}
+\begin{center}
+	\begin{tikzpicture}[scale=1.6, baseline=(current bounding box.north)]
+		\begin{scope}[tdplot_main_coords]
+			\coordinate (A) at (0,0,0);
+			\coordinate (B) at (1,0,0);
+			\coordinate (C) at (1,1,0);
+			\coordinate (D) at (0,1,0);
+			\coordinate (A1) at (0,0,1);
+			\coordinate (B1) at (1,0,1);
+			\coordinate (C1) at (1,1,1);
+			\coordinate (D1) at (0,1,1);
+			\coordinate (E) at (1,0.5,0);
+			\coordinate (F) at (1,1,0.5);
+			\coordinate (G) at (1,0,0.5);
+			\draw[thick] (A)--(B)--(C); \draw[thick] (C)--(C1); \draw[thick] (C1)--(B1)--(A1)--(A);
+			\draw[thick] (A1)--(D1)--(C1); \draw[thick] (B)--(B1);
+			\draw[thick, dashed] (A)--(D); \draw[thick, dashed] (D)--(C); \draw[thick, dashed] (D)--(D1);
+			\fill[SkyBlue, opacity=0.25] (A)--(E)--(F)--(D1)--cycle;
+			\draw[SkyBlue, very thick] (A)--(E)--(F)--(D1)--cycle;
+			\draw[DarkRed, very thick] (A1)--(G);
+			\draw[DarkRed, dashed] (D1)--(F);
+			\foreach \p in {A,B,C,D,A1,B1,C1,D1,E,F,G} \fill (\p) circle (0.8pt);
+			\node[below left] at (A) {$A$};
+			\node[below right] at (B) {$B$};
+			\node[right] at (C) {$C$};
+			\node[left] at (D) {$D$};
+			\node[above left] at (A1) {$A_1$};
+			\node[above] at (B1) {$B_1$};
+			\node[above right] at (C1) {$C_1$};
+			\node[above left] at (D1) {$D_1$};
+			\node[right] at (E) {$E$};
+			\node[right] at (F) {$F$};
+			\node[right] at (G) {$G$};
+		\end{scope}
 	\end{tikzpicture}
+\end{center}
 \end{minipage}
+
+\subsection{第九讲\quad 垂直关系}
+
+\subsubsection{线面垂直}
+\begin{knowledge}{相交垂直}
+	
+	夹角$90^\circ$或平移后夹角$90^\circ$.
+	
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 三线合一（等腰）取中点.
+		
+		\item 勾股定理逆定理.
+		
+		\item 菱形、圆、直棱柱.
+		
+	\end{enumerate}
+	
+	另：线面垂直.
+\end{knowledge}
+
+\subsubsection{面面垂直}
+\begin{knowledge}{性质}
+	
+	面面垂直$\implies$找交线.
+\end{knowledge}
+
+\subsubsection{空间中的距离问题}
+\begin{knowledge}{方法}
+	
+	主要为：点$\to$平面；直线$\to$平面；平面$\to$平面.
+	
+	\begin{enumerate}[label=(\arabic*), left=0pt]
+		
+		\item 直接：过点作平面垂线（证明），求垂线段长度；含平行转化法、相似转化法.
+		
+		\item 体积法：从不同角度计算体积；三棱锥体积：$\dfrac{1}{6}\times$长$\times$宽$\times$高.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{深中期末19}
+\begin{question}
+	
+	四棱锥$P-ABCD$，底面平，$AB=AC=AP=1$，$PD=\sqrt{3}$，$\angle BAD=135^\circ$，面$PAD\perp$底$ABCD$，$E,F$为$BC,AC$中点，$M$为$PD$上任意一点. 求证：面$PAC\perp$面$EFM$.
+\end{question}
+
+分析：面上面$\Leftarrow EF\perp$面$PAC$.
+
+$EF\perp PA$（$PA\perp$底）；$EF\perp AC$（几何：$EF\parallel AB$，$AB\perp AC$）.
+
+$\therefore EF\perp$面$PAC$；又$EF\subset$面$EFM$.
+
+$\therefore$ 面$PAC\perp$面$EFM$.
+
+\tdplotsetmaincoords{70}{115}
+\begin{center}
+	\begin{tikzpicture}[scale=1.8, baseline=(current bounding box.north)]
+		\begin{scope}[tdplot_main_coords]
+			\coordinate (A) at (0,0,0);
+			\coordinate (B) at (1,0,0);
+			\coordinate (C) at (0,1,0);
+			\coordinate (D) at (-1,1,0);
+			\coordinate (P) at (0,0,1);
+			\coordinate (E) at (0.5,0.5,0);
+			\coordinate (F) at (0,0.5,0);
+			\coordinate (M) at (-0.45,0.45,0.55);
+			\draw[thick] (B)--(C); 
+			\draw[dashed,thick] (A)--(B); 
+			\draw[thick] (C)--(D); \draw[thick, dashed] (D)--(A);
+			\draw[thick] (P)--(A); \draw[thick] (P)--(B); \draw[thick] (P)--(C); \draw[thick] (P)--(D);
+			\draw[gray, dashed] (A)--(C); \draw[gray, dashed] (P)--(C);
+			\draw[SkyBlue, dashed, very thick] (E)--(F); \draw[SkyBlue, dashed, very thick] (E)--(M); \draw[SkyBlue, dashed, very thick] (F)--(M);
+			\foreach \p in {A,B,C,D,P,E,F,M} \fill (\p) circle (0.8pt);
+			\node[left] at (A) {$A$};
+			\node[below] at (B) {$B$};
+			\node[right] at (C) {$C$};
+			\node[right] at (D) {$D$};
+			\node[above] at (P) {$P$};
+			\node[below] at (E) {$E$};
+			\node[left] at (F) {$F$};
+			\node[right] at (M) {$M$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\category{深中高一上期末15}
+\begin{question}
+	
+	四棱锥$P-ABCD$，底$ABCD$为矩形，$PA\perp$底，$AP=1$，$AD=\sqrt{3}$，$V_{P-ABD}=\dfrac{\sqrt{3}}{4}$. 求$A$到面$PBC$的距离.
+\end{question}
+
+$V_{P-ABD}=\dfrac{1}{3}\times\dfrac{1}{2}\times AB\times\sqrt{3}\times1=\dfrac{\sqrt{3}}{4} \implies AB=\dfrac{3}{2}$.
+
+(1)直接：$BC\perp AB$，$BC\perp PA \implies BC\perp$面$PAB \implies$ 面$PBC\perp$面$PAB$，交线$PB$.
+
+作$AE\perp PB$于$E$，则$AE\perp$面$PBC$，$AE$即所求；$BP=\sqrt{AB^2+AP^2}=\dfrac{\sqrt{13}}{2}$.
+
+$AE=\dfrac{AB\cdot AP}{PB}=\dfrac{3}{\sqrt{13}}=\dfrac{3\sqrt{13}}{13}$.
+
+(3)体积法：$V_{A-PBC}=V_{P-ABC}$：$\dfrac{1}{3}S_{\triangle PBC}\cdot d=\dfrac{1}{3}S_{\triangle ABC}\cdot PA$.
+
+$S_{\triangle PBC}=\dfrac{1}{2}\cdot\dfrac{\sqrt{13}}{2}\cdot\sqrt{3}=\dfrac{\sqrt{39}}{4}$；$S_{\triangle ABC}=\dfrac{1}{2}\cdot\dfrac{3}{2}\cdot\sqrt{3}=\dfrac{3\sqrt{3}}{4}$.
+
+$\therefore d=\dfrac{3\sqrt{13}}{13}$.
+
+\tdplotsetmaincoords{72}{110}
+\begin{center}
+	\begin{tikzpicture}[scale=1.4, baseline=(current bounding box.north)]
+		\begin{scope}[tdplot_main_coords]
+			\coordinate (A) at (0,0,0);
+			\coordinate (B) at (1.5,0,0);
+			\coordinate (C) at (1.5,1.732,0);
+			\coordinate (D) at (0,1.732,0);
+			\coordinate (P) at (0,0,1);
+			\coordinate (E) at (0.857,0.742,0);
+			\draw[thick] (A)--(B)--(C); \draw[thick] (C)--(D); \draw[thick, dashed] (D)--(A);
+			\draw[thick] (P)--(A); \draw[thick] (P)--(B); \draw[thick] (P)--(C); \draw[thick] (P)--(D);
+			\fill[SkyBlue, opacity=0.25] (P)--(B)--(C)--cycle;
+			\draw[SkyBlue, very thick] (P)--(B)--(C)--cycle;
+			\draw[DarkRed, dashed, thick] (A)--(E);
+			\foreach \p in {A,B,C,D,P,E} \fill (\p) circle (0.8pt);
+			\node[left] at (A) {$A$};
+			\node[below] at (B) {$B$};
+			\node[right] at (C) {$C$};
+			\node[right] at (D) {$D$};
+			\node[above] at (P) {$P$};
+			\node[below right] at (E) {$E$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\subsection{第十讲\quad 角度问题}
+
+\subsubsection{异面直线所成角}
+\begin{knowledge}{方法}
+	
+	平移至相交，解三角形（难题用余弦）.
+\end{knowledge}
+
+\category{深大附中月考7}
+\begin{question}
+	
+	$AA_1=AB=2$，$AD=1$，$E,F,G$为$DD_1,AB,CC_1$中点. 则$A_1E$和$GF$所成角？
+\end{question}
+
+$A_1E$平移至$B_1G$，连$B_1F$.
+
+$A_1E=\sqrt{2}$，$B_1F=\sqrt{5}$，$FG=\sqrt{3}$.
+
+$\because B_1G^2+FG^2=B_1F^2$.
+
+$\therefore$ 夹角$\angle B_1GF=90^\circ$.
+
+\tdplotsetmaincoords{72}{50}
+\begin{center}
+	\begin{tikzpicture}[scale=1.2, baseline=(current bounding box.north)]
+		\begin{scope}[tdplot_main_coords]
+			\coordinate (A) at (0,0,0);
+			\coordinate (B) at (2,0,0);
+			\coordinate (C) at (2,1,0);
+			\coordinate (D) at (0,1,0);
+			\coordinate (A1) at (0,0,2);
+			\coordinate (B1) at (2,0,2);
+			\coordinate (C1) at (2,1,2);
+			\coordinate (D1) at (0,1,2);
+			\coordinate (E) at (0,1,1);
+			\coordinate (F) at (1,0,0);
+			\coordinate (G) at (2,1,1);
+			\draw[thick] (A)--(B)--(C); \draw[thick] (C)--(C1); \draw[thick] (B)--(B1); \draw[thick] (A)--(A1);
+			\draw[thick] (A1)--(B1)--(C1)--(D1)--(A1);
+			\draw[thick, dashed] (A)--(D); \draw[thick, dashed] (D)--(C); \draw[thick, dashed] (D)--(D1);
+			\draw[SkyBlue, very thick] (A1)--(E);
+			\draw[SkyBlue, very thick, dashed] (B1)--(G);
+			\draw[DarkRed, very thick] (G)--(F);
+			\draw[DarkRed, dashed, very thick] (B1)--(F);
+			\foreach \p in {A,B,C,D,A1,B1,C1,D1,E,F,G} \fill (\p) circle (0.8pt);
+			\node[below left] at (A) {$A$};
+			\node[below right] at (B) {$B$};
+			\node[right] at (C) {$C$};
+			\node[left] at (D) {$D$};
+			\node[above left] at (A1) {$A_1$};
+			\node[above] at (B1) {$B_1$};
+			\node[above right] at (C1) {$C_1$};
+			\node[above left] at (D1) {$D_1$};
+			\node[left] at (E) {$E$};
+			\node[below] at (F) {$F$};
+			\node[right] at (G) {$G$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\subsubsection{直线与平面所成角}
+\begin{knowledge}{步骤}
+	
+	$1^\circ$证$AA_1\perp$面：$A_1$已知——两个线线垂直；$A_1$未知——等$V$算$AA_1$.
+	
+	$2^\circ$$\sin\theta=\dfrac{AA_1}{OA}$（点面距比斜长）.
+\end{knowledge}
+
+\category{正方体线面角}
+\begin{question}
+	
+	在棱长为$1$的正方体$ABCD-A_1B_1C_1D_1$中，$BC_1$与面$ACC_1A_1$夹角.
+\end{question}
+
+连$BD$交$AC$于$E$，易知$AC\perp BD$.
+
+$\therefore BE\perp AC$；又$BE\perp AA_1$.
+
+$AC\cap AA_1=A$，$AC,AA_1\subset$面$ACC_1A_1$.
+
+$\therefore BE\perp$面$ACC_1A_1$.
+
+连接$C_1E$；$\therefore C_1E$即为$BC_1$在面$ACC_1A_1$中射影.
+
+$\therefore \angle EC_1B$为所求线面角.
+
+$\sin\angle EC_1B=\dfrac{BE}{BC_1}=\dfrac{1}{2} \implies \angle EC_1B=30^\circ$.
+
+\tdplotsetmaincoords{72}{30}
+\begin{center}
+	\begin{tikzpicture}[scale=1.6, baseline=(current bounding box.north)]
+		\begin{scope}[tdplot_main_coords]
+			\coordinate (A) at (0,0,0);
+			\coordinate (B) at (1,0,0);
+			\coordinate (C) at (1,1,0);
+			\coordinate (D) at (0,1,0);
+			\coordinate (A1) at (0,0,1);
+			\coordinate (B1) at (1,0,1);
+			\coordinate (C1) at (1,1,1);
+			\coordinate (D1) at (0,1,1);
+			\coordinate (E) at (0.5,0.5,0);
+			\draw[thick] (A)--(B)--(C); \draw[thick] (C)--(C1); \draw[thick] (B)--(B1); \draw[thick] (A)--(A1);
+			\draw[thick] (A1)--(B1)--(C1)--(D1)--(A1);
+			\draw[thick, dashed] (A)--(D); \draw[thick, dashed] (D)--(C); \draw[thick, dashed] (D)--(D1);
+			\draw[gray, dashed] (A)--(C); \draw[gray, dashed] (A1)--(C1); \draw[gray, dashed] (B)--(D);
+			\draw[DarkRed, very thick] (B)--(E);
+			\draw[DarkRed, dashed, very thick] (C1)--(E);
+			\draw[SkyBlue, very thick] (B)--(C1);
+			\foreach \p in {A,B,C,D,A1,B1,C1,D1,E} \fill (\p) circle (0.8pt);
+			\node[below left] at (A) {$A$};
+			\node[below right] at (B) {$B$};
+			\node[right] at (C) {$C$};
+			\node[left] at (D) {$D$};
+			\node[above left] at (A1) {$A_1$};
+			\node[above] at (B1) {$B_1$};
+			\node[above right] at (C1) {$C_1$};
+			\node[above left] at (D1) {$D_1$};
+			\node[below] at (E) {$E$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\category{线面角正弦}
+\begin{question}
+	
+	同上，求$A_1B_1$与平面$A_1C_1B$所成角的正弦值.
+\end{question}
+
+设$B_1-A_1C_1B$高为$B_1E$，连$A_1E$.
+
+$\therefore \angle B_1A_1E$即为所求线面角.
+
+$\sin\angle B_1A_1E=\dfrac{B_1E}{A_1B_1}=B_1E$.
+
+$V_{B_1-A_1C_1B}=V_{B-A_1B_1C_1} \implies B_1E=\dfrac{\sqrt{3}}{3}$.
+
+$\therefore \sin\angle B_1A_1E=\dfrac{\sqrt{3}}{3}$.
+
+\tdplotsetmaincoords{72}{30}
+\begin{center}
+	\begin{tikzpicture}[scale=1.6, baseline=(current bounding box.north)]
+		\begin{scope}[tdplot_main_coords]
+			\coordinate (A) at (0,0,0);
+			\coordinate (B) at (1,0,0);
+			\coordinate (C) at (1,1,0);
+			\coordinate (D) at (0,1,0);
+			\coordinate (A1) at (0,0,1);
+			\coordinate (B1) at (1,0,1);
+			\coordinate (C1) at (1,1,1);
+			\coordinate (D1) at (0,1,1);
+			\coordinate (E) at (0.667,0.333,0.667);
+			\draw[thick] (A)--(B)--(C); \draw[thick] (C)--(C1); \draw[thick] (B)--(B1); \draw[thick] (A)--(A1);
+			\draw[thick] (A1)--(B1)--(C1)--(D1)--(A1);
+			\draw[thick, dashed] (A)--(D); \draw[thick, dashed] (D)--(C); \draw[thick, dashed] (D)--(D1);
+			\fill[SkyBlue, opacity=0.25] (A1)--(C1)--(B)--cycle;
+			\draw[SkyBlue, very thick] (A1)--(C1)--(B)--cycle;
+			\draw[DarkRed, dashed, very thick] (B1)--(E);
+			\draw[DarkRed, dashed, very thick] (A1)--(E);
+			\foreach \p in {A,B,C,D,A1,B1,C1,D1,E} \fill (\p) circle (0.8pt);
+			\node[below left] at (A) {$A$};
+			\node[below right] at (B) {$B$};
+			\node[right] at (C) {$C$};
+			\node[left] at (D) {$D$};
+			\node[above left] at (A1) {$A_1$};
+			\node[above] at (B1) {$B_1$};
+			\node[above right] at (C1) {$C_1$};
+			\node[above left] at (D1) {$D_1$};
+			\node[right] at (E) {$E$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\subsubsection{二面角}
+\begin{knowledge}{记法与两垂一连法}
+	
+	记作$\alpha-l-\beta$或$P-AB-Q$.
+	
+	两垂一连法：过$P$作面垂线于$M$；过$P$作$l$垂线于$Q$；连$MQ$，则$MQ\perp l$.
+	
+	证明：$l\perp PM$，$l\perp PQ$，$PM\cap PQ=P$，$PM,PQ\subset$面$PMQ$.
+	
+	$\therefore l\perp$面$PMQ$；又$\because MQ\subset$面$PMQ$，$\therefore MQ\perp l$.
+	
+	证折痕与所作面垂直（线面垂直）$\Leftarrow$ 两个线线垂直.
+\end{knowledge}
+
+\tdplotsetmaincoords{70}{110}
+\begin{center}
+	\begin{tikzpicture}[scale=1.2, baseline=(current bounding box.north)]
+		\begin{scope}[tdplot_main_coords]
+			\coordinate (O) at (0,0,0);
+			\coordinate (X) at (3,0,0);
+			\coordinate (Y) at (3,2,0);
+			\coordinate (Z) at (0,2,0);
+			\coordinate (M) at (2,0.3,0);
+			\coordinate (P) at (2,0.3,1.5);
+			\coordinate (Q) at (2,1.2,0);
+			\draw[thick] (O)--(X)--(Y)--(Z)--cycle;
+			\draw[very thick] (-0.4,1.2,0) -- (3.4,1.2,0) node[right] {$l$};
+			\draw[DarkRed, dashed, thick] (P)--(M);
+			\draw[DarkRed, thick] (P)--(Q);
+			\draw[SkyBlue, thick] (M)--(Q);
+			\foreach \p in {M,P,Q} \fill (\p) circle (1pt);
+			\node[above] at (P) {$P$};
+			\node[below left] at (M) {$M$};
+			\node[above left] at (Q) {$Q$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\category{棱柱二面角}
+\begin{question}
+	
+	$\angle BAC=90^\circ$，$AB=BB_1=1$，$AC=\sqrt{2}$，求$A-B_1C-B$正弦值.
+\end{question}
+
+\begin{minipage}[t]{0.62\textwidth}
+
+过$A$作$B_1C$垂线于$E$；过$A$作$BC$垂线于$F$；连接$EF$.
+
+$AF\perp BC$，$AF\perp BB_1$，$BC\cap BB_1=B$，$BC,BB_1\subset$面$BCB_1$.
+
+$\therefore AF\perp$面$BCB_1$，$\therefore B_1C\perp AF$.
+
+$\because B_1C\perp AF$，$B_1C\perp AE$，$AE\cap AF=A$，$AE,AF\subset$面$AEF$.
+
+$\therefore B_1C\perp$面$AEF$；$\because EF\subset$面$AEF$，$\therefore EF\perp B_1C$.
+
+$\therefore \angle AEF$即为所求.
+
+$\sin\angle AEF=\dfrac{AF}{AE}=\dfrac{\sqrt{6}}{3}$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+\tdplotsetmaincoords{72}{115}
+\begin{center}
+	\begin{tikzpicture}[scale=2, baseline=(current bounding box.north)]
+		\begin{scope}[tdplot_main_coords]
+			\coordinate (A) at (0,0,0);
+			\coordinate (B) at (1,0,0);
+			\coordinate (C) at (0,1.414,0);
+			\coordinate (A1) at (0,0,1);
+			\coordinate (B1) at (1,0,1);
+			\coordinate (C1) at (0,1.414,1);
+			\coordinate (E) at (0.5,0.707,0.5);
+			\coordinate (F) at (0.667,0.471,0);
+			\draw[thick] (A)--(B)--(C); \draw[thick, dashed] (C)--(A);
+			\draw[thick] (A1)--(B1)--(C1)--(A1);
+			\draw[thick, dashed] (A)--(A1); \draw[thick] (B)--(B1); \draw[thick] (C)--(C1);
+			\draw[thick] (B1)--(C);
+			\draw[SkyBlue, very thick] (A)--(E);
+			\draw[DarkRed, thick] (A)--(F);
+			\draw[DarkRed, dashed, thick] (E)--(F);
+			\foreach \p in {A,B,C,A1,B1,C1,E,F} \fill (\p) circle (0.8pt);
+			\node[below left] at (A) {$A$};
+			\node[below] at (B) {$B$};
+			\node[right] at (C) {$C$};
+			\node[above left] at (A1) {$A_1$};
+			\node[above left] at (B1) {$B_1$};
+			\node[above right] at (C1) {$C_1$};
+			\node[right] at (E) {$E$};
+			\node[below] at (F) {$F$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\category{深外上学期二段考21}
+\begin{question}
+	
+	$ABCD$是矩形，$PA\perp$平面$ABCD$，$PA=AD=1$，$AB=\sqrt{2}$，$E$为$CD$中点，求二面角$P-BE-A$的值.
+\end{question}
+
+\begin{minipage}[t]{0.62\textwidth}
+过$A$作$BE$垂线于$G$，连$PG$.
+
+$BE\perp AG$，$BE\perp AP$，$PA\cap AG=A$，$PA,AG\subset$面$AGP$.
+
+$\therefore BE\perp$面$AGP$.
+
+又$\because PG\subset$面$AGP$，$\therefore BE\perp PG$.
+
+$\therefore \angle PGA$即为所求.
+
+$\tan\theta=\dfrac{PA}{AG}=\dfrac{\sqrt{3}}{2}$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+\tdplotsetmaincoords{70}{110}
+\begin{center}
+	\begin{tikzpicture}[scale=2, baseline=(current bounding box.north)]
+		\begin{scope}[tdplot_main_coords]
+			\coordinate (A) at (0,0,0);
+			\coordinate (B) at (1.414,0,0);
+			\coordinate (C) at (1.414,1,0);
+			\coordinate (D) at (0,1,0);
+			\coordinate (P) at (0,0,1);
+			\coordinate (E) at (0.707,1,0);
+			\coordinate (G) at (0.943,0.667,0);
+			\draw[thick] (B)--(C)--(D);  \draw[thick, dashed] (D)--(A)--(B);
+			\draw[thick] (P)--(A); \draw[thick] (P)--(B); \draw[thick] (P)--(C); \draw[thick] (P)--(D);
+			\draw[gray, dashed] (B)--(E);
+			\draw[DarkRed, dashed, thick] (A)--(G);
+			\draw[SkyBlue, very thick] (P)--(G);
+			\draw[thick] (P)--(E);
+			\foreach \p in {A,B,C,D,P,E,G} \fill (\p) circle (0.8pt);
+			\node[left] at (A) {$A$};
+			\node[below] at (B) {$B$};
+			\node[right] at (C) {$C$};
+			\node[right] at (D) {$D$};
+			\node[above] at (P) {$P$};
+			\node[right] at (E) {$E$};
+			\node[below right] at (G) {$G$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\subsection{第十一讲\quad 立体几何复习}
+
+\begin{knowledge}{动态问题与三垂线定理}
+	
+	动态问题：$1^\circ$平行：给线面平行，要过定点作面的平行面，再根据题目判断动点的轨迹（一类定、一类动）；要判断线面平行，要找面上一定线与该线平行：找到$\to$共面；找不到$\to$极限位置.
+	
+	$2^\circ$垂直：三垂线定理：$AB\perp b \implies A'B\perp b$.
+	
+	给三点截面画法：连上共面的两点，过另一点作平行线.
+\end{knowledge}
+
+\begin{center}
+	% 动态问题：过定点作平行面，轨迹为交线
+	\tdplotsetmaincoords{70}{110}
+	\begin{tikzpicture}[scale=1.1, baseline=(current bounding box.north)]
+		\begin{scope}[tdplot_main_coords]
+			\draw[thick] (0,0,0) -- (3.2,0,0) -- (3.2,2,0) -- (0,2,0) -- cycle;
+			\fill[SkyBlue, opacity=0.18] (0.4,1,1.2) -- (3,1,1.2) -- (3,1,0) -- (0.4,1,0) -- cycle;
+			\draw[SkyBlue, thick] (0.4,1,1.2) -- (3,1,1.2) node[right] {$l$};
+			\draw[SkyBlue, thick] (0.4,1,1.2) -- (0.4,1,0);
+			\draw[SkyBlue, thick] (3,1,1.2) -- (3,1,0);
+			\draw[DarkRed, very thick] (0.4,1,0) -- (3,1,0) node[right] {$m$（轨迹）};
+			\fill (1.6,1,0) circle (1.2pt);
+			\node[below right] at (1.6,1,0) {$P$};
+			\node[below left, SkyBlue] at (0.5,1.9,1.15) {$\beta$};
+			\node[below right] at (3.1,1.9,0) {$\alpha$};
+		\end{scope}
+	\end{tikzpicture}
+	\qquad
+	% 三垂线定理
+	\tdplotsetmaincoords{70}{110}
+	\begin{tikzpicture}[scale=1.1, baseline=(current bounding box.north)]
+		\begin{scope}[tdplot_main_coords]
+			\draw[thick] (0,0,0) -- (3.2,0,0) -- (3.2,2,0) -- (0,2,0) -- cycle;
+			\coordinate (Ap) at (1,1,0);
+			\coordinate (A) at (1,1,1.4);
+			\coordinate (B) at (2.3,1,0);
+			\draw[very thick] (2.3,-0.3,0) -- (2.3,2.3,0) node[right] {$b$};
+			\draw[DarkRed, dashed, thick] (A) -- (Ap);
+			\draw[SkyBlue, thick] (Ap) -- (B);
+			\draw[very thick] (A) -- (B);
+			\draw (2.1,1,0) -- (2.1,1.2,0) -- (2.3,1.2,0);
+			\foreach \p in {A,Ap,B} \fill (\p) circle (1.2pt);
+			\node[above] at (A) {$A$};
+			\node[below left] at (Ap) {$A'$};
+			\node[below right] at (B) {$B$};
+			\node[below right] at (3.1,1.9,0) {$\alpha$};
+		\end{scope}
+	\end{tikzpicture}
+	\qquad
+	% 三点截面：连共面两点，过第三点作平行线
+	\tdplotsetmaincoords{72}{30}
+	\begin{tikzpicture}[scale=1.3, baseline=(current bounding box.north)]
+		\begin{scope}[tdplot_main_coords]
+			\coordinate (O) at (0,0,0);
+			\coordinate (X) at (1,0,0);
+			\coordinate (Y) at (1,1,0);
+			\coordinate (Z) at (0,1,0);
+			\coordinate (O1) at (0,0,1);
+			\coordinate (X1) at (1,0,1);
+			\coordinate (Y1) at (1,1,1);
+			\coordinate (Z1) at (0,1,1);
+			\draw[thick] (O)--(X)--(Y); \draw[thick] (Y)--(Y1); \draw[thick] (X)--(X1); \draw[thick] (O)--(O1);
+			\draw[thick] (O1)--(X1)--(Y1)--(Z1)--(O1);
+			\draw[thick, dashed] (O)--(Z); \draw[thick, dashed] (Z)--(Y); \draw[thick, dashed] (Z)--(Z1);
+			\coordinate (P) at (0.3,0.2,0);
+			\coordinate (Q) at (0.8,0.7,0);
+			\coordinate (R) at (0.35,0.25,1);
+			\draw[SkyBlue, very thick] (P)--(Q);
+			\draw[SkyBlue, very thick] (R)--(0.85,0.75,1);
+			\foreach \p in {P,Q,R} \fill (\p) circle (1pt);
+			\node[below left] at (P) {$P$};
+			\node[below right] at (Q) {$Q$};
+			\node[above left] at (R) {$R$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\subsubsection{四点共面证明}
+\begin{knowledge}{方法}
+	
+	运用基本事实1：不共线的三点确定一个平面.
+	
+	即寻找平行$\implies$不共线（$A,B,C,D$不共线）；线线平行：$AB\parallel CD$.
+\end{knowledge}
+
+\subsubsection{三点共线证明}
+\begin{knowledge}{方法}
+	
+	运用基本事实3：不同面有一公共点，该点一定过公共直线.
+	
+	步骤：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 分别证三点在两面内（点在线内，线在面内）.
+		
+		\item 面$\cap$面$=$交线.
+		
+		\item 点在交线上.
+		
+		\item 三点共线.
+		
+	\end{enumerate}
+\end{knowledge}
+
+\category{例1：正方体中点}
+\begin{question}
+	
+	$E,F$为$AB,AA_1$中点. 求证：(1)$E,C,D_1,F$四点共面；(2)$CE,D_1F,DA$三线共点.
+\end{question}
+
+(1) 连接$EF,CD_1,A_1B$.
+
+$\because EF\parallel CD_1\parallel A_1B$.
+
+$\therefore EF$与$CD_1$共面.
+
+$\therefore E,F,C,D_1$共面.
+
+(2) 由(1)$FD_1$与$EC$共面. 设$FD_1\cap EC=P$.
+
+$P\in EC$，$EC\subset$面$ABCD \implies P\in$面$ABCD$.
+
+$P\in D_1F$，$D_1F\subset$面$ADD_1A_1 \implies P\in$面$ADD_1A_1$.
+
+$\because$ 面$ADD_1A_1\cap$面$ABCD=AD$.
+
+$\therefore P\in AD$.
+
+$\therefore P$为$CE,D_1F,DA$三线共点，即三线共点.
+
+\tdplotsetmaincoords{72}{30}
+\begin{center}
+	\begin{tikzpicture}[scale=2.5, baseline=(current bounding box.north)]
+		\begin{scope}[tdplot_main_coords]
+			\coordinate (A) at (0,0,0);
+			\coordinate (B) at (1,0,0);
+			\coordinate (C) at (1,1,0);
+			\coordinate (D) at (0,1,0);
+			\coordinate (A1) at (0,0,1);
+			\coordinate (B1) at (1,0,1);
+			\coordinate (C1) at (1,1,1);
+			\coordinate (D1) at (0,1,1);
+			\coordinate (E) at (0.5,0,0);
+			\coordinate (F) at (0,0,0.5);
+			\coordinate (P) at (0,-1,0);
+			\draw[thick] (A)--(B)--(C); \draw[thick] (C)--(C1); \draw[thick] (B)--(B1); \draw[thick] (A)--(A1);
+			\draw[thick] (A1)--(B1)--(C1)--(D1)--(A1);
+			\draw[thick, dashed] (A)--(D); \draw[thick, dashed] (D)--(C); \draw[thick, dashed] (D)--(D1);
+			\draw[SkyBlue, very thick] (C)--(E);
+			\draw[SkyBlue, dashed, very thick] (E)--(P);
+			\draw[DarkRed, very thick] (D1)--(F);
+			\draw[DarkRed, dashed, very thick] (F)--(P);
+			\draw[gray, dashed] (A)--(P);
+			\draw[DarkGreen, thick] (E)--(F);
+			\draw[DarkGreen, dashed, very thick] (D1)--(C);
+			\foreach \p in {A,B,C,D,A1,B1,C1,D1,E,F,P} \fill (\p) circle (0.5pt);
+			\node[below left] at (A) {$A$};
+			\node[below right] at (B) {$B$};
+			\node[right] at (C) {$C$};
+			\node[left] at (D) {$D$};
+			\node[above left] at (A1) {$A_1$};
+			\node[above] at (B1) {$B_1$};
+			\node[above right] at (C1) {$C_1$};
+			\node[above left] at (D1) {$D_1$};
+			\node[below] at (E) {$E$};
+			\node[left] at (F) {$F$};
+			\node[below left] at (P) {$P$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\subsubsection{折叠问题}
+\category{深圳高一下期末统考21}
+\begin{question}
+	
+	$AB=4$，$BC=6\sqrt{2}$，$AE=1$，将$\triangle BEC$折起使$B'$投影在$AD$上.
+	
+	(1)在图2中，线段$B'C$上是否存在$F$使$EF\parallel$平面$B'AD$？求$\dfrac{B'F}{B'C}$
+	
+	(2)二面角$B'-EC-D$大小
+\end{question}
+
+(1) 取$G$使$FG\underset{=}{\parallel}\ \dfrac{1}{4}CD$；又$AE\underset{=}{\parallel}\ \dfrac{1}{4}CD$.
+
+$\therefore FG\underset{=}{\parallel}\AE \implies EF\parallel AG \implies$ 四边形$EFGA$为平行四边形.
+
+$\because EF\not\subset$面$B'AD$，$AG\subset$面$B'AD$.
+
+$\therefore EF\parallel$面$B'AD$；此时$\dfrac{B'F}{B'C}=\dfrac{1}{4}$.
+
+(2) 作$B'N\perp AD$；$\because B'$投影在$AD$上，$\therefore B'N\perp$面$AECD$.
+
+$\because EC\subset$面$AECD$，$\therefore B'N\perp EC$.
+
+又$EC\perp B'M$（图1折痕垂直保留），$\therefore EC\perp$面$B'MN$.
+
+$\because MN\subset$面$B'MN$，$\therefore EC\perp MN$.
+
+$\therefore \angle B'MN$即为所求.
+
+图1相似求得$MN=\sqrt{2}$；图2得$B'M=2\sqrt{2}$.
+
+$\cos\theta=\dfrac{MN}{B'M}=\dfrac{1}{2} \implies \theta=60^\circ$.
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.75, baseline=(current bounding box.north)]
+		\coordinate (A) at (0,4);
+		\coordinate (D) at (8.49,4);
+		\coordinate (B) at (0,0);
+		\coordinate (C) at (8.49,0);
+		\coordinate (E) at (0,3);
+		\coordinate (N) at (2,4);
+		\coordinate (M) at (1.32,2.53);
+		\draw[thick] (A)--(D)--(C)--(B)--cycle;
+		\draw[thick] (E)--(C);
+		\draw[DarkRed, dashed, thick] (N)--(M)--(B);
+		\foreach \p in {A,D,B,C,E,N,M} \fill (\p) circle (1.2pt);
+		\node[above left] at (A) {$A$};
+		\node[above right] at (D) {$D$};
+		\node[below left] at (B) {$B$};
+		\node[below right] at (C) {$C$};
+		\node[left] at (E) {$E$};
+		\node[above] at (N) {$N$};
+		\node[below right] at (M) {$M$};
+		\node[below] at (4.2,-0.6) {图1};
+	\end{tikzpicture}
+	\qquad
+	\tdplotsetmaincoords{70}{30}
+	\begin{tikzpicture}[scale=0.75, baseline=(current bounding box.north)]
+		\begin{scope}[tdplot_main_coords]
+			\coordinate (A) at (0,4,0);
+			\coordinate (E) at (0,3,0);
+			\coordinate (C) at (8.49,0,0);
+			\coordinate (D) at (8.49,4,0);
+			\coordinate (N) at (2,4,0);
+			\coordinate (M) at (2.4,1.9,0);
+			\coordinate (Bp) at (2,4,2.2);
+			\coordinate (F) at (3.62,3.1,1.65);
+			\coordinate (G) at (3.62,4,1.65);
+			\draw[thick] (A)--(E); \draw[thick] (E)--(C); \draw[thick] (C)--(D); \draw[thick] (D)--(A);\draw[dashed] (A)--(Bp);\draw[thick] (Bp)--(D);
+			\draw[thick] (Bp)--(E); \draw[thick] (Bp)--(C);
+			\draw[DarkRed, dashed, thick] (Bp)--(N);
+			\draw[DarkRed, dashed, thick] (N)--(M);
+			\draw[DarkRed, thick] (Bp)--(M);
+			\draw[SkyBlue, very thick] (E)--(F);
+			\draw[SkyBlue, dashed, very thick] (A)--(G);
+			\draw[gray, thick] (F)--(G);
+			\foreach \p in {A,E,C,D,N,M,Bp,F,G} \fill (\p) circle (1.2pt);
+			\node[left] at (A) {$A$};
+			\node[left] at (E) {$E$};
+			\node[below] at (C) {$C$};
+			\node[right] at (D) {$D$};
+			\node[above] at (N) {$N$};
+			\node[below] at (M) {$M$};
+			\node[above] at (Bp) {$B'$};
+			\node[right] at (F) {$F$};
+			\node[right] at (G) {$G$};
+			\node[below] at (4.2,-0.8) {图2};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+\subsection{第十二讲\quad 统计}
+
+\subsubsection{抽样方法}
+\begin{knowledge}{概念}
+	
+	总体：调查对象的全体.
+	
+	个体：每一个调查对象（可用调查指标）.
+	
+	样本：抽取的一部分（可用指标）.
+	
+	样本量：个体数字.
+	
+	抽签法：搅拌均匀、不放回；前抽后抽概率一致.
+	
+	随机数法：读表规则数位一致、越少越好；无效和重复剔除.
+	
+	分层抽样：每个个体被抽概率相等.
+\end{knowledge}
+
+\category{题型1：更正数据}
+\begin{question}
+	
+	$48$名学生，$\bar{x}=70$，$S^2=75$，但甲$80$记为$50$，乙$70$记为$100$，更正后的$\bar{x}'$和$S^{2'}$？
+\end{question}
+
+$\bar{x}=\dfrac{M+50+100}{48}=70$；$\bar{x}'=\dfrac{M+70+80}{48}=70$.
+
+$S^2=\dfrac{N+(50-70)^2+(100-70)^2}{48}=75$.
+
+$S^{2'}=\dfrac{N+(80-70)^2+(70-70)^2}{48}=50$.
+
+\subsubsection{数字特征}
+\begin{knowledge}{百分位数、众数、中位数、平均数、方差}
+	
+	百分位数：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 小$\to$大排序.
+		
+		\item $70\%\times$个数：整$\Rightarrow$这个数与下个数平均数；分$\Rightarrow$下个数.
+		
+	\end{enumerate}
+	
+	众数：可有多个；中位数：中间一数/中间二数均值.
+	
+	平均数：$\dfrac{x_1+\cdots+x_n}{n}$；极差；方差$S^2=\dfrac{(x_1-\bar{x})^2+\cdots+(x_n-\bar{x})^2}{n}$；标准差.
+	
+	分层方差：$S_{\text{总}}^2=\dfrac{n_1}{n}\left[S_1^2+(\bar{x}_1-\bar{x}_{\text{总}})^2\right]+\dfrac{n_2}{n}\left[S_2^2+(\bar{x}_2-\bar{x}_{\text{总}})^2\right]$.
+	
+	※平均数和方差的性质：一组数$x_1,x_2,\cdots,x_n$平均值$\bar{x}$、方差$S^2$，则数据$ax_1+b,\cdots,ax_n+b$的平均值为$a\bar{x}+b$、方差为$a^2S^2$.
+\end{knowledge}
+
+\subsubsection{统计图表}
+\begin{knowledge}{频率分布直方图}
+	
+	组数$=\dfrac{\text{极差}}{\text{组距}}$（自选）.
+	
+	频率$=\dfrac{\text{频数}}{\text{总数}}$.
+	
+	在频率分布直方图中：众数：最高处均值；平均数（加权）；中位数：平分面积处横坐标.
+\end{knowledge}
+
+\subsection{第十三讲\quad 概率}
+
+\subsubsection{随机事件及事件的运算}
+\begin{knowledge}{题型}
+	
+	事件关系：把所有情况列出比对.
+\end{knowledge}
+
+\subsubsection{概率}
+\begin{knowledge}{对立与概率}
+	
+	对立事件概率和为$1$；概率和为$1$不一定对立.
+	
+	$P(A)=1$不一定为必然事件；$P(B)=0$不一定为不可能事件.
+\end{knowledge}
+
+\subsubsection{事件的独立性}
+\begin{knowledge}{串并联电路}
+	
+	并联用加（补），串联用乘.
+	
+	并联块三种可能：上通下不通；下通上不通；都通$\Rightarrow$考虑反面.
+\end{knowledge}
+
+\category{电路通过概率}
+\begin{question}
+	
+	元件通过概率为$0.9$，则$M$-$N$通过概率为？（$1,2$串联后与$3$并联，再与$4$串联）
+\end{question}
+
+\begin{center}
+	\begin{tikzpicture}[scale=1.0, baseline=(current bounding box.north)]
+		\draw[thick] (-2.6,0) -- (-1.5,0);
+		\draw[thick] (-1.5,0) -- (-1.5,0.6); \draw[thick] (-1.5,0) -- (-1.5,-0.6);
+		\draw[thick] (-1.5,0.6) -- (-0.9,0.6); \draw[thick] (-0.3,0.6) -- (0.3,0.6); \draw[thick] (0.9,0.6) -- (1.5,0.6);
+		\draw[thick] (-1.5,-0.6) -- (-0.3,-0.6); \draw[thick] (0.3,-0.6) -- (1.5,-0.6);
+		\draw[thick] (-0.9,0.45) rectangle (-0.3,0.75); \node at (-0.6,0.6) {$1$};
+		\draw[thick] (0.3,0.45) rectangle (0.9,0.75); \node at (0.6,0.6) {$2$};
+		\draw[thick] (-0.3,-0.75) rectangle (0.3,-0.45); \node at (0,-0.6) {$3$};
+		\draw[thick] (1.5,0.6) -- (1.5,0); \draw[thick] (1.5,-0.6) -- (1.5,0);
+		\draw[thick] (1.5,0) -- (2.1,0);
+		\draw[thick] (2.1,-0.15) rectangle (2.7,0.15); \node at (2.4,0) {$4$};
+		\draw[thick] (2.7,0) -- (3.4,0);
+		\draw[dashed, gray] (-1.7,-1) rectangle (1.7,1);
+		\node[above, gray] at (0,1) {区块1};
+		\node[left] at (-2.6,0) {$M$};
+		\node[right] at (3.4,0) {$N$};
+	\end{tikzpicture}
+\end{center}
+
+$1,2$整体：$0.9\times0.9=0.81$.
+
+$P(\text{区块1通})=1-0.19\times0.1=0.981$.
+
+整个通：$0.981\times0.9=0.8829$.
+
+\subsubsection{古典概型}
+\begin{knowledge}{特征与步骤}
+	
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 有限.
+		
+		\item 等可能.
+		
+	\end{enumerate}
+	
+	选择只看描述，不看求什么.
+	
+	从$x$个中选$y$个的情况数算法：$5$中选$3$：$C_5^3=\dfrac{5\times4\times3}{3\times2\times1}=10$种情况.
+	
+	大题（解题）总步骤：
+	\begin{enumerate}[label=\arabic*., left=0pt]
+		
+		\item 求出从几个抽几个.
+		
+		\item 把样本点设出来.
+		
+		\item 列出所有可能.
+		
+		\item 设题目所求的事件为$A$.
+		
+		\item 找出$n_A$.
+		
+		\item 用$\dfrac{n_A}{n}$算$P(A)$.
+		
+	\end{enumerate}
+\end{knowledge}
+
+
 
 
 

@@ -16,3 +16,5 @@
 \contentsline {subsection}{\numberline {3.7}Harnack 不等式}{17}{subsection.3.7}%
 \contentsline {subsection}{\numberline {3.8}Green 公式与 Green 函数}{17}{subsection.3.8}%
 \contentsline {subsection}{\numberline {3.9}半空间上的 Green 函数与 Poisson 公式}{19}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}半空间 Poisson 公式的证明}{20}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}球上的 Green 函数与 Poisson 公式}{22}{subsection.3.11}%

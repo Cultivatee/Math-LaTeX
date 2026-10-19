@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  30 SEP 2026 10:51
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  16 OCT 2026 11:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1621,6 +1621,34 @@ Overfull \hbox (1.66667pt too wide) in paragraph at lines 346--400
 
 [4] [5]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 462.
+
+[6] [7]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 539.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 540.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 554.
+
+[8]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 623.
+
+[9]
+
 Package caption Warning: Unused \captionsetup[table] on input line 121.
 See the caption package documentation for explanation.
 
@@ -1632,21 +1660,28 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[subfigure] on input line 129.
 See the caption package documentation for explanation.
 
-[6] (./数理统计笔记.aux)
+[10] (./数理统计笔记.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
  ***********
-Package rerunfilecheck Info: File `数理统计笔记.out' has not changed.
-(rerunfilecheck)             Checksum: 017EA5B3C007580003230C18E31F9A78;828.
+
+
+Package rerunfilecheck Warning: File `数理统计笔记.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `数理统计笔记.out':
+(rerunfilecheck)             Before: 017EA5B3C007580003230C18E31F9A78;828
+(rerunfilecheck)             After:  376185DD7D2CC6FAD3E48BA7324D5766;1554.
  ) 
 Here is how much of TeX's memory you used:
- 33341 strings out of 468168
- 721388 string characters out of 5429579
+ 33394 strings out of 468168
+ 724431 string characters out of 5429579
  1323389 words of memory out of 5000000
- 61464 multiletter control sequences out of 15000+600000
- 634468 words of font info for 105 fonts, out of 8000000 for 9000
+ 61515 multiletter control sequences out of 15000+600000
+ 634484 words of font info for 107 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,11n,111p,420b,769s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 数理统计笔记.pdf (6 pages).
+Output written on 数理统计笔记.pdf (10 pages).

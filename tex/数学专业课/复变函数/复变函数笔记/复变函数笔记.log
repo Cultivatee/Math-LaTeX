@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  30 SEP 2026 10:46
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.7.22)  16 OCT 2026 11:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1675,6 +1675,23 @@ Overfull \hbox (16.66666pt too wide) in paragraph at lines 931--959
 [][]  []
  []
 
+[12]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 969.
+
+
+Overfull \hbox (16.66666pt too wide) in paragraph at lines 995--1031
+[][]  [] 
+ []
+
+[13]
+Overfull \hbox (1.66666pt too wide) in paragraph at lines 1087--1121
+[]  []
+ []
+
+[14]
 
 Package caption Warning: Unused \captionsetup[table] on input line 121.
 See the caption package documentation for explanation.
@@ -1687,7 +1704,7 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[subfigure] on input line 129.
 See the caption package documentation for explanation.
 
-[12] (./复变函数笔记.aux)
+[15] (./复变函数笔记.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
@@ -1699,16 +1716,16 @@ Package rerunfilecheck Warning: File `复变函数笔记.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `复变函数笔记.out':
-(rerunfilecheck)             Before: E28D400BC48338393553706FA651A5B3;1775
-(rerunfilecheck)             After:  3F5C2E9D68096E1C789350F5C4E02546;2941.
+(rerunfilecheck)             Before: 3F5C2E9D68096E1C789350F5C4E02546;2941
+(rerunfilecheck)             After:  47B81A5733E2CCFC626D340987904081;3666.
  ) 
 Here is how much of TeX's memory you used:
- 32834 strings out of 468168
- 711923 string characters out of 5429579
+ 32868 strings out of 468168
+ 713587 string characters out of 5429579
  1320389 words of memory out of 5000000
- 60957 multiletter control sequences out of 15000+600000
+ 60991 multiletter control sequences out of 15000+600000
  634468 words of font info for 105 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,16n,111p,420b,771s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 复变函数笔记.pdf (12 pages).
+Output written on 复变函数笔记.pdf (15 pages).

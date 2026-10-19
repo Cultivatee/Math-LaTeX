@@ -459,6 +459,196 @@
 		\]
 	\end{knowledge}
 	
+	\subsection{§5.5\quad 充分统计量}
+	
+	\begin{knowledge}{充分统计量的定义}
+		
+		设总体分布函数为 $F(x;\theta)$. 若条件概率
+		\[
+		P(X_1=x_1,\ X_2=x_2,\ \dots,\ X_n=x_n \mid T=t)
+		\]
+		与 $\theta$ 无关，则称 $T=T(X_1,\dots,X_n)$ 为 $\theta$ 的充分统计量.
+	\end{knowledge}
+	
+	\begin{question}{判定：总体 $b(1,\theta)$，$T=\sum_{i=1}^n X_i$}
+		
+		记 $t=x_1+\cdots+x_n$. 由独立性且 $T\sim b(n,\theta)$：
+		\[
+		P(X_1=x_1,\dots,X_n=x_n \mid T=t) = \frac{\prod_{i=1}^{n-1} P(X_i=x_i)\cdot P\Big(X_n=t-\sum_{i=1}^{n-1}x_i\Big)}{P\Big(\sum_{i=1}^n X_i=t\Big)}
+		\]
+		\[
+		= \frac{\prod_{i=1}^{n-1}\theta^{x_i}(1-\theta)^{1-x_i}\cdot \theta^{\,t-\sum_{i=1}^{n-1}x_i}\,(1-\theta)^{1-t+\sum_{i=1}^{n-1}x_i}}{C_n^t\,\theta^t(1-\theta)^{n-t}} = \frac{1}{C_n^t},
+		\]
+		与 $\theta$ 无关，故 $T$ 为 $\theta$ 的充分统计量.
+	\end{question}
+	
+	\begin{question}{正态总体 $N(\mu,1)$：$T=\bar{X}$ 是 $\mu$ 的充分统计量}
+		
+		$p(x)=\dfrac{1}{\sqrt{2\pi}}\,e^{-\frac{(x-\mu)^2}{2}}$，故
+		\[
+		p(x_1,\dots,x_n)=\left(\frac{1}{\sqrt{2\pi}}\right)^n \exp\left\{-\frac{\sum_{i=1}^n (x_i-\mu)^2}{2}\right\}.
+		\]
+		作变换 $x_n=nt-\sum_{i=1}^{n-1}x_i$（雅可比行列式 $|J|=n$），得 $(X_1,\dots,X_{n-1},T)$ 的联合密度
+		\[
+		p(x_1,\dots,x_{n-1},t)=n\,(2\pi)^{-\frac{n}{2}} \exp\left\{-\frac{1}{2}\left[\sum_{i=1}^{n-1}(x_i-\mu)^2+\Big(nt-\sum_{i=1}^{n-1}x_i-\mu\Big)^2\right]\right\};
+		\]
+		又 $T\sim N\Big(\mu,\dfrac1n\Big)$，边缘密度为
+		\[
+		p_T(t)=\left(\frac{2\pi}{n}\right)^{-\frac12}\exp\left\{-\frac{n}{2}(t-\mu)^2\right\}.
+		\]
+		两式相除（即给定 $T=t$ 的条件密度）不含 $\mu$，故 $T=\bar{X}$ 是 $\mu$ 的充分统计量.
+	\end{question}
+	
+	\begin{knowledge}{均匀总体 $U(0,\theta)$：$T=X_{(n)}$ 充分}
+		
+		$p(x)=\dfrac1\theta\,\mathbf{1}_{\{0<x<\theta\}}$，故
+		\[
+		p(x_1)\cdots p(x_n)=\left(\frac1\theta\right)^n \mathbf{1}_{\{0<x_{(n)}<\theta\}}.
+		\]
+		取 $T=X_{(n)}$，$g(t,\theta)=\left(\dfrac1\theta\right)^n \mathbf{1}_{\{t<\theta\}}$，$h(x)=1$，由因子分解定理知 $T$ 是 $\theta$ 的充分统计量.
+	\end{knowledge}
+	
+	\begin{knowledge}{定理（因子分解定理）}
+		
+		设总体概率函数为 $f(x;\theta)$，则 $T=T(X_1,\dots,X_n)$ 是充分统计量 $\iff$ 存在 $g(t,\theta)$ 与 $h(x_1,\dots,x_n)$，使得对任意 $\theta$ 及 $x_1,\dots,x_n$，有
+		\[
+		f(x_1,\dots,x_n;\theta)=g\big(T(x_1,\dots,x_n),\,\theta\big)\cdot h(x_1,\dots,x_n).
+		\]
+	\end{knowledge}
+	
+	\begin{question}{正态总体 $N(\mu,\sigma^2)$，$\theta=(\mu,\sigma^2)$}
+		
+		联合密度
+		\[
+		p(x_1,\dots,x_n;\theta)=\left(\frac{1}{\sqrt{2\pi}\,\sigma}\right)^n \exp\left\{-\frac{1}{2\sigma^2}\sum_{i=1}^n x_i^2+\frac{\mu}{\sigma^2}\sum_{i=1}^n x_i-\frac{n\mu^2}{2\sigma^2}\right\}.
+		\]
+		取 $T=(T_1,T_2)=\Big(\sum_{i=1}^n X_i,\ \sum_{i=1}^n X_i^2\Big)$，$h(x)=1$，
+		\[
+		g(t_1,t_2)=\left(\frac{1}{\sqrt{2\pi}\,\sigma}\right)^n \exp\left\{-\frac{1}{2\sigma^2}t_2+\frac{\mu}{\sigma^2}t_1-\frac{n\mu^2}{2\sigma^2}\right\},
+		\]
+		则 $T$ 是 $\theta$ 的充分统计量.
+	\end{question}
+	
+	\begin{knowledge}{似然函数与分解技巧}
+		
+		似然函数：$L(\theta;x_1,\dots,x_n)=\prod_{i=1}^n p(x_i;\theta)$.
+		
+		分解技巧：令与 $\theta$ 有关的 $x$ 的代数式为 $T$；$g(T,\theta)$ 取其余只含 $T$ 与 $\theta$ 的因子；$h(x)$ 取范围示性函数 $\prod_{i=1}^n \mathbf{1}_{\{x_i\in\text{范围}\}}$.
+	\end{knowledge}
+	
+	\section{第六章\quad 参数估计}
+	\subsection{§6.1\quad 无偏性与有效性}
+	
+	\begin{knowledge}{无偏估计}
+		
+		$E_\theta(\hat\theta)=\theta$.
+	\end{knowledge}
+	
+	\begin{knowledge}{有效性}
+		
+		前提为无偏估计；$\operatorname{Var}$ 越小越有效.
+		
+		常用恒等式：$E(X^2)=\operatorname{Var}(X)+E^2(X)$.
+	\end{knowledge}
+	
+	\subsection{§6.2\quad 矩估计与相合性}
+	
+	\begin{knowledge}{矩估计步骤}
+		
+		1$^\circ$ 写 $E(X)$；两参数再写 $\operatorname{Var}(X)$，$E(X^2)$.
+		
+		2$^\circ$ 反解：把参数解成矩的函数 $\theta=f[E(X)]$；两参数就建立方程组.
+		
+		3$^\circ$ 替换：$E(X)\to\bar{X}$，$\operatorname{Var}(X)\to m_2=\dfrac1n\sum_{i=1}^n (X_i-\bar{X})^2$，得 $\hat\theta=f(\bar{X})$.
+	\end{knowledge}
+	
+	\begin{center}
+		
+		\begin{tabular}{lcc}
+			\toprule
+			分布 & $E(X)$ & $\operatorname{Var}(X)$ \\
+			\midrule
+			指数 $E(\lambda)$ & $\dfrac1\lambda$ & $\dfrac{1}{\lambda^2}$ \\[6pt]
+			均匀 $U(a,b)$ & $\dfrac{a+b}{2}$ & $\dfrac{(b-a)^2}{12}$ \\[6pt]
+			均匀 $U(0,\theta)$ & $\dfrac\theta2$ & $\dfrac{\theta^2}{12}$ \\[6pt]
+			二项 $b(m,p)$ & $mp$ & $mp(1-p)$ \\[6pt]
+			负二项 $NB(r,\theta)$ & $\dfrac r\theta$ & $\dfrac{r(1-\theta)}{\theta^2}$ \\[6pt]
+			泊松 $P(\lambda)$ & $\lambda$ & $\lambda$ \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	
+	附：$\int_0^1 x^a\,dx=\dfrac{1}{a+1}$；给了 $P$ 先用 $\Sigma$ 或 $\int$ 算 $E$，然后反解.
+	
+	\begin{knowledge}{相合性与证明步骤}
+		
+		证明 $\hat\theta_n$ 是相合估计：
+		
+		1$^\circ$ 算 $E(\hat\theta_n)$，$\operatorname{Var}(\hat\theta_n)$；
+		
+		2$^\circ$ 证 $\lim_{n\to\infty} E(\hat\theta_n)=\theta$，$\lim_{n\to\infty}\operatorname{Var}(\hat\theta_n)=0$；
+		
+		则 $\lim_{n\to\infty} P(|\hat\theta_n-\theta|\geq\varepsilon)=0$，即 $\hat\theta_n$ 相合.
+		
+		矩估计一般都相合.
+	\end{knowledge}
+	
+	\begin{question}{$U(0,\theta)$：$X_{(n)}$ 是 $\theta$ 的相合估计}
+		
+		$X_{(n)}$ 的密度：
+		\[
+		p_n(x)=\frac{n!}{(n-1)!\,(n-n)!}\,[F(x)]^{n-1}p(x)=n\left(\frac{x}{\theta}\right)^{n-1}\cdot\frac1\theta=\frac{n\,x^{n-1}}{\theta^n},\quad 0<x<\theta.
+		\]
+		\[
+		E(\hat\theta)=\int_0^\theta x\,p_n(x)\,dx=\frac{n}{n+1}\,\theta \to \theta.
+		\]
+		\[
+		E(\hat\theta^2)=\int_0^\theta x^2\,p_n(x)\,dx=\frac{n}{n+2}\,\theta^2.
+		\]
+		\[
+		\operatorname{Var}(\hat\theta)=\frac{n}{n+2}\,\theta^2-\left(\frac{n}{n+1}\,\theta\right)^2=\frac{n}{(n+1)^2(n+2)}\,\theta^2 \to 0.
+		\]
+		$\therefore X_{(n)}$ 是 $\theta$ 的相合估计.
+	\end{question}
+	
+	\begin{knowledge}{定理（连续映射保持相合性）}
+		
+		若 $\hat\theta_{n1},\dots,\hat\theta_{nk}$ 分别是 $\theta_1,\theta_2,\dots,\theta_k$ 的相合估计，$\eta=g(\theta_1,\dots,\theta_k)$ 为连续函数，则
+		\[
+		\hat\eta_n=g(\hat\theta_{n1},\dots,\hat\theta_{nk})
+		\]
+		是 $\eta$ 的相合估计.
+	\end{knowledge}
+	
+	\subsection{§6.3\quad 最大似然估计（MLE）与EM算法}
+	
+	\begin{knowledge}{似然函数与MLE步骤}
+		
+		似然函数：$L(\theta)=\prod_{i=1}^n p(x_i;\theta)$.
+		
+		1$^\circ$ 写似然：$L(\theta)=\prod_{i=1}^n p(x_i;\theta)$，离散用 $P(X=x_i)$.
+		
+		2$^\circ$ 写出参数约束.
+		
+		3$^\circ$ 取对数：$\ln L=\sum_{i=1}^n \ln p(x_i;\theta)$.
+		
+		4$^\circ$ 求导置 $0$：$\dfrac{d\ln L}{d\theta}=0$；多参数时用 $\dfrac{\partial}{\partial\theta_j}$ 联立.
+	\end{knowledge}
+	
+	\begin{knowledge}{不变性}
+		
+		若 $\hat\theta$ 是 $\theta$ 的 MLE，则 $g(\hat\theta)$ 是 $g(\theta)$ 的 MLE.
+	\end{knowledge}
+	
+	\begin{knowledge}{带约束求MLE（均匀分布型）}
+		
+		$X>\theta \implies \theta\leq X_{(1)}$；
+		
+		$\theta<X<2\theta \implies \dfrac{X_{(n)}}{2}\leq\theta\leq X_{(1)}$.
+		
+		当似然关于 $\theta$ 单调时，MLE 在约束区间的端点处取得.
+	\end{knowledge}
+	
 	
 	
 \end{document}
